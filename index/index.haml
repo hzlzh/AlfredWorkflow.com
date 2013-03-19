@@ -1,0 +1,75 @@
+!!! 5
+%html{'lang' => 'en-US', 'dir' => 'ltr'}
+  %head
+    %meta{'charset' => 'UTF-8'}/
+    %meta{:name => "viewport", :content  => "width=device-width"}
+    %title Alfred Workflow Collections
+    %meta{:name => "keywords", :content  => "Alfred, Workflow, Workflows, Theme, Tips"}
+    %meta{:name => "description", :content  => "Alfred Workflow Collections, also Alfred 2 Themes / Alfred Tips"}
+    %meta{:name => "robots", :content  => "noindex,nofollow"}
+    %meta{:name => "apple-mobile-web-app-capable", :content  => "no"}
+    %link{:rel => "apple-touch-icon", :size => "114x114", :href  => "/apple-touch-icon-114x114.png"}
+    %link{:rel => "stylesheet", :href  => "css/style.css"}
+    %link{:rel => "alternate", :typr => "application/rss+xml", :title => "RSS Feed", :href  => ""}
+    %script{:src  => "js/libs/modernizr.js"}
+    %script{:src  => "jquery-1.9.1.min.js"}
+    :javascript
+      // Google analytics code
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-00000000-0']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+  %body
+    %header
+      %h1 Alfred Workflow Collections 
+      %span also Themes / Tips
+      .desription Arm your Alfred 
+    %article 
+      .add-source Submit & Share yours?
+      %h2 Workflows
+      %table 
+        %thead 
+          %tr 
+            %th Name
+            %th Description
+            %th Author
+            %th Release Page
+            %th Download
+        %tbody 
+          %tr 
+            %td 
+              %a{:href => "#Shorten URL"} Shorten URL
+            %td Shorten link with (goo.gl, bit.ly, t.cn, j.mp, is.gd, v.gd etc.)
+            %td 
+              %a{:href => "#"} hzlzh
+            %td 
+              %a{:href => "#"} Github
+            %td 
+              %a{:href => ""} dl
+          %tr 
+            %td 
+              %a{:href => "#Shorten URL"} Shorten URL
+            %td Shorten link with (goo.gl, bit.ly, t.cn, j.mp, is.gd, v.gd etc.)
+            %td 
+              %a{:href => "#"} hzlzh
+            %td 
+              %a{:href => "#"} Github
+            %td 
+              %a{:href => ""} dl
+          %tr 
+            %td 
+              %a{:href => "#Shorten URL"} Shorten URL
+            %td Shorten link with (goo.gl, bit.ly, t.cn, j.mp, is.gd, v.gd etc.)
+            %td 
+              %a{:href => "#"} hzlzh
+            %td 
+              %a{:href => "#"} Github
+            %td 
+              %a{:href => ""} dl
+    %footer
+      .copyright @hzlzh
