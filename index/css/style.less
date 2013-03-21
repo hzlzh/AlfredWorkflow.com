@@ -1,8 +1,119 @@
 /*
-@name: ###
+@name: AlfredWorkflow.com
 @author: hzlzh(hzlzh.dev@gmail.com)
 */
 @import "libs/reset";
 @import "libs/elements";
 
-body{}
+html{
+	background: url("images/bg.jpg") repeat fixed 0 0 transparent;
+}
+body{
+	background-color: #9B59B6;
+	max-width: 1024px;
+	width: 100%;
+	font-size: 14px;
+    border-radius: 10px;
+	position: relative;
+	margin: 30px auto 30px;
+	color: #fff;
+background-color: rgb(145, 104, 181);
+background-color: rgba(255, 255, 255,0.3);
+.logo{
+	background-image: url("images/logo.png");
+    height: 309px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 372px;
+    z-index: -1;
+}
+.description{
+		display: block;
+    margin: 0 auto;
+    width: 20%;height: 10px;
+	}
+}
+
+.header{background-color:rgba(66, 33, 108, 0.8);
+	height: 55px;
+    padding: 20px 2%;
+    position: relative;
+	.title{margin: 0;color: #FFFFFF;font-size: 28px;
+		> span{
+		  background: none repeat scroll 0 0 #37A5CB;
+    display: inline-block;
+    font-size: 23px;
+    line-height: 33px;
+    margin: 0 10px;
+    padding: 2px 5px;
+    position: relative;
+    text-align: center;
+    top: -10px;
+    width: 100px;
+    		> span{
+    		 background: none repeat scroll 0 0 #37CB3A;
+    bottom: -24px;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 2px 11px;
+    position: absolute;
+    right: -10px;
+    text-align: center;
+    width: 40px;
+    			> span{
+    		background: none repeat scroll 0 0 #ED8641;
+    bottom: -10px;
+    display: inline-block;
+    left: -25px;
+    padding: 1px 5px;
+    position: absolute;
+    width: 25px;
+    			}
+    		}
+		}
+	}
+	
+	.add-source{
+		background: none repeat scroll 0 0 #4EAF51;
+    bottom: 0;
+    color: #FFFFFF;
+    padding: 2px 5px;
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    &:hover{background-color: #469d49;};
+	}
+}
+.article{
+	h2{text-shadow: 1px 1px 2px #000;}
+	a{color: #fff;}
+border-top: 1px solid #FFFFFF;
+padding: 0 2%;
+
+table{margin: 0;text-overflow: ellipsis;
+    white-space: nowrap;table-layout: fixed;
+	thead{
+	background-color: #69448B;
+	}
+	tbody{
+		background-color: #8356AC;
+		tr:nth-of-type(odd) > td{background-color: #9260BF;text-overflow: ellipsis;}
+		tr:hover > td{background-color: #37a5cb;text-overflow: ellipsis;}
+	}
+}
+
+}
+.footer{height: 20px;
+    overflow: hidden;
+	.copyright{bottom: -28px;
+    display: block;
+    left: 50%;
+    margin: 0 auto 0 -100px;
+    padding-bottom: 5px;
+    position: absolute;
+    text-align: center;
+    width: 200px;}
+
+}
