@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.benzi.a2w.battery</string>
+	<key>connections</key>
+	<dict/>
+	<key>createdby</key>
+	<string>Benzi Ahamed</string>
+	<key>description</key>
+	<string>Displays information about your laptop battery</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Battery</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>battery</string>
+				<key>runningsubtext</key>
+				<string>Displays information about your battery, retrieving...</string>
+				<key>script</key>
+				<string>ioreg -l -n AppleSmartBattery -r &gt; info.txt
+CURRENT_CAPACITY=$(cat info.txt | grep CurrentCapacity | awk '{printf ("%i", $3)}')
+MAX_CAPACITY=$(cat info.txt | grep MaxCapacity | awk '{printf ("%i", $3)}')
+DESIGN_CAPACITY=$(cat info.txt | grep DesignCapacity | awk '{printf ("%i", $3)}')
+
+HEALTH=$(echo $MAX_CAPACITY $DESIGN_CAPACITY | awk '{printf ("%i", $1/$2 * 100)}')
+CHARGE=$(echo $CURRENT_CAPACITY $MAX_CAPACITY | awk '{printf ("%i", $1/$2 * 100)}')
+CELLS=$(python -c "f='●'*($CHARGE/10) + '○'*(10-$CHARGE/10);print f")
+
+CYCLE_COUNT=$(cat info.txt | grep -e '"CycleCount" =' | awk '{printf ("%i", $3)}')
+
+TIME_TO_EMPTY=$(cat info.txt | grep -i AvgTimeToEmpty | awk '{printf("%s", $3)}')
+TIME_LEFT=Calculating…
+if [ $TIME_TO_EMPTY -lt 15000 ]; then
+TIME_LEFT=$(cat info.txt | grep -i AvgTimeToEmpty | awk '{printf("%i:%.2i", $3/60, $3%60)}')
+fi
+
+TIME_INFO=n
+STATUS_INFO=Draining
+
+CHARGING=$(cat info.txt | grep -i ischarging | awk '{printf("%s",$3)}')
+if [ $CHARGING == Yes ]; then
+	TIME_FULL=$(cat info.txt | grep -i AvgTimeToFull | tr '\n' ' | ' | awk '{printf("%i:%.2i", $3/60, $3%60)}')
+	TIME_INFO=$(echo $TIME_FULL until full)
+	STATUS_INFO=Charging
+else
+	FULLY_CHARGED=$(cat info.txt | grep -i FullyCharged | awk '{printf("%s",$3)}')
+	EXTERNAL=$(cat info.txt | grep -i ExternalConnected | awk '{printf("%s",$3)}')
+	if [ $FULLY_CHARGED == Yes ]; then 
+		if [ $EXTERNAL == Yes ]; then
+			TIME_INFO=$(echo On AC power)
+			STATUS_INFO=Fully Charged
+		else
+			TIME_INFO=$(echo $TIME_LEFT)
+		fi
+	else
+		TIME_INFO=$(echo $TIME_LEFT)
+	fi
+fi
+
+cat &lt;&lt; EOB
+&lt;?xml version="1.0"?&gt;
+&lt;items&gt;
+  &lt;item uid=""&gt;
+    &lt;title&gt;$CHARGE% $CELLS&lt;/title&gt;
+	&lt;subtitle&gt;Current charge&lt;/subtitle&gt;
+	&lt;icon&gt;icon.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid=""&gt;
+    &lt;title&gt;$TIME_INFO&lt;/title&gt;
+	&lt;subtitle&gt;Time left&lt;/subtitle&gt;
+	&lt;icon&gt;clock.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid=""&gt;
+    &lt;title&gt;$STATUS_INFO&lt;/title&gt;
+	&lt;subtitle&gt;Battery status&lt;/subtitle&gt;
+	&lt;icon&gt;icon.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid=""&gt;
+    &lt;title&gt;$CYCLE_COUNT&lt;/title&gt;
+	&lt;subtitle&gt;Charge cycles completed&lt;/subtitle&gt;
+	&lt;icon&gt;cycles.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid=""&gt;
+    &lt;title&gt;$HEALTH%&lt;/title&gt;
+	&lt;subtitle&gt;Battery health&lt;/subtitle&gt;
+	&lt;icon&gt;health.png&lt;/icon&gt;
+  &lt;/item&gt;
+&lt;/items&gt;
+EOB</string>
+				<key>subtext</key>
+				<string>Displays information about your battery</string>
+				<key>title</key>
+				<string>Battery</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FC5EB146-FA11-4E33-8456-F60EA94E7EEE</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>FC5EB146-FA11-4E33-8456-F60EA94E7EEE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>benzi-ahamed.tumblr.com</string>
+</dict>
+</plist>
