@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>jdfwarrior.mailsearch</string>
+	<key>connections</key>
+	<dict>
+		<key>D84E1C47-74CA-4B11-A1C2-56A13E60F4D1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DF5577D9-9A74-4603-9A8C-06E696122A3C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>David Ferguson</string>
+	<key>description</key>
+	<string>Search Mail.app Messages</string>
+	<key>name</key>
+	<string>Search Mail</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>mail</string>
+				<key>script</key>
+				<string>php -f search.php -- "{query}"</string>
+				<key>subtext</key>
+				<string>Search Mail.app Messages for {query}</string>
+				<key>title</key>
+				<string>Search Mail Messages</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D84E1C47-74CA-4B11-A1C2-56A13E60F4D1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/Applications/Mail.app</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>DF5577D9-9A74-4603-9A8C-06E696122A3C</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>D84E1C47-74CA-4B11-A1C2-56A13E60F4D1</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>DF5577D9-9A74-4603-9A8C-06E696122A3C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>jdfwarrior.tumblr.com</string>
+</dict>
+</plist>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.dansherman.pinboardtools</string>
+	<key>connections</key>
+	<dict>
+		<key>508B7D8E-723D-466A-9341-E391363ADA32</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>820F89B2-7C42-47B7-A28F-947FFC6AD69B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Dan Sherman</string>
+	<key>description</key>
+	<string>Tools for searching Pinboard.in</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Pinboard Tools</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>pins</string>
+				<key>runningsubtext</key>
+				<string>Searching Pinboard.in, please wait.</string>
+				<key>script</key>
+				<string>python pinboard.py {query}</string>
+				<key>subtext</key>
+				<string>Searches Pinboard's website</string>
+				<key>title</key>
+				<string>Pinboard Search</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>508B7D8E-723D-466A-9341-E391363ADA32</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>820F89B2-7C42-47B7-A28F-947FFC6AD69B</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>508B7D8E-723D-466A-9341-E391363ADA32</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>820F89B2-7C42-47B7-A28F-947FFC6AD69B</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
