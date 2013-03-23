@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>fushdns</string>
+	<key>connections</key>
+	<dict>
+		<key>9290E1C5-FD31-4E5A-9297-E36CDEF00A0B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>731CF669-CFAF-43EF-B614-273786D7E473</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D617EE88-9475-4E33-9DB4-B5C83E047639</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9290E1C5-FD31-4E5A-9297-E36CDEF00A0B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Sy Doveton</string>
+	<key>description</key>
+	<string>Clear DNS cache</string>
+	<key>name</key>
+	<string>Flush DNS Cache</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+long=`sw_vers -productVersion`
+short=${long:0:4}
+if [ "$short" == "10.4" ]; then
+    lookupd -flushcache
+elif [ "$short" == "10.5" ] || [ "$short" == "10.6" ]; then
+    dscacheutil -flushcache
+elif [ "$short" == "10.7" ] || [ "$short" == "10.8" ]; then
+    sudo killall -HUP mDNSResponder
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9290E1C5-FD31-4E5A-9297-E36CDEF00A0B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Cache clear….</string>
+				<key>title</key>
+				<string>DNS Cache flushed</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>731CF669-CFAF-43EF-B614-273786D7E473</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>flush</string>
+				<key>text</key>
+				<string>Flush DNS Cache</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D617EE88-9475-4E33-9DB4-B5C83E047639</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>731CF669-CFAF-43EF-B614-273786D7E473</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9290E1C5-FD31-4E5A-9297-E36CDEF00A0B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D617EE88-9475-4E33-9DB4-B5C83E047639</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.sdov.com</string>
+</dict>
+</plist>
