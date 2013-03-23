@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.timein.timein</string>
+	<key>connections</key>
+	<dict>
+		<key>1FAF9DE1-985C-46EA-8131-22E21E1C463B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>96BC973E-9AE3-4265-A198-15107908F634</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4B17AC8B-AAEB-4206-A6D7-378CA879BBE0</key>
+		<array/>
+		<key>96BC973E-9AE3-4265-A198-15107908F634</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D80B159-FC00-4575-9699-86E4F5F64B1A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>The_Ben &amp; nirl</string>
+	<key>description</key>
+	<string>Shows the time in default &amp; custom locations</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>TimeIn</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>timein</string>
+				<key>script</key>
+				<string>AMOUNT={query};
+#----
+PLACE="Hong Kong" ; TITLE="\"""Time in $PLACE""\"" ; ICONLOC="\"""file://"`pwd`"/icon.png""\""
+
+RESULT=$(echo $(curl -s "http://api.wolframalpha.com/v2/query?input=time%20in%20$(echo $PLACE | sed 's/ /\%20/g')&amp;appid=WHARE2-WAGAJRG3AV" | cat | awk '/&lt;plaintext&gt;/') | cut -d "&gt;" -f 4 | cut -d "&lt;" -f 1 | sed 's/| /-/g')
+
+if [ "$RESULT" = "" ]; then RESULT="Unable to find suitable results"; fi
+
+
+
+#-----
+
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  			&lt;item uid="convert" arg="'{query}'"&gt;
+				&lt;title&gt;'HK - $RESULT'&lt;/title&gt;
+				&lt;icon&gt;A127682B-08D7-4D97-A649-EA8274BB3D81.png&lt;/icon&gt;
+				&lt;subtitle&gt;&lt;/subtitle&gt;
+  			&lt;/item&gt;
+		&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>Hong Kong</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A127682B-08D7-4D97-A649-EA8274BB3D81</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>timein setup</string>
+				<key>text</key>
+				<string>Setup TimeIn for first usage</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1FAF9DE1-985C-46EA-8131-22E21E1C463B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>timein</string>
+				<key>script</key>
+				<string>AMOUNT={query};
+#----
+PLACE="San Jose" ; TITLE="\"""Time in $PLACE""\"" ; ICONLOC="\"""file://"`pwd`"/icon.png""\""
+
+RESULT=$(echo $(curl -s "http://api.wolframalpha.com/v2/query?input=time%20in%20$(echo $PLACE | sed 's/ /\%20/g')&amp;appid=WHARE2-WAGAJRG3AV" | cat | awk '/&lt;plaintext&gt;/') | cut -d "&gt;" -f 4 | cut -d "&lt;" -f 1 | sed 's/| /-/g')
+
+if [ "$RESULT" = "" ]; then RESULT="Unable to find suitable results"; fi
+
+
+
+#-----
+
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  			&lt;item uid="convert" arg="'{query}'"&gt;
+				&lt;title&gt;'SJ - $RESULT'&lt;/title&gt;
+				&lt;icon&gt;20D7196B-EF33-41FA-B725-F18B89B3AAF7.png&lt;/icon&gt;
+				&lt;subtitle&gt;&lt;/subtitle&gt;
+  			&lt;/item&gt;
+		&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>San Jose</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>20D7196B-EF33-41FA-B725-F18B89B3AAF7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>timein</string>
+				<key>script</key>
+				<string>AMOUNT={query};
+#----
+PLACE="Jerusalem" ; TITLE="\"""Time in $PLACE""\"" ; ICONLOC="\"""file://"`pwd`"/icon.png""\""
+
+RESULT=$(echo $(curl -s "http://api.wolframalpha.com/v2/query?input=time%20in%20$(echo $PLACE | sed 's/ /\%20/g')&amp;appid=WHARE2-WAGAJRG3AV" | cat | awk '/&lt;plaintext&gt;/') | cut -d "&gt;" -f 4 | cut -d "&lt;" -f 1 | sed 's/| /-/g')
+
+if [ "$RESULT" = "" ]; then RESULT="Unable to find suitable results"; fi
+
+
+
+#-----
+
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  			&lt;item uid="convert" arg="'{query}'"&gt;
+				&lt;title&gt;'ISR - $RESULT'&lt;/title&gt;
+				&lt;icon&gt;96C6BE78-4FF8-4FBF-95E9-5C9A26634D84.png&lt;/icon&gt;
+				&lt;subtitle&gt;&lt;/subtitle&gt;
+  			&lt;/item&gt;
+		&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>Israel</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>96C6BE78-4FF8-4FBF-95E9-5C9A26634D84</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>timein</string>
+				<key>script</key>
+				<string>AMOUNT={query};
+#----
+PLACE="London" ; TITLE="\"""Time in $PLACE""\"" ; ICONLOC="\"""file://"`pwd`"/icon.png""\""
+
+RESULT=$(echo $(curl -s "http://api.wolframalpha.com/v2/query?input=time%20in%20$(echo $PLACE | sed 's/ /\%20/g')&amp;appid=WHARE2-WAGAJRG3AV" | cat | awk '/&lt;plaintext&gt;/') | cut -d "&gt;" -f 4 | cut -d "&lt;" -f 1 | sed 's/| /-/g')
+
+if [ "$RESULT" = "" ]; then RESULT="Unable to find suitable results"; fi
+
+
+
+#-----
+
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  			&lt;item uid="convert" arg="'{query}'"&gt;
+				&lt;title&gt;'CMB - $RESULT'&lt;/title&gt;
+				&lt;icon&gt;31D52796-F63C-4BEC-955C-0ED6D5F6A6E9.png&lt;/icon&gt;
+				&lt;subtitle&gt;&lt;/subtitle&gt;
+  			&lt;/item&gt;
+		&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>Cambridge</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>31D52796-F63C-4BEC-955C-0ED6D5F6A6E9</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>timein</string>
+				<key>runningsubtext</key>
+				<string>Please wait while getting the current time for {query}</string>
+				<key>script</key>
+				<string>from time import get_location_item
+
+print(get_location_item('{query}'))</string>
+				<key>title</key>
+				<string>Shows the current time in {query}</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>4B17AC8B-AAEB-4206-A6D7-378CA879BBE0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Setup completed successfully</string>
+				<key>title</key>
+				<string>TimeIn Setup</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2D80B159-FC00-4575-9699-86E4F5F64B1A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>sudo easy_install wolframalpha</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>96BC973E-9AE3-4265-A198-15107908F634</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow was originally made by nirl,
+rewritten from the ground up in Python by The_Ben to include custom locations input and flags of the given location.
+
+Feel free to look at the code, modify and distribute it, but please give proper credits.
+
+** Please note that the script takes a Worfram AppId, which is currently blank. You can get one by registering here: http://products.wolframalpha.com/api/ (click the 'Sign up' button) **
+
+Uses the wolframalpha api found in: https://pypi.python.org/pypi/wolframalpha/</string>
+	<key>uidata</key>
+	<dict>
+		<key>1FAF9DE1-985C-46EA-8131-22E21E1C463B</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>20D7196B-EF33-41FA-B725-F18B89B3AAF7</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>2D80B159-FC00-4575-9699-86E4F5F64B1A</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>31D52796-F63C-4BEC-955C-0ED6D5F6A6E9</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>4B17AC8B-AAEB-4206-A6D7-378CA879BBE0</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>96BC973E-9AE3-4265-A198-15107908F634</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>96C6BE78-4FF8-4FBF-95E9-5C9A26634D84</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>A127682B-08D7-4D97-A649-EA8274BB3D81</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

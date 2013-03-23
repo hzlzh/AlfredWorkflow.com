@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>alfredimdbsuggest</string>
+	<key>connections</key>
+	<dict>
+		<key>1B01DB55-39A0-41F1-B8D6-55348E840456</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>88966712-77BF-426A-B1BE-BF6F7C74A027</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Matt Harzewski</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>IMDB Suggest</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>imdb</string>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$wf = new Workflows();
+$q = "{query}";
+
+
+//Get JSONP data from Amazon
+$term = trim(strtolower($q));
+$search = str_replace(array(" ", "(", ")"), array("_", "", ""), $term);
+$firstchar = substr($search,0,1);
+$url = "http://sg.media-imdb.com/suggests/".$firstchar."/".$search.".json";
+$jsonp = $wf-&gt;request($url);
+
+
+//Convert to JSON and decode
+preg_match('/^imdb\$.*?\((.*?)\)$/ms', $jsonp, $matches);
+if (!$matches) {
+	$url = "http://www.imdb.com/find?s=all&amp;q=".urlencode($q);
+	$wf-&gt;result('alfredimdbsuggest.', $url, 'Search IMDB for '.$q, 'No search suggestions found. Search IMDB for '.$q, 'icon.png');
+	echo $wf-&gt;toxml();
+	exit();
+}
+$json = $matches[1];
+$arr = json_decode($json, true);
+$data = $arr['d'];
+
+
+//Output results
+$count = 1;
+foreach ($data as $item) {
+	if (substr($item['id'], 0, 2) === 'nm') {
+		$url = "http://www.imdb.com/name/".$item['id']."/";
+	} else {
+		$url = "http://www.imdb.com/title/".$item['id']."/";
+	}
+	$wf-&gt;result('alfredimdbsuggest.'.$count.'.'.time(), $url, $item['l'], 'Search IMDB for '.$item['l'], 'icon.png');
+	$count++;
+}
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Find a movie or person on IMDB</string>
+				<key>title</key>
+				<string>Search IMDB</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1B01DB55-39A0-41F1-B8D6-55348E840456</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>88966712-77BF-426A-B1BE-BF6F7C74A027</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1B01DB55-39A0-41F1-B8D6-55348E840456</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>88966712-77BF-426A-B1BE-BF6F7C74A027</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.webmaster-source.com/</string>
+</dict>
+</plist>

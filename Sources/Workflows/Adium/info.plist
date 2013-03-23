@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>cz.ry2L.adium</string>
+	<key>connections</key>
+	<dict>
+		<key>EF1B8F5A-AABF-4670-8FE2-A729394DB042</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>39E87B55-A376-4BA1-A8BB-0FB4BB0E68AC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jan Rydval</string>
+	<key>description</key>
+	<string>Shows Adium IM contact list</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Adium</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>im</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>-- Configuration beginset showHosts to falseset sortNames to true-- Configuration endset res to "&lt;?xml version='1.0'?&gt;&lt;items&gt;"set q to "{query}"-- set q to ""-- log qtell application "Adium"		if q is "-" then		set unreadOnly to true		set q to ""	else		set unreadOnly to false	end if			if q is "" then		set aList to (every contact whose status type is not offline)	else		set aList to (every contact whose status type is not offline and display name contains q)	end if				set waitingMsgs to name of first contact of (every chat whose unread message count is not 0)		set listThem to {}	repeat with i in aList		set tmp to properties of i		set listThem to listThem &amp; {{display name of tmp as text, name of tmp as text, status type of tmp as text, name of service of account of tmp as text, host of account of tmp as text, status message of tmp as text, idle time of tmp as text}}	end repeat		if sortNames then		set last_swap_position to length of listThem		repeat while last_swap_position &gt; 0			set comparisons_needed to last_swap_position - 1			set last_swap_position to 0			repeat with i from 1 to comparisons_needed				if item 1 of item i of listThem &gt; item 1 of item (i + 1) of listThem then					set swap_item to item i of listThem					set item i of listThem to item (i + 1) of listThem					set item (i + 1) of listThem to swap_item					set last_swap_position to i				end if			end repeat		end repeat	end if		set empty to true	repeat with aPerson in listThem				set aService to item 4 of aPerson		set aDisplayName to item 1 of aPerson		set aName to item 2 of aPerson		if showHosts then			set aHost to item 5 of aPerson			if aHost is not equal to "missing value" then				set aService to item 4 of aPerson &amp; "@" &amp; aHost			end if		end if				set aStatusMessage to item 6 of aPerson		if aStatusMessage is not "" then			set aStatusMessage to ", " &amp; aStatusMessage		end if				set aStatus to item 3 of aPerson		set aIdle to item 7 of aPerson		if aIdle is not "" and aIdle is not "0" then			set aStatus to aStatus &amp; ", " &amp; aIdle &amp; "m idle"		end if				set itemText to "&lt;item uid=\"" &amp; aName &amp; "\" arg=\"" &amp; aName &amp; "\"&gt;&lt;title&gt;" &amp; aDisplayName &amp; "&lt;/title&gt;&lt;subtitle&gt;" &amp; aStatus &amp; "@" &amp; aService &amp; aStatusMessage &amp; "&lt;/subtitle&gt;"				if waitingMsgs contains aName then			set res to res &amp; itemText &amp; "&lt;icon&gt;newmsg.png&lt;/icon&gt;&lt;/item&gt;"			set empty to false		else if not unreadOnly then						if item 3 of aPerson is not "available" then				set res to res &amp; itemText &amp; "&lt;icon&gt;awayIcon.png&lt;/icon&gt;&lt;/item&gt;"			else				set res to res &amp; itemText &amp; "&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"			end if			set empty to false		end if			end repeat		if empty then		if unreadOnly then			set res to res &amp; "&lt;item uid=\"empty\" arg=\"empty\" valid=\"no\"&gt;&lt;title&gt;There is not any unread message&lt;/title&gt;&lt;icon&gt;newmsg.png&lt;/icon&gt;&lt;/item&gt;"		else			set res to res &amp; "&lt;item uid=\"empty\" arg=\"empty\" valid=\"no\"&gt;&lt;title&gt;" &amp; q &amp; " not found&lt;/title&gt;&lt;subtitle&gt;Maybe contact is offline&lt;/subtitle&gt;&lt;icon&gt;no.png&lt;/icon&gt;&lt;/item&gt;"		end if	end if	end tellset res to res &amp; "&lt;/items&gt;"</string>
+				<key>subtext</key>
+				<string>Search online contacts by name</string>
+				<key>title</key>
+				<string>Adium</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>EF1B8F5A-AABF-4670-8FE2-A729394DB042</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)		tell application "Adium"		set fContact to contact q		set anAccount to (account of fContact)
+				if exists first chat window then			set existing_window to first chat window		else			set existing_window to ""		end if				tell anAccount						if existing_window is "" then				set aChat to (make new chat with contacts {fContact} with new chat window)			else				set aChat to (make new chat with contacts {fContact} at end of (chats of existing_window))			end if								end tell		become active aChat		activate	end tell	end alfred_script
+</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>39E87B55-A376-4BA1-A8BB-0FB4BB0E68AC</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>V0.91
+-- shows idle time if known
+-- shows status message if any
+
+V0.9
+-- different icon for contacts with unread messages
+
+V0.8
+-- further speed optimisation
+
+V0.7
+-- contacts cached - sorting is not longer time consuming and can be switch on for everybody
+
+V0.6
+-- added configuration for account servers to be shown or not
+
+V0.5
+-- Free DarkGlassReworked icons are used</string>
+	<key>uidata</key>
+	<dict>
+		<key>39E87B55-A376-4BA1-A8BB-0FB4BB0E68AC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>EF1B8F5A-AABF-4670-8FE2-A729394DB042</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>blog.ry2L.cz</string>
+</dict>
+</plist>
