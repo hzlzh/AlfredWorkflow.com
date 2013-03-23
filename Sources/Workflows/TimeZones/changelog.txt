@@ -1,0 +1,23 @@
+v1.4
+20 Mar 2013
+* You can now move your list of saved cities to a file location of your choice (eg. Dropbox, to sync between machines). Keyword: timezone move
+
+v1.3
+18 Feb 2013
+* Fixes to account for changes to the Wolfram Alpha API
+* When doing a full "update", it won't fail the whole update if one city fails. A list of failed updates is saved to your Desktop.
+
+v1.2
+4 Feb 2013
+* fixes to make "update" work better/properly/at all.
+
+v1.1
+3 Feb 2013
+* Fixed the problem with cities with half-hour UTC offsets (eg. Adelaide—UTC+10.5, New Delhi—UTC+5.5
+* You can search the list of displayed cities (useful if you've got a lot) — just start typing after the "tz"
+* Hotkey to launch the list (set to Ctrl-Z by default)
+
+
+v1.0
+2 Feb 2013
+* Initial release

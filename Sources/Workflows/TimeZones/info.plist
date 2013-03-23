@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>carlosnz.timezones</string>
+	<key>connections</key>
+	<dict>
+		<key>3E37F651-EEB7-451F-B0AD-28710998F443</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>075CB49C-D3B5-4699-9B92-B421D704333D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>814F7D3F-03F9-4248-8308-ECA4D3792F3F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E8F7A1D7-00B7-44A7-9C43-3AFA322C666E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>823CB231-548F-45B9-9DBD-DB29D0D203E4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3E37F651-EEB7-451F-B0AD-28710998F443</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>942CCE71-9883-4AB2-A558-B5A44993DF3B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BC542037-8795-4FE1-8534-AF381F4197FC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AAA84F5F-2F96-4126-A840-9CD676BDD208</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>075CB49C-D3B5-4699-9B92-B421D704333D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B3D2103A-E31D-454E-BD6E-8F13020AC68D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>075CB49C-D3B5-4699-9B92-B421D704333D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>BD27CF53-3880-47C9-9AAC-4B443E7BA1BD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F15F2405-5743-4407-9BFF-A45E6783BA88</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>BFC9E74C-8EB5-4863-8FE6-44AC5AE9427A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B3D2103A-E31D-454E-BD6E-8F13020AC68D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E8F7A1D7-00B7-44A7-9C43-3AFA322C666E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>075CB49C-D3B5-4699-9B92-B421D704333D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F15F2405-5743-4407-9BFF-A45E6783BA88</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>942CCE71-9883-4AB2-A558-B5A44993DF3B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AAA84F5F-2F96-4126-A840-9CD676BDD208</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Remove this locale</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Carl Smith (@CarlosNZ)</string>
+	<key>description</key>
+	<string>A World Clock for Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>TimeZones</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>BD27CF53-3880-47C9-9AAC-4B443E7BA1BD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>./add_city.sh "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3E37F651-EEB7-451F-B0AD-28710998F443</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>timezone add</string>
+				<key>subtext</key>
+				<string>Add a city to your TimeZones cities list</string>
+				<key>text</key>
+				<string>New city?</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>823CB231-548F-45B9-9DBD-DB29D0D203E4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>timezone move</string>
+				<key>subtext</key>
+				<string>Change storage location for your Timezone list</string>
+				<key>text</key>
+				<string>Move Timezone list</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>814F7D3F-03F9-4248-8308-ECA4D3792F3F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>./move.sh</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E8F7A1D7-00B7-44A7-9C43-3AFA322C666E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>x="{query}"
+IFS='|'
+data=($x)
+city="${data[0]}"
+city_time="${data[1]}"
+city_date="${data[2]}"
+
+echo "Current time in $city:"$'\n'"$city_time"$'\n'"on $city_date"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>942CCE71-9883-4AB2-A558-B5A44993DF3B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>tz</string>
+				<key>script</key>
+				<string>./timezone_list.sh "{query}"</string>
+				<key>subtext</key>
+				<string>Display current time in various worldwide cities</string>
+				<key>title</key>
+				<string>TimeZones</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F15F2405-5743-4407-9BFF-A45E6783BA88</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>./update.sh</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B3D2103A-E31D-454E-BD6E-8F13020AC68D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>./remove_city.sh "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AAA84F5F-2F96-4126-A840-9CD676BDD208</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>BC542037-8795-4FE1-8534-AF381F4197FC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>timezone update</string>
+				<key>subtext</key>
+				<string>This may take a few moments.</string>
+				<key>text</key>
+				<string>Update all TimeZone info online</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>BFC9E74C-8EB5-4863-8FE6-44AC5AE9427A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Timezones</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>075CB49C-D3B5-4699-9B92-B421D704333D</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>TimeZones v1.4
+20 March 2013
+
+Timezone information updates courtesy of Wolfram Alpha:
+
+http://www.wolframalpha.com/
+
+Icon credit: Oliver Scholtz (http://schollidesign.deviantart.com/art/Human-O2-Iconset-105344123)
+
+=========
+CHANGELOG
+=========
+
+v1.4
+20 Mar 2013
+* You can now move your list of saved cities to a file location of your choice (eg. Dropbox, to sync between machines). Keyword: timezone move
+
+v1.3
+18 Feb 2013
+* Fixes to account for changes to the Wolfram Alpha API
+* When doing a full "update", it won't fail the whole update if one city fails. A list of failed updates is saved to your Desktop.
+
+v1.2
+4 Feb 2013
+* fixes to make "update" work better/properly/at all.
+
+v1.1
+3 Feb 2013
+* Fixed the problem with cities with half-hour UTC offsets (eg. Adelaide—UTC+10.5, New Delhi—UTC+5.5
+* You can search the list of displayed cities (useful if you've got a lot) — just start typing after the "tz"
+* Hotkey to launch the list (set to Ctrl-Z by default)
+
+v1.0
+2 Feb 2013
+* Initial release</string>
+	<key>uidata</key>
+	<dict>
+		<key>075CB49C-D3B5-4699-9B92-B421D704333D</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>3E37F651-EEB7-451F-B0AD-28710998F443</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>814F7D3F-03F9-4248-8308-ECA4D3792F3F</key>
+		<dict>
+			<key>ypos</key>
+			<real>480</real>
+		</dict>
+		<key>823CB231-548F-45B9-9DBD-DB29D0D203E4</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>942CCE71-9883-4AB2-A558-B5A44993DF3B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>AAA84F5F-2F96-4126-A840-9CD676BDD208</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>B3D2103A-E31D-454E-BD6E-8F13020AC68D</key>
+		<dict>
+			<key>ypos</key>
+			<real>360</real>
+		</dict>
+		<key>BC542037-8795-4FE1-8534-AF381F4197FC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>BD27CF53-3880-47C9-9AAC-4B443E7BA1BD</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>BFC9E74C-8EB5-4863-8FE6-44AC5AE9427A</key>
+		<dict>
+			<key>ypos</key>
+			<real>360</real>
+		</dict>
+		<key>E8F7A1D7-00B7-44A7-9C43-3AFA322C666E</key>
+		<dict>
+			<key>ypos</key>
+			<real>480</real>
+		</dict>
+		<key>F15F2405-5743-4407-9BFF-A45E6783BA88</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://geekzone.philosophicalzombie.net/</string>
+</dict>
+</plist>

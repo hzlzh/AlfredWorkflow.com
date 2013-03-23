@@ -1,0 +1,12 @@
+Auckland|UTC+13
+Sydney|UTC+11
+New York|UTC-5
+Los Angeles|UTC-8
+London|UTC+0
+Paris|UTC+1
+Tokyo|UTC+9
+Beijing|UTC+8
+Hong Kong|UTC+8
+Capetown|UTC+2
+Moscow|UTC+4
+Dubai|UTC+4
