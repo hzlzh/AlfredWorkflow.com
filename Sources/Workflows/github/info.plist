@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>7h2o.com</string>
+	<key>connections</key>
+	<dict>
+		<key>0866791B-6D75-4235-BB02-F5EA1F0C5895</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CD72F364-87D9-4BA7-9A6A-76B5FB5058A6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5EFE76B3-67BE-4AD5-86EC-F1157DB0A5B9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>36F9AC47-932F-4580-8BD9-F6CD4A52C97E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>70FCF210-9927-4381-8063-64799886F60C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>36F9AC47-932F-4580-8BD9-F6CD4A52C97E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>94028B23-5584-4F3B-B08D-87A7DD96CA19</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>36F9AC47-932F-4580-8BD9-F6CD4A52C97E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B80CFBDC-85C4-463D-B70A-10E654D68CD7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B9F20FD8-B35E-4F39-969B-A993BD08D4AF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CD72F364-87D9-4BA7-9A6A-76B5FB5058A6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6AAC52FC-76E2-430E-AC82-DB301475CA74</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E4F641D4-7BAA-47BF-9B19-403450B6E0CA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>36F9AC47-932F-4580-8BD9-F6CD4A52C97E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F3A1FA7D-0932-479F-836A-77ED25E82E56</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>36F9AC47-932F-4580-8BD9-F6CD4A52C97E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>xhinking</string>
+	<key>description</key>
+	<string>Github on Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Github</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>set</string>
+				<key>runningsubtext</key>
+				<string>Please wait</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$w = new Workflows();
+
+$query = {query};
+
+$w-&gt;result( 'github', $query, $query, 'Set Alfred Github Username', 'icon.png', 'yes', 'Username' );
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Input My Github Username</string>
+				<key>title</key>
+				<string>Set Github Username</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0866791B-6D75-4235-BB02-F5EA1F0C5895</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Alfred Github</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6AAC52FC-76E2-430E-AC82-DB301475CA74</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>gist</string>
+				<key>runningsubtext</key>
+				<string>Please Wait...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+$w = new Workflows();
+$query = urlencode( "{query}" );
+$username = $w-&gt;get( 'github.username', 'settings.plist' );
+
+$url = "https://api.github.com/users/".$username."/gists";
+$content = $w-&gt;request( $url );
+$gists = json_decode( $content );
+
+foreach($gists as $gist ):
+	$name_array = object_to_array($gist-&gt;files);
+	$name = array_keys($name_array);
+
+if (strlen(strstr( strtolower($name[0]), strtolower($query)))&gt;0) {
+ 	$w-&gt;result( $gist-&gt;html_url, $gist-&gt;html_url, $name[0], $gist-&gt;description, 'gist_item.png' );
+}
+
+endforeach;
+
+if ( count( $w-&gt;results() ) == 0 ):
+  $w-&gt;result( 'git', 'na', 'No Gist found', 'No Gist were found that match your query', 'gist_item.png', 'no' );
+endif;
+
+echo $w-&gt;toxml();
+
+function object_to_array($data)
+{
+    if (is_array($data) || is_object($data))
+    {
+        $result = array();
+        foreach ($data as $key =&gt; $value)
+        {
+            $result[$key] = object_to_array($value);
+        }
+        return $result;
+    }
+    return $data;
+}</string>
+				<key>subtext</key>
+				<string>Search All My Gists</string>
+				<key>title</key>
+				<string>Gist Search</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E4F641D4-7BAA-47BF-9B19-403450B6E0CA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>https://gist.github.com/</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>B9F20FD8-B35E-4F39-969B-A993BD08D4AF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>36F9AC47-932F-4580-8BD9-F6CD4A52C97E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>gist</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+$w = new Workflows();
+$username = $w-&gt;get( 'github.username', 'settings.plist' );
+
+$url = "https://api.github.com/users/".$username."/gists";
+$content = $w-&gt;request( $url );
+$gists = json_decode( $content );
+
+foreach($gists as $gist ):
+	$name_array = object_to_array($gist-&gt;files);
+	$name = array_keys($name_array);
+ 	$w-&gt;result( $gist-&gt;html_url, $gist-&gt;html_url, $name[0], $gist-&gt;description, 'gist_item.png' );
+endforeach;
+
+if ( count( $w-&gt;results() ) == 0 ):
+  $w-&gt;result( 'git', 'na', 'No Gist found', 'No Gist were found that match your query', 'gist_item.png', 'no' );
+endif;
+
+echo $w-&gt;toxml();
+
+function object_to_array($data)
+{
+    if (is_array($data) || is_object($data))
+    {
+        $result = array();
+        foreach ($data as $key =&gt; $value)
+        {
+            $result[$key] = object_to_array($value);
+        }
+        return $result;
+    }
+    return $data;
+}</string>
+				<key>subtext</key>
+				<string>Get All My Gists</string>
+				<key>title</key>
+				<string>My Gists</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5EFE76B3-67BE-4AD5-86EC-F1157DB0A5B9</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>git star</string>
+				<key>runningsubtext</key>
+				<string>Please wait…</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+$w = new Workflows();
+$query = urlencode( "{query}" );
+
+$username = $w-&gt;get( 'github.username', 'settings.plist' );
+
+$url = "https://api.github.com/users/".$username."/starred";
+$content = $w-&gt;request( $url );
+$repos = json_decode( $content );
+
+ foreach($repos as $repo ):
+ 	$w-&gt;result( $repo-&gt; html_url, $repo-&gt; html_url, $repo-&gt;full_name, $repo-&gt;description, 'repo.png' );
+ endforeach;
+
+if ( count( $w-&gt;results() ) == 0 ):
+  $w-&gt;result( 'git', 'na', 'No Repository found', 'No Repository were found that match your query', 'repo', 'no' );
+endif;
+
+if ($repos-&gt;message) {
+$w-&gt;result( $msg-&gt; message, $msg-&gt;message, 'Github Limit', $msg-&gt;message, 'gihub.png' );
+}
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>My Github Starring repos</string>
+				<key>title</key>
+				<string>Github Star</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>70FCF210-9927-4381-8063-64799886F60C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>require( 'workflows.php' );
+$w = new Workflows();
+
+$in = "{query}";
+$w-&gt;set( 'github.username', $in, 'settings.plist' );
+
+if ( $in != 'F' ){
+	echo 'Set Alfred Github Username '.$in;
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CD72F364-87D9-4BA7-9A6A-76B5FB5058A6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>git s</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+$w = new Workflows();
+$query = urlencode( "{query}" );
+
+$url = "https://api.github.com/legacy/repos/search/".$query;
+$repositories = $w-&gt;request( $url );
+$repos = json_decode( $repositories );
+
+ foreach($repos-&gt;repositories as $repo ):
+ 	$w-&gt;result( $repo-&gt;url, $repo-&gt; url, $repo-&gt;name.' / '.$repo-&gt;language, $repo-&gt;description, 'repo.png' );
+ endforeach;
+
+if ( count( $w-&gt;results() ) == 0 ):
+  $w-&gt;result( 'git', 'na', 'No Repository found', 'No Repository were found that match your query', 'repo', 'no' );
+endif;
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Search on github</string>
+				<key>title</key>
+				<string>Github Search</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>94028B23-5584-4F3B-B08D-87A7DD96CA19</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>git star</string>
+				<key>runningsubtext</key>
+				<string>Please Wait...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+$w = new Workflows();
+$query = urlencode( "{query}" );
+
+$username = $w-&gt;get( 'github.username', 'settings.plist' );
+
+$url = "https://api.github.com/users/".$username."/starred";
+$content = $w-&gt;request( $url );
+$repos = json_decode( $content );
+
+foreach($repos as $repo ):
+if (strlen(strstr( strtolower($repo-&gt;full_name), strtolower($query)))&gt;0) {
+$w-&gt;result( $repo-&gt; html_url, $repo-&gt; html_url, $repo-&gt;full_name, $repo-&gt;description, 'repo.png' );
+}
+	
+endforeach;
+
+if ( count( $w-&gt;results() ) == 0 ):
+  $w-&gt;result( 'git', 'na', 'No Repository found', 'No Repository were found that match your query', 'repo.png', 'no' );
+endif;
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Search My Github Star</string>
+				<key>title</key>
+				<string>Github Star Search</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F3A1FA7D-0932-479F-836A-77ED25E82E56</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>gist create</string>
+				<key>subtext</key>
+				<string>Press Enter To Create Gist</string>
+				<key>text</key>
+				<string>New Gist</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B80CFBDC-85C4-463D-B70A-10E654D68CD7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>git limit</string>
+				<key>runningsubtext</key>
+				<string>Please Wait</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+$w = new Workflows();
+
+$url = "https://api.github.com/rate_limit";
+$content = $w-&gt;request( $url );
+$msg = json_decode( $content );
+
+if ($msg-&gt;message) {
+$w-&gt;result( $msg-&gt; message, $msg-&gt;message, 'Github Limit', $msg-&gt;message, 'icon.png' );
+}
+if ($msg-&gt;rate-&gt;remaining) {
+$w-&gt;result( 'Limit', 'Limit', 'Github Limit', 'Github API requests remaining '.$msg-&gt;rate-&gt;remaining, 'icon.png' );
+}
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Github limit requests to 60/hour for unauthenticated requests</string>
+				<key>title</key>
+				<string>Github API Limit Test</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9C315645-681D-48AE-BB3E-4B7F416DC753</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>By: xhinking
+Email: xhinking@gmail.com
+Blog: 7h2o.com
+
+Credit:
+- Github Team 
+- Alfred Team
+- My Mother</string>
+	<key>uidata</key>
+	<dict>
+		<key>0866791B-6D75-4235-BB02-F5EA1F0C5895</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>36F9AC47-932F-4580-8BD9-F6CD4A52C97E</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>5EFE76B3-67BE-4AD5-86EC-F1157DB0A5B9</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>6AAC52FC-76E2-430E-AC82-DB301475CA74</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>70FCF210-9927-4381-8063-64799886F60C</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>94028B23-5584-4F3B-B08D-87A7DD96CA19</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9C315645-681D-48AE-BB3E-4B7F416DC753</key>
+		<dict>
+			<key>ypos</key>
+			<real>710</real>
+		</dict>
+		<key>B80CFBDC-85C4-463D-B70A-10E654D68CD7</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>B9F20FD8-B35E-4F39-969B-A993BD08D4AF</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>CD72F364-87D9-4BA7-9A6A-76B5FB5058A6</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>E4F641D4-7BAA-47BF-9B19-403450B6E0CA</key>
+		<dict>
+			<key>ypos</key>
+			<real>410</real>
+		</dict>
+		<key>F3A1FA7D-0932-479F-836A-77ED25E82E56</key>
+		<dict>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://7h2o.com</string>
+</dict>
+</plist>
