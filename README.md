@@ -1,4 +1,4 @@
-[AlfredWorkflow.com](http://AlfredWorkflow.com)
+[AlfredWorkflow.com](http://AlfredWorkflow.com) (beta)
 ====
 
 ## Path
@@ -6,7 +6,7 @@
     --- 
      |---- Downloads/             .alfredworkflow files    
      |---- Sources/               source code                 
-     |---- index/                 AlfredWorkflow.com pages
+     |---- index/                 some of AlfredWorkflow.com pages
 
 ## Submit your works.
 
