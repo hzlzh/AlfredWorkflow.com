@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.calebevans.playsong</string>
+	<key>connections</key>
+	<dict>
+		<key>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>64EF0688-06B2-4A1E-9C4C-12BF956FEE55</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E469295A-B442-434E-AB28-032646DC376B</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Reveal in iTunes</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>99C0C20B-3AB8-4B24-AA70-6130965C04BA</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Reveal in Finder</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>950645BB-63CD-4198-A435-3BA7E17789C0</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Search on Google</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Caleb Evans</string>
+	<key>description</key>
+	<string>Plays a Song in iTunes</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Play Song</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>play</string>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>global homeFolder-- cache variablesset homeFolder to (path to home folder as text)set musicFolder to (path to music folder as text)set itunesFolder to (musicFolder &amp; "iTunes:")set artworkFolderName to "Alfred Album Artwork"set artworkPath to (itunesFolder &amp; artworkFolderName &amp; ":")-- retrieve search queryset query to "{query}"-- limit number of songs for maximum efficiencyset songLimit to 20-- whether or not podcasts are included in the resultsset podcastsIncluded to true-- whether or not to retrieve album artwork for each resultset albumArtEnabled to true-- the playlist from which to search (2 = default music playlist)set chosenPlaylist to 2-- replace substring in string with another substringon replaceStr(replaceThis, replaceWith, originalStr)	set AppleScript's text item delimiters to replaceThis	set strItems to text items of originalStr	set AppleScript's text item delimiters to replaceWith	return strItems as textend replaceStr-- escape XML forbidden characters in the given stringon escapeXmlChars(str)	set str to replaceStr("&amp;", "&amp;amp;", str)	set str to replaceStr("'", "&amp;apos;", str)	set str to replaceStr("\"", "&amp;quot;", str)	set str to replaceStr("&lt;", "&amp;lt;", str)	set str to replaceStr("&gt;", "&amp;gt;", str)	return strend escapeXmlChars-- create XML itemon createItem(uid, arg, title, subtitle, icon)		-- recognize file paths for the icon	if icon begins with homeFolder then		set icon to POSIX path of icon	end if		-- escape forbidden XML characters	set title to escapeXmlChars(title)	set subtitle to escapeXmlChars(subtitle)		return "&lt;item uid='" &amp; uid &amp; "' arg='" &amp; arg &amp; "'&gt;
+	&lt;title&gt;" &amp; title &amp; "&lt;/title&gt;
+	&lt;subtitle&gt;" &amp; subtitle &amp; "&lt;/subtitle&gt;
+	&lt;icon&gt;" &amp; icon &amp; "&lt;/icon&gt;
+	&lt;/item&gt;"	end createItem-- create album artwork folder if it does not existif albumArtEnabled is true then	tell application "Finder"		if not (alias artworkPath exists) then			make new folder in itunesFolder with properties {name:artworkFolderName}		end if	end tellend if-- search iTunes library for the given querytell application "iTunes"		-- initially search songs by name	set allSongs to (search playlist chosenPlaylist for query)		-- search and include podcasts if the preference is set	if podcastsIncluded is true then		set allPodcasts to (search playlist 5 for query)		set allSongs to allSongs &amp; allPodcasts	end if		-- create XML string	set xml to "&lt;?xml version='1.0'?&gt;&lt;items&gt;"		-- inform user that no results were found (prompt to launch iTunes instead)	if length of allSongs is 0 then				set xml to xml &amp; createItem("play", "null", "Launch iTunes", ("No results for '" &amp; query &amp; "'"), "icon.png") of me			else				set songIndex to 0				-- loop through the results to create the XML data		repeat with eachSong in allSongs						-- limit number of results			if songIndex is greater than songLimit then				exit repeat			end if						set songId to (get database ID of eachSong)			set songName to name of eachSong			set songArtist to artist of eachSong			set songAlbum to album of eachSong			if albumArtEnabled is false then				set songArtworkPath to "icon.png"			else				-- generate a unique identifier for that album				set songArtworkName to (songArtist &amp; "_" &amp; songAlbum) as text				-- replace forbidden characters				set songArtworkName to replaceStr(":", "", songArtworkName) of me				set songArtworkName to replaceStr("/", "", songArtworkName) of me				set songArtworkName to replaceStr(".", "", songArtworkName) of me				set songArtworkPath to (artworkPath &amp; songArtworkName &amp; ".jpg")								tell application "Finder"					-- cache artwork if it's not already cached					if not (songArtworkPath exists) then						tell application "iTunes"							-- only save artwork if artwork exists for this song							set songArtworks to artworks of eachSong							if (length of songArtworks) is 0 then								set songArtworkPath to "icon.png"							else								-- save artwork to file								set songArtwork to data of (item 1 of songArtworks)								set fileRef to open for access songArtworkPath with write permission								write songArtwork to fileRef								close access fileRef							end if						end tell					end if				end tell			end if						-- add song information to XML			set xml to xml &amp; createItem(("track-" &amp; songId), songId, songName, songArtist, songArtworkPath) of me						set songIndex to songIndex + 1		end repeat				set xml to xml &amp; "&lt;/items&gt;"			end if	end tell-- return XML datareturn xml</string>
+				<key>subtext</key>
+				<string>iTunes</string>
+				<key>title</key>
+				<string>Play a Song...</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>-- retrieve search queryset query to "{query}"tell application "iTunes"	if query is "null" then		-- if no results were found, bring iTunes to the front		activate	else		set songId to query as integer		-- otherwise, play the given song ID		set songList to (every track of playlist 2 whose database ID is songId)		-- also play any given podcast		if songList is {} then			set songList to (every track of playlist 5 whose database ID is songId)		end if		-- play track		set song to item 1 of songList		play song	end ifend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>64EF0688-06B2-4A1E-9C4C-12BF956FEE55</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>-- retrieve search queryset query to "{query}"-- ignore null queriesif query is not "null" then	set songId to query as integer		-- get song name from the given query (which is a database ID)	tell application "iTunes"		set songList to (every track of playlist 2 whose database ID is songId)		-- also play any given podcast		if songList is {} then			set songList to (every track of playlist 5 whose database ID is songId)		end if		set song to item 1 of songList		set songPath to location of song as text	end tell		-- reveal song file in Finder	tell application "Finder"		activate		reveal alias songPath	end tell	end if</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>99C0C20B-3AB8-4B24-AA70-6130965C04BA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>-- retrieve search queryset query to "{query}"tell application "iTunes"		-- ignore null queries	if query is "null" then		activate	else		set songId to query as integer				-- get song name from the given query (which is a database ID)		set songList to (every track of playlist 2 whose database ID is songId)		-- also play any given podcast		if songList is {} then			set songList to (every track of playlist 5 whose database ID is songId)		end if		set song to item 1 of songList		set songName to name of song		set songArtist to artist of song				-- escape query for use in a URL		set escaped to do shell script "python -c 'import urllib; print urllib.quote_plus(\"\\\"" &amp; songName &amp; "\\\" by " &amp; songArtist &amp; "\")'"				-- search for song with Google		do shell script ("open 'https://www.google.com/search?q=" &amp; escaped &amp; "'")			end if	end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>950645BB-63CD-4198-A435-3BA7E17789C0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>-- retrieve search queryset query to "{query}"tell application "iTunes"	if query is "null" then		-- if no results were found, bring iTunes to the front		activate	else		set songId to query as integer		-- otherwise, play the given song ID		set songList to (every track of playlist 2 whose database ID is songId)		-- also play any given podcast		if songList is {} then			set songList to (every track of playlist 5 whose database ID is songId)		end if		-- reveal track in iTunes		set song to item 1 of songList		activate		reveal song	end ifend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E469295A-B442-434E-AB28-032646DC376B</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>"Play Song" Workflow
+Copyright 2013 Caleb Evans
+
+BASIC USAGE
+
+Type the "play" keyword, followed by a space and a song name, artist, album, or genre. Songs matching your query will automatically populate Alfred's list of results.
+
+Choosing a result from the list will play the song in iTunes.
+
+Holding down the Command key will reveal the chosen song in iTunes.
+
+Holding down the Option key will reveal the chosen song in the Finder.
+
+Holding down the Control key will search the chosen song on Google.</string>
+	<key>uidata</key>
+	<dict>
+		<key>64EF0688-06B2-4A1E-9C4C-12BF956FEE55</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>950645BB-63CD-4198-A435-3BA7E17789C0</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>99C0C20B-3AB8-4B24-AA70-6130965C04BA</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>E469295A-B442-434E-AB28-032646DC376B</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>calebevans.me</string>
+</dict>
+</plist>

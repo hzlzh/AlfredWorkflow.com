@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.schoeps.vpn</string>
+	<key>connections</key>
+	<dict>
+		<key>536D562F-06AF-4BA2-B496-445AF8977C39</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>723AEBA8-1F78-4F9B-B6F3-956CFEC9CB10</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9120C872-8587-4BEE-B39B-DA89B4A1C7F6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>536D562F-06AF-4BA2-B496-445AF8977C39</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Sebastian Schöps</string>
+	<key>description</key>
+	<string>Connect to or disconnect from VPN service</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>VPN Toggle</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>vpn</string>
+				<key>script</key>
+				<string># This workflow ships with artwork from Oxygen Icons.
+# For those icons applies the LGPLv3 licence, see
+# http://www.oxygen-icons.org/
+
+shopt -s nocasematch;echo "&lt;items&gt;";osascript -e 'set text item delimiters to "\n"' -e 'tell application "System Events"' -e 'tell current location of network preferences' -e 'set vpns to (get name of every service whose (kind is greater than 8)) as string' -e 'end tell' -e 'end tell' | while IFS= read -r line; do if [[ $line == *{query}* ]]; then echo "&lt;item uid=\"\" arg=\"$line\"&gt;&lt;title&gt;$line&lt;/title&gt;";osascript -e 'tell application "System Events"' -e 'tell current location of network preferences' -e "set VPNservice to service \"$line\"" -e 'set isConnected to connected of current configuration of VPNservice' -e 'if isConnected then' -e 'set result to "&lt;subtitle&gt;Disconnect from VPN Service&lt;/subtitle&gt;&lt;icon&gt;disconnect.png&lt;/icon&gt;"' -e 'else' -e 'set result to "&lt;subtitle&gt;Connect to VPN Service&lt;/subtitle&gt;&lt;icon&gt;connect.png&lt;/icon&gt;"' -e 'end if' -e 'end tell' -e 'end tell'; echo "&lt;/item&gt;"; fi; done; echo "&lt;/items&gt;"</string>
+				<key>subtext</key>
+				<string>Connect to or disconnect from VPN service</string>
+				<key>title</key>
+				<string>VPN Toggle</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9120C872-8587-4BEE-B39B-DA89B4A1C7F6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "System Events"
+	tell current location of network preferences
+        set VPNservice to service q -- name of the VPN service
+        set isConnected to connected of current configuration of VPNservice
+        if isConnected then
+            disconnect VPNservice
+		    return "Disonnected from " &amp; q
+        else
+            connect VPNservice
+		    return "Connected to " &amp; q
+        end if
+    end tell
+end tell
+end alfred_script</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>536D562F-06AF-4BA2-B496-445AF8977C39</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>VPN Toggle</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>723AEBA8-1F78-4F9B-B6F3-956CFEC9CB10</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This worklflow shows a list of all available VPN services (configured via "System Preferences"-&gt;"Network") and allows to connect or disconnect via Alfred.
+
+The workflow ships with artwork from Oxygen Icons. For those icons applies the LGPLv3 licence, see http://www.oxygen-icons.org/</string>
+	<key>uidata</key>
+	<dict>
+		<key>536D562F-06AF-4BA2-B496-445AF8977C39</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>723AEBA8-1F78-4F9B-B6F3-956CFEC9CB10</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9120C872-8587-4BEE-B39B-DA89B4A1C7F6</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.schoeps.org</string>
+</dict>
+</plist>
