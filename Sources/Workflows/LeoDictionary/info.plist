@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>psistorm.alfed.leo</string>
+	<key>connections</key>
+	<dict>
+		<key>206533A2-C691-4EBD-9DCE-29FFF6E4C718</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Open translation with Leo</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>37D9603A-6C24-45F8-A9A1-6A68733C07D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2EF3E9DB-AFD7-42E2-B185-AD8854B48861</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9066ECA5-A314-4CB1-98F4-5171E14A6706</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>37D9603A-6C24-45F8-A9A1-6A68733C07D6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DC652A86-C1F2-43AF-BD30-510EC00724E7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>46CE4D42-DAE7-441F-8869-28CBDDD3DD4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Open translation with Leo</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>37D9603A-6C24-45F8-A9A1-6A68733C07D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9066ECA5-A314-4CB1-98F4-5171E14A6706</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Open translation with Leo</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>37D9603A-6C24-45F8-A9A1-6A68733C07D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Bastian Ohmer</string>
+	<key>description</key>
+	<string>Translate with Leo</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Leo Dictionary</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>require('utils.php');
+
+$url = "{query}";
+
+preg_match("/{([^}]*)}(.*)/", $url, $matchResult);
+
+$translationCode = $matchResult[1];
+$cleanedString = trim(preg_replace("/\s*\[[^]]*\]/", "", $matchResult[2]));
+$cleanedString = clean_utf8($cleanedString);
+
+$url = "http://dict.leo.org/".$translationCode."/?lang=en&amp;searchLoc=0&amp;search=".urlencode($cleanedString);
+
+shell_exec("open '$url'");</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>df</string>
+				<key>runningsubtext</key>
+				<string>Retrieving suggestions from Leo</string>
+				<key>script</key>
+				<string>require('leo.php');
+
+$in = "{query}";
+$leo = new Leo("frde");
+echo $leo-&gt;getTranslations($in);</string>
+				<key>subtext</key>
+				<string>Translate with Leo (German/French)</string>
+				<key>title</key>
+				<string>Translate with Leo</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>46CE4D42-DAE7-441F-8869-28CBDDD3DD4D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>2EF3E9DB-AFD7-42E2-B185-AD8854B48861</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>DC652A86-C1F2-43AF-BD30-510EC00724E7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>de</string>
+				<key>runningsubtext</key>
+				<string>Retrieving suggestions from Leo</string>
+				<key>script</key>
+				<string>require('leo.php');
+
+$in = "{query}";
+$leo = new Leo("ende");
+echo $leo-&gt;getTranslations($in);</string>
+				<key>subtext</key>
+				<string>Translate with Leo (German/English)</string>
+				<key>title</key>
+				<string>Leo Dictionary</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9066ECA5-A314-4CB1-98F4-5171E14A6706</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>ds</string>
+				<key>runningsubtext</key>
+				<string>Retrieving suggestions from Leo</string>
+				<key>script</key>
+				<string>require('leo.php');
+
+$in = "{query}";
+$leo = new Leo("esde");
+echo $leo-&gt;getTranslations($in);</string>
+				<key>subtext</key>
+				<string>Translate with Leo (German/Spanish)</string>
+				<key>title</key>
+				<string>Translate with Leo</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>206533A2-C691-4EBD-9DCE-29FFF6E4C718</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>$in = "{query}";
+echo preg_replace("/\s*\{[^]]*\}/", "", $in);</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>37D9603A-6C24-45F8-A9A1-6A68733C07D6</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>206533A2-C691-4EBD-9DCE-29FFF6E4C718</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>2EF3E9DB-AFD7-42E2-B185-AD8854B48861</key>
+		<dict>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+		<key>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>37D9603A-6C24-45F8-A9A1-6A68733C07D6</key>
+		<dict>
+			<key>ypos</key>
+			<real>320</real>
+		</dict>
+		<key>46CE4D42-DAE7-441F-8869-28CBDDD3DD4D</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>9066ECA5-A314-4CB1-98F4-5171E14A6706</key>
+		<dict>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+		<key>DC652A86-C1F2-43AF-BD30-510EC00724E7</key>
+		<dict>
+			<key>ypos</key>
+			<real>320</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.bastian-ohmer.de</string>
+</dict>
+</plist>
