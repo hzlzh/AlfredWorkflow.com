@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dk.aiyo.FinderSettings</string>
+	<key>connections</key>
+	<dict>
+		<key>62E901BB-8C53-4115-A6AD-06DACFAAA8DC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2F7226C4-A1BC-4AE7-8BE4-2C76A201A9D1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F6C3BD5E-67E1-4F65-A7DC-474BE5657ED0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2F7226C4-A1BC-4AE7-8BE4-2C76A201A9D1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jonas Eriksen</string>
+	<key>description</key>
+	<string>Change Finder Settings</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Finder Settings</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>finder</string>
+				<key>script</key>
+				<string>sh finderSettings.sh "{query}"</string>
+				<key>subtext</key>
+				<string>Change Finder Settings</string>
+				<key>title</key>
+				<string>Finder Settings</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>62E901BB-8C53-4115-A6AD-06DACFAAA8DC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>desktop</string>
+				<key>script</key>
+				<string>sh desktopSettings.sh "{query}"</string>
+				<key>subtext</key>
+				<string>Change Finders Settings For The Desktop</string>
+				<key>title</key>
+				<string>Finder Desktop Settings</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F6C3BD5E-67E1-4F65-A7DC-474BE5657ED0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>FRONTMOST=$(osascript -e "tell application \"System Events\" to return name of the first process whose frontmost is true")
+
+case "{query}" in
+	"hideLibraryFolder")
+		chflags hidden ~/Library
+		;;
+	"showLibraryFolder")
+		chflags nohidden ~/Library
+		;;
+	"hideHiddenFiles")
+		defaults write com.apple.finder AppleShowAllFiles -bool NO
+		RESET_FINDER="yes"
+		;;
+	"showHiddenFiles")
+		defaults write com.apple.finder AppleShowAllFiles -bool YES
+		RESET_FINDER="yes"
+		;;
+	"rebuildLaunchServices")
+		/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user
+		;;
+	"hideDesktopIcons")
+		defaults write com.apple.finder CreateDesktop -bool NO
+		RESET_FINDER="yes"
+		;;
+	"showDesktopIcons")
+		defaults write com.apple.finder CreateDesktop -bool YES
+		RESET_FINDER="yes"
+		;;
+	"HideExternalHardDrivesOnDesktop")
+		defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool NO
+		RESET_FINDER="yes"
+		;;
+	"ShowExternalHardDrivesOnDesktop")
+		defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool YES
+		RESET_FINDER="yes"
+		;;
+	"HideHardDrivesOnDesktop")
+		defaults write com.apple.finder ShowHardDrivesOnDesktop -bool NO
+		RESET_FINDER="yes"
+		;;
+	"ShowHardDrivesOnDesktop")
+		defaults write com.apple.finder ShowHardDrivesOnDesktop -bool YES
+		RESET_FINDER="yes"
+		;;
+	"HideMountedServersOnDesktop")
+		defaults write com.apple.finder ShowMountedServersOnDesktop -bool NO
+		RESET_FINDER="yes"
+		;;
+	"ShowMountedServersOnDesktop")
+		defaults write com.apple.finder ShowMountedServersOnDesktop -bool YES
+		RESET_FINDER="yes"
+		;;
+	"HideRemovableMediaOnDesktop")
+		defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool NO
+		RESET_FINDER="yes"
+		;;
+	"ShowRemovableMediaOnDesktop")
+		defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool YES
+		RESET_FINDER="yes"
+		;;
+esac
+
+if [ "$RESET_FINDER" == "yes" ]
+	then
+	killall Finder
+
+	if [ "$FRONTMOST" == "Finder" ]
+		then
+		$(osascript -e "delay 0.5" -e "tell application \"System Events\" to set frontmost of process \"Finder\" to true")
+	fi
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2F7226C4-A1BC-4AE7-8BE4-2C76A201A9D1</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2F7226C4-A1BC-4AE7-8BE4-2C76A201A9D1</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>62E901BB-8C53-4115-A6AD-06DACFAAA8DC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>F6C3BD5E-67E1-4F65-A7DC-474BE5657ED0</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.aiyo.dk/alfredapp/v2</string>
+</dict>
+</plist>

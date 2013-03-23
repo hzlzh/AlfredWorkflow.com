@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dk.aiyo.zip</string>
+	<key>connections</key>
+	<dict>
+		<key>2B3A9182-9E13-429E-9A58-0D16FF63A999</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5068AF51-F938-4AF7-843E-3966C44E609B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5068AF51-F938-4AF7-843E-3966C44E609B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B6365CBD-AD57-4129-8C2A-AB477CC75FDE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jonas Eriksen</string>
+	<key>description</key>
+	<string>Compress one or more files into a ZIP archive</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ZIP</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Compress Into ZIP Archive</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>2B3A9182-9E13-429E-9A58-0D16FF63A999</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>7</integer>
+				<key>script</key>
+				<string>TIME=$(date "+%Y-%m-%d at %H.%M.%S")
+mkdir /tmp/alfredzip
+cd /tmp/alfredzip
+ln -s {query} /tmp/alfredzip
+E=$(zip -qr -x *.DS_Store -b /tmp ~/Desktop/Archive\ "$TIME".zip *)
+rm -rf /tmp/alfredzip
+if [ -z "$E" ]
+ then
+  echo "Archive "$TIME".zip available on your desktop"
+ else
+  echo $E
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5068AF51-F938-4AF7-843E-3966C44E609B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>ZIP Files</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B6365CBD-AD57-4129-8C2A-AB477CC75FDE</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>2B3A9182-9E13-429E-9A58-0D16FF63A999</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>5068AF51-F938-4AF7-843E-3966C44E609B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B6365CBD-AD57-4129-8C2A-AB477CC75FDE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.aiyo.dk/alfredapp/v2</string>
+</dict>
+</plist>

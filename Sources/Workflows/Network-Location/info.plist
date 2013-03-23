@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dk.aiyo.networklocation.v1</string>
+	<key>connections</key>
+	<dict>
+		<key>FCB21B0F-7DEA-46FB-9253-051F8C486A7D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>23137084-A3AF-4FD2-9B76-DEA604F7D9AF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jonas Eriksen</string>
+	<key>description</key>
+	<string>Change Network Location</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Network Location</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>location</string>
+				<key>script</key>
+				<string>sh networklocation.sh "{query}"</string>
+				<key>subtext</key>
+				<string>Change Network Location</string>
+				<key>title</key>
+				<string>Network Location</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FCB21B0F-7DEA-46FB-9253-051F8C486A7D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>if [[ ! -z "{query}" ]]
+then
+scselect "{query}"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>23137084-A3AF-4FD2-9B76-DEA604F7D9AF</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>23137084-A3AF-4FD2-9B76-DEA604F7D9AF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>FCB21B0F-7DEA-46FB-9253-051F8C486A7D</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.aiyo.dk/alfredapp/v2</string>
+</dict>
+</plist>

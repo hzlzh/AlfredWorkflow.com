@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dk.aiyo.wifi</string>
+	<key>connections</key>
+	<dict>
+		<key>7EFD412A-E46B-4CF0-9C4B-4748E82AD366</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F197C20-F3B1-46DB-927F-32C6500E024A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jonas Eriksen</string>
+	<key>description</key>
+	<string>Turn WiFi On/Off + Get IP And Network Name</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Wi-Fi Toggle</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>DEVICE=$(networksetup -listallhardwareports | grep -A 2 -E "AirPort|Wi-Fi" | grep -m 1 -o -e en[0-9]);
+
+if [[ "{query}" == "off" ]]
+then
+	networksetup -setairportpower $DEVICE Off
+elif [[ "{query}" == "on" ]]
+then
+	networksetup -setairportpower $DEVICE On
+else
+	echo "{query}" | pbcopy
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6F197C20-F3B1-46DB-927F-32C6500E024A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>wifi</string>
+				<key>script</key>
+				<string>DEVICE=$(networksetup -listallhardwareports | grep -A 2 -E "AirPort|Wi-Fi" | grep -m 1 -o -e en[0-9]);
+
+DEVICENAME=$(networksetup -listallhardwareports | grep -Eo "AirPort|Wi-Fi");
+
+echo "&lt;?xml version=\"1.0\"?&gt;"
+echo "&lt;items&gt;"
+
+if [[ $(networksetup -getairportpower $DEVICE | grep -c On) == 0 ]]
+then
+// Turn Wi-Fi On
+	echo "&lt;item uid=\"wifi turn on\" arg=\"on\"&gt;&lt;title&gt;Turn $DEVICENAME On&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+
+else
+
+// IPv4
+IPv4=$(networksetup -getinfo $DEVICENAME | grep "IP address" | egrep -o "([0-9]{1,3}\.){3,3}[0-9]{1,3}")
+if [[ ! -z "$IPv4" ]]
+then echo "&lt;item uid=\"\" arg=\"$IPv4\"&gt;&lt;title&gt;$IPv4&lt;/title&gt;&lt;subtitle&gt;IPv4 address&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+fi
+
+// IPv6
+IPv6=$(networksetup -getinfo $DEVICENAME | grep "IPv6 IP address")
+IPv6=${IPv6:17}
+if [[ "$IPv6" != "none" ]]
+then echo "&lt;item uid=\"\" arg=\"$IPv6\"&gt;&lt;title&gt;$IPv6&lt;/title&gt;&lt;subtitle&gt;IPv6 address&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+fi
+
+// Name of current Wi-Fi network
+SSID=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | grep " SSID" | sed -e 's/^[ \t]*//')
+SSID=${SSID:6}
+
+if [[ ! -z "$SSID" ]]
+then 
+
+BSSID=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | grep "BSSID" | sed -e 's/^[ \t]*//')
+BSSID=${BSSID:7}
+
+echo "&lt;item uid=\"\" arg=\"$SSID ($BSSID)\"&gt;&lt;title&gt;$SSID ($BSSID)&lt;/title&gt;&lt;subtitle&gt;Current Wi-Fi Network&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+fi
+
+// Turn Wi-Fi Off
+echo "&lt;item uid=\"\" arg=\"off\"&gt;&lt;title&gt;Turn $DEVICENAME Off&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+
+fi
+
+echo "&lt;/items&gt;"
+</string>
+				<key>subtext</key>
+				<string>Turn Wi-Fi on/off</string>
+				<key>title</key>
+				<string>Wi-Fi Toggle</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7EFD412A-E46B-4CF0-9C4B-4748E82AD366</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>6F197C20-F3B1-46DB-927F-32C6500E024A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>7EFD412A-E46B-4CF0-9C4B-4748E82AD366</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.aiyo.dk/alfredapp/v2</string>
+</dict>
+</plist>
