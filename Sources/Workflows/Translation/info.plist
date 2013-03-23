@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>florian.translation</string>
+	<key>connections</key>
+	<dict>
+		<key>5F216323-FD34-4C9D-A775-C00FC11C1860</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D4855B2C-E8F1-455A-A032-ACB430E8D19C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED1B356F-E40E-4AD4-AC0D-FE134A039F8E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>3D812156-6A07-474D-AB9C-C0D3B6DC0ECF</string>
+				<key>modifiers</key>
+				<integer>8388608</integer>
+				<key>modifiersubtext</key>
+				<string>Search google translate for '{query}'</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E926E106-6676-4ED2-A497-1F9EBBE72800</string>
+				<key>modifiers</key>
+				<integer>8388608</integer>
+				<key>modifiersubtext</key>
+				<string>Search google translate for '{query}'</string>
+			</dict>
+		</array>
+		<key>87E139F2-CCA7-4199-9DED-A7D748A85EF3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D4855B2C-E8F1-455A-A032-ACB430E8D19C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED1B356F-E40E-4AD4-AC0D-FE134A039F8E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>3D812156-6A07-474D-AB9C-C0D3B6DC0ECF</string>
+				<key>modifiers</key>
+				<integer>8388608</integer>
+				<key>modifiersubtext</key>
+				<string>Search google translate for '{query}'</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E926E106-6676-4ED2-A497-1F9EBBE72800</string>
+				<key>modifiers</key>
+				<integer>8388608</integer>
+				<key>modifiersubtext</key>
+				<string>Search google translate for '{query}'</string>
+			</dict>
+		</array>
+		<key>E4E59FCF-1FF2-46F7-9A6E-182610252C94</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D4855B2C-E8F1-455A-A032-ACB430E8D19C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED1B356F-E40E-4AD4-AC0D-FE134A039F8E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>3D812156-6A07-474D-AB9C-C0D3B6DC0ECF</string>
+				<key>modifiers</key>
+				<integer>8388608</integer>
+				<key>modifiersubtext</key>
+				<string>Search google translate for '{query}'</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E926E106-6676-4ED2-A497-1F9EBBE72800</string>
+				<key>modifiers</key>
+				<integer>8388608</integer>
+				<key>modifiersubtext</key>
+				<string>Search google translate for '{query}'</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Florian Pellet</string>
+	<key>description</key>
+	<string>Google translate workflow</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Translation</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>translate</string>
+				<key>normalisation</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string># Set your default language
+SOURCE_LANGUAGE="auto"
+DESTINATION_LANGUAGE="es"
+
+# Transform the text to something Google translate understands
+set +o histexpand
+TEXT_TO_TRANSLATE=$(echo "{query}"|sed 's/ /+/g')
+
+# Call Google and ask for the answer
+TEXT=`curl -s -A "Mozilla/5.0" "http://translate.google.com.br/translate_a/t?client=t&amp;text=$TEXT_TO_TRANSLATE&amp;hl=pt-BR&amp;sl=$SOURCE_LANGUAGE&amp;tl=$DESTINATION_LANGUAGE&amp;multires=1&amp;ssel=0&amp;tsel=0&amp;sc=1" | awk -F'"' '{print $2}'`
+
+# Make the clipboard able to handle international characters
+export __CF_USER_TEXT_ENCODING=0x1F5:0x8000100:0x8000100
+
+
+
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  &lt;item uid="translation" arg="'$TEXT'"&gt;
+	&lt;title&gt;'$TEXT'&lt;/title&gt;
+    &lt;subtitle&gt;in Spanish&lt;/subtitle&gt;
+	&lt;icon&gt;icon.png&lt;/icon&gt;
+  &lt;/item&gt;
+&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>Translate to Spanish</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>87E139F2-CCA7-4199-9DED-A7D748A85EF3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>translate</string>
+				<key>normalisation</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string># Set your default language
+SOURCE_LANGUAGE="auto"
+DESTINATION_LANGUAGE="fr"
+
+# Transform the text to something Google translate understands
+set +o histexpand
+TEXT_TO_TRANSLATE=$(echo "{query}"|sed 's/ /+/g')
+
+# Call Google and ask for the answer
+TEXT=`curl -s -A "Mozilla/5.0" "http://translate.google.com.br/translate_a/t?client=t&amp;text=$TEXT_TO_TRANSLATE&amp;hl=pt-BR&amp;sl=$SOURCE_LANGUAGE&amp;tl=$DESTINATION_LANGUAGE&amp;multires=1&amp;ssel=0&amp;tsel=0&amp;sc=1" | awk -F'"' '{print $2}'`
+
+# Make the clipboard able to handle international characters
+export __CF_USER_TEXT_ENCODING=0x1F5:0x8000100:0x8000100
+
+
+
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  &lt;item uid="translation" arg="'$TEXT'"&gt;
+	&lt;title&gt;'$TEXT'&lt;/title&gt;
+	&lt;icon&gt;icon.png&lt;/icon&gt;
+	&lt;subtitle&gt;in French&lt;/subtitle&gt;
+  &lt;/item&gt;
+&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>Translate to French</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E4E59FCF-1FF2-46F7-9A6E-182610252C94</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>translate</string>
+				<key>normalisation</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string># Set your default language
+SOURCE_LANGUAGE="auto"
+DESTINATION_LANGUAGE="en"
+
+# Transform the text to something Google translate understands
+set +o histexpand
+TEXT_TO_TRANSLATE=$(echo "{query}"|sed 's/ /+/g')
+
+# Call Google and ask for the answer
+TEXT=`curl -s -A "Mozilla/5.0" "http://translate.google.com.br/translate_a/t?client=t&amp;text=$TEXT_TO_TRANSLATE&amp;hl=pt-BR&amp;sl=$SOURCE_LANGUAGE&amp;tl=$DESTINATION_LANGUAGE&amp;multires=1&amp;ssel=0&amp;tsel=0&amp;sc=1" | awk -F'"' '{print $2}'`
+
+# Make the clipboard able to handle international characters
+export __CF_USER_TEXT_ENCODING=0x1F5:0x8000100:0x8000100
+
+
+
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  &lt;item uid="translation" arg="'$TEXT'"&gt;
+	&lt;title&gt;'$TEXT'&lt;/title&gt;
+    &lt;subtitle&gt;in English&lt;/subtitle&gt;
+	&lt;icon&gt;icon.png&lt;/icon&gt;
+  &lt;/item&gt;
+&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>Translate to English</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5F216323-FD34-4C9D-A775-C00FC11C1860</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Translation copied to clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D4855B2C-E8F1-455A-A032-ACB430E8D19C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>ED1B356F-E40E-4AD4-AC0D-FE134A039F8E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>http://translate.google.com/#auto/auto/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>E926E106-6676-4ED2-A497-1F9EBBE72800</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>3D812156-6A07-474D-AB9C-C0D3B6DC0ECF</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>3D812156-6A07-474D-AB9C-C0D3B6DC0ECF</key>
+		<dict>
+			<key>ypos</key>
+			<real>350</real>
+		</dict>
+		<key>5F216323-FD34-4C9D-A775-C00FC11C1860</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>87E139F2-CCA7-4199-9DED-A7D748A85EF3</key>
+		<dict>
+			<key>ypos</key>
+			<real>450</real>
+		</dict>
+		<key>D4855B2C-E8F1-455A-A032-ACB430E8D19C</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>E4E59FCF-1FF2-46F7-9A6E-182610252C94</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>E926E106-6676-4ED2-A497-1F9EBBE72800</key>
+		<dict>
+			<key>ypos</key>
+			<real>350</real>
+		</dict>
+		<key>ED1B356F-E40E-4AD4-AC0D-FE134A039F8E</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

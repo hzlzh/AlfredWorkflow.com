@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>florian.rss</string>
+	<key>connections</key>
+	<dict>
+		<key>17C6337F-10FF-4465-9263-24DF77FC3505</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D866855-B35C-4CAD-B9C2-2B0DA54A1A87</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>274E7014-084A-4F1B-A30E-5BBD0A29B5CC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D866855-B35C-4CAD-B9C2-2B0DA54A1A87</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>62EAD57C-07C2-4EEE-94A4-D280BE7FF060</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D866855-B35C-4CAD-B9C2-2B0DA54A1A87</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EE439E6B-31BD-415E-B066-E6FFEAE2666C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D866855-B35C-4CAD-B9C2-2B0DA54A1A87</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EF0D8A9D-30CF-4E1B-A731-14764CD87180</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D866855-B35C-4CAD-B9C2-2B0DA54A1A87</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FB5EA1FB-21C3-45BA-BEC0-9D363A03D074</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D866855-B35C-4CAD-B9C2-2B0DA54A1A87</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Florian Pellet</string>
+	<key>description</key>
+	<string>Quickly see a rss feed</string>
+	<key>name</key>
+	<string>RSS</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>rss golden moustache</string>
+				<key>script</key>
+				<string>/////////////////////////////////
+///////// SETTINGS //////////////
+/////////////////////////////////
+
+//Select a URL that is an XML RSS feed. Each item should be enclosed in &lt;item&gt; and have &lt;title&gt;, &lt;link&gt; and &lt;description&gt;
+$url = 'http://www.goldenmoustache.com/feed/';
+
+//Set this to true if you want to see the description in alfred
+$display_subtitle = false;
+
+
+/////////////////////////////////
+/////////// CODE ////////////////
+/////////////////////////////////
+
+
+//get web page
+/*$crl = curl_init();
+$timeout = 5;
+$useragent = "Googlebot/2.1 ( http://www.googlebot.com/bot.html)";
+curl_setopt ($crl, CURLOPT_USERAGENT, $useragent);
+curl_setopt ($crl, CURLOPT_URL,$url);
+curl_setopt ($crl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt ($crl, CURLOPT_CONNECTTIMEOUT, $timeout);
+$ret = curl_exec($crl);
+curl_close($crl);*/
+
+
+$ret = file_get_contents($url);
+
+//explode results
+$pieces = explode('&lt;item&gt;', $ret);
+
+//account for a no-result case
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;';
+if (count($pieces)==1){
+
+	$url = 'http://www.downforeveryoneorjustme.com/'.$url;
+	$str = file_get_contents($url);
+	if (strpos($str,'not just you') !== false) {
+		echo '&lt;item uid="0" arg=""&gt;';
+		echo '&lt;title&gt;Your RSS feed appears to be down at the moment.&lt;/title&gt;';
+		echo '&lt;subtitle&gt;Sorry, try again later...&lt;/subtitle&gt;';
+	}
+	else{
+		echo '&lt;item uid="0" arg="" valid="no"&gt;';
+		echo '&lt;title&gt;No news feed seems to appear here.&lt;/title&gt;';
+		echo '&lt;subtitle&gt;I don\'t think I can read this page. Try another URL.&lt;/subtitle&gt;';
+	}
+	echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+	echo '&lt;/item&gt;';
+	
+}
+else{
+
+
+//loop on every piece
+for ($i=1; $i&lt;=count($pieces); $i++){
+
+	//get name
+	$name = explode('&lt;/title&gt;', $pieces[$i]);
+	$name = $name[0];
+	$name = explode('&lt;title&gt;', $name);
+	$name = $name[1];
+	$name = clean($name);
+
+	//get link
+	$link = explode('&lt;link&gt;', $pieces[$i]);
+	$link = $link[1];
+	$link = explode('&lt;/link&gt;', $link);
+	$link = $link[0];
+	$link = clean($link);
+
+	//get description
+	if($display_subtitle){
+		$description = explode('&lt;description&gt;', $pieces[$i]);
+		$description = $description[1];
+		$description = explode('&lt;/description&gt;', $description);
+		$description = $description[0];
+		$description = clean($description);
+	}
+		$id = time() + $i;	
+		echo '&lt;item uid="'.$id.'" arg="'.$link.'"&gt;';
+		echo '&lt;title&gt;'.$name.'&lt;/title&gt;';
+		echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+		if ($display_subtitle){
+			echo '&lt;subtitle&gt;'.$description.'&lt;/subtitle&gt;';
+		} else {
+			echo '&lt;subtitle&gt;&lt;/subtitle&gt;';
+		}
+		echo '&lt;/item&gt;';
+		
+}}
+echo '&lt;/items&gt;';
+
+function clean($string){
+
+	$string = str_replace("&amp;amp;", '&amp;', $string);
+	$string = str_replace("&amp;quot;", '"', $string);
+	$string = str_replace("&amp;apos;", "'", $string);
+	$string = str_replace("&amp;lt;", '&lt;', $string);
+	$string = str_replace("&amp;gt;", '&gt;', $string);
+
+	$strings = explode('&gt;', $string);
+	$string='';
+	for ($j=0; $j&lt;count($strings); $j++){
+		$one_piece = explode('&lt;', $strings[$j]);
+		$one_piece = $one_piece[0];
+		$string=$string.$one_piece;
+	}
+
+	$string = str_replace('&amp;', "&amp;amp;", $string);
+	$string = str_replace('"', "&amp;quot;", $string);
+	$string = str_replace("'", "&amp;apos;", $string);
+	$string = str_replace('&lt;', "&amp;lt;", $string);
+	$string = str_replace('&gt;', "&amp;gt;", $string);
+    
+    return $string; 
+}</string>
+				<key>title</key>
+				<string>Golden Moustache</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FB5EA1FB-21C3-45BA-BEC0-9D363A03D074</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>rss ted</string>
+				<key>script</key>
+				<string>/////////////////////////////////
+///////// SETTINGS //////////////
+/////////////////////////////////
+
+//Select a URL that is an XML RSS feed. Each item should be enclosed in &lt;item&gt; and have &lt;title&gt;, &lt;link&gt; and &lt;description&gt;
+$url = 'http://feeds.feedburner.com/TEDTalks_video';
+
+//Set this to true if you want to see the description in alfred
+$display_subtitle = true;
+
+
+/////////////////////////////////
+/////////// CODE ////////////////
+/////////////////////////////////
+
+
+//get web page
+/*$crl = curl_init();
+$timeout = 5;
+$useragent = "Googlebot/2.1 ( http://www.googlebot.com/bot.html)";
+curl_setopt ($crl, CURLOPT_USERAGENT, $useragent);
+curl_setopt ($crl, CURLOPT_URL,$url);
+curl_setopt ($crl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt ($crl, CURLOPT_CONNECTTIMEOUT, $timeout);
+$ret = curl_exec($crl);
+curl_close($crl);*/
+
+
+$ret = file_get_contents($url);
+
+//explode results
+$pieces = explode('&lt;item&gt;', $ret);
+
+//account for a no-result case
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;';
+if (count($pieces)==1){
+
+	$url = 'http://www.downforeveryoneorjustme.com/'.$url;
+	$str = file_get_contents($url);
+	if (strpos($str,'not just you') !== false) {
+		echo '&lt;item uid="0" arg=""&gt;';
+		echo '&lt;title&gt;Your RSS feed appears to be down at the moment.&lt;/title&gt;';
+		echo '&lt;subtitle&gt;Sorry, try again later...&lt;/subtitle&gt;';
+	}
+	else{
+		echo '&lt;item uid="0" arg="" valid="no"&gt;';
+		echo '&lt;title&gt;No news feed seems to appear here.&lt;/title&gt;';
+		echo '&lt;subtitle&gt;I don\'t think I can read this page. Try another URL.&lt;/subtitle&gt;';
+	}
+	echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+	echo '&lt;/item&gt;';
+	
+}
+else{
+
+
+//loop on every piece
+for ($i=1; $i&lt;=count($pieces); $i++){
+
+	//get name
+	$name = explode('&lt;/title&gt;', $pieces[$i]);
+	$name = $name[0];
+	$name = explode('&lt;title&gt;', $name);
+	$name = $name[1];
+	$name = clean($name);
+
+	//get link
+	$link = explode('&lt;link&gt;', $pieces[$i]);
+	$link = $link[1];
+	$link = explode('&lt;/link&gt;', $link);
+	$link = $link[0];
+	$link = clean($link);
+
+	//get description
+	if($display_subtitle){
+		$description = explode('&lt;description&gt;', $pieces[$i]);
+		$description = $description[1];
+		$description = explode('&lt;/description&gt;', $description);
+		$description = $description[0];
+		$description = clean($description);
+	}
+		$id = time() + $i;	
+		echo '&lt;item uid="'.$id.'" arg="'.$link.'"&gt;';
+		echo '&lt;title&gt;'.$name.'&lt;/title&gt;';
+		echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+		if ($display_subtitle){
+			echo '&lt;subtitle&gt;'.$description.'&lt;/subtitle&gt;';
+		} else {
+			echo '&lt;subtitle&gt;&lt;/subtitle&gt;';
+		}
+		echo '&lt;/item&gt;';
+		
+}}
+echo '&lt;/items&gt;';
+
+function clean($string){
+
+	$string = str_replace("&amp;amp;", '&amp;', $string);
+	$string = str_replace("&amp;quot;", '"', $string);
+	$string = str_replace("&amp;apos;", "'", $string);
+	$string = str_replace("&amp;lt;", '&lt;', $string);
+	$string = str_replace("&amp;gt;", '&gt;', $string);
+
+	$strings = explode('&gt;', $string);
+	$string='';
+	for ($j=0; $j&lt;count($strings); $j++){
+		$one_piece = explode('&lt;', $strings[$j]);
+		$one_piece = $one_piece[0];
+		$string=$string.$one_piece;
+	}
+
+	$string = str_replace('&amp;', "&amp;amp;", $string);
+	$string = str_replace('"', "&amp;quot;", $string);
+	$string = str_replace("'", "&amp;apos;", $string);
+	$string = str_replace('&lt;', "&amp;lt;", $string);
+	$string = str_replace('&gt;', "&amp;gt;", $string);
+    
+    return $string; 
+}</string>
+				<key>title</key>
+				<string>TED</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>62EAD57C-07C2-4EEE-94A4-D280BE7FF060</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>rss rue89</string>
+				<key>script</key>
+				<string>/////////////////////////////////
+///////// SETTINGS //////////////
+/////////////////////////////////
+
+//Select a URL that is an XML RSS feed. Each item should be enclosed in &lt;item&gt; and have &lt;title&gt;, &lt;link&gt; and &lt;description&gt;
+$url = 'http://rue89.feedsportal.com/c/33822/f/608948/index.rss';
+
+//Set this to true if you want to see the description in alfred
+$display_subtitle = true;
+
+
+/////////////////////////////////
+/////////// CODE ////////////////
+/////////////////////////////////
+
+
+//get web page
+/*$crl = curl_init();
+$timeout = 5;
+$useragent = "Googlebot/2.1 ( http://www.googlebot.com/bot.html)";
+curl_setopt ($crl, CURLOPT_USERAGENT, $useragent);
+curl_setopt ($crl, CURLOPT_URL,$url);
+curl_setopt ($crl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt ($crl, CURLOPT_CONNECTTIMEOUT, $timeout);
+$ret = curl_exec($crl);
+curl_close($crl);*/
+
+
+$ret = file_get_contents($url);
+
+//explode results
+$pieces = explode('&lt;item&gt;', $ret);
+
+//account for a no-result case
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;';
+if (count($pieces)==1){
+
+	$url = 'http://www.downforeveryoneorjustme.com/'.$url;
+	$str = file_get_contents($url);
+	if (strpos($str,'not just you') !== false) {
+		echo '&lt;item uid="0" arg=""&gt;';
+		echo '&lt;title&gt;Your RSS feed appears to be down at the moment.&lt;/title&gt;';
+		echo '&lt;subtitle&gt;Sorry, try again later...&lt;/subtitle&gt;';
+	}
+	else{
+		echo '&lt;item uid="0" arg="" valid="no"&gt;';
+		echo '&lt;title&gt;No news feed seems to appear here.&lt;/title&gt;';
+		echo '&lt;subtitle&gt;I don\'t think I can read this page. Try another URL.&lt;/subtitle&gt;';
+	}
+	echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+	echo '&lt;/item&gt;';
+	
+}
+else{
+
+
+//loop on every piece
+for ($i=1; $i&lt;=count($pieces); $i++){
+
+	//get name
+	$name = explode('&lt;/title&gt;', $pieces[$i]);
+	$name = $name[0];
+	$name = explode('&lt;title&gt;', $name);
+	$name = $name[1];
+	$name = clean($name);
+
+	//get link
+	$link = explode('&lt;link&gt;', $pieces[$i]);
+	$link = $link[1];
+	$link = explode('&lt;/link&gt;', $link);
+	$link = $link[0];
+	$link = clean($link);
+
+	//get description
+	if($display_subtitle){
+		$description = explode('&lt;description&gt;', $pieces[$i]);
+		$description = $description[1];
+		$description = explode('&lt;/description&gt;', $description);
+		$description = $description[0];
+		$description = clean($description);
+	}
+		$id = time() + $i;	
+		echo '&lt;item uid="'.$id.'" arg="'.$link.'"&gt;';
+		echo '&lt;title&gt;'.$name.'&lt;/title&gt;';
+		echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+		if ($display_subtitle){
+			echo '&lt;subtitle&gt;'.$description.'&lt;/subtitle&gt;';
+		} else {
+			echo '&lt;subtitle&gt;&lt;/subtitle&gt;';
+		}
+		echo '&lt;/item&gt;';
+		
+}}
+echo '&lt;/items&gt;';
+
+function clean($string){
+
+	$string = str_replace("&amp;amp;", '&amp;', $string);
+	$string = str_replace("&amp;quot;", '"', $string);
+	$string = str_replace("&amp;apos;", "'", $string);
+	$string = str_replace("&amp;lt;", '&lt;', $string);
+	$string = str_replace("&amp;gt;", '&gt;', $string);
+
+	$strings = explode('&gt;', $string);
+	$string='';
+	for ($j=0; $j&lt;count($strings); $j++){
+		$one_piece = explode('&lt;', $strings[$j]);
+		$one_piece = $one_piece[0];
+		$string=$string.$one_piece;
+	}
+
+	$string = str_replace('&amp;', "&amp;amp;", $string);
+	$string = str_replace('"', "&amp;quot;", $string);
+	$string = str_replace("'", "&amp;apos;", $string);
+	$string = str_replace('&lt;', "&amp;lt;", $string);
+	$string = str_replace('&gt;', "&amp;gt;", $string);
+    
+    return $string; 
+}</string>
+				<key>title</key>
+				<string>Rue89</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>EE439E6B-31BD-415E-B066-E6FFEAE2666C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>rss julfou</string>
+				<key>script</key>
+				<string>/////////////////////////////////
+///////// SETTINGS //////////////
+/////////////////////////////////
+
+//Select a URL that is an XML RSS feed. Each item should be enclosed in &lt;item&gt; and have &lt;title&gt;, &lt;link&gt; and &lt;description&gt;
+$url = 'http://julfou.com/feed/';
+
+//Set this to true if you want to see the description in alfred
+$display_subtitle = false;
+
+
+/////////////////////////////////
+/////////// CODE ////////////////
+/////////////////////////////////
+
+
+//get web page
+/*$crl = curl_init();
+$timeout = 5;
+$useragent = "Googlebot/2.1 ( http://www.googlebot.com/bot.html)";
+curl_setopt ($crl, CURLOPT_USERAGENT, $useragent);
+curl_setopt ($crl, CURLOPT_URL,$url);
+curl_setopt ($crl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt ($crl, CURLOPT_CONNECTTIMEOUT, $timeout);
+$ret = curl_exec($crl);
+curl_close($crl);*/
+
+
+$ret = file_get_contents($url);
+
+//explode results
+$pieces = explode('&lt;item&gt;', $ret);
+
+//account for a no-result case
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;';
+if (count($pieces)==1){
+
+	$url = 'http://www.downforeveryoneorjustme.com/'.$url;
+	$str = file_get_contents($url);
+	if (strpos($str,'not just you') !== false) {
+		echo '&lt;item uid="0" arg=""&gt;';
+		echo '&lt;title&gt;Your RSS feed appears to be down at the moment.&lt;/title&gt;';
+		echo '&lt;subtitle&gt;Sorry, try again later...&lt;/subtitle&gt;';
+	}
+	else{
+		echo '&lt;item uid="0" arg="" valid="no"&gt;';
+		echo '&lt;title&gt;No news feed seems to appear here.&lt;/title&gt;';
+		echo '&lt;subtitle&gt;I don\'t think I can read this page. Try another URL.&lt;/subtitle&gt;';
+	}
+	echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+	echo '&lt;/item&gt;';
+	
+}
+else{
+
+
+//loop on every piece
+for ($i=1; $i&lt;=count($pieces); $i++){
+
+	//get name
+	$name = explode('&lt;/title&gt;', $pieces[$i]);
+	$name = $name[0];
+	$name = explode('&lt;title&gt;', $name);
+	$name = $name[1];
+	$name = clean($name);
+
+	//get link
+	$link = explode('&lt;link&gt;', $pieces[$i]);
+	$link = $link[1];
+	$link = explode('&lt;/link&gt;', $link);
+	$link = $link[0];
+	$link = clean($link);
+
+	//get description
+	if($display_subtitle){
+		$description = explode('&lt;description&gt;', $pieces[$i]);
+		$description = $description[1];
+		$description = explode('&lt;/description&gt;', $description);
+		$description = $description[0];
+		$description = clean($description);
+	}
+		$id = time() + $i;	
+		echo '&lt;item uid="'.$id.'" arg="'.$link.'"&gt;';
+		echo '&lt;title&gt;'.$name.'&lt;/title&gt;';
+		echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+		if ($display_subtitle){
+			echo '&lt;subtitle&gt;'.$description.'&lt;/subtitle&gt;';
+		} else {
+			echo '&lt;subtitle&gt;&lt;/subtitle&gt;';
+		}
+		echo '&lt;/item&gt;';
+		
+}}
+echo '&lt;/items&gt;';
+
+function clean($string){
+
+	$string = str_replace("&amp;amp;", '&amp;', $string);
+	$string = str_replace("&amp;quot;", '"', $string);
+	$string = str_replace("&amp;apos;", "'", $string);
+	$string = str_replace("&amp;lt;", '&lt;', $string);
+	$string = str_replace("&amp;gt;", '&gt;', $string);
+
+	$strings = explode('&gt;', $string);
+	$string='';
+	for ($j=0; $j&lt;count($strings); $j++){
+		$one_piece = explode('&lt;', $strings[$j]);
+		$one_piece = $one_piece[0];
+		$string=$string.$one_piece;
+	}
+
+	$string = str_replace('&amp;', "&amp;amp;", $string);
+	$string = str_replace('"', "&amp;quot;", $string);
+	$string = str_replace("'", "&amp;apos;", $string);
+	$string = str_replace('&lt;', "&amp;lt;", $string);
+	$string = str_replace('&gt;', "&amp;gt;", $string);
+    
+    return $string; 
+}</string>
+				<key>title</key>
+				<string>Julfou</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>17C6337F-10FF-4465-9263-24DF77FC3505</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>rss macappstorm</string>
+				<key>script</key>
+				<string>/////////////////////////////////
+///////// SETTINGS //////////////
+/////////////////////////////////
+
+//Select a URL that is an XML RSS feed. Each item should be enclosed in &lt;item&gt; and have &lt;title&gt;, &lt;link&gt; and &lt;description&gt;
+$url = 'http://feeds.feedburner.com/MacAppStorm?format=xml';
+
+//Set this to true if you want to see the description in alfred
+$display_subtitle = true;
+
+
+/////////////////////////////////
+/////////// CODE ////////////////
+/////////////////////////////////
+
+
+//get web page
+/*$crl = curl_init();
+$timeout = 5;
+$useragent = "Googlebot/2.1 ( http://www.googlebot.com/bot.html)";
+curl_setopt ($crl, CURLOPT_USERAGENT, $useragent);
+curl_setopt ($crl, CURLOPT_URL,$url);
+curl_setopt ($crl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt ($crl, CURLOPT_CONNECTTIMEOUT, $timeout);
+$ret = curl_exec($crl);
+curl_close($crl);*/
+
+
+$ret = file_get_contents($url);
+
+//explode results
+$pieces = explode('&lt;item&gt;', $ret);
+
+//account for a no-result case
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;';
+if (count($pieces)==1){
+
+	$url = 'http://www.downforeveryoneorjustme.com/'.$url;
+	$str = file_get_contents($url);
+	if (strpos($str,'not just you') !== false) {
+		echo '&lt;item uid="0" arg=""&gt;';
+		echo '&lt;title&gt;Your RSS feed appears to be down at the moment.&lt;/title&gt;';
+		echo '&lt;subtitle&gt;Sorry, try again later...&lt;/subtitle&gt;';
+	}
+	else{
+		echo '&lt;item uid="0" arg="" valid="no"&gt;';
+		echo '&lt;title&gt;No news feed seems to appear here.&lt;/title&gt;';
+		echo '&lt;subtitle&gt;I don\'t think I can read this page. Try another URL.&lt;/subtitle&gt;';
+	}
+	echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+	echo '&lt;/item&gt;';
+	
+}
+else{
+
+
+//loop on every piece
+for ($i=1; $i&lt;=count($pieces); $i++){
+
+	//get name
+	$name = explode('&lt;/title&gt;', $pieces[$i]);
+	$name = $name[0];
+	$name = explode('&lt;title&gt;', $name);
+	$name = $name[1];
+	$name = clean($name);
+
+	//get link
+	$link = explode('&lt;link&gt;', $pieces[$i]);
+	$link = $link[1];
+	$link = explode('&lt;/link&gt;', $link);
+	$link = $link[0];
+	$link = clean($link);
+
+	//get description
+	if($display_subtitle){
+		$description = explode('&lt;description&gt;', $pieces[$i]);
+		$description = $description[1];
+		$description = explode('&lt;/description&gt;', $description);
+		$description = $description[0];
+		$description = clean($description);
+	}
+		$id = time() + $i;	
+		echo '&lt;item uid="'.$id.'" arg="'.$link.'"&gt;';
+		echo '&lt;title&gt;'.$name.'&lt;/title&gt;';
+		echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+		if ($display_subtitle){
+			echo '&lt;subtitle&gt;'.$description.'&lt;/subtitle&gt;';
+		} else {
+			echo '&lt;subtitle&gt;&lt;/subtitle&gt;';
+		}
+		echo '&lt;/item&gt;';
+		
+}}
+echo '&lt;/items&gt;';
+
+function clean($string){
+
+	$string = str_replace("&amp;amp;", '&amp;', $string);
+	$string = str_replace("&amp;quot;", '"', $string);
+	$string = str_replace("&amp;apos;", "'", $string);
+	$string = str_replace("&amp;lt;", '&lt;', $string);
+	$string = str_replace("&amp;gt;", '&gt;', $string);
+
+	$strings = explode('&gt;', $string);
+	$string='';
+	for ($j=0; $j&lt;count($strings); $j++){
+		$one_piece = explode('&lt;', $strings[$j]);
+		$one_piece = $one_piece[0];
+		$string=$string.$one_piece;
+	}
+
+	$string = str_replace('&amp;', "&amp;amp;", $string);
+	$string = str_replace('"', "&amp;quot;", $string);
+	$string = str_replace("'", "&amp;apos;", $string);
+	$string = str_replace('&lt;', "&amp;lt;", $string);
+	$string = str_replace('&gt;', "&amp;gt;", $string);
+    
+    return $string; 
+}</string>
+				<key>title</key>
+				<string>Mac.AppStorm</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>274E7014-084A-4F1B-A30E-5BBD0A29B5CC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>rss courrier international</string>
+				<key>script</key>
+				<string>/////////////////////////////////
+///////// SETTINGS //////////////
+/////////////////////////////////
+
+//Select a URL that is an XML RSS feed. Each item should be enclosed in &lt;item&gt; and have &lt;title&gt;, &lt;link&gt; and &lt;description&gt;
+$url = 'http://www.courrierinternational.com/rss/all/rss.xml';
+
+//Set this to true if you want to see the description in alfred
+$display_subtitle = true;
+
+
+/////////////////////////////////
+/////////// CODE ////////////////
+/////////////////////////////////
+
+
+//get web page
+/*$crl = curl_init();
+$timeout = 5;
+$useragent = "Googlebot/2.1 ( http://www.googlebot.com/bot.html)";
+curl_setopt ($crl, CURLOPT_USERAGENT, $useragent);
+curl_setopt ($crl, CURLOPT_URL,$url);
+curl_setopt ($crl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt ($crl, CURLOPT_CONNECTTIMEOUT, $timeout);
+$ret = curl_exec($crl);
+curl_close($crl);*/
+
+
+$ret = file_get_contents($url);
+
+//explode results
+$pieces = explode('&lt;item&gt;', $ret);
+
+//account for a no-result case
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;';
+if (count($pieces)==1){
+
+	$url = 'http://www.downforeveryoneorjustme.com/'.$url;
+	$str = file_get_contents($url);
+	if (strpos($str,'not just you') !== false) {
+		echo '&lt;item uid="0" arg=""&gt;';
+		echo '&lt;title&gt;Your RSS feed appears to be down at the moment.&lt;/title&gt;';
+		echo '&lt;subtitle&gt;Sorry, try again later...&lt;/subtitle&gt;';
+	}
+	else{
+		echo '&lt;item uid="0" arg="" valid="no"&gt;';
+		echo '&lt;title&gt;No news feed seems to appear here.&lt;/title&gt;';
+		echo '&lt;subtitle&gt;I don\'t think I can read this page. Try another URL.&lt;/subtitle&gt;';
+	}
+	echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+	echo '&lt;/item&gt;';
+	
+}
+else{
+
+
+//loop on every piece
+for ($i=1; $i&lt;=count($pieces); $i++){
+
+	//get name
+	$name = explode('&lt;/title&gt;', $pieces[$i]);
+	$name = $name[0];
+	$name = explode('&lt;title&gt;', $name);
+	$name = $name[1];
+	$name = clean($name);
+
+	//get link
+	$link = explode('&lt;link&gt;', $pieces[$i]);
+	$link = $link[1];
+	$link = explode('&lt;/link&gt;', $link);
+	$link = $link[0];
+	$link = clean($link);
+
+	//get description
+	if($display_subtitle){
+		$description = explode('&lt;description&gt;', $pieces[$i]);
+		$description = $description[1];
+		$description = explode('&lt;/description&gt;', $description);
+		$description = $description[0];
+		$description = clean($description);
+	}
+		$id = time() + $i;	
+		echo '&lt;item uid="'.$id.'" arg="'.$link.'"&gt;';
+		echo '&lt;title&gt;'.$name.'&lt;/title&gt;';
+		echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+		if ($display_subtitle){
+			echo '&lt;subtitle&gt;'.$description.'&lt;/subtitle&gt;';
+		} else {
+			echo '&lt;subtitle&gt;&lt;/subtitle&gt;';
+		}
+		echo '&lt;/item&gt;';
+		
+}}
+echo '&lt;/items&gt;';
+
+function clean($string){
+
+	$string = str_replace("&amp;amp;", '&amp;', $string);
+	$string = str_replace("&amp;quot;", '"', $string);
+	$string = str_replace("&amp;apos;", "'", $string);
+	$string = str_replace("&amp;lt;", '&lt;', $string);
+	$string = str_replace("&amp;gt;", '&gt;', $string);
+
+	$strings = explode('&gt;', $string);
+	$string='';
+	for ($j=0; $j&lt;count($strings); $j++){
+		$one_piece = explode('&lt;', $strings[$j]);
+		$one_piece = $one_piece[0];
+		$string=$string.$one_piece;
+	}
+
+	$string = str_replace('&amp;', "&amp;amp;", $string);
+	$string = str_replace('"', "&amp;quot;", $string);
+	$string = str_replace("'", "&amp;apos;", $string);
+	$string = str_replace('&lt;', "&amp;lt;", $string);
+	$string = str_replace('&gt;', "&amp;gt;", $string);
+    
+    return $string; 
+}</string>
+				<key>title</key>
+				<string>Le Courrier International</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>EF0D8A9D-30CF-4E1B-A731-14764CD87180</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>open "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2D866855-B35C-4CAD-B9C2-2B0DA54A1A87</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>17C6337F-10FF-4465-9263-24DF77FC3505</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>274E7014-084A-4F1B-A30E-5BBD0A29B5CC</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>2D866855-B35C-4CAD-B9C2-2B0DA54A1A87</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>62EAD57C-07C2-4EEE-94A4-D280BE7FF060</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>EE439E6B-31BD-415E-B066-E6FFEAE2666C</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>EF0D8A9D-30CF-4E1B-A731-14764CD87180</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>FB5EA1FB-21C3-45BA-BEC0-9D363A03D074</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
