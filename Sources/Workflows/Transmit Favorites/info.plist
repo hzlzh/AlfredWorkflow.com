@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>exit4web.transmit</string>
+	<key>connections</key>
+	<dict>
+		<key>E74D4727-E1BE-4980-AA5C-130311DC839C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4022D130-26DD-47C9-8D42-D1729C447628</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>bigluck</string>
+	<key>description</key>
+	<string>Open Transmit Favorites</string>
+	<key>name</key>
+	<string>Transmit Favorites</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>open -a Transmit {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4022D130-26DD-47C9-8D42-D1729C447628</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>ftp</string>
+				<key>script</key>
+				<string>php -f transmit.php -- "{query}"</string>
+				<key>subtext</key>
+				<string>Search Transmit Favorites</string>
+				<key>title</key>
+				<string>Transmit Search</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E74D4727-E1BE-4980-AA5C-130311DC839C</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>4022D130-26DD-47C9-8D42-D1729C447628</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E74D4727-E1BE-4980-AA5C-130311DC839C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/BigLuck/alfred2-transmit</string>
+</dict>
+</plist>

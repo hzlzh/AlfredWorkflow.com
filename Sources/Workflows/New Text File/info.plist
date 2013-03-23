@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>qohelet.newtextfile</string>
+	<key>connections</key>
+	<dict>
+		<key>8612BDEE-C9AC-4AA9-BCE6-4E50DCDC2B59</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>094D7B5F-4122-469F-95BA-1E56EA1D2B66</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9FEE2B2A-0E2C-426F-8326-317F310CB755</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>094D7B5F-4122-469F-95BA-1E56EA1D2B66</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>qohelet</string>
+	<key>description</key>
+	<string>Create a new text file in Finder front window</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>New Text File</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>try	tell application "Finder"		set input to the target of the front window as alias	end tellon error	set input to (path to desktop folder)end tryset x to ""set y to 1set i to ""repeat	try		set check to ((input as text) &amp; "untitled" &amp; x &amp; i &amp; ".txt") as alias		set x to " "		set y to y + 1		set i to y	on error		exit repeat	end tryend repeatdo shell script "cd " &amp; POSIX path of input &amp; ";touch untitled\\" &amp; x &amp; i &amp; ".txt"set theFile to (input as text) &amp; "untitled" &amp; x &amp; i &amp; ".txt" as aliastell application "Finder" to set extension hidden of theFile to true
+-- tell application "Finder" to open theFile</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>094D7B5F-4122-469F-95BA-1E56EA1D2B66</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>txt</string>
+				<key>text</key>
+				<string>Make new text file</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8612BDEE-C9AC-4AA9-BCE6-4E50DCDC2B59</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>9FEE2B2A-0E2C-426F-8326-317F310CB755</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>094D7B5F-4122-469F-95BA-1E56EA1D2B66</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8612BDEE-C9AC-4AA9-BCE6-4E50DCDC2B59</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>9FEE2B2A-0E2C-426F-8326-317F310CB755</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

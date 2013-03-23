@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.ngreenstein.alfred-process-killer</string>
+	<key>connections</key>
+	<dict>
+		<key>2A751056-87B7-4408-90D6-B868021760CE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>31AD6783-08D4-48E0-B323-39292BF089D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C4986824-5761-4F2E-A82F-E4EBC2CAF54C</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Kill all processes with this name.</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Nathan Greenstein</string>
+	<key>description</key>
+	<string>Easily find and kill misbehaving processes.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Kill Process</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>kill -9 {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>31AD6783-08D4-48E0-B323-39292BF089D6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>kill</string>
+				<key>runningsubtext</key>
+				<string>Finding processes...</string>
+				<key>script</key>
+				<string># Type a query to test with here.
+# !!!!! Comment this line out when pasting into alfred preferences.
+#theQuery = ""
+# Grab the query that the user typed (this is provided by Alfred).
+# !!!!! Uncomment this line when pasting into Alfred Preferences.
+theQuery = "{query}"
+
+# Assemble an array of each matching process. It will contain the process's path and percent CPU usage.
+# The -A flag shows all processes. The -o pid, -o %cpu, and -o comm show only the process's PID, CPU usage and path, respectively.
+# Grep for processes whose name contains the query. The regex isolates the name by only searching characters after the last slash in the path.
+#  The -i flag ignores case.
+processes = `ps -A -o pid -o %cpu -o comm | grep -i [^/]*#{theQuery}[^/]*$`.split("\n")
+# Start the XML string that will be sent to Alfred. This just uses strings to avoid dependencies.
+xmlString = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n"
+processes.each do | process |
+	# Extract the PID, CPU usage and path from the line (lines are in the form of `123 12.3 /path/to/process`).
+	processId, processCpu, processPath = process.match(/(\d+)\s+(\d+\.\d+)\s+(.*)/).captures
+	# Use the same expression as before to isolate the name of the process.
+	processName = processPath.match(/[^\/]*#{theQuery}[^\/]*$/i)
+	# Search for an application bundle in the path to the process.
+	iconValue = processPath.match(/.*\.app\//)
+	# The icon type sent to Alfred is 'fileicon' (taken from a file). This assumes that a .app was found.
+	iconType = "fileicon"
+	# If no .app was found, use OS X's generic 'executable binary' icon.
+	# An empty icon type tells Alfred to load the icon from the file itself, rather than loading the file type's icon.
+	if !iconValue
+		iconValue = "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ExecutableBinaryIcon.icns"
+		iconType = ""
+	end
+	#Assemble this item's XML string for Alfred. See http://www.alfredforum.com/topic/5-generating-feedback-in-workflows/
+	thisXmlString = "\t&lt;item uid=\"#{processName}\" arg=\"#{processId}\"&gt;
+		&lt;title&gt;#{processName}&lt;/title&gt;
+		&lt;subtitle&gt;#{processCpu}% CPU @ #{processPath}&lt;/subtitle&gt;
+		&lt;icon type=\"#{iconType}\"&gt;#{iconValue}&lt;/icon&gt;
+	&lt;/item&gt;\n"
+	# Append this process's XML string to the global XML string.
+	xmlString += thisXmlString
+end
+# Finish off and echo the XML string to Alfred.
+xmlString += "&lt;/items&gt;"
+puts xmlString</string>
+				<key>subtext</key>
+				<string>Start typing a process name...</string>
+				<key>title</key>
+				<string>Kill Process Named</string>
+				<key>type</key>
+				<integer>2</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2A751056-87B7-4408-90D6-B868021760CE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>killall -- "$(ps -c -p {query} -o comm | tail -n 1)"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C4986824-5761-4F2E-A82F-E4EBC2CAF54C</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>See https://github.com/nathangreenstein/alfred-process-killer for full documentation.
+
+#Description
+Kill Process is an Alfred 2 workflow that makes it easy to kill misbehaving processes. It is, in essence, a way to easily find processes by name and kill them using `kill -9`.
+
+#Features
+* Autocompletes process names
+* Learns and prioritizes processes you kill frequently
+* Shows icons when possible
+* Shows CPU usage
+* Shows process paths
+* Ignores case
+* Kills all processes with matching names on &lt;kbd&gt;cmd&lt;/kbd&gt;+&lt;kbd&gt;return&lt;/kbd&gt;
+
+![screenshot: `kill it`](screenshot.png)
+
+#Usage
+1. Type `kill` into Alfred followed by a space.
+2. Begin typing the name of the process you want to kill.
+3. When you see the process you want to kill, select it from the list as usual.
+4. Press return to kill the selected process.  
+Alternatively, press &lt;kbd&gt;cmd&lt;/kbd&gt;+&lt;kbd&gt;return&lt;/kbd&gt; to kill all processes with the same name as the selected one.
+
+#Installation
+Open `Kill Process.alfredworkflow` and Alfred will walk you through the installation process. No configuration is necessary.
+
+#Making Changes
+##Editing the Script
+The ruby script that powers Kill Process is `script.rb`. For testing, add a value for `theQuery` in the first line. Be sure that the subsequent `theQuery = "{query}"` is commented out. This allows you to hard-code a search query instead of taking what the user has typed from Alfred. See the comments in the script for more info.
+
+##Applying Changes to the Workflow
+1. Be sure that the first line in the script setting `theQuery` is commented out and that the second line (`theQuery = "{query}"`) is not commented out.
+2. Open the Workflows tab of Alfred's Preferences.
+3. Select the Kill Process workflow on the left.
+4. Double click the first box ('kill Script Filter').
+5. Paste your script into the 'Script' box at the bottom.
+6. Click Save.
+
+#License
+[WTFPL](http://www.wtfpl.net/about/), of course.</string>
+	<key>uidata</key>
+	<dict>
+		<key>2A751056-87B7-4408-90D6-B868021760CE</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>31AD6783-08D4-48E0-B323-39292BF089D6</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>C4986824-5761-4F2E-A82F-E4EBC2CAF54C</key>
+		<dict>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/nathangreenstein/alfred-process-killer</string>
+</dict>
+</plist>
