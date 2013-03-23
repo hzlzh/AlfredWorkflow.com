@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>pjkh.dig</string>
+	<key>connections</key>
+	<dict>
+		<key>8901B669-3C82-4B63-99EC-00C8185D4952</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>05A3ACCF-091F-4CBF-84E9-65C15EB74A7C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Philip Hallstrom</string>
+	<key>description</key>
+	<string>Perform DNS lookups using dig.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Dig</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>dig</string>
+				<key>runningsubtext</key>
+				<string>Looking up DNS records...</string>
+				<key>script</key>
+				<string>bash ./dig.sh {query}</string>
+				<key>subtext</key>
+				<string>Lookup DNS records. Select result to copy to clipboard.</string>
+				<key>title</key>
+				<string>Dig</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8901B669-3C82-4B63-99EC-00C8185D4952</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>05A3ACCF-091F-4CBF-84E9-65C15EB74A7C</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>05A3ACCF-091F-4CBF-84E9-65C15EB74A7C</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>8901B669-3C82-4B63-99EC-00C8185D4952</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
