@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E2F67977-2FFA-4801-9860-2811831D3E24</string>
+				<string>F480DD5B-678F-498C-825E-AF6F6ADDE71C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -21,7 +21,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E2F67977-2FFA-4801-9860-2811831D3E24</string>
+				<string>F480DD5B-678F-498C-825E-AF6F6ADDE71C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -107,13 +107,34 @@ end alfred_script</string>
 			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
-tell application "System Preferences"	reveal pane id "com.apple.preferences.Bluetooth"	try		tell application "System Events"			tell process "System Preferences"				click checkbox 2 of window "Bluetooth"			end tell		end tell	on error		display dialog "Failed to toggle bluetooth."	end tryend tell
+tell application "System Preferences"	reveal pane id "com.apple.preferences.Bluetooth"	try		tell application "System Events"			tell process "System Preferences"				click checkbox 2 of window "Bluetooth"			end tell		end tell	on error errStr number errorNumber		error errStr number errorNumber	end tryend tell
 end alfred_script</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
 			<string>E2F67977-2FFA-4801-9860-2811831D3E24</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+if [ "$(./blueutil status)" = "Status: on" ]
+then
+	./blueutil off
+else
+	./blueutil on
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F480DD5B-678F-498C-825E-AF6F6ADDE71C</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -156,6 +177,11 @@ end alfred_script</string>
 			<real>250</real>
 		</dict>
 		<key>E2F67977-2FFA-4801-9860-2811831D3E24</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>F480DD5B-678F-498C-825E-AF6F6ADDE71C</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>

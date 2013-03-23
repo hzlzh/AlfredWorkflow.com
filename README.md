@@ -10,5 +10,5 @@
 
 ## Submit your works.
 
-* Submit Alfred 2 workflows -> [here](http://www.alfredworkflow.com/submit-alfred-workflow/)
+* Submit Alfred 2 Workflows -> [here](http://www.alfredworkflow.com/submit-alfred-workflow/)
 * Submit Alfred 2 Themes -> Commmming soon!
