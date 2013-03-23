@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.v2ex.hzlzh</string>
+	<key>connections</key>
+	<dict>
+		<key>5781539F-3A42-4724-BE8A-AF9E749F1FDE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ABD9DFE8-DA6B-4F46-AD34-4F6926FE883C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>ABD9DFE8-DA6B-4F46-AD34-4F6926FE883C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2B3CC67B-A963-4638-BFCA-A3FE12BA5587</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>⌘ &gt; 仅复制此文章链接到剪切板</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>64842A1D-75E7-4103-BD08-4DCB0AA137AE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>741DB4F2-5EC9-478D-8CBB-463E10EFC171</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>⌘ &gt; 仅复制此文章链接到剪切板</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>03A62D0B-A768-4DCE-A3C8-3DCC8D672125</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>29B4395A-0D13-4C81-A252-26A55CA7E1B6</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>搜索本条</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>hzlzh</string>
+	<key>description</key>
+	<string>Workflow for v2ex.com</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>V2EX</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>hotkey</key>
+				<integer>32</integer>
+				<key>hotmod</key>
+				<integer>1835008</integer>
+				<key>hotstring</key>
+				<string>U</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>5781539F-3A42-4724-BE8A-AF9E749F1FDE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2B3CC67B-A963-4638-BFCA-A3FE12BA5587</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>741DB4F2-5EC9-478D-8CBB-463E10EFC171</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>v2ex</string>
+				<key>runningsubtext</key>
+				<string>正在处理中 …</string>
+				<key>script</key>
+				<string>
+require_once('workflows.php');
+
+
+function load_data($api) {
+    
+    $opts = array(  
+        'http'=&gt;array(  
+        'method'=&gt;"GET",  
+        'timeout'=&gt;10
+        )
+    );  
+    $context = stream_context_create($opts);       
+    $obj = false;
+    
+    $xml = @file_get_contents( $api,false, $context);
+    $obj=json_decode($xml);
+    
+    return $obj;
+    
+}
+
+
+$wf = new Workflows();
+
+$orig = "{query}";
+
+if($orig == 'n' || $orig == 'new' ){
+    $obj = load_data('http://v2ex.com/api/topics/latest.json');
+    $int = 1;
+    
+    if($obj != null):
+        foreach( $obj as $post ):
+            $post_id = $post-&gt;id;
+            $post_title = $post-&gt;title;
+            $post_url = $post-&gt;url;
+            $post_content = $post-&gt;content;
+            $post_member = $post-&gt;member-&gt;username;
+            $post_member_id = $post-&gt;member-&gt;id;
+            $post_avatar = $post-&gt;member-&gt;avatar_normal;
+            $post_local_avatar = 'temp_avatar/default.png';
+            
+            $wf-&gt;result( $post_id, $post_url, $post_title.' - @'.$post_member, $post_content, $post_local_avatar  );
+            $int++;
+        endforeach;
+    endif;
+
+}else if(strstr($orig,'@')){
+    $obj = load_data('http://v2ex.com/api/topics/show.json?username='.substr($orig,1));
+    $int = 1;
+    
+    if($obj != null):
+        foreach( $obj as $post ):
+            $post_id = $post-&gt;id;
+            $post_title = $post-&gt;title;
+            $post_url = $post-&gt;url;
+            $post_content = $post-&gt;content;
+            $post_member = $post-&gt;member-&gt;username;
+            $post_member_id = $post-&gt;member-&gt;id;
+            $post_local_avatar = 'temp_avatar/default.png';
+
+            $wf-&gt;result( $post_id, $post_url, $post_title.' - @'.$post_member, $post_content, $post_local_avatar  );
+            $int++;
+        endforeach;
+    endif;
+}
+
+$results = $wf-&gt;results();
+if ( count( $results ) == 0 ):
+    $wf-&gt;result( 'v2ex_500', '请确保指令和网络链接正常', '没有响应，请再试一次。', '请确保指令和网络链接正常', 'icon.png' );
+endif;
+
+echo $wf-&gt;toxml();
+</string>
+				<key>subtext</key>
+				<string>new或n: 获取最新文章列表 | @name: 获取指定用户文章列表</string>
+				<key>title</key>
+				<string>常用指令：n或new | @name</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>ABD9DFE8-DA6B-4F46-AD34-4F6926FE883C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>64842A1D-75E7-4103-BD08-4DCB0AA137AE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>03A62D0B-A768-4DCE-A3C8-3DCC8D672125</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>searcher</key>
+				<integer>1635215215</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.systemwebsearch</string>
+			<key>uid</key>
+			<string>29B4395A-0D13-4C81-A252-26A55CA7E1B6</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># V2EX v1.0
+
+一个给V2EXer用的Alfred 2 workflow.
+功能：
+	* 获取最新文章列表，指令：n 或 new
+	* 获取指定用户的文章列表，指令：@hzlzh
+	* 列表状态下按住`Command`键，可以只复制URL到剪切板
+	* 列表状态下按住`Opition`键，在搜索引擎中检索该文章
+	* 更多功能添加中...
+
+# Project Source
+
+* Github: https://github.com/hzlzh/Alfred-Workflows
+* Blog Post: https://zlz.im/Alfred-Workflows/
+
+# Contact
+
+* hzlzh (hzlzh.dev@gmail.com)
+* Twitter: https://twitter.com/hzlzh</string>
+	<key>uidata</key>
+	<dict>
+		<key>03A62D0B-A768-4DCE-A3C8-3DCC8D672125</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
+		<key>29B4395A-0D13-4C81-A252-26A55CA7E1B6</key>
+		<dict>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
+		<key>2B3CC67B-A963-4638-BFCA-A3FE12BA5587</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>5781539F-3A42-4724-BE8A-AF9E749F1FDE</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>64842A1D-75E7-4103-BD08-4DCB0AA137AE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>741DB4F2-5EC9-478D-8CBB-463E10EFC171</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>ABD9DFE8-DA6B-4F46-AD34-4F6926FE883C</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://zlz.im/</string>
+</dict>
+</plist>

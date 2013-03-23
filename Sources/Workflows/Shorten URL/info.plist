@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.shorten-url.hzlzh</string>
+	<key>connections</key>
+	<dict>
+		<key>29221F47-9904-4EE7-AAF9-D300BAFAF2EF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>162D1E3F-9D73-4C83-AD8C-869165521442</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>82524AB3-0487-48D7-9CB8-7A456D78F473</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>82E5133A-F114-4C1D-9FD4-365C395B6DF1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FE7E3DAE-D8FF-4C84-AC14-4A1D11A10904</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FE7E3DAE-D8FF-4C84-AC14-4A1D11A10904</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>29221F47-9904-4EE7-AAF9-D300BAFAF2EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>hzlzh</string>
+	<key>description</key>
+	<string>Shorten link with (goo.gl, bit.ly, t.cn, j.mp, is.gd, v.gd etc.)</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Shorten URL</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>'''
+Shorten URL v1.1
+
+Github: https://github.com/hzlzh/Alfred-Workflows
+Author: hzlzh (hzlzh.dev@gmail.com)
+Twitter: @hzlzh
+Blog: https://zlz.im/Alfred-Workflows/
+'''
+
+import urllib
+import urllib2
+import json
+import sys
+
+def getLink(type,service,url):
+
+    if (('http' in url) == False):
+        url = 'http://'+url
+        
+    if type == 'goo.gl':
+        terms = urllib.quote_plus(url.strip())
+        data = json.dumps({"longUrl": url})
+        clen = len(data)
+        req = urllib2.Request(service,data,{'Content-Type': 'application/json', 'Content-Length': clen})
+        f = urllib2.urlopen(req)
+        data = f.read()
+        output = json.loads(data)["id"]
+    else:
+        try:
+            terms = urllib.quote_plus(url.strip())
+            url = service + terms
+            data = urllib2.urlopen(url).read()
+        except Exception, e:
+            print ''
+        if type == 'bit.ly':
+            result = json.loads(data)
+            if(result["status_code"] == 500):
+                output = result["status_txt"]
+            else:
+                output = result["data"]["url"]
+        elif type == 'j.mp':
+            result = json.loads(data)
+            if(result["status_code"] == 500):
+                output = result["status_txt"]
+            else:
+                output = result["data"]["url"]
+        elif type == 't.cn': 
+            result = json.loads(data)
+            if('error_code' in result.keys()):
+                output = result["error"]
+            else:
+                output = result["urls"][0]["url_short"]
+        elif type == 'is.gd':
+            result = json.loads(data)
+            if('errorcode' in result.keys()):
+                output = result["errormessage"]
+            else:
+                output = result["shorturl"]
+        elif type == 'v.gd':
+            result = json.loads(data)
+            if('errorcode' in result.keys()):
+                output = result["errormessage"]
+            else:
+                output = result["shorturl"]
+    return output
+    
+temp = '{query}'
+response = json.loads(temp)
+
+type = response['type']
+service = response['api_url']
+url = response['long_url']
+
+last_output = getLink(type,service,url)
+
+if ('http' in last_output):
+    print last_output
+else:
+    print 'Error: '+ last_output</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>29221F47-9904-4EE7-AAF9-D300BAFAF2EF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>162D1E3F-9D73-4C83-AD8C-869165521442</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>hotkey</key>
+				<integer>37</integer>
+				<key>hotmod</key>
+				<integer>1179648</integer>
+				<key>hotstring</key>
+				<string>L</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>82E5133A-F114-4C1D-9FD4-365C395B6DF1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>short</string>
+				<key>runningsubtext</key>
+				<string>Loading services list.</string>
+				<key>script</key>
+				<string>'''
+Shorten URL v1.1
+
+Github: https://github.com/hzlzh/Alfred-Workflows
+Author: hzlzh (hzlzh.dev@gmail.com)
+Twitter: @hzlzh
+Blog: https://zlz.im/Alfred-Workflows/
+'''
+from feedback import Feedback
+
+import urllib
+import urllib2
+import json
+import sys
+
+query = '{query}'
+
+api = {
+'goo.gl' : {'api_url':'https://www.googleapis.com/urlshortener/v1/url','title':'goo.gl','des':'http://goo.gl/'},
+'bit.ly' : {'api_url':'https://api-ssl.bitly.com/v3/shorten?format=json&amp;login=hzlzh&amp;apiKey=R_e8bcc43adaa5f818cc5d8a544a17d27d&amp;longUrl=','title':'bit.ly','des':'http://bit.ly/'},
+'t.cn' : {'api_url':'https://api.weibo.com/2/short_url/shorten.json?access_token=2.00WSLtpB0GRHJ9745670860ceNWWiC&amp;url_long=','title':'t.cn','des':'http://t.cn/'},
+'j.mp' : {'api_url':'http://api.j.mp/v3//shorten?format=json&amp;login=hzlzh&amp;apiKey=R_e8bcc43adaa5f818cc5d8a544a17d27d&amp;longUrl=','title':'j.mp','des':'http://j.mp/'},
+'is.gd' : {'api_url':'http://is.gd/create.php?format=json&amp;url=','title':'is.gd','des':'http://is.gd/'},
+'v.gd' : {'api_url':'http://v.gd/create.php?format=json&amp;url=','title':'v.gd','des':'http://v.gd/'}
+}
+
+fb = Feedback()
+for title in api:
+    fb.add_item(api[title]['title'],
+        subtitle="Using %s" % api[title]['des'],
+        arg='{"type":"'+title+'","api_url":"'+api[title]['api_url']+'","long_url":"'+query+'"}',icon='favicons/'+title+'.png')
+print fb
+</string>
+				<key>subtext</key>
+				<string>Include goo.gl, bit.ly, t.cn, j.mp, is.gd, v.gd etc.</string>
+				<key>title</key>
+				<string>Shorten URL</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FE7E3DAE-D8FF-4C84-AC14-4A1D11A10904</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Copied to Clipboard!</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>82524AB3-0487-48D7-9CB8-7A456D78F473</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Shorten URL v1.1
+
+This workflow support URL shortener like (goo.gl, bit.ly, t.cn, j.mp, is.gd, v.gd), you can use Hotkey to trigger without open Alfred input window.
+
+# Project Source
+
+* Github: https://github.com/hzlzh/Alfred-Workflows
+* Blog Post: https://zlz.im/Alfred-Workflows/
+
+# Contact
+
+* Andy Huang (hzlzh.dev@gmail.com)
+* Twitter: https://twitter.com/hzlzh
+
+(If you need more services to be added, please let me know.)</string>
+	<key>uidata</key>
+	<dict>
+		<key>162D1E3F-9D73-4C83-AD8C-869165521442</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>29221F47-9904-4EE7-AAF9-D300BAFAF2EF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>82524AB3-0487-48D7-9CB8-7A456D78F473</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>82E5133A-F114-4C1D-9FD4-365C395B6DF1</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>FE7E3DAE-D8FF-4C84-AC14-4A1D11A10904</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://zlz.im/</string>
+</dict>
+</plist>

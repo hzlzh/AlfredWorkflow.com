@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.seo-checker.hzlzh</string>
+	<key>connections</key>
+	<dict>
+		<key>5AF9DBA5-62D9-44A4-B634-119DFCF6EE12</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E0A62B76-2AC4-4EA9-9229-5AEBD2D5499E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6A5855DC-E66B-40CD-B6C0-0CAF18F63BE9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1405700F-1171-44FB-A236-34DF8CF9E101</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E0A62B76-2AC4-4EA9-9229-5AEBD2D5499E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6A5855DC-E66B-40CD-B6C0-0CAF18F63BE9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>hzlzh</string>
+	<key>description</key>
+	<string>Check domain's PR, Alexa, etc</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>SEO Checker</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>6A5855DC-E66B-40CD-B6C0-0CAF18F63BE9</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Check it on website.</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>1405700F-1171-44FB-A236-34DF8CF9E101</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>seo</string>
+				<key>runningsubtext</key>
+				<string>Checking … please wait</string>
+				<key>script</key>
+				<string>'''
+SEO Checker v1.0
+
+Github: https://github.com/hzlzh/Alfred-Workflows
+Author: hzlzh (hzlzh.dev@gmail.com)
+Twitter: @hzlzh
+Blog: https://zlz.im/Alfred-Workflows/
+'''
+from feedback import Feedback
+
+import urllib
+import urllib2
+import json
+import sys
+import re
+
+
+def get_root_domain(domain):
+    r = re.compile('([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}')
+    s_match = r.search(domain)
+    return s_match.group()
+
+def get_pr(domain):
+    api = 'http://toolbarqueries.google.com/tbr?client=navclient-auto&amp;features=Rank&amp;'
+    # get google domain hask
+    GPR_HASH_SEED ="Mining PageRank dmoanin hash"
+    def google_hash(value):
+        magic = 0x1020345
+        for i in xrange(len(value)):
+            magic ^= ord(GPR_HASH_SEED[i % len(GPR_HASH_SEED)]) ^ ord(value[i])
+            magic = (magic &gt;&gt; 23 | magic &lt;&lt; 9) &amp; 0xFFFFFFFF
+        return "8%08x" % (magic)
+        
+    try:
+        request = api + 'ch=' + google_hash(domain) + '&amp;q=info:' + domain
+        terms = urllib.quote_plus(request.strip())
+        data = urllib2.urlopen(request).read()
+    except Exception, e:
+        print 'Error'
+        
+    return str.split(data,':')[-1]
+
+def get_alexa(domain):
+    api = 'http://data.alexa.com/data?cli=10&amp;dat=snbamz&amp;url='
+    request = api + domain
+    terms = urllib.quote_plus(request.strip())
+    data = urllib2.urlopen(request).read()
+    return data[data.index('REACH RANK')+12:data.index('RANK DELTA')-5]
+    
+def check_rank(type,domain):
+	if(type == 'pr'):
+		return get_pr(domain)
+	elif(type == 'alexa'):
+		return get_alexa(domain)
+
+query = get_root_domain('{query}')
+
+api = {
+	'pr':{'title':'Checking Google PR for &gt;&gt;&gt; ','des':'Result: ','checker':'http://www.prfind.com/?q='},
+	'alexa':{'title':'Checking Alexa reach Rank for &gt;&gt;&gt; ','des':'Result: ','checker':'http://www.alexa.com/search?q='}
+}
+
+fb = Feedback()
+for title in api:
+    fb.add_item(api[title]['title'] + query,
+        subtitle=api[title]['des'] + " %s" % check_rank(title,query),arg=api[title]['checker']+query,icon='favicons/'+title+'.png')
+print fb</string>
+				<key>subtext</key>
+				<string>Include PR, Alexa</string>
+				<key>title</key>
+				<string>Input any domain URL here</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E0A62B76-2AC4-4EA9-9229-5AEBD2D5499E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>hotkey</key>
+				<integer>35</integer>
+				<key>hotmod</key>
+				<integer>1835008</integer>
+				<key>hotstring</key>
+				<string>P</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>5AF9DBA5-62D9-44A4-B634-119DFCF6EE12</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># SEO Checker v1.0
+
+Check domain's PR, Alexa, etc
+
+# Project Source
+
+* Github: https://github.com/hzlzh/Alfred-Workflows
+* Blog Post: https://zlz.im/Alfred-Workflows/
+
+# Contact
+
+* Andy Huang (hzlzh.dev@gmail.com)
+* Twitter: https://twitter.com/hzlzh
+
+(If you need more SEO services to be added, please let me know.)</string>
+	<key>uidata</key>
+	<dict>
+		<key>1405700F-1171-44FB-A236-34DF8CF9E101</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>5AF9DBA5-62D9-44A4-B634-119DFCF6EE12</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>6A5855DC-E66B-40CD-B6C0-0CAF18F63BE9</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E0A62B76-2AC4-4EA9-9229-5AEBD2D5499E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://zlz.im/</string>
+</dict>
+</plist>
