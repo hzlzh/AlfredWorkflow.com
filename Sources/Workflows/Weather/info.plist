@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>jdfwarrior.weather</string>
+	<key>connections</key>
+	<dict>
+		<key>40DCC86A-D471-4DD4-9CA4-0667DD3613F5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7DC2836D-CC12-4DCC-B184-92808C4E5A57</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7DC2836D-CC12-4DCC-B184-92808C4E5A57</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D8C3716-5008-4246-B50F-2578BC1BD90C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9C71CAE2-5C59-46C2-A981-F66AF598E165</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>82614863-ED50-4D00-B2F8-6BC2A5781FCF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AA52F4FD-BEDD-4247-B1C8-C070F21151E4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2FB3BD58-39F4-4CA8-927C-19ADAEBC206F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D1FFEE23-9648-4263-8940-892B00A578EF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9C71CAE2-5C59-46C2-A981-F66AF598E165</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>David Ferguson</string>
+	<key>description</key>
+	<string>Local weather and forecast</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Weather</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>forecast</string>
+				<key>runningsubtext</key>
+				<string>Requesting local forecast ...</string>
+				<key>script</key>
+				<string>php -f forecast.php</string>
+				<key>subtext</key>
+				<string>Show the upcoming weather forecast</string>
+				<key>title</key>
+				<string>Forecast</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>075CEC33-404F-41DA-A177-31C2C0BDE6B2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$w = new Workflows();
+
+exec( 'touch settings.plist' );
+
+$w-&gt;set( 'default.location', '{query}', 'settings.plist' );
+$w-&gt;set( 'preferred.unit', 'F', 'settings.plist' );
+
+echo "Default weather location saved";</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9C71CAE2-5C59-46C2-A981-F66AF598E165</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>weatherunit</string>
+				<key>script</key>
+				<string>require( 'workflows.php' );
+$w = new Workflows();
+
+$w-&gt;result( 'wewatherunit', 'F', 'Fahrenheit', 'Set your default weather unit to fahrenheit', 'icon.png', 'yes', 'Fahrenheit' );
+$w-&gt;result( 'wewatherunit', 'C', 'Celsius', 'Set your default weather unit to celsius', 'icon.png', 'yes', 'Celcius' );
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Set your preferred weather unit</string>
+				<key>title</key>
+				<string>Set Weather Unit</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>40DCC86A-D471-4DD4-9CA4-0667DD3613F5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>conditions</string>
+				<key>runningsubtext</key>
+				<string>Requesting current local conditions ...</string>
+				<key>script</key>
+				<string>php -f weather.php</string>
+				<key>subtext</key>
+				<string>View current weather conditions</string>
+				<key>title</key>
+				<string>Current Weather Conditions</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>AA52F4FD-BEDD-4247-B1C8-C070F21151E4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>2FB3BD58-39F4-4CA8-927C-19ADAEBC206F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>weather</string>
+				<key>runningsubtext</key>
+				<string>Searching for locations ...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$w = new Workflows();
+
+$query = urlencode( "{query}" );
+$url = "http://autocomplete.wunderground.com/aq?query=$query&amp;format=json";
+$suggestions = $w-&gt;request( $url );
+$suggestions = json_decode( $suggestions );
+
+foreach( $suggestions-&gt;RESULTS as $suggest ):
+	$w-&gt;result( $suggest-&gt;l, $suggest-&gt;l, $suggest-&gt;name, 'Country: '. $suggest-&gt;c .'. Timezone: '. $suggest-&gt;tz, 'icon.png' );
+endforeach;
+
+if ( count( $w-&gt;results() ) == 0 ):
+	$w-&gt;result( 'weather', 'na', 'No locations found', 'No locations were found that match your query', 'icon.png', 'no' );
+endif;	
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Set your default weather location</string>
+				<key>title</key>
+				<string>Set Location</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D1FFEE23-9648-4263-8940-892B00A578EF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Weather</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>82614863-ED50-4D00-B2F8-6BC2A5781FCF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>require( 'workflows.php' );
+$w = new Workflows();
+
+exec( 'touch settings.plist' );
+
+$in = "{query}";
+$w-&gt;set( 'preferred.unit', $in, 'settings.plist' );
+
+if ( $in == 'F' ):
+	echo 'Set preferred weather unit to fahrenheit';
+else:
+	echo 'Set preferred weather unit to celcius';
+endif;
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7DC2836D-CC12-4DCC-B184-92808C4E5A57</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Weather</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2D8C3716-5008-4246-B50F-2578BC1BD90C</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>075CEC33-404F-41DA-A177-31C2C0BDE6B2</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>2D8C3716-5008-4246-B50F-2578BC1BD90C</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>2FB3BD58-39F4-4CA8-927C-19ADAEBC206F</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>40DCC86A-D471-4DD4-9CA4-0667DD3613F5</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>7DC2836D-CC12-4DCC-B184-92808C4E5A57</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>82614863-ED50-4D00-B2F8-6BC2A5781FCF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9C71CAE2-5C59-46C2-A981-F66AF598E165</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>AA52F4FD-BEDD-4247-B1C8-C070F21151E4</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>D1FFEE23-9648-4263-8940-892B00A578EF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>jdfwarrior.tumblr.com</string>
+</dict>
+</plist>
