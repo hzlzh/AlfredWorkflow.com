@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>ch.xtin.alfred.skype</string>
+	<key>connections</key>
+	<dict>
+		<key>2EA68B53-2A8C-4198-913A-5268FD9042E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9F8F3372-481E-4409-A8DD-2E16012FB05B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>34287A05-A4C7-40CA-BEAB-48AF0EED0113</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>59E44B6E-BE69-419A-980B-39F9E3571CA8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>43762EDE-A2CA-419E-ACA5-7D472EEDD47A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9F8F3372-481E-4409-A8DD-2E16012FB05B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>59E44B6E-BE69-419A-980B-39F9E3571CA8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>33BFC232-CC16-4A14-BA97-66BCEA020D39</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8B13D60C-0781-43E2-A9D4-0AA324953FE7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>59E44B6E-BE69-419A-980B-39F9E3571CA8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9F8F3372-481E-4409-A8DD-2E16012FB05B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>33BFC232-CC16-4A14-BA97-66BCEA020D39</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Rafael Hostettler</string>
+	<key>description</key>
+	<string>Write Messages With Skype</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>SkypingAlfred</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>sc</string>
+				<key>script</key>
+				<string>import skypingalfred as s
+
+try:
+	print s.handleFriends("{query}")
+except Exception as e:
+	print "{query} Error:"+str(e)
+</string>
+				<key>subtext</key>
+				<string>Call a friend on skype</string>
+				<key>title</key>
+				<string>Skype Call</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8B13D60C-0781-43E2-A9D4-0AA324953FE7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>s</string>
+				<key>runningsubtext</key>
+				<string>Searching Friends ...</string>
+				<key>script</key>
+				<string>import skypingalfred as s
+
+print s.handleMessage("{query}")</string>
+				<key>subtext</key>
+				<string>Find friend and write a message</string>
+				<key>title</key>
+				<string>Write Skype Message</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2EA68B53-2A8C-4198-913A-5268FD9042E1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>name</key>
+				<string>Call Skype</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.contact</string>
+			<key>uid</key>
+			<string>34287A05-A4C7-40CA-BEAB-48AF0EED0113</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>snew</string>
+				<key>runningsubtext</key>
+				<string>Retreiving...</string>
+				<key>script</key>
+				<string>import skypingalfred as s
+
+try:
+	print s.handleNewest("{query}")
+except Exception as e:
+	print "{query} Error:"+str(e)
+</string>
+				<key>subtext</key>
+				<string>Retreive the last 5 Skype Messages</string>
+				<key>title</key>
+				<string>New Skype Messages</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>43762EDE-A2CA-419E-ACA5-7D472EEDD47A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>import skypingalfred as s
+
+print s.sendMessage("{query}")</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9F8F3372-481E-4409-A8DD-2E16012FB05B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Skype</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>33BFC232-CC16-4A14-BA97-66BCEA020D39</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>import skypingalfred as s
+
+print s.callUser("{query}")</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>59E44B6E-BE69-419A-980B-39F9E3571CA8</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2EA68B53-2A8C-4198-913A-5268FD9042E1</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>33BFC232-CC16-4A14-BA97-66BCEA020D39</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>34287A05-A4C7-40CA-BEAB-48AF0EED0113</key>
+		<dict>
+			<key>ypos</key>
+			<real>480</real>
+		</dict>
+		<key>43762EDE-A2CA-419E-ACA5-7D472EEDD47A</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>59E44B6E-BE69-419A-980B-39F9E3571CA8</key>
+		<dict>
+			<key>ypos</key>
+			<real>360</real>
+		</dict>
+		<key>8B13D60C-0781-43E2-A9D4-0AA324953FE7</key>
+		<dict>
+			<key>ypos</key>
+			<real>360</real>
+		</dict>
+		<key>9F8F3372-481E-4409-A8DD-2E16012FB05B</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.x-tin.ch</string>
+</dict>
+</plist>
