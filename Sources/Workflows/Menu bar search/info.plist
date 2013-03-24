@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>menusearch.neorej.com</string>
+	<key>connections</key>
+	<dict>
+		<key>A91F4592-881F-45CF-B891-205207B45A08</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E8C28337-6DD3-449D-94C0-CED77B2EB345</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jeroen van der Neut</string>
+	<key>description</key>
+	<string>Searches through all items of the active application's menu bar</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Menu bar search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>mb</string>
+				<key>runningsubtext</key>
+				<string>please wait</string>
+				<key>script</key>
+				<string>echo '&lt;items&gt;'
+osascript enumerate.scpt |
+sed -E 's/of application "System Events", /\'$'\n/g' |
+grep -E '^menu item "' |
+sed -E 's/ of menu bar 1.+$//g' |
+grep -i '{query}' |
+sed -E s/"'"/"&amp;apos;"/g |
+sed -E "s/^menu item \"([^\"\\]*(\\.[^\"\\]*)*)\"(.+)$/&lt;item arg='\"\1\"\3' uid='menu item {query}'&gt;&lt;title&gt;\1&lt;\/title&gt;&lt;subtitle&gt;\"\1\"\3&lt;\/subtitle&gt;&lt;icon&gt;icon.png&lt;\/icon&gt;&lt;valid&gt;yes&lt;\/valid&gt;&lt;\/item&gt;/g"
+echo '&lt;/items&gt;'</string>
+				<key>subtext</key>
+				<string>placeholder subtext</string>
+				<key>title</key>
+				<string>placeholder title</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A91F4592-881F-45CF-B891-205207B45A08</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>osascript execute.scpt {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>E8C28337-6DD3-449D-94C0-CED77B2EB345</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Based on some code found at https://getsatisfaction.com/alfredapp/topics/searching_through_nested_menu_items</string>
+	<key>uidata</key>
+	<dict>
+		<key>A91F4592-881F-45CF-B891-205207B45A08</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E8C28337-6DD3-449D-94C0-CED77B2EB345</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://neorej.com</string>
+</dict>
+</plist>

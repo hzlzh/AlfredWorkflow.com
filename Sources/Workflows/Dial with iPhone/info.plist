@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>carlosnz.dialer</string>
+	<key>connections</key>
+	<dict>
+		<key>4A631F77-16BD-44E3-9CA9-43D12DEAAF1E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA1CFA96-0942-45CF-8068-FB84B8CB4D76</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>52776967-44FE-4768-B392-B63DD36F7CE8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA1CFA96-0942-45CF-8068-FB84B8CB4D76</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6580A494-CD84-4703-A00E-6958FB868CB8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA1CFA96-0942-45CF-8068-FB84B8CB4D76</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DA1CFA96-0942-45CF-8068-FB84B8CB4D76</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EB379694-74EB-4645-9564-4F752A789ACA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Carl Smith (@CarlosNZ)</string>
+	<key>description</key>
+	<string>Dial a Contact's phone number from your iPhone</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Dial with iPhone</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>1</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Dial with iPhone</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EB379694-74EB-4645-9564-4F752A789ACA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>name</key>
+				<string>Dial with iPhone (via Prowl)</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.contact</string>
+			<key>uid</key>
+			<string>4A631F77-16BD-44E3-9CA9-43D12DEAAF1E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>#Dial with iPhone v1.2 - 28 January 2013
+#by Carl Smith (@CarlosNZ)
+
+./dialer.sh "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DA1CFA96-0942-45CF-8068-FB84B8CB4D76</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>6580A494-CD84-4703-A00E-6958FB868CB8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>dial</string>
+				<key>subtext</key>
+				<string>Sends phone no. to your iPhone via Prowl ("dial help" for more info.)</string>
+				<key>text</key>
+				<string>Dial with iPhone</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>52776967-44FE-4768-B392-B63DD36F7CE8</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>For detailed instructions, type:
+ 	
+	dial help
+
+into Alfred</string>
+	<key>uidata</key>
+	<dict>
+		<key>4A631F77-16BD-44E3-9CA9-43D12DEAAF1E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>52776967-44FE-4768-B392-B63DD36F7CE8</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>6580A494-CD84-4703-A00E-6958FB868CB8</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>DA1CFA96-0942-45CF-8068-FB84B8CB4D76</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>EB379694-74EB-4645-9564-4F752A789ACA</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://geekzone.philosophicalzombie.net/</string>
+</dict>
+</plist>

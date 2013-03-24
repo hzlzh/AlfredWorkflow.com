@@ -1,0 +1,23 @@
+Title:   Dial with iPhone•ChangelogAuthor:  Carl J. SmithDate:    March 2013
+CSS:     markdown_simonic.css
+
+#Dial with iPhone
+##an Alfred 2 workflow by [Carl Smith (@CarlosNZ)](http://geekzone.philosophicalzombie.net/)
+
+###v1.2
+####March 20, 2013
+
+* GUI for user to enter API key rather than having to edit the code
+* Documentation
+* Better handling of other punctuation characters than might be in a valid phone number.
+
+
+###v1.1
+####January 24, 2013
+* Updated to allow '+' character in phone numbers
+
+####January 14, 2013
+* Initial release.
+
+
+Please leave feedback/bug reports/suggestion in the comments on the [workflow's homepage](http://geekzone.philosophicalzombie.net/post/40509881936/alfred-iphone-dialler), the [Alfred forum](http://www.alfredforum.com/topic/67-dial-with-your-iphone-from-alfred/) or via [**Twitter** (@CarlosNZ)](https://twitter.com/CarlosNZ).

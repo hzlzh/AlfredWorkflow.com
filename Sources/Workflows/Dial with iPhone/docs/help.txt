@@ -1,0 +1,46 @@
+Title:   Dial with iPhoneAuthor:  Carl J. Smith (@CarlosNZ)Date:    20 March 2013
+CSS:     markdown_simonic.css
+
+
+#Dial with iPhone
+##an Alfred 2 workflow by [Carl Smith (@CarlosNZ)](http://geekzone.philosophicalzombie.net/)
+
+###v1.2 [(What's new?)](./changelog.html) | 20th March 2013
+
+![](screenshot.png) 
+
+This workflow allows you use Alfred to send a phone number to your iPhone, which your phone will then dial automatically when you open the notification. You will need to have [Prowl](http://www.prowlapp.com/) installed on your iPhone to receive the notifications. You can send a number from either:
+
+* a contact you have in your Mac Address Book
+* selected text (say, a phone number on a website)
+* a manually entered number.
+
+###Usage
+
+First things first: you need an API key for Prowl - a unique string of digits that allows Alfred to connect to the Prowl service on your behalf. Get that [here](https://www.prowlapp.com/api_settings.php), or the workflow will direct you to the site when you first use it.
+
+The workflow should prompt you for your API key the first time you run it. If you need to change it at some point, use the keyword **dial setup**.
+
+![](API_dialog.png)
+
+Enter it in, and you're good to go.
+
+You can now manually send a phone number. Try **dial *phonenumber*** in Alfred and you should receive the Prowl alert on your iPhone within seconds. (Alfred will show you a notification confirming the success or failure of the phone number transmission.)
+
+####With *"Selected Text"*
+
+To send *selected text*, invoke the workflow via a *hotkey*. You'll need to configure this hotkey in the ***Workflows*** pane of Alfred's preferences:
+
+![](workflow.png)
+
+####Send a Contact's phone number
+
+To send the number of a contact from your Address Book, you'll need to enable a "custom action" in Alfred's ***Contact*** preferences.
+
+![](contact_prefs.png)
+
+For the contact field *"Phone"*, choose the action *"Dial with iPhone (via Prowl)"*. And that's it. Now, when you display a Contact in Alfred, just select their phone number to dial it from your iPhone!
+
+----
+
+I hope this workflow is useful to you. Please leave feedback/bug reports/suggestion in the comments on the [workflow's homepage](http://geekzone.philosophicalzombie.net/post/40509881936/alfred-iphone-dialler), the [Alfred forum](http://www.alfredforum.com/topic/67-dial-with-your-iphone-from-alfred/) or via [**Twitter** (@CarlosNZ)](https://twitter.com/CarlosNZ).
