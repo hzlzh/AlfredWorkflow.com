@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>alfred.workflow.appstore</string>
+	<key>connections</key>
+	<dict>
+		<key>008BEB46-2A21-4D90-A585-9E220A388C69</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>514C7F51-5631-4B4C-9409-6EED2A62F6B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>93843284-FB0D-40F4-9660-FD9D9F19CFA9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>514C7F51-5631-4B4C-9409-6EED2A62F6B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Siqi Yi</string>
+	<key>description</key>
+	<string>Search Apps in Store</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>App Store</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>514C7F51-5631-4B4C-9409-6EED2A62F6B8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>mas</string>
+				<key>runningsubtext</key>
+				<string>Searching now, please wait...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$wf = new Workflows();
+
+$orig = "{query}";
+$json = $wf-&gt;request( "http://itunes.apple.com/search?country=cn&amp;entity=macSoftware&amp;limit=25&amp;term=".urlencode( $orig ) );
+$json = json_decode( $json, ture);
+$int = 1;
+$json=$json['results'];
+
+$wf-&gt;result( "searchinstore", "macappstore://ax.search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?q=".urlencode( $orig ), 'Search apps with keyword "'.$orig.'"', 'Open iTunes and search apps with what you type.', "icon.png"  );
+
+//*
+foreach( $json as $sugg ):
+	$data = $sugg['trackName'];
+	$url = preg_replace("/^https?/", "macappstore", $sugg['trackViewUrl']);
+	//$icon = $sugg['artworkUrl60'];
+	$icon = "icon.png";
+	$wf-&gt;result( 
+		$int.'.'.time()
+		, "$url"
+		, "$data"
+		, $sugg['formattedPrice']
+			.'  	Version '.$sugg['version']
+			.'  	Ratings  '.number_format($sugg['averageUserRating'], 1, '.', '')
+			.' / 5	from '.number_format($sugg['userRatingCount'])
+			.' users  by '.$sugg['artistName']
+		, $icon  );
+	$int++;
+endforeach;
+
+$results = $wf-&gt;results();
+if ( count( $results ) == 1 ):
+	$wf-&gt;popresults();
+	$wf-&gt;result( 'googlesuggest', 'https://www.google.com/search?ie=UTF-8&amp;oe=UTF-8&amp;q='.urlencode( $orig ), 'Nothing Found', 'No search apps found. Search Google for '.$orig, 'icon.png' );
+endif;
+
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Find Apps in Mac App Store</string>
+				<key>title</key>
+				<string>Find Apps in Store</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>008BEB46-2A21-4D90-A585-9E220A388C69</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>app</string>
+				<key>runningsubtext</key>
+				<string>Searching now, please wait...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$wf = new Workflows();
+
+$orig = "{query}";
+$json = $wf-&gt;request( "http://itunes.apple.com/search?country=cn&amp;entity=software&amp;limit=25&amp;term=".urlencode( $orig ) );
+$json = json_decode( $json, ture);
+$int = 1;
+$json=$json['results'];
+
+$wf-&gt;result( "searchinstore", "itunes://ax.search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?term=".urlencode( $orig ), 'Search apps with keyword "'.$orig.'"', 'Open iTunes and search apps with what you type.', "icon.png"  );
+
+
+foreach( $json as $sugg ):
+	$data = $sugg['trackCensoredName'];
+	$url = preg_replace("/^https?/", "itunes", $sugg['trackViewUrl']);
+	
+	$type = "for iPhone	";
+	
+	if( in_array("iosUniversal", $sugg['features']) ):
+		$type = "Universal	";
+	endif;
+	
+	if( count($sugg['screenshotUrls']) == 0):
+		$type = "for iPad	";
+	endif;
+
+	$wf-&gt;result( 
+		$int.'.'.time()
+		, "$url", "$data"
+		, $type.' '.$sugg['formattedPrice']
+			.' 	Version '.$sugg['version']
+			.'  	Ratings : '.number_format($sugg['averageUserRating'], 1, '.', '')
+			.' / 5	from '.number_format($sugg['userRatingCount'])
+			.' users  by '.$sugg['artistName']
+		, "icon.png"  );
+	$int++;
+endforeach;
+
+$results = $wf-&gt;results();
+if ( count( $results ) == 1 ):
+
+	$wf-&gt;popresults();
+	$wf-&gt;result( 'googlesuggest', 'https://www.google.com/search?ie=UTF-8&amp;oe=UTF-8&amp;q='.urlencode( $orig ), 'Nothing Found', 'No search apps found. Search Google for '.$orig, 'GoogleIcon.png' );
+endif;
+
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Find apps in iTunes App Store</string>
+				<key>title</key>
+				<string>Find Apps in Store</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>93843284-FB0D-40F4-9660-FD9D9F19CFA9</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>008BEB46-2A21-4D90-A585-9E220A388C69</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>514C7F51-5631-4B4C-9409-6EED2A62F6B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+		<key>93843284-FB0D-40F4-9660-FD9D9F19CFA9</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://yisiqi.github.com</string>
+</dict>
+</plist>
