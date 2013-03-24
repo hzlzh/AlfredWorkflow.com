@@ -1,16 +1,16 @@
 [AlfredWorkflow.com](http://AlfredWorkflow.com) (beta)
 ====
 
-## Path
+## Repo path
 
     --- 
-     |---- Downloads/             .alfredworkflow files    
-     |---- Sources/               source code                 
-     |---- index/                 some of AlfredWorkflow.com pages
+     |---- Downloads/             .alfredworkflow files for download mirror   
+     |---- Sources/               source code(Learn from others code)                 
+     |---- index/                 some of AlfredWorkflow.com beta pages
 
 ## Submit your works.
 
 * Submit Alfred 2 Workflows -> [here](http://www.alfredworkflow.com/submit-alfred-workflow/)
 * Submit Alfred 2 Themes -> Commmming soon!
 
-## We really need your 
+### Search, Install and Share, No Need to Reinvent the Wheel.
