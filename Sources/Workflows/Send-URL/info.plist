@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dk.aiyo.SendURL</string>
+	<key>connections</key>
+	<dict>
+		<key>D42C3359-8491-49C8-B954-0FF6937B1E8E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D84B7D54-9C0A-451D-89F3-6AAA7EE50596</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D84B7D54-9C0A-451D-89F3-6AAA7EE50596</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2448C14C-CE79-4CAA-AD29-738977B2415A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jonas Eriksen</string>
+	<key>description</key>
+	<string>Send a URL from one App to another</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Send URL</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>sh actionURL.sh "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D84B7D54-9C0A-451D-89F3-6AAA7EE50596</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>url</string>
+				<key>runningsubtext</key>
+				<string>Fetching URL...</string>
+				<key>script</key>
+				<string>sh sendURL.sh "{query}"
+</string>
+				<key>title</key>
+				<string>Send URL to...</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D42C3359-8491-49C8-B954-0FF6937B1E8E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>2</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Send URL</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2448C14C-CE79-4CAA-AD29-738977B2415A</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow selects the URL from the frontmost App or a URL from the Clipboard.
+
+Supported Apps are: Safari, Webkit, Google Chrome (Beta/Dev/Canary), Camino, Opera (and Opera Next )and Omniweb
+ 
+You can then send the URL to a variety of Apps, including:
+Safari, Webkit, Google Chrome (Beta/Dev/Canary), Camino, Opera (and Opera Next), Omniweb, Firefox, Aurora, iCab, Sleipnir, Paparazzi!, Mail, Sparrow, Postbox, Gmail, QuickTime Player, VLC, Adium, Droplr, downforeveryoneorjustme.com and Instapaper Mobilizer
+
+You can also copy the URL to OSX clipboard as text, HTML link or Markdown link.</string>
+	<key>uidata</key>
+	<dict>
+		<key>2448C14C-CE79-4CAA-AD29-738977B2415A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D42C3359-8491-49C8-B954-0FF6937B1E8E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D84B7D54-9C0A-451D-89F3-6AAA7EE50596</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.aiyo.dk/alfredapp/v2</string>
+</dict>
+</plist>
