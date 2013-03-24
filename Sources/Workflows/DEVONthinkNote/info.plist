@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.danielsh.alfred.dtn</string>
+	<key>connections</key>
+	<dict>
+		<key>BF7E567F-3F86-4034-B778-2171396B4C4B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E76AE06C-1F19-4D86-834C-07C8DDB26590</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E76AE06C-1F19-4D86-834C-07C8DDB26590</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DBEF6C07-086A-481D-A162-0D72818F6E89</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Daniel Shannon</string>
+	<key>description</key>
+	<string>Add simple notes to DEVONthink Pro.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>DEVONthink Note</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>dtn</string>
+				<key>runningsubtext</key>
+				<string>Working...</string>
+				<key>script</key>
+				<string>python dtn.py "{query}"</string>
+				<key>subtext</key>
+				<string>Add a note to DEVONthink Pro.</string>
+				<key>title</key>
+				<string>DEVONthink Note</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>BF7E567F-3F86-4034-B778-2171396B4C4B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>DEVONthink Note</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>DBEF6C07-086A-481D-A162-0D72818F6E89</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)		set prevDelimiter to AppleScript's text item delimiters	set AppleScript's text item delimiters to " ||| "	set queryItems to every text item of q	set AppleScript's text item delimiters to prevDelimiter		set qDBName to item 1 of queryItems	set qGroup to item 2 of queryItems	set qTitle to item 3 of queryItems	set qNote to item 4 of queryItems		tell application id "DNtp"		set theDBs to (databases whose name is qDBName)		set theDB to item 1 of theDBs		if qDBName is "Inbox" and qGroup is "Inbox" then			set oLocation to incoming group of inbox		else			set thePath to path of theDB			set oDB to open database thePath			set oLocation to first parent of oDB where name is qGroup		end if		set oRecord to create record with {type:txt, source:qTitle &amp; return &amp; return &amp; qNote} in oLocation				activate		open tab for record oRecord				set output to "Saved " &amp; qTitle &amp; " to " &amp; qGroup &amp; "."	end tell		return output	end alfred_script</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>E76AE06C-1F19-4D86-834C-07C8DDB26590</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Use the feedback system to navigate through your databases, then press the spacebar to begin entering a note. Anything before a colon will be treated as a title, or a timestamp will be added by default.</string>
+	<key>uidata</key>
+	<dict>
+		<key>BF7E567F-3F86-4034-B778-2171396B4C4B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>DBEF6C07-086A-481D-A162-0D72818F6E89</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E76AE06C-1F19-4D86-834C-07C8DDB26590</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://alfred.daniel.sh</string>
+</dict>
+</plist>

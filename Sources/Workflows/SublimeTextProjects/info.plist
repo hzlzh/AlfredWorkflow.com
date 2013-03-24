@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.danielsh.alfred.stproj</string>
+	<key>connections</key>
+	<dict>
+		<key>62AB575B-3988-451F-8ECC-9B1C7FA19150</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4DA0CA36-464C-45C0-BB0D-61E1404CD052</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Daniel Shannon</string>
+	<key>description</key>
+	<string>Search and open Sublime Text projects.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Sublime Text Projects</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>if [ -d "/Applications/Sublime Text.app/" ]; then
+	/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n --stay --project {query}
+else
+	/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl -n --stay --project {query}
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4DA0CA36-464C-45C0-BB0D-61E1404CD052</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>p</string>
+				<key>script</key>
+				<string>python proj.py {query}</string>
+				<key>subtext</key>
+				<string>Search and open Sublime Text projects.</string>
+				<key>title</key>
+				<string>Search Sublime Projects</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>62AB575B-3988-451F-8ECC-9B1C7FA19150</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>4DA0CA36-464C-45C0-BB0D-61E1404CD052</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>62AB575B-3988-451F-8ECC-9B1C7FA19150</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://alfred.daniel.sh/</string>
+</dict>
+</plist>
