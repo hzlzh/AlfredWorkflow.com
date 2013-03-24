@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.isometry.alfred.ssh</string>
+	<key>connections</key>
+	<dict>
+		<key>73503A72-F4BD-4C29-B531-ACE7CF405F6B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>027D62F5-14E9-4EA0-BE27-57C38B1ECC1F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Robin Breathe</string>
+	<key>description</key>
+	<string>Open Secure SHell with smart hostname autocompletion</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ssh</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>ssh</string>
+				<key>runningsubtext</key>
+				<string>Please Wait: matching host…</string>
+				<key>script</key>
+				<string>from alfredssh import complete
+print complete("{query}")</string>
+				<key>subtext</key>
+				<string>Open Secure SHell with smart hostname autocompletion</string>
+				<key>title</key>
+				<string>Open SSH</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>73503A72-F4BD-4C29-B531-ACE7CF405F6B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>ssh://{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>027D62F5-14E9-4EA0-BE27-57C38B1ECC1F</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Easily open remote SSH sessions using your default ssh: protocol handler (the default being Terminal.app) with full anchored hostname autocompletion against the contents of ~/.ssh/config (e.g. Host aliases with Hostname override), ~/.ssh/known_hosts (historical connections), /etc/hosts and, optionally, Bonjour (Back to My Mac and local hosts advertising their ability to accept SSH connections).
+
+NB: in order to enable Bonjour discovery, you must install the pybonjour module: `&gt; sudo /usr/bin/easy_install pybonjour`</string>
+	<key>uidata</key>
+	<dict>
+		<key>027D62F5-14E9-4EA0-BE27-57C38B1ECC1F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>73503A72-F4BD-4C29-B531-ACE7CF405F6B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/isometry/alfredworkflows/tree/master/net.isometry.alfred.ssh</string>
+</dict>
+</plist>
