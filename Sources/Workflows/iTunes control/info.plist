@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>florian.itunes</string>
+	<key>connections</key>
+	<dict>
+		<key>19E888AD-6B89-4EE0-BB14-81F9CEB974A5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8B267038-D340-421A-8D15-B95C2362D873</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4179E5CC-2615-42D9-9A3F-5AA3A0E88F99</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3EFBB1CA-0F33-48FE-8D2E-32F1150FABEF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8A67ADC7-EFEF-4BE0-8141-9AFBB93A06C7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C07ED000-310B-4530-BA79-4CBF4F061529</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A0DB44F4-F2EA-4D06-BF90-5DDE618F166E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>24EF4DF5-60C5-4FE6-8803-7940C1A90EA5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>19E888AD-6B89-4EE0-BB14-81F9CEB974A5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>BB8B7B35-8023-484E-8202-33A0050D8C58</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3A1DC238-0105-416A-B3A3-D8793DBFC846</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C07ED000-310B-4530-BA79-4CBF4F061529</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>954F0206-7C21-4FE0-9A82-1F51A4325094</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D707CC79-EE23-407D-9A21-FB0478256703</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3EFBB1CA-0F33-48FE-8D2E-32F1150FABEF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Florian Pellet</string>
+	<key>description</key>
+	<string>Control iTunes with Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>iTunes control</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>itunes</string>
+				<key>text</key>
+				<string>Show the iTunes Main Window</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>BB8B7B35-8023-484E-8202-33A0050D8C58</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Done.</string>
+				<key>title</key>
+				<string>Delete watched shows</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8B267038-D340-421A-8D15-B95C2362D873</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Rate iTunes Track</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>954F0206-7C21-4FE0-9A82-1F51A4325094</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>delete tv shows</string>
+				<key>subtext</key>
+				<string>Removes all watched TV Shows from iTunes library &amp; Finder</string>
+				<key>text</key>
+				<string>Delete watched TV Shows</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A0DB44F4-F2EA-4D06-BF90-5DDE618F166E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>play</string>
+				<key>text</key>
+				<string>Play</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4179E5CC-2615-42D9-9A3F-5AA3A0E88F99</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>command</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.itunescommand</string>
+			<key>uid</key>
+			<string>3EFBB1CA-0F33-48FE-8D2E-32F1150FABEF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>pause</string>
+				<key>text</key>
+				<string>Pause</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D707CC79-EE23-407D-9A21-FB0478256703</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+if application "iTunes" is running then	tell application "iTunes"		if player state is paused or player state is stopped then			return "iTunes is not currently playing a track"		else			set trackname to name of current track			set rating of current track to q * 20			return "'" &amp; trackname &amp; "'" &amp; " rated " &amp; q &amp; " stars."		end if	end tellelse	return "iTunes is not running"end if
+end alfred_script</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C07ED000-310B-4530-BA79-4CBF4F061529</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>rate</string>
+				<key>runningsubtext</key>
+				<string>Fetching current song...</string>
+				<key>script</key>
+				<string>
+
+isRunning=$(osascript -e 'if application "iTunes" is running then true')
+
+if [ $isRunning == "true" ]; then
+	isPlaying=$(osascript -e 'tell application "iTunes" to if player state is playing then true')
+fi
+
+if [ $isPlaying ]; then
+	title=$(osascript -e 'tell application "iTunes" to "" &amp; name of current track &amp; " - " &amp; artist of current track')
+	
+	if [ "{query}" == "" ]; then
+		rating=$(osascript -e 'tell application "iTunes" to "" &amp; rating of current track')
+		rating=$(($rating/20))
+		valid='valid="no"'
+		subtitle='Currently rated: '
+	else
+		rating={query}
+		valid='valid="yes"'
+		subtitle='Rate current song: '
+	fi
+	for i in {1..5}
+	do
+		if [ "$i" -le "$rating" ]; then
+			subtitle+='★'
+		else
+			subtitle+=' •'
+		fi
+	done
+else
+	valid='valid="no"'
+	title='No song is playing'
+	subtitle='Cannot rate a song when there is no song, duh!'
+fi
+
+var1="&amp;"
+var2="&amp;amp;"
+title=${title//$var1/$var2}
+
+var1="&gt;"
+var2="&amp;gt;"
+title=${title//$var1/$var2}
+
+var1="&lt;"
+var2="&amp;lt;"
+title=${title//$var1/$var2}
+
+var1="'"
+var2="&amp;apos;"
+title=${title//$var1/$var2}
+
+var1='"'
+var2="&amp;quot;"
+title=${title//$var1/$var2}
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  &lt;item uid="rate_song" arg="{query}" '$valid'&gt;
+	&lt;title&gt;'$title'&lt;/title&gt;
+	&lt;icon&gt;icon.png&lt;/icon&gt;
+	&lt;subtitle&gt;'$subtitle'&lt;/subtitle&gt;
+  &lt;/item&gt;
+&lt;/items&gt;'
+
+
+
+
+
+</string>
+				<key>subtext</key>
+				<string>Rate current song {query} stars</string>
+				<key>title</key>
+				<string>Rate iTunes Track</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8A67ADC7-EFEF-4BE0-8141-9AFBB93A06C7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "iTunes"	try		set filesToDelete to location of (file tracks whose (video kind is TV show) and (unplayed is false) and (bookmark = 0.0))		delete (tracks whose (video kind is TV show) and (unplayed is false) and (bookmark = 0.0))	end tryend telltell application "Finder"	try		repeat with theFile in filesToDelete			delete theFile		end repeat	end tryend tell
+end alfred_script</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>19E888AD-6B89-4EE0-BB14-81F9CEB974A5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Started...</string>
+				<key>title</key>
+				<string>Delete watched shows</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>24EF4DF5-60C5-4FE6-8803-7940C1A90EA5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "System Events"	tell process "iTunes"		tell menu bar 1			tell menu bar item "Window"				tell menu "Window"					click menu item "iTunes"				end tell			end tell		end tell	end tellend tell
+tell application "iTunes" to activate
+end alfred_script</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>3A1DC238-0105-416A-B3A3-D8793DBFC846</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>The only interesting here is in the "rate" script filter. Don't hesitate to reuse the info getting code.</string>
+	<key>uidata</key>
+	<dict>
+		<key>19E888AD-6B89-4EE0-BB14-81F9CEB974A5</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>24EF4DF5-60C5-4FE6-8803-7940C1A90EA5</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>3A1DC238-0105-416A-B3A3-D8793DBFC846</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>3EFBB1CA-0F33-48FE-8D2E-32F1150FABEF</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>4179E5CC-2615-42D9-9A3F-5AA3A0E88F99</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>8A67ADC7-EFEF-4BE0-8141-9AFBB93A06C7</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8B267038-D340-421A-8D15-B95C2362D873</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>954F0206-7C21-4FE0-9A82-1F51A4325094</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A0DB44F4-F2EA-4D06-BF90-5DDE618F166E</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>BB8B7B35-8023-484E-8202-33A0050D8C58</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>C07ED000-310B-4530-BA79-4CBF4F061529</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D707CC79-EE23-407D-9A21-FB0478256703</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>florianpellet.com</string>
+</dict>
+</plist>
