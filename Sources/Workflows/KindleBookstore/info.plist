@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.danielsh.alfred.kindlestore</string>
+	<key>connections</key>
+	<dict>
+		<key>5E363F44-7D39-4597-9729-6A9940B381E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E1550646-65AA-4ACE-A43C-24B7E7A9ADAC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Daniel Shannon</string>
+	<key>description</key>
+	<string>Search Amazon's Kindle bookstore.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Kindle Bookstore</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>kindle</string>
+				<key>script</key>
+				<string>python kindle.py '{query}'</string>
+				<key>subtext</key>
+				<string>Please wait; searching Kindle store.</string>
+				<key>title</key>
+				<string>Kindle Bookstore</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5E363F44-7D39-4597-9729-6A9940B381E1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>E1550646-65AA-4ACE-A43C-24B7E7A9ADAC</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>5E363F44-7D39-4597-9729-6A9940B381E1</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E1550646-65AA-4ACE-A43C-24B7E7A9ADAC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://daniel.sh</string>
+</dict>
+</plist>
