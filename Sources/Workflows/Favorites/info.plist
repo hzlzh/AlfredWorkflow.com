@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.david.faves</string>
+	<key>connections</key>
+	<dict>
+		<key>290F6931-A9F0-4547-9196-2187F7534B55</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5B6BD71F-027C-4652-9001-771485949D34</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>09A8FA4A-4726-4AD2-9628-7A968C7FCD0A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Browse in Alfred</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4EE21E91-B16A-4CF3-9B40-2E2198555BF2</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Delete Favorite</string>
+			</dict>
+		</array>
+		<key>2D56E997-57BB-4B74-919E-706B273E1326</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2BCD1015-6DEA-462C-8E37-F1439F833A70</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4EE21E91-B16A-4CF3-9B40-2E2198555BF2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2BCD1015-6DEA-462C-8E37-F1439F833A70</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AB1EF077-83C1-4BEA-842A-DAE1D711DF9C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D56E997-57BB-4B74-919E-706B273E1326</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>David Ferguson</string>
+	<key>description</key>
+	<string>Work with user defined set of favorites</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Favorites</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>faves</string>
+				<key>runningsubtext</key>
+				<string>Getting List of Faves ...</string>
+				<key>script</key>
+				<string>require('workflows.php');
+$w = new Workflows( 'jdfwarrior.faves' );
+
+$list = $w-&gt;data().'/favorites.json';
+
+$filter = "{query}";
+
+if ( file_exists( $list ) ):
+	$favs = $w-&gt;read( $list, true );
+	if ( count( $favs ) &gt; 0 ):
+		foreach( $favs as $fav ):
+			if ($filter &amp;&amp; strpos(strtolower($fav),strtolower($filter)) === false) continue;
+			$w-&gt;result( $fav, $fav, basename( $fav ), $fav, 'fileicon:'.$fav, 'yes', '', 'file' );
+		endforeach;
+	else:
+		$w-&gt;result( 'na', 'na', 'No favorites', 'No favorites were found. Try adding some new favs', 'icon.png', 'no' );
+	endif;
+else:
+	$w-&gt;result( 'na', 'na', 'No favorites', 'No favorites were found. Try adding some new favs', 'icon.png', 'no' );
+endif;
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>List Favorites</string>
+				<key>title</key>
+				<string>Faves</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>290F6931-A9F0-4547-9196-2187F7534B55</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Add to Faves</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>AB1EF077-83C1-4BEA-842A-DAE1D711DF9C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Favorite Folders</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2BCD1015-6DEA-462C-8E37-F1439F833A70</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>require('workflows.php');
+$w = new Workflows( 'jdfwarrior.faves' );
+
+$del  = "{query}";
+$file = $w-&gt;data().'/favorites.json';
+$favs = $w-&gt;read( $file, true );
+
+if ( $favs ):
+	$i = 0;
+	while( $fav = $favs[$i] ):
+		if ( $del == $fav ):
+			unset( $favs[$i] );
+			echo 'Removed '.$del.' from favorites';
+			$w-&gt;write( $favs, $file );
+			break;
+		endif;
+		$i++;
+	endwhile;
+else:
+	echo 'Favorites couldn\'t be located. Nothing deleted.';
+endif;</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4EE21E91-B16A-4CF3-9B40-2E2198555BF2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>require('workflows.php');
+$w = new Workflows( 'jdfwarrior.faves' );
+
+$folders = explode( '	', "{query}" );
+
+$file = $w-&gt;data().'/favorites.json';
+exec( 'touch "'.$file.'"' );
+
+$favs = $w-&gt;read( $file, true );
+
+if ( !$favs ):
+	$favs = array();
+endif;
+
+foreach( $folders as $fav ):
+	array_push( $favs, $fav );
+endforeach;
+
+$w-&gt;write( $favs, $file );
+
+echo 'Favorite Folders List Updated';</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2D56E997-57BB-4B74-919E-706B273E1326</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>5B6BD71F-027C-4652-9001-771485949D34</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.browseinalfred</string>
+			<key>uid</key>
+			<string>09A8FA4A-4726-4AD2-9628-7A968C7FCD0A</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>09A8FA4A-4726-4AD2-9628-7A968C7FCD0A</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>290F6931-A9F0-4547-9196-2187F7534B55</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>2BCD1015-6DEA-462C-8E37-F1439F833A70</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>2D56E997-57BB-4B74-919E-706B273E1326</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>4EE21E91-B16A-4CF3-9B40-2E2198555BF2</key>
+		<dict>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>5B6BD71F-027C-4652-9001-771485949D34</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>AB1EF077-83C1-4BEA-842A-DAE1D711DF9C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>dferg.us</string>
+</dict>
+</plist>
