@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.danielsh.alfred.sublopen</string>
+	<key>connections</key>
+	<dict>
+		<key>7C37B436-47F5-447A-AEF2-D84595EAC652</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DEAFC118-81B7-42D6-A99F-F007CE98F6DA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D8F6C528-1659-460B-8D59-DBE023996BA9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>21B06A24-98F3-4539-B977-5C0F51330422</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F955C061-DEC7-4AE3-9551-2BAEA165F6A1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>21B06A24-98F3-4539-B977-5C0F51330422</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FE3B6C7B-FC46-47E1-8278-DCEDE54BC86B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>21B06A24-98F3-4539-B977-5C0F51330422</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Daniel Shannon</string>
+	<key>description</key>
+	<string>Open a file or folder in Sublime Text.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Open in Sublime</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+    if length of q is greater than 0 then
+        set oldDelimit to AppleScript's text item delimiters
+        set AppleScript's text item delimiters to {tab}
+        set pathList to {}
+        set splitPaths to every text item of q
+        repeat with anItem in splitPaths
+            set itemPath to quoted form of POSIX path of (anItem as text)
+            set pathList to pathList &amp; " " &amp; itemPath
+        end repeat
+        set AppleScript's text item delimiters to oldDelimit
+    else
+        tell application "Finder"
+            set theSelection to (get selection)
+            if length of theSelection is greater than 0 then
+                set pathList to {}
+                repeat with anItem in theSelection
+                    set itemPath to quoted form of POSIX path of (anItem as text)
+                    set pathList to pathList &amp; " " &amp; itemPath
+                end repeat
+            else
+                set pathList to (quoted form of POSIX path of (folder of the front window as alias))
+            end if
+        end tell
+    end if
+
+    tell application "System Events"
+        if exists file "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" then
+            do shell script "/Applications/Sublime\\ Text.app/Contents/SharedSupport/bin/subl --stay -n " &amp; pathList
+        else
+            do shell script "/Applications/Sublime\\ Text\\ 2.app/Contents/SharedSupport/bin/subl --stay -n " &amp; pathList
+        end if
+    end tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>21B06A24-98F3-4539-B977-5C0F51330422</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>FE3B6C7B-FC46-47E1-8278-DCEDE54BC86B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<true/>
+				<key>keyword</key>
+				<string>subl</string>
+				<key>scopes</key>
+				<array/>
+				<key>subtext</key>
+				<string>Open file matching '{query}' in Sublime.</string>
+				<key>title</key>
+				<string>Search and Open in Sublime</string>
+				<key>types</key>
+				<array/>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>7C37B436-47F5-447A-AEF2-D84595EAC652</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>if [ -d "/Applications/Sublime Text.app/" ]; then
+	/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n --stay "{query}"
+else
+	/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl -n --stay "{query}"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DEAFC118-81B7-42D6-A99F-F007CE98F6DA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Open in Sublime</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>F955C061-DEC7-4AE3-9551-2BAEA165F6A1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>subl</string>
+				<key>subtext</key>
+				<string>Open Finder selection or path in Sublime Text.</string>
+				<key>text</key>
+				<string>Open in Sublime</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D8F6C528-1659-460B-8D59-DBE023996BA9</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Select files or folders in the Finder or enter a list of paths to open your selection in Sublime Text 2 or 3. The script defaults to Sublime Text 3, but will use ST2 as a fallback if it's not installed. Can also be used as a file action.</string>
+	<key>uidata</key>
+	<dict>
+		<key>21B06A24-98F3-4539-B977-5C0F51330422</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>7C37B436-47F5-447A-AEF2-D84595EAC652</key>
+		<dict>
+			<key>ypos</key>
+			<real>350</real>
+		</dict>
+		<key>D8F6C528-1659-460B-8D59-DBE023996BA9</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>DEAFC118-81B7-42D6-A99F-F007CE98F6DA</key>
+		<dict>
+			<key>ypos</key>
+			<real>350</real>
+		</dict>
+		<key>F955C061-DEC7-4AE3-9551-2BAEA165F6A1</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>FE3B6C7B-FC46-47E1-8278-DCEDE54BC86B</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://alfred.daniel.sh</string>
+</dict>
+</plist>
