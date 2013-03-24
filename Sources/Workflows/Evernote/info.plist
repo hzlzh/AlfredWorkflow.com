@@ -83,6 +83,19 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>D4DCD4EA-CEE5-495D-BA5F-7C8F8259D4DB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>388F687E-0773-45D9-8168-0A43874A46B1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EA1B23BD-B97B-428C-880C-5CE13AED4A32</key>
+		<array/>
 	</dict>
 	<key>createdby</key>
 	<string>Carlos Alberto Sztoltz</string>
@@ -91,7 +104,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Evernote</string>
+	<string>Evernote 3.1</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -140,6 +153,25 @@
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>8AC9DA30-2F9D-4E61-919C-DA5DC07BC4D5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>1</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>typenote </string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>EA1B23BD-B97B-428C-880C-5CE13AED4A32</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -218,6 +250,54 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Evernote</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D939543B-25D2-4C34-BAF2-4CAA441B9FA2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>typenote</string>
+				<key>script</key>
+				<string>osascript addtype_evernote.scpt "{query}"</string>
+				<key>subtext</key>
+				<string>Type the note content</string>
+				<key>title</key>
+				<string>Type a Note</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D4DCD4EA-CEE5-495D-BA5F-7C8F8259D4DB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -242,29 +322,6 @@
 			<key>uid</key>
 			<string>2B7138ED-D927-4D76-A708-9028C9AC18DB</string>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Evernote</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>D939543B-25D2-4C34-BAF2-4CAA441B9FA2</string>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>Code snippets from:
@@ -275,7 +332,7 @@ http://dev.evernote.com/documentation/local/chapters/mac.php</string>
 		<key>11F0317D-BA3E-4674-BDC0-EB5A21092114</key>
 		<dict>
 			<key>ypos</key>
-			<real>130</real>
+			<real>110</real>
 		</dict>
 		<key>2B7138ED-D927-4D76-A708-9028C9AC18DB</key>
 		<dict>
@@ -285,7 +342,7 @@ http://dev.evernote.com/documentation/local/chapters/mac.php</string>
 		<key>388F687E-0773-45D9-8168-0A43874A46B1</key>
 		<dict>
 			<key>ypos</key>
-			<real>250</real>
+			<real>290</real>
 		</dict>
 		<key>3D0C64EE-F2CE-4A9A-91E6-3A11D95E993E</key>
 		<dict>
@@ -295,27 +352,37 @@ http://dev.evernote.com/documentation/local/chapters/mac.php</string>
 		<key>8AC9DA30-2F9D-4E61-919C-DA5DC07BC4D5</key>
 		<dict>
 			<key>ypos</key>
-			<real>460</real>
+			<real>500</real>
 		</dict>
 		<key>9A1E0EC0-B446-4586-9ED4-1229700D064A</key>
 		<dict>
 			<key>ypos</key>
-			<real>250</real>
+			<real>190</real>
 		</dict>
 		<key>B545AB8F-C982-484B-9A94-5849E5B1B098</key>
 		<dict>
 			<key>ypos</key>
-			<real>360</real>
+			<real>400</real>
 		</dict>
 		<key>C95E4049-FEFD-4FD2-AEEF-8C949B676AF2</key>
 		<dict>
 			<key>ypos</key>
-			<real>130</real>
+			<real>110</real>
+		</dict>
+		<key>D4DCD4EA-CEE5-495D-BA5F-7C8F8259D4DB</key>
+		<dict>
+			<key>ypos</key>
+			<real>290</real>
 		</dict>
 		<key>D939543B-25D2-4C34-BAF2-4CAA441B9FA2</key>
 		<dict>
 			<key>ypos</key>
-			<real>130</real>
+			<real>200</real>
+		</dict>
+		<key>EA1B23BD-B97B-428C-880C-5CE13AED4A32</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
