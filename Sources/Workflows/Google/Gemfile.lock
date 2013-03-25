@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    google-search (1.0.3)
+      json
+    json (1.7.7)
+    nokogiri (1.5.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  google-search
+  nokogiri

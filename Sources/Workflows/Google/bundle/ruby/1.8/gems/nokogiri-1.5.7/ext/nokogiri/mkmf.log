@@ -1,0 +1,387 @@
+package configuration for libxslt is not found
+package configuration for libxml-2.0 is not found
+package configuration for libiconv is not found
+find_header: checking for libxml/parser.h... -------------------- yes
+
+"xcrun cc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <libxml/parser.h>
+/* end */
+
+--------------------
+
+find_header: checking for libxslt/xslt.h... -------------------- yes
+
+"xcrun cc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <libxslt/xslt.h>
+/* end */
+
+--------------------
+
+find_header: checking for libexslt/exslt.h... -------------------- yes
+
+"xcrun cc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <libexslt/exslt.h>
+/* end */
+
+--------------------
+
+have_func: checking for iconv_open() in iconv.h... -------------------- no
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.       -lruby  -lpthread -ldl -lobjc   "
+ld: warning: directory not found for option '-L/usr/local/Cellar/libxml2/2.9.0/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+Undefined symbols for architecture x86_64:
+  "_iconv_open", referenced from:
+      _t in conftest-SDD6iE.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { void ((*volatile p)()); p = (void ((*)()))iconv_open; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.       -lruby  -lpthread -ldl -lobjc   "
+conftest.c:5:22: error: too few arguments to function call, expected 2, have 0
+int t() { iconv_open(); return 0; }
+          ~~~~~~~~~~ ^
+/usr/include/iconv.h:65:1: note: 'iconv_open' declared here
+iconv_t iconv_open (const char* /*tocode*/, const char* /*fromcode*/);
+^
+1 error generated.
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { iconv_open(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for iconv_open() in -liconv... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.       -lruby -liconv  -lpthread -ldl -lobjc   "
+ld: warning: directory not found for option '-L/usr/local/Cellar/libxml2/2.9.0/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { void ((*volatile p)()); p = (void ((*)()))iconv_open; return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for xmlParseDoc() in -lxml2... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -liconv  -lruby -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:53: error: use of undeclared identifier 'xmlParseDoc'
+int t() { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -liconv  -lruby -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:11: warning: implicit declaration of function 'xmlParseDoc' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { xmlParseDoc(); return 0; }
+          ^
+1 warning generated.
+ld: warning: directory not found for option '-L/usr/local/Cellar/libxml2/2.9.0/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlParseDoc(); return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for xsltParseStylesheetDoc() in -lxslt... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lxml2 -liconv  -lruby -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:53: error: use of undeclared identifier 'xsltParseStylesheetDoc'
+int t() { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lxml2 -liconv  -lruby -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:11: warning: implicit declaration of function 'xsltParseStylesheetDoc' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { xsltParseStylesheetDoc(); return 0; }
+          ^
+1 warning generated.
+ld: warning: directory not found for option '-L/usr/local/Cellar/libxml2/2.9.0/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xsltParseStylesheetDoc(); return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for exsltFuncRegister() in -lexslt... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:53: error: use of undeclared identifier 'exsltFuncRegister'
+int t() { void ((*volatile p)()); p = (void ((*)()))exsltFuncRegister; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))exsltFuncRegister; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:11: warning: implicit declaration of function 'exsltFuncRegister' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { exsltFuncRegister(); return 0; }
+          ^
+1 warning generated.
+ld: warning: directory not found for option '-L/usr/local/Cellar/libxml2/2.9.0/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { exsltFuncRegister(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlHasFeature()... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:53: error: use of undeclared identifier 'xmlHasFeature'
+int t() { void ((*volatile p)()); p = (void ((*)()))xmlHasFeature; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlHasFeature; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:11: warning: implicit declaration of function 'xmlHasFeature' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { xmlHasFeature(); return 0; }
+          ^
+1 warning generated.
+ld: warning: directory not found for option '-L/usr/local/Cellar/libxml2/2.9.0/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlHasFeature(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlFirstElementChild()... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:53: error: use of undeclared identifier 'xmlFirstElementChild'
+int t() { void ((*volatile p)()); p = (void ((*)()))xmlFirstElementChild; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlFirstElementChild; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:11: warning: implicit declaration of function 'xmlFirstElementChild' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { xmlFirstElementChild(); return 0; }
+          ^
+1 warning generated.
+ld: warning: directory not found for option '-L/usr/local/Cellar/libxml2/2.9.0/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlFirstElementChild(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlRelaxNGSetParserStructuredErrors()... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:53: error: use of undeclared identifier 'xmlRelaxNGSetParserStructuredErrors'
+int t() { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:11: warning: implicit declaration of function 'xmlRelaxNGSetParserStructuredErrors' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { xmlRelaxNGSetParserStructuredErrors(); return 0; }
+          ^
+1 warning generated.
+ld: warning: directory not found for option '-L/usr/local/Cellar/libxml2/2.9.0/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlRelaxNGSetParserStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlRelaxNGSetParserStructuredErrors()... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:53: error: use of undeclared identifier 'xmlRelaxNGSetParserStructuredErrors'
+int t() { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:11: warning: implicit declaration of function 'xmlRelaxNGSetParserStructuredErrors' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { xmlRelaxNGSetParserStructuredErrors(); return 0; }
+          ^
+1 warning generated.
+ld: warning: directory not found for option '-L/usr/local/Cellar/libxml2/2.9.0/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlRelaxNGSetParserStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlRelaxNGSetValidStructuredErrors()... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:53: error: use of undeclared identifier 'xmlRelaxNGSetValidStructuredErrors'
+int t() { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetValidStructuredErrors; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetValidStructuredErrors; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:11: warning: implicit declaration of function 'xmlRelaxNGSetValidStructuredErrors' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { xmlRelaxNGSetValidStructuredErrors(); return 0; }
+          ^
+1 warning generated.
+ld: warning: directory not found for option '-L/usr/local/Cellar/libxml2/2.9.0/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlRelaxNGSetValidStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlSchemaSetValidStructuredErrors()... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:53: error: use of undeclared identifier 'xmlSchemaSetValidStructuredErrors'
+int t() { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetValidStructuredErrors; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetValidStructuredErrors; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:11: warning: implicit declaration of function 'xmlSchemaSetValidStructuredErrors' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { xmlSchemaSetValidStructuredErrors(); return 0; }
+          ^
+1 warning generated.
+ld: warning: directory not found for option '-L/usr/local/Cellar/libxml2/2.9.0/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlSchemaSetValidStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlSchemaSetParserStructuredErrors()... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:53: error: use of undeclared identifier 'xmlSchemaSetParserStructuredErrors'
+int t() { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetParserStructuredErrors; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetParserStructuredErrors; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I. -I-I-I/opt/local/include -I-I-I/usr/local/include -I-I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I-I/usr/include -I-I-I/usr/include/libxml2 -I/usr/local/Cellar/libxml2/2.9.0/include/libxml2 -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include/libxml2 -I-I/opt/local/include -I-I/usr/local/include -I-I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I-I/usr/include -I-I/usr/include/libxml2 -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/include -I/usr/include -I/usr/include/libxml2  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    -g -DXP_UNIX conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/Cellar/libxml2/2.9.0/lib -L/opt/local/lib -L/usr/local/lib -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/lib -L.      -lexslt -lxslt -lxml2 -liconv  -lruby -lexslt -lxslt -lxml2 -liconv  -lpthread -ldl -lobjc   "
+conftest.c:3:11: warning: implicit declaration of function 'xmlSchemaSetParserStructuredErrors' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { xmlSchemaSetParserStructuredErrors(); return 0; }
+          ^
+1 warning generated.
+ld: warning: directory not found for option '-L/usr/local/Cellar/libxml2/2.9.0/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { xmlSchemaSetParserStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+

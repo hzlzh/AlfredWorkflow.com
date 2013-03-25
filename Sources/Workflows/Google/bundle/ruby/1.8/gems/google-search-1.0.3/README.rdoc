@@ -1,0 +1,95 @@
+
+= Google Search
+
+Fast, feature rich Google Search client. Search web results, images,
+books, local, patents, blogs and news using an elegant Ruby API with
+only a single dependency.
+
+== Dependencies 
+
+* json gem
+
+== Features
+
+* Fast
+* Lazy Enumeration (requests more results from google, not all at once)
+* Populates Google::Search::Item's blog, book, image, local, news, patent, video, and web
+* Clean, well documented source code
+* Full test coverage
+
+== Classes
+
+  - Google::Search                  | superclass of all other search classes. Is Enumerable
+  - Google::Search::Web             | web search.
+  - Google::Search::Blog            | blog search.
+  - Google::Search::Book            | book search.
+  - Google::Search::Image           | image search.
+  - Google::Search::Local           | local search.
+  - Google::Search::News            | news search.
+  - Google::Search::Patent          | patent search.
+  - Google::Search::Video           | video search.
+  - Google::Search::Response        | single request response, containing items. Is Enumerable
+  - Google::Search::Item            | single item, superclass of all other items.
+  - Google::Search::Item::Web       | single item containing web specific data.
+  - Google::Search::Item::Blog      | single item containing blog specific data.
+  - Google::Search::Item::Book      | single item containing book specific data.
+  - Google::Search::Item::Image     | single item containing image specific data.
+  - Google::Search::Item::Local     | single item containing local specific data.
+  - Google::Search::Item::News      | single item containing news specific data.
+  - Google::Search::Item::Patent    | single item containing patent specific data.
+  - Google::Search::Item::Video     | single item containing video specific data.
+
+== Arbitrary Query String Support
+
+Arbitrary key / value pairs may be passed to Google::Search.new, all options
+passed that are not assigned (deleted) will pass on to be part of the query string. 
+
+For argument reference visit: http://code.google.com/apis/ajaxsearch/documentation/reference.html#_fonje_web
+  
+== Items
+
+Each item type (web, image, etc) is a subclass of Google::Search::Item,
+whose constant is Google::Search::Item::{Web, Image, Blog, etc}. Every aspect
+of google-search is well documented, so poke around to learn more or view
+spec/item_spec.rb for item attributes.
+
+== Image example
+
+Below we simply create a new :image search, and pass a :query string.
+Query strings are urlencoded when Search#get_uri is called, so there
+is no reason to do so manually.
+
+  File.open('path/to/images.html', 'w+') do |file|
+    Google::Search::Image.new(:query => 'Cookies').each do |image|
+      file.write %(<img src="#{image.uri}">)
+    end
+  end
+  
+== More Information
+
+* View the source :) 
+
+== License:
+
+(The MIT License)
+
+Copyright (c) 2009 TJ Holowaychuk <tj@vision-media.ca>
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, an d/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

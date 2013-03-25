@@ -1,0 +1,11 @@
+
+require 'google-search/search/mixins'
+require 'google-search/search/base'
+require 'google-search/search/web'
+require 'google-search/search/blog'
+require 'google-search/search/image'
+require 'google-search/search/local'
+require 'google-search/search/news'
+require 'google-search/search/video'
+require 'google-search/search/book'
+require 'google-search/search/patent'
