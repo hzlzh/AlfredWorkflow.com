@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dropbox</string>
+	<key>connections</key>
+	<dict>
+		<key>012BC202-969C-4B85-A390-11B5E0DD620B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C7BFE155-2978-4762-A241-EE6D4208432D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>971818E7-5063-44EB-B508-FE0B3F8FFFC0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>745E2F73-3A8D-4373-AC7E-367961F830E5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C7BFE155-2978-4762-A241-EE6D4208432D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>971818E7-5063-44EB-B508-FE0B3F8FFFC0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7B5216CE-D88B-4D2B-9DEF-1ED8E17F6064</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>012BC202-969C-4B85-A390-11B5E0DD620B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B9551011-33AA-4DEA-AC30-2DF1D8092DF0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>745E2F73-3A8D-4373-AC7E-367961F830E5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Duane Johnson</string>
+	<key>description</key>
+	<string>OAuth Connector for Dropbobx Quick Links</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Dropbox Quick Links</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>B9551011-33AA-4DEA-AC30-2DF1D8092DF0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string># Put this init script directly into the Alfred script window and
+# it will load main.rb with console logging enabled for Ruby exceptions
+
+# Add workflow directory to ruby path
+$: &lt;&lt; File.join(Dir.pwd)
+
+# Add workflow gem repository to gem path
+ENV['GEM_PATH'] = File.join(Dir.pwd, 'ruby-1.8')
+
+# Provide a facility to log messages to Console.app:
+def console_log(msg)
+  escape = proc{ |m| m.gsub("'", "'\\\\''") }
+  `logger -t 'Alfred Workflow' '#{escape[msg]}'`
+end
+# Yay! A way to debug Alfred scripts. You can use either method:
+#   raise "I need to explain how this happened…"
+#                   OR
+#   Alfred.log "parachutes away!"
+#
+# Note: to see the messages, open up Console.app. If there is a backtrace,
+# you'll need to press the little "right arrow" next to the log line.
+
+# Load and evaluate a Ruby file in the current bundle's directory
+def load_ruby_file(filename)
+  ruby_code = IO.read(filename)
+  eval(ruby_code, binding, File.expand_path(filename))
+end
+
+begin
+  # Load the Alfred singleton object
+  load_ruby_file("alfred.rb")
+  Alfred = AlfredInit.new("{query}")
+  
+  URL_TYPE = "share"
+  # Load your code from main.rb:
+  load_ruby_file("main.rb")
+rescue Exception =&gt; e
+  slice = -1
+  # Ignore final 2 lines of backtrace that always come from this file
+  slice = -3 if e.backtrace.size &gt; 2
+  bt = e.backtrace[0..slice].join("\n  ")
+  console_log "#{e.message} (#{e.class}) [query: {query}]\n  " + bt
+end</string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>745E2F73-3A8D-4373-AC7E-367961F830E5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>971818E7-5063-44EB-B508-FE0B3F8FFFC0</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>C7BFE155-2978-4762-A241-EE6D4208432D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>7B5216CE-D88B-4D2B-9DEF-1ED8E17F6064</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string># Put this init script directly into the Alfred script window and
+# it will load main.rb with console logging enabled for Ruby exceptions
+
+# Add workflow directory to ruby path
+$: &lt;&lt; File.join(Dir.pwd)
+
+# Add workflow gem repository to gem path
+ENV['GEM_PATH'] = File.join(Dir.pwd, 'ruby-1.8')
+
+# Provide a facility to log messages to Console.app:
+def console_log(msg)
+  escape = proc{ |m| m.gsub("'", "'\\\\''") }
+  `logger -t 'Alfred Workflow' '#{escape[msg]}'`
+end
+# Yay! A way to debug Alfred scripts. You can use either method:
+#   raise "I need to explain how this happened…"
+#                   OR
+#   Alfred.log "parachutes away!"
+#
+# Note: to see the messages, open up Console.app. If there is a backtrace,
+# you'll need to press the little "right arrow" next to the log line.
+
+# Load and evaluate a Ruby file in the current bundle's directory
+def load_ruby_file(filename)
+  ruby_code = IO.read(filename)
+  eval(ruby_code, binding, File.expand_path(filename))
+end
+
+begin
+  # Load the Alfred singleton object
+  load_ruby_file("alfred.rb")
+  Alfred = AlfredInit.new("{query}")
+  
+  URL_TYPE = "direct"
+  # Load your code from main.rb:
+  load_ruby_file("main.rb")
+rescue Exception =&gt; e
+  slice = -1
+  # Ignore final 2 lines of backtrace that always come from this file
+  slice = -3 if e.backtrace.size &gt; 2
+  bt = e.backtrace[0..slice].join("\n  ")
+  console_log "#{e.message} (#{e.class}) [query: {query}]\n  " + bt
+end</string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>012BC202-969C-4B85-A390-11B5E0DD620B</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>012BC202-969C-4B85-A390-11B5E0DD620B</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>745E2F73-3A8D-4373-AC7E-367961F830E5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>7B5216CE-D88B-4D2B-9DEF-1ED8E17F6064</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>971818E7-5063-44EB-B508-FE0B3F8FFFC0</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>B9551011-33AA-4DEA-AC30-2DF1D8092DF0</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C7BFE155-2978-4762-A241-EE6D4208432D</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/canadaduane/alfred2-dropbox</string>
+</dict>
+</plist>

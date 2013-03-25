@@ -1,0 +1,59 @@
+<html>
+<head>
+  <script src="/jquery.js"></script>
+  <script>
+  $(function() {
+    setTimeout(function() {
+      $.ajax({
+        url: '/exit', 
+        success: function() {
+          $('#add-on-message').html('(You can close this tab)');
+        },
+        error: function() {
+          $('#add-on-message').html('(But there was an error shutting down the local auth server)');
+        }
+      })
+    }, 1500);
+  });
+  </script>
+  <style>
+    body { padding: 0; margin: 0; }
+    .header {
+      /*margin-top: 100px;*/
+      background: url(/background-purple.jpg) no-repeat;
+      height: 172;
+      padding: 20px;
+      padding-top: 50px;
+
+      color: white;
+      font-size: 32px;
+      font-family: Lucida Grande, Verdana;
+      line-height: 48px;
+    }
+    .header img.hat {
+    }
+    .header img.box {
+    }
+    .header img.arrows {
+      opacity: 0.2;
+      margin-top: -200px;
+    }
+    .small {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="icons" align="center">
+    <table><tr>
+    <td><img class="hat" src="alfred-logo.png" width="304" height="250" /></td>
+    <td><img class="arrows" src="arrows.png" width="150" /></td>
+    <td><img class="box" src="dropbox.png" width="250" height="250" /></td>
+    </tr></table>
+  </div>
+  <div class="header" align="center">
+    Your Dropbox account has been successfully authorized for Alfred 2.
+    <div class="small" id="add-on-message"></div>
+  </div>
+</body>
+</html>

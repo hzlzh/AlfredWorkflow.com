@@ -1,0 +1,310 @@
+find_header: checking for sqlite3.h... -------------------- yes
+
+"xcrun cc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <sqlite3.h>
+/* end */
+
+--------------------
+
+find_library: checking for sqlite3_libversion_number() in -lsqlite3... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.       -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:53: error: use of undeclared identifier 'sqlite3_libversion_number'
+int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_libversion_number; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_libversion_number; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.       -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:11: warning: implicit declaration of function 'sqlite3_libversion_number' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { sqlite3_libversion_number(); return 0; }
+          ^
+1 warning generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { sqlite3_libversion_number(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_proc_arity()... -------------------- no
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:53: error: use of undeclared identifier 'rb_proc_arity'
+int t() { void ((*volatile p)()); p = (void ((*)()))rb_proc_arity; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))rb_proc_arity; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:11: warning: implicit declaration of function 'rb_proc_arity' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { rb_proc_arity(); return 0; }
+          ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_rb_proc_arity", referenced from:
+      _t in conftest-Y82olT.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { rb_proc_arity(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_initialize()... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:53: error: use of undeclared identifier 'sqlite3_initialize'
+int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_initialize; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_initialize; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:11: warning: implicit declaration of function 'sqlite3_initialize' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { sqlite3_initialize(); return 0; }
+          ^
+1 warning generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { sqlite3_initialize(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_backup_init()... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:53: error: use of undeclared identifier 'sqlite3_backup_init'
+int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_backup_init; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_backup_init; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:11: warning: implicit declaration of function 'sqlite3_backup_init' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { sqlite3_backup_init(); return 0; }
+          ^
+1 warning generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { sqlite3_backup_init(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_column_database_name()... -------------------- no
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:53: error: use of undeclared identifier 'sqlite3_column_database_name'
+int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_column_database_name; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_column_database_name; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:11: warning: implicit declaration of function 'sqlite3_column_database_name' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { sqlite3_column_database_name(); return 0; }
+          ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_sqlite3_column_database_name", referenced from:
+      _t in conftest-lod8My.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { sqlite3_column_database_name(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_enable_load_extension()... -------------------- no
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:53: error: use of undeclared identifier 'sqlite3_enable_load_extension'
+int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_enable_load_extension; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_enable_load_extension; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:11: warning: implicit declaration of function 'sqlite3_enable_load_extension' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { sqlite3_enable_load_extension(); return 0; }
+          ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_sqlite3_enable_load_extension", referenced from:
+      _t in conftest-7rRfCk.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { sqlite3_enable_load_extension(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_load_extension()... -------------------- no
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:53: error: use of undeclared identifier 'sqlite3_load_extension'
+int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_load_extension; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_load_extension; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:11: warning: implicit declaration of function 'sqlite3_load_extension' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { sqlite3_load_extension(); return 0; }
+          ^
+1 warning generated.
+Undefined symbols for architecture x86_64:
+  "_sqlite3_load_extension", referenced from:
+      _t in conftest-PuhXsm.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { sqlite3_load_extension(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_open_v2()... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:53: error: use of undeclared identifier 'sqlite3_open_v2'
+int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_open_v2; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_open_v2; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:11: warning: implicit declaration of function 'sqlite3_open_v2' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { sqlite3_open_v2(); return 0; }
+          ^
+1 warning generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { sqlite3_open_v2(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_prepare_v2()... -------------------- yes
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:53: error: use of undeclared identifier 'sqlite3_prepare_v2'
+int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_prepare_v2; return 0; }
+                                                    ^
+1 error generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_prepare_v2; return 0; }
+/* end */
+
+"xcrun cc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common   conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L.      -lsqlite3  -lruby -lsqlite3  -lpthread -ldl -lobjc  "
+conftest.c:3:11: warning: implicit declaration of function 'sqlite3_prepare_v2' is invalid in C99 [-Wimplicit-function-declaration]
+int t() { sqlite3_prepare_v2(); return 0; }
+          ^
+1 warning generated.
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { sqlite3_prepare_v2(); return 0; }
+/* end */
+
+--------------------
+
+have_type: checking for sqlite3_int64 in sqlite3.h... -------------------- yes
+
+"xcrun cc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common     -c conftest.c"
+checked program was:
+/* begin */
+1: #include <sqlite3.h>
+2: 
+3: /*top*/
+4: typedef sqlite3_int64 conftest_type;
+5: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
+have_type: checking for sqlite3_uint64 in sqlite3.h... -------------------- yes
+
+"xcrun cc -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin12.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE    -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common     -c conftest.c"
+checked program was:
+/* begin */
+1: #include <sqlite3.h>
+2: 
+3: /*top*/
+4: typedef sqlite3_uint64 conftest_type;
+5: int conftestval[sizeof(conftest_type)?1:-1];
+/* end */
+
+--------------------
+
