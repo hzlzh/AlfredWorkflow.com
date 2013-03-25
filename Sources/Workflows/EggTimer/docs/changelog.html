@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="creator" content="Marked.app"/>
+	<title>EggTimer•Changelog</title>
+	<meta name="author" content="Carl J. Smith"/>
+	<meta name="date" content="January 2013"/>
+	<link type="text/css" rel="stylesheet" href="markdown_simonic.css"/>
+	<link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+<h1 id="eggtimerforalfred">EggTimer for Alfred</h1>
+
+<h2 id="bycarlsmithcarlosnz">by <a href="http://geekzone.philosophicalzombie.net/">Carl Smith (@CarlosNZ)</a></h2>
+
+<h3 id="v2.0">v2.0</h3>
+
+<h4 id="march2013">22 March 2013</h4>
+
+<ul>
+<li>Proper notifications for timers/alarms using either Growl or Notification Center, depending on your selection in the workflow setup panel.</li>
+<li>No longer requires <a href="http://growl.info/downloads#generaldownloads"><strong>growlnotify</strong></a>. Now uses AppleScript to talk to Growl, so it&#8217;s a proper registered Growl application (which you can customise in your Growl Preferences).</li>
+<li>Better documentation.</li>
+<li>Miscellaneous tweaks and cosmetic improvements.</li>
+</ul>
+
+<h3 id="v2.0beta4d">v2.0 beta4d</h3>
+
+<h4 id="january282013">January 28 2013</h4>
+
+<ul>
+<li>Fixed startup check issue. This <em>should</em> work properly now.</li>
+</ul>
+
+<h3 id="v2.0beta4c">v2.0 beta4c</h3>
+
+<h4 id="january282013">January 28 2013</h4>
+
+<ul>
+<li>Doh! One more pesky absolute path eliminated. There&#8217;s still a bit of weirdness with resuming timers after a login though, so I&#8217;m still trying to figure that out. Maybe answer &#8220;no&#8221; to installing startup item for now.</li>
+</ul>
+
+<h3 id="v2.0beta4b">v2.0 beta4b</h3>
+
+<h4 id="january282013">January 28 2013</h4>
+
+<ul>
+<li>Fixed absolute path reference preventing permission dialog from launching.</li>
+</ul>
+
+<h3 id="v2.0beta4a">v2.0 beta4a</h3>
+
+<h4 id="january272013">January 27 2013</h4>
+
+<ul>
+<li>Fixed minor (and embarrassing) regression.</li>
+</ul>
+
+<h3 id="v2.0beta4">v2.0 beta4</h3>
+
+<h4 id="january272013">January 27 2013</h4>
+
+<ul>
+<li>The big one: will now resume timers after restart/re-login. EggTimer adds an entry to the OS X <a href="http://en.wikipedia.org/wiki/Launchd">launchd</a> daemon to check for and resume timers at startup. You will be prompted to give permission for this on first launch of EggTimer.</li>
+<li>New keyword/workflow structure. Check out the workflow config panel to see what&#8217;s what. If you&#8217;d prefer the old ones (all starting with <strong>timer</strong>), just change them yourself (eg. <strong>repeat</strong> -&gt; <strong>timer repeat</strong>). You&#8217;ll note that from the timer list (<strong>timers</strong> or hotkey <em>Ctrl-T</em>) you can also select to launch a new timer or alarm (courtesy of Alfred&#8217;s new Applescript-ability).</li>
+<li>Removed <strong>timer stop</strong> function. It&#8217;s now very straightforward to just stop timers from the main list (<strong>timers</strong>) by holding down the <em>option</em> key.</li>
+<li>Now has a &#8220;nuke&#8221; option (<strong>timer nuke</strong>) to reset EggTimer back to initial blank config. (Deletes all working folders, cancels running timers, uninstalls startup item.)</li>
+<li>Fixed <a href="http://www.alfredforum.com/index.php?/topic/275-eggtimer-v2-updated-to-beta3/?p=1578">bug with &#8220;08&#8221; and &#8220;09&#8221; minutes entries</a> when using <strong><em>hrs:mins</em></strong> timer format.</li>
+<li>More specific icons and other miscellaneous UI tweaks.</li>
+</ul>
+
+<h3 id="v2.0beta3">v2.0 beta3</h3>
+
+<h4 id="january242013">January 24 2013</h4>
+
+<ul>
+<li>Now uses <a href="http://www.alfredforum.com/index.php?/topic/307-workflows-best-practices/">recommended working folders</a> for storing timer info and preferences. The main benefit from the user point of view is that future updates won&#8217;t overwrite your timers and preferences.</li>
+<li>Timers and Auto-timers now accept hour:minute input. Syntax is <strong>timer <em>HRS:MINS Reminder</em></strong>.</li>
+<li>Can now stop timers from the timer list using the option-key modifier. Kind of an ugly implementation though, as it will display the same information regardless of whether it&#8217;s context-appropriate. Trying to think of a better way to make this work. (Suggestions welcome!)</li>
+<li>Timers will be restored if they have crashed. This is only partially implemented though, because it&#8217;ll only check if you actually run the workflow. It won&#8217;t restore them at login yet, which is more important. Working on it.</li>
+<li>Miscellaneous tweaks and fixes.</li>
+</ul>
+
+<h3 id="v2.0beta2">v2.0 beta2</h3>
+
+<h4 id="january2013">21 January 2013</h4>
+
+<ul>
+<li>Timers/Alarms now use a &#8220;while&#8230;&#8221; loop to check due time against time of day (instead of just sleeping for a duration). This prevents the problem of timers running late if the computer was put to sleep.</li>
+</ul>
+
+<h3 id="v2.0beta1">v2.0 beta 1</h3>
+
+<h4 id="january2013">20 January 2013</h4>
+
+<ul>
+<li>Complete rewrite to work with Alfred 2&#8217;s script filters with live results feedback.</li>
+<li>Now includes support for Alarms as well as Timers (including repeat options).</li>
+<li>A Recent Timers option - shows last 10 timers for quick re-use.</li>
+<li>Stop timers from command window.</li>
+<li>Help file incomplete while in beta.</li>
+<li>Experimental support for Tom Hunt&#8217;s <a href="http://alfredrepo.tom-hunt.co.uk/">AlfPT auto-update repository</a>.</li>
+</ul>
+
+<h3 id="v1.0">v1.0</h3>
+
+<h4 id="january152013">January 15, 2013</h4>
+
+<p>A version compatible with Alfred 2 (beta) released. Now a &#8220;workflow&#8221; rather than &#8220;extension&#8221;.</p>
+
+<h4 id="january2013">January 2013</h4>
+
+<p>First public release.</p>
+
+<hr />
+
+<p>Please leave feedback/bug reports/suggestion in the <a href="http://www.alfredforum.com/index.php?/topic/275-eggtimer-v2/">EggTimer</a> thread on the Alfred forum, or on <a href="http://geekzone.philosophicalzombie.net/alfred">my website</a>.</p>
+</body>
+</html>

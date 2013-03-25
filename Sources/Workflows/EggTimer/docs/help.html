@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="creator" content="Marked.app"/>
+	<title>EggTimer for Alfred</title>
+	<meta name="author" content="Carl J. Smith (@CarlosNZ)"/>
+	<meta name="date" content="January 2013"/>
+	<link type="text/css" rel="stylesheet" href="markdown_simonic.css"/>
+	<link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+<h1 id="eggtimer2foralfred">EggTimer 2 for Alfred</h1>
+
+<h2 id="bycarlsmithcarlosnz">by <a href="http://geekzone.philosophicalzombie.net/">Carl Smith (@CarlosNZ)</a></h2>
+
+<h3 id="v2.0whatsnew22march2013">v2.0 <a href="./changelog.html">(What&#8217;s new?)</a> | 22 March 2013</h3>
+
+<figure>
+<img src="screenshot.png" alt="" /></figure>
+
+
+
+<p>Welcome to the new-and-improved™ <strong>EggTimer 2</strong> for Alfred. EggTimer is a comprehensive timed notification system for Alfred. You can set multiple timers and alarms, with snooze, repeat, or auto-repeat functionality.</p>
+
+<p>Please note that EggTimer installs a startup item in OS X&#8217;s <a href="http://en.wikipedia.org/wiki/Launchd">launchd</a> daemon to check for and resume existing timers and alarms. This will consume no ongoing system resources other than running a short script at startup. You will be prompted to approve or deny the installation of this when you run EggTimer for the first time.</p>
+
+<h3 id="quickstart">Quick Start</h3>
+
+<p>The simplest way to access the functions of EggTimer is to use the keyword <strong>timers</strong>. This will bring up a list of options available to you, as well as showing you any currently running timers or alarms (see screenshot above). I would recommend assigning a hotkey to this action for quick access. (Just edit the <strong>Hotkey</strong> item in the workflow&#8217;s configuration pane in Alfred.)</p>
+
+<h3 id="fullfeatureoverview">Full Feature Overview</h3>
+
+<p>A list of all the keywords available, and what they do:</p>
+
+<blockquote>
+<p><strong>timers</strong></p>
+</blockquote>
+
+<p>The main &#8220;menu&#8221;, which shows a list of currently running timers and alarms, and provides the option to start a new timer or alarm. To <em>stop</em> a currently running timer, select it while holding down the <strong><em>&#8220;option&#8221;</em></strong> key.</p>
+
+<blockquote>
+<p><strong>timer <em>MINUTES Your Reminder</em></strong></p>
+</blockquote>
+
+<p>Create a basic countdown timer. You can also use <strong><em>HOURS:MINUTES</em></strong> for the duration.</p>
+
+<figure>
+<img src="new_timer.png" alt="" /></figure>
+
+
+
+<p>Once the timer completes, it will display a notification (either Growl or Notification Centre, depending on your setting) and play an audible &#8220;alarm clock&#8221; sound.</p>
+
+<figure>
+<img src="timer_done.png" alt="" /></figure>
+
+
+
+<blockquote>
+<p><strong>timer every <em>MINUTES Your Reminder</em></strong></p>
+</blockquote>
+
+<p>Create a timer which automatically repeats at the specified time interval. Again, <strong><em>HOURS:MINUTES</em></strong> is allowed. Note: to stop an auto-repeating timer, you&#8217;ll need to <em>option</em>-select it from the <strong>timers</strong> list (as mentioned above).</p>
+
+<figure>
+<img src="new_autotimer.png" alt="" /></figure>
+
+
+
+<blockquote>
+<p><strong>alarm <em>TIME Your Reminder</em></strong></p>
+</blockquote>
+
+<p>Set an alarm for the specified time. The TIME format is fairly flexible, so all the following should work:</p>
+
+<ul>
+<li>3pm</li>
+<li>3:00pm</li>
+<li>1500</li>
+<li>300pm</li>
+<li>3P.M.</li>
+</ul>
+
+<figure>
+<img src="new_alarm.png" alt="" /></figure>
+
+
+
+<p>You can also add <em>daily</em> or <em>hourly</em> after the time to set a repeating alarm. eg. <strong>&#8220;alarm 4pm daily Time to stop work.&#8221;</strong> </p>
+
+<blockquote>
+<p><strong>repeat [<em>MINUTES</em>]</strong></p>
+</blockquote>
+
+<p>Repeat the most recently finished timer for the specified duration. <em>MINUTES</em> is optional &#8212; it will use the timer&#8217;s previous duration if omitted.</p>
+
+<figure>
+<img src="repeat_timer.png" alt="" /></figure>
+
+
+
+<blockquote>
+<p><strong>snooze</strong></p>
+</blockquote>
+
+<p>Snooze the most recently finished timer or alarm for a pre-determined number of minutes (default is 9).</p>
+
+<figure>
+<img src="snooze.png" alt="" /></figure>
+
+
+
+<blockquote>
+<p><strong>snooze set <em>MINUTES</em></strong></p>
+</blockquote>
+
+<p>Set the number of minutes for future snoozes. The current value is shown in Alfred results.</p>
+
+<blockquote>
+<p><strong>recent</strong></p>
+</blockquote>
+
+<p>Display the ten most recently-completed (or stopped) timers and alarms. Select one to relaunch it. (Or <em>option</em>-select to delete it from history.)</p>
+
+<figure>
+<img src="recent.png" alt="" /></figure>
+
+
+
+<p>[Note: the keyword <strong>recent</strong> is used in a number of other popular workflows, so you may find this clashes and causes a confusing list of results. You can change it to something else (e.g. <strong>finished</strong>) by double-clicking the <em>recent</em> item in the workflow configuration panel.]</p>
+
+<blockquote>
+<p><strong>timer help</strong></p>
+</blockquote>
+
+<p>Display this documentation file.</p>
+
+<blockquote>
+<p><strong>timer about</strong> <em>or</em> <strong>timer version</strong></p>
+</blockquote>
+
+<p>Show version info for this workflow.</p>
+
+<blockquote>
+<p><strong>timer change</strong></p>
+</blockquote>
+
+<p>Display <a href="./changelog.html">changelog</a>.</p>
+
+<blockquote>
+<p><strong>timer reset</strong></p>
+</blockquote>
+
+<p>Cancel all currently running timers and erase history (i.e. recent, last-completed).</p>
+
+<blockquote>
+<p><strong>timer nuke</strong></p>
+</blockquote>
+
+<p>Completely restore workflow to initial settings. (It will cancel all running timers, delete all working folders, and uninstall the startup item.)</p>
+
+<h3 id="andfinally">And finally…</h3>
+
+<p>I hope you find <strong>EggTimer</strong> useful and that it behaves as it&#8217;s supposed to. If you find any bugs, or want to leave feedback or feature suggestions, leave a comment on my <a href="http://geekzone.philosophicalzombie.net/post/40086558091/eggtimer">EggTimer webpage</a>, the <a href="http://www.alfredforum.com/index.php?/topic/275-eggtimer-v2/">EggTimer thread</a> on the Alfred forum, or catch me on <a href="https://twitter.com/CarlosNZ">Twitter (@CarlosNZ)</a>.</p>
+
+<p>Many thanks to all the great folks on the <a href="http://www.alfredforum.com/">Alfred forum</a>, whose expertise and helpfulness has been invaluable for the development of EggTimer.</p>
+
+<p>And of course, big props to <a href="https://twitter.com/preppeller">Andrew Pepperrell</a> for creating Alfred in the first place!</p>
+
+<h3 id="credits">Credits</h3>
+
+<ul>
+<li><p>Hourglass (Timer) icon by: <a href="http://www.psdgraphics.com/psd-icons/sands-of-time-psd-hourglass-icon/">PSDGraphics</a></p></li>
+<li><p>Alarm icon by: <a href="http://www.customicondesign.com/">CustomIconDesign</a></p></li>
+<li><p>Notification Centre integration uses
+<a href="https://github.com/Daij-Djan/DDMountainNotifier/blob/master/README.md">DDMountainNotifier</a> by Daij-Djan</p></li>
+</ul>
+</body>
+</html>

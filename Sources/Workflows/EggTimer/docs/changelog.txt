@@ -1,0 +1,83 @@
+Title:   EggTimer•ChangelogAuthor:  Carl J. SmithDate:    March 2013
+CSS:     markdown_simonic.css
+
+#EggTimer for Alfred
+##by [Carl Smith (@CarlosNZ)](http://geekzone.philosophicalzombie.net/)
+
+###v2.0
+####22 March 2013
+
+* Proper notifications for timers/alarms using either Growl or Notification Center, depending on your selection in the workflow setup panel.
+* No longer requires [**growlnotify**](http://growl.info/downloads#generaldownloads). Now uses AppleScript to talk to Growl, so it's a proper registered Growl application (which you can customise in your Growl Preferences).
+* Better documentation.
+* Miscellaneous tweaks and cosmetic improvements.
+
+
+###v2.0 beta4d
+####January 28 2013
+
+* Fixed startup check issue. This *should* work properly now.
+
+###v2.0 beta4c
+####January 28 2013
+
+* Doh! One more pesky absolute path eliminated. There's still a bit of weirdness with resuming timers after a login though, so I'm still trying to figure that out. Maybe answer "no" to installing startup item for now.
+
+###v2.0 beta4b
+####January 28 2013
+
+* Fixed absolute path reference preventing permission dialog from launching.
+
+###v2.0 beta4a
+####January 27 2013
+
+* Fixed minor (and embarrassing) regression.
+
+###v2.0 beta4
+####January 27 2013
+
+* The big one: will now resume timers after restart/re-login. EggTimer adds an entry to the OS X [launchd](http://en.wikipedia.org/wiki/Launchd) daemon to check for and resume timers at startup. You will be prompted to give permission for this on first launch of EggTimer.
+* New keyword/workflow structure. Check out the workflow config panel to see what's what. If you'd prefer the old ones (all starting with **timer**), just change them yourself (eg. **repeat** -> **timer repeat**). You'll note that from the timer list (**timers** or hotkey *Ctrl-T*) you can also select to launch a new timer or alarm (courtesy of Alfred's new Applescript-ability).
+* Removed **timer stop** function. It's now very straightforward to just stop timers from the main list (**timers**) by holding down the *option* key.
+* Now has a "nuke" option (**timer nuke**) to reset EggTimer back to initial blank config. (Deletes all working folders, cancels running timers, uninstalls startup item.)
+* Fixed [bug with "08" and "09" minutes entries](http://www.alfredforum.com/index.php?/topic/275-eggtimer-v2-updated-to-beta3/?p=1578) when using ***hrs:mins*** timer format.
+* More specific icons and other miscellaneous UI tweaks.
+
+
+###v2.0 beta3
+####January 24 2013
+
+* Now uses [recommended working folders](http://www.alfredforum.com/index.php?/topic/307-workflows-best-practices/) for storing timer info and preferences. The main benefit from the user point of view is that future updates won't overwrite your timers and preferences.
+* Timers and Auto-timers now accept hour:minute input. Syntax is **timer *HRS:MINS Reminder***.
+* Can now stop timers from the timer list using the option-key modifier. Kind of an ugly implementation though, as it will display the same information regardless of whether it's context-appropriate. Trying to think of a better way to make this work. (Suggestions welcome!)
+* Timers will be restored if they have crashed. This is only partially implemented though, because it'll only check if you actually run the workflow. It won't restore them at login yet, which is more important. Working on it.
+* Miscellaneous tweaks and fixes.
+
+
+###v2.0 beta2
+#### 21 January 2013
+
+* Timers/Alarms now use a "while..." loop to check due time against time of day (instead of just sleeping for a duration). This prevents the problem of timers running late if the computer was put to sleep.
+
+
+###v2.0 beta 1
+#### 20 January 2013
+
+* Complete rewrite to work with Alfred 2's script filters with live results feedback.
+* Now includes support for Alarms as well as Timers (including repeat options).
+* A Recent Timers option - shows last 10 timers for quick re-use.
+* Stop timers from command window.
+* Help file incomplete while in beta.
+* Experimental support for Tom Hunt's [AlfPT auto-update repository](http://alfredrepo.tom-hunt.co.uk/).
+
+
+###v1.0
+####January 15, 2013
+A version compatible with Alfred 2 (beta) released. Now a "workflow" rather than "extension".
+
+####January 2013
+First public release.
+
+----
+
+Please leave feedback/bug reports/suggestion in the [EggTimer](http://www.alfredforum.com/index.php?/topic/275-eggtimer-v2/) thread on the Alfred forum, or on [my website](http://geekzone.philosophicalzombie.net/alfred).

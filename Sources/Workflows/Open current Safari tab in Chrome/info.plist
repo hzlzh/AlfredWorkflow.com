@@ -42,31 +42,14 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>chrome</string>
-				<key>subtext</key>
-				<string>Open current Safari tab in Google Chrome</string>
-				<key>text</key>
-				<string>Open in Chrome</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>AECAFE99-E0FC-41D3-B39D-2444C2FA8B18</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
 set isRunning to falsetell application "System Events"	if exists process "Google Chrome" then		set isRunning to true	end ifend telltell application "Safari" to set openURL to URL of current tab of window 1tell application "Safari" to set openName to name of current tab of window 1tell application "Google Chrome"	if isRunning is true then		if (count of windows) is 0 then			make new window			set URL of active tab of front window to openURL		else			make new tab at end of tabs of front window			set URL of active tab of front window to openURL		end if	else		set URL of active tab of front window to openURL	end if		delay 1	activateend tell
 
 return openName
 end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.applescript</string>
@@ -95,6 +78,25 @@ end alfred_script</string>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>8127B9A1-8B18-4E8D-88F8-9B6086A5C20D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>chh</string>
+				<key>subtext</key>
+				<string>Open current Safari tab in Google Chrome</string>
+				<key>text</key>
+				<string>Open in Chrome</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>AECAFE99-E0FC-41D3-B39D-2444C2FA8B18</string>
 		</dict>
 	</array>
 	<key>readme</key>
