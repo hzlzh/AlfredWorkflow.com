@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>chjlu.cnyconverter</string>
+	<key>connections</key>
+	<dict>
+		<key>02965654-CEA0-49EE-9365-117F3F0955B6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0B15F93C-F24D-4A2B-BE21-D553DEA3063A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>09537431-99F7-47F3-B0A0-318E63B98530</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>1B7056B8-9563-4499-B922-DCFF19772C4E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0B15F93C-F24D-4A2B-BE21-D553DEA3063A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>09537431-99F7-47F3-B0A0-318E63B98530</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>35E947F1-FFDE-4112-A005-AB948466DF3C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0B15F93C-F24D-4A2B-BE21-D553DEA3063A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>09537431-99F7-47F3-B0A0-318E63B98530</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>57486E7F-FC1E-46A4-A5FE-9208A8219D7C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0B15F93C-F24D-4A2B-BE21-D553DEA3063A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>09537431-99F7-47F3-B0A0-318E63B98530</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B075002A-E3A1-4349-8F90-C33B22B202B6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0B15F93C-F24D-4A2B-BE21-D553DEA3063A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>09537431-99F7-47F3-B0A0-318E63B98530</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Junlu Cheng</string>
+	<key>description</key>
+	<string>Calculate how much Chinese Yuan is equal to the given number of USD or HKD or JPY or GBP or EUR by Google Finance Currency Converter</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Currency Converter of CNY</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>hkd</string>
+				<key>script</key>
+				<string>AMOUNT={query};
+
+RESULTSTR=`curl -s "http://www.google.com/finance/converter?a=$AMOUNT&amp;from=HKD&amp;to=CNY" | awk '/&lt;span/{print}' | sed -e 's/&lt;[^&gt;][^&gt;]*&gt;//g' -e '/^ *$/d'`
+
+RESULT=`echo $RESULTSTR | sed -e 's/^[0-9]*//g' -e 's/[A-Za-z]*//g' -e 's/ *//g' -e 's/=//g'`
+
+RESULTSTR=${RESULTSTR/CNY/CN¥}
+RESULTSTR=${RESULTSTR/HKD/HK\$}
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  			&lt;item uid="convert" arg="'$RESULT'"&gt;
+				&lt;title&gt;'$RESULTSTR'&lt;/title&gt;
+				&lt;icon&gt;icon.png&lt;/icon&gt;
+				&lt;subtitle&gt;&lt;/subtitle&gt;
+  			&lt;/item&gt;
+		&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>Convert HK$ to CN¥</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>02965654-CEA0-49EE-9365-117F3F0955B6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>eur</string>
+				<key>script</key>
+				<string>AMOUNT={query};
+
+RESULTSTR=`curl -s "http://www.google.com/finance/converter?a=$AMOUNT&amp;from=EUR&amp;to=CNY" | awk '/&lt;span/{print}' | sed -e 's/&lt;[^&gt;][^&gt;]*&gt;//g' -e '/^ *$/d'`
+
+RESULT=`echo $RESULTSTR | sed -e 's/^[0-9]*//g' -e 's/[A-Za-z]*//g' -e 's/ *//g' -e 's/=//g'`
+
+RESULTSTR=${RESULTSTR/CNY/CN¥}
+RESULTSTR=${RESULTSTR/EUR/€}
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  			&lt;item uid="convert" arg="'$RESULT'"&gt;
+				&lt;title&gt;'$RESULTSTR'&lt;/title&gt;
+				&lt;icon&gt;icon.png&lt;/icon&gt;
+				&lt;subtitle&gt;&lt;/subtitle&gt;
+  			&lt;/item&gt;
+		&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>Convert € to CN¥</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B075002A-E3A1-4349-8F90-C33B22B202B6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>jpy</string>
+				<key>script</key>
+				<string>AMOUNT={query};
+
+RESULTSTR=`curl -s "http://www.google.com/finance/converter?a=$AMOUNT&amp;from=JPY&amp;to=CNY" | awk '/&lt;span/{print}' | sed -e 's/&lt;[^&gt;][^&gt;]*&gt;//g' -e '/^ *$/d'`
+
+RESULT=`echo $RESULTSTR | sed -e 's/^[0-9]*//g' -e 's/[A-Za-z]*//g' -e 's/ *//g' -e 's/=//g'`
+
+RESULTSTR=${RESULTSTR/CNY/CN¥}
+RESULTSTR=${RESULTSTR/JPY/\¥}
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  			&lt;item uid="convert" arg="'$RESULT'"&gt;
+				&lt;title&gt;'$RESULTSTR'&lt;/title&gt;
+				&lt;icon&gt;icon.png&lt;/icon&gt;
+				&lt;subtitle&gt;&lt;/subtitle&gt;
+  			&lt;/item&gt;
+		&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>Convert ¥ to CN¥</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>35E947F1-FFDE-4112-A005-AB948466DF3C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>gbp</string>
+				<key>script</key>
+				<string>AMOUNT={query};
+
+RESULTSTR=`curl -s "http://www.google.com/finance/converter?a=$AMOUNT&amp;from=GBP&amp;to=CNY" | awk '/&lt;span/{print}' | sed -e 's/&lt;[^&gt;][^&gt;]*&gt;//g' -e '/^ *$/d'`
+
+RESULT=`echo $RESULTSTR | sed -e 's/^[0-9]*//g' -e 's/[A-Za-z]*//g' -e 's/ *//g' -e 's/=//g'`
+
+RESULTSTR=${RESULTSTR/CNY/CN¥}
+RESULTSTR=${RESULTSTR/GBP/£}
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  			&lt;item uid="convert" arg="'$RESULT'"&gt;
+				&lt;title&gt;'$RESULTSTR'&lt;/title&gt;
+				&lt;icon&gt;icon.png&lt;/icon&gt;
+				&lt;subtitle&gt;&lt;/subtitle&gt;
+  			&lt;/item&gt;
+		&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>Convert £ to CN¥</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1B7056B8-9563-4499-B922-DCFF19772C4E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>0B15F93C-F24D-4A2B-BE21-D553DEA3063A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Result copied to clipboard.</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>09537431-99F7-47F3-B0A0-318E63B98530</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>usd</string>
+				<key>script</key>
+				<string>AMOUNT={query};
+
+RESULTSTR=`curl -s "http://www.google.com/finance/converter?a=$AMOUNT&amp;from=USD&amp;to=CNY" | awk '/&lt;span/{print}' | sed -e 's/&lt;[^&gt;][^&gt;]*&gt;//g' -e '/^ *$/d'`
+
+RESULT=`echo $RESULTSTR | sed -e 's/^[0-9]*//g' -e 's/[A-Za-z]*//g' -e 's/ *//g' -e 's/=//g'`
+
+RESULTSTR=${RESULTSTR/CNY/CN¥}
+RESULTSTR=${RESULTSTR/USD/\$}
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;
+  			&lt;item uid="convert" arg="'$RESULT'"&gt;
+				&lt;title&gt;'$RESULTSTR'&lt;/title&gt;
+				&lt;icon&gt;icon.png&lt;/icon&gt;
+				&lt;subtitle&gt;&lt;/subtitle&gt;
+  			&lt;/item&gt;
+		&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>Convert $ to CN¥</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>57486E7F-FC1E-46A4-A5FE-9208A8219D7C</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>02965654-CEA0-49EE-9365-117F3F0955B6</key>
+		<dict>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>09537431-99F7-47F3-B0A0-318E63B98530</key>
+		<dict>
+			<key>ypos</key>
+			<real>410</real>
+		</dict>
+		<key>0B15F93C-F24D-4A2B-BE21-D553DEA3063A</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>1B7056B8-9563-4499-B922-DCFF19772C4E</key>
+		<dict>
+			<key>ypos</key>
+			<real>460</real>
+		</dict>
+		<key>35E947F1-FFDE-4112-A005-AB948466DF3C</key>
+		<dict>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>57486E7F-FC1E-46A4-A5FE-9208A8219D7C</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>B075002A-E3A1-4349-8F90-C33B22B202B6</key>
+		<dict>
+			<key>ypos</key>
+			<real>580</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

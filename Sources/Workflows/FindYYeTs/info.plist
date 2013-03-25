@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>Find YYeTs</string>
+	<key>connections</key>
+	<dict>
+		<key>1992A25B-FCF4-4139-BF63-84F4E6229796</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>772FA0EF-CAB3-4BD2-99E6-32C0385B85E7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>池建强</string>
+	<key>description</key>
+	<string>查找最新的YYeTs资源</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>FindYYeTs</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>772FA0EF-CAB3-4BD2-99E6-32C0385B85E7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>yyets</string>
+				<key>runningsubtext</key>
+				<string>请稍候</string>
+				<key>script</key>
+				<string># -*- coding: utf-8 -*-
+
+__author__ = 'Sagacity'
+
+import urllib
+import xml.dom.minidom
+
+theQuery = u"{query}"
+
+rssurl = 'http://www.yyets.com/rss/feed/'
+urldoc = xml.dom.minidom.parse( urllib.urlopen( rssurl ) )
+
+print "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;"
+for item in urldoc.getElementsByTagName('item'):
+    title = item.getElementsByTagName('title')[0].firstChild.data
+    link = item.getElementsByTagName('link')[0].firstChild.data
+
+    if title.__contains__(theQuery) or theQuery == "all":
+        print "    &lt;item uid=\"YYeTs\" arg=\""+ link +"\"&gt;"
+        print "        &lt;title&gt;" + title.encode('utf-8') + "&lt;/title&gt;"
+        print "        &lt;subtitle&gt;" + title.encode('utf-8') + "&lt;/subtitle&gt;"
+        print '''        &lt;icon type="fileicon"&gt;/Applications/QuickTime Player.app/&lt;/icon&gt;
+    &lt;/item&gt;'''
+print "&lt;/items&gt;\n"</string>
+				<key>subtext</key>
+				<string>YYeTs</string>
+				<key>title</key>
+				<string>Find Media in YYeTs...</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1992A25B-FCF4-4139-BF63-84F4E6229796</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1992A25B-FCF4-4139-BF63-84F4E6229796</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>772FA0EF-CAB3-4BD2-99E6-32C0385B85E7</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://q.itari.com.cn</string>
+</dict>
+</plist>
