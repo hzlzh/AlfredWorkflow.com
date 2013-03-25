@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.petrmanas.btwftoggle</string>
+	<key>connections</key>
+	<dict>
+		<key>0ECB85A1-FE72-47A4-BD3D-A77DDDC6D3BB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F480DD5B-678F-498C-825E-AF6F6ADDE71C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>38943C8E-6849-4E94-85AA-F31CBCB5EF4A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F480DD5B-678F-498C-825E-AF6F6ADDE71C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CF001614-D38A-4085-82D9-1C66C955A7CD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C4FBD917-A521-413B-840D-4FDFDC78B657</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Petr Manas</string>
+	<key>description</key>
+	<string>Toggle Bluetooth and Wifi</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>BT &amp; Wifi Toggle</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>bluetooth</string>
+				<key>text</key>
+				<string>Toggle bluetooth</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0ECB85A1-FE72-47A4-BD3D-A77DDDC6D3BB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>wifi</string>
+				<key>text</key>
+				<string>Toggle wifi</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CF001614-D38A-4085-82D9-1C66C955A7CD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	set wifi to (do shell script "networksetup -listallhardwareports | grep -A 1 Wi-Fi | tail -n 1 | cut -b 9-12")
+	if (offset of "On" in (do shell script "networksetup -getairportpower " &amp; wifi &amp; " ")) &gt; 0 then
+		do shell script "networksetup -setairportpower " &amp; wifi &amp; " off"
+	else
+		do shell script "networksetup -setairportpower " &amp; wifi &amp; " on"
+	end if
+end alfred_script</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C4FBD917-A521-413B-840D-4FDFDC78B657</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "System Preferences"	reveal pane id "com.apple.preferences.Bluetooth"	try		tell application "System Events"			tell process "System Preferences"				click checkbox 2 of window "Bluetooth"			end tell		end tell	on error errStr number errorNumber		error errStr number errorNumber	end tryend tell
+end alfred_script</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>E2F67977-2FFA-4801-9860-2811831D3E24</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+if [ "$(./blueutil status)" = "Status: on" ]
+then
+	./blueutil off
+else
+	./blueutil on
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F480DD5B-678F-498C-825E-AF6F6ADDE71C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>bttoggle</string>
+				<key>text</key>
+				<string>Toggle bluetooth</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>38943C8E-6849-4E94-85AA-F31CBCB5EF4A</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>0ECB85A1-FE72-47A4-BD3D-A77DDDC6D3BB</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>38943C8E-6849-4E94-85AA-F31CBCB5EF4A</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>C4FBD917-A521-413B-840D-4FDFDC78B657</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>CF001614-D38A-4085-82D9-1C66C955A7CD</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>E2F67977-2FFA-4801-9860-2811831D3E24</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>F480DD5B-678F-498C-825E-AF6F6ADDE71C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>petrmanas.name</string>
+</dict>
+</plist>

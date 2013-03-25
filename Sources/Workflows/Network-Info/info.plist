@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.tedwise.networkinfo</string>
+	<key>connections</key>
+	<dict>
+		<key>7137038F-4A68-480F-B1BA-11184DC1B780</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1EF675C8-10A0-4AC6-8A1E-5E687047F8EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4FCF6CC4-0666-49E5-9145-89F4FA1AA560</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy MAC Address</string>
+			</dict>
+		</array>
+		<key>A409F076-1DE3-4F67-95B7-FC75BBC54C1B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1EF675C8-10A0-4AC6-8A1E-5E687047F8EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4FCF6CC4-0666-49E5-9145-89F4FA1AA560</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy IP Address</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Ted Wise</string>
+	<key>description</key>
+	<string>What is my network info?</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Network Info</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>4FCF6CC4-0666-49E5-9145-89F4FA1AA560</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>mac</string>
+				<key>runningsubtext</key>
+				<string>Examining network...</string>
+				<key>script</key>
+				<string>ruby main.rb mac</string>
+				<key>subtext</key>
+				<string>Get your local and external IP address</string>
+				<key>title</key>
+				<string>Get MAC address</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7137038F-4A68-480F-B1BA-11184DC1B780</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>1EF675C8-10A0-4AC6-8A1E-5E687047F8EC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>ip</string>
+				<key>runningsubtext</key>
+				<string>Examining network...</string>
+				<key>script</key>
+				<string>ruby main.rb ip</string>
+				<key>subtext</key>
+				<string>Get your local and external IP address</string>
+				<key>title</key>
+				<string>Get IP Address</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A409F076-1DE3-4F67-95B7-FC75BBC54C1B</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Based on David Ferguson's IP Address workflow</string>
+	<key>uidata</key>
+	<dict>
+		<key>1EF675C8-10A0-4AC6-8A1E-5E687047F8EC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>4FCF6CC4-0666-49E5-9145-89F4FA1AA560</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>7137038F-4A68-480F-B1BA-11184DC1B780</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A409F076-1DE3-4F67-95B7-FC75BBC54C1B</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://tedwise.com</string>
+</dict>
+</plist>

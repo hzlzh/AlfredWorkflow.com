@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>co.uk.mattcheetham.xcodedocs</string>
+	<key>connections</key>
+	<dict>
+		<key>25857A55-6327-4F6A-AB97-E917C32EADFA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4C9C63DD-AC37-4328-B180-CA091AD8FFEC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Matt Cheetham</string>
+	<key>description</key>
+	<string>Searches Xcode Documentation for a specified keyword</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Search Xcode Documentation</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>docs</string>
+				<key>subtext</key>
+				<string>E.g. "docs NSString"</string>
+				<key>text</key>
+				<string>Search Xcode documentation</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>25857A55-6327-4F6A-AB97-E917C32EADFA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tell application "System Events"	tell process "Xcode"		-- Activate Xcode if necessary		set frontmost to true				-- Open the Organizer		keystroke "2" using {shift down, command down}		set organizer to window 1				-- Select the Documentation panel if it's not already selected		if the title of organizer is not "Organizer - Documentation" then			click button "Documentation" of tool bar 1 of organizer			delay 0.1			set organizer to window 1		end if				-- Move focus to the search field		set searchField to text field 1 of splitter group 1 of organizer		set searchField's focused to true				-- Clear field		keystroke "a" using command down		keystroke (ASCII character 8)		tell application "System Events" to keystroke "{query}"	end tellend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4C9C63DD-AC37-4328-B180-CA091AD8FFEC</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>25857A55-6327-4F6A-AB97-E917C32EADFA</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>4C9C63DD-AC37-4328-B180-CA091AD8FFEC</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.mattcheetham.co.uk</string>
+</dict>
+</plist>

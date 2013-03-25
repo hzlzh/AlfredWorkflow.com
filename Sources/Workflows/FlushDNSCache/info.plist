@@ -3,25 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>fushdns</string>
 	<key>connections</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>9290E1C5-FD31-4E5A-9297-E36CDEF00A0B</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<string>731CF669-CFAF-43EF-B614-273786D7E473</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<key>D617EE88-9475-4E33-9DB4-B5C83E047639</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+				<string>9290E1C5-FD31-4E5A-9297-E36CDEF00A0B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -30,13 +30,11 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string></string>
+	<string>Sy Doveton</string>
 	<key>description</key>
-	<string>Set Your DNS Servers</string>
-	<key>disabled</key>
-	<false/>
+	<string>Clear DNS cache</string>
 	<key>name</key>
-	<string>Set DNS Servers</string>
+	<string>Flush DNS Cache</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -45,64 +43,23 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
-				<string>DEVICE=$(networksetup -listnetworkserviceorder | awk '
-    BEGIN {
-        "netstat -rn | grep default " | getline var
-        split(var, ARRAY, " ")
-    }
-
-    { if ($5 ~ ARRAY[6]) { NAME=$3 } }
-
-    END { print NAME }
-')
-
-dscacheutil -flushcache
-case "{query}" in
-    "114")
-        networksetup -setdnsservers ${DEVICE%,*} 114.114.114.114 114.114.115.115
-        echo "Using 114 Public DNS on your ${DEVICE%,*} connection."                                                                                                                 
-    ;;
-    "v2ex")
-        networksetup -setdnsservers ${DEVICE%,*} 199.91.73.222 178.79.131.110
-        echo "Using V2EX Public DNS on your ${DEVICE%,*} connection."                                                                                                                 
-    ;;
-    "google")
-        networksetup -setdnsservers ${DEVICE%,*} 8.8.8.8 8.8.4.4
-        echo "Using Google Public DNS on your ${DEVICE%,*} connection."
-    ;;
-    "opendns")
-        networksetup -setdnsservers ${DEVICE%,*} 208.67.222.222 208.67.220.220
-        echo "Using OpenDNS on your ${DEVICE%,*} connection."
-    ;;
-    *)
-        networksetup -setdnsservers ${DEVICE%,*} empty
-        echo "Using Default DNS on your ${DEVICE%,*} connection."
-    ;;
-esac</string>
+				<string>#!/bin/bash
+long=`sw_vers -productVersion`
+short=${long:0:4}
+if [ "$short" == "10.4" ]; then
+    lookupd -flushcache
+elif [ "$short" == "10.5" ] || [ "$short" == "10.6" ]; then
+    dscacheutil -flushcache
+elif [ "$short" == "10.7" ] || [ "$short" == "10.8" ]; then
+    sudo killall -HUP mDNSResponder
+fi</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>dns</string>
-				<key>text</key>
-				<string>Set DNS Servers</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
+			<string>9290E1C5-FD31-4E5A-9297-E36CDEF00A0B</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -117,34 +74,53 @@ esac</string>
 				<false/>
 				<key>sticky</key>
 				<false/>
+				<key>text</key>
+				<string>Cache clear….</string>
+				<key>title</key>
+				<string>DNS Cache flushed</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+			<string>731CF669-CFAF-43EF-B614-273786D7E473</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>flush</string>
+				<key>text</key>
+				<string>Flush DNS Cache</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D617EE88-9475-4E33-9DB4-B5C83E047639</string>
 		</dict>
 	</array>
-	<key>readme</key>
-	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>731CF669-CFAF-43EF-B614-273786D7E473</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>10</real>
 		</dict>
-		<key>A70A4E1E-712E-4575-967A-0AA64960904D</key>
+		<key>9290E1C5-FD31-4E5A-9297-E36CDEF00A0B</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>10</real>
 		</dict>
-		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<key>D617EE88-9475-4E33-9DB4-B5C83E047639</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>10</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string>24says.com</string>
+	<string>www.sdov.com</string>
 </dict>
 </plist>
