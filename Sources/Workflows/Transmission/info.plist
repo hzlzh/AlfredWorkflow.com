@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>florian.transmission</string>
+	<key>connections</key>
+	<dict>
+		<key>327E246D-0C46-432A-B48F-AC6033D32093</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C4BE4D80-1B5B-4474-94DA-DBF2F085F8A8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>66480622-1ED4-419A-9C57-3CEBD7078914</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C0C50A7C-EB62-4502-A5C5-9571CFEA3269</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6FAA4D0F-D9B3-44F9-B17A-A10F26A6AB32</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>663B27E9-F243-421B-A846-77C06D37C639</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9DEEFB1A-3683-49EB-BDC9-4B2A727A1202</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AFC655B4-1F88-4C70-BF80-56A7F7B86959</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>6FAA4D0F-D9B3-44F9-B17A-A10F26A6AB32</string>
+				<key>modifiers</key>
+				<integer>8388608</integer>
+				<key>modifiersubtext</key>
+				<string>Remove this torrent.</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CAC131AD-6F58-4DE1-BE8D-876E3416BFF2</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Remove this torrent and its associated files.</string>
+			</dict>
+		</array>
+		<key>AFC655B4-1F88-4C70-BF80-56A7F7B86959</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4946EDF8-8EC2-4927-A47B-6AB137A0EA05</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E3D17955-7E4C-4901-AF62-6D9BA0BA30CD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C0C50A7C-EB62-4502-A5C5-9571CFEA3269</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA7CF3AA-9445-41B5-B163-FB30540434A4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C4BE4D80-1B5B-4474-94DA-DBF2F085F8A8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8D4B97BF-EF2A-47A3-9855-47DE4EDF818A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CAC131AD-6F58-4DE1-BE8D-876E3416BFF2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2F519726-5220-4B8D-B1C9-BF5A0A6EC7B5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>3353F048-CC5D-4EB8-9B92-F2DAC4190851</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E64C7BF3-6199-44C1-B540-C56977B568E5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9DEEFB1A-3683-49EB-BDC9-4B2A727A1202</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Florian Pellet</string>
+	<key>description</key>
+	<string>See and manage your transmission downloads</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Transmission</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>arg='{query}';
+type=${arg:0:1};
+if [ "$type" = "1" ]; then
+
+	arg=( $arg );
+	id=${arg[1]};
+	monofile=${arg[2]};
+
+	nb_letters=$(( 5 + ${#id} ));  
+
+arg='{query}';
+
+	address=${arg:nb_letters};
+
+	if [ "$monofile" = "1" ]; then
+		address=`dirname $address`;
+	fi
+
+	
+
+	open $address;
+else
+	echo $arg;
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AFC655B4-1F88-4C70-BF80-56A7F7B86959</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>mv "{query}" ~/.Trash</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>2F519726-5220-4B8D-B1C9-BF5A0A6EC7B5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Done.</string>
+				<key>title</key>
+				<string>Remove torrent &amp; files</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>3353F048-CC5D-4EB8-9B92-F2DAC4190851</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>require_once('./class/TransmissionRPC.class.php' );
+
+$rpc = new TransmissionRPC();
+
+$arg = '{query}';
+$pieces = explode(' ', $arg);
+$type = $pieces[0];
+$id = $pieces[1];
+
+if ($type == 2){ //downloading
+	$rpc-&gt;stop(intval($id));
+}
+else{ //not downloading
+	$rpc-&gt;start(intval($id));
+
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>4946EDF8-8EC2-4927-A47B-6AB137A0EA05</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "System Events"	tell process "Transmission"		tell menu bar 1			tell menu bar item "Transfers"				tell menu "Transfers"					click menu item "Resume All"				end tell			end tell		end tell	end tellend tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C0C50A7C-EB62-4502-A5C5-9571CFEA3269</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>resume all</string>
+				<key>text</key>
+				<string>Resume All</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>66480622-1ED4-419A-9C57-3CEBD7078914</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>transfers</string>
+				<key>script</key>
+				<string>require_once('./class/TransmissionRPC.class.php' );
+
+$rpc = new TransmissionRPC();
+
+
+/*
+id:				identifying number
+name:			displayed name of the torrent
+isFinished:		true is download is complete
+rateDownload:	speed of DL in B/s
+percentDone:	percentage of accomplished DL
+sizeWhenDone:	size of the files
+status:			downloading when 4, unknown for anything else
+downloadDir:	destination directory
+files:			array of files
+	name:		name of the file
+*/
+
+$result = $rpc-&gt;get(array(),array('id', 'name', 'isFinished', 'rateDownload', 'percentDone', 'sizeWhenDone', 'status', 'downloadDir', 'files') );
+$nb_torrents = count($result-&gt;arguments-&gt;torrents);
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;';
+
+if ($nb_torrents == 0){
+	echo '
+	  	&lt;item uid="" arg="" valid="no"&gt;
+			&lt;title&gt;You have currently no download&lt;/title&gt;
+			&lt;icon&gt;icon.png&lt;/icon&gt;
+			&lt;subtitle&gt;&lt;/subtitle&gt;
+	  	&lt;/item&gt;';
+}
+
+for ($i=0; $i&lt;$nb_torrents; $i++){
+
+	$id = $result-&gt;arguments-&gt;torrents[$i]-&gt;id;
+	$name = $result-&gt;arguments-&gt;torrents[$i]-&gt;name;
+	$finished = $result-&gt;arguments-&gt;torrents[$i]-&gt;isFinished;
+	$rate = $result-&gt;arguments-&gt;torrents[$i]-&gt;rateDownload;
+	$size = $result-&gt;arguments-&gt;torrents[$i]-&gt;sizeWhenDone;
+	$percent = $result-&gt;arguments-&gt;torrents[$i]-&gt;percentDone;
+	$status = $result-&gt;arguments-&gt;torrents[$i]-&gt;status;
+	$dir = $result-&gt;arguments-&gt;torrents[$i]-&gt;downloadDir;
+
+	$percent = number_format(100*$percent, 2, '.', '');
+
+	if($rate &gt; 1000000000){
+		$rate = $rate / 1000000000 ;
+		$rate = round($rate, 2) . ' GB';
+	}
+	elseif($rate &gt; 1000000){
+		$rate = $rate / 1000000 ;
+		$rate = round($rate, 2) . ' MB';
+	}
+	elseif($rate &gt; 1000){
+		$rate = $rate / 1000 ;
+		$rate = round($rate, 2) . ' KB';
+	}
+	else{
+		$rate = round($rate, 2) . ' B';
+	}
+
+	if($size &gt; 1000000000){
+		$size = $size / 1000000000 ;
+		$size = round($size, 2) . ' GB';
+	}
+	elseif($size &gt; 1000000){
+		$size = $size / 1000000 ;
+		$size = round($size, 2) . ' MB';
+	}
+	elseif($size &gt; 1000){
+		$size = $size / 1000 ;
+		$size = round($size, 2) . ' KB';
+	}
+	else{
+		$size = round($size, 2) . ' B';
+	}
+
+	$nb_files = count($result-&gt;arguments-&gt;torrents[$i]-&gt;files);
+
+	if(!is_null($finished)){
+		$subtitle = 'Download finished. (' . $size . ')';
+		$icon = "finished.png";
+		$arg = '1';
+	}
+	elseif($status==4){
+		$subtitle = $percent . '% of ' . $size . ' - DL: ' . $rate . '/s';
+		$icon = "downloading.png";
+		$arg = '2';
+	}
+	else{
+		$subtitle = 'Not downloading.';
+		$icon = "stopped.png";
+		$arg = '3';
+	}
+
+	if ($nb_files == 1){
+		$monofile = 1;
+		$dir = $dir . '/' . $result-&gt;arguments-&gt;torrents[$i]-&gt;files[0]-&gt;name;
+	}
+	else{
+		$monofile = 0;
+	}	
+
+
+	if ($monofile == 0){
+        $arg = $arg . ' ' . $id . ' ' . $monofile . ' ' . $dir . '/' . $name;
+    }
+    elseif (!is_null($finished)){
+        $arg = $arg . ' ' . $id . ' ' . $monofile . ' ' . $dir;
+    }
+    else{
+        $arg = $arg . ' ' . $id . ' ' . $monofile . ' ' . $dir . '.part';
+    }
+
+	echo '
+	  	&lt;item uid="" arg="'.$arg.'"&gt;
+			&lt;title&gt;'.$name.'&lt;/title&gt;
+			&lt;icon&gt;'.$icon.'&lt;/icon&gt;
+			&lt;subtitle&gt;'.$subtitle.'&lt;/subtitle&gt;
+	  	&lt;/item&gt;';
+}
+
+echo '&lt;/items&gt;';</string>
+				<key>title</key>
+				<string>Transfers summary</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9DEEFB1A-3683-49EB-BDC9-4B2A727A1202</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Done.</string>
+				<key>title</key>
+				<string>Pause All</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8D4B97BF-EF2A-47A3-9855-47DE4EDF818A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>pause all</string>
+				<key>text</key>
+				<string>Pause all</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>327E246D-0C46-432A-B48F-AC6033D32093</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>E64C7BF3-6199-44C1-B540-C56977B568E5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>require_once('./class/TransmissionRPC.class.php' );
+
+$rpc = new TransmissionRPC();
+
+$arg = '{query}';
+
+$pieces = explode(' ', $arg);
+$type = $pieces[0];
+$id = $pieces[1];
+$monofile = $pieces[2];
+
+$nb_letters = strlen($id) + 5;
+
+$address = substr($arg, $nb_letters);
+
+$rpc-&gt;remove(intval($id), false);
+
+echo $address;</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CAC131AD-6F58-4DE1-BE8D-876E3416BFF2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Done.</string>
+				<key>title</key>
+				<string>Remove torrent</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>663B27E9-F243-421B-A846-77C06D37C639</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>require_once('./class/TransmissionRPC.class.php' );
+
+$rpc = new TransmissionRPC();
+
+$arg = '{query}';
+
+$pieces = explode(' ', $arg);
+$id = $pieces[1];
+
+$rpc-&gt;remove(intval($id), false);
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6FAA4D0F-D9B3-44F9-B17A-A10F26A6AB32</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "System Events"	tell process "Transmission"		tell menu bar 1			tell menu bar item "Transfers"				tell menu "Transfers"					click menu item "Pause All"				end tell			end tell		end tell	end tellend tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C4BE4D80-1B5B-4474-94DA-DBF2F085F8A8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Done.</string>
+				<key>title</key>
+				<string>Resume All</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>DA7CF3AA-9445-41B5-B163-FB30540434A4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>title</key>
+				<string>Done</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E3D17955-7E4C-4901-AF62-6D9BA0BA30CD</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>2F519726-5220-4B8D-B1C9-BF5A0A6EC7B5</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>327E246D-0C46-432A-B48F-AC6033D32093</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>3353F048-CC5D-4EB8-9B92-F2DAC4190851</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>4946EDF8-8EC2-4927-A47B-6AB137A0EA05</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>663B27E9-F243-421B-A846-77C06D37C639</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>66480622-1ED4-419A-9C57-3CEBD7078914</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>6FAA4D0F-D9B3-44F9-B17A-A10F26A6AB32</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>8D4B97BF-EF2A-47A3-9855-47DE4EDF818A</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>9DEEFB1A-3683-49EB-BDC9-4B2A727A1202</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>AFC655B4-1F88-4C70-BF80-56A7F7B86959</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C0C50A7C-EB62-4502-A5C5-9571CFEA3269</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>C4BE4D80-1B5B-4474-94DA-DBF2F085F8A8</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>CAC131AD-6F58-4DE1-BE8D-876E3416BFF2</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>DA7CF3AA-9445-41B5-B163-FB30540434A4</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>E3D17955-7E4C-4901-AF62-6D9BA0BA30CD</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>E64C7BF3-6199-44C1-B540-C56977B568E5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

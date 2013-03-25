@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>Sagacity-PlayMedia</string>
+	<key>connections</key>
+	<dict>
+		<key>57E1A4B3-1BC7-4712-9528-52655C04C646</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FB8BF5D1-B554-48AF-8EBF-6D7B79089E64</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0772D216-0E9F-4D10-BF62-04A19312970B</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>在Finder中显示</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DCC9E4F4-D5BC-46A0-9522-0BEBF659380C</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>直接打开</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>池建强</string>
+	<key>description</key>
+	<string>通过iTune播放媒体文件</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Play Media</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>DCC9E4F4-D5BC-46A0-9522-0BEBF659380C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>saga</string>
+				<key>runningsubtext</key>
+				<string>请稍候...</string>
+				<key>script</key>
+				<string># -*- coding: utf-8 -*-
+
+__author__ = 'Sagacity'
+
+import commands;
+
+theQuery = "{query}"
+
+medias = ( "mkv", "wmv" );
+
+results = commands.getstatusoutput("mdfind \"kMDItemFSName == '*" + theQuery + "*'c "
+    "&amp;&amp; ( kMDItemKind == 'MP3*' || kMDItemKind == 'QuickTime*' || kMDItemKind == 'Video Media' ) \"")[-1]
+
+results = results.split("\n")
+if results.__len__() &lt; 2 and results[0].__len__() == 0:
+    exit()
+
+print "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;"
+for mediaPath in results:
+    ts = mediaPath.__str__()
+    mediaName = ts.split("/")[-1]
+    ext = mediaName.split(".")[-1]
+    if ext.lower() == "dat":
+        continue
+
+    if (medias.__contains__(ext.lower())):
+        ts = "\'"+ ts +"\'"
+    else:
+        ts = "\'"+ ts +"\' -a iTunes"
+
+    print("    &lt;item uid=\"iTunes\" arg=\""+ ts +"\"&gt;" )
+    print "        &lt;title&gt;"+ mediaName +"&lt;/title&gt;"
+    print "        &lt;subtitle&gt;"+ ts +"&lt;/subtitle&gt;"
+    print '''        &lt;icon type="fileicon"&gt;/Applications/iTunes.app/&lt;/icon&gt;
+	&lt;/item&gt;'''
+print "&lt;/items&gt;\n"</string>
+				<key>subtext</key>
+				<string>iTunes</string>
+				<key>title</key>
+				<string>Play Media...</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>57E1A4B3-1BC7-4712-9528-52655C04C646</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>open {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FB8BF5D1-B554-48AF-8EBF-6D7B79089E64</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>0772D216-0E9F-4D10-BF62-04A19312970B</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0772D216-0E9F-4D10-BF62-04A19312970B</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>57E1A4B3-1BC7-4712-9528-52655C04C646</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>DCC9E4F4-D5BC-46A0-9522-0BEBF659380C</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>FB8BF5D1-B554-48AF-8EBF-6D7B79089E64</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://q.itari.com.cn</string>
+</dict>
+</plist>

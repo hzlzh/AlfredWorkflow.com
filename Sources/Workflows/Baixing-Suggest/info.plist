@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.baixing</string>
+	<key>connections</key>
+	<dict>
+		<key>504C702E-F7D2-44D7-9BB8-DD4248A56C02</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4DAED0E3-439C-4EF3-85B8-7C7395D3192B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Sofish Lin</string>
+	<key>description</key>
+	<string>搜索百姓网</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>百姓网</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>open {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>4DAED0E3-439C-4EF3-85B8-7C7395D3192B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>bx</string>
+				<key>runningsubtext</key>
+				<string>查询中...</string>
+				<key>script</key>
+				<string>require_once('bx.php');
+$bx = new Bx();
+
+$query = '{query}';
+$json = $bx-&gt;json($query);
+$i = 1;
+
+foreach($json as $item) {
+	$bx-&gt;result($i . time(), $item-&gt;label, $item-&gt;label, '在' . strtoupper($bx-&gt;city) . '搜索「'. $item-&gt;value .'」', 'icon.png');
+	$i++;
+}
+
+$results = $bx-&gt;results();
+if (count( $results ) === 0) {
+	$bx-&gt;result('nothing', 'nothing', '找不到', '在百姓网搜索不到'.$query, 'icon.png' );
+}
+
+echo $bx-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>输入要搜索的关键词</string>
+				<key>title</key>
+				<string>在百姓网搜索</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>504C702E-F7D2-44D7-9BB8-DD4248A56C02</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>4DAED0E3-439C-4EF3-85B8-7C7395D3192B</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>504C702E-F7D2-44D7-9BB8-DD4248A56C02</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>sofish.de</string>
+</dict>
+</plist>

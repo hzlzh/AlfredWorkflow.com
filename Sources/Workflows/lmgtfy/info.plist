@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>jousch.alfred.lmgtfy</string>
+	<key>connections</key>
+	<dict>
+		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E68DA71A-30EB-4F25-A334-78B42FBD781D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E68DA71A-30EB-4F25-A334-78B42FBD781D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2217BF02-AD31-42CB-8173-4E7024A21C94</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Josef Florian Glatz</string>
+	<key>description</key>
+	<string>Workflow that creates a link for lmgtfy.com</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Let me google that for you</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>lmgtfy</string>
+				<key>subtext</key>
+				<string>lmgtfy "the search to run"</string>
+				<key>text</key>
+				<string>Let me google that for you</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Let me google that for you</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2217BF02-AD31-42CB-8173-4E7024A21C94</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string># CONFIGURATION
+flag=$LANG
+
+# DO THE MAGIC
+QUERY=$(perl -MURI::Escape -e 'print uri_escape("{query}");' "$2")
+echo "http://lmgtfy.com/?q=$QUERY" | pbcopy
+
+# NOTIFICATION
+if [[ $flag == de* ]]; then
+	echo "Link wurde in die Zwischenablage kopiert!"
+else
+	echo "Link copied to clipboard! Go share it!"
+fi
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E68DA71A-30EB-4F25-A334-78B42FBD781D</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Alfred v2 workflow version of https://github.com/brockangelo/lmgtfy for use with Alfred v2 and powerpack.
+
+Special Thanks goes to Angelo Brock https://github.com/brockangelo - he wrotes the initial lmgtfy as alfred v1 extension.
+
+Please drop an issue for question/bugreporting/... at https://github.com/jousch/lmgtfy-alfredworkflow
+
+
+Cheers
+Jousch</string>
+	<key>uidata</key>
+	<dict>
+		<key>2217BF02-AD31-42CB-8173-4E7024A21C94</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>E68DA71A-30EB-4F25-A334-78B42FBD781D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://jousch.com</string>
+</dict>
+</plist>

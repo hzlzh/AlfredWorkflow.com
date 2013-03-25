@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.wandoujia</string>
+	<key>connections</key>
+	<dict>
+		<key>22F51725-25CF-44B4-BFFC-6A7912876506</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5D277A62-0C4F-42F0-BD7B-0D295DDF7089</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3451C4A5-E48C-48E9-B6F5-FB20AA95F286</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8BE01F64-F1F3-4271-BBFF-35F47C107FB2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>346DA4C3-2FD0-4AA7-89D8-527357201759</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A6232A2D-3D36-4D5D-A1A0-AE1E2B40E5CF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3BDB18F4-85B0-4F3D-AB3E-923FE093311F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>712C665E-BAD5-4C61-82DE-BD6F4B6D091E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3E59D6EF-84F4-46D0-8029-C303EF51DB0A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>348C0415-23DF-4DB9-A2DD-09B5B13A3636</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>712C665E-BAD5-4C61-82DE-BD6F4B6D091E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6754A98F-67C7-442F-A6E3-2CF0732FCA1D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9788351D-9D14-4393-B5DB-A78F60E1BF72</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>346DA4C3-2FD0-4AA7-89D8-527357201759</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CB3EEDA7-8408-473B-B3A0-B94F220A6E2E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3E59D6EF-84F4-46D0-8029-C303EF51DB0A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F1D3AB2A-F0F4-4C85-A6CC-EF0F592CCA5F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>22F51725-25CF-44B4-BFFC-6A7912876506</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>豌豆实验室</string>
+	<key>description</key>
+	<string>搜索应用</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>豌豆荚</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>http://www.wandoujia.com/apps/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>8BE01F64-F1F3-4271-BBFF-35F47C107FB2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>请到手机上检查安装</string>
+				<key>title</key>
+				<string>应用已推送</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6754A98F-67C7-442F-A6E3-2CF0732FCA1D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>请到手机上检查安装</string>
+				<key>title</key>
+				<string>设计奖应用已推送</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>348C0415-23DF-4DB9-A2DD-09B5B13A3636</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>wdjaward</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+include('config.php');
+$w = new Workflows();
+$query = urlencode( "{query}" );
+
+$url = "http://apps.wandoujia.com/api/v1/apps/?type=award&amp;opt_fields=title,icons.px48,installedCountStr,likesRate,packageName,latestApk.versionCode,award.*";
+$suggestions = $w-&gt;request($url);
+$suggestions = json_decode($suggestions);
+foreach($suggestions as $suggest):
+    $w-&gt;write($w-&gt;request($suggest-&gt;icons-&gt;px48),$suggest-&gt;packageName.'.png','appicons');
+    $w-&gt;result( $suggest-&gt;packageName, 
+                '--cookie "'.$cookie.'" --data "did='.$did.'&amp;title='.urlencode(strip_tags($suggest-&gt;title)).'&amp;url=http://apps.wandoujia.com/apps/'.$suggest-&gt;packageName.'/download&amp;versioncode='.$suggest-&gt;latestApk-&gt;versionCode.'&amp;packagename='.$suggest-&gt;packageName.'" http://www.wandoujia.com/offlinepush/push',
+                strip_tags($suggest-&gt;title),
+                $suggest-&gt;award-&gt;issue."期"." ・ ".$suggest-&gt;award-&gt; blogTitle.' ・ '.$suggest-&gt;installedCountStr.'人安装 ・ '.$suggest-&gt;likesRate.'% 好评',
+                'appicons/'.$suggest-&gt;packageName.'.png');
+endforeach;
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>最优质的应用</string>
+				<key>title</key>
+				<string>推送豌豆荚设计奖</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CB3EEDA7-8408-473B-B3A0-B94F220A6E2E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>wdjtoday</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+include('config.php');
+$w = new Workflows();
+$query = urlencode( "{query}" );
+
+$url = "http://apps.wandoujia.com/api/v1/feeds/$query?opt_fields=data.app.title,data.app.icons.px48,data.app.installedCountStr,data.app.likesRate,data.app.packageName,data.app.latestApk.versionCode,data.app.editorComment";
+$suggestions = $w-&gt;request($url);
+$suggestions = json_decode($suggestions);
+foreach($suggestions-&gt;data as $suggest):
+	$suggest=$suggest-&gt;app;
+    $w-&gt;write($w-&gt;request($suggest-&gt;icons-&gt;px48),$suggest-&gt;packageName.'.png','appicons');
+    $w-&gt;result( $suggest-&gt;packageName, 
+                '--cookie "'.$cookie.'" --data "did='.$did.'&amp;title='.urlencode(strip_tags($suggest-&gt;title)).'&amp;url=http://apps.wandoujia.com/apps/'.$suggest-&gt;packageName.'/download&amp;versioncode='.$suggest-&gt;latestApk-&gt;versionCode.'&amp;packagename='.$suggest-&gt;packageName.'" http://www.wandoujia.com/offlinepush/push',
+                strip_tags($suggest-&gt;title),
+                $suggest-&gt;editorComment,
+                'appicons/'.$suggest-&gt;packageName.'.png');
+endforeach;
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>豌豆荚今天的挑选</string>
+				<key>title</key>
+				<string>推送当天的优质应用</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3BDB18F4-85B0-4F3D-AB3E-923FE093311F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>open "https://account.wandoujia.com/v1/user/?do=login&amp;callback=http://www.wandoujia.com/alfred/auth.php"
+open -b "com.apple.TextEdit" "./config.php"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>346DA4C3-2FD0-4AA7-89D8-527357201759</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>app</string>
+				<key>runningsubtext</key>
+				<string>请稍候…</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$w = new Workflows();
+$query = urlencode( "{query}" );
+$url = "http://apps.wandoujia.com/api/v1/search/$query?opt_fields=title,installedCountStr,likesRate,snippet,packageName";
+$suggestions = $w-&gt;request($url);
+$suggestions = json_decode($suggestions);
+foreach($suggestions-&gt;appList as $suggest):
+    $w-&gt;result( $suggest-&gt;packageName, 
+                $suggest-&gt;packageName,
+                strip_tags($suggest-&gt;title),
+                $suggest-&gt;installedCountStr.'人安装 ・ '.$suggest-&gt;likesRate.'% 好评 ・ ' . $suggest-&gt;snippet,
+                '3451C4A5-E48C-48E9-B6F5-FB20AA95F286.png');
+endforeach;
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>请输入关键词</string>
+				<key>title</key>
+				<string>搜索应用</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3451C4A5-E48C-48E9-B6F5-FB20AA95F286</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>请到手机上检查安装</string>
+				<key>title</key>
+				<string>应用已推送</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>5D277A62-0C4F-42F0-BD7B-0D295DDF7089</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>您需要把登录后的网页信息粘贴到设置文件里。</string>
+				<key>title</key>
+				<string>请登录</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A6232A2D-3D36-4D5D-A1A0-AE1E2B40E5CF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>/usr/bin/curl {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>712C665E-BAD5-4C61-82DE-BD6F4B6D091E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>wdj</string>
+				<key>runningsubtext</key>
+				<string>请稍等…</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+include('config.php');
+$w = new Workflows();
+$query = urlencode( "{query}" );
+
+$url = "http://apps.wandoujia.com/api/v1/search/$query?opt_fields=title,icons.px48,installedCountStr,likesRate,snippet,packageName,latestApk.versionCode";
+$suggestions = $w-&gt;request($url);
+$suggestions = json_decode($suggestions);
+foreach($suggestions-&gt;appList as $suggest):
+    $w-&gt;write($w-&gt;request($suggest-&gt;icons-&gt;px48),$suggest-&gt;packageName.'.png','appicons');
+    $w-&gt;result( $suggest-&gt;packageName, 
+                '--cookie "'.$cookie.'" --data "did='.$did.'&amp;title='.urlencode(strip_tags($suggest-&gt;title)).'&amp;url=http://apps.wandoujia.com/apps/'.$suggest-&gt;packageName.'/download&amp;versioncode='.$suggest-&gt;latestApk-&gt;versionCode.'&amp;packagename='.$suggest-&gt;packageName.'" http://www.wandoujia.com/offlinepush/push',
+                strip_tags($suggest-&gt;title),
+                $suggest-&gt;installedCountStr.'人安装 ・ '.$suggest-&gt;likesRate.'% 好评 ・ ' . $suggest-&gt;snippet,
+                'appicons/'.$suggest-&gt;packageName.'.png');
+endforeach;
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>搜索并推送应用</string>
+				<key>title</key>
+				<string>推送应用</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F1D3AB2A-F0F4-4C85-A6CC-EF0F592CCA5F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>/usr/bin/curl {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>22F51725-25CF-44B4-BFFC-6A7912876506</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>/usr/bin/curl {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3E59D6EF-84F4-46D0-8029-C303EF51DB0A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>wdjsetup</string>
+				<key>subtext</key>
+				<string>请您登录后把设置信息填到对应的文件里。</string>
+				<key>text</key>
+				<string>应用推送帐号设置</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9788351D-9D14-4393-B5DB-A78F60E1BF72</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>22F51725-25CF-44B4-BFFC-6A7912876506</key>
+		<dict>
+			<key>ypos</key>
+			<real>390</real>
+		</dict>
+		<key>3451C4A5-E48C-48E9-B6F5-FB20AA95F286</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>346DA4C3-2FD0-4AA7-89D8-527357201759</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>348C0415-23DF-4DB9-A2DD-09B5B13A3636</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>3BDB18F4-85B0-4F3D-AB3E-923FE093311F</key>
+		<dict>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>3E59D6EF-84F4-46D0-8029-C303EF51DB0A</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>5D277A62-0C4F-42F0-BD7B-0D295DDF7089</key>
+		<dict>
+			<key>ypos</key>
+			<real>390</real>
+		</dict>
+		<key>6754A98F-67C7-442F-A6E3-2CF0732FCA1D</key>
+		<dict>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>712C665E-BAD5-4C61-82DE-BD6F4B6D091E</key>
+		<dict>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>8BE01F64-F1F3-4271-BBFF-35F47C107FB2</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>9788351D-9D14-4393-B5DB-A78F60E1BF72</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A6232A2D-3D36-4D5D-A1A0-AE1E2B40E5CF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>CB3EEDA7-8408-473B-B3A0-B94F220A6E2E</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>F1D3AB2A-F0F4-4C85-A6CC-EF0F592CCA5F</key>
+		<dict>
+			<key>ypos</key>
+			<real>390</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>43E8825E-1B66-45BD-8807-BC88FE3F50CE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D1FA3A9C-378B-4EFF-988E-5149BEA20511</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7FB51CE8-3D15-43B8-88CA-01C7C917351D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D3BCB73-47EF-40FA-AE2B-AFAF14C74A73</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CD69778A-A49B-44D1-9F54-B24359DEF8B8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7FB51CE8-3D15-43B8-88CA-01C7C917351D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D1FA3A9C-378B-4EFF-988E-5149BEA20511</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Sebastian Burschel</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Add task to Things</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+if application "Things" is running thenelse	tell application "Things" to activate	tell application "Finder"		set visible of process "Things" to false	end tell	delay 1end ifset x to text 1 thru ((offset of "::" in q) - 1) of qif (offset of "::" in q) = 0 then	set y to ""else	set y to text ((offset of "::" in q) + 2) thru -1 of qend iftell application "Things"	show quick entry panel with properties {name:x, notes:y}end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>D1FA3A9C-378B-4EFF-988E-5149BEA20511</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>task2</string>
+				<key>subtext</key>
+				<string>&lt;task&gt; ::&lt;note&gt;</string>
+				<key>text</key>
+				<string>Things: Show quick entry panel</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>43E8825E-1B66-45BD-8807-BC88FE3F50CE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Task successfully added! {query}</string>
+				<key>title</key>
+				<string>Things</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>1D3BCB73-47EF-40FA-AE2B-AFAF14C74A73</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on tellthings(w)	tell application "Things"		parse quicksilver input (w)	end tell	error number -128end tellthingson testclass(f)	set teststring to "r"	try		set teststring to (f as integer)	end try	if (class of teststring) is integer then		return true	else		return false	end ifend testclasson alfred_script(q)
+if application "Things" is running thenelse	tell application "Things" to activate	tell application "Finder"		set visible of process "Things" to false	end tell	delay 1end ifset x to ""set y to ""set days1 to 0set endspace to falseset today to current dateset x to text 1 thru ((offset of "::" in q) - 1) of qif (offset of "::" in q) = 0 then	set y to ""else	set y to text (offset of "::" in q) thru -1 of qend ifrepeat while endspace is false	if (text -1 of x) = " " then		set x to text 1 thru -2 of x	else		set endspace to true	end ifend repeatif ((count of words of x) &lt; 3) then	tellthings(x &amp; y)end ifset foundmnothdate to current dateif (word -2 in x = "next") then	if (word -1 in x) = "day" then		set x to text 1 thru ((offset of (word -2 in x) in x) - 2) of x		tellthings(x &amp; y &amp; "&gt;+1")			else if ((word -1 in x) is in ((current date)'s weekday as string)) then		set x to text 1 thru ((offset of (word -2 in x) in x) - 2) of x		tellthings(x &amp; y &amp; "&gt;+7")	else		set foundweekdate to current date		set leftweekdays to 0		repeat while (word -1 in x) is not in ((foundweekdate's weekday) as string)			set foundweekdate to (foundweekdate + 1 * days)			set leftweekdays to leftweekdays + 1			if leftweekdays &gt; 8 then				tellthings(x &amp; y)			end if		end repeat		set x to text 1 thru ((offset of (word -2 in x) in x) - 2) of x				tellthings(x &amp; y &amp; "&gt;+" &amp; leftweekdays)	end if	else if (word -3 in x = "in") and testclass(word -2 in x) then	set days1 to (word -2 in x)	if (word -1 in x) is in "days" then	else if (word -1 in x) is in "weeks" then		set days1 to days1 * 7	else if (word -1 in x) is in "months" then				set today's month to (today's month) + (word -2 in x)		set days1 to (((today - (current date)) / 86400) as integer)	else if (word -1 in x) is in "years" then		set today's year to (today's year) + (word -2 in x)		set days1 to (((today - (current date)) / 86400) as integer)	end if	set x to text 1 thru ((offset of (word -3 in x) in x) - 2) of x	tellthings(x &amp; y &amp; "&gt;+" &amp; days1)else if ((word -3 in x = "on")) and ((word -2 in x) is in "january february march april may june july august september october november decemer") and testclass(word -1 in x) then	set foundmonthdate to current date		if ((word -2 in x) is in ((today's month) as string)) and ((word -1 in x as integer) ≤ (today's day as integer)) then		set foundmonthdate's month to (foundmonthdate's month) + 1	end if	repeat while (word -2 in x) is not in ((foundmonthdate's month) as string)		set foundmonthdate's month to ((foundmonthdate's month) + 1)	end repeat	set foundmonthdate's day to (word -1 in x as integer)	set x to text 1 thru ((offset of (word -3 in x) in x) - 2) of x	set days1 to (((foundmonthdate - (current date)) / 86400) as integer)		tellthings(x &amp; y &amp; "&gt;+" &amp; days1)else	tellthings(x &amp; y)		end ifend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7FB51CE8-3D15-43B8-88CA-01C7C917351D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>task</string>
+				<key>subtext</key>
+				<string>#tag1 #tag2 name [project name/area name] &lt;in/next&gt; x &lt;days … years/monday … sonday&gt;::note</string>
+				<key>text</key>
+				<string>Things: Simple add</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CD69778A-A49B-44D1-9F54-B24359DEF8B8</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1D3BCB73-47EF-40FA-AE2B-AFAF14C74A73</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>43E8825E-1B66-45BD-8807-BC88FE3F50CE</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>7FB51CE8-3D15-43B8-88CA-01C7C917351D</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>CD69778A-A49B-44D1-9F54-B24359DEF8B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D1FA3A9C-378B-4EFF-988E-5149BEA20511</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>burschel.com</string>
+</dict>
+</plist>

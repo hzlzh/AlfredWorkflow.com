@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>nikipore.firefoxbookmarks</string>
+	<key>connections</key>
+	<dict>
+		<key>5DBEA531-326D-4036-8FDE-9353EFE432FB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>10BC39C1-3727-4AFE-8837-C01E80B640E8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jan Müller</string>
+	<key>description</key>
+	<string>Search Mozilla Firefox Bookmarks</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Firefox Bookmarks</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>open -a "/Applications/Firefox.app" "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>10BC39C1-3727-4AFE-8837-C01E80B640E8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>ff</string>
+				<key>runningsubtext</key>
+				<string>Scanning …</string>
+				<key>script</key>
+				<string>PROFILE="~/Library/Application Support/Firefox/Profiles/*.default"
+python bookmarks.py "${PROFILE}" "{query}"</string>
+				<key>subtext</key>
+				<string>Search Firefox Bookmarks</string>
+				<key>title</key>
+				<string>Firefox Bookmarks</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5DBEA531-326D-4036-8FDE-9353EFE432FB</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>10BC39C1-3727-4AFE-8837-C01E80B640E8</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>5DBEA531-326D-4036-8FDE-9353EFE432FB</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/nikipore</string>
+</dict>
+</plist>

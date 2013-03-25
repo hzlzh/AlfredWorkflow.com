@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>A851C506-2EB5-4314-8D15-2FC8E5BD58E2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>07D9E2C6-5B1B-4454-AC42-9BE0A422F2E5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Kobi Tate</string>
+	<key>description</key>
+	<string>Get information about FIRST Teams using thebluealliance.com</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>The Blue Alliance</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>tba</string>
+				<key>runningsubtext</key>
+				<string>Loading team data...</string>
+				<key>script</key>
+				<string>// HTML DOM by http://simplehtmldom.sourceforge.net/
+include("htmldom.php");
+
+// Grab team number from Alfred input and set URL
+$teamnumber = {query};
+$url = "http://www.thebluealliance.com/team/".$teamnumber;
+
+// Grab TBA Page
+$html = file_get_html($url);
+
+// Pull out record, name, and subname
+$teamrecord = $html-&gt;find('.span12 p',0)-&gt;plaintext;
+$teamname = $html-&gt;find('.container h2',0)-&gt;plaintext;
+$teamsubname = $html-&gt;find('.span7 p em',0)-&gt;plaintext;
+$teamwebsite = $html-&gt;find('.span7 p a',1)-&gt;plaintext;
+
+// Variables for events loop
+$recordindex = 1;
+
+// Check if record is empty and change to message if it is
+if ($teamrecord == null) {
+	$teamrecord = "Team has not played any matches yet.";
+}
+
+// Send it all to Alfred
+echo '&lt;?xml version="1.0"?&gt;';
+echo '&lt;items&gt;';
+
+	echo '&lt;item uid="" arg="" valid="no"&gt;';
+		echo '&lt;title&gt;'.$teamname.'&lt;/title&gt;';
+		echo '&lt;subtitle&gt;'. $teamsubname .'&lt;/subtitle&gt;';
+		echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+	echo '&lt;/item&gt;';
+
+	echo '&lt;item uid="" arg="" valid="no"&gt;';
+		echo '&lt;title&gt;Current Record&lt;/title&gt;';
+		echo '&lt;subtitle&gt;'. $teamrecord .'&lt;/subtitle&gt;';
+		echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+	echo '&lt;/item&gt;';
+
+	echo '&lt;item uid="" arg="'. $url .'"&gt;';
+		echo '&lt;title&gt;Go to Blue Alliance page&lt;/title&gt;';
+		echo '&lt;subtitle&gt;'. $url .'&lt;/subtitle&gt;';
+		echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+	echo '&lt;/item&gt;';
+	
+	
+	// Check if team has website in TBA, print it
+	if ($teamwebsite != "?") {
+		echo '&lt;item uid="" arg="'. $teamwebsite .'"&gt;';
+			echo '&lt;title&gt;Go to Team Website&lt;/title&gt;';
+			echo '&lt;subtitle&gt;'. $teamwebsite .'&lt;/subtitle&gt;';
+			echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+		echo '&lt;/item&gt;';
+	}
+	
+	
+	// Get all events on page, print name and team record
+	foreach ($html-&gt;find('.span4 h3 a') as $element) {
+		$eventlink = $element-&gt;href;
+		$eventrecord = $html-&gt;find('.span4 p',$recordindex)-&gt;plaintext;
+		if ($eventrecord == null) {
+			$eventrecord = "Event has not yet begun.";
+		}
+		else {
+			// Remove excess spacing
+			$eventrecord = preg_replace('/( )+/', ' ', $eventrecord);
+			// Check for and remove event awards
+			if (strpos($eventrecord,'and won') !== false) {
+				$eventrecord=substr($eventrecord,0,stripos($eventrecord,' and won'));
+			}
+		}
+		echo '&lt;item uid="" arg="http://thebluealliance.com'. $eventlink .'"&gt;';
+			echo '&lt;title&gt;'. $element-&gt;plaintext .'&lt;/title&gt;';
+			echo '&lt;subtitle&gt;'. $eventrecord .'&lt;/subtitle&gt;';
+			echo '&lt;icon&gt;icon.png&lt;/icon&gt;';
+		echo '&lt;/item&gt;';
+		// Go to next event on page
+		$recordindex = $recordindex + 2;
+	}
+
+echo '&lt;/items&gt;';</string>
+				<key>subtext</key>
+				<string>Loads data from The Blue Alliance</string>
+				<key>title</key>
+				<string>The Blue Alliance Team lookup</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A851C506-2EB5-4314-8D15-2FC8E5BD58E2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>07D9E2C6-5B1B-4454-AC42-9BE0A422F2E5</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>07D9E2C6-5B1B-4454-AC42-9BE0A422F2E5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A851C506-2EB5-4314-8D15-2FC8E5BD58E2</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://k0bi.tk</string>
+</dict>
+</plist>

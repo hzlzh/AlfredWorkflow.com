@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Kevin Zhu</string>
+	<key>description</key>
+	<string>cd into folder in iTerm2, current active folder be the default</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>open folder in iTerm2</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+        if length of (q as string) is greater than 0 then
+                set currentFolder to false
+        else
+                set currentFolder to true
+        end if
+        tell application "Finder"
+                try
+                        set _cwd to POSIX path of ((folder of (front window)) as alias)
+                on error
+                        set _cwd to POSIX path of (path to home folder as alias)
+                end try
+        end tell
+
+
+        tell application "iTerm"
+                activate
+                set _term to (make new terminal)
+                tell _term
+                        launch session "Default"
+                        set _session to current session
+                end tell
+                if currentFolder
+                        tell _session
+                                write text "cd \"" &amp; _cwd &amp; "\""
+                        end tell
+                else
+                        tell _session
+                                write text "cd " &amp; q
+                        end tell
+                end if
+        end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>cd</string>
+				<key>subtext</key>
+				<string>open current active folder as default</string>
+				<key>text</key>
+				<string>open folder in iTerm2</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

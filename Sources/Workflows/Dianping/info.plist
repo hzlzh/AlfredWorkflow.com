@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dianping</string>
+	<key>connections</key>
+	<dict>
+		<key>68FF0188-3D61-44EB-BC7F-C641C3F8437F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7FCBE0A0-81AD-4826-9BE5-4C104DC97AB7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8AB6D833-DA20-4F03-95FB-78BF4C2C33EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FC1E1B9B-9F27-4B3C-8A24-C89A72CA32C8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FC1E1B9B-9F27-4B3C-8A24-C89A72CA32C8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EA420093-FF56-4D2C-96F6-2B158D149FF6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>em91@weibo.com</string>
+	<key>description</key>
+	<string>大众点评</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Dianping</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>当前城市</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EA420093-FF56-4D2C-96F6-2B158D149FF6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>dianping set</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$w = new Workflows();
+
+$query = {query};
+
+$w-&gt;result( 'github', $query, $query, '设置所在城市', 'icon.png', 'yes', 'City' );
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>dianping set 杭州</string>
+				<key>title</key>
+				<string>设置所在城市</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8AB6D833-DA20-4F03-95FB-78BF4C2C33EE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>dianping s</string>
+				<key>runningsubtext</key>
+				<string>正在搜索...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$w = new Workflows();
+$query = "{query}";
+
+define('APPKEY','428960217');
+define('SECRET','bd3804478b94449aba359c1ea1246c72');
+define('URL', 'http://api.dianping.com/v1/business/find_businesses');
+
+$city =  $w-&gt;get( 'dianping.city', 'settings.plist');
+$city = urldecode($city);
+
+$params = array('format'=&gt;'json','city'=&gt;''.$city.'','limit'=&gt;'20','keyword'=&gt;''.$query.'');
+
+//按照参数名排序
+ksort($params);
+
+//连接待加密的字符串
+$codes = APPKEY;
+
+//请求的URL参数
+$queryString = '';
+
+while (list($key, $val) = each($params))
+{
+  $codes .=($key.$val);
+  $queryString .=('&amp;'.$key.'='.urlencode($val));
+}
+
+$codes .=SECRET;
+
+$sign = strtoupper(sha1($codes));
+
+$url1= URL . '?appkey='.APPKEY.'&amp;sign='.$sign.$queryString;
+
+$api = "01068bdd0c3168a70313a397249439f5";
+$url = "https://api.douban.com/v2/book/search?count=20&amp;apikey=$api&amp;q=$query";
+$suggestions = $w-&gt;request( $url1 );
+$suggestions = json_decode( $suggestions );
+function get_name($i) {
+   return $i-&gt;name;
+}
+
+foreach( $suggestions-&gt;businesses as $suggest ):
+	$stars = '';
+	for($l = $suggest-&gt;product_grade, $i = 0;$i &lt; $l;$i++){
+		$stars = $stars. '★';
+	}
+	$w-&gt;result( $suggest-&gt;business_id, $suggest-&gt;business_url, $suggest-&gt;name . ' '. $suggest-&gt;branch_name . ' '.$stars, $suggest-&gt;address . '  '. $suggest-&gt;telephone, '');
+endforeach;
+
+if ( count( $w-&gt;results() ) == 0 ):
+      	$w-&gt;result( '点评', 'http://www.dianping.com/search/keyword/3/0_'. $query, '糟糕…', '没找到符合条件的商家, 去大众点评搜搜看？', 'logo.png', 'yes' );
+endif;	
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>dianping s 海底捞</string>
+				<key>title</key>
+				<string>输入商家名称</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>68FF0188-3D61-44EB-BC7F-C641C3F8437F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>7FCBE0A0-81AD-4826-9BE5-4C104DC97AB7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>require( 'workflows.php' );
+$w = new Workflows();
+
+$in = urlencode( "{query}" );
+$w-&gt;set( 'dianping.city', $in, 'settings.plist' );
+
+if ( $in != 'F' ){
+	echo urldecode($in);
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FC1E1B9B-9F27-4B3C-8A24-C89A72CA32C8</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>快捷搜索大众点评商家。
+
+dianping set 杭州
+dianping s 海底捞</string>
+	<key>uidata</key>
+	<dict>
+		<key>68FF0188-3D61-44EB-BC7F-C641C3F8437F</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>7FCBE0A0-81AD-4826-9BE5-4C104DC97AB7</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8AB6D833-DA20-4F03-95FB-78BF4C2C33EE</key>
+		<dict>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>EA420093-FF56-4D2C-96F6-2B158D149FF6</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>FC1E1B9B-9F27-4B3C-8A24-C89A72CA32C8</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://em91.me</string>
+</dict>
+</plist>
