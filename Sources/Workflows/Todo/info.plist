@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.benzi.a2w.todo</string>
+	<key>connections</key>
+	<dict>
+		<key>0C6FD776-C690-4670-9F23-14A30A30E244</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E25A6741-E369-480F-BB0E-1C6711B60492</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>147D21F1-86EB-422D-B66C-6AC58CCB9479</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Delete this item</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>3B3F5A7B-5D6E-40A2-A64C-C5412FD7A36F</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Pin/unpin this item</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CB76767D-57EC-41E5-95EB-0A9254146CE1</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>View all items with matching tag</string>
+			</dict>
+		</array>
+		<key>147D21F1-86EB-422D-B66C-6AC58CCB9479</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CB1F2598-F755-46DF-AC55-2AE1BC49B5A5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>244C7138-CDB9-4041-B7A5-FE0BA857E93D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F0323239-0B21-4C96-BFC9-E8EF820197F2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5AB8056C-065D-467C-8D1A-7AF0C9C8C7AE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>30EE0481-76A6-4236-9437-8B5E9FFA9CAB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>244C7138-CDB9-4041-B7A5-FE0BA857E93D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3B3F5A7B-5D6E-40A2-A64C-C5412FD7A36F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CB1F2598-F755-46DF-AC55-2AE1BC49B5A5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>40969DA4-F3BE-43BF-A0C7-733D45095C7B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C2EB008E-434A-45B1-8246-EC3FD2CB5BE6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5408F4E7-BA67-4CE8-90FC-AB693E6C9E1C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CB1F2598-F755-46DF-AC55-2AE1BC49B5A5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>56795F9C-B5B7-4C56-A2D7-763962F63641</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CD9699C-1955-4F75-90DD-D959B6040059</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>58DF9661-1D26-4703-8656-C15AEFBF8EBE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>74B92A6E-6236-496B-824A-A047D963AEE6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5942F024-8248-41C6-8D33-422F4BFC7408</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5408F4E7-BA67-4CE8-90FC-AB693E6C9E1C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5D598F9D-CCE7-4BD6-819D-90C5B77FA5C4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E25A6741-E369-480F-BB0E-1C6711B60492</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>74B92A6E-6236-496B-824A-A047D963AEE6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CD9699C-1955-4F75-90DD-D959B6040059</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C26AE337-2B97-41C2-9153-874EA9F6A573</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56795F9C-B5B7-4C56-A2D7-763962F63641</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E25A6741-E369-480F-BB0E-1C6711B60492</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CB1F2598-F755-46DF-AC55-2AE1BC49B5A5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Benzi Ahamed</string>
+	<key>description</key>
+	<string>A simple todo list manager</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Todo</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>setup</string>
+				<key>scopes</key>
+				<array/>
+				<key>subtext</key>
+				<string>Select a folder to save your Todo database</string>
+				<key>title</key>
+				<string>Setup Todo folder</string>
+				<key>types</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>5942F024-8248-41C6-8D33-422F4BFC7408</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>6</integer>
+				<key>keyword</key>
+				<string>todo</string>
+				<key>runningsubtext</key>
+				<string>Manage a todo list using Alfred</string>
+				<key>script</key>
+				<string>python todo.py -q "{query}"</string>
+				<key>subtext</key>
+				<string>Manage a todo list using Alfred</string>
+				<key>title</key>
+				<string>Todo</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0C6FD776-C690-4670-9F23-14A30A30E244</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tags</string>
+				<key>subtext</key>
+				<string>Displays your tag list</string>
+				<key>text</key>
+				<string>View Todo tags</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>40969DA4-F3BE-43BF-A0C7-733D45095C7B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>python todo.py -r "{query}"
+
+# Pop Alfred back up
+TAG=$(python config.py -get todo.tag.recent)
+COMMAND=$(python config.py -get todo.command.last)
+if [ $COMMAND == 'remove_tag' ]; then
+ruby runalfred.rb "todo #"
+elif [ $TAG == '#default' ]; then 
+ruby runalfred.rb "todo "
+else
+ruby runalfred.rb "todo $TAG "
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>147D21F1-86EB-422D-B66C-6AC58CCB9479</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Items copied to the clipboard</string>
+				<key>title</key>
+				<string>Todo</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>5AB8056C-065D-467C-8D1A-7AF0C9C8C7AE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>clear</string>
+				<key>text</key>
+				<string>Remove all Todo items</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C26AE337-2B97-41C2-9153-874EA9F6A573</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>reset</string>
+				<key>subtext</key>
+				<string>Resets all preferences and clears your todo list</string>
+				<key>text</key>
+				<string>Reset Todo</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>58DF9661-1D26-4703-8656-C15AEFBF8EBE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>python todo.py -a "{query}"
+
+# Check if last action was copy to clipboard
+# Then we do not want Alfred to popup back up
+ACTION=$(python config.py -get todo.command.last)
+if [ $ACTION == "copy_to_clipboard" ]; then
+exit
+fi
+
+
+# Pop Alfred back up
+TAG=$(python config.py -get todo.tag.recent)
+if [ $ACTION == 'display_tags' ]; then
+ruby runalfred.rb "todo $TAG "
+elif [ $TAG == '#default' ]; then
+ruby runalfred.rb "todo "
+else
+ruby runalfred.rb "todo $TAG "
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E25A6741-E369-480F-BB0E-1C6711B60492</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Todo</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CB1F2598-F755-46DF-AC55-2AE1BC49B5A5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>python setup.py -set-folder "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5408F4E7-BA67-4CE8-90FC-AB693E6C9E1C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>F0323239-0B21-4C96-BFC9-E8EF820197F2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>ruby runalfred.rb "todo #"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C2EB008E-434A-45B1-8246-EC3FD2CB5BE6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>add</string>
+				<key>subtext</key>
+				<string>Add a new todo item</string>
+				<key>text</key>
+				<string>New item '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5D598F9D-CCE7-4BD6-819D-90C5B77FA5C4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>export</string>
+				<key>script</key>
+				<string>python export.py</string>
+				<key>subtext</key>
+				<string>Export all your items or filter by tag</string>
+				<key>title</key>
+				<string>Export Todo items</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>30EE0481-76A6-4236-9437-8B5E9FFA9CAB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>python export.py {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>244C7138-CDB9-4041-B7A5-FE0BA857E93D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>python setup.py -reset
+echo "Preferences reset to their defaults"
+
+python todo.py -c
+echo "Todo items cleared"
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>74B92A6E-6236-496B-824A-A047D963AEE6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Todo</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8CD9699C-1955-4F75-90DD-D959B6040059</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>6</integer>
+				<key>script</key>
+				<string>python todo.py -v "{query}"
+TAG=$(python config.py -get todo.tag.recent)
+ruby runalfred.rb "todo $TAG "</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CB76767D-57EC-41E5-95EB-0A9254146CE1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>python todo.py -c
+echo "Todo items cleared"
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>56795F9C-B5B7-4C56-A2D7-763962F63641</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>python todo.py -p "{query}"
+TAG=$(python config.py -get todo.tag.recent)
+if [ $TAG == '#default' ]; then 
+ruby runalfred.rb "todo "
+else
+ruby runalfred.rb "todo $TAG "
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3B3F5A7B-5D6E-40A2-A64C-C5412FD7A36F</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0C6FD776-C690-4670-9F23-14A30A30E244</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>147D21F1-86EB-422D-B66C-6AC58CCB9479</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>244C7138-CDB9-4041-B7A5-FE0BA857E93D</key>
+		<dict>
+			<key>ypos</key>
+			<real>1030</real>
+		</dict>
+		<key>30EE0481-76A6-4236-9437-8B5E9FFA9CAB</key>
+		<dict>
+			<key>ypos</key>
+			<real>1030</real>
+		</dict>
+		<key>3B3F5A7B-5D6E-40A2-A64C-C5412FD7A36F</key>
+		<dict>
+			<key>ypos</key>
+			<real>440</real>
+		</dict>
+		<key>40969DA4-F3BE-43BF-A0C7-733D45095C7B</key>
+		<dict>
+			<key>ypos</key>
+			<real>660</real>
+		</dict>
+		<key>5408F4E7-BA67-4CE8-90FC-AB693E6C9E1C</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>56795F9C-B5B7-4C56-A2D7-763962F63641</key>
+		<dict>
+			<key>ypos</key>
+			<real>790</real>
+		</dict>
+		<key>58DF9661-1D26-4703-8656-C15AEFBF8EBE</key>
+		<dict>
+			<key>ypos</key>
+			<real>910</real>
+		</dict>
+		<key>5942F024-8248-41C6-8D33-422F4BFC7408</key>
+		<dict>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+		<key>5AB8056C-065D-467C-8D1A-7AF0C9C8C7AE</key>
+		<dict>
+			<key>ypos</key>
+			<real>1150</real>
+		</dict>
+		<key>5D598F9D-CCE7-4BD6-819D-90C5B77FA5C4</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>74B92A6E-6236-496B-824A-A047D963AEE6</key>
+		<dict>
+			<key>ypos</key>
+			<real>910</real>
+		</dict>
+		<key>8CD9699C-1955-4F75-90DD-D959B6040059</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>C26AE337-2B97-41C2-9153-874EA9F6A573</key>
+		<dict>
+			<key>ypos</key>
+			<real>790</real>
+		</dict>
+		<key>C2EB008E-434A-45B1-8246-EC3FD2CB5BE6</key>
+		<dict>
+			<key>ypos</key>
+			<real>660</real>
+		</dict>
+		<key>CB1F2598-F755-46DF-AC55-2AE1BC49B5A5</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>CB76767D-57EC-41E5-95EB-0A9254146CE1</key>
+		<dict>
+			<key>ypos</key>
+			<real>550</real>
+		</dict>
+		<key>E25A6741-E369-480F-BB0E-1C6711B60492</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>F0323239-0B21-4C96-BFC9-E8EF820197F2</key>
+		<dict>
+			<key>ypos</key>
+			<real>1030</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>benzi-ahamed.tumblr.com</string>
+</dict>
+</plist>

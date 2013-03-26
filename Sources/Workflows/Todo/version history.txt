@@ -1,0 +1,25 @@
+### Version History
+
+22 Mar 2013 - v0.1
+* Initial version
+
+23 Mar 2013 - v0.1.1
+* Small bug fixes around escaping certain characters
+
+23 Mar 2013 - v0.2
+* Added tagging support
+
+23 Mar 2013 - v0.5
+* Improved handling of todo items once selected (items details are copied to clipboard)
+* Improved handling of tags (you can now delete all items with a specific tag at once by pressing the Cmd key in tag view, selecting a tag will display all the items with that tag)
+* New advanced features and config options (control where the todo database is stored, reset to factory settings)
+
+24 Mar 2013 - v0.6
+* Added a utility keyword tags which will take you directly to the tags list view
+* Added the Alt modifier, that helps you search for items matching a specific tag
+
+26 Mar 2013 - v0.7
+* Add ability to pin / unpin items using the Ctrl key
+* QuickCreate feature for items added without specifying a tag and using the Todo keyword - prevents Alfred from flashing
+* Export todo items to clipboard (plain text)
+

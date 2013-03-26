@@ -1,0 +1,495 @@
+bash: no job control in this shell
+bash-3.2$ ls
+40969DA4-F3BE-43BF-A0C7-733D45095C7B.png
+58DF9661-1D26-4703-8656-C15AEFBF8EBE.png
+5942F024-8248-41C6-8D33-422F4BFC7408.png
+5D598F9D-CCE7-4BD6-819D-90C5B77FA5C4.png
+B490E294-C385-43E0-B496-EBC658F05CAD.png
+C26AE337-2B97-41C2-9153-874EA9F6A573.png
+alfred.py
+alfred.pyc
+config.py
+config.pyc
+helpers.py
+helpers.pyc
+icon.png
+info.plist
+parser.py
+preferences.pyc
+runalfred.rb
+setup.py
+taskparser.pyc
+todo.py
+todo_add.png
+todo_old.png
+todo_tag.png
+yaml
+bash-3.2$ python parser.py
+Traceback (most recent call last):
+  File "parser.py", line 36, in <module>
+    showparse()
+  File "parser.py", line 32, in showparse
+    pprint(parse(sys.argv[1]))
+IndexError: list index out of range
+bash-3.2$ python parser.py "asdd"
+Traceback (most recent call last):
+  File "parser.py", line 36, in <module>
+    showparse()
+  File "parser.py", line 32, in showparse
+    pprint(parse(sys.argv[1]))
+  File "parser.py", line 10, in parse
+    task = taskInfo
+NameError: global name 'taskInfo' is not defined
+bash-3.2$ python parser.py "asdd"
+{'tag': None, 'title': 'asdd'}
+bash-3.2$ python parser.py "asdd ok"
+{'tag': None, 'title': 'asdd ok'}
+bash-3.2$ python parser.py "asdd"
+{'tag': None, 'title': 'asdd'}
+bash-3.2$ python parser.py "asdd"
+{'pinned': False, 'rating': None, 'tag': None, 'title': 'asdd'}
+bash-3.2$ python parser.py "asdd"
+{'pinned': False, 'rating': None, 'tag': None, 'title': 'asdd'}
+bash-3.2$ python parser.py "#test asdd"
+{'pinned': False, 'rating': None, 'tag': 'test', 'title': '#test asdd'}
+bash-3.2$ python parser.py "#test asdd"
+{'pinned': False, 'rating': None, 'tag': 'test', 'title': 'asdd'}
+bash-3.2$ python parser.py "#test asdd"
+{'pinned': False, 'rating': None, 'tag': 'test', 'title': 'asdd'}
+bash-3.2$ python parser.py "#test asdd"
+{'pinned': False, 'rating': None, 'tag': 'test', 'title': 'asdd'}
+bash-3.2$ python parser.py "#test asdd"
+{'pinned': False, 'rating': None, 'tag': 'test', 'title': 'asdd'}
+bash-3.2$ python config.py -load
+{'todo.tag.recent': '#todo', 'todo.command.last': 'add_todo', 'todo.db': '/Users/benzi/Library/Application Support/Alfred 2/Workflow Data/com.benzi.a2w.todo/todo.yaml'}
+bash-3.2$ python test.py
+Traceback (most recent call last):
+  File "test.py", line 4, in <module>
+    print generate_view()
+NameError: name 'generate_view' is not defined
+bash-3.2$ python test.py
+Traceback (most recent call last):
+  File "test.py", line 4, in <module>
+    print tagview.generate_view()
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/tagview.py", line 7, in generate_view
+    tags = items.get_tags()
+UnboundLocalError: local variable 'items' referenced before assignment
+bash-3.2$ python test.py
+Traceback (most recent call last):
+  File "test.py", line 4, in <module>
+    print tagview.generate_view()
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/tagview.py", line 7, in generate_view
+    tags = itemlist.get_tags()
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 75, in get_tags
+    todos = get_todo_list()
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 21, in get_todo_list
+    todos = yaml.load(f)
+NameError: global name 'yaml' is not defined
+bash-3.2$ python test.py
+Traceback (most recent call last):
+  File "test.py", line 4, in <module>
+    print tagview.generate_view()
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/tagview.py", line 7, in generate_view
+    tags = itemlist.get_tags()
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 77, in get_tags
+    tags = defaultdict(list)
+NameError: global name 'defaultdict' is not defined
+bash-3.2$ python test.py
+Traceback (most recent call last):
+  File "test.py", line 4, in <module>
+    print tagview.generate_view()
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/tagview.py", line 8, in generate_view
+    for tag,items in res.items():
+NameError: global name 'res' is not defined
+bash-3.2$ python test.py
+Traceback (most recent call last):
+  File "test.py", line 4, in <module>
+    print tagview.generate_view()
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/tagview.py", line 25, in generate_view
+    config.update_state(view='tag_view',command='generate_view')
+NameError: global name 'config' is not defined
+bash-3.2$ python test.py
+Traceback (most recent call last):
+  File "test.py", line 4, in <module>
+    print tagview.generate_view()
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/tagview.py", line 26, in generate_view
+    config.update_state(view='tag_view',command='generate_view')
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/config.py", line 57, in update_state
+    config.put('todo.view.last', view)
+NameError: global name 'config' is not defined
+bash-3.2$ python test.py
+<items><item arg="___tag___:movies" autocomplete="#movies " uid="com.benzi.a2w.todo-movies" valid="no"><title>#movies</title><subtitle>Tag matches 5 items</subtitle><icon>todo_tag.png</icon></item><item arg="___tag___:todo" autocomplete="#todo " uid="com.benzi.a2w.todo-todo" valid="no"><title>#todo</title><subtitle>Tag matches 7 items</subtitle><icon>todo_tag.png</icon></item></items>None
+bash-3.2$ python test.py
+<items><item arg="___tag___:movies" autocomplete="#movies " uid="com.benzi.a2w.todo-movies" valid="no"><title>#movies</title><subtitle>Tag matches 5 items</subtitle><icon>todo_tag.png</icon></item><item arg="___tag___:todo" autocomplete="#todo " uid="com.benzi.a2w.todo-todo" valid="no"><title>#todo</title><subtitle>Tag matches 7 items</subtitle><icon>todo_tag.png</icon></item></items>None
+bash-3.2$ python test.py
+<items><item arg="___tag___:movies" autocomplete="#movies " uid="com.benzi.a2w.todo-movies" valid="no"><title>#movies</title><subtitle>Tag matches 5 items</subtitle><icon>todo_tag.png</icon></item><item arg="___tag___:todo" autocomplete="#todo " uid="com.benzi.a2w.todo-todo" valid="no"><title>#todo</title><subtitle>Tag matches 7 items</subtitle><icon>todo_tag.png</icon></item></items>None
+bash-3.2$ python todo.py -p "todo new test item 3"
+bash-3.2$ python todo.py -p "todo new test item 4"
+bash-3.2$ python todo.py -p ""
+bash-3.2$ python todo.py -q ""
+<items><item arg="___id___:96cd3e68-0bea-4ce9-bc3a-e84c21736cc6" uid="com.benzi.a2w.todo-96cd3e68-0bea-4ce9-bc3a-e84c21736cc6"><title>new test item1</title><subtitle>added 8 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:901939a0-180a-49b3-8765-541de4aba67f" uid="com.benzi.a2w.todo-901939a0-180a-49b3-8765-541de4aba67f"><title>sync with a todo app</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:388a0640-36f7-4590-957a-50411c894b83" uid="com.benzi.a2w.todo-388a0640-36f7-4590-957a-50411c894b83"><title>share lists</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:d158a1cc-a629-4776-948d-a4a42badd5a6" uid="com.benzi.a2w.todo-d158a1cc-a629-4776-948d-a4a42badd5a6"><title>importance to tasks</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:82a5dda4-45da-4ac2-a34c-7119413b320e" uid="com.benzi.a2w.todo-82a5dda4-45da-4ac2-a34c-7119413b320e"><title>deadlines to tasks</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:dbac58f4-4e40-415c-b994-f61c4a2febc2" uid="com.benzi.a2w.todo-dbac58f4-4e40-415c-b994-f61c4a2febc2"><title>merge if file existing</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:f1cfa1ce-3050-45ce-9d59-d1a05ad2ff28" uid="com.benzi.a2w.todo-f1cfa1ce-3050-45ce-9d59-d1a05ad2ff28"><title>copy all to clipboard</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:f1d2d745-5072-4198-a5cb-8f8fd7d8eeae" uid="com.benzi.a2w.todo-f1d2d745-5072-4198-a5cb-8f8fd7d8eeae"><title>multiple tags</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:c44a36ae-fb26-447e-9913-8fdc45034315" uid="com.benzi.a2w.todo-c44a36ae-fb26-447e-9913-8fdc45034315"><title>compliance</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:1967459c-8060-4847-9754-e37b28271789" uid="com.benzi.a2w.todo-1967459c-8060-4847-9754-e37b28271789"><title>rust and bones</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:f47ce7bf-f8be-4c8c-8b0f-515183407a98" uid="com.benzi.a2w.todo-f47ce7bf-f8be-4c8c-8b0f-515183407a98"><title>magic mike</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:7ef4f3a1-90d6-4318-915e-a9ad52a4928f" uid="com.benzi.a2w.todo-7ef4f3a1-90d6-4318-915e-a9ad52a4928f"><title>lawless</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:ee6d3f80-546b-4f7a-9d9a-238035a6403f" uid="com.benzi.a2w.todo-ee6d3f80-546b-4f7a-9d9a-238035a6403f"><title>zero dark thirty</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q "todo new test item 3"
+<items><item arg="#default todo new test item 3" uid="com.benzi.a2w.todo-todo new test item 3"><title>New item 'todo new test item 3'</title><subtitle>Type something to create a new todo</subtitle><icon>todo_add.png</icon></item></items>bash-3.2$ python todo.py -a "todo new test item 3"
+Traceback (most recent call last):
+  File "todo.py", line 124, in <module>
+    main()
+  File "todo.py", line 114, in main
+    actionize(query)
+  File "todo.py", line 83, in actionize
+    itemlist.save_todo(taskinfo)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 49, in save_todo
+    'created' : datetime.now(), 
+NameError: global name 'datetime' is not defined
+bash-3.2$ python todo.py -a "todo new test item 3"
+Added 'todo new test item 3'
+Traceback (most recent call last):
+  File "todo.py", line 124, in <module>
+    main()
+  File "todo.py", line 114, in main
+    actionize(query)
+  File "todo.py", line 83, in actionize
+    itemlist.save_todo(taskinfo)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 61, in save_todo
+    update_state(command='add_todo', tag='#'+tag)
+NameError: global name 'update_state' is not defined
+bash-3.2$ python todo.py -a "todo new test item 3"
+Added 'todo new test item 3'
+bash-3.2$ python todo.py -q "todo new test item 3"
+Traceback (most recent call last):
+  File "todo.py", line 106, in <module>
+    main()
+  File "todo.py", line 98, in main
+    process_todo_query(query)
+  File "todo.py", line 62, in process_todo_query
+    (tag, q) = helpers.parse(raw_query)
+AttributeError: 'module' object has no attribute 'parse'
+bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 108, in <module>
+    main()
+  File "todo.py", line 100, in main
+    process_todo_query(query)
+  File "todo.py", line 62, in process_todo_query
+    info = parser.parse(raw_query)
+NameError: global name 'parser' is not defined
+bash-3.2$ python todo.py -q ""
+<items><item arg="___id___:96cd3e68-0bea-4ce9-bc3a-e84c21736cc6" uid="com.benzi.a2w.todo-96cd3e68-0bea-4ce9-bc3a-e84c21736cc6"><title>new test item1</title><subtitle>added 17 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:901939a0-180a-49b3-8765-541de4aba67f" uid="com.benzi.a2w.todo-901939a0-180a-49b3-8765-541de4aba67f"><title>sync with a todo app</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:388a0640-36f7-4590-957a-50411c894b83" uid="com.benzi.a2w.todo-388a0640-36f7-4590-957a-50411c894b83"><title>share lists</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:d158a1cc-a629-4776-948d-a4a42badd5a6" uid="com.benzi.a2w.todo-d158a1cc-a629-4776-948d-a4a42badd5a6"><title>importance to tasks</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:82a5dda4-45da-4ac2-a34c-7119413b320e" uid="com.benzi.a2w.todo-82a5dda4-45da-4ac2-a34c-7119413b320e"><title>deadlines to tasks</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:dbac58f4-4e40-415c-b994-f61c4a2febc2" uid="com.benzi.a2w.todo-dbac58f4-4e40-415c-b994-f61c4a2febc2"><title>merge if file existing</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:f1cfa1ce-3050-45ce-9d59-d1a05ad2ff28" uid="com.benzi.a2w.todo-f1cfa1ce-3050-45ce-9d59-d1a05ad2ff28"><title>copy all to clipboard</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:f1d2d745-5072-4198-a5cb-8f8fd7d8eeae" uid="com.benzi.a2w.todo-f1d2d745-5072-4198-a5cb-8f8fd7d8eeae"><title>multiple tags</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:c44a36ae-fb26-447e-9913-8fdc45034315" uid="com.benzi.a2w.todo-c44a36ae-fb26-447e-9913-8fdc45034315"><title>compliance</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:1967459c-8060-4847-9754-e37b28271789" uid="com.benzi.a2w.todo-1967459c-8060-4847-9754-e37b28271789"><title>rust and bones</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:f47ce7bf-f8be-4c8c-8b0f-515183407a98" uid="com.benzi.a2w.todo-f47ce7bf-f8be-4c8c-8b0f-515183407a98"><title>magic mike</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:7ef4f3a1-90d6-4318-915e-a9ad52a4928f" uid="com.benzi.a2w.todo-7ef4f3a1-90d6-4318-915e-a9ad52a4928f"><title>lawless</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:ee6d3f80-546b-4f7a-9d9a-238035a6403f" uid="com.benzi.a2w.todo-ee6d3f80-546b-4f7a-9d9a-238035a6403f"><title>zero dark thirty</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q "test item"
+<items><item arg="___id___:96cd3e68-0bea-4ce9-bc3a-e84c21736cc6" uid="com.benzi.a2w.todo-96cd3e68-0bea-4ce9-bc3a-e84c21736cc6"><title>new test item1</title><subtitle>added 17 minutes ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -r "___id___:96cd3e68-0bea-4ce9-bc3a-e84c21736cc6"
+Traceback (most recent call last):
+  File "todo.py", line 109, in <module>
+    main()
+  File "todo.py", line 103, in main
+    itemlist.remove(query)
+AttributeError: 'module' object has no attribute 'remove'
+bash-3.2$ python todo.py -r "___id___:96cd3e68-0bea-4ce9-bc3a-e84c21736cc6"
+Removed 'new test item1'
+bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 66, in <module>
+    main()
+  File "todo.py", line 58, in main
+    process_todo_query(query)
+  File "todo.py", line 33, in process_todo_query
+    itemview.generate_view(raw_query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 37, in generate_view
+    info = parser.parse(query)
+NameError: global name 'parser' is not defined
+bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 66, in <module>
+    main()
+  File "todo.py", line 58, in main
+    process_todo_query(query)
+  File "todo.py", line 33, in process_todo_query
+    itemview.generate_view(raw_query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 43, in generate_view
+    matching_by_location = [t for t in todos if (tag is None or t['group'] == tag)]		
+NameError: global name 'todos' is not defined
+bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 66, in <module>
+    main()
+  File "todo.py", line 58, in main
+    process_todo_query(query)
+  File "todo.py", line 33, in process_todo_query
+    itemview.generate_view(raw_query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 53, in generate_view
+    feedback_items = map(lambda x: generate_todo_feedbackitem(x), matching)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 53, in <lambda>
+    feedback_items = map(lambda x: generate_todo_feedbackitem(x), matching)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 32, in generate_todo_feedbackitem
+    'arg' : helpers.encode_todo_id(str(t['id']))
+NameError: global name 'helpers' is not defined
+bash-3.2$ python todo.py -q ""
+<items><item arg="___id___:901939a0-180a-49b3-8765-541de4aba67f" uid="com.benzi.a2w.todo-901939a0-180a-49b3-8765-541de4aba67f"><title>sync with a todo app</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:388a0640-36f7-4590-957a-50411c894b83" uid="com.benzi.a2w.todo-388a0640-36f7-4590-957a-50411c894b83"><title>share lists</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:d158a1cc-a629-4776-948d-a4a42badd5a6" uid="com.benzi.a2w.todo-d158a1cc-a629-4776-948d-a4a42badd5a6"><title>importance to tasks</title><subtitle>#todo added 12 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:82a5dda4-45da-4ac2-a34c-7119413b320e" uid="com.benzi.a2w.todo-82a5dda4-45da-4ac2-a34c-7119413b320e"><title>deadlines to tasks</title><subtitle>#todo added 12 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:dbac58f4-4e40-415c-b994-f61c4a2febc2" uid="com.benzi.a2w.todo-dbac58f4-4e40-415c-b994-f61c4a2febc2"><title>merge if file existing</title><subtitle>#todo added 12 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:f1cfa1ce-3050-45ce-9d59-d1a05ad2ff28" uid="com.benzi.a2w.todo-f1cfa1ce-3050-45ce-9d59-d1a05ad2ff28"><title>copy all to clipboard</title><subtitle>#todo added 12 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:f1d2d745-5072-4198-a5cb-8f8fd7d8eeae" uid="com.benzi.a2w.todo-f1d2d745-5072-4198-a5cb-8f8fd7d8eeae"><title>multiple tags</title><subtitle>#todo added 12 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:c44a36ae-fb26-447e-9913-8fdc45034315" uid="com.benzi.a2w.todo-c44a36ae-fb26-447e-9913-8fdc45034315"><title>compliance</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:1967459c-8060-4847-9754-e37b28271789" uid="com.benzi.a2w.todo-1967459c-8060-4847-9754-e37b28271789"><title>rust and bones</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:f47ce7bf-f8be-4c8c-8b0f-515183407a98" uid="com.benzi.a2w.todo-f47ce7bf-f8be-4c8c-8b0f-515183407a98"><title>magic mike</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:7ef4f3a1-90d6-4318-915e-a9ad52a4928f" uid="com.benzi.a2w.todo-7ef4f3a1-90d6-4318-915e-a9ad52a4928f"><title>lawless</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:ee6d3f80-546b-4f7a-9d9a-238035a6403f" uid="com.benzi.a2w.todo-ee6d3f80-546b-4f7a-9d9a-238035a6403f"><title>zero dark thirty</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 62, in <module>
+    main()
+  File "todo.py", line 46, in main
+    (option, query) = alfred.args2()
+NameError: global name 'alfred' is not defined
+bash-3.2$ python todo.py -q ""
+<items><item arg="___id___:901939a0-180a-49b3-8765-541de4aba67f" uid="com.benzi.a2w.todo-901939a0-180a-49b3-8765-541de4aba67f"><title>sync with a todo app</title><subtitle>#todo added 11 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:388a0640-36f7-4590-957a-50411c894b83" uid="com.benzi.a2w.todo-388a0640-36f7-4590-957a-50411c894b83"><title>share lists</title><subtitle>#todo added 12 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:d158a1cc-a629-4776-948d-a4a42badd5a6" uid="com.benzi.a2w.todo-d158a1cc-a629-4776-948d-a4a42badd5a6"><title>importance to tasks</title><subtitle>#todo added 12 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:82a5dda4-45da-4ac2-a34c-7119413b320e" uid="com.benzi.a2w.todo-82a5dda4-45da-4ac2-a34c-7119413b320e"><title>deadlines to tasks</title><subtitle>#todo added 12 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:dbac58f4-4e40-415c-b994-f61c4a2febc2" uid="com.benzi.a2w.todo-dbac58f4-4e40-415c-b994-f61c4a2febc2"><title>merge if file existing</title><subtitle>#todo added 12 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:f1cfa1ce-3050-45ce-9d59-d1a05ad2ff28" uid="com.benzi.a2w.todo-f1cfa1ce-3050-45ce-9d59-d1a05ad2ff28"><title>copy all to clipboard</title><subtitle>#todo added 12 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:f1d2d745-5072-4198-a5cb-8f8fd7d8eeae" uid="com.benzi.a2w.todo-f1d2d745-5072-4198-a5cb-8f8fd7d8eeae"><title>multiple tags</title><subtitle>#todo added 12 hours ago</subtitle><icon>icon.png</icon></item><item arg="___id___:c44a36ae-fb26-447e-9913-8fdc45034315" uid="com.benzi.a2w.todo-c44a36ae-fb26-447e-9913-8fdc45034315"><title>compliance</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:1967459c-8060-4847-9754-e37b28271789" uid="com.benzi.a2w.todo-1967459c-8060-4847-9754-e37b28271789"><title>rust and bones</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:f47ce7bf-f8be-4c8c-8b0f-515183407a98" uid="com.benzi.a2w.todo-f47ce7bf-f8be-4c8c-8b0f-515183407a98"><title>magic mike</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:7ef4f3a1-90d6-4318-915e-a9ad52a4928f" uid="com.benzi.a2w.todo-7ef4f3a1-90d6-4318-915e-a9ad52a4928f"><title>lawless</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item><item arg="___id___:ee6d3f80-546b-4f7a-9d9a-238035a6403f" uid="com.benzi.a2w.todo-ee6d3f80-546b-4f7a-9d9a-238035a6403f"><title>zero dark thirty</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q "compliance"
+<items><item arg="___id___:c44a36ae-fb26-447e-9913-8fdc45034315" uid="com.benzi.a2w.todo-c44a36ae-fb26-447e-9913-8fdc45034315"><title>compliance</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item></items>bash-3.2$ todo -v "___id___:c44a36ae-fb26-447e-9913-8fdc45034315"
+bash: todo: command not found
+bash-3.2$ python todo.py -v "___id___:c44a36ae-fb26-447e-9913-8fdc45034315"
+Traceback (most recent call last):
+  File "todo.py", line 61, in <module>
+    main()
+  File "todo.py", line 58, in main
+    itemlist.retrieve_and_store_tag(query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 106, in retrieve_and_store_tag
+    todos = itemlist.get_todo_list()
+NameError: global name 'itemlist' is not defined
+bash-3.2$ python todo.py -v "___id___:c44a36ae-fb26-447e-9913-8fdc45034315"
+bash-3.2$ python todo.py -v "___id___:c44a36ae-fb26-447e-9913-8fdc45034315"
+bash-3.2$ python todo.py -v "___id___:c44a36ae-fb26-447e-9913-8fdc45034315"
+bash-3.2$ python todo.py -v "___id___:c44a36ae-fb26-447e-9913-8fdc45034315"
+bash-3.2$ 
+bash-3.2$ python todo.py -q "rust"
+<items><item arg="___id___:1967459c-8060-4847-9754-e37b28271789" uid="com.benzi.a2w.todo-1967459c-8060-4847-9754-e37b28271789"><title>rust and bones</title><subtitle>#movies added yesterday</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -a "___id___:1967459c-8060-4847-9754-e37b28271789"
+Traceback (most recent call last):
+  File "todo.py", line 48, in <module>
+    main()
+  File "todo.py", line 39, in main
+    actionize(query)
+  File "todo.py", line 30, in actionize
+    itemlist.copy_todo_to_clipboard(helpers.extract_todo_id(query))
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 119, in copy_todo_to_clipboard
+    todos = get_todo(_id)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 68, in get_todo
+    if str(todo[id]) == _id:
+KeyError: <built-in function id>
+bash-3.2$ python todo.py -a "___id___:1967459c-8060-4847-9754-e37b28271789"
+Traceback (most recent call last):
+  File "todo.py", line 48, in <module>
+    main()
+  File "todo.py", line 39, in main
+    actionize(query)
+  File "todo.py", line 30, in actionize
+    itemlist.copy_todo_to_clipboard(helpers.extract_todo_id(query))
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 120, in copy_todo_to_clipboard
+    title = todo['title']
+NameError: global name 'todo' is not defined
+bash-3.2$ python todo.py -a "___id___:1967459c-8060-4847-9754-e37b28271789"
+Traceback (most recent call last):
+  File "todo.py", line 48, in <module>
+    main()
+  File "todo.py", line 39, in main
+    actionize(query)
+  File "todo.py", line 30, in actionize
+    itemlist.copy_todo_to_clipboard(helpers.extract_todo_id(query))
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 120, in copy_todo_to_clipboard
+    title = todo['title']
+NameError: global name 'todo' is not defined
+bash-3.2$ python todo.py -a "___id___:1967459c-8060-4847-9754-e37b28271789"
+Copied 'rust and bones' to the clipboard
+bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 8, in <module>
+    import itemview
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 29
+    else
+       ^
+SyntaxError: invalid syntax
+bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 48, in <module>
+    main()
+  File "todo.py", line 41, in main
+    process_todo_query(query)
+  File "todo.py", line 19, in process_todo_query
+    itemview.generate_view(raw_query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 78, in generate_view
+    alfred.write(alfred.xml(feedback_items))
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/alfred.py", line 81, in xml
+    root.append(item.xml())
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/alfred.py", line 45, in xml
+    SubElement(item, attribute, self.unicode(attributes)).text = unicode(value)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/xml/etree/ElementTree.py", line 528, in SubElement
+AttributeError: 'unicode' object has no attribute 'copy'
+bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 48, in <module>
+    main()
+  File "todo.py", line 41, in main
+    process_todo_query(query)
+  File "todo.py", line 19, in process_todo_query
+    itemview.generate_view(raw_query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 78, in generate_view
+    alfred.write(alfred.xml(feedback_items))
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/alfred.py", line 81, in xml
+    root.append(item.xml())
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/alfred.py", line 45, in xml
+    SubElement(item, attribute, self.unicode(attributes)).text = unicode(value)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/xml/etree/ElementTree.py", line 528, in SubElement
+AttributeError: 'unicode' object has no attribute 'copy'
+bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 48, in <module>
+    main()
+  File "todo.py", line 41, in main
+    process_todo_query(query)
+  File "todo.py", line 19, in process_todo_query
+    itemview.generate_view(raw_query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 78, in generate_view
+    alfred.write(alfred.xml(feedback_items))
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/alfred.py", line 81, in xml
+    root.append(item.xml())
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/alfred.py", line 45, in xml
+    SubElement(item, attribute, self.unicode(attributes)).text = unicode(value)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/xml/etree/ElementTree.py", line 528, in SubElement
+AttributeError: 'unicode' object has no attribute 'copy'
+bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 48, in <module>
+    main()
+  File "todo.py", line 41, in main
+    process_todo_query(query)
+  File "todo.py", line 19, in process_todo_query
+    itemview.generate_view(raw_query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 77, in generate_view
+    alfred.write(alfred.xml(feedback_items))
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/alfred.py", line 81, in xml
+    root.append(item.xml())
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/alfred.py", line 45, in xml
+    SubElement(item, attribute, self.unicode(attributes)).text = unicode(value)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/xml/etree/ElementTree.py", line 528, in SubElement
+AttributeError: 'unicode' object has no attribute 'copy'
+bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 8, in <module>
+    import itemview
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 62
+    info = parser.parse(query)
+       ^
+IndentationError: expected an indented block
+bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 48, in <module>
+    main()
+  File "todo.py", line 41, in main
+    process_todo_query(query)
+  File "todo.py", line 19, in process_todo_query
+    itemview.generate_view(raw_query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 77, in generate_view
+    alfred.write(alfred.xml(feedback_items))
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/alfred.py", line 81, in xml
+    root.append(item.xml())
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/alfred.py", line 45, in xml
+    SubElement(item, attribute, self.unicode(attributes)).text = unicode(value)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/xml/etree/ElementTree.py", line 528, in SubElement
+AttributeError: 'unicode' object has no attribute 'copy'
+bash-3.2$ python todo.py -q ""
+<items><item arg="#default " autocomplete="" uid="3824cc22-95ae-41ad-92e3-92f9d60fa559" valid="no"><title>New item '...'</title><subtitle>Type something to create a new todo</subtitle><icon>todo_add.png</icon></item></items>bash-3.2$ python todo.py -q ""
+<items><item arg="#default " autocomplete="" uid="89b90b71-f6d4-49bf-92f2-d8cce4e6cfbc" valid="no"><title>New item '...'</title><subtitle>Type something to create a new todo</subtitle><icon>todo_add.png</icon></item></items>bash-3.2$ python todo.py -q "new test item"
+<items><item arg="#default new test item" autocomplete="" uid="1a4b0f52-a4dc-4cf4-8f84-d8e0aba341e3" valid="no"><title>New item 'new test item'</title><subtitle>Type something to create a new todo</subtitle><icon>todo_add.png</icon></item></items>bash-3.2$ python todo.py -q ""
+Added 'new test item'
+quick_create
+<items><item arg="___id___:70319ca8-1528-4281-b333-9c24af02d3ee" uid="com.benzi.a2w.todo-70319ca8-1528-4281-b333-9c24af02d3ee"><title>new test item</title><subtitle>added moments ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q "test 4"
+<items><item arg="#default test 4" autocomplete="" uid="013f7426-36ca-4ec8-a4ee-7400ca47cee8" valid="no"><title>New item 'test 4'</title><subtitle>Type something to create a new todo</subtitle><icon>todo_add.png</icon></item></items>bash-3.2$ python todo.py -q ""
+Added 'test 4'
+<items><item arg="___id___:036f8a20-5dd5-45cf-a5fc-d64276c5fcad" uid="com.benzi.a2w.todo-036f8a20-5dd5-45cf-a5fc-d64276c5fcad"><title>test 4</title><subtitle>added moments ago</subtitle><icon>icon.png</icon></item><item arg="___id___:fbc48834-9d4e-46a4-b989-3d649e85f512" uid="com.benzi.a2w.todo-fbc48834-9d4e-46a4-b989-3d649e85f512"><title>test 3</title><subtitle>added 2 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:af7c32ee-61a5-4f5e-9086-7458e87c158e" uid="com.benzi.a2w.todo-af7c32ee-61a5-4f5e-9086-7458e87c158e"><title>new test item 2</title><subtitle>added 3 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:70319ca8-1528-4281-b333-9c24af02d3ee" uid="com.benzi.a2w.todo-70319ca8-1528-4281-b333-9c24af02d3ee"><title>new test item</title><subtitle>added 3 minutes ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q ""
+<items><item arg="___id___:575ffef0-dd15-458e-92c8-b1b42bf01a22" uid="com.benzi.a2w.todo-575ffef0-dd15-458e-92c8-b1b42bf01a22"><title>style</title><subtitle>#happy added moments ago</subtitle><icon>icon.png</icon></item><item arg="___id___:c66f76d7-c146-4625-b976-e3e004c3e017" uid="com.benzi.a2w.todo-c66f76d7-c146-4625-b976-e3e004c3e017"><title>lemon</title><subtitle>added 1 minute ago</subtitle><icon>icon.png</icon></item><item arg="___id___:cb34e804-cb38-494f-9446-be649e6f6424" uid="com.benzi.a2w.todo-cb34e804-cb38-494f-9446-be649e6f6424"><title>happy</title><subtitle>added 2 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:036f8a20-5dd5-45cf-a5fc-d64276c5fcad" uid="com.benzi.a2w.todo-036f8a20-5dd5-45cf-a5fc-d64276c5fcad"><title>test 4</title><subtitle>added 2 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:3a693a7d-a9fb-4f37-ba95-ec6adfa35a31" uid="com.benzi.a2w.todo-3a693a7d-a9fb-4f37-ba95-ec6adfa35a31"><title>lea</title><subtitle>added 4 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:fbc48834-9d4e-46a4-b989-3d649e85f512" uid="com.benzi.a2w.todo-fbc48834-9d4e-46a4-b989-3d649e85f512"><title>test 3</title><subtitle>added 4 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:af7c32ee-61a5-4f5e-9086-7458e87c158e" uid="com.benzi.a2w.todo-af7c32ee-61a5-4f5e-9086-7458e87c158e"><title>new test item 2</title><subtitle>added 5 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:70319ca8-1528-4281-b333-9c24af02d3ee" uid="com.benzi.a2w.todo-70319ca8-1528-4281-b333-9c24af02d3ee"><title>new test item</title><subtitle>added 6 minutes ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -c
+bash-3.2$ python todo.py -c
+bash-3.2$ python todo.py -q "add 1"
+<items><item arg="#default add 1" autocomplete="" uid="ed1d08cf-b7bf-4f35-9a1c-2e819c063a2b" valid="no"><title>New item 'add 1'</title><subtitle>Type something to create a new todo</subtitle><icon>todo_add.png</icon></item></items>bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ 
+bash-3.2$ python config.py -load
+{'todo.tag.recent': '#default', 'todo.view.last': 'tag_view', 'todo.command.last': 'quick_create', 'todo.user.query': 'add 1', 'todo.db': '/Users/benzi/Library/Application Support/Alfred 2/Workflow Data/com.benzi.a2w.todo/todo.yaml'}
+bash-3.2$ python todo.py -q ""
+Added 'add 1'
+<items><item arg="___id___:e6e19d0d-b715-4518-a155-532df540aef8" uid="com.benzi.a2w.todo-e6e19d0d-b715-4518-a155-532df540aef8"><title>add 1</title><subtitle>added moments ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python config.py -load
+{'todo.tag.recent': '#default', 'todo.view.last': 'tag_view', 'todo.command.last': '', 'todo.user.query': '', 'todo.db': '/Users/benzi/Library/Application Support/Alfred 2/Workflow Data/com.benzi.a2w.todo/todo.yaml'}
+bash-3.2$ python todo.py -c
+bash-3.2$ python config.py -load
+{'todo.tag.recent': '#default', 'todo.view.last': 'tag_view', 'todo.command.last': 'clear_todos', 'todo.user.query': '', 'todo.db': '/Users/benzi/Library/Application Support/Alfred 2/Workflow Data/com.benzi.a2w.todo/todo.yaml'}
+bash-3.2$ python todo.py -q "add 1"
+<items><item arg="#default add 1" autocomplete="" uid="82cf2695-3438-46d2-a0cc-e47de6b9fc4c" valid="no"><title>New item 'add 1'</title><subtitle>Type something to create a new todo</subtitle><icon>todo_add.png</icon></item></items>bash-3.2$ python todo.py -q ""
+Added 'add 1'
+<items><item arg="___id___:fe4e7955-aaaa-4477-a8ae-28320db3e92b" uid="com.benzi.a2w.todo-fe4e7955-aaaa-4477-a8ae-28320db3e92b"><title>add 1</title><subtitle>added moments ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q "add 2"
+<items><item arg="#default add 2" autocomplete="" uid="befa4776-cd90-4229-9229-cfec42aaa265" valid="no"><title>New item 'add 2'</title><subtitle>Type something to create a new todo</subtitle><icon>todo_add.png</icon></item></items>bash-3.2$ python todo.py -q ""
+<items><item arg="___id___:166f2db2-6b8b-4552-8820-515ddbdaeecf" uid="com.benzi.a2w.todo-166f2db2-6b8b-4552-8820-515ddbdaeecf"><title>add 2</title><subtitle>added moments ago</subtitle><icon>icon.png</icon></item><item arg="___id___:fe4e7955-aaaa-4477-a8ae-28320db3e92b" uid="com.benzi.a2w.todo-fe4e7955-aaaa-4477-a8ae-28320db3e92b"><title>add 1</title><subtitle>added 1 minute ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 48, in <module>
+    main()
+  File "todo.py", line 41, in main
+    process_todo_query(query)
+  File "todo.py", line 19, in process_todo_query
+    itemview.generate_view(raw_query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 64, in generate_view
+    todos1 = [t for t in todos if t['pinned'] == True]
+KeyError: 'pinned'
+bash-3.2$ python todo.py -q ""
+<items><item arg="___id___:8255127b-44aa-4385-8711-f2d6c3da89e4" uid="com.benzi.a2w.todo-8255127b-44aa-4385-8711-f2d6c3da89e4"><title>lemon</title><subtitle>#test added 5 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:467829b0-dd3f-44fa-8c43-092d2d8002dc" uid="com.benzi.a2w.todo-467829b0-dd3f-44fa-8c43-092d2d8002dc"><title>quick add</title><subtitle>added 8 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:30562559-6286-47cd-bec0-1cc223adef23" uid="com.benzi.a2w.todo-30562559-6286-47cd-bec0-1cc223adef23"><title>test2</title><subtitle>added 9 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:1681e860-d372-47a0-b574-74c1668c45d6" uid="com.benzi.a2w.todo-1681e860-d372-47a0-b574-74c1668c45d6"><title>add 4</title><subtitle>added 10 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:85cd3f40-2b05-4b5f-abff-99ed9194b42e" uid="com.benzi.a2w.todo-85cd3f40-2b05-4b5f-abff-99ed9194b42e"><title>add 3</title><subtitle>added 10 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:166f2db2-6b8b-4552-8820-515ddbdaeecf" uid="com.benzi.a2w.todo-166f2db2-6b8b-4552-8820-515ddbdaeecf"><title>add 2</title><subtitle>added 10 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:fe4e7955-aaaa-4477-a8ae-28320db3e92b" uid="com.benzi.a2w.todo-fe4e7955-aaaa-4477-a8ae-28320db3e92b"><title>add 1</title><subtitle>added 11 minutes ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q ""
+<items><item arg="___id___:8255127b-44aa-4385-8711-f2d6c3da89e4" uid="com.benzi.a2w.todo-8255127b-44aa-4385-8711-f2d6c3da89e4"><title>lemon</title><subtitle>#test added 8 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:467829b0-dd3f-44fa-8c43-092d2d8002dc" uid="com.benzi.a2w.todo-467829b0-dd3f-44fa-8c43-092d2d8002dc"><title>quick add</title><subtitle>added 11 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:30562559-6286-47cd-bec0-1cc223adef23" uid="com.benzi.a2w.todo-30562559-6286-47cd-bec0-1cc223adef23"><title>test2</title><subtitle>added 12 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:1681e860-d372-47a0-b574-74c1668c45d6" uid="com.benzi.a2w.todo-1681e860-d372-47a0-b574-74c1668c45d6"><title>add 4</title><subtitle>added 13 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:85cd3f40-2b05-4b5f-abff-99ed9194b42e" uid="com.benzi.a2w.todo-85cd3f40-2b05-4b5f-abff-99ed9194b42e"><title>add 3</title><subtitle>added 13 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:166f2db2-6b8b-4552-8820-515ddbdaeecf" uid="com.benzi.a2w.todo-166f2db2-6b8b-4552-8820-515ddbdaeecf"><title>add 2</title><subtitle>added 13 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:fe4e7955-aaaa-4477-a8ae-28320db3e92b" uid="com.benzi.a2w.todo-fe4e7955-aaaa-4477-a8ae-28320db3e92b"><title>add 1</title><subtitle>added 15 minutes ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 48, in <module>
+    main()
+  File "todo.py", line 41, in main
+    process_todo_query(query)
+  File "todo.py", line 19, in process_todo_query
+    itemview.generate_view(raw_query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 64, in generate_view
+    todos1 = [t for t in todos if itemlist.get_item_feature(t,'pinned') == True]
+AttributeError: 'module' object has no attribute 'get_item_feature'
+bash-3.2$ python todo.py -q ""
+<items><item arg="___id___:8255127b-44aa-4385-8711-f2d6c3da89e4" uid="com.benzi.a2w.todo-8255127b-44aa-4385-8711-f2d6c3da89e4"><title>lemon</title><subtitle>#test added 14 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:467829b0-dd3f-44fa-8c43-092d2d8002dc" uid="com.benzi.a2w.todo-467829b0-dd3f-44fa-8c43-092d2d8002dc"><title>quick add</title><subtitle>added 17 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:30562559-6286-47cd-bec0-1cc223adef23" uid="com.benzi.a2w.todo-30562559-6286-47cd-bec0-1cc223adef23"><title>test2</title><subtitle>added 18 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:1681e860-d372-47a0-b574-74c1668c45d6" uid="com.benzi.a2w.todo-1681e860-d372-47a0-b574-74c1668c45d6"><title>add 4</title><subtitle>added 19 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:85cd3f40-2b05-4b5f-abff-99ed9194b42e" uid="com.benzi.a2w.todo-85cd3f40-2b05-4b5f-abff-99ed9194b42e"><title>add 3</title><subtitle>added 19 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:166f2db2-6b8b-4552-8820-515ddbdaeecf" uid="com.benzi.a2w.todo-166f2db2-6b8b-4552-8820-515ddbdaeecf"><title>add 2</title><subtitle>added 19 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:fe4e7955-aaaa-4477-a8ae-28320db3e92b" uid="com.benzi.a2w.todo-fe4e7955-aaaa-4477-a8ae-28320db3e92b"><title>add 1</title><subtitle>added 20 minutes ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 48, in <module>
+    main()
+  File "todo.py", line 41, in main
+    process_todo_query(query)
+  File "todo.py", line 19, in process_todo_query
+    itemview.generate_view(raw_query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 77, in generate_view
+    if len(matching) == 0:
+NameError: global name 'matching' is not defined
+bash-3.2$ python todo.py -q ""
+<items><item arg="___id___:8255127b-44aa-4385-8711-f2d6c3da89e4" uid="com.benzi.a2w.todo-8255127b-44aa-4385-8711-f2d6c3da89e4"><title>lemon</title><subtitle>#test added 16 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:467829b0-dd3f-44fa-8c43-092d2d8002dc" uid="com.benzi.a2w.todo-467829b0-dd3f-44fa-8c43-092d2d8002dc"><title>quick add</title><subtitle>added 20 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:30562559-6286-47cd-bec0-1cc223adef23" uid="com.benzi.a2w.todo-30562559-6286-47cd-bec0-1cc223adef23"><title>test2</title><subtitle>added 20 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:1681e860-d372-47a0-b574-74c1668c45d6" uid="com.benzi.a2w.todo-1681e860-d372-47a0-b574-74c1668c45d6"><title>add 4</title><subtitle>added 21 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:85cd3f40-2b05-4b5f-abff-99ed9194b42e" uid="com.benzi.a2w.todo-85cd3f40-2b05-4b5f-abff-99ed9194b42e"><title>add 3</title><subtitle>added 22 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:166f2db2-6b8b-4552-8820-515ddbdaeecf" uid="com.benzi.a2w.todo-166f2db2-6b8b-4552-8820-515ddbdaeecf"><title>add 2</title><subtitle>added 22 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:fe4e7955-aaaa-4477-a8ae-28320db3e92b" uid="com.benzi.a2w.todo-fe4e7955-aaaa-4477-a8ae-28320db3e92b"><title>add 1</title><subtitle>added 23 minutes ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q "lemon"
+<items><item arg="___id___:7cc9e5ff-fb1c-4799-b447-435b45bdc1f3" uid="com.benzi.a2w.todo-7cc9e5ff-fb1c-4799-b447-435b45bdc1f3"><title>lemon pies</title><subtitle>#adasd added 8 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:bc0d6570-b9b0-4ac8-bcbb-434b7debd107" uid="com.benzi.a2w.todo-bc0d6570-b9b0-4ac8-bcbb-434b7debd107"><title>lemons</title><subtitle>added 10 minutes ago</subtitle><icon>icon.png</icon></item><item arg="___id___:8255127b-44aa-4385-8711-f2d6c3da89e4" uid="com.benzi.a2w.todo-8255127b-44aa-4385-8711-f2d6c3da89e4"><title>lemon</title><subtitle>#test added 39 minutes ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -q "lemon pies"
+<items><item arg="___id___:7cc9e5ff-fb1c-4799-b447-435b45bdc1f3" uid="com.benzi.a2w.todo-7cc9e5ff-fb1c-4799-b447-435b45bdc1f3"><title>lemon pies</title><subtitle>#adasd added 8 minutes ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -c
+bash-3.2$ python todo.py -q "lemon"
+<items><item arg="#default lemon" autocomplete="" uid="e19b7b60-e99d-4b02-aa39-ae96ceff60d3" valid="no"><title>New item 'lemon'</title><subtitle>Type something to create a new todo</subtitle><icon>todo_add.png</icon></item></items>bash-3.2$ python todo.py -q ""
+<items><item arg="___id___:c749461a-e14f-48a3-b5d3-a15c1b89efce" uid="com.benzi.a2w.todo-c749461a-e14f-48a3-b5d3-a15c1b89efce"><title>lemon</title><subtitle>added moments ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ python todo.py -p "___id___:c749461a-e14f-48a3-b5d3-a15c1b89efce"
+Traceback (most recent call last):
+  File "todo.py", line 51, in <module>
+    main()
+  File "todo.py", line 48, in main
+    itemlist.toggle_pinned(helpers.extract_todo_id(query))
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 95, in toggle_pinned
+    update_todo(_id, {'pinned', toggle})
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 87, in update_todo
+    for key, value in values:
+ValueError: too many values to unpack
+bash-3.2$ python todo.py -p "___id___:c749461a-e14f-48a3-b5d3-a15c1b89efce"
+Traceback (most recent call last):
+  File "todo.py", line 51, in <module>
+    main()
+  File "todo.py", line 48, in main
+    itemlist.toggle_pinned(helpers.extract_todo_id(query))
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 95, in toggle_pinned
+    update_todo(_id, {'pinned', toggle})
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemlist.py", line 88, in update_todo
+    t[key] = values[key]
+TypeError: 'set' object is not subscriptable
+bash-3.2$ python todo.py -p "___id___:c749461a-e14f-48a3-b5d3-a15c1b89efce"
+bash-3.2$ python todo.py -q ""
+<items />bash-3.2$ python todo.py -q ""
+<items />bash-3.2$ python todo.py -q ""
+<items />bash-3.2$ python todo.py -p "___id___:c749461a-e14f-48a3-b5d3-a15c1b89efce"
+bash-3.2$ python todo.py -q ""
+Traceback (most recent call last):
+  File "todo.py", line 51, in <module>
+    main()
+  File "todo.py", line 41, in main
+    process_todo_query(query)
+  File "todo.py", line 19, in process_todo_query
+    itemview.generate_view(raw_query)
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/itemview.py", line 110, in generate_view
+    alfred.write(alfred.xml(feedback_items))
+  File "/Users/benzi/Dropbox/Alfred2/Alfred.alfredpreferences/workflows/user.workflow.3CC31774-18B5-4611-B2CA-AE554DFF6C32/alfred.py", line 81, in xml
+    root.append(item.xml())
+AttributeError: 'list' object has no attribute 'xml'
+bash-3.2$ python todo.py -q ""
+<items><item arg="___id___:c749461a-e14f-48a3-b5d3-a15c1b89efce" uid="com.benzi.a2w.todo-c749461a-e14f-48a3-b5d3-a15c1b89efce"><title>lemon</title><subtitle>added 5 minutes ago</subtitle><icon>icon.png</icon></item></items>bash-3.2$ todo 

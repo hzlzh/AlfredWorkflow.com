@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.benzi.a2w.lingo</string>
+	<key>connections</key>
+	<dict>
+		<key>2D0260F3-64E0-4A46-A3BE-1D6FD26F27BA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>28B2725C-1D0C-4A67-AAC7-89EDC5952EE5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>20CC5775-DDC9-4D15-954F-5D0655B6E692</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Define in Alfred</string>
+			</dict>
+		</array>
+		<key>4B54E75D-0B12-44B0-8F47-066762329C19</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2239F4A3-D069-4BF3-BAF0-69BEA599085D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7C45670E-1A2E-4554-AA55-629AB83ECA7B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D0260F3-64E0-4A46-A3BE-1D6FD26F27BA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9CD426FE-2A3E-401F-9FAB-1BC6BB784BEE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CAB73280-3A90-476F-B463-15DF6C41CC2C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CAB73280-3A90-476F-B463-15DF6C41CC2C</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Benzi Ahamed</string>
+	<key>description</key>
+	<string>A wordgame for Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Lingo</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>lingo</string>
+				<key>subtext</key>
+				<string>Start a new game</string>
+				<key>text</key>
+				<string>Play Lingo</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9CD426FE-2A3E-401F-9FAB-1BC6BB784BEE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>python newgame.py
+ruby runalfred.rb "try "</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CAB73280-3A90-476F-B463-15DF6C41CC2C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>python config.py -put difficulty {query}
+ruby runalfred.rb "lingo"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2239F4A3-D069-4BF3-BAF0-69BEA599085D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>difficulty</string>
+				<key>script</key>
+				<string>cat &lt;&lt; EOB
+&lt;?xml version="1.0"?&gt;
+
+&lt;items&gt;
+
+&lt;!--
+  Example of using icon type 'fileicon' to load the file icon directly.
+  This item is of type "file" which means it will be treated as a file in
+  Alfred's results, so can be actioned and revealed in finder.
+  Autocomplete sets what will complete when the user autocompletes.
+--&gt;
+  &lt;item uid="com.benzi.a2w.lingo.easy" arg="e"&gt;
+    &lt;title&gt;Easy&lt;/title&gt;
+	&lt;subtitle&gt;Play with commonly used words&lt;/subtitle&gt;
+    &lt;icon&gt;easy.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid="com.benzi.a2w.lingo.medium" arg="m"&gt;
+    &lt;title&gt;Medium&lt;/title&gt;
+	&lt;subtitle&gt;Play with words that are not so common&lt;/subtitle&gt;
+    &lt;icon&gt;medium.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid="com.benzi.a2w.lingo.hard" arg="h"&gt;
+    &lt;title&gt;Hard&lt;/title&gt;
+	&lt;subtitle&gt;Play with very obscure, hard-to-find words&lt;/subtitle&gt;
+    &lt;icon&gt;hard.png&lt;/icon&gt;
+  &lt;/item&gt;
+
+&lt;/items&gt;
+EOB</string>
+				<key>subtext</key>
+				<string>Choose your difficulty level</string>
+				<key>title</key>
+				<string>Play Lingo</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>4B54E75D-0B12-44B0-8F47-066762329C19</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>try</string>
+				<key>script</key>
+				<string>python game.py -p "{query}"</string>
+				<key>title</key>
+				<string>Play Lingo</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2D0260F3-64E0-4A46-A3BE-1D6FD26F27BA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>7C45670E-1A2E-4554-AA55-629AB83ECA7B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>WORD=$(python config.py -get target)
+ruby runalfred.rb "define $WORD"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>20CC5775-DDC9-4D15-954F-5D0655B6E692</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>if [ "{query}" == "another_round" ]; then
+python newgame.py
+ruby runalfred.rb "try "
+else
+python game.py -a "{query}"
+ruby runalfred.rb "try "
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>28B2725C-1D0C-4A67-AAC7-89EDC5952EE5</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>20CC5775-DDC9-4D15-954F-5D0655B6E692</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>2239F4A3-D069-4BF3-BAF0-69BEA599085D</key>
+		<dict>
+			<key>ypos</key>
+			<real>430</real>
+		</dict>
+		<key>28B2725C-1D0C-4A67-AAC7-89EDC5952EE5</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>2D0260F3-64E0-4A46-A3BE-1D6FD26F27BA</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>4B54E75D-0B12-44B0-8F47-066762329C19</key>
+		<dict>
+			<key>ypos</key>
+			<real>430</real>
+		</dict>
+		<key>7C45670E-1A2E-4554-AA55-629AB83ECA7B</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>9CD426FE-2A3E-401F-9FAB-1BC6BB784BEE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>CAB73280-3A90-476F-B463-15DF6C41CC2C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>benzi.site44.com</string>
+</dict>
+</plist>

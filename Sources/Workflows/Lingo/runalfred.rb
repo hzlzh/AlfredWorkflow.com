@@ -1,0 +1,1 @@
+`osascript -e 'tell application "Alfred 2" to search "#{ARGV[0]}"'`

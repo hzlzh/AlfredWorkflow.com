@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.tie.bar</string>
+	<key>connections</key>
+	<dict>
+		<key>D2AE57B8-DAD8-4B6D-B681-24A5EC4EAF98</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>87577F26-5441-4965-8A85-56DB940026A1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>@mmyjona</string>
+	<key>description</key>
+	<string>直达患处有效治疗贴吧瘙痒症.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Tieba</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>tb</string>
+				<key>runningsubtext</key>
+				<string>载入中… 英文贴吧请不要急着按回车</string>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# -*- coding: utf-8 -*-
+from __future__ import division, absolute_import
+
+import alp
+import re
+
+url = "http://wapp.baidu.com/f?kw={query}"
+r = alp.Request(url, payload=None, post=False).souper()
+
+result = [u'&lt;?xml version="1.0"?&gt;', u'&lt;items&gt;']
+
+i = 0
+for link in r.find_all("div", "i"):
+    title = link.find("a").string.encode('utf-8')
+    # print title
+    title = re.sub(r"^\d*\. *", "", title)
+    id = re.search("kz\=(\d*)\&amp;", link.find("a")["href"]).group(1)
+    aurl = u"http://tieba.baidu.com/p/" + id
+    result.append(u'&lt;item uid="baidusearch' + str(i) + u'" arg="' + aurl + u'"&gt;')
+    result.append(u'&lt;title&gt;' + title.decode("utf8") + u'&lt;/title&gt;')
+    result.append(u'&lt;subtitle&gt;打开这帖&lt;/subtitle&gt;')
+    result.append(u'&lt;icon&gt;icon.png&lt;/icon&gt;')
+    result.append(u'&lt;/item&gt;')
+    i += 1
+
+result.append(u'&lt;/items&gt;')
+xml = ''.join(result)
+
+print xml.encode("utf8")
+</string>
+				<key>subtext</key>
+				<string>空格后输入吧名, 载入后↑↓箭头选贴, 回车直达</string>
+				<key>title</key>
+				<string>浏览贴吧最新贴</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D2AE57B8-DAD8-4B6D-B681-24A5EC4EAF98</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>87577F26-5441-4965-8A85-56DB940026A1</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>87577F26-5441-4965-8A85-56DB940026A1</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D2AE57B8-DAD8-4B6D-B681-24A5EC4EAF98</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://twitter.com/mmyjona</string>
+</dict>
+</plist>
