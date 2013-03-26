@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>caffeinate.control.com</string>
+	<key>connections</key>
+	<dict>
+		<key>0D6581B8-9835-427D-BCF4-4A61453B47B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>77CACC9A-24AC-4EDD-B696-39A9FD15EC82</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>85EFE1D3-7E1C-49CF-901F-11F408717738</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>65CD2D5D-8FF8-4074-AEB1-059A34B06ED4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A684A7D0-32C1-4388-A7D9-51BB94125946</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0D6581B8-9835-427D-BCF4-4A61453B47B4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>85EFE1D3-7E1C-49CF-901F-11F408717738</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C3F74F6E-921A-43D0-BC0B-9AAA09611551</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C3F74F6E-921A-43D0-BC0B-9AAA09611551</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>65CD2D5D-8FF8-4074-AEB1-059A34B06ED4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Shawn Rice</string>
+	<key>description</key>
+	<string>Controls "caffeinate" — system command to prevent the sleep function.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Caffeinate</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Caffeinate</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>65CD2D5D-8FF8-4074-AEB1-059A34B06ED4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>caff</string>
+				<key>subtext</key>
+				<string>For a list of arguments type "caff help"</string>
+				<key>text</key>
+				<string>Caffeinate</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A684A7D0-32C1-4388-A7D9-51BB94125946</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>error_reporting(0); // This is set to off in order to escape an error for timezones not being set.
+
+$query = "{query}";
+$query = explode(" ",$query);
+
+$cmd = $query[0];
+$arg = $query[1];
+
+if ((($cmd == "help") || ($cmd == "Help") || (!(($cmd == "status") || ($cmd == "Status") || ($cmd == "dis") || ($cmd == "Dis") || ($cmd == "en") || ($cmd == "En"))))) { // displays help on "help" command or unrecognized command
+// Display help if command is "help" or an unrecognized command
+	echo "Available Commands:
+	* status 		— Shows whether caffeinate is active and returns the number of minutes if it is.
+	* en 	 		— Enables caffeinate.
+	* en \"minutes\" — Enables caffeinate for X minutes.
+	* dis 			— Disables caffeinate.";
+}
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0D6581B8-9835-427D-BCF4-4A61453B47B4</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>77CACC9A-24AC-4EDD-B696-39A9FD15EC82</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>// Script to report the status of caffeinate
+// Checks whether active/inactive.
+// If active, reports how much longer it will be.
+
+error_reporting(0);
+
+$query = "{query}";
+$query = explode(" ",$query); // Separate command from arguments
+
+$cmd = $query[0]; // Check command. This script runs only if command is "status"
+
+if ($cmd == "status") { // This could be written more elegantly.
+
+	$status = caff_status();
+	if ($status == 1) { } else {echo "Caffeine is disabled.";}
+
+}
+
+function caff_status() {
+	$value = shell_exec("ps -ef|grep caff|grep -v grep");
+	$regex = "/^([\w\W]{0,})([0-9]){1,}([:]{1})([0-9]{2})([APM]{2})([\w\W]{1,})(caffeinate){1}([ \-tdbsi]{0,})([0-9]{0,})/";
+
+	$match = preg_match($regex, $value, $matches);
+
+	if ($match) {
+		$hour = $matches[2];
+		$minutes = $matches[4];
+		$apm = $matches[5];
+		$duration = $matches[9];
+
+		$launch = $hour . ":" . $minutes . $apm;
+		$now = shell_exec("date +\"%l:%M%p\"");
+		$diff = round(abs(strtotime($now) - strtotime($launch)) / 60);
+		$duration = $duration;
+		$min = ($duration/60) - $diff;
+		
+		if ($min &gt; 0) {
+			echo "Caffeinate is active for another " . $min  . " minutes.";
+			return true;
+		} else {
+			echo "Caffeinate is currently active for an indefinite period.";
+			return true;
+		}
+	} else if ($match == 0) {
+		return false;
+	}
+} // End caffeinate_status()
+
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>85EFE1D3-7E1C-49CF-901F-11F408717738</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>// Script that will enable / disable caffeinate.
+// If already enabled, doesn't enable again but reports enabled
+// If already disabled, doesn't disable again but reports disabled
+
+error_reporting(0); // This is set to off in order to escape an error for timezones not being set.
+
+$query = "{query}";
+$query = explode(" ",$query); // Separates commands from argument
+
+$cmd = $query[0]; // Sets command
+$arg = $query[1]; // Sets argument
+
+if (($cmd == "dis") || ($cmd == "Dis")) {
+	caff_dis();
+}
+
+if (($cmd == "en") || ($cmd == "En")) {
+	caff_en($arg);
+}
+
+
+function caff_en($arg) {
+	
+	$value = exec("ps -ef|grep caff|grep -v grep");
+	$regex = "/^([\w\W]{0,})([0-9]){1,}([:]{1})([0-9]{2})([APM]{2})([\w\W]{1,})(caffeinate){1}([ \-tdbsi]]{0,})([0-9]{0,})/";
+
+	$match = preg_match($regex, $value, $matches);
+	if ($match) {
+		echo "Caffeinate is already active.";
+	} else {
+		$message = "Caffeinate has now been activated ";
+
+		if ($arg) {
+			$arg *= 60;
+			shell_exec("caffeinate -dsit $arg  &gt;/dev/null 2&gt;&amp;1 &amp;");
+			$message .= "for " . $arg/60 . " minutes.";
+		} else {
+			shell_exec("caffeinate -dsi &gt;/dev/null 2&gt;&amp;1 &amp;");
+			$message .= "indefinitely.";
+		}
+	echo $message;
+	}
+		
+}
+
+function caff_dis() {
+	$value = shell_exec("ps -ef|grep caff|grep -v grep");
+	$regex = "/^([\w\W]*)(caffeinate)([\w\W]*)$/";
+	if ($value) {
+		shell_exec("killall caffeinate");
+		echo "Caffeinate is now disabled.";
+	} else {
+		echo "Caffeinate is already disabled.";
+	}
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C3F74F6E-921A-43D0-BC0B-9AAA09611551</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## Requirements ##
+
+OS X 10.8.x (Mountain Lion)
+
+## Description ##
+
+In Mountain Lion (10.8), Apple introduced a utility called "Caffeinate" that basically replicates what the Caffeine utility ([web](http://lightheadsw.com/caffeine/) | [app store](http://itunes.apple.com/us/app/caffeine/id411246225) from [Lighthead Software](http://lightheadsw.com/) does.
+
+## Commands ##
+
+Available Commands:
+* status 		— Shows whether caffeinate is active and returns the number of minutes if it is.
+* en 	 		— Enables caffeinate.
+* en "minutes" — Enables caffeinate for X minutes.
+* dis 			— Disables caffeinate."</string>
+	<key>uidata</key>
+	<dict>
+		<key>0D6581B8-9835-427D-BCF4-4A61453B47B4</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>65CD2D5D-8FF8-4074-AEB1-059A34B06ED4</key>
+		<dict>
+			<key>ypos</key>
+			<real>390</real>
+		</dict>
+		<key>77CACC9A-24AC-4EDD-B696-39A9FD15EC82</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>85EFE1D3-7E1C-49CF-901F-11F408717738</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
+		<key>A684A7D0-32C1-4388-A7D9-51BB94125946</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C3F74F6E-921A-43D0-BC0B-9AAA09611551</key>
+		<dict>
+			<key>ypos</key>
+			<real>390</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/shawnrice/alfred-2-caffeinate-workflow</string>
+</dict>
+</plist>

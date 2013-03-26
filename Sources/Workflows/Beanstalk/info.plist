@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>leenug.beanstalk</string>
+	<key>connections</key>
+	<dict>
+		<key>87B71E4A-F52A-4150-961F-50D61669B5B2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BF33E761-E836-45C4-843D-DE3D129A51A5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C1E9B62E-660E-448C-B95D-97B7FFCA8C7E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Lee Nugent</string>
+	<key>description</key>
+	<string>Easily view your beanstalk repos</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Beanstalk</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Repo clone string has been copied to your clipboard.</string>
+				<key>title</key>
+				<string>Beanstalk</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>BF33E761-E836-45C4-843D-DE3D129A51A5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>C1E9B62E-660E-448C-B95D-97B7FFCA8C7E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>32</integer>
+				<key>keyword</key>
+				<string>bs</string>
+				<key>runningsubtext</key>
+				<string>"list" to view all repos, or "search {query}" to search</string>
+				<key>script</key>
+				<string>// Enter your Beanstalk account details
+$credentials = array(
+	'company' =&gt; '',
+	'username' =&gt; '',
+	'password' =&gt; ''
+);
+
+// Thats it.. type "bs" into alfred to begin
+
+include('beanstalk.php');
+$b = new Beanstalk($credentials);
+$b-&gt;query('{query}');</string>
+				<key>subtext</key>
+				<string>Search your beanstalk repos</string>
+				<key>title</key>
+				<string>Beanstalk</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>87B71E4A-F52A-4150-961F-50D61669B5B2</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>87B71E4A-F52A-4150-961F-50D61669B5B2</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>BF33E761-E836-45C4-843D-DE3D129A51A5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C1E9B62E-660E-448C-B95D-97B7FFCA8C7E</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://leenug.com</string>
+</dict>
+</plist>

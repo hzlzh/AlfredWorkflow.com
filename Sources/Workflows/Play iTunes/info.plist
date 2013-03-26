@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>tox.play_itunes</string>
+	<key>connections</key>
+	<dict>
+		<key>68006CBE-A62B-4600-B7C9-74AB939F7BD4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2121354A-BCCB-49E2-B45D-BD77D60156F6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Toshiro Sugii</string>
+	<key>description</key>
+	<string>pl [name]</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Play iTunes</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>20</integer>
+				<key>script</key>
+				<string>osascript play_itunes_spec.scpt "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2121354A-BCCB-49E2-B45D-BD77D60156F6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>pl</string>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>osascript result.scpt "{query}"</string>
+				<key>subtext</key>
+				<string>Type at least 3 letters - pl [ artist | song | album… ]</string>
+				<key>title</key>
+				<string>Play iTunes</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>68006CBE-A62B-4600-B7C9-74AB939F7BD4</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Just type:
+pl [song|artist|album…]
+
+
+Thank you.
+Made by Toshiro Sugii
+I hope it helps you in some way.
+A huge hug.
+
+
+CHANGELOG:
+
+1.1:
+- Added result feedback!!!
+- Some bug fixes.
+- Some minor changes.
+
+1.0.1 - Some details changes.
+
+1.0 - Initial production version.</string>
+	<key>uidata</key>
+	<dict>
+		<key>2121354A-BCCB-49E2-B45D-BD77D60156F6</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>68006CBE-A62B-4600-B7C9-74AB939F7BD4</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://code.google.com/p/tox-alfred-workflows/</string>
+</dict>
+</plist>

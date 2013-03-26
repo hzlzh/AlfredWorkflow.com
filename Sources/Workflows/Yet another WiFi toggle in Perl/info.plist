@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>it.gvoc.yawtop</string>
+	<key>connections</key>
+	<dict>
+		<key>11900EB7-5AED-449B-9949-D0C45E76E805</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8AC30F29-AC58-42F2-8CB2-099393FFD84B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>90C093A5-FA1E-4A81-BEAE-97029BA8E889</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>11900EB7-5AED-449B-9949-D0C45E76E805</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Gaetano Vocca</string>
+	<key>description</key>
+	<string>Enable/Disable AirPort</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Yet another WiFi toggle in Perl</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>31</integer>
+				<key>keyword</key>
+				<string>wifi</string>
+				<key>script</key>
+				<string>#!/usr/bin/perl
+
+# Some basic commands to be used later
+$LIST_ALL_HARDWARE_REPORTS_CMD = 'networksetup -listallhardwareports';
+$GET_AIRPORT_POWER_CMD_PREF = 'networksetup -getairportpower';
+$AIRPORT_CMD_PREF = '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I';
+$GETINFO_CMD_PREF = 'networksetup -getinfo';
+$UID = 'yawtop_';
+
+my ($device, $hardware_port, $mac, $power, $ssid, $bssid, $ipv4, $ipv6);
+
+# Retrieve hardware port, device id and MAC addr
+my @lines = `$LIST_ALL_HARDWARE_REPORTS_CMD`;
+for my $i (0..$#lines) {
+	if ($lines[$i] =~ /Wi-Fi|AirPort/) {
+		chomp ($lines[$i]);
+		$lines[$i] =~ /Hardware Port: (\S+)$/;
+		$hardware_port = $1;
+		$lines[++$i] =~ /Device: (.+)$/;
+		$device = $1;
+		$lines[++$i] =~ /Ethernet Address: (.+)$/;
+		$mac = $1;
+		last;
+	}
+}
+
+# Retrieve power indicator
+@lines = `$GET_AIRPORT_POWER_CMD_PREF $device`;
+for my $i (0..$#lines) {
+	if ($lines[$i] =~ /Wi-Fi|AirPort/) {
+		chomp ($lines[$i]);
+		$lines[$i] =~ /: (.+)$/;
+		$power = $1;
+		last;
+	}
+}
+
+# Some XML now
+print "&lt;?xml version=\"1.0\"?&gt;\n";
+print "&lt;items&gt;\n";
+	
+if ($power eq 'Off') {
+	
+	print "&lt;item uid=\"$UID$hardware_port\" arg=\"$device On\"&gt;&lt;title&gt;Turn $hardware_port On&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;\n";
+} elsif ($power eq 'On') {
+
+	#Retrieve IP address
+	@lines = `$GETINFO_CMD_PREF $hardware_port`;
+	foreach (@lines) {
+		if (/^IP address: (.*)$/) {
+			$ipv4 = $1 eq '' ? "none" : $1;
+		} elsif (/^IPv6 IP address: (.*)$/) {
+			$ipv6 = $1 eq '' ? "none" : $1;
+		}
+	}
+	$ipv4 = "none" if ($ipv4 eq '');
+
+	# Retrieve SSID and BSSID
+	my @lines = `$AIRPORT_CMD_PREF`;
+	for my $i (0..$#lines) {
+		if ($lines[$i] =~ /BSSID: (.*)$/) {
+			$bssid = $1;
+			$lines[++$i] =~ /SSID: (.+)$/;
+			$ssid = $1;
+			last;
+		}
+	}
+	print "&lt;item uid=\"$UID$hardware_port\" arg=\"$device Off\"&gt;&lt;title&gt;Turn $hardware_port Off ($ssid)&lt;/title&gt;&lt;subtitle&gt;MAC:$mac IPv4:$ipv4 IPv6:$ipv6&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;\n";
+} 
+
+print "&lt;/items&gt;\n"
+</string>
+				<key>subtext</key>
+				<string>Toggle Airport status</string>
+				<key>title</key>
+				<string>Toggle AirPort</string>
+				<key>type</key>
+				<integer>4</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>90C093A5-FA1E-4A81-BEAE-97029BA8E889</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Toggle Airport</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8AC30F29-AC58-42F2-8CB2-099393FFD84B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#!/usr/bin/perl
+
+$SET_AIRPORT_POWER_CMD_PREF = 'networksetup -setairportpower';
+
+my $arg = "{query}";
+
+($device, $power) = split(' ', $arg);
+
+print "Turning AirPort $power";
+`$SET_AIRPORT_POWER_CMD_PREF $arg`;
+
+</string>
+				<key>type</key>
+				<integer>4</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>11900EB7-5AED-449B-9949-D0C45E76E805</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>11900EB7-5AED-449B-9949-D0C45E76E805</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>8AC30F29-AC58-42F2-8CB2-099393FFD84B</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>90C093A5-FA1E-4A81-BEAE-97029BA8E889</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

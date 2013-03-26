@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>jousch.alfred.ping</string>
+	<key>connections</key>
+	<dict>
+		<key>3CEBA57C-CEFD-4B29-83FE-C16412EB869E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>814AA3F6-F386-4358-8B09-36A05B2746AB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A21E8C17-B6E0-42C6-B52F-8FADDF401F1B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3CEBA57C-CEFD-4B29-83FE-C16412EB869E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Josef Florian Glatz</string>
+	<key>description</key>
+	<string>Ping any host and display latency</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Ping</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Ping Results</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>814AA3F6-F386-4358-8B09-36A05B2746AB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>require('Ping.php');
+$host = "{query}";
+$ping = new Ping($host);
+$latency = $ping-&gt;ping();
+if ($latency) {
+  print 'Latency is ' . $latency . ' ms';
+}
+else {
+  print '{query} could not be reached.';
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3CEBA57C-CEFD-4B29-83FE-C16412EB869E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ping</string>
+				<key>subtext</key>
+				<string>Ping any host and display latency</string>
+				<key>text</key>
+				<string>Ping</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A21E8C17-B6E0-42C6-B52F-8FADDF401F1B</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>3CEBA57C-CEFD-4B29-83FE-C16412EB869E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>814AA3F6-F386-4358-8B09-36A05B2746AB</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A21E8C17-B6E0-42C6-B52F-8FADDF401F1B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://jousch.com</string>
+</dict>
+</plist>
