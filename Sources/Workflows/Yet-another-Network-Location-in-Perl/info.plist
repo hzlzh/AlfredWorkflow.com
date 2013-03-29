@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>it.gvoc.yanlop</string>
+	<key>connections</key>
+	<dict>
+		<key>9E24489F-F6E7-49E1-8E4C-3E5A1F99B6CC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BF87C803-DCFF-41F2-9B3F-618F7C2BAF7A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>BF87C803-DCFF-41F2-9B3F-618F7C2BAF7A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D8255BF5-AD37-473B-A9E4-9665A6B2D110</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Gaetano Vocca</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Yet another Network Location in Perl</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#$SWITCH_LOCATION = 'networksetup -switchtolocation';
+$SWITCH_LOCATION = 'scselect';
+
+my $arg = "{query}";
+
+`$SWITCH_LOCATION "$arg"` unless ($arg eq '');
+print "$arg";</string>
+				<key>type</key>
+				<integer>4</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BF87C803-DCFF-41F2-9B3F-618F7C2BAF7A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>loc</string>
+				<key>script</key>
+				<string>#!/usr/bin/perl
+
+# Some basic commands to be used later
+$GET_CURRENT_LOCATION_CMD = 'networksetup -getcurrentlocation';
+$LIST_LOCATIONS_CMD = 'networksetup -listlocations';
+$UID = 'yanlop_';
+
+my ($current_location);
+
+my @lines = `$GET_CURRENT_LOCATION_CMD`;
+
+$current_location = $lines[0];
+chomp($current_location);
+
+my $arg = "{query}";
+
+# Available Network Locations
+my @all_the_lines = `$LIST_LOCATIONS_CMD`;
+
+@lines = grep { $_ =~ /$arg/i } @all_the_lines;
+
+# Some XML now
+print "&lt;?xml version=\"1.0\"?&gt;\n";
+print "&lt;items&gt;\n";
+
+
+foreach (@lines) {
+	chomp;
+	if ($_ eq $current_location) {
+		print "&lt;item uid=\"$UID$_\" arg=\"$_\"&gt;&lt;title&gt;$_ (Current)&lt;/title&gt;&lt;subtitle&gt;Press Return to select this Network Location&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;\n";
+	} else {
+		print "&lt;item uid=\"$UID$_\" arg=\"$_\"&gt;&lt;title&gt;$_&lt;/title&gt;&lt;subtitle&gt;Press Return to select this Network Location&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;\n";
+	}
+}
+
+print "&lt;/items&gt;\n"
+</string>
+				<key>subtext</key>
+				<string>Change Network Location</string>
+				<key>title</key>
+				<string>Network Location</string>
+				<key>type</key>
+				<integer>4</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9E24489F-F6E7-49E1-8E4C-3E5A1F99B6CC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Changing Network Location</string>
+				<key>title</key>
+				<string>New Network Location "{query}"</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D8255BF5-AD37-473B-A9E4-9665A6B2D110</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Yet another Network Location in Perl lists available locations allowing to switch between them.
+Currently active Network Location is marked with "(Current)"
+Version 0.9</string>
+	<key>uidata</key>
+	<dict>
+		<key>9E24489F-F6E7-49E1-8E4C-3E5A1F99B6CC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>BF87C803-DCFF-41F2-9B3F-618F7C2BAF7A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D8255BF5-AD37-473B-A9E4-9665A6B2D110</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>0D4BA306-5CB4-4C81-A359-0DEB652480AE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A5908BF3-AE8D-47C2-A35E-077C40F30D87</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>NiteoWeb</string>
+	<key>description</key>
+	<string>Mark all messages in Mail as read.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Mail.app Mark All As Read</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>tell application "Mail"
+	set allAccounts to the name of every account
+	repeat with currAccount in allAccounts
+		set unreadMboxes to (every mailbox in account currAccount whose unread count is not 0)
+		repeat with currMbox in unreadMboxes
+			set (the read status of every message in currMbox whose read status is false) to true
+		end repeat
+	end repeat
+end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A5908BF3-AE8D-47C2-A35E-077C40F30D87</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>allread</string>
+				<key>subtext</key>
+				<string>Mark all messages in Mail as read</string>
+				<key>text</key>
+				<string>Mark All Emails Read</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0D4BA306-5CB4-4C81-A359-0DEB652480AE</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0D4BA306-5CB4-4C81-A359-0DEB652480AE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A5908BF3-AE8D-47C2-A35E-077C40F30D87</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.niteoweb.com</string>
+</dict>
+</plist>

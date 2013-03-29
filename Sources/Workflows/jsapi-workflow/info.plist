@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>allenm.javascript.api.workflow</string>
+	<key>connections</key>
+	<dict>
+		<key>2C02D658-2292-4A5B-965F-4AD20BCF95AD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A339BCBF-18EC-4318-B16A-0C709965D2DB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Allen.M</string>
+	<key>description</key>
+	<string>search javascript api</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>javascript api</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>js</string>
+				<key>runningsubtext</key>
+				<string>查询中</string>
+				<key>script</key>
+				<string>from jsapi import query
+
+query("{query}")</string>
+				<key>subtext</key>
+				<string>please input js api keyword</string>
+				<key>title</key>
+				<string>search javascript api</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2C02D658-2292-4A5B-965F-4AD20BCF95AD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A339BCBF-18EC-4318-B16A-0C709965D2DB</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2C02D658-2292-4A5B-965F-4AD20BCF95AD</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>A339BCBF-18EC-4318-B16A-0C709965D2DB</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/allenm/jsapi-workflow</string>
+</dict>
+</plist>

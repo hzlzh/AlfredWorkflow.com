@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>718E85F9-EB90-495F-80F5-AE0FDBD431FE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7B767252-0C29-4424-83AE-D18B37C10A3C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3B2C763-844B-4E48-82CD-AD1ACC891872</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F491F04B-52E9-40AB-AA3B-FBBA49028F06</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>718E85F9-EB90-495F-80F5-AE0FDBD431FE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>mtlx</string>
+	<key>description</key>
+	<string>Toggle the sound output of your mac</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Toggle Sound Output</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Toggle Sound Output</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F3B2C763-844B-4E48-82CD-AD1ACC891872</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tell application "System Preferences"
+activate	set current pane to pane "com.apple.preference.sound"end telltell application "System Events"	tell application process "System Preferences"		tell tab group 1 of window "Son"			click radio button "Sortie"			if (selected of row 3 of table 1 of scroll area 1) then				set selected of row 4 of table 1 of scroll area 1 to true				set deviceselected to "HEADSET"
+return "HEADSET"
+			else				set selected of row 3 of table 1 of scroll area 1 to true				set deviceselected to "MAC"
+return "MAC"			end if
+		end tell	end tellend telltell application "System Preferences" to quit</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>718E85F9-EB90-495F-80F5-AE0FDBD431FE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tell application "System Preferences" to quit</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>7B767252-0C29-4424-83AE-D18B37C10A3C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F491F04B-52E9-40AB-AA3B-FBBA49028F06</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow will toggle the sound output on a hotkey. It should also display a notification using Notification Center of the Mac...
+
+I'm not a programmer. To create this workflow I took parts of code from internet searches and tried to make everything work. I was lucky to succeed. You are free to edit it, ameliorate it and share it again :-)</string>
+	<key>uidata</key>
+	<dict>
+		<key>718E85F9-EB90-495F-80F5-AE0FDBD431FE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>7B767252-0C29-4424-83AE-D18B37C10A3C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>F3B2C763-844B-4E48-82CD-AD1ACC891872</key>
+		<dict>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>F491F04B-52E9-40AB-AA3B-FBBA49028F06</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

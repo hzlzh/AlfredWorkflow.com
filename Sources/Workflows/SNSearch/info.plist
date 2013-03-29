@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>sagacity.snsearch</string>
+	<key>connections</key>
+	<dict>
+		<key>AC9E9C29-3E78-492F-9E31-3ACFFEC7C2EA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>61E83C43-E906-49D1-9642-F64017F8942E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>445E514A-AFF6-428D-A4AE-59CD57731FA1</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open Startup News iterm……</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>池建强</string>
+	<key>description</key>
+	<string>Workflow for Hacker News</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>SNSearch</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sn</string>
+				<key>runningsubtext</key>
+				<string>请稍候...</string>
+				<key>script</key>
+				<string># -*- coding: utf-8 -*-
+
+__author__ = 'Sagacity'
+
+import urllib
+import xml.dom.minidom
+
+theQuery = u"{query}"
+# theQuery = u"io"
+theQuery = theQuery.strip().lower()
+rssurl = 'http://news.dbanotes.net/rss'
+urldoc = xml.dom.minidom.parse( urllib.urlopen( rssurl ) )
+
+print "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;"
+for item in urldoc.getElementsByTagName('item'):
+    title = item.getElementsByTagName('title')[0].firstChild.data.replace( "&amp;", "##" )
+    link = item.getElementsByTagName('link')[0].firstChild.data.replace( "&amp;", "%26" )
+    comments = item.getElementsByTagName('comments')[0].firstChild.data.replace( "&amp;", "%26" )
+
+    if (theQuery in title.lower()) or theQuery == "all":
+        print "    &lt;item uid=\"SN\" arg=\""+ link + "|" + comments + "\"&gt;"
+        print "        &lt;title&gt;" + title.encode('utf-8') + "&lt;/title&gt;"
+        print "        &lt;subtitle&gt;" + comments + "&lt;/subtitle&gt;"
+        print '''        &lt;icon type="fileicon"&gt;/Applications/Safari.app/&lt;/icon&gt;
+    &lt;/item&gt;'''
+print "&lt;/items&gt;\n"</string>
+				<key>subtext</key>
+				<string>Get the rss items of Startup News</string>
+				<key>title</key>
+				<string>Start News</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>AC9E9C29-3E78-492F-9E31-3ACFFEC7C2EA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>open "$(echo '{query}' | cut -d '|' -f 1 )"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>61E83C43-E906-49D1-9642-F64017F8942E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>open "$(echo '{query}' | cut -d '|' -f 2 )"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>445E514A-AFF6-428D-A4AE-59CD57731FA1</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>445E514A-AFF6-428D-A4AE-59CD57731FA1</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>61E83C43-E906-49D1-9642-F64017F8942E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>AC9E9C29-3E78-492F-9E31-3ACFFEC7C2EA</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>news.dbanotes.net</string>
+</dict>
+</plist>

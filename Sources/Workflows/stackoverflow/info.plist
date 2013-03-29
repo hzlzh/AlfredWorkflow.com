@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>stackoverflow.7h2o.com</string>
+	<key>connections</key>
+	<dict>
+		<key>0640EF58-9502-445E-A797-AC2055920155</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>11D5721D-E45C-4D45-82C8-2CC370002271</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>xhinking</string>
+	<key>description</key>
+	<string>Fast StackOverflow Search</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>StackOverflow</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>st</string>
+				<key>runningsubtext</key>
+				<string>Please Wait...</string>
+				<key>script</key>
+				<string>import json, StringIO, gzip, alfred, urllib, urllib2, datetime
+
+def voiteImg(votes):
+	if votes &lt; 0:
+		imgStr = 'so--1.png'
+	elif votes == 0:
+		imgStr = 'so-0.png'
+	elif votes &gt;0 and votes &lt;10:
+		imgStr = 'so-1-1.png' 
+	elif votes &gt;= 10 and votes &lt;50:
+		imgStr = 'so-10.png'
+	elif votes &gt;= 50 and votes &lt;100:
+		imgStr = 'so-50.png'
+	elif votes &gt;= 100 and votes &lt;500:
+		imgStr = 'so-100.png'
+	elif votes &gt;= 500 and votes &lt;1000:
+		imgStr = 'so-500.png'
+	elif votes &gt;= 1000:
+		imgStr = 'so-1000.png'
+
+	return imgStr
+
+theQuery = u'{query}'
+theQuery = urllib.quote_plus(theQuery)
+url = 'https://api.stackexchange.com/2.1/search/advanced?order=desc&amp;sort=votes&amp;site=stackoverflow&amp;q=%s' % theQuery
+
+request = urllib2.Request(url)
+request.add_header('Accept-encoding', 'gzip')
+req_open = urllib2.build_opener()
+conn = req_open.open(request)
+req_data = conn.read()
+
+data_stream = StringIO.StringIO(req_data)
+gzip_stream = gzip.GzipFile(fileobj=data_stream)
+actual_data = gzip_stream.read()
+
+data = json.loads(actual_data)
+
+results = []
+
+for q in data['items']:
+	arg = q['link']
+	time = datetime.datetime.fromtimestamp(q['creation_date']).strftime('%Y-%m-%d %H:%M:%S')
+	subtitle = "Votes:" + str(q['score']) + "   Answers:" + str(q['answer_count']) + "   View:"+ str(q['view_count']) + "   Create At:" + time
+	img = voiteImg(q['score'])
+
+	item = alfred.Item({'uid': 1, 'arg': arg}, q['title'], subtitle.encode('utf-8'), (img, {'type': 'png'}))
+	results.append(item)
+
+xml = alfred.xml(results)
+alfred.write(xml)</string>
+				<key>title</key>
+				<string>Stack Overflow</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0640EF58-9502-445E-A797-AC2055920155</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>11D5721D-E45C-4D45-82C8-2CC370002271</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>By: xhinking
+Email: xhinking@gmail.com
+Blog: 7h2o.com
+
+Credit:
+- StackOverflow Team 
+- Alfred Team
+- Github Team
+- Sumi Team
+- jackychi - https://github.com/jackychi
+- nikipore - https://github.com/nikipore
+- lucjon   - https://github.com/lucjon
+- My Mother</string>
+	<key>uidata</key>
+	<dict>
+		<key>0640EF58-9502-445E-A797-AC2055920155</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>11D5721D-E45C-4D45-82C8-2CC370002271</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://7h2o.com</string>
+</dict>
+</plist>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.bilalh.ratings</string>
+	<key>connections</key>
+	<dict>
+		<key>737129E7-3578-458B-854B-B475A8F90D98</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>91E64AA1-4B9A-45EC-930D-5B70ED8E9F0E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>91E64AA1-4B9A-45EC-930D-5B70ED8E9F0E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>216C8A2F-A9A3-4A42-84B4-5F24B464989E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Bilal Syed Hussain</string>
+	<key>description</key>
+	<string>Manage the rating of the current song in iTunes.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>iTunes Ratings</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>rating</string>
+				<key>runningsubtext</key>
+				<string>Loading options...</string>
+				<key>script</key>
+				<string>set workflowFolder to do shell script "pwd"
+set sc to POSIX file (workflowFolder &amp; "/rating.applescript") as aliasrun script (sc) with parameters "{query}"</string>
+				<key>subtext</key>
+				<string>Manage current song rating in iTunes.</string>
+				<key>title</key>
+				<string>iTunes Song Rating</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>737129E7-3578-458B-854B-B475A8F90D98</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Song Rated!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>216C8A2F-A9A3-4A42-84B4-5F24B464989E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "iTunes"		set oldrating to ((rating of current track) / 20) as integer		set rating of current track to q * 20		return "[" &amp; q &amp; " stars] " &amp; artist of current track &amp; " - " &amp; name of current track
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>91E64AA1-4B9A-45EC-930D-5B70ED8E9F0E</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Based on a script by Ursan Razvan
+https://github.com/qlassiqa/alfred-workflow/tree/master/example%20workflows
+
+Uses the icons from that script as well</string>
+	<key>uidata</key>
+	<dict>
+		<key>216C8A2F-A9A3-4A42-84B4-5F24B464989E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>737129E7-3578-458B-854B-B475A8F90D98</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>91E64AA1-4B9A-45EC-930D-5B70ED8E9F0E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://bilalh.github.com</string>
+</dict>
+</plist>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.benzi.a2w.comics</string>
+	<key>connections</key>
+	<dict>
+		<key>891100E4-9090-4EB5-8249-C2FB98699674</key>
+		<array/>
+		<key>BAF05A36-E61B-48BB-BAE5-7268E12BBE60</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>891100E4-9090-4EB5-8249-C2FB98699674</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Benzi Ahamed</string>
+	<key>description</key>
+	<string>View latest strips from a number of comics</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Comics</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>comics</string>
+				<key>runningsubtext</key>
+				<string>Loading comic strip feed, please wait...</string>
+				<key>script</key>
+				<string>python comics.py --s "{query}"</string>
+				<key>subtext</key>
+				<string>View the latest strips from a number of comics</string>
+				<key>title</key>
+				<string>Comics</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>BAF05A36-E61B-48BB-BAE5-7268E12BBE60</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>python comics.py --load "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>891100E4-9090-4EB5-8249-C2FB98699674</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>891100E4-9090-4EB5-8249-C2FB98699674</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>BAF05A36-E61B-48BB-BAE5-7268E12BBE60</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>benzi-ahamed.tumblr.com</string>
+</dict>
+</plist>

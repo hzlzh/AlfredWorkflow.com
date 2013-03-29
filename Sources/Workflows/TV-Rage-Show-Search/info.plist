@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>99763599276</string>
+	<key>connections</key>
+	<dict>
+		<key>74CDC4AC-FAC1-474E-8A86-8F1CDC0144A4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4999FF99-571D-4647-AA26-29C48D105DC0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4DCCE206-5778-42A2-BD13-B7493E6C5703</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A9A38AEC-1807-4E00-B2AE-7D06810E0642</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D7E20359-0D5D-4F78-B77C-18CE906A084D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CD01D4A3-9960-4276-8621-F96B00793599</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Kevin Kirsche</string>
+	<key>description</key>
+	<string>Search TVRage for the show of your choice. Returns information about the show in subtitle</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>TV Rage Show Search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4DCCE206-5778-42A2-BD13-B7493E6C5703</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>enable12hr</string>
+				<key>subtext</key>
+				<string>Enable 12-hour time (ex. 8:00 PM) for the TV Rage Workflow</string>
+				<key>text</key>
+				<string>Enable 12-hour time</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D7E20359-0D5D-4F78-B77C-18CE906A084D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>A9A38AEC-1807-4E00-B2AE-7D06810E0642</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>runningsubtext</key>
+				<string>Searching TV Rage...</string>
+				<key>script</key>
+				<string>	// Author: Kevin Kirsche
+    // Version: 0.05
+	//Episode Search
+
+     date_default_timezone_set('America/New_York');
+
+	require_once('workflows.php');
+	require_once('TVRAGE/TVRAGE.class.php');
+	require_once('TVRAGE/TV_Show.class.php');
+	require_once('TVRAGE/TV_Shows.class.php');
+	require_once('TVRAGE/TV_Episode.class.php');
+	//create new workflow
+	$w = new Workflows();
+
+	// Grab input
+	$input = "Mike &amp; Molly S01E01";
+
+	//next we want to separate the show name from the season and from the episode
+	preg_match("/(.+)S(\d{2})E(\d{2})/", $input, $showInfoArray);
+
+	if(empty($showInfoArray)) {
+		$fileIcon = "icon_waiting.png";
+     		$valid = "no";
+		$w-&gt;result("52847495564616816814684357", "http://www.tvrage.com/", "Preparing to Search...", "Waiting for the complete input. Please enter \"[SHOW NAME] S##E##\" to begin the search.", $fileIcon, $valid, 'yes');
+	} else {
+		$showName = $showInfoArray['1'];
+		$showSeason = $showInfoArray['2'];
+		$showEpisode = $showInfoArray['3'];
+
+		$tvShowSearch = TV_Shows::search($showName);
+		foreach ($tvShowSearch as $returnedTVShow) {
+			//First, we want to get the TV show information.
+			$thisShowInfo = array(
+				'showId' =&gt; $returnedTVShow-&gt;showId,
+				'showName' =&gt; $returnedTVShow-&gt;name
+			);
+			//Now that we have the current TV Show ID #, we can use this to search for the specific episode
+			$useIDToGetToEpisode = TV_Shows::findById($thisShowInfo['showId']);
+			$episode = $useIDToGetToEpisode-&gt;getEpisode($showSeason, $showEpisode);
+
+			//Take the information we got from TV Rage, and put it in an array
+			$episodeInformation = array(
+				'uid' =&gt; $thisShowInfo['showId'],
+		     		'arg' =&gt; $episode-&gt;url,
+		     		'name' =&gt; $episode-&gt;title . ", " . $thisShowInfo['showName'] . " aired on " . $episode-&gt;airDate . ".",
+		     		'subtitle' =&gt; 'Episode ' . $showEpisode . " of " . $thisShowInfo['showName'] . " was named " . $episode-&gt;title . " and aired on " . $episode-&gt;airDate . ".",
+		     		'fileIcon' =&gt; 'icon.png',
+		     		'valid' =&gt; 'yes'
+			);
+
+			//prep it for return to Alfred!
+			$w-&gt;result($episodeInformation['uid'], $episodeInformation['arg'], $episodeInformation['name'], $episodeInformation['subtitle'], $episodeInformation['fileIcon'], $episodeInformation['valid'], 'yes');
+		//end foreach loop
+		}
+	//end else
+	}
+
+     // Return the result xml
+     	echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Searching TV Rage for {query}</string>
+				<key>title</key>
+				<string>Search TV Rage for Episode</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>17ADF6E8-69EA-4EFC-954A-EE53F9C6E533</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>enable24hr</string>
+				<key>subtext</key>
+				<string>Enable 24-hour time (ex. 20:00) for the TV Rage Workflow</string>
+				<key>text</key>
+				<string>Enable 24-hour time</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>74CDC4AC-FAC1-474E-8A86-8F1CDC0144A4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>tv</string>
+				<key>runningsubtext</key>
+				<string>Searching TV Rage ...</string>
+				<key>script</key>
+				<string>	 // Author: Kevin Kirsche
+     // Version: 0.15
+     date_default_timezone_set('America/New_York');
+
+	require_once('workflows.php');
+	require_once('TVRAGE/TVRAGE.class.php');
+	require_once('TVRAGE/TV_Show.class.php');
+	require_once('TVRAGE/TV_Shows.class.php');
+	//create new workflow
+	$w = new Workflows();
+	// Grab input
+	$input = "{query}";
+
+     $string = file_get_contents('config.json');
+     $decodedJSON = json_decode($string, true);
+
+	//Use the input to search TVRage
+	$show = TV_Shows::search($input);
+	//use foreach loop to set the information for each result
+    foreach ($show as $each) {
+    	//set the information available to us
+     	$thisShow = array(
+     		'uid' =&gt; $each-&gt;showId,
+     		'arg' =&gt; $each-&gt;showLink,
+     		'name' =&gt; $each-&gt;name,
+     		'subtitle' =&gt; "",
+     		'status' =&gt; $each-&gt;status,
+     		'airDay' =&gt; $each-&gt;airDay,
+     		'airTime' =&gt; $each-&gt;airTime,
+               '12hrAirTime' =&gt; $each-&gt;twelveHourAirTime,
+     		'network' =&gt; $each-&gt;network,
+     		'seasons' =&gt; $each-&gt;seasons,
+               'valid' =&gt; 'yes',
+               'fileIcon' =&gt; 'icon.png',
+               'autocomplete' =&gt; 'yes'
+     	);
+          //check number of seasons to ensure we return the correct word
+          if ($thisShow['seasons'] &gt; 1) {
+               $seasons = "seasons";
+          } else {
+               $seasons = "season";
+          }
+
+          if($decodedJSON['12hrtimezone'] == true) {
+          	//set the subtitle based on the status of the show. We want the user to get information pertinent to the show.
+          	if($thisShow['status'] == "Returning Series") {
+          		$thisShow['subtitle'] = $each-&gt;name . " is a " . $thisShow['status'] . ". It is aired " . $thisShow['airDay'] . " at " . $thisShow['12hrAirTime'] . " on " . $thisShow['network'] . ".";
+          	} else if ($thisShow['status'] == "Canceled/Ended") {
+          		$thisShow['subtitle'] = $thisShow['name'] . " is " . $thisShow['status'] . ". It ran for " . $thisShow['seasons'] . " $seasons on " . $thisShow['network'] . ".";
+          	} else if ($thisShow['status'] == "TBD/On The Bubble") {
+          		$thisShow['subtitle'] = $thisShow['name'] . " is on the bubble for being renewed. If it is renewed, it airs on " . $thisShow['airDay'] . " at " . $thisShow['12hrAirTime'] . " on " . $thisShow['network'] . ".";
+          	} else {
+          		$thisShow['subtitle'] = $thisShow['name'] . " is aired on " . $thisShow['airDay'] . " at " . $thisShow['12hrAirTime'] . " on " . $thisShow['network'] . ".";
+          	}
+          } else {
+               //set the subtitle based on the status of the show. We want the user to get information pertinent to the show.
+               if($thisShow['status'] == "Returning Series") {
+                    $thisShow['subtitle'] = $each-&gt;name . " is a " . $thisShow['status'] . ". It is aired " . $thisShow['airDay'] . " at " . $thisShow['airTime'] . " on " . $thisShow['network'] . ".";
+               } else if ($thisShow['status'] == "Canceled/Ended") {
+                    $thisShow['subtitle'] = $thisShow['name'] . " is " . $thisShow['status'] . ". It ran for " . $thisShow['seasons'] . " $seasons on " . $thisShow['network'] . ".";
+               } else if ($thisShow['status'] == "TBD/On The Bubble") {
+                    $thisShow['subtitle'] = $thisShow['name'] . " is on the bubble for being renewed. If it is renewed, it airs on " . $thisShow['airDay'] . " at " . $thisShow['airTime'] . " on " . $thisShow['network'] . ".";
+               } else {
+                    $thisShow['subtitle'] = $thisShow['name'] . " is aired on " . $thisShow['airDay'] . " at " . $thisShow['airTime'] . " on " . $thisShow['network'] . ".";
+               }
+          }
+
+          //$w-&gt;result(uid, arg, title, subtitle, fileicon, valid, autocomplete)
+          $w-&gt;result($thisShow['uid'], $thisShow['arg'], $thisShow['name'], $thisShow['subtitle'], $thisShow['fileIcon'], $thisShow['valid'], $thisShow['autocomplete']);
+     }
+
+     // Return the result xml
+     echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Searching TV Rage for {query}</string>
+				<key>title</key>
+				<string>TVRage</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>$string = file_get_contents('config.json');
+
+$decodedJSON = json_decode($string, true);
+$decodedJSON['12hrtimezone'] = true;
+
+$encodedJSON = json_encode($decodedJSON);
+
+file_put_contents('config.json', $encodedJSON);</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CD01D4A3-9960-4276-8621-F96B00793599</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>$string = file_get_contents('config.json');
+
+$decodedJSON = json_decode($string, true);
+$decodedJSON['12hrtimezone'] = false;
+
+$encodedJSON = json_encode($decodedJSON);
+
+file_put_contents('config.json', $encodedJSON);</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4999FF99-571D-4647-AA26-29C48D105DC0</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Welcome to the TVRage Alfred Workflow
+=====================================
+### Version 0.12
+
+This workflow is currently setup to run based on the tv keyword. It queries TVRage and returns information on the show. If you are using a hotkey, it will pass your current selection in OS X into the workflow.
+![Alfred Workflow Example](http://i.imgur.com/2cwW7IB.png)
+
+Returning Series:
+-----------------
+[*SHOW_NAME*] is a returning series. It is aired on [*AIR DAY*] at [*AIR TIME*] on [*TV NETWORK*].
+
+Canceled/Ended Series:
+----------------------
+[*SHOW_NAME*] is canceled/ended. It ran for [*NUMBER OF SEASONS*] season(s) on [*TV NETWORK*].
+
+TBD/On The Bubble Series:
+----------------------
+[*SHOW_NAME*] is on the bubble for being renewed. If it is renewed, it airs on [*AIR DAY*] at [*AIR TIME*] on [*TV NETWORK*].
+
+Use of the Workflow
+===================
+This workflow can be called by the keyword "tv [*TV SHOW NAME*]". This will query the TVRage database and return results based on your query.
+
+Features to be added:
+---------------------
+* TV Episode search — NOTE: functions, but slow. Trying to speed it up before hooking it up.
+* 12 hour version (instead of current 24-hour time)
+* ~~Create icon for TVRage workflow~~
+
+Resources Used:
+---------------
+* [PHP TVRage Class](https://github.com/ryandoherty/PHP--TVRage)</string>
+	<key>uidata</key>
+	<dict>
+		<key>17ADF6E8-69EA-4EFC-954A-EE53F9C6E533</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>4999FF99-571D-4647-AA26-29C48D105DC0</key>
+		<dict>
+			<key>ypos</key>
+			<real>430</real>
+		</dict>
+		<key>4DCCE206-5778-42A2-BD13-B7493E6C5703</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>74CDC4AC-FAC1-474E-8A86-8F1CDC0144A4</key>
+		<dict>
+			<key>ypos</key>
+			<real>430</real>
+		</dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>A9A38AEC-1807-4E00-B2AE-7D06810E0642</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>CD01D4A3-9960-4276-8621-F96B00793599</key>
+		<dict>
+			<key>ypos</key>
+			<real>320</real>
+		</dict>
+		<key>D7E20359-0D5D-4F78-B77C-18CE906A084D</key>
+		<dict>
+			<key>ypos</key>
+			<real>320</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://razerdesign.com</string>
+</dict>
+</plist>

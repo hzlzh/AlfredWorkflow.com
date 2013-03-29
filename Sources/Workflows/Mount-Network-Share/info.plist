@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>pstadler/alfred-mount</string>
+	<key>connections</key>
+	<dict>
+		<key>5C4A76F4-0175-48DE-AA23-7F7F70AB8659</key>
+		<array/>
+		<key>6B492BDF-9554-4B32-9FC7-70299B4F6CF0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3BABCA7A-880C-45B6-A4CC-03B301CB4991</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C3BD5BCD-E58A-491B-93B0-951192C4BAC9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5C4A76F4-0175-48DE-AA23-7F7F70AB8659</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Patrick Stadler</string>
+	<key>description</key>
+	<string>Mount a network share with automatic discovery</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Mount Network Share</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>unmount</string>
+				<key>runningsubtext</key>
+				<string>Find mounted shares...</string>
+				<key>script</key>
+				<string>#!/bin/bash
+
+out=''
+while read -r line; do
+    local_path=$(echo $line | sed 's/^.* on \(.*\) (.*/\1/g')
+    remote=$(echo $line | sed 's/^.*@\(.*\) on .*/\1/g')
+    host=$(echo $remote | cut -f1 -d '/')
+    share=$(echo $remote | cut -f2 -d '/')
+
+    out+="&lt;item arg=\"$local_path\" uid=\"$remote\" valid=\"yes\"&gt;\
+            &lt;title&gt;$share&lt;/title&gt;\
+            &lt;subtitle&gt;$local_path — on $host&lt;/subtitle&gt;\
+            &lt;icon&gt;eject.png&lt;/icon&gt;\
+        &lt;/item&gt;"
+done &lt; &lt;(mount | grep '^//')
+
+echo "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;items&gt;$out&lt;/items&gt;"</string>
+				<key>subtext</key>
+				<string>Disconnect a network share</string>
+				<key>title</key>
+				<string>Unmount Network Share</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6B492BDF-9554-4B32-9FC7-70299B4F6CF0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>mount</string>
+				<key>runningsubtext</key>
+				<string>Discovering shares...</string>
+				<key>script</key>
+				<string>#!/bin/bash
+
+query="{query}"
+
+HOSTNAME=`hostname`
+
+function escape_hostname {
+    echo $(echo "$@" | sed 's/(.*)$//g;s/[^a-zA-Z0-9 -_]//g;s/[ _]/-/g')
+}
+
+trap '{
+    mounted_volumes=$(mount)
+    for host in $(printf "%s\n" "${hosts[@]}" | sort -u); do
+        # password=$(security find-internet-password -l "$host" -w)
+        while read -r line; do
+            if [[ "$line" == *Disk* ]]; then
+                share=$(echo $line | tr -s " " | sed "s/ Disk.*$//g;s/[^a-zA-Z0-9 -_]//g;s/ _/-/g")
+                if [[ $mounted_volumes != *"$host"*"$share"* &amp;&amp; ($share =~ "$query" || -z "$query") ]]; then
+                    out+="&lt;item arg=\"$host/$share\" uid=\"$host/$share\" valid=\"yes\"&gt;\
+                        &lt;title&gt;$share&lt;/title&gt;\
+                        &lt;subtitle&gt;on $host&lt;/subtitle&gt;\
+                        &lt;icon&gt;icon.png&lt;/icon&gt;\
+                    &lt;/item&gt;"
+                fi
+            fi
+        done &lt; &lt;(smbutil view -g //@$(echo $host | sed "s/\.local$//g") 2&gt; /dev/null) # strip .local for faster resolution
+    done
+    # shares=``
+    if [ -z "$out" ]; then
+        out="&lt;item arg=\"$query\" uid=\"$query\" valid=\"yes\"&gt;\
+                &lt;title&gt;Connect to...&lt;/title&gt;\
+                &lt;subtitle&gt;Enter path to network share: &amp;lt;host&amp;gt;/&amp;lt;share&amp;gt;&lt;/subtitle&gt;\
+                &lt;icon&gt;icon.png&lt;/icon&gt;\
+            &lt;/item&gt;"
+    fi
+    echo "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;items&gt;$out&lt;/items&gt;"
+}' EXIT
+
+hosts=(); i=0
+while read -r line; do
+    i=`expr $i + 1`
+
+    if [ $i -lt 5 ]; then continue; fi # skip the header lines
+
+    name=$(echo "$line" | tr -s ' ' | sed 's/^.*_afpovertcp\._tcp\. //g')
+    domain=$(echo $line | tr -s ' ' | cut -d ' ' -f 5)
+    domain="${domain%?}"
+    hostname="$(escape_hostname $name).$domain"
+
+    if [[ "$hostname" != "$HOSTNAME" ]]; then
+        hosts+=("$hostname")
+    fi
+
+    if [ $(echo $line | cut -d ' ' -f 3) -ne '3' ]; then break; fi # break if no more items will follow
+
+done &lt; &lt;((sleep 0.5; kill -13 0) &amp; # kill quickly if trapped
+            dns-sd -B _afpovertcp._tcp)
+
+# silently kill subprocess
+kill -13 0
+exit 0</string>
+				<key>subtext</key>
+				<string>Connect a network share</string>
+				<key>title</key>
+				<string>Mount Network Share</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C3BD5BCD-E58A-491B-93B0-951192C4BAC9</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	try
+		mount volume "afp://" &amp; q
+	on error
+		mount volume "smb://" &amp; q
+	end try
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>5C4A76F4-0175-48DE-AA23-7F7F70AB8659</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	do shell script "umount " &amp; q
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>3BABCA7A-880C-45B6-A4CC-03B301CB4991</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>3BABCA7A-880C-45B6-A4CC-03B301CB4991</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>5C4A76F4-0175-48DE-AA23-7F7F70AB8659</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>6B492BDF-9554-4B32-9FC7-70299B4F6CF0</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>C3BD5BCD-E58A-491B-93B0-951192C4BAC9</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://github.com/pstadler/alfred-mount</string>
+</dict>
+</plist>

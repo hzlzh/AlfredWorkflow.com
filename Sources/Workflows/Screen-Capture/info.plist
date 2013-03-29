@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.benzi.a2w.screencapture</string>
+	<key>connections</key>
+	<dict>
+		<key>0A0133E9-B06A-4858-800B-7A85616B72E6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FA0DFDB3-D578-4E5A-9A23-BDB4D6A3B011</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A88F8004-FF4B-4350-A46F-EF394ADE89F3</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open picture in a Mail message (only for options that save to Desktop)</string>
+			</dict>
+		</array>
+		<key>FA0DFDB3-D578-4E5A-9A23-BDB4D6A3B011</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Benzi Ahamed</string>
+	<key>description</key>
+	<string>Grab a screen shot and save to your desktop</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Screen Capture</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sc</string>
+				<key>script</key>
+				<string>cat &lt;&lt; EOB
+
+&lt;?xml version="1.0"?&gt;
+
+&lt;items&gt;
+
+  &lt;item uid="screencapture.i" arg="i"&gt; 
+    &lt;title&gt;Capture Interactive&lt;/title&gt; 
+    &lt;subtitle&gt;Draw a rectangle on screen, or press space to select a window &lt;/subtitle&gt; 
+	&lt;icon&gt;sci.png&lt;/icon&gt;
+  &lt;/item&gt;
+
+  &lt;item uid="screencapture.c" arg="c"&gt; 
+    &lt;title&gt;Capture to Clipboard&lt;/title&gt; 
+    &lt;subtitle&gt;Capture the current screen to the clipboard&lt;/subtitle&gt; 
+	&lt;icon&gt;scc.png&lt;/icon&gt;
+  &lt;/item&gt; 
+
+  &lt;item uid="screencapture.ic" arg="ic"&gt; 
+    &lt;title&gt;Capture Interactive to Clipboard&lt;/title&gt; 
+    &lt;subtitle&gt;Draw a rectangle on screen and save to the clipboard&lt;/subtitle&gt; 
+	&lt;icon&gt;scic.png&lt;/icon&gt;
+  &lt;/item&gt; 
+
+  &lt;item uid="screencapture.screen" arg=""&gt; 
+    &lt;title&gt;Capture Screen&lt;/title&gt; 
+    &lt;subtitle&gt;Capture the current screen&lt;/subtitle&gt; 
+	&lt;icon&gt;sc.png&lt;/icon&gt;
+  &lt;/item&gt; 
+
+&lt;/items&gt;
+
+EOB</string>
+				<key>subtext</key>
+				<string>Grab a screen shot and save to your desktop</string>
+				<key>title</key>
+				<string>Screen Capture</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0A0133E9-B06A-4858-800B-7A85616B72E6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>OPTIONS={query}
+USER=$(whoami)
+DATE=$(date)
+FOLDER=$(echo /Users/$USER/Desktop)
+FILENAME=$(echo ScreenCapture at $DATE.png)
+
+echo /Users/$USER/Desktop/$FILENAME
+
+
+if [ $OPTIONS == ""]; then
+screencapture "$FOLDER/$FILENAME"
+elif [ $OPTIONS == "i" ]; then
+screencapture -i "$FOLDER/$FILENAME"
+elif [ $OPTIONS == "c" ]; then
+screencapture -c
+elif [ $OPTIONS == "ic" ]; then
+screencapture -c -i 
+elif [ $OPTIONS == "ci" ]; then
+screencapture -c -i 
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FA0DFDB3-D578-4E5A-9A23-BDB4D6A3B011</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>OPTIONS={query}
+USER=$(whoami)
+DATE=$(date)
+FOLDER=$(echo /Users/$USER/Desktop)
+FILENAME=$(echo ScreenCapture at $DATE.png)
+
+echo /Users/$USER/Desktop/$FILENAME
+
+
+if [ $OPTIONS == ""]; then
+screencapture -M "$FOLDER/$FILENAME"
+elif [ $OPTIONS == "i" ]; then
+screencapture -iM "$FOLDER/$FILENAME"
+elif [ $OPTIONS == "c" ]; then
+screencapture -cM
+elif [ $OPTIONS == "ic" ]; then
+screencapture -icM 
+elif [ $OPTIONS == "ci" ]; then
+screencapture -icM 
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A88F8004-FF4B-4350-A46F-EF394ADE89F3</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Credits
+Icons from: 
+http://www.iconfinder.com/icondetails/49252/128/paste_icon</string>
+	<key>uidata</key>
+	<dict>
+		<key>0A0133E9-B06A-4858-800B-7A85616B72E6</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>A88F8004-FF4B-4350-A46F-EF394ADE89F3</key>
+		<dict>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
+		<key>FA0DFDB3-D578-4E5A-9A23-BDB4D6A3B011</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>benzi-ahamed.tumblr.com</string>
+</dict>
+</plist>

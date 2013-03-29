@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.honnix.dropinpocket</string>
+	<key>connections</key>
+	<dict>
+		<key>0931F551-BFC6-4D74-BA96-638A0468CDC9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3620A049-0FA1-4831-A1D4-A5B5F93C0490</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8A6446A4-A410-4C97-B1C9-3988C5BA724E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0931F551-BFC6-4D74-BA96-638A0468CDC9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>honnix</string>
+	<key>description</key>
+	<string>Convert from http://jdfwarrior.tumblr.com/post/21650256216/drop-in-pocket-extension-allows-you-to-quickly#_=_</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Drop in Pocket</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>$parm 			= '{query}';
+$api 			= 'c28d6Xo1T6390y9c1bA2323Aemg5Kc66';
+$pocket_add 	= "https://readitlaterlist.com/v2/add";
+
+/*******************************
+	Parse user input
+*******************************/
+
+if ($parm == "setup") {
+
+	setup($api);
+
+}
+else if ($parm == "version") {
+	if (!file_exists("update.xml")) {
+		echo "Unable to find Drop in Pocket version information.";
+		exit(1);
+	}
+	else {
+		$update = simplexml_load_file("update.xml");
+		echo "Drop in Pocket ". $update-&gt;version ." for Alfred.";
+		exit(1);
+	}
+}
+else if ($parm == "help") {
+
+	echo "Drop in Pocket for Alfred\n";
+	echo "pocket setup - Setup authentication\n";
+	echo "pocket version - Display version info\n";
+	echo "pocket help - Display help info\n";
+	echo "pocket &lt;url&gt; - Save url to Pocket\n";
+
+	exit(1);
+
+}
+else {
+
+	//retrieve saved credentials
+	$creds = get_creds();
+
+	if (is_array($creds)) {
+
+		//url encode the passed url
+		$url 	= urlencode($parm);
+		$user 	= $creds['user'];
+		$pass 	= $creds['pass']; 
+
+		//set url to pocket
+		$result = exec("curl -d username=$user -d password=$pass -d apikey=$api -d url=$url $pocket_add");
+
+		if ( strpos($result, "OK") ) { echo "Saved url to Pocket"; }
+		else if ( ! strpos($result, "OK") ) { echo "An error occurred while attempting to save the url $parm"; }
+		else { echo "Um.. Something happened?"; }
+
+	}
+	else {
+		setup($api);
+	}
+
+	//halt execution
+	exit(1);
+
+}
+
+/*******************************
+	Get user credentials
+*******************************/
+
+function get_creds() {
+	$user = `./Authenticate.app/Contents/MacOS/Authenticate -get username`;
+	$pass = `./Authenticate.app/Contents/MacOS/Authenticate -get password`;
+
+	if ($user != "" &amp;&amp; $pass != "") {
+		return array( 'user'=&gt;$user, 'pass'=&gt;$pass );
+	}
+	else {
+		return false;
+	}
+
+}
+
+/*******************************
+	Verify user credentials
+*******************************/
+
+function verify_auth($user, $pass, $api) {
+
+	//pocket's authentication url
+	$pocket_verify 	= "https://readitlaterlist.com/v2/auth";
+
+	//verify user credentials
+	$result = exec("curl -d username=$user -d password=$pass -d apikey=$api $pocket_verify");
+
+	//looking for "200" in the response to indicate credentials were valid
+	if (strpos($result, "OK")) { return true; }
+	//if 200 wasn't found, credneitals not accepted.
+	else if ( ! strpos($result, "OK") ) { return false; }
+	//all else (shouldn't happen), return false.
+	else { return false; }
+
+}
+
+/*******************************
+	User Setup
+*******************************/
+
+function setup($api) {
+	
+	//retrieve credentials
+	exec('./Authenticate.app/Contents/MacOS/Authenticate -title "Authenticate to Pocket" -label1 "User:"');
+	
+	//grab the saved credentials
+	$user = `./Authenticate.app/Contents/MacOS/Authenticate -get username`;
+	$pass = `./Authenticate.app/Contents/MacOS/Authenticate -get password`;
+
+	//verify the credentials
+	$verified = verify_auth($user, $pass, $api);
+
+	//provide the user with feedback on the credentials provided.
+	if ($verified==true) { echo "Credentials saved to the keychain. You can begin saving URLs to Pocket."; }
+	else { echo "Invalid username/password combination. Please run setup again."; }
+
+	//halt execution
+	exit(1);
+
+}
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0931F551-BFC6-4D74-BA96-638A0468CDC9</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pocket</string>
+				<key>subtext</key>
+				<string>Save URL to Pocket</string>
+				<key>text</key>
+				<string>pocket</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8A6446A4-A410-4C97-B1C9-3988C5BA724E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>3620A049-0FA1-4831-A1D4-A5B5F93C0490</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This is converted from Alfred V1 extension http://jdfwarrior.tumblr.com/post/21650256216/drop-in-pocket-extension-allows-you-to-quickly#_=_</string>
+	<key>uidata</key>
+	<dict>
+		<key>0931F551-BFC6-4D74-BA96-638A0468CDC9</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>3620A049-0FA1-4831-A1D4-A5B5F93C0490</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8A6446A4-A410-4C97-B1C9-3988C5BA724E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://honnix.com</string>
+</dict>
+</plist>

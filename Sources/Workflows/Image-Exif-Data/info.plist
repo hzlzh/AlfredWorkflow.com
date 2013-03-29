@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>workflow.exiftool</string>
+	<key>connections</key>
+	<dict>
+		<key>0232C24F-D985-456E-9D56-2F29D5D12028</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>19BCF522-24A0-4E09-A5E0-34A7E2C25E74</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>1816D224-08B2-44EC-B2CC-08F4F615BCF8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CE0774A-A221-4D6E-92F7-798659D2C3E3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>19BCF522-24A0-4E09-A5E0-34A7E2C25E74</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7FCE2AB-7C80-4733-9892-6E037D8FA6C1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>18BBA8B2-941F-4DA5-9762-199A75CA9BE3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2FEDEC61-62BB-473A-9EC1-77E27DB9E9C8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EDEA251E-5CEF-48F2-80D1-EA96CC24E67E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9129C2CB-023D-4A9F-8BE2-F665A3C93A71</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CE0774A-A221-4D6E-92F7-798659D2C3E3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EDEA251E-5CEF-48F2-80D1-EA96CC24E67E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>18BBA8B2-941F-4DA5-9762-199A75CA9BE3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>stargOOse</string>
+	<key>description</key>
+	<string>Reads Exif data from images</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Image Exif Data</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>ExifTool (copy to clipboard)</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>0232C24F-D985-456E-9D56-2F29D5D12028</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+exiftool {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>19BCF522-24A0-4E09-A5E0-34A7E2C25E74</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "Alfred 2"	search "exif " &amp; qend tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>8CE0774A-A221-4D6E-92F7-798659D2C3E3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>https://maps.google.com/maps?q={query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>EDEA251E-5CEF-48F2-80D1-EA96CC24E67E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>exif</string>
+				<key>script</key>
+				<string>property workflowFolder: do shell script "pwd"
+property lib: load script POSIX file (workflowFolder &amp; "/alfred_library_exif.scpt")
+
+on run	set q to "{query}"		set cmd to "exiftool" &amp; space &amp; quoted form of q		set exifdata to do shell script cmd
+	return lib's formatOutput(exifdata)
+end run
+</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2FEDEC61-62BB-473A-9EC1-77E27DB9E9C8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>18BBA8B2-941F-4DA5-9762-199A75CA9BE3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>ExifTool (show)</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>1816D224-08B2-44EC-B2CC-08F4F615BCF8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Data copied to clipboard</string>
+				<key>title</key>
+				<string>ExidTool</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E7FCE2AB-7C80-4733-9892-6E037D8FA6C1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>9129C2CB-023D-4A9F-8BE2-F665A3C93A71</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Created by using Jack James script from the Metadata workflow
+
+ExifTool by Phil Harvey has to be installed
+http://www.sno.phy.queensu.ca/~phil/exiftool/
+
+Icon by Harwen Zhang
+http://harwen.net</string>
+	<key>uidata</key>
+	<dict>
+		<key>0232C24F-D985-456E-9D56-2F29D5D12028</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+		<key>1816D224-08B2-44EC-B2CC-08F4F615BCF8</key>
+		<dict>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>18BBA8B2-941F-4DA5-9762-199A75CA9BE3</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>19BCF522-24A0-4E09-A5E0-34A7E2C25E74</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+		<key>2FEDEC61-62BB-473A-9EC1-77E27DB9E9C8</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>8CE0774A-A221-4D6E-92F7-798659D2C3E3</key>
+		<dict>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>9129C2CB-023D-4A9F-8BE2-F665A3C93A71</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>E7FCE2AB-7C80-4733-9892-6E037D8FA6C1</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>EDEA251E-5CEF-48F2-80D1-EA96CC24E67E</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.nabelderwelt.de</string>
+</dict>
+</plist>

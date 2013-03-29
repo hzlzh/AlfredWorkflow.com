@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.cjlucas.alfred.tower</string>
+	<key>connections</key>
+	<dict>
+		<key>A754A7F8-D5B5-47F6-9C1A-C902ECEA9BDC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>03C80328-38D8-4EE0-BC32-3C761B51D562</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Chris Lucas</string>
+	<key>description</key>
+	<string>Quickly search and open Tower git repositories</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Tower Repositories</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>tower</string>
+				<key>runningsubtext</key>
+				<string>Searching Repositories...</string>
+				<key>script</key>
+				<string>import alp
+import tower_alfred as ta
+
+items = ta.get_items("{query}")
+
+alp.feedback(items)</string>
+				<key>title</key>
+				<string>Search for Tower Repositories...</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A754A7F8-D5B5-47F6-9C1A-C902ECEA9BDC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>cmd="/Applications/Tower.app/Contents/MacOS/gittower"
+
+# query comes from the arg key in the selected item attributes
+query="{query}"
+
+args="-s \"$query\""
+
+eval $cmd $args</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>03C80328-38D8-4EE0-BC32-3C761B51D562</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>03C80328-38D8-4EE0-BC32-3C761B51D562</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A754A7F8-D5B5-47F6-9C1A-C902ECEA9BDC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://github.com/cjlucas</string>
+</dict>
+</plist>

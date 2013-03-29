@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>pstadler/alfred-screensharing</string>
+	<key>connections</key>
+	<dict>
+		<key>A57B8333-3625-4FFD-9C83-D2902C2416CE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F058E73F-667D-4A00-9616-33FE0EF6E358</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Patrick Stadler</string>
+	<key>description</key>
+	<string>Connect to a host with automatic network discovery</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Screen Sharing</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>vnc</string>
+				<key>runningsubtext</key>
+				<string>Discovering hosts...</string>
+				<key>script</key>
+				<string>#!/bin/bash
+shopt -s nocasematch
+
+query="{query}"
+
+HOSTNAME=`hostname`
+
+function escape_hostname {
+    echo $(echo "$@" | sed 's/[^a-zA-Z0-9 -_]//g;s/[ _]/-/g')
+}
+
+trap '{
+    if [ -z "$out" ]; then
+        out="&lt;item arg=\"$query\" uid=\"$query\" valid=\"yes\"&gt;\
+                &lt;title&gt;Connect to...&lt;/title&gt;\
+                &lt;subtitle&gt;Enter host to connect to&lt;/subtitle&gt;\
+                &lt;icon&gt;icon.png&lt;/icon&gt;\
+            &lt;/item&gt;"
+    fi
+    echo "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;items&gt;$out&lt;/items&gt;"
+}' EXIT
+
+out=""; i=0
+while read -r line; do
+    i=`expr $i + 1`
+
+    if [ $i -lt 5 ]; then continue; fi # skip the header lines
+
+    name=$(echo "$line" | tr -s ' ' | sed 's/^.*_rfb\._tcp\. //g')
+    domain=$(echo $line | tr -s ' ' | cut -d ' ' -f 5)
+    domain="${domain%?}"
+    hostname="$(escape_hostname $name).$domain"
+
+    if [[ "$hostname" != "$HOSTNAME" &amp;&amp; ( -z "$query" || $name =~ "$query" ) ]]; then
+        out+="&lt;item arg=\"$hostname\" uid=\"$hostname\" valid=\"yes\"&gt;\
+                &lt;title&gt;$name&lt;/title&gt;\
+                &lt;subtitle&gt;Connect to $hostname&lt;/subtitle&gt;\
+                &lt;icon&gt;icon.png&lt;/icon&gt;\
+            &lt;/item&gt;"
+    fi
+
+    if [ $(echo $line | cut -d ' ' -f 3) -ne '3' ]; then break; fi # break if no more items will follow
+
+done &lt; &lt;((sleep 0.5; kill -13 0) &amp; # kill quickly if trapped
+            dns-sd -B _rfb._tcp)
+
+# silently kill subprocess
+kill -13 0
+exit 0</string>
+				<key>subtext</key>
+				<string>Connect to a host</string>
+				<key>title</key>
+				<string>Screen Sharing</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A57B8333-3625-4FFD-9C83-D2902C2416CE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "Screen Sharing"
+		open location "vnc://" &amp; q
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F058E73F-667D-4A00-9616-33FE0EF6E358</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Screen Sharing for Alfred
+
+Connect to a host via Apple's Screen Sharing app.
+
+Hosts with Screen Sharing enabled will automatically be discovered and listed within Alfred.</string>
+	<key>uidata</key>
+	<dict>
+		<key>A57B8333-3625-4FFD-9C83-D2902C2416CE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>F058E73F-667D-4A00-9616-33FE0EF6E358</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://github.com/pstadler/alfred-screensharing</string>
+</dict>
+</plist>
