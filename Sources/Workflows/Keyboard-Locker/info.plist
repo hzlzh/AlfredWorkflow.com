@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>jakestech.lcoker.alfred2</string>
+	<key>connections</key>
+	<dict>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AAA7A81D-5C56-4D51-9A12-A6D70E68ABDB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>37D3FC91-428E-4C34-BF1F-183B3C75ED13</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C958491D-10E1-4EED-82FF-1611F9F3F68F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AAA7A81D-5C56-4D51-9A12-A6D70E68ABDB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8790B369-C7FB-403E-A4A0-B99B09FBFE68</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C958491D-10E1-4EED-82FF-1611F9F3F68F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8790B369-C7FB-403E-A4A0-B99B09FBFE68</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jacob Elias</string>
+	<key>description</key>
+	<string>Disables your internal keyboard so you can clean it.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Keyboard Locker</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>try	do shell script "sudo kextunload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext" with administrator privilegesend trydelay 20.0do shell script "sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext" with administrator privileges</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AAA7A81D-5C56-4D51-9A12-A6D70E68ABDB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Your internal keyboard has been re-enabled!</string>
+				<key>title</key>
+				<string>Keyboard Locker</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8790B369-C7FB-403E-A4A0-B99B09FBFE68</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>fix</string>
+				<key>subtext</key>
+				<string>If your internal keyboard isn't re-enabling, after you see the notification.</string>
+				<key>text</key>
+				<string>Keyboard Unlocker!</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>37D3FC91-428E-4C34-BF1F-183B3C75ED13</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>lock</string>
+				<key>subtext</key>
+				<string>Disables your internal keyboard for 20 seconds.</string>
+				<key>text</key>
+				<string>Keyboard Locker</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>do shell script "sudo kextload /System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext" with administrator privileges
+</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C958491D-10E1-4EED-82FF-1611F9F3F68F</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Changelog:
+
+v1.1: First version, nothing new!
+
+Notes:
+
+Make sure you have an external keyboard or know where your onscreen keyboard is before running this workflow for the first time! 
+
+If your internal keyboard doesn't work use the "fix" keyword and enter your admin pass to fix it!
+
+Credits:
+
+	Icon: Created by Iynque (iynque.deviantart.com), edited by me.
+
+	Workflow: Inspired by Ramshack, coded by me.</string>
+	<key>uidata</key>
+	<dict>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>37D3FC91-428E-4C34-BF1F-183B3C75ED13</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
+		<key>8790B369-C7FB-403E-A4A0-B99B09FBFE68</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>AAA7A81D-5C56-4D51-9A12-A6D70E68ABDB</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>C958491D-10E1-4EED-82FF-1611F9F3F68F</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>jakestech.tumblr.com</string>
+</dict>
+</plist>

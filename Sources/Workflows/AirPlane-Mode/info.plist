@@ -205,6 +205,29 @@ esac
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Wifi toggled.</string>
+				<key>title</key>
+				<string>AirPlane Mode</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E808F4C2-47AA-483E-A0D6-6F9691129B06</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
@@ -250,7 +273,7 @@ esac
 				<key>subtext</key>
 				<string>Turn off bluetooth, wifi and lower your brightness</string>
 				<key>text</key>
-				<string>Toggle AirPlane mode</string>
+				<string>Toggle AirPlane mode.</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -258,29 +281,6 @@ esac
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>5070504C-240C-4BC0-BBF9-4FB1E84F1B05</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>Wifi toggled.</string>
-				<key>title</key>
-				<string>AirPlane Mode</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>E808F4C2-47AA-483E-A0D6-6F9691129B06</string>
 		</dict>
 		<dict>
 			<key>config</key>
