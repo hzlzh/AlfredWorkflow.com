@@ -18,8 +18,8 @@ Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in co
 * Submit Alfred 2 Themes -> Commmming soon!
 
 ## Tips 
-* You can share a workflow with link like this:
-`http://www.alfredworkflow.com/#Dev%20Doctor`
+* You can share a workflow with link like this:  
+`http://www.alfredworkflow.com/#Dev%20Doctor`  
 `http://www.alfredworkflow.com/#Translation`
 
 * If you want to update a workflow under `/Downloads`, just make a `pull request`
