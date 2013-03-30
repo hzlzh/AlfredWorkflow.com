@@ -1,0 +1,52 @@
+{
+	"app": {
+		"name": "Hash",
+		"id": "net.exit4web.hash",
+		"version": "1.2",
+		"namespace": "hash"
+	},
+	"commands": [
+		{
+			"id": "md5",
+			"cmd": "MD5",
+			"title": "MD5",
+			"subtitle": "Calculate the MD5 hash of a string"
+		},
+		{
+			"id": "sha1",
+			"cmd": "SHA1",
+			"title": "SHA1",
+			"subtitle": "Calculate the MD5 hash of a string"
+		},
+		{
+			"id": "base64_decode",
+			"cmd": "Base64Decode",
+			"title": "Base64 Decode",
+			"subtitle": "Decode a base64 string"
+		},
+		{
+			"id": "base64_encode",
+			"cmd": "Base64Encode",
+			"title": "Base64 Encode",
+			"subtitle": "Encode a string in base64"
+		},
+		{
+			"id": "htpasswd",
+			"cmd": "HtPasswd",
+			"title": "HtPassword Encode",
+			"subtitle": "Encode a string in the Apache password format"
+		},
+		{
+			"id": "whirlpool",
+			"cmd": "Whirlpool",
+			"title": "Whirlpool",
+			"subtitle": "Calculate the Whirlpool hash of a string"
+		},
+		{
+			"id": "crc32",
+			"cmd": "Crc32",
+			"title": "Crc32",
+			"subtitle": "Calculate the Crc32 hash of a string"
+		}
+	]
+}
