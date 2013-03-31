@@ -5,10 +5,15 @@
  
 Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in coding new workflows yourself.
 
-## List JSON API (new) 
+## Workflows' JSON API (new) 
 
-* (Recommended)API on Github: [https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json](https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json)
+* **(Recommended)** API on Github: [https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json](https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json)
 * API backup: [http://www.alfredworkflow.com/workflow-api/](http://www.alfredworkflow.com/workflow-api/)
+
+-- API info --  
+
+* Download Link by Author **=** `workflow-download-link`   
+* **(Important!)** Backup download link on Github **=** `https://raw.github.com/hzlzh/AlfredWorkflow.com/master/Downloads/Workflows/` **+** `workflow-file`
 
 ## Repo path
 
