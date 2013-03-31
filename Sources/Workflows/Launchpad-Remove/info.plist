@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>karma.launchremove</string>
+	<key>connections</key>
+	<dict>
+		<key>298E3DDA-1B26-452F-875B-214991C51A15</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B6CF871B-1FC7-46D6-83DB-A76D48C38B74</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CCBB8BA8-4286-432C-92E7-38F49577B58F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CCBB8BA8-4286-432C-92E7-38F49577B58F</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>karma</string>
+	<key>description</key>
+	<string>Removes any app from the Launchpad screen</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Launchpad Remove</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>sqlite3 ~/Library/Application\ Support/Dock/*.db "DELETE from apps WHERE title='{query}';"
+killall Dock</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CCBB8BA8-4286-432C-92E7-38F49577B58F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>launchremove</string>
+				<key>subtext</key>
+				<string>NOTE: App name is case sensitive</string>
+				<key>text</key>
+				<string>Remove {query} from your Launchpad</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>298E3DDA-1B26-452F-875B-214991C51A15</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query} has been successfully removed from your Launchpad</string>
+				<key>title</key>
+				<string>Launchpad Remove</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B6CF871B-1FC7-46D6-83DB-A76D48C38B74</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>298E3DDA-1B26-452F-875B-214991C51A15</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B6CF871B-1FC7-46D6-83DB-A76D48C38B74</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>CCBB8BA8-4286-432C-92E7-38F49577B58F</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.unleashiphone.com</string>
+</dict>
+</plist>

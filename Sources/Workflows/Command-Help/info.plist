@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.help.shawn.rice</string>
+	<key>connections</key>
+	<dict>
+		<key>58897BAD-313E-4A6F-82E6-6986D0696EE1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5F4A4847-CE4F-4D4C-9372-0428889E4ABA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E62F5C17-4EE2-4DA8-99ED-A2289A376E5C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>58897BAD-313E-4A6F-82E6-6986D0696EE1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Shawn Rice</string>
+	<key>description</key>
+	<string>Shows a list of workflow commands</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Command Help</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>python help.py  &gt;/dev/null 2&gt;&amp;1 &amp;</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>58897BAD-313E-4A6F-82E6-6986D0696EE1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>help</string>
+				<key>subtext</key>
+				<string>Find workflow commands and hotkeys</string>
+				<key>text</key>
+				<string>Help</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E62F5C17-4EE2-4DA8-99ED-A2289A376E5C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Help file is being generated (may take a few seconds)</string>
+				<key>title</key>
+				<string>Help</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>5F4A4847-CE4F-4D4C-9372-0428889E4ABA</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>58897BAD-313E-4A6F-82E6-6986D0696EE1</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>5F4A4847-CE4F-4D4C-9372-0428889E4ABA</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E62F5C17-4EE2-4DA8-99ED-A2289A376E5C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/shawnrice/alfred2-workflow-help</string>
+</dict>
+</plist>

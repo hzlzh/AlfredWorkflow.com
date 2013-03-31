@@ -65,7 +65,7 @@ end alfred_script</string>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>.</string>
+				<string>..</string>
 				<key>subtext</key>
 				<string>Open current folder in Terminal</string>
 				<key>text</key>

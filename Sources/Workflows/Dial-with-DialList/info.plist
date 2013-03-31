@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>de.hosy.DialList.alfred</string>
+	<key>connections</key>
+	<dict>
+		<key>59C743F2-9E23-4DD1-95EC-484710829643</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A56B9D3A-582E-4EDD-BC92-06835B84C558</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>823A5DDE-23DF-4930-A672-5FFFCF5101C0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A56B9D3A-582E-4EDD-BC92-06835B84C558</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C60FD58B-3511-4AF5-B1DF-5AF7127FAFED</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A56B9D3A-582E-4EDD-BC92-06835B84C558</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Matthias Hühne, HOsy - intelligent software.</string>
+	<key>description</key>
+	<string>Dial a phone number with Dial!List and a FRITZ!Box.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Dial with Dial!List</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "Dial!List"
+		dial q
+	end tell
+end alfred_script
+</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>A56B9D3A-582E-4EDD-BC92-06835B84C558</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>dial</string>
+				<key>subtext</key>
+				<string>Dial Number with Dial!List</string>
+				<key>text</key>
+				<string>Dial Number</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>823A5DDE-23DF-4930-A672-5FFFCF5101C0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>name</key>
+				<string>Dial with Dial!List</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.contact</string>
+			<key>uid</key>
+			<string>C60FD58B-3511-4AF5-B1DF-5AF7127FAFED</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>59C743F2-9E23-4DD1-95EC-484710829643</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow has some possibilities to dial a phone number with Dial!List over a FRITZ!Box:
+
+Keyword:
+dial 12345
+
+Contact Action:
+In Alfred Preferences &gt; Features &gt; Contacts &gt; Add  Custom Action "Dial with Dial!List" for "Phone" Field
+
+In Alfred search for a contact, select the phone number and hit "Enter"
+
+
+Text Selection &amp; Hotkey:
+In Alfred Preferences &gt; Workflows &gt; "Dial with Dial!List" &gt; Setup your preferred Hotkey
+
+Select a phone number / text in any software and hit your Hotkey
+
+
+All methods will send the given phone number to Dial!List. Now you can start your phone call over a FRITZ!Box.
+Have fun!
+
+Learn more about Dial!List:
+http://www.HOsy.de
+
+Version 1.1</string>
+	<key>uidata</key>
+	<dict>
+		<key>59C743F2-9E23-4DD1-95EC-484710829643</key>
+		<dict>
+			<key>ypos</key>
+			<real>390</real>
+		</dict>
+		<key>823A5DDE-23DF-4930-A672-5FFFCF5101C0</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>A56B9D3A-582E-4EDD-BC92-06835B84C558</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C60FD58B-3511-4AF5-B1DF-5AF7127FAFED</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.hosy.de/</string>
+</dict>
+</plist>
