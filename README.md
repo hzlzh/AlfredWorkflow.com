@@ -15,6 +15,14 @@ Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in co
 * Download Link by Author **=** `workflow-download-link`   
 * **(Important!)** Backup download link on Github **=** `https://raw.github.com/hzlzh/AlfredWorkflow.com/master/Downloads/Workflows/` **+** `workflow-file`
 
+*[PHP]demo:*
+
+    <?php
+        $json = file_get_contents( 'https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json');
+        $obj=json_decode($json);
+        var_dump($obj);
+    ?>
+
 ## Repo path
 
     --- 
