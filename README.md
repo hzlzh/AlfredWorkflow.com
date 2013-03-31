@@ -17,11 +17,13 @@ Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in co
 
 *[PHP]demo:*
 
-    <?php
-        $json = file_get_contents( 'https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json');
-        $obj=json_decode($json);
-        var_dump($obj);
-    ?>
+```php
+<?php
+    $json = file_get_contents( 'https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json');
+    $obj=json_decode($json);
+    var_dump($obj);
+?>
+```
 
 ## Repo path
 
