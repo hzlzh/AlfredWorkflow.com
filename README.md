@@ -8,7 +8,7 @@ Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in co
 ## Workflows' JSON API (new) 
 
 * **(Recommended)** API on Github: [https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json](https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json)
-* API backup: [http://www.alfredworkflow.com/workflow-api/](http://www.alfredworkflow.com/workflow-api/)
+* API backup: [http://www.alfredworkflow.com/workflows-api/](http://www.alfredworkflow.com/workflows-api/)
 
 -- API info --  
 
