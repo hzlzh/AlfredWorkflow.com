@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>save2readinglist</string>
+	<key>connections</key>
+	<dict>
+		<key>D143C2D7-BD5F-4E3C-89A7-5BC4122BCE31</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>964A2D4B-D473-4BC3-81B7-565FAFC1F5B5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Kai Chen</string>
+	<key>description</key>
+	<string>Save current Chrome URL to Safari reading list</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Save current Chrome URL to Safari reading list</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>save2read</string>
+				<key>subtext</key>
+				<string>Save Chrome URL to Safari reading list</string>
+				<key>text</key>
+				<string>save2read</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D143C2D7-BD5F-4E3C-89A7-5BC4122BCE31</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tell application "Google Chrome"	set pageUrl to get URL of active tab of first windowend telltell application "Safari" to add reading list item pageUrl</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>964A2D4B-D473-4BC3-81B7-565FAFC1F5B5</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>964A2D4B-D473-4BC3-81B7-565FAFC1F5B5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D143C2D7-BD5F-4E3C-89A7-5BC4122BCE31</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
