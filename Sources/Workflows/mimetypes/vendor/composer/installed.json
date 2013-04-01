@@ -1,0 +1,254 @@
+[
+    {
+        "name": "symfony/process",
+        "version": "v2.2.0",
+        "version_normalized": "2.2.0.0",
+        "target-dir": "Symfony/Component/Process",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Process.git",
+            "reference": "v2.2.0-RC3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Process/zipball/v2.2.0-RC3",
+            "reference": "v2.2.0-RC3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2013-02-18 21:28:10",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Process\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Process Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/filesystem",
+        "version": "v2.2.0",
+        "version_normalized": "2.2.0.0",
+        "target-dir": "Symfony/Component/Filesystem",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Filesystem.git",
+            "reference": "v2.2.0-RC3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Filesystem/zipball/v2.2.0-RC3",
+            "reference": "v2.2.0-RC3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2013-01-17 15:25:59",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Filesystem\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Filesystem Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "seld/jsonlint",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "http://github.com/Seldaek/jsonlint",
+            "reference": "1.1.1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/1.1.1",
+            "reference": "1.1.1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2013-02-11 23:03:12",
+        "bin": [
+            "bin/jsonlint"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Seld\\JsonLint": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jordi Boggiano",
+                "email": "j.boggiano@seld.be",
+                "homepage": "http://seld.be",
+                "role": "Developer"
+            }
+        ],
+        "description": "JSON Linter",
+        "keywords": [
+            "json",
+            "linter",
+            "parser",
+            "validator"
+        ]
+    },
+    {
+        "name": "skyzyx/alfred-workflow-builder",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/skyzyx/alfred-workflow-builder.git",
+            "reference": "1.0.2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/skyzyx/alfred-workflow-builder/zipball/1.0.2",
+            "reference": "1.0.2",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "seld/jsonlint": ">= 1.1",
+            "symfony/filesystem": "2.*",
+            "symfony/process": "2.*"
+        },
+        "suggest": {
+            "doctrine/cache": "Caching library.",
+            "guzzle/guzzle": "HTTP client library.",
+            "monolog/monolog": "Logging library."
+        },
+        "time": "2013-03-31 04:46:40",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Alfred": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Contributors",
+                "homepage": "https://github.com/skyzyx/alfred-workflow-builder/graphs/contributors"
+            }
+        ],
+        "description": "Workflow Builder for Alfred 2",
+        "homepage": "https://github.com/skyzyx/alfred-workflow-builder",
+        "keywords": [
+            "alfred",
+            "workflow"
+        ]
+    },
+    {
+        "name": "skyzyx/mimetypes",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/skyzyx/mimetypes.git",
+            "reference": "1.1.1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/skyzyx/mimetypes/zipball/1.1.1",
+            "reference": "1.1.1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "dflydev/apache-mime-types": "1.0.*@dev",
+            "twig/twig": "1.*"
+        },
+        "time": "2013-03-31 11:50:02",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Skyzyx\\Components\\Mimetypes": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ryan Parman",
+                "homepage": "http://ryanparman.com",
+                "role": "Vanity Developer"
+            },
+            {
+                "name": "Contributors",
+                "homepage": "http://github.com/skyzyx/mimetypes/contributors"
+            }
+        ],
+        "description": "Creates a JSON document containing a thorough list of file extensions => mime types as provided by the Apache httpd project.",
+        "homepage": "http://github.com/skyzyx/mimetypes",
+        "keywords": [
+            "dictionary",
+            "map",
+            "mime",
+            "mimetype"
+        ]
+    }
+]

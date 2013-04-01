@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.ryanparman.workflow.mime</string>
+	<key>connections</key>
+	<dict>
+		<key>86F16A5E-0701-4D5E-B595-5F686CA3EE9B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B33B3CF7-4033-405C-B3B5-D3AD6D7464AE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>70132FDB-C567-4F46-9758-D2DE452C576A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Ryan Parman</string>
+	<key>description</key>
+	<string>Lookup a mimetype by file extension</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Mimetypes by Extension</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>B33B3CF7-4033-405C-B3B5-D3AD6D7464AE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>mime</string>
+				<key>runningsubtext</key>
+				<string>Retrieving data…</string>
+				<key>script</key>
+				<string>php ./workflow.php "{query}"</string>
+				<key>subtext</key>
+				<string>Lookup mimetype information</string>
+				<key>title</key>
+				<string>Mimetype by Extension</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>86F16A5E-0701-4D5E-B595-5F686CA3EE9B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query} was saved to your clipboard.</string>
+				<key>title</key>
+				<string>Mimetypes</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>70132FDB-C567-4F46-9758-D2DE452C576A</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>70132FDB-C567-4F46-9758-D2DE452C576A</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>86F16A5E-0701-4D5E-B595-5F686CA3EE9B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B33B3CF7-4033-405C-B3B5-D3AD6D7464AE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>ryanparman.com</string>
+</dict>
+</plist>

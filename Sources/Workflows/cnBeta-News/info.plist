@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>alfredapp.voidman.cnbeta</string>
+	<key>connections</key>
+	<dict>
+		<key>E9562F9A-920A-45F8-A406-4B83E69FB004</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1C3A03CF-BDAF-4BFA-A9AF-0068E9396190</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>David Lin</string>
+	<key>description</key>
+	<string>A workflow for getting the news from cnBeta.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>cnBeta News</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>1C3A03CF-BDAF-4BFA-A9AF-0068E9396190</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>cnbeta</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>/**
+ * a workflow for cnBeta news.
+ * @version 1.0b
+ * @author David Lin(voidman.me@gmail.com)
+ */
+
+define('CNBETA_NEWS_ID', 'cbnews');
+
+define('CNBETA_NEWS_NOT_FOUND_TITLE', 'No news found.');
+define('CNBETA_NEWS_NOT_FOUND_CONTENT', 'Please try to visit http://www.cnbeta.com :)');
+
+define('CNBETA_NEWS_URL_BASE', 'http://www.cnbeta.com');
+define('CNBETA_NEWS_SHOW_NEWS_ICON', true);
+define('CNBETA_NEWS_NEWS_ICON_DIR', 'newsicons');
+define('CNBETA_NEWS_NEWS_ICON_DEFAULT', 'icon.png');
+
+require 'simple_html_dom.php';
+require 'workflows.php';
+
+$w = new Workflows();
+
+$context = stream_context_create(array(
+                'http' =&gt; array(
+                    'method' =&gt; "GET",
+                    'timeout' =&gt; 10
+                )
+            )
+        );
+$html = file_get_html(CNBETA_NEWS_URL_BASE, 0, $context);
+
+if (!$html) {
+    $w-&gt;result(CNBETA_NEWS_ID, CNBETA_NEWS_URL_BASE, CNBETA_NEWS_NOT_FOUND, CNBETA_NEWS_NOT_FOUND_DESC, CNBETA_NEWS_NEWS_ICON_DEFAULT);
+} else {
+    foreach ($html-&gt;find('div.newslist') as $element) {
+
+        $title = $element-&gt;find('strong', 0)-&gt;plaintext;
+        $title = iconv('GB2312', 'UTF-8', $title);
+
+        $url = $element-&gt;find('a', 0)-&gt;href;
+
+        $id = 0;
+        if (preg_match("/\/articles\/([0-9]+).htm/", $url, $matches)) {
+            $id = $matches[1];
+        }
+
+        $content = $element-&gt;find('dd.desc &gt; span', 0)-&gt;plaintext;
+        $content = iconv('GB2312', 'UTF-8', trim($content));
+
+        $content = trim(preg_replace("/感谢.+的投递/", '', $content));
+
+        if (!CNBETA_NEWS_SHOW_NEWS_ICON) {
+            $iconPath = CNBETA_NEWS_NEWS_ICON_DEFAULT;
+        } else {
+            $iconUrl = $element-&gt;find('dd.desc &gt; a &gt; img', 0)-&gt;src;
+            $iconName = basename(($iconUrl));
+            $iconPath = CNBETA_NEWS_NEWS_ICON_DIR . DIRECTORY_SEPARATOR . $iconName;
+            if (!file_exists(CNBETA_NEWS_NEWS_ICON_DIR)) {
+                mkdir(CNBETA_NEWS_NEWS_ICON_DIR);
+            }
+            if (!file_exists($iconPath)) {
+                file_put_contents($iconPath, file_get_contents($iconUrl));
+            }
+            $iconPath = file_exists($iconPath) ? $iconPath : CNBETA_NEWS_NEWS_ICON_DEFAULT;
+        }
+
+        $w-&gt;result($id, CNBETA_NEWS_URL_BASE.$url, $title, $content, $iconPath);
+    }
+
+    if ( count( $w-&gt;results() ) == 0 ) {
+        $w-&gt;result(CNBETA_NEWS_ID, CNBETA_NEWS_URL_BASE, CNBETA_NEWS_NOT_FOUND, CNBETA_NEWS_NOT_FOUND_DESC, CNBETA_NEWS_NEWS_ICON_DEFAULT);
+    }
+
+    $html-&gt;clear();
+    unset($html);
+}
+
+echo $w-&gt;toxml();
+
+unset($w);</string>
+				<key>subtext</key>
+				<string>Reading the latest news from cnbeta.com</string>
+				<key>title</key>
+				<string>cnBeta News</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E9562F9A-920A-45F8-A406-4B83E69FB004</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1C3A03CF-BDAF-4BFA-A9AF-0068E9396190</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>5C4FC63D-35F4-4A2B-8BEF-5CD0FA5F7F9B</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>E9562F9A-920A-45F8-A406-4B83E69FB004</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://voidman.com</string>
+</dict>
+</plist>

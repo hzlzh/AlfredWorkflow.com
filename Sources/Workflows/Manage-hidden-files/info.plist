@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.bubidevs.HiddenFiles</string>
+	<key>connections</key>
+	<dict>
+		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8BC60E22-ED6E-4A16-8909-D160C7E69A50</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4A15B392-8832-49AA-8D07-1EEEA4F9F049</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Andrea Busi</string>
+	<key>description</key>
+	<string>Reveal hidden Finder items.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Manage hidden files</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>hidden</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+#check the current value and display the result as subtitle
+CURVALUE=$(defaults read com.apple.finder AppleShowAllFiles -bool)
+if [ $CURVALUE = 0 ]; then
+	subtitle="Current status: hidden"
+else
+	subtitle="Current status: visible"
+fi
+
+#check the input and display the relative title
+PAR={query}
+if [ $PAR = "f" ] || [ $PAR = "false" ]; then
+	title="Show hidden files"
+elif [ $PAR = "t" ] || [ $PAR = "true" ]; then
+	title="Hide hidden files"
+else
+	title="Parameter not correct"
+fi
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;'
+echo "&lt;item arg=\"{query}\" uid=\"ssid\" valid=\"yes\"&gt;"
+echo "&lt;title&gt;$title&lt;/title&gt;"
+echo "&lt;subtitle&gt;$subtitle&lt;/subtitle&gt;"
+echo "&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;&lt;/items&gt;"
+echo "&lt;/items&gt;"</string>
+				<key>title</key>
+				<string>Show/Hide hidden files</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>4A15B392-8832-49AA-8D07-1EEEA4F9F049</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Manage hidden files</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8BC60E22-ED6E-4A16-8909-D160C7E69A50</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#!/bin/sh
+
+VALUE=$(defaults read com.apple.finder AppleShowAllFiles -bool)
+VAR={query}
+if [ "$VAR" = "false" ] || [ "$VAR" = "f" ]; then
+	defaults write com.apple.finder AppleShowAllFiles -bool true
+	echo "Hidden files are now visible!"
+	killall Finder
+elif [ "$VAR" = "true" ] || [ "$VAR" = "t" ]; then
+	defaults write com.apple.finder AppleShowAllFiles -bool false
+	echo "Hidden files are now hidden!"
+	killall Finder
+else
+	echo "Command "$VAR" not found!"
+fi
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Usage
+=====
+How to use workflow:
+
+1. Install workflow in Alfred
+2. Type "hidden"
+3. Now you have to simply type this:
+	+ "true" or "t" for hide hidden files
+	+ "false" or "f" for show hidden files
+Enjoy! :)
+
+Changelog
+=========
+
+**Version 1.1**
+Changed true/false for a more natural usage
+
+**Versione 1.0**
+First working version!</string>
+	<key>uidata</key>
+	<dict>
+		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>4A15B392-8832-49AA-8D07-1EEEA4F9F049</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>8BC60E22-ED6E-4A16-8909-D160C7E69A50</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.bubidevs.net</string>
+</dict>
+</plist>

@@ -1,0 +1,7 @@
+{
+	"require": {
+		"php": ">=5.3.3",
+		"guzzle/guzzle": "~3.3.0",
+		"skyzyx/alfred-workflow-builder": "1.*"
+	}
+}

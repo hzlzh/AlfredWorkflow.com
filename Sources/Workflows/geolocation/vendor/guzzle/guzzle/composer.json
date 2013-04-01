@@ -1,0 +1,114 @@
+{
+    "name": "guzzle/guzzle",
+    "type": "library",
+    "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+    "keywords": ["framework", "http", "rest", "web service", "curl", "client", "HTTP client"],
+    "homepage": "http://guzzlephp.org/",
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "Michael Dowling",
+            "email": "mtdowling@gmail.com",
+            "homepage": "https://github.com/mtdowling"
+        },
+        {
+            "name": "Guzzle Community",
+            "homepage": "https://github.com/guzzle/guzzle/contributors"
+        }
+    ],
+
+    "replace": {
+        "guzzle/batch": "self.version",
+        "guzzle/cache": "self.version",
+        "guzzle/common": "self.version",
+        "guzzle/http": "self.version",
+        "guzzle/inflection": "self.version",
+        "guzzle/iterator": "self.version",
+        "guzzle/log": "self.version",
+        "guzzle/parser": "self.version",
+        "guzzle/plugin": "self.version",
+        "guzzle/plugin-async": "self.version",
+        "guzzle/plugin-backoff": "self.version",
+        "guzzle/plugin-cache": "self.version",
+        "guzzle/plugin-cookie": "self.version",
+        "guzzle/plugin-curlauth": "self.version",
+        "guzzle/plugin-error-response": "self.version",
+        "guzzle/plugin-history": "self.version",
+        "guzzle/plugin-log": "self.version",
+        "guzzle/plugin-md5": "self.version",
+        "guzzle/plugin-mock": "self.version",
+        "guzzle/plugin-oauth": "self.version",
+        "guzzle/service": "self.version",
+        "guzzle/stream": "self.version"
+    },
+
+    "require": {
+        "php": ">=5.3.2",
+        "ext-curl": "*",
+        "symfony/event-dispatcher": ">=2.1"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Guzzle\\Tests": "tests/",
+            "Guzzle": "src/"
+        }
+    },
+
+    "require-dev": {
+        "doctrine/cache": "*",
+        "symfony/class-loader": "*",
+        "monolog/monolog": "1.*",
+        "zendframework/zend-cache": "2.0.*",
+        "zendframework/zend-log": "2.0.*",
+        "zend/zend-log1": "1.12",
+        "zend/zend-cache1": "1.12",
+        "phpunit/phpunit": "3.7.*"
+    },
+
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.zendframework.com/"
+        },
+        {
+            "type":"package",
+            "package": {
+                "name": "zend/zend-log1",
+                "version": "1.12",
+                "source": {
+                    "url": "http://framework.zend.com/svn",
+                    "type": "svn",
+                    "reference": "framework/standard/trunk/library/Zend/Log/"
+                },
+                "target-dir": "Zend/Log",
+                "autoload": {
+                    "psr-0": { "Zend_Log": "/" }
+                }
+            }
+        },
+        {
+            "type":"package",
+            "package": {
+                "name": "zend/zend-cache1",
+                "version": "1.12",
+                "source": {
+                    "url": "http://framework.zend.com/svn",
+                    "type": "svn",
+                    "reference": "framework/standard/trunk/library/Zend/Cache/"
+                },
+                "target-dir": "Zend/Cache",
+                "autoload": {
+                    "psr-0": { "Zend_Cache": "/" }
+                }
+            }
+        }
+    ],
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.3-dev"
+        }
+    }
+}

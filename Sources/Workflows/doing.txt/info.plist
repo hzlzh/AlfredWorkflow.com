@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.anhold.doing.v2</string>
+	<key>connections</key>
+	<dict>
+		<key>4D69A187-2E44-483A-9C8C-360DCE6C7A68</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>87F30DED-A03F-4924-A639-C265D01995E8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>88D5FEB8-13C2-4A78-82C5-6FFC8743DCBD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4D69A187-2E44-483A-9C8C-360DCE6C7A68</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jon Anhold</string>
+	<key>description</key>
+	<string>Track time in TaskPaper format</string>
+	<key>name</key>
+	<string>doing.txt</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>30</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+# append text to doing.txt
+# add date header if new day
+# Jon Anhold &lt;jon@anhold.com&gt; 2012-04-19
+# Updated for Alfred v2 2013-01-14
+#
+# Update the $DOING variable to point to the file you want to use.
+#
+
+DOING="/Users/jon.anhold/Dropbox/doing.taskpaper"
+DATE=`date "+%A %m/%d/%Y:"`
+QUERY="{query}"
+
+grep -q "$DATE" $DOING 
+RET=$?
+if [ $RET -eq 0 ]; then
+    echo -e "\t- $QUERY" &gt;&gt; $DOING
+else
+    echo $DATE &gt;&gt; $DOING
+    echo -e "\t- $QUERY" &gt;&gt; $DOING
+fi
+
+ENTRY=`tail -1 $DOING`
+echo "Added: $ENTRY"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4D69A187-2E44-483A-9C8C-360DCE6C7A68</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>doing</string>
+				<key>text</key>
+				<string>timetracking</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>88D5FEB8-13C2-4A78-82C5-6FFC8743DCBD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<true/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>doing.txt</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>87F30DED-A03F-4924-A639-C265D01995E8</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>4D69A187-2E44-483A-9C8C-360DCE6C7A68</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>87F30DED-A03F-4924-A639-C265D01995E8</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>88D5FEB8-13C2-4A78-82C5-6FFC8743DCBD</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://anhold.com/alfred</string>
+</dict>
+</plist>
