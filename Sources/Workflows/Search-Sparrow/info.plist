@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Idea by Runar Dankel, original code by fireshadow52 @ stackoverflow.com, mutilated by daniel@dhertz.com</string>
+	<key>description</key>
+	<string>Searches Sparrow in the most hacky way possible.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Search Sparrow</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)	tell application "System Events"		set isSparrowRunning to exists (processes where name is "Sparrow")	end tell	if not isSparrowRunning then		tell application "Sparrow" to launch		delay 0.5	end if	tell application "Sparrow" to activate --- activates sparrow	tell application "System Events"		tell process "Sparrow" --- implying Sparrow is already activated			key code 3 using {command down, option down} --- send cmd+alt+F to Sparrow invoking search			keystroke q --- enter the query		end tell	end tellend alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ss</string>
+				<key>subtext</key>
+				<string>Search Sparrow for {query}</string>
+				<key>text</key>
+				<string>Search Sparrow</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://stackoverflow.com/users/544963/fireshadow52</string>
+</dict>
+</plist>

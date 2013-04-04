@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>ahockley-omninew</string>
+	<key>connections</key>
+	<dict>
+		<key>0947E4C4-C59C-44B8-A638-9DD4303E699F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F1B3F7C7-132E-4A10-AF95-4A8C50CC1D94</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7E30861B-E9BF-45D1-B8FC-1D1026EC0B38</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7B45F28-3ECB-402F-8F2F-2EBAFE3A3282</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B5F088CD-C328-4235-83DD-D2D46253DD95</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C5675965-BCD1-4EED-9398-FA295261D3DA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Aaron B. Hockley</string>
+	<key>description</key>
+	<string>Create new OmniFocus tasks (alone or from Chrome or Safari)</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Create OmniFocus Tasks</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "Safari"
+    set theURL to (URL of current tab of window 1)
+    set theTitle to (name of current tab of window 1)
+  end tell
+
+ tell application "OmniFocus"
+	set theDoc to default document
+	set theTask to theTitle
+	set theNote to theURL
+
+-- comment out the whole tell quick entry block if you want tasks to go straight to inbox
+	tell quick entry
+		open
+		set NewTask to make new inbox task with properties {name:theTask, note:theNote}
+		activate
+	end tell
+  end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F1B3F7C7-132E-4A10-AF95-4A8C50CC1D94</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ofnew</string>
+				<key>subtext</key>
+				<string>Creates a new task with the argument supplied</string>
+				<key>text</key>
+				<string>Create OmniFocus Task</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B5F088CD-C328-4235-83DD-D2D46253DD95</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ofsafari</string>
+				<key>subtext</key>
+				<string>Create a new OmniFocus task from the current Safari tab</string>
+				<key>text</key>
+				<string>OmniSafari</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0947E4C4-C59C-44B8-A638-9DD4303E699F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ofchrome</string>
+				<key>subtext</key>
+				<string>New OmniFocus Task from Current Chrome URL</string>
+				<key>text</key>
+				<string>OmniChrome</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>7E30861B-E9BF-45D1-B8FC-1D1026EC0B38</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "OmniFocus"
+	set theDoc to default document
+	set theTask to q
+ 
+-- comment out the whole tell quick entry block if you want tasks to go straight to inbox
+	tell quick entry
+		open
+		set NewTask to make new inbox task with properties {name:theTask}
+		activate
+	end tell
+  end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C5675965-BCD1-4EED-9398-FA295261D3DA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "Google Chrome"
+  	set theTitle to title of active tab of front window
+	set theURL to URL of active tab of front window
+  end tell
+ 
+  tell application "OmniFocus"
+	set theDoc to default document
+	set theTask to theTitle
+	set theNote to theURL
+
+-- comment out the whole tell quick entry block if you want tasks to go straight to inbox
+	tell quick entry
+		open
+		set NewTask to make new inbox task with properties {name:theTask, note:theNote}
+		activate
+	end tell
+  end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>E7B45F28-3ECB-402F-8F2F-2EBAFE3A3282</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0947E4C4-C59C-44B8-A638-9DD4303E699F</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>7E30861B-E9BF-45D1-B8FC-1D1026EC0B38</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>B5F088CD-C328-4235-83DD-D2D46253DD95</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>C5675965-BCD1-4EED-9398-FA295261D3DA</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>E7B45F28-3ECB-402F-8F2F-2EBAFE3A3282</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>F1B3F7C7-132E-4A10-AF95-4A8C50CC1D94</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.aaronhockley.com</string>
+</dict>
+</plist>

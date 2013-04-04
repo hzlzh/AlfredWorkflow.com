@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>plausiblethought.newblogpost2</string>
+	<key>connections</key>
+	<dict>
+		<key>4A580C7C-0FB3-4A61-8077-E229C83FE648</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>77D6570D-DA58-42AE-9AB1-F5C23B3E90E7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>77D6570D-DA58-42AE-9AB1-F5C23B3E90E7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>46AB4AFB-EA3B-4D4B-8B96-80B9E73168F8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B2CA259A-4AFB-49B2-A754-5840E0140938</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B7E7A718-6767-4342-AC0A-757C6360B1D5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B7E7A718-6767-4342-AC0A-757C6360B1D5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>46AB4AFB-EA3B-4D4B-8B96-80B9E73168F8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mark Jenkins and Matthew Guay</string>
+	<key>description</key>
+	<string>Create a new blog post with Kirby</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>New Kirby blog post</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>/* navigate to blog folder - REPLACE WITH YOUR OWN BLOG FOLDER BEFORE USE */
+cd ~/YOUR-SITE-FOLDER/content/YOUR-BLOG-FOLDER/
+
+/* count files */
+COUNT=$(ls | wc -l)
+
+/* remove feed folder from count */
+NEWCOUNT=$(expr $COUNT - 1)
+
+/* replace spaces in query with dashes for folder name */
+DNAME=$(echo {query} | tr " " "-")
+
+/* grab link from clipboard */
+LINK=$(pbpaste)
+
+/* make folder */
+mkdir $NEWCOUNT-$DNAME
+
+/* change directory */
+cd $NEWCOUNT-$DNAME
+
+/* get date */
+DATE=`date "+%a, %d %b %Y %X"`
+
+/* create a file called article.link.md with query as title, the clipboard content as the link, and the date */
+echo "Title: {query}
+
+----
+
+Date: $DATE
+
+----
+
+Link: $LINK
+
+----
+
+Text:
+" &gt; article.link.md
+
+open article.link.md</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B7E7A718-6767-4342-AC0A-757C6360B1D5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>postli</string>
+				<key>subtext</key>
+				<string>Create a new post with the title {query}</string>
+				<key>text</key>
+				<string>Create a new link post</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B2CA259A-4AFB-49B2-A754-5840E0140938</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>1</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Go write an awesome post.</string>
+				<key>title</key>
+				<string>Post created!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>46AB4AFB-EA3B-4D4B-8B96-80B9E73168F8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>/* navigate to blog folder - REPLACE WITH YOUR OWN BLOG FOLDER BEFORE USE */
+cd ~/YOUR-SITE-FOLDER/content/YOUR-BLOG-FOLDER/
+
+/* count files */
+COUNT=$(ls | wc -l)
+
+/* remove feed folder from count */
+NEWCOUNT=$(expr $COUNT - 1)
+
+/* replace spaces in query with dashes for folder name */
+DNAME=$(echo {query} | tr " " "-")
+
+/* make folder */
+mkdir $NEWCOUNT-$DNAME
+
+/* change directory */
+cd $NEWCOUNT-$DNAME
+
+/* get date */
+DATE=`date "+%a, %d %b %Y %X"`
+
+/* create a file called article.md with query as title, along with the date */
+echo "Title: {query}
+
+----
+
+Date: $DATE
+
+----
+
+Text:
+" &gt; article.md
+
+open article.md</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>77D6570D-DA58-42AE-9AB1-F5C23B3E90E7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>post</string>
+				<key>subtext</key>
+				<string>Create a new post with the title {query}</string>
+				<key>text</key>
+				<string>Create a new post</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4A580C7C-0FB3-4A61-8077-E229C83FE648</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This is a tweaked version of Mark Jenkins's Alfred 2 workflow for creating new posts in Kirby (http://plausiblethought.net/creating-new-blog-posts-with-an-alfred-workflow).
+
+It lets you enter the title of a new post in Alfred to create a new, iterated folder for your post with your post name using dashes instead of spaces, and an article.md file for your post. The post text file will open automatically with the title and date already included.
+
+You can also create a link post (saved as article.link.md) using this workflow, which will grab the contents of your clipboard and save it as the link in the post.
+
+DO NOTE: You must add your site and blog folder to the folder path in both scripts in this workflow for it to work for your site.
+
+Tweaked by Matthew Guay - Techinch.com.</string>
+	<key>uidata</key>
+	<dict>
+		<key>46AB4AFB-EA3B-4D4B-8B96-80B9E73168F8</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>4A580C7C-0FB3-4A61-8077-E229C83FE648</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>77D6570D-DA58-42AE-9AB1-F5C23B3E90E7</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B2CA259A-4AFB-49B2-A754-5840E0140938</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>B7E7A718-6767-4342-AC0A-757C6360B1D5</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://techinch.com/blog/publish-to-kirby-from-alfred</string>
+</dict>
+</plist>

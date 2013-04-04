@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>76584C39-BB00-4E7D-9BE0-4ACCBB2829F6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7113EA2C-468F-40D5-B2AA-C7E5E3D020A4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>964C67AF-870F-420E-8B91-6079B9457583</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>17BF1163-1E8E-426C-8572-225093B55B4E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9F9DC1C6-5DE4-49F7-9BAA-14E4CA01C956</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C5615B51-DAE5-4A23-8376-67AA21C3ECC3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AA3CDA14-C3B5-442B-B117-D61A244C6625</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BFDCE43A-5AE3-4362-88D9-D0D3CD119C81</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>LeEnno</string>
+	<key>description</key>
+	<string>Open currently selected Finder window in Terminal and vice versa</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>TerminalFinder</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ft</string>
+				<key>subtext</key>
+				<string>Open current Finder directory in Terminal</string>
+				<key>text</key>
+				<string>Finder → Terminal</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>76584C39-BB00-4E7D-9BE0-4ACCBB2829F6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>if</string>
+				<key>subtext</key>
+				<string>Open current iTerm directory in Finder</string>
+				<key>text</key>
+				<string>iTerm → Finder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9F9DC1C6-5DE4-49F7-9BAA-14E4CA01C956</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "Finder"		set pathList to (quoted form of POSIX path of (folder of the front window as alias))	end tell	tell application "System Events"		do shell script "Open -a Terminal " &amp; pathList	end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7113EA2C-468F-40D5-B2AA-C7E5E3D020A4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>fi</string>
+				<key>subtext</key>
+				<string>Open current Finder directory in iTerm</string>
+				<key>text</key>
+				<string>Finder → iTerm</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>AA3CDA14-C3B5-442B-B117-D61A244C6625</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tf</string>
+				<key>subtext</key>
+				<string>Open current Terminal directory in Finder</string>
+				<key>text</key>
+				<string>Terminal → Finder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>964C67AF-870F-420E-8B91-6079B9457583</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "iTerm"
+		tell the current session of current terminal
+			write text "open -a Finder ./"		end tell
+	end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C5615B51-DAE5-4A23-8376-67AA21C3ECC3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "Terminal"		do script "open -a Finder ./" in first window	end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>17BF1163-1E8E-426C-8572-225093B55B4E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "Finder"		set pathList to (quoted form of POSIX path of (folder of the front window as alias))	end tell	tell application "System Events"		do shell script "Open -a iTerm " &amp; pathList	end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>BFDCE43A-5AE3-4362-88D9-D0D3CD119C81</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>17BF1163-1E8E-426C-8572-225093B55B4E</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>7113EA2C-468F-40D5-B2AA-C7E5E3D020A4</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>76584C39-BB00-4E7D-9BE0-4ACCBB2829F6</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>964C67AF-870F-420E-8B91-6079B9457583</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>9F9DC1C6-5DE4-49F7-9BAA-14E4CA01C956</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>AA3CDA14-C3B5-442B-B117-D61A244C6625</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>BFDCE43A-5AE3-4362-88D9-D0D3CD119C81</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>C5615B51-DAE5-4A23-8376-67AA21C3ECC3</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.ienno.de</string>
+</dict>
+</plist>

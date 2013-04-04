@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.quells.unread-instapaper</string>
+	<key>connections</key>
+	<dict>
+		<key>B4F37371-CC17-460B-BD06-6A6DEB8242EC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7D50E9E5-FC4E-43D9-A9CE-34C3C507C962</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>6E3E2636-E417-4585-9B2E-AC29A2753705</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open in Chrome…</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Kai Wells</string>
+	<key>description</key>
+	<string>Get unread Instapaper articles</string>
+	<key>name</key>
+	<string>Unread Instapaper</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string>com.google.Chrome</string>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>6E3E2636-E417-4585-9B2E-AC29A2753705</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>instapaper</string>
+				<key>script</key>
+				<string>from instapaper import list
+print list("USERNAME", "PASSWORD", '{query}')</string>
+				<key>subtext</key>
+				<string>Get Unread Instapaper Articles</string>
+				<key>title</key>
+				<string>Instapaper</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B4F37371-CC17-460B-BD06-6A6DEB8242EC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string>com.apple.Safari</string>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>7D50E9E5-FC4E-43D9-A9CE-34C3C507C962</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>6E3E2636-E417-4585-9B2E-AC29A2753705</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>7D50E9E5-FC4E-43D9-A9CE-34C3C507C962</key>
+		<dict>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+		<key>B4F37371-CC17-460B-BD06-6A6DEB8242EC</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://quells.net</string>
+</dict>
+</plist>

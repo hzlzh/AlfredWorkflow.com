@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>techinch.newnote</string>
+	<key>connections</key>
+	<dict>
+		<key>E4B24959-8DC4-4502-A899-136AC53B3CCD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5814A50C-70D9-4B92-86B4-121B64A8B6EA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Matthew Guay</string>
+	<key>description</key>
+	<string>Make a plain text note and open it in iA Writer</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>New Note</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>nt</string>
+				<key>subtext</key>
+				<string>Make a new text note and open it in iA Writer</string>
+				<key>text</key>
+				<string>New Note</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E4B24959-8DC4-4502-A899-136AC53B3CCD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>cd ~/YOUR-NOTES-FOLDER
+
+echo "{query}" &gt; "{query}".md
+
+open "{query}".md</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>5814A50C-70D9-4B92-86B4-121B64A8B6EA</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This will let you type a file name in Alfred and turn that into a plain-text note with a .md extension that'll open in your default text editor. It'll then put in your Alfred query in the top line of your note as the title.
+
+You'll need to add the file path for your notes folder in the bash script.</string>
+	<key>uidata</key>
+	<dict>
+		<key>5814A50C-70D9-4B92-86B4-121B64A8B6EA</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E4B24959-8DC4-4502-A899-136AC53B3CCD</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>Techinch.com</string>
+</dict>
+</plist>

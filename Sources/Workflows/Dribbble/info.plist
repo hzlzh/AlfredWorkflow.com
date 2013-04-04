@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dribbble.dingis.me</string>
+	<key>connections</key>
+	<dict>
+		<key>0A7F94DA-8824-4BEA-892C-25D9882A4143</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C24829E-6EDA-48DF-93AE-4C238B4A6355</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>26D243C7-CEE7-445D-99F8-E0A9F286CCC2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C52B326C-2E70-4BBC-A740-A6DEEF4C9C36</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7C24829E-6EDA-48DF-93AE-4C238B4A6355</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CB9E2DD-A4FC-4AA5-B229-88174066B821</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F822044F-2F24-4FCC-BA7F-37FF6E86D225</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C52B326C-2E70-4BBC-A740-A6DEEF4C9C36</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>dingyi</string>
+	<key>description</key>
+	<string>Show dribbble statics</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Dribbble</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>set</string>
+				<key>runningsubtext</key>
+				<string>hold on...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$w = new Workflows();
+
+$query = {query};
+
+$w-&gt;result( 'dribbble', $query, $query, 'Set Your Dribbble Username', 'icon.png', 'yes', 'Username' );
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Input Your Dribbble Name</string>
+				<key>title</key>
+				<string>set your dribbble name</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0A7F94DA-8824-4BEA-892C-25D9882A4143</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>require( 'workflows.php' );
+$w = new Workflows();
+
+$in = "{query}";
+$w-&gt;set( 'dribbble.username', $in, 'settings.plist' );
+
+if ( $in != 'F' ){
+	echo 'Set Dribbble Username: '.$in;
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7C24829E-6EDA-48DF-93AE-4C238B4A6355</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>C52B326C-2E70-4BBC-A740-A6DEEF4C9C36</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Dribbble</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8CB9E2DD-A4FC-4AA5-B229-88174066B821</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>mydribbble</string>
+				<key>runningsubtext</key>
+				<string>Hold on...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+$w = new Workflows();
+$query = urlencode( "{query}" );
+
+$username = $w-&gt;get( 'dribbble.username', 'settings.plist' );
+
+$url = "http://api.dribbble.com/players/".$username;
+$dribbble = $w-&gt;request( $url );
+$dribbble = json_decode( $dribbble );
+
+$w-&gt;result( 
+    $dribbble-&gt;url, 
+    $dribbble-&gt;url, 
+    $dribbble-&gt;username, 
+    'Shots: '. $dribbble-&gt;shots_count .', '. 'Followers: '. $dribbble-&gt;followers_count .', '. 'Likes Received: '. $dribbble-&gt;likes_received_count .', '. 'Comments Received: '. $dribbble-&gt;comments_received_count,
+    'icon.png'
+);
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Show Your Analytics</string>
+				<key>title</key>
+				<string>show your analytics</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F822044F-2F24-4FCC-BA7F-37FF6E86D225</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>dribbble</string>
+				<key>runningsubtext</key>
+				<string>Hold on...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+$w = new Workflows();
+$query = urlencode( "{query}" );
+
+$url = "http://api.dribbble.com/players/".$query;
+$dribbble = $w-&gt;request( $url );
+$dribbble = json_decode( $dribbble );
+
+$w-&gt;result( 
+    $dribbble-&gt;url, 
+    $dribbble-&gt;url, 
+    $dribbble-&gt;username, 
+    'Shots: '. $dribbble-&gt;shots_count .', '. 'Followers: '. $dribbble-&gt;followers_count .', '. 'Likes Received: '. $dribbble-&gt;likes_received_count .', '. 'Comments Received: '. $dribbble-&gt;comments_received_count,
+    'icon.png'
+);
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Input A Username to Search</string>
+				<key>title</key>
+				<string>username</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>26D243C7-CEE7-445D-99F8-E0A9F286CCC2</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0A7F94DA-8824-4BEA-892C-25D9882A4143</key>
+		<dict>
+			<key>ypos</key>
+			<real>350</real>
+		</dict>
+		<key>26D243C7-CEE7-445D-99F8-E0A9F286CCC2</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>7C24829E-6EDA-48DF-93AE-4C238B4A6355</key>
+		<dict>
+			<key>ypos</key>
+			<real>350</real>
+		</dict>
+		<key>8CB9E2DD-A4FC-4AA5-B229-88174066B821</key>
+		<dict>
+			<key>ypos</key>
+			<real>350</real>
+		</dict>
+		<key>C52B326C-2E70-4BBC-A740-A6DEEF4C9C36</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>F822044F-2F24-4FCC-BA7F-37FF6E86D225</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://dingis.me</string>
+</dict>
+</plist>

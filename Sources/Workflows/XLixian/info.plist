@@ -6,18 +6,146 @@
 	<string>me.imwuyu.xlixian</string>
 	<key>connections</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>08091057-FCAD-4712-B084-03E51AFB088D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<string>902DF5E0-B040-4237-847F-154A84290301</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<key>0813E001-8721-48F5-AC19-415CFAEC2C40</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6EC1EF9F-0201-40F5-B9AD-EB15AD7305FF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>274E0A3D-D84E-4174-A602-372FFBEE1C4C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3C9F784-788A-49AA-98BE-B8A81D41BE8F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>527CE03D-ADBD-44FA-B551-CC342304C757</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A8BE34DB-0F2A-49FF-AAE6-6F22D6EF9119</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>查看使用帮助</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0813E001-8721-48F5-AC19-415CFAEC2C40</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>55DC8224-C31F-4027-85F4-C91D24ECC0B7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C15E06B5-D4D0-4626-BC13-9B8366477C1E</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>打开 Web 端迅雷离线</string>
+			</dict>
+		</array>
+		<key>55DC8224-C31F-4027-85F4-C91D24ECC0B7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7DC74A9F-AAC4-47C4-AFDF-2DB447A62E28</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E33B5484-FEA1-4151-B7CA-B32A8CDFC9EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>84018E32-67B0-4076-9633-D7F07C840120</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E33B5484-FEA1-4151-B7CA-B32A8CDFC9EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>894D28DB-28FA-45F8-AC44-11C42CF5C098</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EB15D140-DC2C-49F1-A48E-E57C48AD797F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>902DF5E0-B040-4237-847F-154A84290301</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>934F0743-5C49-4415-BC7D-368A3082ED29</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>894D28DB-28FA-45F8-AC44-11C42CF5C098</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>08091057-FCAD-4712-B084-03E51AFB088D</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>查看BT任务内容</string>
+			</dict>
+		</array>
+		<key>E33B5484-FEA1-4151-B7CA-B32A8CDFC9EC</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -36,16 +164,78 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>迅雷离线</string>
+	<string>XLixian</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<true/>
-				<key>onlyshowifquerypopulated</key>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ft</string>
+				<key>subtext</key>
+				<string>1. 复制链接 2.ft</string>
+				<key>text</key>
+				<string>使用 fakeThunder 下载</string>
+				<key>withspace</key>
 				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>274E0A3D-D84E-4174-A602-372FFBEE1C4C</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>6EC1EF9F-0201-40F5-B9AD-EB15AD7305FF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>http://lixian.vip.xunlei.com/task.html</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>C15E06B5-D4D0-4626-BC13-9B8366477C1E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>LIXIAN_CLI_PATH="./iambus_xunlei_lixian/lixian_cli.py" # set path
+export LANG=zh_CN.UTF-8 # setup env
+shopt -s expand_aliases # Must!, else script will not expand aliases.
+alias lx="python $LIXIAN_CLI_PATH"
+
+if [[ '{query}' =~ ^[help]* ]]; then
+	lx {query}
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0813E001-8721-48F5-AC19-415CFAEC2C40</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
 				<key>output</key>
 				<integer>0</integer>
 				<key>removeextension</key>
@@ -65,21 +255,185 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>org.bittorrent.torrent</string>
+					<string>public.plain-text</string>
+				</array>
+				<key>name</key>
+				<string>离线下载</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>7DC74A9F-AAC4-47C4-AFDF-2DB447A62E28</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>tell application "Alfred 2"		set q to "{query}" as text	if q starts with "http" then		set the clipboard to q		return "单文件 " &amp; q	else		search "list " &amp; q &amp; "@"	end ifend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>08091057-FCAD-4712-B084-03E51AFB088D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
 				<key>keyword</key>
-				<string>lx</string>
+				<string>list</string>
+				<key>runningsubtext</key>
+				<string>❗以 [@] 结尾开始搜索</string>
+				<key>script</key>
+				<string>inputStr={query}
+
+if [[ $inputStr == *@ ]]; then
+	# echo ${inputStr%%@} &gt;&gt; ~/Desktop/abc.txt
+	python feedback.py ${inputStr%%@}
+fi
+
+# python feedback.py {query}</string>
 				<key>subtext</key>
-				<string>添加：lx push ，获取：lx pull [taskID]，设置： lx user [username] [password]，帮助：lx help</string>
-				<key>text</key>
-				<string>迅雷离线</string>
+				<string>🔍 可使用 [ID]、[关键字]、[0-9]等方式，</string>
+				<key>title</key>
+				<string>检索离线任务💭</string>
+				<key>type</key>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
+			<string>934F0743-5C49-4415-BC7D-368A3082ED29</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>https://github.com/iambus/xunlei-lixian</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A8BE34DB-0F2A-49FF-AAE6-6F22D6EF9119</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>lx</string>
+				<key>runningsubtext</key>
+				<string>⏳ Waiting...</string>
+				<key>script</key>
+				<string>cat &lt;&lt; EOB
+
+&lt;items&gt;
+
+    &lt;item uid="me.imwuyu.xlixian.push" arg="add {query}" autocomplete="--bt"&gt;
+    &lt;title&gt;剪切板 ✂&lt;/title&gt;
+    &lt;subtitle&gt;支持：[url/info-hash]，若[url]指向[.torrent]请按[Tab]或输入[ --bt]&lt;/subtitle&gt;
+    &lt;icon type="fileicon"&gt;/Applications/Utilities/Grab.app&lt;/icon&gt;
+  &lt;/item&gt;
+
+  &lt;item uid="me.imwuyu.xlixian.set" arg="{query}" autocomplete="user "&gt;
+    &lt;title&gt;设置 🔒&lt;/title&gt;
+    &lt;subtitle&gt;设置离线帐号:lx user Username Password&lt;/subtitle&gt;
+    &lt;icon type="fileicon"&gt;/System/Library/CoreServices/AppleScript Utility.app&lt;/icon&gt; 
+  &lt;/item&gt;
+
+  &lt;item uid="me.imwuyu.xlixian.help" arg="{query}" autocomplete="help "&gt;
+    &lt;title&gt;高级 📌&lt;/title&gt;
+    &lt;subtitle&gt;更多命令,按[Tab]。[Shift+Enter]打开帮助网页&lt;/subtitle&gt;
+    &lt;icon type="fileicon"&gt;/System/Library/CoreServices/HelpViewer.app&lt;/icon&gt; 
+  &lt;/item&gt;
+
+&lt;/items&gt;
+
+EOB</string>
+				<key>title</key>
+				<string>迅雷离线</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>527CE03D-ADBD-44FA-B551-CC342304C757</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>CMD=({query})
+LIXIAN_CLI_PATH="./iambus_xunlei_lixian/lixian_cli.py" # set path
+OUT_FILE=$HOME/Desktop/info.txt
+export LANG=zh_CN.UTF-8 # setup env
+shopt -s expand_aliases # Must!, else script will not expand aliases.
+alias lx="python $LIXIAN_CLI_PATH"
+
+# excute command
+case ${CMD[0]} in
+	'add')
+		# 剪切板链接添加到迅雷离线，抓取结果作为反馈
+		echo -n '添加剪切板任务'
+		PUSH_MSG=$(lx ${CMD[@]} `pbpaste` | sed -n '$p')
+		if [[ $PUSH_MSG =~ ^[0-9]+ ]]; then
+			echo -n "成功：";
+			echo $PUSH_MSG
+		else
+			echo -n "失败，请检查链接。";
+		fi
+		;;
+	'user' )
+		if [[ ${CMD[1]} != '' ]] &amp;&amp; [[ ${CMD[2]} != '' ]]; then
+			# 设置账户
+			lx config username ${CMD[1]} &gt; /dev/null # suppress output
+			lx config password ${CMD[2]} &gt; /dev/null
+			echo '设置完成'
+		fi
+		echo -n '帐号：'
+		lx config | grep '^--username' | awk -F '=' '{print $2}'
+		;;
+	'help' )
+		# echo "help"
+		exit 0
+		;;
+	'*' )
+		lx ${CMD[@]}
+		;;
+esac</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>55DC8224-C31F-4027-85F4-C91D24ECC0B7</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -87,45 +441,260 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
-				<string>#Desc: 	xunlei lixian
-#Use:	lx [command] [arg0] [arg1]
-#Ex1:	lx user your_name your_password, lx help, lx config
-#Ex2:	lx push, lx push -t, lx push -lf, lx push -tf 
-#Ex3:   lx pull [NAME]/[ID]
+				<string>LIXIAN_CLI_PATH="./iambus_xunlei_lixian/lixian_cli.py" # set path
+OUT_FILE=$HOME/Desktop/info.txt
+export LANG=zh_CN.UTF-8 # setup env
+shopt -s expand_aliases # Must!, else script will not expand aliases.
+alias lx="python $LIXIAN_CLI_PATH"
 
-LOGtoFile=true
-#LOG_DIR=~/Downloads
-LIXIAN_CLI_PATH=./iambus-xunlei-lixian/lixian_cli.py
-export LOGtoFile LOG_DIR LIXIAN_CLI_PATH
-
-sh XLixian.sh {query}</string>
+# ------ loop-------- #
+IFS=$'\t'
+IN_FILES=({query})
+for IN_FILE in ${IN_FILES[@]}; do
+	FILE_NAME=$(basename "$IN_FILE")
+	FILE_EXT="${FILE_NAME##*.}" # get file extension
+	ARG=""
+	if [[ "txt" = $FILE_EXT ]]; then
+		ARG="--input"
+	else
+		ARG=""
+	fi
+	# excute command
+	lx add "$ARG" "$IN_FILE" | grep '^\d'
+done
+echo "添加文件："
+unset IFS</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<string>E33B5484-FEA1-4151-B7CA-B32A8CDFC9EC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Copyed：{query}</string>
+				<key>title</key>
+				<string>离线查询</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>902DF5E0-B040-4237-847F-154A84290301</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>EB15D140-DC2C-49F1-A48E-E57C48AD797F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>-- 方法一：ft -&gt;先复制链接到剪切板-- 方法二：ft URL-- 该脚本通过 UI Scripting 为 fakeThunder 添加任务-- 如果没有［启用辅助设备的控制］，则自动开启（需要授权）-- Written by CrazyApi, September 2012. Last updated September 2012.on alfred_script(query)	get system attribute "sysv"	if result is greater than or equal to 4192 then -- 4192 is Mac OS X 10.6.0				if enabledGUIScripting(true) then			-- my code begin			set downloadURL to query as text			if downloadURL is "" then				set downloadURL to the clipboard as text			end if						set appName to "fakeThunder"			openAppWindow(appName)			someClicks(appName, downloadURL)			-- my code end		else			tell current application to display dialog "This script requires Mac OS X 10.6.0 Snow Leopard or newer" buttons {"OK"} default button "OK"		end if	end ifend alfred_scripton openAppWindow(appToOpen)	-- 检查程序是否已经运行，是否有窗口打开。必须保证有可用窗口，否则无法添加任务。	set appNotRunning to false	set windowOpened to true		tell application "System Events"		if not (exists process appToOpen) then			set appNotRunning to true		end if		if not (exists window 1 of process appToOpen) then			set windowOpened to false		end if	end tell		if windowOpened then		-- do nothing. 已经有可用窗口，则不需要干涉	else if appNotRunning then		tell application appToOpen to activate	else -- 程序已经运行，但是窗口被关闭。		-- 由于程序没有［开启新窗口］的命令，所以通过点击 Dock 上的程序图标来开启新窗口		clickDock(appToOpen)	end ifend openAppWindowon clickDock(appOnDock)	-- 通过点击 Dock 上的程序图标来开启一个可用窗口	tell application "System Events"		tell process "Dock" of application "System Events"			click UI element appOnDock of list 1		end tell	end tellend clickDockon someClicks(appToClick, textToadd)	-- 使用 UI Scripting 来添加任务	tell application "System Events"		tell process appToClick			tell window 1				click button 1 of tool bar 1				set value of text field 1 of sheet 1 to textToadd				click button 1 of sheet 1 -- 确定1，取消2				-- click button 3 of tool bar 1 -- 刷新				-- click button 3 -- 最小化窗口			end tell		end tell	end tellend someClickson enabledGUIScripting(switch)	-- UI Scripting 需要开启［偏好设置－万能辅助－启用辅助设备的控制］	-- Call this handler and pass 'true' in the switch parameter to enable GUI Scripting before your script executes any GUI Scripting commands, or pass 'false' to disable GUI Scripting. You need not test the 'UI elements enabled' setting before calling this handler, because authorization is required only if 'UI elements enabled' will be changed. Returns the final setting of 'UI elements enabled', even if unchanged.	tell application "System Events"		activate -- brings System Events authentication dialog to front		set UI elements enabled to switch		return UI elements enabled	end tellend enabledGUIScripting</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F3C9F784-788A-49AA-98BE-B8A81D41BE8F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>LIXIAN_CLI_PATH="./iambus_xunlei_lixian/lixian_cli.py" # set path
+export LANG=zh_CN.UTF-8 # setup env
+shopt -s expand_aliases # Must!, else script will not expand aliases.
+alias lx="python $LIXIAN_CLI_PATH"
+
+if [[ '{query}' =~ ^[0-9]+/$ ]]; then 
+	# "整个BT任务的链接"
+	lx list --no-id --no-name --no-status --download-url '{query}'
+else
+	echo -n "{query}"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>894D28DB-28FA-45F8-AC44-11C42CF5C098</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>lxf</string>
+				<key>scopes</key>
+				<array>
+					<string>~/Desktop</string>
+					<string>~/Downloads</string>
+				</array>
+				<key>subtext</key>
+				<string>[torrent]/[txt]，输入[*]可快速查找文件</string>
+				<key>title</key>
+				<string>文件🚀 {query}</string>
+				<key>types</key>
+				<array>
+					<string>org.bittorrent.torrent</string>
+					<string>public.plain-text</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>84018E32-67B0-4076-9633-D7F07C840120</string>
 		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>08091057-FCAD-4712-B084-03E51AFB088D</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>860</real>
+		</dict>
+		<key>0813E001-8721-48F5-AC19-415CFAEC2C40</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>274E0A3D-D84E-4174-A602-372FFBEE1C4C</key>
+		<dict>
+			<key>ypos</key>
+			<real>1020</real>
+		</dict>
+		<key>527CE03D-ADBD-44FA-B551-CC342304C757</key>
+		<dict>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>55DC8224-C31F-4027-85F4-C91D24ECC0B7</key>
+		<dict>
+			<key>ypos</key>
+			<real>290</real>
+		</dict>
+		<key>6EC1EF9F-0201-40F5-B9AD-EB15AD7305FF</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>7DC74A9F-AAC4-47C4-AFDF-2DB447A62E28</key>
+		<dict>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>84018E32-67B0-4076-9633-D7F07C840120</key>
+		<dict>
+			<key>ypos</key>
+			<real>530</real>
+		</dict>
+		<key>894D28DB-28FA-45F8-AC44-11C42CF5C098</key>
+		<dict>
+			<key>ypos</key>
+			<real>670</real>
+		</dict>
+		<key>902DF5E0-B040-4237-847F-154A84290301</key>
+		<dict>
+			<key>ypos</key>
+			<real>860</real>
+		</dict>
+		<key>934F0743-5C49-4415-BC7D-368A3082ED29</key>
+		<dict>
+			<key>ypos</key>
+			<real>760</real>
 		</dict>
 		<key>A70A4E1E-712E-4575-967A-0AA64960904D</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>400</real>
 		</dict>
-		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<key>A8BE34DB-0F2A-49FF-AAE6-6F22D6EF9119</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>10</real>
+		</dict>
+		<key>C15E06B5-D4D0-4626-BC13-9B8366477C1E</key>
+		<dict>
+			<key>ypos</key>
+			<real>410</real>
+		</dict>
+		<key>E33B5484-FEA1-4151-B7CA-B32A8CDFC9EC</key>
+		<dict>
+			<key>ypos</key>
+			<real>530</real>
+		</dict>
+		<key>EB15D140-DC2C-49F1-A48E-E57C48AD797F</key>
+		<dict>
+			<key>ypos</key>
+			<real>670</real>
+		</dict>
+		<key>F3C9F784-788A-49AA-98BE-B8A81D41BE8F</key>
+		<dict>
+			<key>ypos</key>
+			<real>1020</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

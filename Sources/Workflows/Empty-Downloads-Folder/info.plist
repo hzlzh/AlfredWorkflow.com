@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>0008</string>
+	<key>connections</key>
+	<dict>
+		<key>34CAE5D2-2B9D-4A41-A592-328FB345D670</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>55FA7ED0-E63B-4EA9-A6E3-0C23F1607C41</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>59FB158C-5203-48CA-BCEE-EAA8807D3126</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>55FA7ED0-E63B-4EA9-A6E3-0C23F1607C41</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mike Lipson</string>
+	<key>description</key>
+	<string>Clear Out Your Downloads Folder</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Empty Downloads Folder</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "Finder"	set dls to folder "Downloads" of (path to home folder)	delete (every file of dls)	delete (every folder of dls)end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>55FA7ED0-E63B-4EA9-A6E3-0C23F1607C41</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>emptydl</string>
+				<key>subtext</key>
+				<string>Move Files and Folders to the Trash</string>
+				<key>text</key>
+				<string>Empty Downloads Folder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>59FB158C-5203-48CA-BCEE-EAA8807D3126</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>34CAE5D2-2B9D-4A41-A592-328FB345D670</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow clears out all files and folders from your Downloads folder and moves them to the trash.</string>
+	<key>uidata</key>
+	<dict>
+		<key>34CAE5D2-2B9D-4A41-A592-328FB345D670</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>55FA7ED0-E63B-4EA9-A6E3-0C23F1607C41</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>59FB158C-5203-48CA-BCEE-EAA8807D3126</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.mikelipson.com</string>
+</dict>
+</plist>

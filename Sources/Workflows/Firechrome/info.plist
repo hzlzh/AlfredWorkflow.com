@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>33510AEF-70C4-4B37-B9A4-1E9D382DCA4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3391AAC-70BF-42B5-A097-76344DC187A1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3391AAC-70BF-42B5-A097-76344DC187A1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>LeEnno</string>
+	<key>description</key>
+	<string>Open URL of Chrome's current tab in Firefox</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Firechrome</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ff</string>
+				<key>subtext</key>
+				<string>Open Chrome's current tab in Firefox</string>
+				<key>text</key>
+				<string>Firechrome</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>property theURL : ""
+tell application "Google Chrome"
+	set theURL to URL of active tab of window 1
+end tell
+tell application "System Events"
+	do shell script "Open -a Firefox " &amp; theURL
+end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F3391AAC-70BF-42B5-A097-76344DC187A1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>firechrome</string>
+				<key>subtext</key>
+				<string>Open Chrome's current tab in Firefox</string>
+				<key>text</key>
+				<string>Firechrome</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>33510AEF-70C4-4B37-B9A4-1E9D382DCA4D</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>33510AEF-70C4-4B37-B9A4-1E9D382DCA4D</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>F3391AAC-70BF-42B5-A097-76344DC187A1</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.ienno.de</string>
+</dict>
+</plist>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>carlosgaldino.emoji-codes</string>
+	<key>connections</key>
+	<dict>
+		<key>48F47C79-01A7-4C1D-8239-1DAF1D54F7E6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2404AE08-D4CF-4265-B7BB-44043DD356DD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Carlos Galdino (@carlosgaldino)</string>
+	<key>description</key>
+	<string>Search emoji codes</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Emoji codes</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>emoji</string>
+				<key>runningsubtext</key>
+				<string>Loading results...</string>
+				<key>script</key>
+				<string>ruby emoji.rb "{query}"</string>
+				<key>title</key>
+				<string>Search emoji codes</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>48F47C79-01A7-4C1D-8239-1DAF1D54F7E6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>2404AE08-D4CF-4265-B7BB-44043DD356DD</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2404AE08-D4CF-4265-B7BB-44043DD356DD</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>48F47C79-01A7-4C1D-8239-1DAF1D54F7E6</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/carlosgaldino/alfred-emoji-workflow</string>
+</dict>
+</plist>

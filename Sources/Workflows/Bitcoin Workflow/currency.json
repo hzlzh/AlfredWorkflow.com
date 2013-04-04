@@ -1,0 +1,20 @@
+{
+  "USD": "U.S. Dollar",
+  "CNY": "Chinese Yuan Renminbi",
+  "JPY": "Japanese Yen",
+  "SGD": "Singaporean Dollar",
+  "HKD": "Hong Kong Dollar",
+  "CAD": "Canadian Dollar",
+  "AUD": "Australian Dollar",
+  "NZD": "New Zealand Dollar",
+  "GBP": "UK Pound Sterling",
+  "DKK": "Danish Krone",
+  "SEK": "Swedish Krona",
+  "BRL": "Brazilian Real",
+  "CHF": "Swiss Franc",
+  "EUR": "Euro",
+  "RUB": "Russian Rouble",
+  "SLL": "Sierra Leone Leone",
+  "PLN": "Polish New Zloty",
+  "THB": "Thai Baht"
+}

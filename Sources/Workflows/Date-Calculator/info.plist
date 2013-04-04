@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>1BB7558D-E38D-42D8-A02A-5C59994DB34B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F2BBF679-2DAD-423D-9D3D-E4E7FD844C95</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B21A55CA-05F3-486A-B703-2356F1CFE09D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>75DF5805-053A-4EEC-9E57-0C97A7C62699</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F7174A3C-7E76-4439-B6E4-E7E5B5122C97</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1BB7558D-E38D-42D8-A02A-5C59994DB34B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>LeEnno</string>
+	<key>description</key>
+	<string>Display or calculate with current date and time.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Date Calculator</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>75DF5805-053A-4EEC-9E57-0C97A7C62699</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>if ["{query}" == ""]
+then
+	open "http://php.net/manual/en/function.date.php"
+else
+	if [ -f "format.txt" ]; then
+		rm format.txt
+	fi
+	in=$(echo "{query}" | tr -d "\\")
+	echo "$in" &gt; format.txt
+	echo "Saved date format \"{query}\""
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1BB7558D-E38D-42D8-A02A-5C59994DB34B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>date</string>
+				<key>script</key>
+				<string>ruby date.rb "{query}"</string>
+				<key>title</key>
+				<string>Calculate date</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B21A55CA-05F3-486A-B703-2356F1CFE09D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F2BBF679-2DAD-423D-9D3D-E4E7FD844C95</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>dateformat</string>
+				<key>script</key>
+				<string>ruby dateformat.rb "{query}"</string>
+				<key>title</key>
+				<string>Format Date for Calculator</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F7174A3C-7E76-4439-B6E4-E7E5B5122C97</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1BB7558D-E38D-42D8-A02A-5C59994DB34B</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>75DF5805-053A-4EEC-9E57-0C97A7C62699</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B21A55CA-05F3-486A-B703-2356F1CFE09D</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>F2BBF679-2DAD-423D-9D3D-E4E7FD844C95</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>F7174A3C-7E76-4439-B6E4-E7E5B5122C97</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.ienno.de</string>
+</dict>
+</plist>

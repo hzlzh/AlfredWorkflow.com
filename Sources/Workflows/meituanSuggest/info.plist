@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.meituan.zhiyelee</string>
+	<key>connections</key>
+	<dict>
+		<key>D6D99748-5084-4A08-9016-A6F48ECF2286</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6708E16E-0BDF-4EED-81C2-7E021BA54EFC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>zhiyelee</string>
+	<key>description</key>
+	<string>meituan search suggest</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>meituanSuggest</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>6708E16E-0BDF-4EED-81C2-7E021BA54EFC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>mt</string>
+				<key>runningsubtext</key>
+				<string>小美和小团正辛苦的为您检索数据。。。</string>
+				<key>script</key>
+				<string>php mt.php '{query}'</string>
+				<key>subtext</key>
+				<string>meituan suggest</string>
+				<key>title</key>
+				<string>美团</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D6D99748-5084-4A08-9016-A6F48ECF2286</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>美团搜索建议</string>
+	<key>uidata</key>
+	<dict>
+		<key>6708E16E-0BDF-4EED-81C2-7E021BA54EFC</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>D6D99748-5084-4A08-9016-A6F48ECF2286</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://blog.tsnrose.com</string>
+</dict>
+</plist>

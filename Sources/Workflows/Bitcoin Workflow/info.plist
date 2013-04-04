@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>bitcoin.lucifr.com</string>
+	<key>connections</key>
+	<dict>
+		<key>5ACA4711-261D-495F-B604-4E6EF9C5D2D6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AD5809E0-D236-4EAA-AE6F-E5DE143EEB11</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AB9F7584-2082-4E08-B3D3-D946113D8BE8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9E1C94D1-023F-4E93-9BE1-C450D6EAF94B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8775EC63-B7F5-4A9C-8340-97A4FFDE2EE2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AD5809E0-D236-4EAA-AE6F-E5DE143EEB11</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>930952EB-4969-420D-9E37-BE715F0311B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>BD98F5FE-F57C-41F6-B60B-EB67F561535F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>930952EB-4969-420D-9E37-BE715F0311B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E1F394A4-791E-44A4-9B43-B7562696D675</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AB9F7584-2082-4E08-B3D3-D946113D8BE8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EB3C87FB-3EA7-477C-93A1-3F8F54715D1A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AB9F7584-2082-4E08-B3D3-D946113D8BE8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FF10D6A0-90C9-4CAC-99C3-46DE6113EFEC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BD98F5FE-F57C-41F6-B60B-EB67F561535F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Lucifr</string>
+	<key>description</key>
+	<string>Bitcoin market price, currency conversion and address lookup.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Bitcoin</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>9E1C94D1-023F-4E93-9BE1-C450D6EAF94B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>wallet</string>
+				<key>subtext</key>
+				<string>Enter or paste your address.</string>
+				<key>text</key>
+				<string>Set up your default address.</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5ACA4711-261D-495F-B604-4E6EF9C5D2D6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>$q = "{query}";
+if ($q=='setcur') {
+	exec('osascript -e \'tell application "Alfred 2" to search "currency "\'');
+}
+elseif(preg_match("/^https:\/\//", $q)) {
+	exec('open '. $q);
+}
+else {
+	echo $q;
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AB9F7584-2082-4E08-B3D3-D946113D8BE8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>require( 'workflows.php' );
+$w = new Workflows();
+
+$cur = "{query}";
+$w-&gt;set( 'preferred.currency', $cur, 'settings.plist' );
+
+echo 'Prefferred Currency Set to '. $cur .'.';</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BD98F5FE-F57C-41F6-B60B-EB67F561535F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>addr</string>
+				<key>runningsubtext</key>
+				<string>Please wait…</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$w = new Workflows();
+$query = "{query}";
+$cur = $w-&gt;get( 'preferred.currency', 'settings.plist' );
+$addr = $w-&gt;get( 'default.address', 'settings.plist' );
+if ($cur == '') {
+	$w-&gt;result( 'nullcur', 'setcur', 'Oops. Preferred currency is not defined yet.', 'Press Enter to set it now.', 'icon.png');
+}
+else {
+	if($query == '' &amp;&amp; $addr !== '') {
+		$query = $addr;
+	}
+	$url = "http://blockchain.info/address/$query?format=json";
+	$data = $w-&gt;request( $url );
+	$data = json_decode($data, true);
+	function btccount($arg, $text) {
+		global $w, $data, $cur;
+		$num = $data[$arg]/100000000;
+		$exch = "http://blockchain.info/tobtc?currency=$cur&amp;value=$num";
+		$exch = json_decode($w-&gt;request($exch));
+		if ($exch &gt; 0) {
+			$exch = round($num*$num/$exch, 2);
+		}
+		$output = $w-&gt;result($arg, $num, $num .' BTC', $text .' ('. $exch .' in '. $cur .')', 'icon.png' );
+		return $output;
+	}
+	btccount('final_balance', 'Final Balance');
+	btccount('total_received', 'Total Received');
+	btccount('total_sent', 'Total Sent');
+	$w-&gt;result( 'hash160', $data['hash160'], $data['hash160'], 'in Hash 160', 'icon.png' );
+	$w-&gt;result( 'btcaddress', $data['address'], $data['address'], 'BTC Address', 'icon.png' );
+	$w-&gt;result( 'bttxs', 'https://blockchain.info/address/'. $query, 'Detailed transactions info on Blockchain.info.', 'Enter to open in browser.', 'icon.png' );
+}
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Give me an address or Hash 160.</string>
+				<key>title</key>
+				<string>Show info of a given Bitcoin address.</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>EB3C87FB-3EA7-477C-93A1-3F8F54715D1A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>currency</string>
+				<key>script</key>
+				<string>require( 'workflows.php' );
+$query = strtoupper("{query}");
+$w = new Workflows();
+$cur = file_get_contents(__DIR__.'/currency.json');
+$cur = json_decode( $cur );
+if($query == '') {
+	foreach ($cur as $key =&gt; $value) {
+	 	$w-&gt;result( 'bitcoincurrency', $key, $key, $value, 'icon.png');
+	}	
+}
+else {
+	foreach ($cur as $key =&gt; $value) {
+		$pos = strpos($key, $query);
+		if($pos !== false) {
+			$w-&gt;result( 'bitcoincurrency', $key, $key, $value, 'icon.png');
+		}
+}
+
+}
+echo $w-&gt;toxml();</string>
+				<key>title</key>
+				<string>Set your preferred currency.</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FF10D6A0-90C9-4CAC-99C3-46DE6113EFEC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>exch</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>require( 'workflows.php' );
+$query = "{query}";
+$w = new Workflows();
+$cur = $w-&gt;get( 'preferred.currency', 'settings.plist' );
+if ($cur == '') {
+	$w-&gt;result( 'nullcur', 'setcur', 'Oops. Preferred currency is not defined yet.', 'Press Enter to set it now.', 'icon.png');
+}
+elseif($query == '') {
+	$url = "http://blockchain.info/ticker";
+	$data = $w-&gt;request( $url );
+	$data = json_decode( $data, true );
+	$curr = $data[$cur];
+	$w-&gt;result( 'ticker_15m', $curr['15m'], $curr['15m'] .' '. $curr['symbol'], '15 mins delayed price in '. $cur, 'icon.png');
+	$w-&gt;result( 'ticker_last', $curr['last'], $curr['last'] .' '. $curr['symbol'], 'Last price in '. $cur, 'icon.png');
+	$w-&gt;result( 'ticker_buy', $curr['buy'], $curr['buy'] .' '. $curr['symbol'], 'Buy price in '. $cur, 'icon.png');
+	$w-&gt;result( 'ticker_sell', $curr['sell'], $curr['sell'] .' '. $curr['symbol'], 'Sell price in '. $cur, 'icon.png');
+	$w-&gt;result( 'ticker_24h', $curr['24h'], $curr['24h'] .' '. $curr['symbol'], '24h average price in '. $cur, 'icon.png');
+}
+else {
+	$url = "http://blockchain.info/tobtc?currency=$cur&amp;value=$query";
+	$data = $w-&gt;request( $url );
+	$btc = json_decode($data);
+	if ($btc &gt; 0) {
+		$incur = $query*$query/$btc;
+	}
+	else {
+		$incur = 0;
+	}
+	$w-&gt;result( 'in'.$cur, $incur, $query .' bitcoins = '. $incur .' '. $cur, 'Choose to copy to clipboard.', 'icon.png' );
+	$w-&gt;result( 'inbitcoin', $btc, $query .' '. $cur .' = '. $btc .' bitcoins ', 'Choose to copy to clipboard.', 'icon.png' );
+}
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Type a number for exchange rate.</string>
+				<key>title</key>
+				<string>Show market price in your currency.</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E1F394A4-791E-44A4-9B43-B7562696D675</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>require( 'workflows.php' );
+$w = new Workflows();
+
+$addr = "{query}";
+$w-&gt;set( 'default.address', $addr, 'settings.plist' );
+
+echo 'Default Address Set to '. $addr .'.';</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AD5809E0-D236-4EAA-AE6F-E5DE143EEB11</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Bitcoin</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>930952EB-4969-420D-9E37-BE715F0311B8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Result copied to clipboard</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8775EC63-B7F5-4A9C-8340-97A4FFDE2EE2</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Usage:
+
+* Use `currency` to set your preferred currency. (Required)
+
+* Use `wallet` to set your default Bitcoin address. (Optional)
+
+* `exch` without parameter to view the market prices.
+
+* `exch` with a number to convert between BTC and your preferred currency.
+
+* `addr` with a Bitcoin address or Hash 160 to view the info of it.
+
+* If default Bitcoin address is set. `addr` without parameter will show info of the default address.
+
+Thanks to:
+
+* Jeremy G. for all the great ideas and suggestions.
+
+* Blockchain (http://blockchain.info) for API support.
+
+* David Ferguson's Workflows class (http://dferg.us/workflows-class/)</string>
+	<key>uidata</key>
+	<dict>
+		<key>5ACA4711-261D-495F-B604-4E6EF9C5D2D6</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>8775EC63-B7F5-4A9C-8340-97A4FFDE2EE2</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>930952EB-4969-420D-9E37-BE715F0311B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+		<key>9E1C94D1-023F-4E93-9BE1-C450D6EAF94B</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>AB9F7584-2082-4E08-B3D3-D946113D8BE8</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>AD5809E0-D236-4EAA-AE6F-E5DE143EEB11</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>BD98F5FE-F57C-41F6-B60B-EB67F561535F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E1F394A4-791E-44A4-9B43-B7562696D675</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>EB3C87FB-3EA7-477C-93A1-3F8F54715D1A</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>FF10D6A0-90C9-4CAC-99C3-46DE6113EFEC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://lucifr.com</string>
+</dict>
+</plist>
