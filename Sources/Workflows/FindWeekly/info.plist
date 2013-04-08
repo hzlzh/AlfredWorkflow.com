@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>Find weekly</string>
+	<key>connections</key>
+	<dict>
+		<key>2D5B3243-1F61-4C63-A2AB-320C51DC6FB2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3DE73816-7A7E-4205-AF1C-0220EFF1A534</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>梁超</string>
+	<key>description</key>
+	<string>Find all weekly</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>FindWeekly</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>wk</string>
+				<key>runningsubtext</key>
+				<string>请耐心等待……</string>
+				<key>script</key>
+				<string># -*- coding: utf-8 -*-
+
+import urllib
+import xml.dom.minidom
+import re
+import datetime
+
+theQuery = u"{query}"
+# theQuery = "CSS"
+theQuery = theQuery.lower().strip()
+
+rssMap = {
+	"js" : {"name": "javascript", "key":"http://bcs.duapp.com/weekly/weekly.xml?sign=MBO:A8cdd3a284851538baf8a4f57d463da8:6pYv3rOvfNfMmYBmuUOat4ql6XY%3D&amp;response-content-disposition=filename*=utf8''weekly.xml&amp;response-cache-control=private", "reg": '&lt;p class="smaller header"[^&gt;]*&gt;&lt;a href="([^"]*)"'},
+	"h5":  {"name": "html5", "key": "http://bcs.duapp.com/weekly/h5.xml?sign=MBO:A8cdd3a284851538baf8a4f57d463da8:YF%2FvM3jY%2BguxoUFUNzBtJ%2F7BJz8%3D&amp;response-content-disposition=filename*=utf8''h5.xml&amp;response-cache-control=private", "reg": '&lt;a href="([^"]*)" style="color: #1173c7"&gt;Read this on the Web&lt;/a&gt;'},
+	"css": {"name": "css", "key": "http://css-weekly.com/feed/" },
+}
+urldoc = xml.dom.minidom.parse(urllib.urlopen(rssMap[theQuery]['key']))
+
+
+print "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;"
+for item in urldoc.getElementsByTagName('item'):
+	title = item.getElementsByTagName('title')[0].firstChild.data
+	title = u"%s周刊第%s期" % (rssMap[theQuery]['name'], re.search('Issue #?(\d+)', title).group(1))
+
+	if theQuery == 'css':
+		link = item.getElementsByTagName('link')[0].firstChild.data
+	else:
+		content = item.getElementsByTagName('content:encoded')[0].firstChild.data
+		link = re.search(rssMap[theQuery]['reg'], content)
+		if link is not None:
+			link = link.group(1)
+		else:
+			link = ''
+
+	pubDate = item.getElementsByTagName('pubDate')[0].firstChild.data
+	pubDate = datetime.datetime.strptime(pubDate,'%a, %d %b %Y %H:%M:%S +0000')
+	pubDate = pubDate.strftime("%Y年%m月%d日 %H:%M:%S").decode('utf-8')
+	pubDate = u"发布日期为:%s" % pubDate
+
+	print "    &lt;item uid=\"weekly\" arg=\""+ link +"\"&gt;"
+	print "        &lt;title&gt;" + title.encode('utf-8') + "&lt;/title&gt;"
+	print "        &lt;subtitle&gt;" + pubDate.encode('utf-8') + "&lt;/subtitle&gt;"
+	print '''        &lt;icon&gt;2D5B3243-1F61-4C63-A2AB-320C51DC6FB2.png&lt;/icon&gt;\n    &lt;/item&gt;'''
+print "&lt;/items&gt;\n"
+
+</string>
+				<key>subtext</key>
+				<string>回车输入命令js或css或h5查阅对应周刊</string>
+				<key>title</key>
+				<string>前端技术周刊检索</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2D5B3243-1F61-4C63-A2AB-320C51DC6FB2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>3DE73816-7A7E-4205-AF1C-0220EFF1A534</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2D5B3243-1F61-4C63-A2AB-320C51DC6FB2</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>3DE73816-7A7E-4205-AF1C-0220EFF1A534</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://lc2010.github.io/</string>
+</dict>
+</plist>

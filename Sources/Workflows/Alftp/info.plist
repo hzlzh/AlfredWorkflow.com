@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.janlay.alftp</string>
+	<key>connections</key>
+	<dict>
+		<key>6F60ACDF-4204-44E1-8F9F-CECDA3D168E8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>206929ED-7869-4109-84E5-326F7C757174</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9F397B69-5323-4A71-98A3-8AC28BD35DE4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F60ACDF-4204-44E1-8F9F-CECDA3D168E8</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Copy wget command to download</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>206929ED-7869-4109-84E5-326F7C757174</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy path '{query}'</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E9C9DE0C-08D7-4AF1-86ED-F0C8AA123878</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E9C9DE0C-08D7-4AF1-86ED-F0C8AA123878</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Janlay Wu</string>
+	<key>description</key>
+	<string>Alftp: An FTP browser for Alfred 2</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Alftp</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>// click 'Open workflow folder' button, then update settings in this file...
+require_once "config.php";
+
+$params = "'$url{query}' --ftp-user=$username --ftp-password=$password";
+if(substr('{query}', -1) == '/') $params = "--mirror $params";
+
+echo "wget $params";
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6F60ACDF-4204-44E1-8F9F-CECDA3D168E8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "Alfred 2" to search "ftp " &amp; q
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>E9C9DE0C-08D7-4AF1-86ED-F0C8AA123878</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>206929ED-7869-4109-84E5-326F7C757174</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ftp</string>
+				<key>runningsubtext</key>
+				<string>Please wait while connecting...</string>
+				<key>script</key>
+				<string>// click 'Open workflow folder' button, then update settings in this file...
+
+$query = '{query}';
+require_once "config.php";
+
+require_once "workflows.php";
+require_once "alftp.php";</string>
+				<key>title</key>
+				<string>Alftp: An FTP browser for Alfred 2</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9F397B69-5323-4A71-98A3-8AC28BD35DE4</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>v0.2
+
+Will support any other protocols just like curl does :)</string>
+	<key>uidata</key>
+	<dict>
+		<key>206929ED-7869-4109-84E5-326F7C757174</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>6F60ACDF-4204-44E1-8F9F-CECDA3D168E8</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>9F397B69-5323-4A71-98A3-8AC28BD35DE4</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>E9C9DE0C-08D7-4AF1-86ED-F0C8AA123878</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://janlay.com</string>
+</dict>
+</plist>
