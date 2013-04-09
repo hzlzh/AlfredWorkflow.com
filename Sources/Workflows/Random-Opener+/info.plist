@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>jw.randomopener+</string>
+	<key>connections</key>
+	<dict>
+		<key>1F1AE961-DA7B-461A-AFFE-44363269EEBC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4B3FEB2E-7F2E-464E-8EC6-95B6A5C2148C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4B3FEB2E-7F2E-464E-8EC6-95B6A5C2148C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E2ED4DC4-F224-42F3-8BA7-71F5A6E37663</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DCAE8133-64DE-4AEA-BDE8-5492E4675A74</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4B3FEB2E-7F2E-464E-8EC6-95B6A5C2148C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jonathan Wiesel</string>
+	<key>description</key>
+	<string>Open a random file from a given directory without repeating</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Random Opener+</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Random Opener +</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E2ED4DC4-F224-42F3-8BA7-71F5A6E37663</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>random</string>
+				<key>script</key>
+				<string>shuffleFile="$HOME/randomOpener.dat" 
+if [[ -e "${shuffleFile}" ]]
+then
+cat &lt;&lt; EOB
+
+  &lt;?xml version="1.0"?&gt;
+
+  &lt;items&gt;
+
+
+    &lt;item uid="reset" valid="YES" arg="reset" autocomplete="reset"&gt;
+      &lt;title&gt;reset&lt;/title&gt;
+      &lt;subtitle&gt;Reset the shuffle file&lt;/subtitle&gt;
+      &lt;icon&gt;reset.png&lt;/icon&gt;
+    &lt;/item&gt;
+
+    &lt;item uid="count" valid="NO" arg="count"&gt;
+      &lt;title&gt;$( wc -l "$shuffleFile" | awk '{print $1'} )&lt;/title&gt;
+      &lt;subtitle&gt;Remaining files in shuffle file&lt;/subtitle&gt;
+      &lt;icon&gt;count.png&lt;/icon&gt;
+    &lt;/item&gt;
+
+    &lt;item uid="open" valid="YES" arg="open" autocomplete="open"&gt;
+      &lt;title&gt;open&lt;/title&gt;
+      &lt;subtitle&gt;Open random file&lt;/subtitle&gt;
+      &lt;icon&gt;open.png&lt;/icon&gt;
+    &lt;/item&gt;
+
+&lt;item uid="current" valid="YES" arg="current" autocomplete="current"&gt;
+      &lt;title&gt;current&lt;/title&gt;
+      &lt;subtitle&gt;Open random file in the current Finder's window&lt;/subtitle&gt;
+	&lt;icon&gt;folder.png&lt;/icon&gt;
+    &lt;/item&gt;
+
+
+  &lt;/items&gt;
+
+EOB
+else
+
+cat &lt;&lt; EOB
+
+  &lt;?xml version="1.0"?&gt;
+
+  &lt;items&gt;
+
+
+    &lt;item uid="reset" valid="YES" arg="reset" autocomplete="reset"&gt;
+      &lt;title&gt;reset&lt;/title&gt;
+      &lt;subtitle&gt;Reset the shuffle file&lt;/subtitle&gt;
+      &lt;icon&gt;reset.png&lt;/icon&gt;
+    &lt;/item&gt;
+
+    &lt;item uid="count" valid="NO" arg="count"&gt;
+      &lt;title&gt;Cannot count files.&lt;/title&gt;
+      &lt;subtitle&gt;Shuffle file has not been created or the specified directory could be wrong&lt;/subtitle&gt;
+      &lt;icon&gt;count.png&lt;/icon&gt;
+    &lt;/item&gt;
+
+    &lt;item uid="open" valid="YES" arg="open" autocomplete="open"&gt;
+      &lt;title&gt;open&lt;/title&gt;
+      &lt;subtitle&gt;Open random file&lt;/subtitle&gt;
+      &lt;icon&gt;open.png&lt;/icon&gt;
+    &lt;/item&gt;
+
+&lt;item uid="current" valid="YES" arg="current" autocomplete="current"&gt;
+      &lt;title&gt;current&lt;/title&gt;
+      &lt;subtitle&gt;Open random file in the current Finder's window&lt;/subtitle&gt;
+&lt;icon&gt;folder.png&lt;/icon&gt;
+    &lt;/item&gt;
+
+
+  &lt;/items&gt;
+
+EOB
+fi</string>
+				<key>title</key>
+				<string>Open a random file from a given directory without repeating</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>DCAE8133-64DE-4AEA-BDE8-5492E4675A74</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>open</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>1F1AE961-DA7B-461A-AFFE-44363269EEBC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+# The directory you want to use.
+DIR="$HOME/Documents"
+
+# Storage random file
+shuffleFile="$HOME/randomOpener.dat" 
+
+
+if [ "{query}" == "reset" ]
+then
+  if [[ -d "${DIR}" ]]
+  then
+    rm "${shuffleFile}"
+    echo "$(find "${DIR}" -type f \( ! -iname ".*" \) )" &gt; "${shuffleFile}"
+    echo "Shuffle file reset"
+  else
+    echo "Specified directory not present"
+  fi
+
+elif [ "{query}" == "current" ]
+then
+osascript &lt;&lt; EOF
+tell application "Finder"
+  set theArray to {}
+  if window 1 exists then
+    set theItems to every file of window 1
+    repeat with i from 1 to count of theItems
+      set filepath to item i of theItems as text
+      set end of theArray to POSIX path of filepath
+    end repeat
+    if (count of theArray) is greater than 0 then
+      set theRandom to random number from 1 to count of theArray
+      set singleFile to item theRandom in theArray
+      do shell script "open " &amp; quoted form of singleFile
+      return
+    else
+      set x to "Folder is empty or it contains only folders"
+    end if
+  else
+    set x to "No Finder window is open"
+  end if 
+end tell
+EOF
+else
+  if [[ -d "${DIR}" ]]
+  then 
+      # check if the shuffle file exist or is empty
+      if [ ! -f "${shuffleFile}" ] || [[ ! -s "${shuffleFile}" ]] ; then
+        echo "New shuffle file generated"
+        echo "$(find "${DIR}" -type f \( ! -iname ".*" \) )" &gt; "${shuffleFile}"
+      fi
+
+      num_files="$( wc -l "$shuffleFile" | awk '{print $1'} )"
+
+      randomNumber="$((RANDOM%num_files+1))"
+
+      aux="$(awk "NR==$randomNumber{print;exit}" $shuffleFile)"
+
+      # delete line from file
+      sed -i '' "$randomNumber d" $shuffleFile 
+
+      open "${aux}"
+  else
+    echo "Specified directory not present"
+  fi
+fi
+exit 0</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4B3FEB2E-7F2E-464E-8EC6-95B6A5C2148C</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1F1AE961-DA7B-461A-AFFE-44363269EEBC</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>4B3FEB2E-7F2E-464E-8EC6-95B6A5C2148C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>DCAE8133-64DE-4AEA-BDE8-5492E4675A74</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E2ED4DC4-F224-42F3-8BA7-71F5A6E37663</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>jonathanwiesel.com</string>
+</dict>
+</plist>

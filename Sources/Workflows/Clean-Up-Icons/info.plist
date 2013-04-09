@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>acb.cleanupicons</string>
+	<key>connections</key>
+	<dict>
+		<key>0BE1A2CC-C926-40FE-BB97-36D32E126CF9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8500CC95-7546-4858-888B-591F45E9B0C4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8500CC95-7546-4858-888B-591F45E9B0C4</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Andrew Curtis-Black</string>
+	<key>description</key>
+	<string>Cleans up the icons of the currently focussed Finder window (including the desktop)</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Clean Up Icons</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>if application "Finder" is frontmost then	try		get front window		tell application "Finder"			clean up front window			return		end tell	on error		tell application "System Events"			tell process "Finder"				click menu item "Clean Up Selection" of menu "View" of menu bar 1				click menu item "Clean Up" of menu "View" of menu bar 1			end tell		end tell	end tryend if</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8500CC95-7546-4858-888B-591F45E9B0C4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>0BE1A2CC-C926-40FE-BB97-36D32E126CF9</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0BE1A2CC-C926-40FE-BB97-36D32E126CF9</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8500CC95-7546-4858-888B-591F45E9B0C4</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.alfredforum.com/topic/1860-clean-up-icons/</string>
+</dict>
+</plist>

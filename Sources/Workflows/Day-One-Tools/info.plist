@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>6C3253CC-953F-471C-B438-919D8070C4AB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>74D7A9A2-37D2-4599-BE22-2FE08E6C3553</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E8BA8D43-49DA-4E8C-B8FF-FBF5C5402554</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED58586F-3114-4ADB-B368-F35474D021B6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>John Vining</string>
+	<key>description</key>
+	<string>Quick-Logging Tools for Day One</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Day One Tools</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  do shell script "/Users/johnvining/Dropbox/scripts/logtodayone.rb \"" &amp; q &amp; "\""
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>ED58586F-3114-4ADB-B368-F35474D021B6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>log</string>
+				<key>text</key>
+				<string>Log to Day One</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E8BA8D43-49DA-4E8C-B8FF-FBF5C5402554</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>lw</string>
+				<key>text</key>
+				<string>Log Website with Optional Comment</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6C3253CC-953F-471C-B438-919D8070C4AB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	-- Set the location of the Script
+	set scriptLocation to "/Users/johnvining/Dropbox/scripts/logtodayone.rb"
+	-- Set what comes before the link in your entry
+	set prefix to "Reading: "
+	
+
+	tell application "Safari"
+		set theTitle to name of front document
+		set theURL to URL of front document
+	end tell
+	
+	if q is equal to ""
+		set urlStr to prefix &amp; "[" &amp; theTitle &amp; "](" &amp; theURL &amp; ")"
+		do shell script scriptLocation &amp; " \"" &amp; urlStr &amp; "\""
+	else if character 1 of q is equal to "!"
+		# Starred Entries
+		if q is equal to "!"
+			set urlStr to "!" &amp; prefix &amp; "[" &amp; theTitle &amp; "](" &amp; theURL &amp; ")"
+			do shell script scriptLocation &amp; " \"" &amp; urlStr &amp; "\""
+		else
+			set urlStr to "!" &amp; prefix &amp; "[" &amp; theTitle &amp; "](" &amp; theURL &amp; ") - "
+			set croppedQ to text 2 through -1 of q
+			do shell script scriptLocation &amp; " \"" &amp; urlStr &amp; croppedQ &amp; "\""
+		end if
+	else
+		set urlStr to prefix &amp; "[" &amp; theTitle &amp; "](" &amp; theURL &amp; ") - "
+		do shell script scriptLocation &amp; " \"" &amp; urlStr &amp; q &amp; "\""
+		
+	end if
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>74D7A9A2-37D2-4599-BE22-2FE08E6C3553</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>6C3253CC-953F-471C-B438-919D8070C4AB</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>74D7A9A2-37D2-4599-BE22-2FE08E6C3553</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>E8BA8D43-49DA-4E8C-B8FF-FBF5C5402554</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>ED58586F-3114-4ADB-B368-F35474D021B6</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/senecando</string>
+</dict>
+</plist>

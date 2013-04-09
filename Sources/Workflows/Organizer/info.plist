@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>jw.organizer</string>
+	<key>connections</key>
+	<dict>
+		<key>2EDE1D26-6F45-4435-B007-27AF78D9DEEC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2108E1E9-2B25-4E32-A505-BDA18E8D90EA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>843F2933-C5EC-4CE9-86D3-48E63219A5A9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DC70DB59-6E38-40C2-BA87-40E5D71F2461</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jonathan Wiesel</string>
+	<key>description</key>
+	<string>Clean/Order finder window by name, kind, size...</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Organizer</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "Finder"
+		if the current view of the front Finder window is equal to icon view then
+			run script "tell application \"Finder\" to clean up window 1 by " &amp; space &amp; q
+			set message to "by " &amp; q
+		else if current view of the front Finder window is equal to list view then
+			run script "tell application \"Finder\" to tell list view options of window 1 to set sort column to " &amp; space &amp; q &amp; space &amp; column
+			set message to "by " &amp; q
+		else
+			set message to "Organizer only support icon view and list view"
+		end if
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Organizer</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2108E1E9-2B25-4E32-A505-BDA18E8D90EA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>modification date</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>DC70DB59-6E38-40C2-BA87-40E5D71F2461</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>name</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>2EDE1D26-6F45-4435-B007-27AF78D9DEEC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>org</string>
+				<key>script</key>
+				<string>cat &lt;&lt; EOB
+
+&lt;?xml version="1.0"?&gt;
+
+&lt;items&gt;
+
+
+  &lt;item uid="modification date" valid="YES" arg="modification date" autocomplete="modification date"&gt;
+    &lt;title&gt;date modified&lt;/title&gt;
+    &lt;subtitle&gt;By date modified&lt;/subtitle&gt;
+    &lt;icon&gt;datem.png&lt;/icon&gt;
+  &lt;/item&gt;
+
+	&lt;item uid="creation date" valid="YES" arg="creation date" autocomplete="creation date"&gt;
+    &lt;title&gt;date created&lt;/title&gt;
+    &lt;subtitle&gt;By date created&lt;/subtitle&gt;
+    &lt;icon&gt;datea.png&lt;/icon&gt;
+  &lt;/item&gt;
+
+  &lt;item uid="name" valid="YES" arg="name" autocomplete="name"&gt;
+    &lt;title&gt;name&lt;/title&gt;
+    &lt;subtitle&gt;By name&lt;/subtitle&gt;
+    &lt;icon&gt;name.png&lt;/icon&gt;
+  &lt;/item&gt;
+
+  &lt;item uid="kind" valid="YES" arg="kind" autocomplete="kind"&gt;
+    &lt;title&gt;kind&lt;/title&gt;
+    &lt;subtitle&gt;By kind&lt;/subtitle&gt;
+    &lt;icon&gt;kind.png&lt;/icon&gt;
+  &lt;/item&gt;
+
+   &lt;item uid="size" valid="YES" arg="size" autocomplete="size"&gt;
+    &lt;title&gt;size&lt;/title&gt;
+    &lt;subtitle&gt;By size&lt;/subtitle&gt;
+    &lt;icon&gt;size.png&lt;/icon&gt;
+  &lt;/item&gt;
+
+
+&lt;/items&gt;
+
+EOB</string>
+				<key>title</key>
+				<string>Organize files by parameter</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>843F2933-C5EC-4CE9-86D3-48E63219A5A9</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2108E1E9-2B25-4E32-A505-BDA18E8D90EA</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>2EDE1D26-6F45-4435-B007-27AF78D9DEEC</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>843F2933-C5EC-4CE9-86D3-48E63219A5A9</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>DC70DB59-6E38-40C2-BA87-40E5D71F2461</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>jonathanwiesel.com</string>
+</dict>
+</plist>

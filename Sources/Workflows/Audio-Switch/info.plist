@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>rsampayo.audioswitch</string>
+	<key>connections</key>
+	<dict>
+		<key>704B66A5-0008-4B9C-A34B-8481712132C0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8D08654B-7449-47CB-9C64-836ABABCBBB4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7FEA28CE-D82D-4544-BDCB-6F35985A9381</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8D08654B-7449-47CB-9C64-836ABABCBBB4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>159A291E-3339-491E-8D3F-79091BE0319B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>159A291E-3339-491E-8D3F-79091BE0319B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Ricardo Sampayo</string>
+	<key>description</key>
+	<string>Switch between audio inputs and outputs</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Audio Switch</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Audio Switch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>159A291E-3339-491E-8D3F-79091BE0319B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>32</integer>
+				<key>keyword</key>
+				<string>output</string>
+				<key>runningsubtext</key>
+				<string>Getting output devices...</string>
+				<key>script</key>
+				<string>tell application "System Preferences"
+	reveal anchor "output" of pane id "com.apple.preference.sound"
+end tell
+set deviceselectedXML to ""
+tell application "System Events" to tell process "System Preferences"
+	repeat with i from 1 to the count of rows of table 1 of scroll area 1 of tab group 1 of window 1
+		set deviceselected to the value of text field 1 of row i of table 1 of scroll area 1 of tab group 1 of window 1
+		set deviceselectedXML to deviceselectedXML &amp; "&lt;item uid='" &amp; deviceselected &amp; "' arg='" &amp; deviceselected &amp; "' valid='YES' autocomplete='" &amp; deviceselected &amp; "'&gt;&lt;title&gt;" &amp; deviceselected &amp; "&lt;/title&gt;
+   &lt;icon&gt;output.png&lt;/icon&gt; &lt;/item&gt;"
+  log deviceselectedXML
+	end repeat
+end tell
+set deviceselectedXML to "cat &lt;&lt; EOB 
+&lt;?xml version='1.0'?&gt; &lt;items&gt; " &amp; deviceselectedXML &amp; "&lt;/items&gt; 
+EOB"
+
+do shell script deviceselectedXML</string>
+				<key>subtext</key>
+				<string>Output audio devices</string>
+				<key>title</key>
+				<string>output audio switch</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>704B66A5-0008-4B9C-A34B-8481712132C0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>32</integer>
+				<key>keyword</key>
+				<string>input</string>
+				<key>runningsubtext</key>
+				<string>Getting input devices...</string>
+				<key>script</key>
+				<string>tell application "System Preferences"
+	reveal anchor "input" of pane id "com.apple.preference.sound"
+end tell
+set deviceselectedXML to ""
+tell application "System Events" to tell process "System Preferences"
+	repeat with i from 1 to the count of rows of table 1 of scroll area 1 of tab group 1 of window 1
+		set deviceselected to the value of text field 1 of row i of table 1 of scroll area 1 of tab group 1 of window 1
+		set deviceselectedXML to deviceselectedXML &amp; "&lt;item uid='" &amp; deviceselected &amp; "' arg='" &amp; deviceselected &amp; "' valid='YES' autocomplete='" &amp; deviceselected &amp; "'&gt;&lt;title&gt;" &amp; deviceselected &amp; "&lt;/title&gt;
+   &lt;icon&gt;input.png&lt;/icon&gt; &lt;/item&gt;"
+  log deviceselectedXML
+	end repeat
+end tell
+set deviceselectedXML to "cat &lt;&lt; EOB 
+&lt;?xml version='1.0'?&gt; &lt;items&gt; " &amp; deviceselectedXML &amp; "&lt;/items&gt; 
+EOB"
+
+do shell script deviceselectedXML</string>
+				<key>subtext</key>
+				<string>Input audio devices</string>
+				<key>title</key>
+				<string>input audio switch</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7FEA28CE-D82D-4544-BDCB-6F35985A9381</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "System Preferences"	reveal anchor "output" of pane id "com.apple.preference.sound"end telltell application "System Events" to tell process "System Preferences"	repeat with i from 1 to the count of rows of table 1 of scroll area 1 of tab group 1 of window 1				set deviceselected to the value of text field 1 of row i of table 1 of scroll area 1 of tab group 1 of window 1		if deviceselected is equal to q then			set selected of row i of table 1 of scroll area 1 of tab group 1 of window 1 to true		end if	end repeatend tell
+
+tell application "System Preferences"
+	quit
+end tell
+
+set theMessage to q
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>8D08654B-7449-47CB-9C64-836ABABCBBB4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "System Preferences"	reveal anchor "input" of pane id "com.apple.preference.sound"end telltell application "System Events" to tell process "System Preferences"	repeat with i from 1 to the count of rows of table 1 of scroll area 1 of tab group 1 of window 1				set deviceselected to the value of text field 1 of row i of table 1 of scroll area 1 of tab group 1 of window 1		if deviceselected is equal to q then			set selected of row i of table 1 of scroll area 1 of tab group 1 of window 1 to true		end if	end repeatend tell
+
+tell application "System Preferences"
+	quit
+end tell
+
+set theMessage to q
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>159A291E-3339-491E-8D3F-79091BE0319B</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>704B66A5-0008-4B9C-A34B-8481712132C0</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>7FEA28CE-D82D-4544-BDCB-6F35985A9381</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>8D08654B-7449-47CB-9C64-836ABABCBBB4</key>
+		<dict>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>ricardosampayo.com</string>
+</dict>
+</plist>

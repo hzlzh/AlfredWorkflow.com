@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.beepfy.500px</string>
+	<key>connections</key>
+	<dict>
+		<key>5A4C9794-293F-4FEC-B49E-6A6018568081</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BDF0535C-91BE-4C2E-9FFC-447C40DDFD8A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9AA4C96C-90DF-43E8-83B7-354286A0DCF5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5A4C9794-293F-4FEC-B49E-6A6018568081</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>durrfer</string>
+	<key>description</key>
+	<string>featch 500px photo</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>500px</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Photo has been saved on desktop with name {query}</string>
+				<key>title</key>
+				<string>Fetched photo from 500px</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>BDF0535C-91BE-4C2E-9FFC-447C40DDFD8A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$w = new Workflows();
+
+$id = urlencode( "{query}" );
+$api = "";
+$size = 5;
+$url = "https://api.500px.com/v1/photos/".$id."?image_size=".$size."&amp;consumer_key=".$api;
+
+$results = $w-&gt;request( $url );
+$results = json_decode( $results, true );
+
+if (isset($results-&gt;error)) {
+    $w-&gt;result( 'beepfy', 'http://500px.com/', $results-&gt;error, $results-&gt;status, 'no', 'no' );
+} else {
+    if (is_array($results['photo'])) {
+        //$w-&gt;result( $results['photo']['id'], $results['photo']['image_url'], $results['photo']['name'], $results['photo']['description'], 'no', 'no');
+        $dst = $w-&gt;home()."/Desktop/";
+		$dst_file = $results['photo']['id']."_".$size.".jpg";
+        file_put_contents($dst.$dst_file, file_get_contents($results['photo']['image_url']));
+		echo $dst_file;
+    } else {
+        //$w-&gt;result( 'beepfy', 'http://500px.com/photo/'.$id, 'oops', 'error', 'no', 'no' );
+    }
+}
+
+//echo $w-&gt;toxml();</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5A4C9794-293F-4FEC-B49E-6A6018568081</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>500px</string>
+				<key>subtext</key>
+				<string>usage: 500px photoid</string>
+				<key>text</key>
+				<string>Featch 500px photos</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9AA4C96C-90DF-43E8-83B7-354286A0DCF5</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>5A4C9794-293F-4FEC-B49E-6A6018568081</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>9AA4C96C-90DF-43E8-83B7-354286A0DCF5</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>BDF0535C-91BE-4C2E-9FFC-447C40DDFD8A</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>beepfy.com</string>
+</dict>
+</plist>

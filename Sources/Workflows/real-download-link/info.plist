@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.jeeker.awf.RealDownloadLink</string>
+	<key>connections</key>
+	<dict>
+		<key>925DF385-82D4-4F57-A6C9-835134893BB8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0034AE53-331C-45CC-A37A-309F9993B505</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A0414FAD-9F10-4D34-A0D8-B939DCB5417C</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open the normal url</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>JinnLynn</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Real Download Link</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>rdl</string>
+				<key>runningsubtext</key>
+				<string>please wait...</string>
+				<key>script</key>
+				<string>python rdl.py "{query}"</string>
+				<key>subtext</key>
+				<string>support: http://, https://, ftp://, ftps://, sftp://, thunder://, flashget://, qqdl://, magnet:</string>
+				<key>title</key>
+				<string>Convert special download link to real</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>925DF385-82D4-4F57-A6C9-835134893BB8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>0034AE53-331C-45CC-A37A-309F9993B505</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A0414FAD-9F10-4D34-A0D8-B939DCB5417C</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0034AE53-331C-45CC-A37A-309F9993B505</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>925DF385-82D4-4F57-A6C9-835134893BB8</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A0414FAD-9F10-4D34-A0D8-B939DCB5417C</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://jeeker.net</string>
+</dict>
+</plist>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>iTunesBackupToggle</string>
+	<key>connections</key>
+	<dict>
+		<key>85689284-4435-49D6-9ED4-50B79D31E5D2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D8DA26FE-2633-43C0-A8A8-2EAB12A0D868</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B02483E1-60A2-46CC-9B6C-1B07F0462753</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2B2799D9-4026-4222-A09E-51F9154B0673</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B11B132B-4A61-4C05-8F4F-2111F454E6C6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B02483E1-60A2-46CC-9B6C-1B07F0462753</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EF56397F-EE0E-4C36-AF91-68D9E08A2A72</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>85689284-4435-49D6-9ED4-50B79D31E5D2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>George Germanos</string>
+	<key>description</key>
+	<string>Toggle iTunes Backup</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>iTunes Backup Toggle</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>itbu en</string>
+				<key>subtext</key>
+				<string>Enable iTunes Backup</string>
+				<key>text</key>
+				<string>Enable iTunes Backup</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EF56397F-EE0E-4C36-AF91-68D9E08A2A72</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>killall iTunes
+defaults write com.apple.iTunes AutomaticDeviceBackupsDisabled -bool false
+open -a iTunes</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>85689284-4435-49D6-9ED4-50B79D31E5D2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>title</key>
+				<string>iTunes Backup Disabled</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2B2799D9-4026-4222-A09E-51F9154B0673</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>killall iTunes
+defaults write com.apple.iTunes AutomaticDeviceBackupsDisabled -bool true
+open -a iTunes</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B02483E1-60A2-46CC-9B6C-1B07F0462753</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>itbu dis</string>
+				<key>subtext</key>
+				<string>Disable iTunes Backup</string>
+				<key>text</key>
+				<string>Disable iTunes Backup</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B11B132B-4A61-4C05-8F4F-2111F454E6C6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>title</key>
+				<string>iTunes Backup Enabled</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D8DA26FE-2633-43C0-A8A8-2EAB12A0D868</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2B2799D9-4026-4222-A09E-51F9154B0673</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>85689284-4435-49D6-9ED4-50B79D31E5D2</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>B02483E1-60A2-46CC-9B6C-1B07F0462753</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>B11B132B-4A61-4C05-8F4F-2111F454E6C6</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>D8DA26FE-2633-43C0-A8A8-2EAB12A0D868</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>EF56397F-EE0E-4C36-AF91-68D9E08A2A72</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://george.germanos.me</string>
+</dict>
+</plist>
