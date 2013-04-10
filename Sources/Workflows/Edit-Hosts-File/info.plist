@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>E3EAF751-76B0-4904-B5CD-F04D60A05EBD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9ADB3D29-168C-4C99-9350-20FE1678402D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Brendan DeBeasi</string>
+	<key>description</key>
+	<string>Edit the hosts file</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Edit Hosts File</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>hosts</string>
+				<key>subtext</key>
+				<string>Edit The Hosts File In Nano</string>
+				<key>text</key>
+				<string>Edit Hosts</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E3EAF751-76B0-4904-B5CD-F04D60A05EBD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>sudo nano /etc/hosts</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>9ADB3D29-168C-4C99-9350-20FE1678402D</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>9ADB3D29-168C-4C99-9350-20FE1678402D</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E3EAF751-76B0-4904-B5CD-F04D60A05EBD</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

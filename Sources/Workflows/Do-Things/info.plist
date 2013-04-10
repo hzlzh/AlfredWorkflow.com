@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>0A0F6C5E-17A8-4E23-BCAF-2A93ECBB73B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1E104F4D-876C-4548-A460-C58820F99C1C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>0EFC476B-91E2-45FA-897D-37FFC3F3D9AA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>39E3B965-8BC1-45DE-8CC8-02C2E835E5D4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>1CC2D987-7F03-42E2-A93C-47FC0563EC8E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2DBFA38-5D9C-4EDC-80FB-6D5B7777568E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>36E580A3-080D-41D0-9B6A-90292B10144F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>58C7DFCA-7F14-43E3-982B-5E54BEB091D2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>39923C9C-E5C8-4266-AD34-73191339947A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CE3C109-3703-499E-AA51-BD489734A1E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>39E3B965-8BC1-45DE-8CC8-02C2E835E5D4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>663A7552-9DC8-4C01-8353-A3ABBCDCE5A0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>461A580D-30A6-42E3-93E7-7A2EBB5F0AE1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1CC2D987-7F03-42E2-A93C-47FC0563EC8E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>58C7DFCA-7F14-43E3-982B-5E54BEB091D2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6ED96AAE-5F77-4E28-872C-077C52AA380A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6E25732D-11D0-4AF6-A495-4E2428220FA1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>39E3B965-8BC1-45DE-8CC8-02C2E835E5D4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7C133351-B97D-48DE-8FD0-200C26C1313C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0B8F28CE-4951-441A-9428-D7FE9169B49C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8CE3C109-3703-499E-AA51-BD489734A1E6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>663A7552-9DC8-4C01-8353-A3ABBCDCE5A0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9F5B3C3D-1FF0-4ADC-8DE7-AAF00F1C19DF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1E104F4D-876C-4548-A460-C58820F99C1C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C6092F62-C850-480B-A5E5-E6A1D01A218A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA680C34-1D47-431E-A027-3A9259351069</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D2E51DF2-A866-4157-B703-97979DD2E698</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C133351-B97D-48DE-8FD0-200C26C1313C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DA680C34-1D47-431E-A027-3A9259351069</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2DBFA38-5D9C-4EDC-80FB-6D5B7777568E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F4E2723D-8EEA-4659-A02F-B4B2C537AC20</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>39E3B965-8BC1-45DE-8CC8-02C2E835E5D4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Alex LaFroscia</string>
+	<key>description</key>
+	<string>Interact with Things.app through Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Do Things</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>do empty</string>
+				<key>subtext</key>
+				<string>Perminantly delete items in the trash</string>
+				<key>text</key>
+				<string>Empty the trash</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>36E580A3-080D-41D0-9B6A-90292B10144F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>do projects</string>
+				<key>runningsubtext</key>
+				<string>Creating List...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$utils = new Workflows();
+
+$arg = "{query}";
+
+if (empty($arg))
+	$isEmpty = "Is is empty";
+
+if ( empty($arg) ) {
+	
+$results = array();
+$projects = exec('osascript GetProjects.scpt');
+$project = explode(",", $projects);
+
+foreach( $project as $name ):
+	$first = substr($name, 0, 1);
+	if ($first === " ")
+		$name = substr($name, 1);
+	$item = array(
+		'uid' =&gt; 'projectlistitem',
+		'title' =&gt; $name,
+		'subtitle' =&gt; 'Select item to mark as done',
+		'icon' =&gt; 'icon.png',
+		'valid' =&gt; 'no',
+		'autocomplete' =&gt; $name
+	);
+	array_push( $results, $item);
+endforeach;
+
+if ( count( $results ) &gt; 0 ):
+	echo $utils-&gt;toxml( $results );
+endif;
+
+} else {
+	
+$todoresults = array();
+$todos = exec('osascript GetItemsfromProject.scpt {query}');
+$todo = explode(",", $todos);
+
+foreach( $todo as $name ):
+	$first = substr($name, 0, 1);
+	if ($first === " ")
+		$name = substr($name, 1);
+	$item = array(
+		'uid' =&gt; 'projecttodolistitem',
+		'arg' =&gt; $name,
+		'title' =&gt; $name,
+		'subtitle' =&gt; 'Select item to mark as done',
+		'icon' =&gt; 'icon.png',
+		'vaild' =&gt; 'yes'
+	);
+	array_push( $todoresults, $item);
+endforeach;
+
+if ( count( $todoresults ) &gt; 0 ):
+	echo $utils-&gt;toxml( $todoresults );
+endif;
+
+}</string>
+				<key>subtext</key>
+				<string>Result gets passed back to Alfred</string>
+				<key>title</key>
+				<string>Get a list of all of the projects</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>39923C9C-E5C8-4266-AD34-73191339947A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>do inbox</string>
+				<key>runningsubtext</key>
+				<string>Hold on just a second…</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$utils = new Workflows();
+
+$results = array();
+$todos = exec('osascript GetItems.scpt Inbox');
+$todo = explode(",", $todos);
+
+foreach( $todo as $name ):
+	$first = substr($name, 0, 1);
+	if ($first === " ")
+		$name = substr($name, 1);
+	$item = array(
+		'uid' =&gt; 'todolistitem',
+		'arg' =&gt; $name,
+		'title' =&gt; $name,
+		'subtitle' =&gt; 'Select item to mark as done',
+		'icon' =&gt; 'icon.png',
+		'vaild' =&gt; 'yes'
+	);
+	array_push( $results, $item);
+endforeach;
+
+if ( count( $results ) &gt; 0 ):
+	echo $utils-&gt;toxml( $results );
+endif;</string>
+				<key>subtext</key>
+				<string>Action an item to mark it as completed</string>
+				<key>title</key>
+				<string>Do Inbox | List the items in your Inbox</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F4E2723D-8EEA-4659-A02F-B4B2C537AC20</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+	set theToDo to q
+
+	tell application "Things"
+
+	 	set status of to do named theToDo to completed
+	
+	end tell
+
+	return q
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>8CE3C109-3703-499E-AA51-BD489734A1E6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_scipt(q)
+	tell application "Things"
+		empty trash
+	end tell
+	return "completed"
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>58C7DFCA-7F14-43E3-982B-5E54BEB091D2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+	tell application "Things"
+
+		set newToDo to make new to do with properties {name: q} at beginning of list "Inbox"
+
+	end tell
+
+	return "New task in Inbox created successfully"
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>DA680C34-1D47-431E-A027-3A9259351069</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+	tell application "Things"
+
+		set newToDo to make new to do with properties {name: q} at beginning of list "Today"
+
+	end tell
+
+	return "New task in Today created successfully"
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>1CC2D987-7F03-42E2-A93C-47FC0563EC8E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Emptying the trash was {query}</string>
+				<key>title</key>
+				<string>Things | Empty Trash</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6ED96AAE-5F77-4E28-872C-077C52AA380A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>do someday</string>
+				<key>runningsubtext</key>
+				<string>Hold on just a second...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$utils = new Workflows();
+
+$results = array();
+$todos = exec('osascript GetItems.scpt Someday');
+$todo = explode(",", $todos);
+
+foreach( $todo as $name ):
+	$first = substr($name, 0, 1);
+	if ($first === " ")
+		$name = substr($name, 1);
+	$item = array(
+		'uid' =&gt; 'todolistitem',
+		'arg' =&gt; $name,
+		'title' =&gt; $name,
+		'subtitle' =&gt; 'Select item to mark as done',
+		'icon' =&gt; 'icon.png',
+		'vaild' =&gt; 'yes'
+	);
+	array_push( $results, $item);
+endforeach;
+
+if ( count( $results ) &gt; 0 ):
+	echo $utils-&gt;toxml( $results );
+endif;</string>
+				<key>subtext</key>
+				<string>Action an item to mark it as completed</string>
+				<key>title</key>
+				<string>Do Someday | List items in your "Someday" list</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0EFC476B-91E2-45FA-897D-37FFC3F3D9AA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>do</string>
+				<key>subtext</key>
+				<string>Open Things.app</string>
+				<key>text</key>
+				<string>Open Things</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9F5B3C3D-1FF0-4ADC-8DE7-AAF00F1C19DF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>do today</string>
+				<key>runningsubtext</key>
+				<string>Hold on just a second...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$utils = new Workflows();
+
+$results = array();
+$todos = exec('osascript GetItems.scpt Today');
+$todo = explode(",", $todos);
+
+foreach( $todo as $name ):
+	$first = substr($name, 0, 1);
+	if ($first === " ")
+		$name = substr($name, 1);
+	$item = array(
+		'uid' =&gt; 'todolistitem',
+		'arg' =&gt; $name,
+		'title' =&gt; $name,
+		'subtitle' =&gt; 'Select item to mark as done',
+		'icon' =&gt; 'icon.png',
+		'vaild' =&gt; 'yes'
+	);
+	array_push( $results, $item);
+endforeach;
+
+if ( count( $results ) &gt; 0 ):
+	echo $utils-&gt;toxml( $results );
+endif;</string>
+				<key>subtext</key>
+				<string>Action an item to mark it as completed</string>
+				<key>title</key>
+				<string>Do Today | List items in your "Today" list</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6E25732D-11D0-4AF6-A495-4E2428220FA1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Things.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>1E104F4D-876C-4548-A460-C58820F99C1C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>do log</string>
+				<key>subtext</key>
+				<string>Move all completed items to the log</string>
+				<key>text</key>
+				<string>Log completed Items</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D2E51DF2-A866-4157-B703-97979DD2E698</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Things | Item Completed</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>663A7552-9DC8-4C01-8353-A3ABBCDCE5A0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Things | New Task</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B2DBFA38-5D9C-4EDC-80FB-6D5B7777568E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>do today</string>
+				<key>subtext</key>
+				<string>Add a new task to the Things "Today" list</string>
+				<key>text</key>
+				<string>New Task in "Today"</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>461A580D-30A6-42E3-93E7-7A2EBB5F0AE1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+	set theToDo to q
+
+	tell application "Things"
+
+	 	set status of to do named theToDo to completed
+	
+	end tell
+
+	return q
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>39E3B965-8BC1-45DE-8CC8-02C2E835E5D4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Logging completed items was {query}</string>
+				<key>title</key>
+				<string>Things | Log Items</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0B8F28CE-4951-441A-9428-D7FE9169B49C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+	tell application "Things"
+
+		log completed now
+	
+	end tell
+	
+	return "successful"
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7C133351-B97D-48DE-8FD0-200C26C1313C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>do things</string>
+				<key>subtext</key>
+				<string>Open Things.app</string>
+				<key>text</key>
+				<string>Open Things</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0A0F6C5E-17A8-4E23-BCAF-2A93ECBB73B4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>do inbox</string>
+				<key>subtext</key>
+				<string>Add a new task to the Things inbox</string>
+				<key>text</key>
+				<string>New Task</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C6092F62-C850-480B-A5E5-E6A1D01A218A</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0A0F6C5E-17A8-4E23-BCAF-2A93ECBB73B4</key>
+		<dict>
+			<key>ypos</key>
+			<real>1020</real>
+		</dict>
+		<key>0B8F28CE-4951-441A-9428-D7FE9169B49C</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>0EFC476B-91E2-45FA-897D-37FFC3F3D9AA</key>
+		<dict>
+			<key>ypos</key>
+			<real>660</real>
+		</dict>
+		<key>1CC2D987-7F03-42E2-A93C-47FC0563EC8E</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>1E104F4D-876C-4548-A460-C58820F99C1C</key>
+		<dict>
+			<key>ypos</key>
+			<real>960</real>
+		</dict>
+		<key>36E580A3-080D-41D0-9B6A-90292B10144F</key>
+		<dict>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>39923C9C-E5C8-4266-AD34-73191339947A</key>
+		<dict>
+			<key>ypos</key>
+			<real>790</real>
+		</dict>
+		<key>39E3B965-8BC1-45DE-8CC8-02C2E835E5D4</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>461A580D-30A6-42E3-93E7-7A2EBB5F0AE1</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>58C7DFCA-7F14-43E3-982B-5E54BEB091D2</key>
+		<dict>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>663A7552-9DC8-4C01-8353-A3ABBCDCE5A0</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>6E25732D-11D0-4AF6-A495-4E2428220FA1</key>
+		<dict>
+			<key>ypos</key>
+			<real>460</real>
+		</dict>
+		<key>6ED96AAE-5F77-4E28-872C-077C52AA380A</key>
+		<dict>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>7C133351-B97D-48DE-8FD0-200C26C1313C</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>8CE3C109-3703-499E-AA51-BD489734A1E6</key>
+		<dict>
+			<key>ypos</key>
+			<real>790</real>
+		</dict>
+		<key>9F5B3C3D-1FF0-4ADC-8DE7-AAF00F1C19DF</key>
+		<dict>
+			<key>ypos</key>
+			<real>910</real>
+		</dict>
+		<key>B2DBFA38-5D9C-4EDC-80FB-6D5B7777568E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C6092F62-C850-480B-A5E5-E6A1D01A218A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D2E51DF2-A866-4157-B703-97979DD2E698</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>DA680C34-1D47-431E-A027-3A9259351069</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>F4E2723D-8EEA-4659-A02F-B4B2C537AC20</key>
+		<dict>
+			<key>ypos</key>
+			<real>560</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>alexlafroscia.com</string>
+</dict>
+</plist>
