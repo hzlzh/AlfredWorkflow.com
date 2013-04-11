@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.mcskrzypczak.copyname</string>
+	<key>connections</key>
+	<dict>
+		<key>795171AF-7728-46C6-9202-5DD506B04CA3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0AFF29DB-FD0A-48A8-BCD4-75DA715EBD73</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FBA4AB9F-B5C9-44A9-A605-82D77816A5D1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0AFF29DB-FD0A-48A8-BCD4-75DA715EBD73</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Maciej Skrzypczak</string>
+	<key>description</key>
+	<string>File action that copies selected file/folder name(s)</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Copy name</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Copy folder/file name</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>FBA4AB9F-B5C9-44A9-A605-82D77816A5D1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>795171AF-7728-46C6-9202-5DD506B04CA3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)		set AlfredFile to q		set theFile to POSIX file AlfredFile		tell application "Finder"		set fileAlias to theFile as alias		set fileName to name of fileAlias		set the clipboard to fileName as text	end tell	end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>0AFF29DB-FD0A-48A8-BCD4-75DA715EBD73</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0AFF29DB-FD0A-48A8-BCD4-75DA715EBD73</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>795171AF-7728-46C6-9202-5DD506B04CA3</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>FBA4AB9F-B5C9-44A9-A605-82D77816A5D1</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>imagazine.pl</string>
+</dict>
+</plist>

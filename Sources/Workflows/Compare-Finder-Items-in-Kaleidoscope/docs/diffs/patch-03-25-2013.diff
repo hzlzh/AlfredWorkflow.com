@@ -1,0 +1,36 @@
+diff --git a/CompareInKaleidoscope/utils.sh b/CompareInKaleidoscope/utils.sh
+index 14c4dcb..7dcf00d 100644
+--- a/CompareInKaleidoscope/utils.sh
++++ b/CompareInKaleidoscope/utils.sh
+@@ -8,23 +8,26 @@ alf_file_exists() {
+     return 1
+ }
+ 
++# add -t param to tag log in syslog
++loggerCmd="logger -t 'Alfred Workflow'"
++
+ # Success logging
+ alf_success() {
+-    logger "ALFRED SUCCESS: $@"
++    eval $loggerCmd "SUCCESS: $@"
+ }
+ 
+ # debug logging
+ alf_debug() {
+-    logger "ALFRED DEBUG: $@"
++    eval $loggerCmd "DEBUG: $@"
+ }
+ 
+ # error logging
+ alf_error() {
+-    logger "ALFRED ERROR: $@"
++    eval $loggerCmd "ERROR: $@"
+ }
+ 
+ # get present working dir
+ PWD=`pwd`
+ 
+ # get name of script
+-me=`basename $0`
++me=`basename $0`
+\ No newline at end of file

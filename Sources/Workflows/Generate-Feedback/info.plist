@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.johneday.generatefeedback</string>
+	<key>connections</key>
+	<dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AC7F0BC1-9940-458B-982E-46BBD99CEFE3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>John Day</string>
+	<key>description</key>
+	<string>AppleScript Handler to Generate Feedback</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Generate Feedback</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>6</integer>
+				<key>keyword</key>
+				<string>gf</string>
+				<key>runningsubtext</key>
+				<string>generating your feedback...</string>
+				<key>script</key>
+				<string>osascript xml.scpt "{query}"</string>
+				<key>title</key>
+				<string>Generate Feedback</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Notification Text: {query}</string>
+				<key>title</key>
+				<string>Notification Title: {query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>AC7F0BC1-9940-458B-982E-46BBD99CEFE3</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Instructions may be found at: http://www.johneday.com/617/generate-feedback-in-alfred-2-workflows
+
+If you are looking for a tailored AppleScript solution or a workflow consultation, please leave me a note with your contact information and a brief description of your project.John Dayhttp://www.johneday.com/contact
+Skype: john.eday</string>
+	<key>uidata</key>
+	<dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>AC7F0BC1-9940-458B-982E-46BBD99CEFE3</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://www.johneday.com/</string>
+</dict>
+</plist>

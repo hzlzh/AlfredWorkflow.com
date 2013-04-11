@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>jw.restarter</string>
+	<key>connections</key>
+	<dict>
+		<key>393ACCB9-C244-4A12-A69E-27E5C7AE1242</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CC67FC45-BB4E-4C30-8316-3398B944ED6C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FCCEECC3-73DA-411F-BEAC-8C765F9ADAE3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>393ACCB9-C244-4A12-A69E-27E5C7AE1242</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jonathan Wiesel</string>
+	<key>description</key>
+	<string>Restart applications with force if necessary</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Restarter</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+appPID=$(echo "{query}" | awk '{split($0,a,"|"); print a[1]}')
+appName=$(echo "{query}" | awk '{split($0,a,"|"); print a[2]}')
+
+kill ${appPID}
+sleep 1
+number=$(ps aux | grep -i "${appPID}" | grep -v grep | wc -l)
+if [[ $number -gt 0 ]]
+then
+	kill -9 ${appPID}
+	sleep 1
+	number1=$(ps aux | grep -i "${appPID}" | grep -v grep | wc -l)
+	if [[ $number1 -gt 0 ]]
+	then
+		echo "Application '"${appName}"' couldn't be killed fully"
+	else
+		open -a "${appName}"
+		echo ""${appName}" - restarted"
+	fi
+else
+	open -a "${appName}" 
+	echo ""${appName}" - restarted"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>393ACCB9-C244-4A12-A69E-27E5C7AE1242</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Restarter</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CC67FC45-BB4E-4C30-8316-3398B944ED6C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>32</integer>
+				<key>keyword</key>
+				<string>rapp</string>
+				<key>runningsubtext</key>
+				<string>Getting running applications...</string>
+				<key>script</key>
+				<string>on trim(someText)
+	repeat until someText does not start with " "
+		set someText to text 2 thru -1 of someText
+	end repeat
+	
+	repeat until someText does not end with " "
+		set someText to text 1 thru -2 of someText
+	end repeat
+	
+	return someText
+end trim
+
+on splitText(delimiter, someText)
+	set prevTIDs to AppleScript's text item delimiters
+	set AppleScript's text item delimiters to delimiter
+	set output to text items of someText
+	set AppleScript's text item delimiters to prevTIDs
+	return output
+end splitText
+
+tell application "System Events"
+	set openAppsXML to ""
+	set allOpenApps to get name of (processes where background only is false)
+end tell
+
+repeat with i from 1 to the count of allOpenApps
+	set openApp to item i of allOpenApps
+	set appPathFull to do shell script "ps -A | grep -i '" &amp; openApp &amp; "' | grep -v grep | awk '{$1=$2=$3=\"\"; print $0}'"
+	set appPID to do shell script "echo `ps -A | grep -i '" &amp; openApp &amp; "' | grep -v grep  | awk '{print $1}' | uniq`"
+	set appPath to item 1 of splitText(".app", appPathFull)
+	set cleanAppPath to trim(appPath)
+	set iconPath to cleanAppPath &amp; ".app"
+	
+	set openAppsXML to openAppsXML &amp; "&lt;item uid='" &amp; openApp &amp; "' arg='" &amp; appPID &amp; "|" &amp; openApp &amp; "' valid='YES' autocomplete='" &amp; openApp &amp; "'&gt;&lt;title&gt;Restart " &amp; openApp &amp; "&lt;/title&gt; &lt;icon type='fileicon'&gt;" &amp; iconPath &amp; "&lt;/icon&gt; &lt;/item&gt;"
+end repeat
+
+set openAppsXML to "cat &lt;&lt; EOB 
+&lt;?xml version='1.0'?&gt; &lt;items&gt; " &amp; openAppsXML &amp; "&lt;/items&gt; 
+EOB"
+
+do shell script openAppsXML</string>
+				<key>subtext</key>
+				<string>with force if necessary</string>
+				<key>title</key>
+				<string>Restart application</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FCCEECC3-73DA-411F-BEAC-8C765F9ADAE3</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>393ACCB9-C244-4A12-A69E-27E5C7AE1242</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>CC67FC45-BB4E-4C30-8316-3398B944ED6C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>FCCEECC3-73DA-411F-BEAC-8C765F9ADAE3</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>jonathanwiesel.com</string>
+</dict>
+</plist>

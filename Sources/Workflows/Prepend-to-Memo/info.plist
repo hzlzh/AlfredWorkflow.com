@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>22239DFC-34B4-49B9-A4F0-59962DC16D47</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6714DD07-D57B-4A55-8660-ACA3E4071671</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Andrew Ng</string>
+	<key>description</key>
+	<string>Prepend to a Memo.txt on Dropbox</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Prepend to Memo</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>f=~/Dropbox/Notes/memo.txt
+t=`mktemp /tmp/alfred_prepend.XXXXXXXX`
+q={query}
+
+cat - $f &lt;&lt;&lt; $q &gt; $t
+mv $t $f
+rm $t
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>6714DD07-D57B-4A55-8660-ACA3E4071671</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>memo</string>
+				<key>text</key>
+				<string>memo prepend</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>22239DFC-34B4-49B9-A4F0-59962DC16D47</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This is an example workflow to mimic "Append to Dropbox" features of Drafts for iOS (http://agiletortoise.com/drafts).
+
+You may wish to edit the script to point to a different file, or have a different timestamp format.</string>
+	<key>uidata</key>
+	<dict>
+		<key>22239DFC-34B4-49B9-A4F0-59962DC16D47</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>6714DD07-D57B-4A55-8660-ACA3E4071671</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://andrewng.com</string>
+</dict>
+</plist>

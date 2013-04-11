@@ -1,0 +1,412 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>changelog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+/* 
+   This document has been created with Marked.app <http://markedapp.com>, Copyright 2011 Brett Terpstra
+   Please leave this notice in place, along with any additional credits below.
+   ---------------------------------------------------------------
+   Title: Theme title
+   Author: Your name and optional url
+   Description: Basic description of the theme.
+*/
+
+body
+{
+    -webkit-font-smoothing:antialiased;
+    font:normal .8764em/1.5em Arial,Verdana,sans-serif;
+    margin:0
+}
+
+html>body
+{
+    font-size:13px
+}
+
+li
+{
+    font-size:110%
+}
+
+li li
+{
+    font-size:100%
+}
+
+li p
+{
+    font-size:100%;
+    margin:.5em 0
+}
+
+h1
+{
+    color:#000;
+    font-size:2.2857em;
+    line-height:.6563em;
+    margin:.6563em 0
+}
+
+h2
+{
+    color:#111;
+    font-size:1.7143em;
+    line-height:.875em;
+    margin:.875em 0
+}
+
+h3
+{
+    color:#111;
+    font-size:1.5em;
+    line-height:1em;
+    margin:1em 0
+}
+
+h4
+{
+    color:#111;
+    font-size:1.2857em;
+    line-height:1.1667em;
+    margin:1.1667em 0
+}
+
+h5
+{
+    color:#111;
+    font-size:1.15em;
+    line-height:1.3em;
+    margin:1.3em 0
+}
+
+h6
+{
+    font-size:1em;
+    line-height:1.5em;
+    margin:1.5em 0
+}
+
+body,p,td,div
+{
+    color:#111;
+    font-family:"Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+    word-wrap:break-word
+}
+
+h1,h2,h3,h4,h5,h6
+{
+    line-height:1.5em
+}
+
+a
+{
+    -webkit-transition:color .2s ease-in-out;
+    color:#0d6ea1;
+    text-decoration:none
+}
+
+a:hover
+{
+    color:#3593d9
+}
+
+/*h2 em
+{
+    color:#111;
+    padding-left:10px;
+    text-shadow:0 1px 0 #FFF
+}*/
+
+blockquote p
+{
+  font-size:110%;
+  font-style:italic;
+  line-height:1.6em;
+}
+
+.footnote
+{
+    color:#0d6ea1;
+    font-size:.8em;
+    vertical-align:super
+}
+
+#wrapper img
+{
+    max-width:100%;
+    height:auto
+}
+
+dd
+{
+    margin-bottom:1em
+}
+
+li > p:first-child
+{
+    margin:0
+}
+
+ul ul,ul ol
+{
+    margin-bottom:.4em
+}
+
+caption,col,colgroup,table,tbody,td,tfoot,th,thead,tr
+{
+    border-spacing:0
+}
+
+table
+{
+    border:1px solid rgba(0,0,0,0.25);
+    border-collapse:collapse;
+    display:table;
+    empty-cells:hide;
+    margin:-1px 0 23px;
+    padding:0;
+    table-layout:fixed
+}
+
+caption
+{
+    display:table-caption;
+    font-weight:700
+}
+
+col
+{
+    display:table-column
+}
+
+colgroup
+{
+    display:table-column-group
+}
+
+tbody
+{
+    display:table-row-group
+}
+
+tfoot
+{
+    display:table-footer-group
+}
+
+thead
+{
+    display:table-header-group
+}
+
+td,th
+{
+    display:table-cell
+}
+
+tr
+{
+    display:table-row
+}
+
+table th,table td
+{
+    font-size:1.1em;
+    line-height:23px;
+    padding:0 1em
+}
+
+table thead
+{
+    background:rgba(0,0,0,0.15);
+    border:1px solid rgba(0,0,0,0.15);
+    border-bottom:1px solid rgba(0,0,0,0.2)
+}
+
+table tbody
+{
+    background:rgba(0,0,0,0.05)
+}
+
+table tfoot
+{
+    background:rgba(0,0,0,0.15);
+    border:1px solid rgba(0,0,0,0.15);
+    border-top:1px solid rgba(0,0,0,0.2)
+}
+
+figure
+{
+    display:inline-block;
+    margin-bottom:1.2em;
+    position:relative;
+    margin:1em 0
+}
+
+figcaption
+{
+    font-style:italic;    
+    text-align:center;
+    background:rgba(0,0,0,.9);
+    color:rgba(255,255,255,1);
+    position:absolute;
+    left:0;
+    bottom:-24px;
+    width:98%;
+    padding:1%;
+    -webkit-transition:all .2s ease-in-out;
+}
+
+figure:hover>figcaption
+{
+    /* background:rgba(0,0,0,1) */
+}
+
+/* Styles used when "Tab-indented text is poetry" is set */
+.poetry pre
+{
+    display:block;
+    font-family:Georgia, Garamond, serif!important;
+    font-size:110%!important;
+    font-style:italic;
+    line-height:1.6em;
+    margin-left:1em
+}
+
+.poetry pre code
+{
+    font-family:Georgia, Garamond, serif!important
+}
+
+/* important rules for keeping line-height from being affected by sub */
+sup,sub,a.footnote
+{
+    font-size:1.4ex;
+    height:0;
+    line-height:1;
+    position:relative;
+}
+
+sup {
+    vertical-align:super;
+}
+
+sub {
+    vertical-align: sub;
+    top: -1px;
+}
+
+p,h5
+{
+    font-size:1.1429em;
+    line-height:1.3125em;
+    margin:1.3125em 0
+}
+
+dt,th
+{
+    font-weight:700
+}
+
+table tr:nth-child(odd),table th:nth-child(odd),table td:nth-child(odd)
+{
+    background:rgba(255,255,255,0.06)
+}
+
+table tr:nth-child(even),table td:nth-child(even)
+{
+    background:rgba(0,0,0,0.06)
+}
+
+@media print {
+    /* print only styles. Keep it clean */
+    body
+    {
+        overflow:auto
+    }
+    img, pre, blockquote, table, figure, p {
+        page-break-inside: avoid
+    }
+    .footnotes { page-break-before: always }
+
+    #wrapper
+    {
+        background:#fff;
+        color:#303030;
+        font-size:85%;
+        padding:10px;
+        position:relative;
+        text-indent:0
+    }
+}
+
+@media screen {
+    /* Screen-only styles, including inverted styles */
+    .inverted #wrapper,.inverted {
+        background:rgba(37, 42, 42, 1)
+    }
+    .inverted hr {
+        border-color: rgba(51, 63, 64, 1) !important;
+    }
+    .inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted pre,.inverted code,.inverted th,.inverted .math,.inverted caption,.inverted dd,.inverted dt
+    {
+        color:#eee!important
+    }
+    .inverted table tr:nth-child(odd), .inverted table th:nth-child(odd), .inverted table td:nth-child(odd) {
+      background: none;
+    }
+    .inverted a
+    {
+        color:rgba(172, 209, 213, 1);
+    }
+
+    #wrapper
+    {
+        padding:20px
+    }
+
+    /* styles for more colorful selection highlights */
+    ::selection { background:rgba(157, 193, 200,.5)}
+    h1::selection { background-color:rgba(45, 156, 208, .3)}
+    h2::selection { background-color:rgba(90, 182, 224, .3)}
+    h3::selection,
+    h4::selection,
+    h5::selection,
+    h6::selection,li::selection,ol::selection { background-color:rgba(133, 201, 232, .3)}
+    code::selection { background-color:rgba(0,0,0,.7);color:#eee}
+    code span::selection {background-color:rgba(0,0,0,.7) !important;color:#eee !important}
+    a::selection { background-color:rgba(255, 230, 102,.2)}
+    .inverted a::selection { background-color:rgba(255, 230, 102,.6)}
+	td::selection,th::selection,caption::selection { background-color: rgba(180, 237, 95, .5);}
+}
+
+
+</style>
+<style>#wrapper { max-width:900px; margin:0 auto }</style>
+</head>
+<body class="normal">
+  <div id="wrapper">
+      <h1 id="changelogforcomparefinderitemsinkaleidoscope">Changelog for Compare Finder Items in Kaleidoscope</h1>
+
+<h2 id="v1.1-25mar2013">v1.1 - 25 Mar 2013</h2>
+
+<ul>
+<li><p>Updated utils.sh logging so that logger output is tagged in the syslog. </p>
+
+<p>E.g. <code>Alfred Workflow[4905]: SUCCESS: Ran CompareInKaleidoscope.workflow</code> </p></li>
+</ul>
+
+<p>Diffs can be found here: <a href="diffs/patch-03-25-2013.diff">patch</a> </p>
+
+<h2 id="v1.0-24mar2013">v1.0 - 24 Mar 2013</h2>
+
+<ul>
+<li>Initial release</li>
+</ul>
+    </div>
+</body>
+</html>

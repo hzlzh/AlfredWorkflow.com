@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.stouty.compareinkaleidoscope</string>
+	<key>connections</key>
+	<dict>
+		<key>2E175E89-6483-4553-A680-A1DA9FD5C21E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F66D7BFB-4639-4659-BB62-0A3E20E98F04</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F66D7BFB-4639-4659-BB62-0A3E20E98F04</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA21104D-9E9D-458F-986A-8EBB290C6EA7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>James Stout</string>
+	<key>description</key>
+	<string>Compares selected Finder items in Kaleidoscope</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Compare Finder Items in Kaleidoscope</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+source utils.sh
+
+WF=CompareInKaleidoscope.workflow
+
+KS=/Applications/Kaleidoscope.app
+
+# check Kaleidoscope.app is installed
+alf_file_exists $KS
+RC=$?
+
+if [ $RC -ne 0 ]
+then
+	OUTPUT="Kaleidoscope is NOT installed"
+	alf_error $OUTPUT
+	echo "ERROR $OUTPUT"
+	exit
+fi
+
+output=`automator $WF 2&gt;&amp;1`
+RC=$?
+
+if [ $RC -ne 0 ]
+then
+	OUTPUT="$output - $PWD/$WF"
+	alf_error "$OUTPUT"
+	echo "ERROR $OUTPUT"
+else
+	OUTPUT="Ran $WF"
+	alf_success $OUTPUT
+	# don't display a notification on success
+	#echo "$OUTPUT"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F66D7BFB-4639-4659-BB62-0A3E20E98F04</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>2E175E89-6483-4553-A680-A1DA9FD5C21E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Compare in Kaleidoscope</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>DA21104D-9E9D-458F-986A-8EBB290C6EA7</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Needs Kaleidoscope 2: http://cl.ly/NoMY
+
+My review here: http://cl.ly/Nn0J
+
+v1.1
+
+Changelog in the package.</string>
+	<key>uidata</key>
+	<dict>
+		<key>2E175E89-6483-4553-A680-A1DA9FD5C21E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>DA21104D-9E9D-458F-986A-8EBB290C6EA7</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>F66D7BFB-4639-4659-BB62-0A3E20E98F04</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://zoooot.com</string>
+</dict>
+</plist>

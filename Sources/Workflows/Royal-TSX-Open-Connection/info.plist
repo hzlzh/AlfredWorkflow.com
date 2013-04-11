@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.lemonmojo.royaltsx.alfredworkflow</string>
+	<key>connections</key>
+	<dict>
+		<key>CAE23050-6767-4848-B735-8D8CAE8771FE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B34F08F5-1CE6-4C69-9585-B7804CEE2851</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Lemon Mojo</string>
+	<key>description</key>
+	<string>Open a Royal TSX connection</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Royal TSX - Open Connection</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>rtsxopen</string>
+				<key>runningsubtext</key>
+				<string>Please wait ...</string>
+				<key>script</key>
+				<string>alfred_script("{query}")
+
+on alfred_script(q)	set input to "" &amp; q		tell application "Royal TSX"		set conIds to id of every connection whose name contains input				set xmlHeader to "&lt;?xml version='1.0'?&gt;&lt;items&gt;"		set xmlFooter to "&lt;/items&gt;"				set xmlItemTemplate to "&lt;item uid='%ItemID%' arg='%ItemArg%' valid='%ItemValid%' autocomplete='%ItemAutocomplete%'&gt;&lt;title&gt;%ItemTitle%&lt;/title&gt;&lt;subtitle&gt;%ItemSubtitle%&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"				set xml to xmlHeader				repeat with conId in conIds			set xmlItem to xmlItemTemplate						set conName to get property value of key "Name" from id conId			set conDesc to get property value of key "Description" from id conId						set xmlItem to my replaceString(xmlItem, "%ItemID%", conId as string)			set xmlItem to my replaceString(xmlItem, "%ItemArg%", conId as string)			set xmlItem to my replaceString(xmlItem, "%ItemValid%", "yes")			set xmlItem to my replaceString(xmlItem, "%ItemAutocomplete%", "yes")			set xmlItem to my replaceString(xmlItem, "%ItemTitle%", conName)			set xmlItem to my replaceString(xmlItem, "%ItemSubtitle%", conDesc)						set xml to xml &amp; xmlItem		end repeat				set xml to xml &amp; xmlFooter				return xml	end tellend alfred_scripton replaceString(theText, oldString, newString)	local ASTID, theText, oldString, newString, lst	set ASTID to AppleScript's text item delimiters	try		considering case			set AppleScript's text item delimiters to oldString			set lst to every text item of theText			set AppleScript's text item delimiters to newString			set theText to lst as string		end considering		set AppleScript's text item delimiters to ASTID		return theText	on error eMsg number eNum		set AppleScript's text item delimiters to ASTID		error "Can't replaceString: " &amp; eMsg number eNum	end tryend replaceString</string>
+				<key>subtext</key>
+				<string>Open a Royal TSX connection</string>
+				<key>title</key>
+				<string>Open connection...</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CAE23050-6767-4848-B735-8D8CAE8771FE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>alfred_script("{query}")
+
+on alfred_script(q)	set input to "" &amp; q		tell application "Royal TSX"		connect input	end tellend alfred_script</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B34F08F5-1CE6-4C69-9585-B7804CEE2851</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Royal TSX - Open Connection Alfred Workflow
+Copyright © 2013 by Lemon Mojo - Felix Deimel e.U.</string>
+	<key>uidata</key>
+	<dict>
+		<key>B34F08F5-1CE6-4C69-9585-B7804CEE2851</key>
+		<dict>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+		<key>CAE23050-6767-4848-B735-8D8CAE8771FE</key>
+		<dict>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.royaltsx.com/main/home/osx.aspx</string>
+</dict>
+</plist>

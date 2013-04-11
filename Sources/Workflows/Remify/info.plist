@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.tech42solutions.remify</string>
+	<key>connections</key>
+	<dict>
+		<key>CFFC698C-56E1-4FD8-8BD9-F8CEF5D81188</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>471CC8EC-73DC-447E-846E-25263C9B7568</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Tonio</string>
+	<key>description</key>
+	<string>Remify DailyWTF article</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Remify</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tell application "Google Chrome"
+    execute front window's active tab javascript "(function (){if(window.remified)return;var a=document.getElementById('MainContent');if(!a)return;var b=a.children;while(b.length){var c=b[0];if(b.shift){b.shift()}else{var d=new Array;for(var e=1;e&lt;b.length;++e){d.push(b[e])}b=d}if(c.nodeType==8){var f=document.createElement('span');f.style.backgroundColor='lightgreen';var g=document.createElement('b');g.appendChild(document.createTextNode('Remy: '));f.appendChild(document.createTextNode('['));f.appendChild(g);f.appendChild(document.createTextNode(c.data.replace(/(^\\s*|\\s*$)/g,'')));f.appendChild(document.createTextNode(']'));c.parentNode.insertBefore(f,c);c.parentNode.insertBefore(document.createTextNode(' '),c)}else{var h=c.childNodes;for(var e=0;e&lt;h.length;++e){b.push(h[e])}}if(c.getAttribute&amp;&amp;c.getAttribute('onclick')=='cornify_add();return false;'){c.style.backgroundColor='pink'}}window.remified=true})()"
+end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>471CC8EC-73DC-447E-846E-25263C9B7568</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>remify</string>
+				<key>subtext</key>
+				<string>Remify DailyWTF Article</string>
+				<key>text</key>
+				<string>Remify</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CFFC698C-56E1-4FD8-8BD9-F8CEF5D81188</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>471CC8EC-73DC-447E-846E-25263C9B7568</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>CFFC698C-56E1-4FD8-8BD9-F8CEF5D81188</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
