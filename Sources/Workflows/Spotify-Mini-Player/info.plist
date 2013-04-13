@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.vdesabou.spotify.mini.player</string>
+	<key>connections</key>
+	<dict>
+		<key>18496AC4-EA42-444C-A906-642E38259C96</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5F3AF2C8-064F-4C10-8D99-22E212825BFE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8DF18F9A-B3A5-4B14-8360-AD850CF5C143</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open album in Spotify</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9845C770-A2CC-4752-A542-D71BE1081691</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open artist in Spotify</string>
+			</dict>
+		</array>
+		<key>5F3AF2C8-064F-4C10-8D99-22E212825BFE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BD7525EE-BFFD-4CB1-B617-A7A9492B39C0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8DF18F9A-B3A5-4B14-8360-AD850CF5C143</key>
+		<array/>
+		<key>9845C770-A2CC-4752-A542-D71BE1081691</key>
+		<array/>
+		<key>AE6160D1-56EA-4416-991E-CF12B874FFD3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>18496AC4-EA42-444C-A906-642E38259C96</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>vdesabou</string>
+	<key>description</key>
+	<string>iTunes mini player for Spotify</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Spotify Mini Player 1.5</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>spot_mini</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>php -f main.php -- "{query}"</string>
+				<key>subtext</key>
+				<string>Search in your playlists for tracks, artists, and albums</string>
+				<key>title</key>
+				<string>Spotify Mini Player</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>18496AC4-EA42-444C-A906-642E38259C96</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Spotify Mini Player</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>BD7525EE-BFFD-4CB1-B617-A7A9492B39C0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>38</integer>
+				<key>script</key>
+				<string>ksh action.ksh "{query}" "ARTIST"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9845C770-A2CC-4752-A542-D71BE1081691</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>AE6160D1-56EA-4416-991E-CF12B874FFD3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>38</integer>
+				<key>script</key>
+				<string>ksh action.ksh "{query}" "TRACK"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5F3AF2C8-064F-4C10-8D99-22E212825BFE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>38</integer>
+				<key>script</key>
+				<string>ksh action.ksh "{query}" "ALBUM"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8DF18F9A-B3A5-4B14-8360-AD850CF5C143</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Based on fabulous work done for Spotifious Workflow:
+
+https://github.com/citelao/Spotify-for-Alfred
+
+Alfred forum post (http://www.alfredforum.com/topic/1644-spotifious-a-natural-spotify-controller-for-alfred/?hl=spotify)
+
+
+Spotify App spotify-export (https://github.com/jamesrwhite/spotify-export) must be installed</string>
+	<key>uidata</key>
+	<dict>
+		<key>18496AC4-EA42-444C-A906-642E38259C96</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>5F3AF2C8-064F-4C10-8D99-22E212825BFE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8DF18F9A-B3A5-4B14-8360-AD850CF5C143</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>9845C770-A2CC-4752-A542-D71BE1081691</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
+		<key>AE6160D1-56EA-4416-991E-CF12B874FFD3</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>BD7525EE-BFFD-4CB1-B617-A7A9492B39C0</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.alfredforum.com/topic/1892-spotify-mini-player-kind-of/</string>
+</dict>
+</plist>

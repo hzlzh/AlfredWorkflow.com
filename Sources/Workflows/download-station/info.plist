@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.jeeker.awf.DownloadStation</string>
+	<key>connections</key>
+	<dict>
+		<key>38226993-DBAA-4010-B7C3-D3AEE879D4D3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>024B8E49-5CC3-4900-B008-E55FAE7F7126</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>79469106-EF40-48B7-B4FD-18D8C19D08FC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>38226993-DBAA-4010-B7C3-D3AEE879D4D3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>98F8973B-9EE1-431A-BDDC-FD86704D6285</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>38226993-DBAA-4010-B7C3-D3AEE879D4D3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FFE730C6-0341-4C5B-94B6-E6D4E13FB59E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>38226993-DBAA-4010-B7C3-D3AEE879D4D3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>JinnLynn</string>
+	<key>description</key>
+	<string>Manage Synology Download Station</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Download Station</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>ds task</string>
+				<key>runningsubtext</key>
+				<string>Request data from Download Station...</string>
+				<key>script</key>
+				<string>python ds.py task {query}</string>
+				<key>subtext</key>
+				<string>To view, pause, resume, delete single or multiple tasks</string>
+				<key>title</key>
+				<string>Manage Download Tasks</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>98F8973B-9EE1-431A-BDDC-FD86704D6285</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>ds setting</string>
+				<key>runningsubtext</key>
+				<string>Request data from Download Station...</string>
+				<key>script</key>
+				<string>python ds.py setting {query}</string>
+				<key>subtext</key>
+				<string>Authorization, enable/disable emule, enable/disable schedule, etc.</string>
+				<key>title</key>
+				<string>Change Settings</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>79469106-EF40-48B7-B4FD-18D8C19D08FC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>ds create</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>python ds.py task create "{query}"</string>
+				<key>subtext</key>
+				<string>To create download task, support multiple urls.</string>
+				<key>title</key>
+				<string>Create Download Task(s)</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FFE730C6-0341-4C5B-94B6-E6D4E13FB59E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Download Station</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>024B8E49-5CC3-4900-B008-E55FAE7F7126</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>python action.py {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>38226993-DBAA-4010-B7C3-D3AEE879D4D3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>ds status</string>
+				<key>runningsubtext</key>
+				<string>Request data from Download Station...</string>
+				<key>script</key>
+				<string>python ds.py status</string>
+				<key>subtext</key>
+				<string>download/upload speed, task count,  etc.</string>
+				<key>title</key>
+				<string>View Status</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5EFA5646-1FE4-4991-A324-3FDD304B4262</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>024B8E49-5CC3-4900-B008-E55FAE7F7126</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>38226993-DBAA-4010-B7C3-D3AEE879D4D3</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>5EFA5646-1FE4-4991-A324-3FDD304B4262</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>79469106-EF40-48B7-B4FD-18D8C19D08FC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>98F8973B-9EE1-431A-BDDC-FD86704D6285</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>FFE730C6-0341-4C5B-94B6-E6D4E13FB59E</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://jeeker.net</string>
+</dict>
+</plist>

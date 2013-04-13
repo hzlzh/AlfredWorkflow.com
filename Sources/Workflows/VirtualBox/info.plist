@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>0A110903-D7AA-41C4-924D-95EAB5EA6912</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>76D576C5-3B4C-43B2-BE05-09E360F3EBD8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>655EAA2C-AD31-4F16-AFF8-43BB88265168</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4B892EE9-9EA5-49E5-ABB4-DD2579129406</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>81C219A8-9B22-41E2-945D-F76AC4A954FB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DE4A821C-A084-4B70-8C25-CF9BFA42C335</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>740EF824-3504-402D-B03E-0B141D1B2BDC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DC0CFAC5-6950-4359-A46F-DA52F5835B05</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F8CD781C-0264-4526-85D0-48DDBBF7DB47</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>81C219A8-9B22-41E2-945D-F76AC4A954FB</key>
+		<array/>
+		<key>A9C1B67B-1BE7-4955-B5C4-90AD197D09EB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>28DDFDFB-4A6A-4BB7-B676-EE146272E5AD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F5D9DDE1-953B-4C6D-97F6-0C7BBDA58F87</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DC0CFAC5-6950-4359-A46F-DA52F5835B05</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Matt D</string>
+	<key>description</key>
+	<string>Control VirtualBox from Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>VirtualBox</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vboxreboot</string>
+				<key>subtext</key>
+				<string>Reboot the VBox Image '{query}'</string>
+				<key>text</key>
+				<string>Reboot the VBox Image '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A9C1B67B-1BE7-4955-B5C4-90AD197D09EB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>runtimes=`date +%m_%d_%y_%H%M`
+export VBox="{query}"
+
+echo "----------------------------------------------------------"
+echo "Trying to start VBox "$VBox "at "$runtimes | tee &gt;&gt;/tmp/vbox_start.log
+echo "----------------------------------------------------------"
+echo $VBox | tee &gt;&gt;/tmp/vbox_start.log
+vboxmanage startvm $VBox | tee &gt;&gt;/tmp/vbox_start.log
+
+clear
+
+echo $VBox</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DC0CFAC5-6950-4359-A46F-DA52F5835B05</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>
+runtimes=`date +%m_%d_%y_%H%M`
+export VBox="{query}"
+
+echo "----------------------------------------------------------"
+echo "Trying to sleep VBox "$VBox "at "$runtimes | tee &gt;&gt;/tmp/vbox_sleep.log
+echo "----------------------------------------------------------"
+echo $VBox | tee &gt;&gt;/tmp/vbox_poweroff.log
+vboxmanage controlvm $VBox savestate | tee &gt;&gt;/tmp/vbox_sleep.log
+
+
+
+
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>81C219A8-9B22-41E2-945D-F76AC4A954FB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vboxsleep</string>
+				<key>subtext</key>
+				<string>Sleep the VBox Image '{query}'</string>
+				<key>text</key>
+				<string>Sleep the VBox Image '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4B892EE9-9EA5-49E5-ABB4-DD2579129406</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Your VBox {query} is sleeping</string>
+				<key>title</key>
+				<string>VirtualBox Controller</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>DE4A821C-A084-4B70-8C25-CF9BFA42C335</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Your VBox {query} is on</string>
+				<key>title</key>
+				<string>VirtualBox Controller</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F8CD781C-0264-4526-85D0-48DDBBF7DB47</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vboxon</string>
+				<key>subtext</key>
+				<string>Start the VBox Image '{query}'</string>
+				<key>text</key>
+				<string>Start the VBox Image '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>740EF824-3504-402D-B03E-0B141D1B2BDC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vboxoff</string>
+				<key>subtext</key>
+				<string>Poweroff the VBox Image '{query}'</string>
+				<key>text</key>
+				<string>Poweroff the VBox Image '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0A110903-D7AA-41C4-924D-95EAB5EA6912</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Your VBox '{query}' reset</string>
+				<key>title</key>
+				<string>VirtualBox Controller</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F5D9DDE1-953B-4C6D-97F6-0C7BBDA58F87</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>
+runtimes=`date +%m_%d_%y_%H%M`
+export VBox="{query}"
+
+echo "----------------------------------------------------------"
+echo "Trying to poweroff VBox "$VBox "at "$runtimes | tee &gt;&gt;/tmp/vbox_poweroff.log
+echo "----------------------------------------------------------"
+echo $VBox | tee &gt;&gt;/tmp/vbox_poweroff.log
+vboxmanage controlvm $VBox poweroff | tee &gt;&gt;/tmp/vbox_poweroff.log
+
+
+
+
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>76D576C5-3B4C-43B2-BE05-09E360F3EBD8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Your VBox {query} is off</string>
+				<key>title</key>
+				<string>VirtualBox Controller</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>655EAA2C-AD31-4F16-AFF8-43BB88265168</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>
+runtimes=`date +%m_%d_%y_%H%M`
+export VBox="{query}"
+
+echo "----------------------------------------------------------"
+echo "Trying to reboot VBox "$VBox "at "$runtimes | tee &gt;&gt;/tmp/vbox_reset.log
+echo "----------------------------------------------------------"
+echo $VBox | tee &gt;&gt;/tmp/vbox_reset.log
+vboxmanage controlvm $VBox reset | tee &gt;&gt;/tmp/vbox_reset.log
+
+
+
+
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>28DDFDFB-4A6A-4BB7-B676-EE146272E5AD</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>You need to just activate Alfred and put in the verb &amp; noun pair
+
+
+keywords are
+
+vboxon --&gt; to power on or wake a vbox from sleep
+
+vboxsleep --&gt; to put a running vbox to sleep
+
+vboxreboot	--&gt; to reboot a running vbox
+
+vboxoff --&gt; to turn off a running vbox</string>
+	<key>uidata</key>
+	<dict>
+		<key>0A110903-D7AA-41C4-924D-95EAB5EA6912</key>
+		<dict>
+			<key>ypos</key>
+			<real>460</real>
+		</dict>
+		<key>28DDFDFB-4A6A-4BB7-B676-EE146272E5AD</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>4B892EE9-9EA5-49E5-ABB4-DD2579129406</key>
+		<dict>
+			<key>ypos</key>
+			<real>600</real>
+		</dict>
+		<key>655EAA2C-AD31-4F16-AFF8-43BB88265168</key>
+		<dict>
+			<key>ypos</key>
+			<real>460</real>
+		</dict>
+		<key>740EF824-3504-402D-B03E-0B141D1B2BDC</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>76D576C5-3B4C-43B2-BE05-09E360F3EBD8</key>
+		<dict>
+			<key>ypos</key>
+			<real>400</real>
+		</dict>
+		<key>81C219A8-9B22-41E2-945D-F76AC4A954FB</key>
+		<dict>
+			<key>ypos</key>
+			<real>540</real>
+		</dict>
+		<key>A9C1B67B-1BE7-4955-B5C4-90AD197D09EB</key>
+		<dict>
+			<key>ypos</key>
+			<real>320</real>
+		</dict>
+		<key>DC0CFAC5-6950-4359-A46F-DA52F5835B05</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>DE4A821C-A084-4B70-8C25-CF9BFA42C335</key>
+		<dict>
+			<key>ypos</key>
+			<real>600</real>
+		</dict>
+		<key>F5D9DDE1-953B-4C6D-97F6-0C7BBDA58F87</key>
+		<dict>
+			<key>ypos</key>
+			<real>320</real>
+		</dict>
+		<key>F8CD781C-0264-4526-85D0-48DDBBF7DB47</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://oramatt.wordpress.com</string>
+</dict>
+</plist>
