@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.stouty.cheaters</string>
+	<key>connections</key>
+	<dict>
+		<key>2B076086-7F0B-4DAB-A1B5-DB8AF5C0B96F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2DA94C8-C1E6-451B-8D00-8273AADFDA66</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B7932454-871B-4509-B46E-45F50E8F54CA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2B076086-7F0B-4DAB-A1B5-DB8AF5C0B96F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>James Stout</string>
+	<key>description</key>
+	<string>Run Cheaters by Brett Terpstra</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Cheaters</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>B7932454-871B-4509-B46E-45F50E8F54CA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Cheaters Workflow</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B2DA94C8-C1E6-451B-8D00-8273AADFDA66</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+source utils.sh
+
+if ! alf_file_exists Cheaters.sh ; then
+	OUTPUT="Cheaters.sh NOT found, cannot continue"
+	alf_error $OUTPUT
+	echo "ERROR $OUTPUT"
+	exit
+else
+	sh Cheaters.sh
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2B076086-7F0B-4DAB-A1B5-DB8AF5C0B96F</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Workflow to run Cheaters by Brett Terpstra 
+
+http://brettterpstra.com/
+http://ttscoff.github.io/cheaters/
+
+Requires git - http://git-scm.com/ (could use curl I suppose)</string>
+	<key>uidata</key>
+	<dict>
+		<key>2B076086-7F0B-4DAB-A1B5-DB8AF5C0B96F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B2DA94C8-C1E6-451B-8D00-8273AADFDA66</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B7932454-871B-4509-B46E-45F50E8F54CA</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://zoooot.com</string>
+</dict>
+</plist>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.kongwu.alfred.taobaosearch</string>
+	<key>connections</key>
+	<dict>
+		<key>A6029AD4-2E69-4DA4-ACFB-BF68BAD0A363</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D3CF241-B9BF-4493-B138-5821D7FEC0D5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Kenny Zhao</string>
+	<key>description</key>
+	<string>Autocomplete suggestion box for Taobao.com</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Taobao Suggest</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>http://s.taobao.com/search?q={query}&amp;searcy_type=item&amp;s_from=newHeader&amp;source=&amp;ssid=s5-e&amp;search=y</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>2D3CF241-B9BF-4493-B138-5821D7FEC0D5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>tb</string>
+				<key>runningsubtext</key>
+				<string>Retrieving...</string>
+				<key>script</key>
+				<string>#author: Peter Okma
+# -*- coding: utf-8 -*-
+
+from Feedback import Feedback
+import sys
+import re
+import json
+import urllib
+
+# import addition packages you want to access here
+
+query = '{query}'
+url = 'http://suggest.taobao.com/sug?code=utf-8&amp;callback=KISSY.Suggest.callback&amp;q=%s' % query;
+f = urllib.urlopen(url);
+content = f.read();
+
+content = content.replace("\s*","")
+p = re.compile( r'KISSY.Suggest.callback\((.*)\)')
+content = p.sub(r'\1', content);
+
+response = json.loads(content)
+
+fb = Feedback()
+try:
+	
+	for title,id in response['result']:
+	    #url = 's.taobao.com/search?q=%s&amp;searcy_type=item&amp;s_from=newHeader&amp;source=&amp;ssid=s5-e&amp;search=y' % title
+	    #url.replace(' ', '_')
+	    fb.add_item(title,
+	        subtitle="Search taobao items on %s" % title,
+	        arg=title)
+except SyntaxError as e:
+    if ('EOF', 'EOL' in e.msg):
+        fb.add_item('...')
+    else:
+        fb.add_item('SyntaxError', e.msg)
+except Exception as e:
+        fb.add_item(e.__class__.__name__,
+            subtitle=e.message)    
+print fb</string>
+				<key>subtext</key>
+				<string>Search Taobao with Suggestions</string>
+				<key>title</key>
+				<string>Searching in Taobao</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A6029AD4-2E69-4DA4-ACFB-BF68BAD0A363</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2D3CF241-B9BF-4493-B138-5821D7FEC0D5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A6029AD4-2E69-4DA4-ACFB-BF68BAD0A363</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://kongwu.net</string>
+</dict>
+</plist>

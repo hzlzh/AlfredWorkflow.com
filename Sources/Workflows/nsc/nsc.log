@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='ASCII'?>
+<items>
+  <item arg="141" uid="decimal">
+    <title>141</title>
+    <subtitle>Decimal</subtitle>
+    <icon>icons/decimal.png</icon>
+  </item>
+  <item arg="12020" uid="conv">
+    <title>12020</title>
+    <subtitle>Number to base 3</subtitle>
+    <icon>icon.png</icon>
+  </item>
+</items>
+
