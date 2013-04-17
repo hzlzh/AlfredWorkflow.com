@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>wl2</string>
+	<key>connections</key>
+	<dict>
+		<key>2C6EA871-854E-413A-95A5-8880BC134B12</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1ABA3928-FC6D-4530-B0F6-B8167AF88150</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Sébastien Etter</string>
+	<key>description</key>
+	<string>Create a new Task in Wunderlist 2</string>
+	<key>name</key>
+	<string>Wunderlist 2</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>wl</string>
+				<key>subtext</key>
+				<string>Create a new Task in Wunderlist 2</string>
+				<key>text</key>
+				<string>Wunderlist</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2C6EA871-854E-413A-95A5-8880BC134B12</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)		set the clipboard to q			tell application "Wunderlist" to activate
+
+tell application "System Events"		keystroke "i" using {Command down, shift down} --Command-Shift-I	end tell		tell application "System Events"		keystroke "v" using {command down} --Command-C	end tellend alfred_script</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>1ABA3928-FC6D-4530-B0F6-B8167AF88150</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>1ABA3928-FC6D-4530-B0F6-B8167AF88150</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>2C6EA871-854E-413A-95A5-8880BC134B12</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://tastenklempner.ch</string>
+</dict>
+</plist>

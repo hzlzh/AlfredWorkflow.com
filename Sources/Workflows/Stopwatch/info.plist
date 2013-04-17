@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.jamiebullock.StopWatch</string>
+	<key>connections</key>
+	<dict>
+		<key>23B42ED1-6154-44E2-92DD-9C8EF2BA20B3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>00B60E73-2EFE-4730-B222-A56404C295F2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jamie Bullock</string>
+	<key>description</key>
+	<string>A Simple Stopwatch</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Stopwatch</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>import Tkinter as tk
+from Tkinter import RIGHT
+
+def update_timeText():
+    if (state):
+        global timer        
+        timer[1] += 1
+        if (timer[1] &gt;= 60):
+            timer[0] += 1
+            timer[1] = 0
+        timeString = pattern.format(timer[0], timer[1])
+        timeText.configure(text=timeString)
+    root.after(1000, update_timeText)
+
+def start():
+    global state
+    state = True
+
+def pause():
+    global state
+    state = False
+
+def reset():
+    global timer
+    timer = [0, 0]
+    timeText.configure(text='00:00')
+
+def exist():
+    root.destroy()
+
+state = False
+
+root = tk.Tk()
+root.wm_title('Stopwatch')
+
+# Our time structure [min, sec]
+timer = [0, 0]
+pattern = '{0:02d}:{1:02d}'
+
+timeText = tk.Label(root, text="00:00", font=("Helvetica", 100))
+timeText.pack()
+
+
+
+
+
+quitButton = tk.Button(root, text='Quit', command=exist)
+quitButton.pack(side=RIGHT, padx=5, pady=5)
+
+resetButton = tk.Button(root, text='Reset', command=reset)
+resetButton.pack(side=RIGHT, padx=5, pady=5)
+
+pauseButton = tk.Button(root, text='Pause', command=pause)
+pauseButton.pack(side=RIGHT, padx=5, pady=5)
+
+startButton = tk.Button(root, text='Start', command=start)
+startButton.pack(side=RIGHT, padx=5, pady=5)
+
+
+
+update_timeText()
+root.call('wm', 'attributes', '.', '-topmost', '1')
+root.mainloop()</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>00B60E73-2EFE-4730-B222-A56404C295F2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>stopwatch</string>
+				<key>subtext</key>
+				<string>Launch a stopwatch applet</string>
+				<key>text</key>
+				<string>Stopwatch</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>23B42ED1-6154-44E2-92DD-9C8EF2BA20B3</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow launches an applet providing a simple stopwatch with a MM:SS display and start, pause and reset controls.
+
+The workflow can be activated by the ‘stopwatch’ keyword within Alfred.
+
+LICENSE: Public Domain — http://creativecommons.org/publicdomain/zero/1.0/</string>
+	<key>uidata</key>
+	<dict>
+		<key>00B60E73-2EFE-4730-B222-A56404C295F2</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>23B42ED1-6154-44E2-92DD-9C8EF2BA20B3</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://jamiebullock.com</string>
+</dict>
+</plist>

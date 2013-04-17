@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>me.schembri.editHosts</string>
+	<key>connections</key>
+	<dict>
+		<key>08E20430-42D2-41DE-B220-3E587D8CABC4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A21B568F-82AC-4F58-B6D2-233341A6288A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CBBC21A3-F9CB-44ED-B437-AE2E4161DDBA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C1A51189-EF8B-4309-8B4A-74CAB2268721</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jamie Schembri</string>
+	<key>description</key>
+	<string>Add or remove entries in /etc/hosts</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Edit hosts</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>host remove</string>
+				<key>subtext</key>
+				<string>Remove a host from /etc/hosts: &lt;ip&gt; &lt;hostname&gt;</string>
+				<key>text</key>
+				<string>Remove host</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CBBC21A3-F9CB-44ED-B437-AE2E4161DDBA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>do shell script "ruby remove.rb '{query}'" with administrator privileges</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C1A51189-EF8B-4309-8B4A-74CAB2268721</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>do shell script "ruby add.rb '{query}'" with administrator privileges</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A21B568F-82AC-4F58-B6D2-233341A6288A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>host add</string>
+				<key>subtext</key>
+				<string>Add a host to /etc/hosts: &lt;ip&gt; &lt;hostname&gt;</string>
+				<key>text</key>
+				<string>Add host</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>08E20430-42D2-41DE-B220-3E587D8CABC4</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Description
+Adds and removes hosts (/etc/hosts)
+
+# Usage
+host add &lt;ip&gt; &lt;hostname&gt;
+host remove &lt;ip&gt; &lt;hostname&gt;
+
+# Credits
+Icons: Crystal Clear by Everaldo Coelho (modified) -- http://commons.wikimedia.org/wiki/Crystal_Clear</string>
+	<key>uidata</key>
+	<dict>
+		<key>08E20430-42D2-41DE-B220-3E587D8CABC4</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>A21B568F-82AC-4F58-B6D2-233341A6288A</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>C1A51189-EF8B-4309-8B4A-74CAB2268721</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>CBBC21A3-F9CB-44ED-B437-AE2E4161DDBA</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>schembri.me</string>
+</dict>
+</plist>
