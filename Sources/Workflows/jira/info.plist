@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>zhoufan.jira</string>
+	<key>connections</key>
+	<dict>
+		<key>074292C9-DDCA-4325-A8FC-7BB4B640F49C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ADA8FAA6-44FA-469B-9AD3-BA92FE8DC8B9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C0648D68-373F-4229-B145-8A4923807915</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>989376E8-B1E6-4C6F-8F24-4B71B1E6FD38</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>ZhouFan</string>
+	<key>description</key>
+	<string>JIRA快速查询</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>JIRA</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>JIRA参数设置</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C0648D68-373F-4229-B145-8A4923807915</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>ADA8FAA6-44FA-469B-9AD3-BA92FE8DC8B9</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>open config.php</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>989376E8-B1E6-4C6F-8F24-4B71B1E6FD38</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>runningsubtext</key>
+				<string>搜索中...</string>
+				<key>script</key>
+				<string>require_once 'workflows.php';
+require_once 'config.php';
+$w      = new Workflows();
+$kw     = "{query}";
+$isKey  = preg_match("/^([a-z]+)-([\d]+)$/i", $kw);
+if ($isKey) {
+    $query  = urlencode("key = {$kw}");
+}
+else {
+    $query  = urlencode("summary ~ {$kw} OR description ~ {$kw}");
+}
+
+$url    = "{$jiraUrl}/sr/jira.issueviews:searchrequest-xml/temp/SearchRequest.xml?tempMax=20&amp;jqlQuery={$query}";
+$content        = $w-&gt;request($url, array(
+    CURLOPT_COOKIE  =&gt; $jiraCookie,
+));
+
+if (!strpos($content, 'channel')) {
+    $w-&gt;result('zhoufan.jira.error', '', '帐户验证失败', '请先运行JIRA参数设置', 'icon.png');
+    echo $w-&gt;toxml();
+    exit;
+}
+
+preg_match_all("/&lt;item&gt;([\S\s]+?)&lt;\/item&gt;/", $content, $itemLines);
+
+if (!count($itemLines[1])) {
+    $w-&gt;result('zhoufan.jira.no_result', '', '没有查询到相关记录', '', 'icon.png');
+    echo $w-&gt;toxml();
+    exit;
+}
+foreach ((array) $itemLines[1] as $itemLine) {
+    $itemLine   = trim($itemLine);
+    $itemLine   = preg_replace("/&gt;([\s]+?)&lt;/", '&gt;&lt;', $itemLine);
+    
+    preg_match_all("/&lt;([\S\s]+?)&gt;([\S\s]*?)&lt;\/([\S]+?)&gt;/", $itemLine, $itemVars);
+
+    foreach ($itemVars[1] as $itemIndex =&gt; $itemName) {
+        preg_match_all("/([\S]+?)=\"([\S]+?)\"/", $itemName, $matches);
+        foreach ($matches[1] as $index =&gt; $key) {
+            $itemInfo[$itemVars[3][$itemIndex]][$key]   = $matches[2][$index];
+        }
+    }
+    foreach ($itemVars[3] as $itemIndex =&gt; $itemName) {
+        $itemInfo[$itemName]['value']   = $itemVars[2][$itemIndex];
+        $itemInfo[$itemName]['value']   = html_entity_decode($itemInfo[$itemName]['value'], ENT_NOQUOTES, 'UTF-8');
+        $itemInfo[$itemName]['value']   = strip_tags($itemInfo[$itemName]['value']);
+    }
+    
+    $key        = $itemInfo['key']['value'];
+    $url        = $itemInfo['link']['value'];
+    $title      = $itemInfo['title']['value'];
+    $reporter   = substr($itemInfo['reporter']['value'], strlen($itemInfo['reporter']['username']) + 1);
+    $assignee   = substr($itemInfo['assignee']['value'], strlen($itemInfo['assignee']['username']) + 1);
+    $desc       = "类型:{$itemInfo['type']['value']} 优先级:{$itemInfo['priority']['value']} 状态:{$itemInfo['status']['value']} 报告:{$reporter} 经办:{$assignee}";
+    $w-&gt;result($key, $url, $title, $desc, 'icon.png');
+}
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>请输入JIRA号或关键词</string>
+				<key>title</key>
+				<string>JIRA</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>074292C9-DDCA-4325-A8FC-7BB4B640F49C</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>074292C9-DDCA-4325-A8FC-7BB4B640F49C</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>989376E8-B1E6-4C6F-8F24-4B71B1E6FD38</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>ADA8FAA6-44FA-469B-9AD3-BA92FE8DC8B9</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>C0648D68-373F-4229-B145-8A4923807915</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://zhoufan.net</string>
+</dict>
+</plist>

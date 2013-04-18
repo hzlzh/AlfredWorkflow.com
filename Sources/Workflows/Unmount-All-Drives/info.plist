@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.janders223.unmount</string>
+	<key>connections</key>
+	<dict>
+		<key>22756B36-024B-463A-9435-A2CDD4795B96</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3FD9E16B-5A97-4958-BBAF-31B21D1E6672</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AD4A7C12-5D72-40E5-ABB5-34A18B8F8A36</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3FD9E16B-5A97-4958-BBAF-31B21D1E6672</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>janders223</string>
+	<key>description</key>
+	<string>Unmounts all external drives</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Unmount All Drives</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>unmount</string>
+				<key>text</key>
+				<string>Unmount all Drives</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>AD4A7C12-5D72-40E5-ABB5-34A18B8F8A36</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "Finder"
+  	  set allVolumes to the name of every disk
+  	  repeat with i from 1 to the count of allVolumes
+		  if item i of allVolumes is not the name of the startup disk then
+			  -- Uncomment the 2 lines below if you don't want Network drives unmounted.
+			  -- if item i of allVolumes is not "Network" then
+			  eject (item i of allVolumes)
+			  -- end if
+		  end if
+	  end repeat
+  end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>3FD9E16B-5A97-4958-BBAF-31B21D1E6672</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>22756B36-024B-463A-9435-A2CDD4795B96</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>22756B36-024B-463A-9435-A2CDD4795B96</key>
+		<dict>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+		<key>3FD9E16B-5A97-4958-BBAF-31B21D1E6672</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>AD4A7C12-5D72-40E5-ABB5-34A18B8F8A36</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

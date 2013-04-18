@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.felipecypriano.alfred.urbandictionary</string>
+	<key>connections</key>
+	<dict>
+		<key>B42FA15E-912C-4A8C-AC10-CBE51001C3CD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0592B086-5BE4-44C9-8FA3-F46FE6FF818C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Felipe Cypriano</string>
+	<key>description</key>
+	<string>Searches query in Urban Dictionary</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Urban Dictionary</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>0592B086-5BE4-44C9-8FA3-F46FE6FF818C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>runningsubtext</key>
+				<string>Sarching Urban Dictionary...</string>
+				<key>script</key>
+				<string>import urllib2
+from HTMLParser import HTMLParser
+import xml.etree.ElementTree as ET
+
+class UrbanDictionaryHTMLParser(HTMLParser):
+    def __init__(self):
+        HTMLParser.__init__(self)
+        self.is_parsing_entries = False
+        self.definitions = []
+        self.is_word_open = False
+        self.is_word_span = False
+        self.is_index_open = False
+        self.is_index_a = False
+        self.is_definition = False
+        self.current_data = []
+        self.tables_in_entries = 0
+        self.current_definition = {}
+    
+    def handle_starttag(self, tag, attrs):
+        attrD = dict(attrs)
+        
+        if tag == 'table': 
+            if attrD.get('id', '') == 'entries':
+                self.is_parsing_entries = True
+            elif self.is_parsing_entries:
+                self.tables_in_entries += 1
+                
+        if self.is_parsing_entries:
+            tag_class = attrD.get('class', '')
+            if tag == 'td' and tag_class == 'index':
+                self.is_index_open = True
+                
+            elif self.is_index_open and tag == 'a':
+                self.current_definition['link'] = attrD['href']
+                
+            elif tag == 'td' and tag_class == 'word':
+                self.is_word_open = True
+            
+            elif self.is_word_open and tag == 'span':
+                self.is_word_span = True
+
+            elif tag == 'div' and tag_class == 'definition':
+                self.is_definition = True
+            
+    def handle_endtag(self, tag):
+        if tag == 'table':
+            if self.tables_in_entries &gt; 0:
+                self.tables_in_entries -= 1
+            elif self.is_parsing_entries:
+                self.is_parsing_entries = False
+            
+        if self.is_parsing_entries:
+            if tag == 'td' and self.is_index_open:
+                self.is_index_open = False
+
+            elif tag == 'span' and self.is_word_span:
+                self.is_word_span = False
+                self.current_definition['word'] = ''.join(self.current_data).strip()
+                self.current_data = []
+                
+            elif tag == 'td' and self.is_word_open:
+                self.is_word_open = False
+                
+            elif tag == 'div' and self.is_definition:
+                self.is_definition = False
+                self.current_definition['definition'] = ''.join(self.current_data)
+                self.definitions.append(self.current_definition)
+                self.current_data = []
+                self.current_definition = {}
+
+    def handle_data(self, data):
+        if self.is_definition or self.is_word_span:
+            self.current_data.append(data)
+
+f = urllib2.urlopen('http://www.urbandictionary.com/define.php?term={query}')
+html = f.read()
+
+parser = UrbanDictionaryHTMLParser()
+parser.feed(html)
+
+# Generate Alfred's XML
+root = ET.Element('items')
+for d in parser.definitions:
+    item = ET.SubElement(root, 'item')
+    item.set('uid', 'urbandictionarydefinition')
+    item.set('arg', d['link'])
+    title = ET.SubElement(item, 'title')
+    title.text = d['word']
+    subtitle = ET.SubElement(item, 'subtitle')
+    subtitle.text = d['definition']
+    icon = ET.SubElement(item, 'icon')
+    icon.set('type', 'fileicon')
+    icon.text = '/Applications/Dictionary.app'
+
+print ET.tostring(root)</string>
+				<key>subtext</key>
+				<string>Look for definitions in Urban Dictionary</string>
+				<key>title</key>
+				<string>Urban Dictionary</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B42FA15E-912C-4A8C-AC10-CBE51001C3CD</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Icon by Neweravin:
+http://www.iconfinder.com/icondetails/71466/48/dictionary_icon
+http://neweravin.deviantart.com/art/48px-icons-203868486?q=gallery%3Aneweravin%2F7696292&amp;qo=4</string>
+	<key>uidata</key>
+	<dict>
+		<key>0592B086-5BE4-44C9-8FA3-F46FE6FF818C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B42FA15E-912C-4A8C-AC10-CBE51001C3CD</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://felipecypriano.com/</string>
+</dict>
+</plist>

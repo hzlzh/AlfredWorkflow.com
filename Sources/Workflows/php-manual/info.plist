@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>zhoufan.php</string>
+	<key>connections</key>
+	<dict>
+		<key>11723E74-B925-42D4-82E5-7DA22A10FA4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6EE7D8CD-DDBF-47A9-95A2-C7DE3EBD6790</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>ZhouFan</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>PHP Manual</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<true/>
+				<key>url</key>
+				<string>http://www.php.net/manual-lookup.php?pattern={query}&amp;lang=zh&amp;scope=quickref</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>6EE7D8CD-DDBF-47A9-95A2-C7DE3EBD6790</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>php</string>
+				<key>runningsubtext</key>
+				<string>查找中……</string>
+				<key>script</key>
+				<string>require_once 'workflows.php';
+$w      = new Workflows();
+$kw     = "{query}";
+//$kw     = "array diff";
+$funcInfoList   = include_once('function_list.php');
+$funcList   = array_keys($funcInfoList);
+
+$funcRes    = array();
+
+$limit  = 100;
+
+// 完全匹配
+foreach ($funcList as $funcName) {
+    if ($funcName == $kw) {
+        $funcRes[$funcName]   = array();
+    }
+}
+
+// 前缀匹配
+foreach ($funcList as $funcName) {
+    if (count($funcRes) &gt;= $limit) {
+        break;
+    }
+
+    if (strpos($funcName, $kw) === 0) {
+        $funcRes[$funcName]   = array();
+    }
+}
+
+// 部分匹配
+foreach ($funcList as $funcName) {
+    if (count($funcRes) &gt;= $limit) {
+        break;
+    }
+    
+    if (strpos($funcName, $kw)) {
+        $funcRes[$funcName]   = array();
+    }
+}
+
+// 拆词匹配
+foreach ($funcList as $funcName) {
+    if (count($funcRes) &gt;= $limit) {
+        break;
+    }
+    
+    $kwList = preg_split("/[\_\-\ ]/", $kw);
+    foreach ($kwList as $kwItem) {
+        if (strpos($funcName, $kwItem) === false) {
+            continue(2);
+        }
+    }
+    $funcRes[$funcName]   = array();
+}
+
+// 标题匹配
+foreach ($funcInfoList as $funcInfo) {
+    if (count($funcRes) &gt;= $limit) {
+        break;
+    }
+    
+    if (strpos($funcInfo['title'], $kw)) {
+        $funcRes[$funcInfo['name']] = array(
+        );
+    }
+}
+
+foreach((array) $funcRes as $funcName =&gt; $funcInfo) {
+    $i++;
+    $funcInfo   = $funcInfoList[$funcName];
+    $title      = trim("{$funcName} - {$funcInfo['title']}");
+    $sub        = trim("{$funcInfo['prot']}");
+    
+    $w-&gt;result($i, $funcName, $title, $sub, 'icon.png');
+}
+
+
+if (count($w-&gt;results()) == 0) {
+  	$w-&gt;result('zhoufan.php', $kw, '糟糕…', '没找到, 去php.net搜搜看？', 'icon.png', 'yes');
+}
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>请输入全部或部分函数名</string>
+				<key>title</key>
+				<string>PHP函数手册</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>11723E74-B925-42D4-82E5-7DA22A10FA4D</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>11723E74-B925-42D4-82E5-7DA22A10FA4D</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>6EE7D8CD-DDBF-47A9-95A2-C7DE3EBD6790</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

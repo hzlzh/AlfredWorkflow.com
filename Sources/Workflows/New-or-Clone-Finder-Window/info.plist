@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>D0F79CEE-E97B-4562-8D5E-BAEF2073E8CA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>74E3D9F1-2C91-4F75-9FC7-09E79D360089</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FF2B8F84-AFC0-4D62-98B9-91EA245C108F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>74E3D9F1-2C91-4F75-9FC7-09E79D360089</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Augusto Campos</string>
+	<key>description</key>
+	<string>Opens a new Finder window on the same path as the foremost one already open, if any</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>New or Clone Finder Window</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tell application "Finder"	set theSelection to (alias (path to desktop folder as text))	set theCount to the count of windows	if theCount &gt; 0 then set theSelection to the target of the front Finder window	make new Finder window to theSelection	activateend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>74E3D9F1-2C91-4F75-9FC7-09E79D360089</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>new</string>
+				<key>subtext</key>
+				<string>Clones the current Finder Window</string>
+				<key>text</key>
+				<string>New Finder Window</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FF2B8F84-AFC0-4D62-98B9-91EA245C108F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>D0F79CEE-E97B-4562-8D5E-BAEF2073E8CA</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>74E3D9F1-2C91-4F75-9FC7-09E79D360089</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>D0F79CEE-E97B-4562-8D5E-BAEF2073E8CA</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>FF2B8F84-AFC0-4D62-98B9-91EA245C108F</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://br-mac.org/</string>
+</dict>
+</plist>

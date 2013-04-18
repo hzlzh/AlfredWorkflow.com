@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.benzi.a2w.awsearch</string>
+	<key>connections</key>
+	<dict>
+		<key>031C2CB3-3215-4130-918D-C2955C598217</key>
+		<array/>
+		<key>3A28F9C0-56CA-4928-9C3B-D5C1002C5663</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1EFCB4B3-7F73-49AF-B0A7-AC4CBCF98C04</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>031C2CB3-3215-4130-918D-C2955C598217</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>View release page</string>
+			</dict>
+		</array>
+		<key>BA487FD4-B55A-4210-A1BF-D0E24C3B2F58</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1641B4E9-CCC7-4A1B-A731-21C63B14EDC3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Benzi Ahamed</string>
+	<key>description</key>
+	<string>Find workflows from AlfredWorkflow.com</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>AlfredWorkflow.com Search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>runningsubtext</key>
+				<string>Please wait, loading</string>
+				<key>script</key>
+				<string>/usr/bin/python search.py "{query}"</string>
+				<key>subtext</key>
+				<string>Find workflows from AlfredWorkflow.com</string>
+				<key>title</key>
+				<string>Seach for workflows</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3A28F9C0-56CA-4928-9C3B-D5C1002C5663</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>open "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1EFCB4B3-7F73-49AF-B0A7-AC4CBCF98C04</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>/usr/bin/python release.py "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>031C2CB3-3215-4130-918D-C2955C598217</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>import alfred
+
+alfred.cache.delete('workflow.list')
+
+</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1641B4E9-CCC7-4A1B-A731-21C63B14EDC3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>subtext</key>
+				<string>Resets the AlfredWorkflow.com search cache</string>
+				<key>text</key>
+				<string>Reset search</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>BA487FD4-B55A-4210-A1BF-D0E24C3B2F58</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>031C2CB3-3215-4130-918D-C2955C598217</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>1641B4E9-CCC7-4A1B-A731-21C63B14EDC3</key>
+		<dict>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
+		<key>1EFCB4B3-7F73-49AF-B0A7-AC4CBCF98C04</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>3A28F9C0-56CA-4928-9C3B-D5C1002C5663</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>BA487FD4-B55A-4210-A1BF-D0E24C3B2F58</key>
+		<dict>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>benzi.site44.com</string>
+</dict>
+</plist>
