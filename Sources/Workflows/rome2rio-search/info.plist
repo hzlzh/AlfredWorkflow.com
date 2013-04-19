@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.benzi.a2w.rome2rio</string>
+	<key>connections</key>
+	<dict>
+		<key>0153257F-F39D-439D-841B-A7AC6752D644</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DD7D091A-D8E8-4139-B747-CDF0AFD29A64</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1C349AF8-8943-4924-B75E-953E4DFA4652</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Reset search</string>
+			</dict>
+		</array>
+		<key>DD7D091A-D8E8-4139-B747-CDF0AFD29A64</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9B3BB139-9BAB-44FB-9D8C-7E5757A730E1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Benzi Ahamed</string>
+	<key>description</key>
+	<string>Find travel routes using rome2rio</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>rome2rio search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>python r2r.py --reset</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1C349AF8-8943-4924-B75E-953E4DFA4652</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>rome2rio - no routes found</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9B3BB139-9BAB-44FB-9D8C-7E5757A730E1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>rr</string>
+				<key>runningsubtext</key>
+				<string>Please wait, loading...</string>
+				<key>script</key>
+				<string># Setup
+# 
+# with autocomplete enabled
+# 		e.g. python r2r.py --query-autocomplete "{query}"
+# no autocomplete disabled
+# 		e.g. python r2r.py --query "{query}"
+#
+#
+# Command:
+#
+python r2r.py --query-autocomplete "{query}"</string>
+				<key>title</key>
+				<string>Search for routes on Rome2Rio</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0153257F-F39D-439D-841B-A7AC6752D644</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>python r2r.py --search "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DD7D091A-D8E8-4139-B747-CDF0AFD29A64</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0153257F-F39D-439D-841B-A7AC6752D644</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>1C349AF8-8943-4924-B75E-953E4DFA4652</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>9B3BB139-9BAB-44FB-9D8C-7E5757A730E1</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>DD7D091A-D8E8-4139-B747-CDF0AFD29A64</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>benzi.site44.com</string>
+</dict>
+</plist>
