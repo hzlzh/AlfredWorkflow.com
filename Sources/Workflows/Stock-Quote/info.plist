@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7D5CFA3D-4E84-47BC-8743-455CD77A9D03</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7706B6FF-951B-439D-A507-52529F1E53AB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8B32949-E510-46FE-AA3C-7A0B1EA0CB13</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8DEF81EF-56EF-43B2-BCCE-D249191AE8F1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F3DB373C-018B-41BE-AA5A-144465F69CF1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>963FDBEC-4C05-484F-9D72-63F15B9B521C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7706B6FF-951B-439D-A507-52529F1E53AB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F3DB373C-018B-41BE-AA5A-144465F69CF1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8B32949-E510-46FE-AA3C-7A0B1EA0CB13</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Alex Nazimok</string>
+	<key>description</key>
+	<string>Stock Quote</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Stock Quote</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+SYMBL=$(echo '{query}' | tr '[:lower:]' '[:upper:]')
+
+cat "$(pwd)/symbols" | grep -v "$SYMBL" &gt; "$(pwd)/symbols.tmp"
+
+mv "$(pwd)/symbols.tmp" "$(pwd)/symbols"
+
+echo "{query} has been removed"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7706B6FF-951B-439D-A507-52529F1E53AB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>strm</string>
+				<key>text</key>
+				<string>Remove Stock Symbol</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>963FDBEC-4C05-484F-9D72-63F15B9B521C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>stock</string>
+				<key>runningsubtext</key>
+				<string>Please Wait</string>
+				<key>script</key>
+				<string>#!/bin/bash
+
+cat &lt;&lt; EOB
+&lt;?xml version="1.0"?&gt;
+&lt;items&gt;
+EOB
+
+SYMBOLS=$(cat "$(pwd)/symbols" | sort -u | grep -v '^$');
+
+
+for sym in $SYMBOLS; do
+    RESULT=$(curl -s "http://download.finance.yahoo.com/d/quotes.csv?s=$sym&amp;f=sl1c1p2&amp;e=.csv"|sed 's/"//g')
+
+    SYMBL=$(echo $RESULT|cut -d ',' -f1);
+    PRICE=$(echo $RESULT|cut -d ',' -f2)
+    CHNG=$(echo $RESULT|cut -d ',' -f3)
+	CHP=$(echo $RESULT|cut -d ',' -f4)
+
+    $(echo $CHNG|grep -q '^-')
+    ICON_SFX=$?
+
+cat &lt;&lt; EOB
+  &lt;item uid="$SYMBL" arg="$SYMBL" valid="Yes"&gt;
+    &lt;title&gt;$SYMBL $PRICE&lt;/title&gt;
+    &lt;subtitle&gt;$CHNG  $CHP&lt;/subtitle&gt;
+    &lt;icon&gt;stock-$ICON_SFX.png&lt;/icon&gt;
+  &lt;/item&gt;
+EOB
+done
+
+cat &lt;&lt; EOB
+&lt;/items&gt;
+EOB
+
+</string>
+				<key>title</key>
+				<string>Display Stock Quote</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>http://finance.yahoo.com/q?s={query}&amp;ql=1</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>7D5CFA3D-4E84-47BC-8743-455CD77A9D03</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B8B32949-E510-46FE-AA3C-7A0B1EA0CB13</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>stadd</string>
+				<key>text</key>
+				<string>Add Stock Symbol</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8DEF81EF-56EF-43B2-BCCE-D249191AE8F1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+SYM=$(echo '{query}' | tr '[:lower:]' '[:upper:]')
+
+echo $SYM &gt;&gt; "$(pwd)/symbols"
+
+echo "{query} has been added to the list"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F3DB373C-018B-41BE-AA5A-144465F69CF1</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>7706B6FF-951B-439D-A507-52529F1E53AB</key>
+		<dict>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>7D5CFA3D-4E84-47BC-8743-455CD77A9D03</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>8DEF81EF-56EF-43B2-BCCE-D249191AE8F1</key>
+		<dict>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>963FDBEC-4C05-484F-9D72-63F15B9B521C</key>
+		<dict>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>B8B32949-E510-46FE-AA3C-7A0B1EA0CB13</key>
+		<dict>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
+		<key>F3DB373C-018B-41BE-AA5A-144465F69CF1</key>
+		<dict>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

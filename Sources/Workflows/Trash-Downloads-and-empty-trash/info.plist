@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>acb.trashdownloadsandemptytrash</string>
+	<key>connections</key>
+	<dict>
+		<key>53AFB0C4-A1B1-4D7C-93A3-C22334F57B40</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>877AB5CA-B95D-42DB-87FC-22D47948809B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>877AB5CA-B95D-42DB-87FC-22D47948809B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>95CCD79B-818A-43E5-B511-94CA9C66FB7D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Andrew Reifel</string>
+	<key>description</key>
+	<string>Trashes the contents of the Downloads folder and empties the trash</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Trash Downloads and empty trash</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>mv ~/Downloads/* ~/.Trash
+osascript -e 'tell app "Finder" to empty'</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>877AB5CA-B95D-42DB-87FC-22D47948809B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>empty downloads &amp; trash</string>
+				<key>subtext</key>
+				<string>Move the contents of the Downloads folder to the Trash and empty the trash</string>
+				<key>text</key>
+				<string>Trash downloads &amp; empty trash</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>53AFB0C4-A1B1-4D7C-93A3-C22334F57B40</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Your downloads folder has been emptied</string>
+				<key>title</key>
+				<string>Empty Folder</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>95CCD79B-818A-43E5-B511-94CA9C66FB7D</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Be aware! This will empty your trash!</string>
+	<key>uidata</key>
+	<dict>
+		<key>53AFB0C4-A1B1-4D7C-93A3-C22334F57B40</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>877AB5CA-B95D-42DB-87FC-22D47948809B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>95CCD79B-818A-43E5-B511-94CA9C66FB7D</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.icyleaf.alfred.youdaotranslation</string>
+	<key>connections</key>
+	<dict>
+		<key>200D6FF7-2B7F-42FF-8B27-331B37ABC36C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6D2F020C-4B37-4402-AE34-3C7CA86B08DB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>50ACFBA3-8F38-4842-B93A-3B021E6F7E2A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED513634-4FBC-4258-AF29-9F6214C05D28</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C894F8ED-2CC8-46DD-A1FC-683628CCF296</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>200D6FF7-2B7F-42FF-8B27-331B37ABC36C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>icyleaf</string>
+	<key>description</key>
+	<string>使用有道翻译你想知道的单词和语句</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>有道翻译</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>翻译结果</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6D2F020C-4B37-4402-AE34-3C7CA86B08DB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>C894F8ED-2CC8-46DD-A1FC-683628CCF296</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>ED513634-4FBC-4258-AF29-9F6214C05D28</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>yd</string>
+				<key>runningsubtext</key>
+				<string>翻译中...</string>
+				<key>script</key>
+				<string>require_once('youdao.php');
+
+
+// API 每小时 10000 次请求限制
+// 假如发现结果无法显示，请到这里申请自己的 API
+// http://fanyi.youdao.com/openapi
+
+$keyfrom = 'Alfred';
+$key = 1963786550;
+
+
+$yd = YouDaoTranslation::factory($keyfrom, $key, '{query}');
+echo $yd-&gt;listInAlfred();</string>
+				<key>subtext</key>
+				<string>使用有道翻译你想知道的单词和语句 {query}</string>
+				<key>title</key>
+				<string>有道翻译</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>50ACFBA3-8F38-4842-B93A-3B021E6F7E2A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>require_once('youdao.php');
+
+// API 每小时 10000 次请求限制
+// 假如发现结果无法显示，请到这里申请自己的 API
+// http://fanyi.youdao.com/openapi
+  
+$keyfrom = 'Alfred';
+$key = 1963786550;
+
+
+$yd = YouDaoTranslation::factory($keyfrom, $key, '{query}');
+
+echo $yd-&gt;postToNotification();</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>200D6FF7-2B7F-42FF-8B27-331B37ABC36C</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>#Desc:	利用有道翻译 API 接口达到翻译的目的
+#Use:	youdao &lt;words&gt;
+
+# API 每小时 10000 次请求限制
+# 假如发现结果无法显示，请到这里申请自己的 API
+# http://fanyi.youdao.com/openapi</string>
+	<key>uidata</key>
+	<dict>
+		<key>200D6FF7-2B7F-42FF-8B27-331B37ABC36C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>50ACFBA3-8F38-4842-B93A-3B021E6F7E2A</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>6D2F020C-4B37-4402-AE34-3C7CA86B08DB</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C894F8ED-2CC8-46DD-A1FC-683628CCF296</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>ED513634-4FBC-4258-AF29-9F6214C05D28</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://icyleaf.com</string>
+</dict>
+</plist>

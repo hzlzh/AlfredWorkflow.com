@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.temikus.octopress</string>
+	<key>connections</key>
+	<dict>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>866DC277-A235-48C2-ABE7-FE3B1A772CE2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F8FE8DC5-F5ED-44BA-8D6D-B21278B6DF1E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Artem Yakimenko</string>
+	<key>description</key>
+	<string>Create a blogpost in octopress</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Octopress publish</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>blog</string>
+				<key>subtext</key>
+				<string>Create a new blog post via octopress</string>
+				<key>text</key>
+				<string>Octopress publish</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+#Path to your octopress installation
+OCTOPATH='/your/path/to/octopress'
+#Editor to open the new markdown post in
+EDITORAPP=Mou
+
+if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
+
+      source "$HOME/.rvm/scripts/rvm"
+fi
+
+#Exporting encoding
+export 'LC_CTYPE=en_US.UTF-8'
+
+cd $OCTOPATH
+rvm use 1.9.3@octopress
+OCTOPOST=$(rake new_post['{query}']| grep -o 'source/_posts/.*')
+open -a "$EDITORAPP" $OCTOPATH/$OCTOPOST</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+#Path to your octopress installation
+OCTOPATH='/your/path/to/octopress'
+
+if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
+      source "$HOME/.rvm/scripts/rvm"
+fi
+
+cd $OCTOPATH
+rvm use 1.9.3@octopress
+rake generate
+
+if [[ $? -eq 0 ]] ; then
+    terminal-notifier -message "Blog generated successfully!" -title "Octopress - Alfred"
+else
+    terminal-notifier -message "Errors while generating static content. Check the console." -title "Octopress - Alfred"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F8FE8DC5-F5ED-44BA-8D6D-B21278B6DF1E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>blog generate</string>
+				<key>subtext</key>
+				<string>Generate static content with Jekyll</string>
+				<key>text</key>
+				<string>Octopress generate</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>866DC277-A235-48C2-ABE7-FE3B1A772CE2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+#NOTE
+#This is a debug version of the script. 
+#You can use it to collect debugging information from rake if something goes wrong.
+#####
+
+#Path to your octopress installation
+OCTOPATH='/your/path/to/octopress'
+#Editor to open the new markdown post in
+EDITORAPP=Mou
+#Path to write traces to
+TRACEPATH='~/Desktop'
+
+pwd &gt;&gt; $TRACEPATH/op_trace.log
+
+echo {query} &gt;&gt; $TRACEPATH/op_trace.log
+
+if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
+
+      source "$HOME/.rvm/scripts/rvm"
+fi
+
+#Exporting encoding
+export 'LC_CTYPE=en_US.UTF-8'
+
+cd $OCTOPATH
+rvm use 1.9.3@octopress
+pwd &gt;&gt; $TRACEPATH/op_trace.log
+OCTOPOST=$(rake -t new_post['{query}'] 2&gt;&amp;1 | tee $TRACEPATH/op_trace.log/op_rake.log | grep -o 'source/_posts/.*')
+open -a "$EDITORAPP" $OCTOPATH/$OCTOPOST</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>49FFC567-FE69-4AD6-A270-A2CC83D09086</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This Alfred extension automatically creates a post and opens the markdown file for it in your editor of choice (it uses Mou by default).
+Before you start using the extension, you will need to set the 'OCTOPATH' variable to your octopress installation directory and ‘EDITORAPP to your favourite editor.
+
+Usage:
+blog Awesome post
+	Create a new blog post, named "Awesome post"
+blog generate
+	Launch static page generation via Jekyll.
+
+Note: if you want to get a notification when generation is complete, you need to install the terminal-notifier gem:
+	
+	'gem install terminal-notifier'
+
+If you have any requests or suggestions, feel free to poke me on GitHub: 
+https://github.com/temikus</string>
+	<key>uidata</key>
+	<dict>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>49FFC567-FE69-4AD6-A270-A2CC83D09086</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>866DC277-A235-48C2-ABE7-FE3B1A772CE2</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>F8FE8DC5-F5ED-44BA-8D6D-B21278B6DF1E</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.temikus.net/</string>
+</dict>
+</plist>

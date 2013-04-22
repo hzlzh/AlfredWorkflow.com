@@ -1,0 +1,28 @@
+#!/bin/bash
+
+browser="$(getPref browser 1)"
+
+# Get browser's frontmost tab's url and title, and set the tags for Pinboard
+# Arguments must be url-encoded (hence the 'perl')
+if [[ $(echo ${browser} | tr [:upper:] [:lower:]) == "chrome" ]]; then
+  url=$(osascript -e 'tell application "Google Chrome" to return URL of active tab of front window' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+  title=$(osascript -e 'tell application "Google Chrome" to return title of active tab of front window' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+elif [[ $(echo ${browser} | tr [:upper:] [:lower:]) == "safari" ]]; then
+  url=$(osascript -e 'tell application "Safari" to return URL of front document' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+  title=$(osascript -e 'tell application "Safari" to return name of front document' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+elif [[ $(echo ${browser} | tr [:upper:] [:lower:]) == "webkit" ]]; then
+  url=$(osascript -e 'tell application "Webkit" to return URL of front document' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+  title=$(osascript -e 'tell application "Webkit" to return name of front document' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+elif [[ $(echo ${browser} | tr [:upper:] [:lower:]) == "chromecanary" ]]; then
+  url=$(osascript -e 'tell application "Google Chrome Canary" to return URL of active tab of front window' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+  title=$(osascript -e 'tell application "Google Chrome Canary" to return title of active tab of front window' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+elif [[ $(echo ${browser} | tr [:upper:] [:lower:]) == "opera" ]]; then
+  url=$(osascript -e 'tell application "Opera" to return URL of front document' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+  title=$(osascript -e 'tell application "Opera" to return name of front document' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+elif [[ $(echo ${browser} | tr [:upper:] [:lower:]) == "camino" ]]; then
+  url=$(osascript -e 'tell application "Camino" to return URL of current tab of front browser window' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+  title=$(osascript -e 'tell application "Camino" to return name of current tab of front browser window' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+fi
+
+setPref url ${url} 0 titleandurl
+setPref title ${title} 0 titleandurl

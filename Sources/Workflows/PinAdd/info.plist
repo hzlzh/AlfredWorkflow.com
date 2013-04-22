@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.vitorgalvao.alfred.pinadd</string>
+	<key>connections</key>
+	<dict>
+		<key>147225F5-C2E2-4FE1-AACF-B43D4F9394C2</key>
+		<array/>
+		<key>41A5A177-9A68-4BE7-870A-2F6797AC2464</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A3481C3B-1483-419B-96C7-CB2CC0A40433</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>6C356EDF-5EEF-408C-8C92-14DC26E5F05C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E229E8F1-226C-4996-A83D-C181DAEFB268</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A3481C3B-1483-419B-96C7-CB2CC0A40433</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>3CBD80B1-2C96-442C-86AB-93BA5F5FC2FD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EB540A71-1528-4CD8-BF49-FF90C76826DB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A3481C3B-1483-419B-96C7-CB2CC0A40433</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B3C81DF2-524D-4044-BAC1-6BDA9DA6A6FF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Vítor Galvão</string>
+	<key>description</key>
+	<string>Takes arguments as tags and adds your browser’s frontmost tab as a pinboard bookmark</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>PinAdd</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pi</string>
+				<key>runningsubtext</key>
+				<string>Getting url and title of frontmost tab…</string>
+				<key>script</key>
+				<string>source ./workflowHandler.sh
+
+# addResult "uid" "arg" "title" "subtitle" "icon" "valid" "autocomplete"
+
+if [[ ! -d "$(getDataDir)" ]]; then
+	addResult "Configure PinAdd Warning" "" "Your account isn't configured yet" "run configurepinadd to set it" "icon.png" "yes" ""
+else
+	source ./setTitleAndURL
+fi
+
+# get feedback xml
+echo "$(getXMLResults)"</string>
+				<key>subtext</key>
+				<string>Please wait…</string>
+				<key>title</key>
+				<string>PinAdd</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>147225F5-C2E2-4FE1-AACF-B43D4F9394C2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Operation done</string>
+				<key>title</key>
+				<string>PinAdd</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A3481C3B-1483-419B-96C7-CB2CC0A40433</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>pin</string>
+				<key>subtext</key>
+				<string>Adds a bookmark</string>
+				<key>text</key>
+				<string>Add bookmark</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EB540A71-1528-4CD8-BF49-FF90C76826DB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>./pinadd "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>B3C81DF2-524D-4044-BAC1-6BDA9DA6A6FF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>./pinadd "{{setAsPrivate}} {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>6C356EDF-5EEF-408C-8C92-14DC26E5F05C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pin</string>
+				<key>subtext</key>
+				<string>Adds a bookmark as private</string>
+				<key>text</key>
+				<string>Add private bookmark</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>41A5A177-9A68-4BE7-870A-2F6797AC2464</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>configurepinadd</string>
+				<key>subtext</key>
+				<string>your-api-token your-preferred-browser</string>
+				<key>text</key>
+				<string>Configure your account</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E229E8F1-226C-4996-A83D-C181DAEFB268</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>./pinadd "{{configureYourAccount}} {query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>3CBD80B1-2C96-442C-86AB-93BA5F5FC2FD</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>147225F5-C2E2-4FE1-AACF-B43D4F9394C2</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>3CBD80B1-2C96-442C-86AB-93BA5F5FC2FD</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>41A5A177-9A68-4BE7-870A-2F6797AC2464</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>6C356EDF-5EEF-408C-8C92-14DC26E5F05C</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>A3481C3B-1483-419B-96C7-CB2CC0A40433</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B3C81DF2-524D-4044-BAC1-6BDA9DA6A6FF</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>E229E8F1-226C-4996-A83D-C181DAEFB268</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>EB540A71-1528-4CD8-BF49-FF90C76826DB</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://vitorgalvao.com/</string>
+</dict>
+</plist>

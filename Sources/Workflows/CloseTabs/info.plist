@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<array/>
+		<key>836FDD3A-7AAF-4E15-BE48-DEB3FB8670AA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E64E56DF-72C9-4D8C-8F21-B9AC6879CC2F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F282C1C3-4FE9-4337-88C5-0C3E527C29DB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>MacGeeky</string>
+	<key>description</key>
+	<string>Close every tab to the left or right for the active tab in Safari with keyboard shortcuts</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>CloseTabs</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>836FDD3A-7AAF-4E15-BE48-DEB3FB8670AA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "Safari"
+	set cWindow to first item of windows
+	set ctIndex to index of «class cTab» of cWindow
+	repeat ctIndex - 1 times
+		close first item of every «class bTab» of cWindow
+	end repeat
+end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F282C1C3-4FE9-4337-88C5-0C3E527C29DB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>
+
+on alfred_script(q)
+  tell application "Safari"
+	set cWindow to first item of windows
+	set ctIndex to index of «class cTab» of cWindow
+	repeat while (count of every «class bTab» of cWindow) &gt; ctIndex
+		close last item of every «class bTab» of cWindow
+	end repeat
+end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>E64E56DF-72C9-4D8C-8F21-B9AC6879CC2F</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Safari:
+
+Close all tabs to the right with the following key combination:
+Command + right arrow
+
+Close all tabs to the left with the following key combination:
+Command + left arrow</string>
+	<key>uidata</key>
+	<dict>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>836FDD3A-7AAF-4E15-BE48-DEB3FB8670AA</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>E64E56DF-72C9-4D8C-8F21-B9AC6879CC2F</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>F282C1C3-4FE9-4337-88C5-0C3E527C29DB</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://macgeeky.no</string>
+</dict>
+</plist>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.upblog.alternativeto</string>
+	<key>connections</key>
+	<dict>
+		<key>00817CF0-8621-47EB-9473-E5CD1A86DA18</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3BCB4672-DA3D-455F-84C0-2CBE4F72DE3B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Cheng Yao</string>
+	<key>description</key>
+	<string>Find Alternative Apps on alternativeto.net</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>AlternativeTo</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>3BCB4672-DA3D-455F-84C0-2CBE4F72DE3B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>an</string>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$w = new Workflows();
+$query = urlencode( "{query}" );
+$url = "http://api.alternativeto.net/software/$query/?count=8&amp;platform=mac";
+$suggestions = $w-&gt;request( $url );
+$suggestions = json_decode( $suggestions );
+
+if ($suggestions-&gt;ID) {
+
+  // queried app
+  $w-&gt;result( $suggestions-&gt;ID,
+    $suggestions-&gt;Url,
+    $suggestions-&gt;Name . " ({$suggestions-&gt;License})" . " [{$suggestions-&gt;Votes}]",
+    $suggestions-&gt;ShortDescription,
+    'icon.png');
+
+  // alternatives
+  foreach( $suggestions-&gt;Items as $suggest ){
+    $w-&gt;result( $suggest-&gt;ID, 
+    $suggest-&gt;Url, 
+    $suggest-&gt;Name . " ({$suggest-&gt;License})" . " [{$suggest-&gt;Votes}]",
+    $suggest-&gt;ShortDescription, 
+    'icon.png');
+  }
+}  else {
+  $w-&gt;result( 'alternativeto', "http://alternativeto.net/SearchResult.aspx?search={$query}&amp;platform=mac&amp;sort=defaultSort", "Could not found '{$query}'", "Try alternative search...", 'icon.png', 'yes' );
+}
+
+echo $w-&gt;toxml();</string>
+				<key>title</key>
+				<string>Find Alternative Apps</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>00817CF0-8621-47EB-9473-E5CD1A86DA18</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>00817CF0-8621-47EB-9473-E5CD1A86DA18</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>3BCB4672-DA3D-455F-84C0-2CBE4F72DE3B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>upblog.net</string>
+</dict>
+</plist>

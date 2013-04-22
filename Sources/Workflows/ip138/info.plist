@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>hellosa.alfredappv2.ip138</string>
+	<key>connections</key>
+	<dict>
+		<key>6E09078E-98E5-4169-88AF-FCBB137FA008</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B44B11F1-14BE-4619-BB2A-8513E33BE762</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>hellosa</string>
+	<key>description</key>
+	<string>查询 ip 归属地</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ip138</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>ip138</string>
+				<key>runningsubtext</key>
+				<string>查询中...</string>
+				<key>script</key>
+				<string>ip='{query}'
+
+sleep 1
+
+# get the result
+url="http://www.ip138.com/ips138.asp?ip=${ip}&amp;action=2"
+result=`curl -s $url | grep '&lt;ul class="ul1"&gt;' | iconv -f gbk -t utf8`
+#echo $result
+
+# how many results ?
+n=`echo $result | awk -F "&lt;li&gt;" '{print NF-1}'`
+#echo $n
+
+/bin/echo '&lt;?xml version="1.0"?&gt;'
+/bin/echo '&lt;items&gt;'
+i=0
+while [ $i -lt $n ] ; do
+    j=$[ $i + 2]
+    #echo $j
+    addr=`echo $result |  awk -F '&lt;li&gt;' '{print $"'"$j"'" }' | awk -F '&lt;/li&gt;' '{print $1}' | awk -F '：' '{print $2}'`
+    subtitle=`echo $result |  awk -F '&lt;li&gt;' '{print $"'"$j"'" }' | awk -F '&lt;/li&gt;' '{print $1}' | awk -F '：' '{print $1}'`
+    uid=`echo $addr | md5sum | awk '{print $1}'`
+
+    echo '&lt;item uid="'$uid'" arg="'$addr'"&gt;'
+    echo '&lt;title&gt;'$addr'&lt;/title&gt;'
+    echo '&lt;subtitle&gt;'$subtitle'&lt;/subtitle&gt;'
+    echo '&lt;icon&gt;icon.png&lt;/icon&gt;'
+    echo '&lt;/item&gt;'
+    let i++
+done
+/bin/echo '&lt;/items&gt;'</string>
+				<key>subtext</key>
+				<string>使用 ip138 查询 ip 归属地</string>
+				<key>title</key>
+				<string>ip138</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6E09078E-98E5-4169-88AF-FCBB137FA008</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>B44B11F1-14BE-4619-BB2A-8513E33BE762</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>6E09078E-98E5-4169-88AF-FCBB137FA008</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>B44B11F1-14BE-4619-BB2A-8513E33BE762</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://blog.hellosa.org/</string>
+</dict>
+</plist>

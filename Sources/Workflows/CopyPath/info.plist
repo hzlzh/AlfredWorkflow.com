@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.lucatnt.copypath</string>
+	<key>connections</key>
+	<dict>
+		<key>5D2EEEE3-220B-41FF-934E-FB25C7ED8A1B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1A76CEC1-38BD-4B45-BF44-83DB989104F6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Luca Zorzi</string>
+	<key>description</key>
+	<string>Copies the path of the Finder selection to the clipboard</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>CopyPath</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>path</string>
+				<key>subtext</key>
+				<string>Copy path of Finder Selection to the clipboard</string>
+				<key>text</key>
+				<string>Copy Path</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5D2EEEE3-220B-41FF-934E-FB25C7ED8A1B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "Finder"
+	set theItems to selection
+	set filePath to (POSIX path of (the selection as alias))
+  end tell
+  set the clipboard to filePath
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>1A76CEC1-38BD-4B45-BF44-83DB989104F6</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1A76CEC1-38BD-4B45-BF44-83DB989104F6</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>5D2EEEE3-220B-41FF-934E-FB25C7ED8A1B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.lucatnt.com/</string>
+</dict>
+</plist>

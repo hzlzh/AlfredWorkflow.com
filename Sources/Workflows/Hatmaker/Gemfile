@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+gem 'alfred-workflow', '>= 1.6.0'
+gem 'logging'
+gem 'oj'
+gem 'plist'

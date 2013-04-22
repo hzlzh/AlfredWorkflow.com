@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.icyleaf.alfred.kuaidi</string>
+	<key>connections</key>
+	<dict>
+		<key>C08510C0-E29E-4065-973D-DBBF7C7D7D5F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>65D5825E-92CC-482C-B518-70ADC7EFD750</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E197F7E1-D206-4363-B970-0C9CAE312745</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EBDBA045-98F6-4699-B713-ABA3B1C9A159</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>访问官网网站</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C08510C0-E29E-4065-973D-DBBF7C7D7D5F</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>拷贝快递公司电话（剪切板）</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7D088E7-84E6-4BC3-BD51-54927D5A9851</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>icyleaf</string>
+	<key>description</key>
+	<string>使用【快递100】的数据查询快递物流状态</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>快递速查</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>args = "{query}".split('-[icyleaf]-')
+
+print args[0]</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C08510C0-E29E-4065-973D-DBBF7C7D7D5F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>65D5825E-92CC-482C-B518-70ADC7EFD750</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>kd</string>
+				<key>runningsubtext</key>
+				<string>正在努力工作中</string>
+				<key>script</key>
+				<string>from feedback import Feedback
+from kuaidi import Kuaidi
+
+q = '{query}'
+kd = Kuaidi()
+kd.is_terminal = False
+
+if not q:
+	kd.companies_list()
+elif q.find(' ') &gt; 0:
+	a = q.split(' ')
+	c = a[0]
+	n = a[1]
+
+	kd.tracking_search(n, company=c)
+else:
+	kd.company_search(q)
+	
+</string>
+				<key>subtext</key>
+				<string>kd 快递公司 单号 (e.g. kd shunfeng 332323232323)</string>
+				<key>title</key>
+				<string>快递查询</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E197F7E1-D206-4363-B970-0C9CAE312745</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application id default_Browser()
+		set theArray to my splitString(q, "-[icyleaf]-")
+		set theUrl to item 2 of theArray
+
+		open location theUrl	end tellend alfred_script
+
+
+on default_Browser()	tell (system attribute "sysv") to set MacOS_version to it mod 4096 div 16	if MacOS_version is 5 then		set {a1, a2} to {1, 2}	else		set {a1, a2} to {2, 1}	end if	set pListpath to (path to preferences as Unicode text) &amp; "com.apple.LaunchServices.plist"	tell application "System Events"		repeat with i in property list items of property list item 1 of contents of property list file pListpath			if value of property list item a2 of i is "http" then				return value of property list item a1 of i			end if		end repeat		return "com.apple.Safari"	end tellend default_Browserto splitString(aString, delimiter)	set retVal to {}	set prevDelimiter to AppleScript's text item delimiters	log delimiter	set AppleScript's text item delimiters to {delimiter}	set retVal to every text item of aString	set AppleScript's text item delimiters to prevDelimiter	return retValend splitString</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>EBDBA045-98F6-4699-B713-ABA3B1C9A159</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>E7D088E7-84E6-4BC3-BD51-54927D5A9851</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>#Desc:	使用【快递100】的数据查询快递物流状态
+#Use:	kd &lt;company&gt; &lt;order_id&gt;</string>
+	<key>uidata</key>
+	<dict>
+		<key>65D5825E-92CC-482C-B518-70ADC7EFD750</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>C08510C0-E29E-4065-973D-DBBF7C7D7D5F</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>E197F7E1-D206-4363-B970-0C9CAE312745</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>E7D088E7-84E6-4BC3-BD51-54927D5A9851</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>EBDBA045-98F6-4699-B713-ABA3B1C9A159</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://icyleaf.com</string>
+</dict>
+</plist>

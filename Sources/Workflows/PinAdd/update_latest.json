@@ -1,0 +1,5 @@
+{
+	"version": 2.0,
+	"download_url": "https://raw.github.com/vitorgalvao/alfred-workflows/master/bin/PinAdd.alfredworkflow",
+	"description": "'Add a bookmark' will now add a public one, even if the account is configured to post private ones for default"
+}

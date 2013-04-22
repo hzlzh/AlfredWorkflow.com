@@ -1,0 +1,63 @@
+
+purpose    : TestA
+description: This is the 1st YAML doc
+say        : Hi
+
+---
+# *** YAML2LOGGING ***
+logging_config:
+  # define all pre config ...
+  pre_config:
+    define_levels:
+      - DEB
+      - INF
+      - PRT
+      - WRN
+      - ERR
+      - FAT
+    format_as   : inspect
+    root:
+      level     : WRN
+
+  # define all loggers ...
+  loggers:
+    - name      : mylogger
+      level     : DEB
+      additive  : false
+      trace     : false      
+      appenders:
+        - stderr
+        - logfile 
+
+    - name      : yourlogger
+      level     : INF 
+      appenders: 
+        - stderr
+        - logfile 
+
+  # define all appenders (incl. layouts)      
+  appenders:
+    - type          : Stderr
+      name          : stderr 
+      level         : DEB
+      layout:
+        type        : Basic
+        format_as   : string
+
+    - type          : File
+      name          : logfile
+      level         : DEB
+      filename      : 'tmp/temp.log'
+      truncate      : true
+      layout:
+        type        : Pattern
+        date_method : to_s
+        pattern     : '[%d] %l  %c : %m\n'
+  
+---
+purpose    : TestB
+description: This is the last YAML doc
+say        : Bye
+
+
+# EOF  
