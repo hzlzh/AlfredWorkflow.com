@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>de.stetro.lovefilm</string>
+	<key>connections</key>
+	<dict>
+		<key>F62EFE82-9E4A-46A4-B23A-A39AC1A6AEA4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>35154E73-AE41-4C80-9B1D-6030BF1DA94D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Steffen Tröster</string>
+	<key>description</key>
+	<string>Search LOVEFiLM library</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>LOVEFiLM Search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>35154E73-AE41-4C80-9B1D-6030BF1DA94D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>love</string>
+				<key>runningsubtext</key>
+				<string>loading ...</string>
+				<key>script</key>
+				<string>python lovefilm.py de "{query}"</string>
+				<key>subtext</key>
+				<string>Search LOVEFiLM with autocompletion.</string>
+				<key>title</key>
+				<string>Search LOVEFiLM '{query}'</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F62EFE82-9E4A-46A4-B23A-A39AC1A6AEA4</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Searchs LOVEFiLM library with autocompletion</string>
+	<key>uidata</key>
+	<dict>
+		<key>35154E73-AE41-4C80-9B1D-6030BF1DA94D</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>F62EFE82-9E4A-46A4-B23A-A39AC1A6AEA4</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>stetro.wordpress.com</string>
+</dict>
+</plist>
