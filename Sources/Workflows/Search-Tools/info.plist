@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>pi1ot.searchtools</string>
 	<key>connections</key>
 	<dict>
 		<key>13B6CFF6-AB27-4934-92B1-AA290E63AF93</key>
@@ -29,6 +29,17 @@
 			</dict>
 		</array>
 		<key>50C7835B-93A6-43A4-88E5-A1FD257A38C1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FE48BE9F-8CD0-442D-A4CD-71E545104B23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>948ECBA7-261A-4F0B-B39E-4923BF484583</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -80,34 +91,13 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>k</string>
-				<key>script</key>
-				<string>python search.py wiki {query}</string>
-				<key>title</key>
-				<string>Search Wiki for {query}...</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>BA178525-ABC7-47B0-B553-8A9A96365FBE</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>keyword</key>
 				<string>n</string>
+				<key>runningsubtext</key>
+				<string>Searching {query} ...</string>
 				<key>script</key>
 				<string>python search.py sina {query}</string>
 				<key>title</key>
-				<string>Search Sina News for {query}...</string>
+				<string>Search Sina News for {query}</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -121,25 +111,17 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>keyword</key>
-				<string>w</string>
-				<key>script</key>
-				<string>python search.py weibo {query}</string>
-				<key>title</key>
-				<string>Search Weibo for {query}...</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>50C7835B-93A6-43A4-88E5-A1FD257A38C1</string>
+			<string>FE48BE9F-8CD0-442D-A4CD-71E545104B23</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -150,10 +132,12 @@
 				<integer>63</integer>
 				<key>keyword</key>
 				<string>z</string>
+				<key>runningsubtext</key>
+				<string>Searching {query} ...</string>
 				<key>script</key>
 				<string>python search.py zhihu {query}</string>
 				<key>title</key>
-				<string>Search Zhihu for {query}...</string>
+				<string>Search Zhihu for {query}</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -172,11 +156,63 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
+				<string>w</string>
+				<key>runningsubtext</key>
+				<string>Searching {query} ...</string>
+				<key>script</key>
+				<string>python search.py weibo {query}</string>
+				<key>title</key>
+				<string>Search Weibo for {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>50C7835B-93A6-43A4-88E5-A1FD257A38C1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>k</string>
+				<key>runningsubtext</key>
+				<string>Searching {query} ...</string>
+				<key>script</key>
+				<string>python search.py wiki {query}</string>
+				<key>title</key>
+				<string>Search Wiki for {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>BA178525-ABC7-47B0-B553-8A9A96365FBE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
 				<string>g</string>
+				<key>runningsubtext</key>
+				<string>Searching {query} ...</string>
 				<key>script</key>
 				<string>python search.py google {query}</string>
 				<key>title</key>
-				<string>Search Google for {query}...</string>
+				<string>Search Google for {query}</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -190,21 +226,31 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>imf</string>
+				<key>runningsubtext</key>
+				<string>searching {query} ...</string>
+				<key>script</key>
+				<string>python search.py imfdb {query}</string>
+				<key>title</key>
+				<string>Search IMFDB for {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>FE48BE9F-8CD0-442D-A4CD-71E545104B23</string>
+			<string>948ECBA7-261A-4F0B-B39E-4923BF484583</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>v0.1</string>
+	<string>v0.5</string>
 	<key>uidata</key>
 	<dict>
 		<key>13B6CFF6-AB27-4934-92B1-AA290E63AF93</key>
@@ -221,6 +267,11 @@
 		<dict>
 			<key>ypos</key>
 			<real>250</real>
+		</dict>
+		<key>948ECBA7-261A-4F0B-B39E-4923BF484583</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
 		</dict>
 		<key>A2A0A287-0C74-4968-AA52-092D3F5E25FC</key>
 		<dict>

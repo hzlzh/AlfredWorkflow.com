@@ -2,7 +2,9 @@
 
 import urllib2
 import urllib
+import cookielib
 import json
+import HTMLParser
 import re
 import alfred
 
@@ -10,28 +12,43 @@ import alfred
 def strip_html( html ):
     p = re.compile( r"<.*?>" )
     return p.sub( "", html )
+    
+def unescape_html( html ):
+	html_parser = HTMLParser.HTMLParser()
+	return html_parser.unescape( html )
 
 def set_proxy():
 	proxy = "http://127.0.0.1:8087" # goagent proxy
 	if proxy != "":
-		proxy_handler = urllib2.ProxyHandler( {"http":proxy} ) 
-		opener = urllib2.build_opener( proxy_handler )
+		cookies = cookielib.CookieJar()
+		proxy_handler = urllib2.ProxyHandler( {"http":proxy} )
+		opener = urllib2.build_opener( proxy_handler, urllib2.HTTPCookieProcessor(cookies) )
+		
+		#httpHandler = urllib2.HTTPHandler( debuglevel=1 )
+		#httpsHandler = urllib2.HTTPSHandler( debuglevel=1 )
+		#opener = urllib2.build_opener( httpHandler, httpsHandler,
+		#	proxy_handler, urllib2.HTTPCookieProcessor(cookies) )
+
 		urllib2.install_opener( opener )
 	return
 
 ################################################################################
 def search_sina( query ):
-	params = { "c":"news", "sort":"rel", "range":"all", "ie":"utf-8", "video":"1", "q":query }
-	response = json.loads( urllib2.urlopen("http://api.search.sina.com.cn/?"+urllib.urlencode(params)).read() )
+	args = { "app_key":"1335320450", "c":"news", "sort":"rel", "range":"all", "ie":"utf-8", "video":"1", "q":query }
+	response = json.loads( urllib2.urlopen("http://platform.sina.com.cn/search/search?"+urllib.urlencode(args)).read() )
 	news = response["result"]["list"]
 	result = []
 	
-	default_link = "http://search.sina.com.cn/?c=news&q=" + urllib.urlencode( params )
-	result.append( alfred.Item( {"uid":"0", "arg":default_link}, u"更多详细结果……", default_link, ("sina.png") ) )
-	
+	default_title = u"更多详细结果……"
+	if len(news) == 0:
+		default_title = u"找不到结果，请使用网页查询……"
+	default_link = "http://search.sina.com.cn/?c=news&q=" + urllib.urlencode( args )
+	result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, default_title, default_link, ("sina.png") ) )
+		
 	for n in news:
 		result.append( alfred.Item( {"uid":alfred.uid(n["url"]), "arg":n["url"]}, 
-			n["title"], n["datetime"]+" "+n["url"], ("sina.png")) ) 
+			unescape_html(n["title"]), n["datetime"]+" "+n["url"], ("sina.png")) )
+
 	return result
 	
 ################################################################################
@@ -42,34 +59,56 @@ def search_wiki( query ):
 	wiki = response["query"]["search"]
 	result = []
 	
+	default_title = u"更多详细结果……"
+	if len(wiki) == 0:
+		default_title = u"找不到结果，请使用网页查询……"
 	default_link = "https://zh.wikipedia.org/w/index.php?" + urllib.urlencode({"search":query})
-	result.append( alfred.Item( {"uid":"0", "arg":default_link}, u"更多详细结果……", default_link, ("wiki.png") ) )
+	result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, default_title, default_link, ("wiki.png") ) )
 
 	for w in wiki:
 		link = u"https://zh.wikipedia.org/wiki/" + urllib.quote( w["title"].encode("utf8") )
-		result.append( alfred.Item( {"uid":alfred.uid(w["title"]), "arg":link, "autocomplete":w["title"]}, 
-			w["title"], link, ("wiki.png")) ) 
+		result.append( alfred.Item( {"uid":alfred.uid(w["title"]), "arg":link}, 
+			unescape_html(w["title"]), link, ("wiki.png")) ) 
 	return result
 	
 ################################################################################
+def search_imfdb( query ):
+	args = { "action":"query", "list":"search", "srprop":"timestamp", "format":"json", "srsearch":query }
+	response = json.loads( urllib2.urlopen("http://www.imfdb.org/api.php?"+urllib.urlencode(args)).read() )
+	wiki = response["query"]["search"]
+	result = []
+	
+	default_title = u"更多详细结果……"
+	if len(wiki) == 0:
+		default_title = u"找不到结果，请使用网页查询……"
+	default_link = "http://www.imfdb.org/index.php?" + urllib.urlencode({"search":query})
+	result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, default_title, default_link, ("imfdb.png") ) )
+
+	for w in wiki:
+		link = u"http://www.imfdb.org/wiki/" + urllib.quote( w["title"].encode("utf8") )
+		result.append( alfred.Item( {"uid":alfred.uid(w["title"]), "arg":link}, 
+			unescape_html(w["title"]), link, ("imfdb.png")) ) 
+	return result
+
+################################################################################
 def search_google( query ):
 	set_proxy()
-	args = { "hl":"zh", "q":query }
-	request=urllib2.Request( "https://www.google.com/search?"+urllib.urlencode(args), None, 
+	args = { "hl":"zh-CN", "q":query }
+	request=urllib2.Request( "https://www.google.com.hk/search?"+urllib.urlencode(args), None, 
 		{'User-Agent':"Mozilla/5.0 (iPhone; CPU iPhone OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B179 Safari/7534.48.3",} )
 	response = urllib2.urlopen( request ).read().replace("rwt(","\nrwt(").split("\n")
 	
 	result = []
 	default_link = "https://www.google.com/search?" + urllib.urlencode( args )
-	result.append( alfred.Item( {"uid":"0", "arg":default_link}, u"更多详细结果……", default_link, ("google.png") ) )
+	result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, u"更多详细结果……", default_link, ("google.png") ) )
 
 	buffer_line = ""
 	prev_line = ""
 	for line in response:
-		
+
 		prev_line = buffer_line
 		buffer_line = line
-		if line.find("rwt(")==-1 or line.find("<em>")==-1:
+		if "rwt(" not in line or "<em>" not in line:
 			continue
 			
 		title_begin = line.find("event)\">")
@@ -78,13 +117,19 @@ def search_google( query ):
 			continue
 		title = strip_html( line[title_begin+8:title_end] )
 		
-		link_begin = prev_line.find("<a href=\"http")
+		link_begin = prev_line.rfind("<a href=\"http")
 		link_end = prev_line.find("\" ",link_begin)
 		if link_begin==-1 or link_end==-1:
 			continue
-		link = strip_html( prev_line[link_begin+13:link_end] )
+		link = strip_html( prev_line[link_begin+9:link_end] )
 		
-		result.append( alfred.Item( {"uid":alfred.uid(link), "arg":link}, unicode(title,"utf-8"), unicode(link,"utf-8"), ("google.png")) ) 
+		result.append( alfred.Item( {"uid":alfred.uid(link), "arg":link}, 
+			unescape_html(unicode(title,"utf-8")), unicode(link,"utf-8"), ("google.png")) )
+	
+	if len(result) == 1:
+		result = []
+		result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, u"找不到结果，请使用网页查询……", default_link, ("google.png") ) )
+	
 	return result
 
 ################################################################################
@@ -94,7 +139,7 @@ def search_zhihu( query ):
 	
 	result = []
 	default_link = "http://www.zhihu.com/search?" + urllib.urlencode(params)
-	result.append( alfred.Item( {"uid":"0", "arg":default_link}, u"更多详细结果……", default_link, ("zhihu.png") ) )
+	result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, u"更多详细结果……", default_link, ("zhihu.png") ) )
 	
 	title = ""
 	link = ""
@@ -103,14 +148,14 @@ def search_zhihu( query ):
 		# <a class="question_link" target="_blank" href="/question/{id}">{title}</a>
 		# <a href="/question/{id}" class="answer zg-link-gray" target="_blank"><i></i>{answers}</a><a
 
-		if line.find("question_link") != -1:
+		if "question_link" in line:
 			title_begin = line.find( "\">" )
 			title_end = line.rfind( "</a>" )
 			if title_begin==-1 or title_end==-1:
 				continue
 			title = strip_html( line[title_begin+2:title_end] )
 			
-		elif line.find("answer")!=-1 and title!="":
+		elif "answer" in line and title!="":
 			link_begin = line.find( "<a href=\"/question/" )
 			link_end = line.find( "\" class=\"answer" )
 			answers_begin = line.find( "<i></i>" )
@@ -124,7 +169,7 @@ def search_zhihu( query ):
 			# append
 			if title!="" and link!="" and answers!="":
 				result.append( alfred.Item( {"uid":alfred.uid(link), "arg":"http://www.zhihu.com/question/"+link}, 
-					unicode(title,"utf-8"), unicode(answers,"utf-8"), ("zhihu.png")) )				
+					unescape_html(unicode(title,"utf-8")), unicode(answers,"utf-8"), ("zhihu.png")) )				
 			# next
 			title = ""
 			link = ""
@@ -133,26 +178,33 @@ def search_zhihu( query ):
 		else:
 			continue
 		
+	if len(result) == 1:
+		result = []
+		result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, u"找不到结果，请使用网页查询……", default_link, ("zhihu.png") ) )
+	
 	return result
 
 ################################################################################
 def search_weibo( query ):
 	params = { "xsort":"time" }
-	response = urllib2.urlopen( "http://s.weibo.com/weibo/"+query+"&"+urllib.urlencode(params) ).read().decode("unicode-escape").split( "\n" )
+	response = urllib2.urlopen( "http://s.weibo.com/weibo/"+urllib.quote_plus(query)
+		+"&"+urllib.urlencode(params) ).read().decode("unicode-escape").split( "\n" )
 	
 	result = []
-	#escaped = unicode(query,"utf-8").encode("unicode-escape").replace("\u","%")
-	default_link = u"http://s.weibo.com/weibo/" + query + "&" + urllib.urlencode(params)
-	result.append( alfred.Item( {"uid":"0", "arg":default_link}, u"更多详细结果……", default_link, ("weibo.png") ) )
+	default_link = u"http://s.weibo.com/weibo/" + urllib.quote_plus(query) + "&" + urllib.urlencode(params)
+	result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, u"更多详细结果……", default_link, ("weibo.png") ) )
 	
 	name = ""
 	weibo = ""
 	link = ""	
 	for line in response:
-		if line.find("pincode") != -1:
+		if "pincode" in line:
 			result.append( alfred.Item( {"uid":alfred.uid(link), "arg":link}, u"搜素行为异常，请退出微博登录并打开以下网页输入验证码", default_link, ("weibo.png")) )				
 		
-		elif line.find("nick-name") != -1:
+		if u"您可能感兴趣的结果" in line:
+			break				
+
+		elif "nick-name" in line:
 			content = strip_html( line )
 			weibo_pos = content.find( u"：" )
 			if weibo_pos == -1:
@@ -162,7 +214,7 @@ def search_weibo( query ):
 				name = name[1:]
 			weibo = content[weibo_pos+1:]
 		
-		elif line.find("action-data=\"allowForward")!=-1 and name!="" and weibo!="":
+		elif "action-data=\"allowForward" in line and name!="" and weibo!="":
 			link_begin = line.find( "&url=http:\/\/weibo.com\/" )
 			link_end = line.find( "&mid=" )
 			if link_begin==-1 or link_end==-1:
@@ -174,7 +226,7 @@ def search_weibo( query ):
 
 			# append
 			if name!="" and weibo!="" and link!="":
-				result.append( alfred.Item( {"uid":link, "arg":link}, "@"+name+": "+weibo, link, ("weibo.png")) )				
+				result.append( alfred.Item( {"uid":link, "arg":link}, "@"+name+": "+unescape_html(weibo), link, ("weibo.png")) )
 			# next
 			name = ""
 			weibo = ""
@@ -182,6 +234,10 @@ def search_weibo( query ):
 			
 		else:
 			continue
+	
+	if len(result) == 1:
+		result = []
+		result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, u"找不到结果，请使用网页查询……", default_link, ("weibo.png") ) )
 	
 	return result
 
@@ -197,6 +253,8 @@ def main():
 		result = search_weibo( query )
 	elif param == "wiki":
 		result = search_wiki( query )
+	elif param == "imfdb":
+		result = search_imfdb( query )
 	elif param == "google":
 		result = search_google( query )
 
