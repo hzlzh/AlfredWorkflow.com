@@ -15,7 +15,7 @@ function checkIfResultAlreadyThere($results,$title) {
 	return false;
 }
 
-function getTrackArtwork($spotifyURL) {
+function getTrackArtwork($spotifyURL,$fetchIfNotPresent) {
 	$hrefs = explode(':', $spotifyURL);
 	$w = new Workflows();
 
@@ -26,20 +26,36 @@ function getTrackArtwork($spotifyURL) {
 	$currentArtwork = $w->data() . "/artwork/$hrefs[2].png";
 	
 	
-	if (!file_exists($currentArtwork)) {
-		$artwork = getTrackArtworkURL($hrefs[1], $hrefs[2]);
-		// if return 0, it is a 404 error, no need to fetch
-		if (!empty($artwork) || (is_numeric($artwork) && $artwork != 0)) {
-			$fp = fopen ($currentArtwork, 'w+');
-			$options = array(
-			CURLOPT_FILE =>	$fp	
-			);		
-			$w->request( "$artwork", $options );
+	if (!file_exists($currentArtwork)) 
+	{
+		if($fetchIfNotPresent == true)
+		{
+			$artwork = getTrackArtworkURL($hrefs[1], $hrefs[2]);
+
+			// if return 0, it is a 404 error, no need to fetch
+			if (!empty($artwork) || (is_numeric($artwork) && $artwork != 0)) {
+				$fp = fopen ($currentArtwork, 'w+');
+				$options = array(
+				CURLOPT_FILE =>	$fp
+				);
+				
+				$w->request( "$artwork", $options );
+				
+				if( filesize($currentArtwork) == 0 )
+				{
+					unlink($currentArtwork); 
+					return "images/default_album.png";
+				}
+			}
+		}
+		else
+		{
+			return "images/default_album.png";
 		}
 	}
 	if(is_numeric($artwork) && $artwork == 0)
 	{
-		return "images/albums.png";
+		return "images/default_album.png";
 	}
 	else
 	{
@@ -47,7 +63,7 @@ function getTrackArtwork($spotifyURL) {
 	}
 }
 
-function getArtistArtwork($artist) {
+function getArtistArtwork($artist,$fetchIfNotPresent) {
 	$parsedArtist = urlencode($artist);
 	$w = new Workflows();
 
@@ -57,21 +73,35 @@ function getArtistArtwork($artist) {
 		
 	$currentArtwork = $w->data() . "/artwork/$parsedArtist.png";
 	
-	if (!file_exists($currentArtwork)) {
-		$artwork = getArtistArtworkURL($artist);
-		// if return 0, it is a 404 error, no need to fetch
-		if (!empty($artwork) || (is_numeric($artwork) && $artwork != 0)) {
-			$fp = fopen ($currentArtwork, 'w+');
-			$options = array(
-			CURLOPT_FILE =>	$fp	
-			);		
-			$w->request( "$artwork", $options );
+	if (!file_exists($currentArtwork)) 
+	{
+		if($fetchIfNotPresent == true)
+		{
+			$artwork = getArtistArtworkURL($artist);
+			// if return 0, it is a 404 error, no need to fetch
+			if (!empty($artwork) || (is_numeric($artwork) && $artwork != 0)) {
+				$fp = fopen ($currentArtwork, 'w+');
+				$options = array(
+				CURLOPT_FILE =>	$fp	
+				);		
+				$w->request( "$artwork", $options );
+				
+				if( filesize($currentArtwork) == 0 )
+				{
+					unlink($currentArtwork); 
+					return "images/default_artist.png";
+				}
+			}
+		}
+		else
+		{
+			return "images/default_artist.png";
 		}
 	}
 	
 	if(is_numeric($artwork) && $artwork == 0)
 	{
-		return "images/albums.png";
+		return "images/default_artist.png";
 	}
 	else
 	{
