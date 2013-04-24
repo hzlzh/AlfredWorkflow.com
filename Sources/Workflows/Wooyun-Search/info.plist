@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>wooyun_search</string>
+	<key>connections</key>
+	<dict>
+		<key>BB9F1266-68B0-4833-94B6-F9C2377259BD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EAD9AF7B-5751-4E23-8CFC-05B94777701B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>GaRY</string>
+	<key>description</key>
+	<string>Search Vulnerabilities in Wooyun.org</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Wooyun Search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<true/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>EAD9AF7B-5751-4E23-8CFC-05B94777701B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>wooyun</string>
+				<key>runningsubtext</key>
+				<string>请等待，正在搜索: {query} …</string>
+				<key>script</key>
+				<string>#coding=utf-8
+import urllib2
+import urllib
+from xml.dom.minidom import Document
+from BeautifulSoup import BeautifulSoup
+
+params = urllib.urlencode({"q": "{query}"})
+search = urllib2.urlopen('http://www.wooyun.org/searchbug.php?'+params).read()
+html = BeautifulSoup(search)
+
+doc = Document()
+items = doc.createElement("items")
+for item in html.find('div', attrs={ 'class' : 'search_content' }).ul.findAll('li'):
+    for t in item.findAll('a', attrs={ 'class' : 'atitle' }):
+        title = u''.join(t.findAll(text=True))
+        url = u'http://www.wooyun.org' + t['href']
+        xmlitem = doc.createElement("item")
+        xmlitem.setAttribute("uid", url)
+        xmlitem.setAttribute("arg", url)
+        xmlitem.setAttribute("autocomplete", title)
+        xmlitem.setAttribute("valid", "YES")
+        attr = doc.createElement("title")
+        attr.appendChild(doc.createTextNode(title))
+        xmlitem.appendChild(attr)
+        attr = doc.createElement("icon")
+        attr.appendChild(doc.createTextNode("icon.png"))
+        xmlitem.appendChild(attr)
+        items.appendChild(xmlitem)
+
+doc.appendChild(items)
+print doc.toxml().encode('utf-8')</string>
+				<key>subtext</key>
+				<string>搜索wooyun上的漏洞</string>
+				<key>title</key>
+				<string>Wooyun Search</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>BB9F1266-68B0-4833-94B6-F9C2377259BD</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>BB9F1266-68B0-4833-94B6-F9C2377259BD</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>EAD9AF7B-5751-4E23-8CFC-05B94777701B</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://github.com/wofeiwo/alfred-wooyun-search</string>
+</dict>
+</plist>

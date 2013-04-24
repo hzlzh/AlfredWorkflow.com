@@ -9,71 +9,44 @@ require 'open-uri'
 
 require File.join(File.dirname(__FILE__), 'lib/alfred_workflow')
 require File.join(File.dirname(__FILE__), 'lib/hatmaker')
+require File.join(File.dirname(__FILE__), 'lib/hatmaker/alfred')
+require File.join(File.dirname(__FILE__), 'lib/hatmaker/alfred/workflow')
+require File.join(File.dirname(__FILE__), 'lib/hatmaker/alfred/yaml_end')
 require File.join(File.dirname(__FILE__), 'lib/hatmaker/workflow')
 
 def search(query, feedback)
   workflows = Hatmaker::Workflow.search(query)
-
-  if workflows.count > 0
-    workflows.each do |workflow|
-      feedback.add_item({
-        :uid      => "#{workflow.author}_#{workflow.name}",
-        :title    => workflow.name,
-        :subtitle => "v#{workflow.version} by #{workflow.author}",
-        :arg      => Oj.dump(workflow)
-      })
-    end
-  else
-    feedback.add_item({
-      :uid      => 'nothingfound',
-      :title    => 'Workflows',
-      :subtitle => 'No workflows found with this query',
-      :valid    => 'no'
-    })
+  workflows.each do |workflow|
+    feedback.add_item(
+      :uid      => workflow.uid,
+      :title    => workflow.name,
+      :subtitle => workflow.description,
+      :arg      => workflow.to_json
+    )
   end
 end
 
-def install(json, feedback, alfred_setting)
-  workflow = Oj.load(json)
-
-  File.open('/tmp/workflow.alfredworkflow', 'wb') do |saved_file|
-    open(workflow.download_link, 'rb') do |read_file|
-      saved_file.write(read_file.read)
-    end
+def install(json, feedback)
+  begin
+    workflow = Oj.load(json)
+    workflow.download { |workflow| workflow.install }
+  rescue OpenURI::HTTPError => ex
+    puts "Error while downloading #{workflow.name}, please try again later."
   end
-
-  setting = alfred_setting.load
-  setting[workflow.name] = workflow.version
-  alfred_setting.dump setting
-
-  `open /tmp/workflow.alfredworkflow`
 end
 
-def outdated(feedback, alfred_setting)
-  setting = alfred_setting.load
-  setting.each do |s|
-    next unless s.first.is_a? String
+def outdated(feedback)
+  Hatmaker::Alfred::Workflow.all.each do |installed_workflow|
+    if installed_workflow.outdated?
+      new_release = installed_workflow.last_release
 
-    workflows = Hatmaker::Workflow.search(s.first)
-    new_release = workflows.find { |w| w.name == s.first && w.version.to_f > s.last.to_f }
-
-    if new_release
-      feedback.add_item({
-        :uid      => "#{new_release.author}_#{new_release.name}",
+      feedback.add_item(
+        :uid      => new_release.uid,
         :title    => new_release.name,
         :subtitle => "v#{new_release.version} by #{new_release.author}",
-        :arg      => Oj.dump(new_release)
-      })
+        :arg      => new_release.to_json
+      )
     end
-  end
-
-  if feedback.items.none?
-    feedback.add_item({
-      :uid      => 'nothingfound',
-      :title    => 'Outdated workflows',
-      :subtitle => 'No outdated workflows found',
-      :valid    => 'no'
-    })
   end
 end
 
@@ -88,11 +61,19 @@ Alfred.with_friendly_error do |alfred|
   when /search/
     search arguments, feedback
   when /install/
-    install arguments, feedback, alfred.setting
+    install arguments, feedback
   when /outdated/
-    outdated feedback, alfred.setting
+    outdated feedback
   end
 
-  puts feedback.to_xml
+  if feedback.items.none?
+    feedback.add_item(
+      :uid      => 'nothingfound',
+      :title    => arguments ? "No workflows found with '#{arguments}'" : 'All workflows are up to date!',
+      :valid    => 'no'
+    )
+  end
+
+  puts feedback.to_xml if command != 'install'
 end
 

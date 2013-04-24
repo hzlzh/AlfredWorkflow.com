@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.tedwise.timemachine</string>
+	<key>connections</key>
+	<dict>
+		<key>2740EA0B-64D0-441C-927D-600AB8D8C33D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>21CE57E5-DB0D-4B77-A965-5AD13B56356A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>39CF375A-5FCB-459A-BA54-181A898DE4D8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C52DC423-7900-42BB-9F01-AC7B65248A54</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>626A04CC-731A-4B0F-A4D4-6EB7ED650A9D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2740EA0B-64D0-441C-927D-600AB8D8C33D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6EEC4466-725D-4675-A6AB-46842B1C2E4F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>39CF375A-5FCB-459A-BA54-181A898DE4D8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Ted Wise</string>
+	<key>description</key>
+	<string>Inspect and control Time Machine (1.1)</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Time Machine</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>tmac status</string>
+				<key>script</key>
+				<string>require 'date'
+
+status_lines = `tmutil status`
+status = {}
+status_lines.each_line do |line| 
+  status[:percent] = (line.split("=")[1][2..-4].strip.to_f * 100).round() if /^ *Percent =/ =~ line
+  status[:running] = (line.split("=")[1][0..-2].strip).to_i if /^ *Running =/ =~ line
+  status[:stopping] = (line.split("=")[1][0..-2].strip).to_i if /^ *Stopping =/ =~ line
+  status[:time_remaining] = (line.split("=")[1][0..-2].strip).to_i if /^ *TimeRemaining =/ =~ line
+  status[:cur_bytes] = (line.split("=")[1][0..-2].strip).to_i if /^ *bytes =/ =~ line
+  status[:total_bytes] = (line.split("=")[1][0..-2].strip).to_i if /^ *totalBytes =/ =~ line
+  status[:backup_phase] = line.split("=")[1][0..-2].strip if /^ *BackupPhase =/ =~ line
+end
+
+status_line = ""
+if status[:running] == 0
+  last_backup = DateTime.strptime((`defaults read /private/var/db/.TimeMachine.Results BACKUP_COMPLETED_DATE`.strip), "%Y-%m-%d %H:%M:%S %z").new_offset(DateTime.now.offset).strftime("%A %B %d, %Y %l:%M %P")
+
+  status_line = "Not Running - last backup #{last_backup}"
+elsif status[:stopping] == 1
+  status_line = "Stopping"
+else
+  if status[:percent] == -100
+	status_line = "Running (Preparing)"
+  else
+    if status[:backup_phase].start_with?("Copying")
+      status_line = "Running (#{status[:percent]}% completed)"
+    else
+      status_line = "Running (Completing)"
+    end
+  end
+end
+
+puts &lt;&lt;ENDS_HERE
+&lt;items&gt;
+  &lt;item uid="status" arg="status"&gt;
+  &lt;title&gt;#{status_line}&lt;/title&gt;
+  &lt;icon&gt;icon.png&lt;/icon&gt;
+  &lt;/item&gt;
+&lt;/items&gt;
+ENDS_HERE
+</string>
+				<key>subtext</key>
+				<string>Show current Time Machine status</string>
+				<key>title</key>
+				<string>Get Time Machine Status</string>
+				<key>type</key>
+				<integer>2</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>87F46482-9DD8-4445-8E34-8D0EC274414C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Backup started</string>
+				<key>title</key>
+				<string>Time Machine</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C52DC423-7900-42BB-9F01-AC7B65248A54</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tmutil startbackup</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>39CF375A-5FCB-459A-BA54-181A898DE4D8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tmac start</string>
+				<key>subtext</key>
+				<string>Initiate a Time Machine Backup</string>
+				<key>text</key>
+				<string>Start Time Machine</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6EEC4466-725D-4675-A6AB-46842B1C2E4F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tmutil stopbackup</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2740EA0B-64D0-441C-927D-600AB8D8C33D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tmac stop</string>
+				<key>subtext</key>
+				<string>Stop Time Machine Backup</string>
+				<key>text</key>
+				<string>Stop Time Machine</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>626A04CC-731A-4B0F-A4D4-6EB7ED650A9D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Backup stopping</string>
+				<key>title</key>
+				<string>Time Machine</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>21CE57E5-DB0D-4B77-A965-5AD13B56356A</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>21CE57E5-DB0D-4B77-A965-5AD13B56356A</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>2740EA0B-64D0-441C-927D-600AB8D8C33D</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>39CF375A-5FCB-459A-BA54-181A898DE4D8</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>626A04CC-731A-4B0F-A4D4-6EB7ED650A9D</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>6EEC4466-725D-4675-A6AB-46842B1C2E4F</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>87F46482-9DD8-4445-8E34-8D0EC274414C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C52DC423-7900-42BB-9F01-AC7B65248A54</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://tedwise.com</string>
+</dict>
+</plist>

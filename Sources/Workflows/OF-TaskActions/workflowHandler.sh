@@ -138,3 +138,7 @@ getPref() {
   local VALUE=$(sed "/^\#/d" "$PREFFILE" | grep "$1"  | tail -n 1 | cut -d "=" -f2-)
   echo "$VALUE"
 }
+
+getLang() {
+  defaults read .GlobalPreferences AppleLanguages | tr -d [:space:] | cut -c2-3
+}

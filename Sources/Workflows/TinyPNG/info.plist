@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.benzi.a2w.tinypng</string>
+	<key>connections</key>
+	<dict>
+		<key>3EACE84A-CD57-4E15-AB2F-4ED68BFC94CC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>94B65702-5C20-4BF9-9BDD-A12CB95D8CB6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8AAE6910-E56E-470E-BF23-048AA6852F9C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3EACE84A-CD57-4E15-AB2F-4ED68BFC94CC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9E5E4259-7D91-4F07-83BE-88D57E679150</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3EACE84A-CD57-4E15-AB2F-4ED68BFC94CC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CDE24FA8-D38C-4094-9EC0-42E990A2389E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3EACE84A-CD57-4E15-AB2F-4ED68BFC94CC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Benzi Ahamed</string>
+	<key>description</key>
+	<string>Shrink PNG files</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>TinyPNG</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>tinypng</string>
+				<key>scopes</key>
+				<array/>
+				<key>subtext</key>
+				<string>Type in a PNG filename</string>
+				<key>title</key>
+				<string>Shrink with TinyPNG</string>
+				<key>types</key>
+				<array>
+					<string>public.png</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>9E5E4259-7D91-4F07-83BE-88D57E679150</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>public.png</string>
+				</array>
+				<key>name</key>
+				<string>Shrink with TinyPNG</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>8AAE6910-E56E-470E-BF23-048AA6852F9C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>shrink(){
+local input=$1
+dir=$(dirname "$input")
+base=$(basename "$input")
+new=$(echo -n original_$base)
+backup=$(echo -n $dir/$new)
+# upload and get download url
+download=$(curl -s --data-binary "@$input" http://tinypng.org/api/shrink | grep -o "http[^\"]*")
+# copy original to backup
+mv "$input" "$backup"
+# download
+curl -o "$input" $download
+curl $download
+echo -n "$base, "
+}
+
+IFS=$'\t'
+images=("{query}")
+for file in ${images[@]}; do
+	shrink "$file"
+done</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3EACE84A-CD57-4E15-AB2F-4ED68BFC94CC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Shrunk {query}</string>
+				<key>title</key>
+				<string>TinyPNG</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>94B65702-5C20-4BF9-9BDD-A12CB95D8CB6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>CDE24FA8-D38C-4094-9EC0-42E990A2389E</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>3EACE84A-CD57-4E15-AB2F-4ED68BFC94CC</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>8AAE6910-E56E-470E-BF23-048AA6852F9C</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>94B65702-5C20-4BF9-9BDD-A12CB95D8CB6</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>9E5E4259-7D91-4F07-83BE-88D57E679150</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>CDE24FA8-D38C-4094-9EC0-42E990A2389E</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>benzi.site44.com</string>
+</dict>
+</plist>

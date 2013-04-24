@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>xiami.keywind.com</string>
+	<key>connections</key>
+	<dict>
+		<key>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3968411C-82BC-4F63-BC05-50D72CCBF94F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>keywind</string>
+	<key>description</key>
+	<string>搜索虾米音乐</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Xiami</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>xm</string>
+				<key>runningsubtext</key>
+				<string>请稍等</string>
+				<key>script</key>
+				<string># -*- coding: utf-8 -*-
+
+from Feedback import Feedback
+import urllib
+import urllib2
+import json
+import sys
+import re
+
+query = '{query}'
+url = 'http://www.xiami.com/app/nineteen/search/key/%s/page/1' % query
+req = urllib2.Request(url, headers={'User-Agent' : "Safari"})
+con = urllib2.urlopen(req)
+content = con.read()  
+
+response = json.loads(content)
+results = response['results']
+
+fb = Feedback()
+try:
+    for song in results:
+        name = unicode(urllib.unquote_plus(song['song_name']).encode('latin-1'), 'utf-8')
+        artist = unicode(urllib.unquote_plus(song['artist_name']).encode('latin-1'), 'utf-8')
+        album = unicode(urllib.unquote_plus(song['album_name']).encode('latin-1'), 'utf-8')
+        t = '%s -- %s' %(artist, name)
+        st = 'Artist:%s  Music:%s  Album:&lt;%s&gt;' %(artist, name, album)
+        fb.add_item(t, subtitle=st,
+	         uid = song['song_id'],
+	         arg = 'http://www.xiami.com/song/' + song['song_id'])
+
+except SyntaxError as e:
+    if ('EOF', 'EOL' in e.msg):
+        fb.add_item('...')
+    else:
+        fb.add_item('SyntaxError', e.msg)
+except Exception as e:
+        fb.add_item(e.__class__.__name__,
+            subtitle=e.message)    
+print fb
+
+</string>
+				<key>subtext</key>
+				<string>请输入歌名</string>
+				<key>title</key>
+				<string>搜索虾米音乐</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>3968411C-82BC-4F63-BC05-50D72CCBF94F</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>3968411C-82BC-4F63-BC05-50D72CCBF94F</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://keywind.me</string>
+</dict>
+</plist>

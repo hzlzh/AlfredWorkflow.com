@@ -5,7 +5,7 @@ QUERY=$1
 OFOC="com.omnigroup.OmniFocus"
 if [ ! -d "$HOME/Library/Caches/$OFOC" ]; then OFOC=$OFOC.MacAppStore; fi
 
-SQL="SELECT persistentIdentifier, name, availableTaskCount FROM Context WHERE active = 1 AND lower(name) LIKE lower('%${QUERY}%')"
+SQL="SELECT persistentIdentifier, name, availableTaskCount FROM Context WHERE effectiveActive = 1 AND lower(name) LIKE lower('%${QUERY}%')"
 
 OLDIFS=$IFS
 IFS='
@@ -19,7 +19,7 @@ for C in ${CONTEXTS[*]}; do
   REST=${C#*|}
   CNAME=${REST%%|*}
   CTCOUNT=${REST##*|}
-  echo "<item uid='ofcontext' arg='${CNAME}'><title>${CNAME##*= }</title><subtitle>Available Tasks: ${CTCOUNT}</subtitle><icon>img/context.png</icon></item>"
+  echo "<item uid='ofcontext' arg='${CNAME}'><title>${CNAME}</title><subtitle>Available Tasks: ${CTCOUNT}</subtitle><icon>img/context.png</icon></item>"
 done
 echo "</items>"
 

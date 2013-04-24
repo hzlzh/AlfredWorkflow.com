@@ -6,6 +6,17 @@
 	<string>com.markokaestner.oftaskactions</string>
 	<key>connections</key>
 	<dict>
+		<key>0CB9B681-A718-48DE-B634-3F2C81C3FA77</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F776373A-EC81-4548-8127-958986750A66</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>1243AC6D-2702-42AD-B52F-800E1DB6FEE4</key>
 		<array>
 			<dict>
@@ -50,6 +61,14 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CF7ACA2-EAE8-42E6-9E4D-A48A91A8E3E4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Focus project in OmniFocus</string>
 			</dict>
 		</array>
 		<key>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</key>
@@ -101,6 +120,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>CEF11258-C786-4A57-92B3-9C9AB21C52EB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8B97078F-5F56-4029-9313-3BA408AC8A5D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F2114B82-1948-4054-A554-C9826BC5ADCA</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -180,6 +210,14 @@
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>FA9E197E-3EF6-4230-8A82-8955E0AE704C</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open perspective in OmniFocus</string>
+			</dict>
 		</array>
 		<key>EEDAAD5D-6787-4076-9E9A-BA7B20B9B557</key>
 		<array>
@@ -203,6 +241,25 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>F2114B82-1948-4054-A554-C9826BC5ADCA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4E512B78-608B-43FB-8062-A509818E2BDD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>485B6E61-6548-42E7-A129-8D4563928A38</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Focus folder in OmniFocus</string>
+			</dict>
+		</array>
 		<key>FE7F94F8-EC51-42C7-BD65-3F68A63E060F</key>
 		<array>
 			<dict>
@@ -212,6 +269,14 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>78D7AA45-6D16-4CC8-84D1-30DE28E325E0</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Focus contex in OmniFocus</string>
 			</dict>
 		</array>
 	</dict>
@@ -238,10 +303,8 @@
 				<string>Loading tasks...</string>
 				<key>script</key>
 				<string>. workflowHandler.sh
-
 setPref "lastSearch" ".ofti" 0
-
-./getTasksInInbox.sh</string>
+./getTasksInInbox.sh 2&gt;&amp;1 | tee ofti.log</string>
 				<key>title</key>
 				<string>OmniFocus: Show tasks in inbox</string>
 				<key>type</key>
@@ -274,6 +337,33 @@ setPref "lastSearch" ".ofti" 0
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>.ofdt</string>
+				<key>runningsubtext</key>
+				<string>Loading tasks...</string>
+				<key>script</key>
+				<string>. workflowHandler.sh
+setPref "lastSearch" ".ofdt" 0
+./getTasksDoneToday.sh 2&gt;&amp;1 | tee ofdt.log</string>
+				<key>title</key>
+				<string>OmniFocus: Show tasks completed today</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8F9DE859-5A9C-4B49-B378-6E59FC28CB26</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -292,51 +382,22 @@ setPref "lastSearch" ".ofti" 0
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>keyword</key>
-				<string>.ofdt</string>
-				<key>runningsubtext</key>
-				<string>Loading tasks...</string>
-				<key>script</key>
-				<string>. workflowHandler.sh
-
-setPref "lastSearch" ".ofdt" 0
-
-./getTasksDoneToday.sh</string>
-				<key>title</key>
-				<string>OmniFocus: Show tasks completed today</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>8F9DE859-5A9C-4B49-B378-6E59FC28CB26</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
 				<integer>6</integer>
 				<key>keyword</key>
-				<string>.oftp</string>
+				<string>.oftf</string>
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
 				<string>. workflowHandler.sh
 QUERY=$(./normalise "{query}")
 setPref "lastSearch" ".oftp $QUERY" 0
-./getTasksByProject.sh "$QUERY"</string>
+./getTasksByFolder.sh "$QUERY" 2&gt;&amp;1 | tee oftf.log</string>
 				<key>subtext</key>
-				<string>Enter project name</string>
+				<string>Enter folder name</string>
 				<key>title</key>
-				<string>OmniFocus: Show tasks in project</string>
+				<string>OmniFocus: Show tasks in folder</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -345,7 +406,7 @@ setPref "lastSearch" ".oftp $QUERY" 0
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>5B4B3531-F9BE-40EB-8315-AC6E4599AD24</string>
+			<string>0CB9B681-A718-48DE-B634-3F2C81C3FA77</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -373,6 +434,36 @@ setPref "task" "$QUERY" 0
 				<key>escaping</key>
 				<integer>6</integer>
 				<key>keyword</key>
+				<string>.oftp</string>
+				<key>runningsubtext</key>
+				<string>Loading tasks...</string>
+				<key>script</key>
+				<string>. workflowHandler.sh
+QUERY=$(./normalise "{query}")
+setPref "lastSearch" ".oftp $QUERY" 0
+./getTasksByProject.sh "$QUERY" 2&gt;&amp;1 | tee oftp.log</string>
+				<key>subtext</key>
+				<string>Enter project name</string>
+				<key>title</key>
+				<string>OmniFocus: Show tasks in project</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5B4B3531-F9BE-40EB-8315-AC6E4599AD24</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>6</integer>
+				<key>keyword</key>
 				<string>.oftc</string>
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
@@ -380,7 +471,7 @@ setPref "task" "$QUERY" 0
 				<string>. workflowHandler.sh
 QUERY=$(./normalise "{query}")
 setPref "lastSearch" ".oftc $QUERY" 0
-./getTasksByContext.sh "$QUERY"</string>
+./getTasksByContext.sh "$QUERY" 2&gt;&amp;1 | tee oftc.log</string>
 				<key>subtext</key>
 				<string>Enter context name</string>
 				<key>title</key>
@@ -408,16 +499,13 @@ setPref "lastSearch" ".oftc $QUERY" 0
 				<string>Loading tasks...</string>
 				<key>script</key>
 				<string>. workflowHandler.sh
-
 QUERY=$(./normalise "{query}")
 setPref "lastSearch" ".oftv $QUERY" 0
-
 THEME=$(getPref theme 1)
 if [ -z "$THEME" ]; then
 	THEME="dark"
 fi
-
-/usr/bin/osascript getTasksByPerspective.scpt "$QUERY" "$THEME"</string>
+/usr/bin/osascript getTasksByPerspective.scpt "$QUERY" "$THEME" 2&gt;&amp;1 | tee oftv.log</string>
 				<key>subtext</key>
 				<string>Enter perspective name</string>
 				<key>title</key>
@@ -440,7 +528,7 @@ fi
 				<key>script</key>
 				<string>set temp to "{query}"
 if temp is not "" then
-	tell application "Alfred 2" to search ".oftp " &amp; temp
+	tell application "Alfred 2" to search ".oftf " &amp; temp
 end if</string>
 				<key>type</key>
 				<integer>6</integer>
@@ -448,7 +536,67 @@ end if</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>302013FC-E146-4CD9-814E-5AA0154C335F</string>
+			<string>4E512B78-608B-43FB-8062-A509818E2BDD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>.offf</string>
+				<key>runningsubtext</key>
+				<string>Loading folders...</string>
+				<key>script</key>
+				<string>QUERY=$(./normalise "{query}")
+./findFolder.sh "$QUERY" 2&gt;&amp;1 | tee offf.log</string>
+				<key>subtext</key>
+				<string>Enter part of folder name</string>
+				<key>title</key>
+				<string>OmniFocus: Find folder</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F2114B82-1948-4054-A554-C9826BC5ADCA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>8B97078F-5F56-4029-9313-3BA408AC8A5D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>/usr/bin/osascript focusFolder.scpt "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>485B6E61-6548-42E7-A129-8D4563928A38</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -480,7 +628,7 @@ end if</string>
 				<string>Searching projects...</string>
 				<key>script</key>
 				<string>QUERY=$(./normalise "{query}")
-./findProject.sh "$QUERY"</string>
+./findProject.sh "$QUERY" 2&gt;&amp;1 | tee offp.log</string>
 				<key>subtext</key>
 				<string>Enter part of project name</string>
 				<key>title</key>
@@ -503,7 +651,7 @@ end if</string>
 				<key>script</key>
 				<string>set temp to "{query}"
 if temp is not "" then
-	tell application "Alfred 2" to search ".oftc " &amp; temp
+	tell application "Alfred 2" to search ".oftp " &amp; temp
 end if</string>
 				<key>type</key>
 				<integer>6</integer>
@@ -511,7 +659,22 @@ end if</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>538E276F-6A73-4474-913B-ADA39F36E65B</string>
+			<string>302013FC-E146-4CD9-814E-5AA0154C335F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>/usr/bin/osascript focusProject.scpt "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8CF7ACA2-EAE8-42E6-9E4D-A48A91A8E3E4</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -533,6 +696,24 @@ end if</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>set temp to "{query}"
+if temp is not "" then
+	tell application "Alfred 2" to search ".oftc " &amp; temp
+end if</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>538E276F-6A73-4474-913B-ADA39F36E65B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -543,7 +724,7 @@ end if</string>
 				<string>Loading contexts...</string>
 				<key>script</key>
 				<string>QUERY=$(./normalise "{query}")
-./findContext.sh "$QUERY"</string>
+./findContext.sh "$QUERY" 2&gt;&amp;1 | tee offc.log</string>
 				<key>subtext</key>
 				<string>Enter part of context name</string>
 				<key>title</key>
@@ -561,30 +742,34 @@ end if</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
 				<key>escaping</key>
-				<integer>4</integer>
-				<key>keyword</key>
-				<string>.offv</string>
-				<key>runningsubtext</key>
-				<string>Loading perspectives...</string>
+				<integer>127</integer>
 				<key>script</key>
-				<string>QUERY=$(./normalise "{query}")
-/usr/bin/osascript findPerspective.scpt "$QUERY"</string>
-				<key>subtext</key>
-				<string>Enter part of perspective name</string>
-				<key>title</key>
-				<string>OmniFocus: Find perspective</string>
+				<string>/usr/bin/osascript focusContext.scpt "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>CEF11258-C786-4A57-92B3-9C9AB21C52EB</string>
+			<string>78D7AA45-6D16-4CC8-84D1-30DE28E325E0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>8A151D7B-0746-480B-B669-8090AEAD970A</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -607,42 +792,45 @@ end if</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>.offv</string>
+				<key>runningsubtext</key>
+				<string>Loading perspectives...</string>
+				<key>script</key>
+				<string>QUERY=$(./normalise "{query}")
+/usr/bin/osascript findPerspective.scpt "$QUERY" 2&gt;&amp;1 | tee offv.log</string>
+				<key>subtext</key>
+				<string>Enter part of perspective name</string>
+				<key>title</key>
+				<string>OmniFocus: Find perspective</string>
+				<key>type</key>
 				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>8A151D7B-0746-480B-B669-8090AEAD970A</string>
+			<string>CEF11258-C786-4A57-92B3-9C9AB21C52EB</string>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>/usr/bin/osascript openPerspective.scpt "{query}"</string>
+				<key>type</key>
 				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>Theme set to {query}</string>
-				<key>title</key>
-				<string>OF: TaskActions</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>3CE76F56-EC88-4255-80EF-3BE3F9D75A41</string>
+			<string>FA9E197E-3EF6-4230-8A82-8955E0AE704C</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -691,6 +879,29 @@ getXMLResults</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>CD421C32-4DFF-4081-83AA-124CFA799A2C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Theme set to {query}</string>
+				<key>title</key>
+				<string>OF: TaskActions</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>3CE76F56-EC88-4255-80EF-3BE3F9D75A41</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -800,7 +1011,7 @@ IFS="$OLDIFS"</string>
 				<key>keyword</key>
 				<string>.oftd</string>
 				<key>script</key>
-				<string>./showTaskDetails.sh</string>
+				<string>./showTaskDetails.sh 2&gt;&amp;1 | tee oftd.log</string>
 				<key>title</key>
 				<string>OmniFocus: Show task details</string>
 				<key>type</key>
@@ -881,15 +1092,20 @@ IFS="$OLDIFS"</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0CB9B681-A718-48DE-B634-3F2C81C3FA77</key>
+		<dict>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
 		<key>1243AC6D-2702-42AD-B52F-800E1DB6FEE4</key>
 		<dict>
 			<key>ypos</key>
-			<real>1160</real>
+			<real>1760</real>
 		</dict>
 		<key>1B7FB3FD-8C2E-471A-B172-B2DD4CB524FD</key>
 		<dict>
 			<key>ypos</key>
-			<real>310</real>
+			<real>410</real>
 		</dict>
 		<key>2F53D276-3EFB-4A2F-A2CE-9A3B2602729B</key>
 		<dict>
@@ -899,29 +1115,39 @@ IFS="$OLDIFS"</string>
 		<key>302013FC-E146-4CD9-814E-5AA0154C335F</key>
 		<dict>
 			<key>ypos</key>
-			<real>560</real>
+			<real>860</real>
 		</dict>
 		<key>327F670C-B57A-4FE1-A976-7D847010B880</key>
 		<dict>
 			<key>ypos</key>
-			<real>760</real>
+			<real>1260</real>
 		</dict>
 		<key>376B7914-BA86-4DCC-8AE3-59E9F4B620CF</key>
 		<dict>
 			<key>ypos</key>
-			<real>560</real>
+			<real>860</real>
 		</dict>
 		<key>3CE76F56-EC88-4255-80EF-3BE3F9D75A41</key>
 		<dict>
 			<key>ypos</key>
-			<real>910</real>
+			<real>1510</real>
 		</dict>
 		<key>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</key>
 		<dict>
 			<key>ypos</key>
-			<real>410</real>
+			<real>510</real>
 		</dict>
 		<key>453BE3C3-6A84-46D1-B1B3-6B9D9EBD5118</key>
+		<dict>
+			<key>ypos</key>
+			<real>1060</real>
+		</dict>
+		<key>485B6E61-6548-42E7-A129-8D4563928A38</key>
+		<dict>
+			<key>ypos</key>
+			<real>760</real>
+		</dict>
+		<key>4E512B78-608B-43FB-8062-A509818E2BDD</key>
 		<dict>
 			<key>ypos</key>
 			<real>660</real>
@@ -929,17 +1155,22 @@ IFS="$OLDIFS"</string>
 		<key>538E276F-6A73-4474-913B-ADA39F36E65B</key>
 		<dict>
 			<key>ypos</key>
-			<real>660</real>
+			<real>1060</real>
 		</dict>
 		<key>5B4B3531-F9BE-40EB-8315-AC6E4599AD24</key>
 		<dict>
 			<key>ypos</key>
-			<real>210</real>
+			<real>310</real>
 		</dict>
 		<key>69C27133-6328-449F-B863-83CEE49688B7</key>
 		<dict>
 			<key>ypos</key>
-			<real>1060</real>
+			<real>1660</real>
+		</dict>
+		<key>78D7AA45-6D16-4CC8-84D1-30DE28E325E0</key>
+		<dict>
+			<key>ypos</key>
+			<real>1160</real>
 		</dict>
 		<key>85E9AA23-548E-46B8-A1E7-C4BBB631A483</key>
 		<dict>
@@ -949,7 +1180,17 @@ IFS="$OLDIFS"</string>
 		<key>8A151D7B-0746-480B-B669-8090AEAD970A</key>
 		<dict>
 			<key>ypos</key>
-			<real>760</real>
+			<real>1260</real>
+		</dict>
+		<key>8B97078F-5F56-4029-9313-3BA408AC8A5D</key>
+		<dict>
+			<key>ypos</key>
+			<real>660</real>
+		</dict>
+		<key>8CF7ACA2-EAE8-42E6-9E4D-A48A91A8E3E4</key>
+		<dict>
+			<key>ypos</key>
+			<real>960</real>
 		</dict>
 		<key>8F9DE859-5A9C-4B49-B378-6E59FC28CB26</key>
 		<dict>
@@ -959,52 +1200,62 @@ IFS="$OLDIFS"</string>
 		<key>90F62233-867B-40D6-A552-5FF0F454ABC5</key>
 		<dict>
 			<key>ypos</key>
-			<real>1160</real>
+			<real>1760</real>
 		</dict>
 		<key>9911EC15-6E11-4AEA-9622-19229358A835</key>
 		<dict>
 			<key>ypos</key>
-			<real>1060</real>
+			<real>1660</real>
 		</dict>
 		<key>9A457476-6781-4B5A-A7BC-88BF5D4180C7</key>
 		<dict>
 			<key>ypos</key>
-			<real>910</real>
+			<real>1510</real>
 		</dict>
 		<key>C2D5744B-3311-4B55-8BCE-6530CA5B5959</key>
 		<dict>
 			<key>ypos</key>
-			<real>560</real>
+			<real>860</real>
 		</dict>
 		<key>CD421C32-4DFF-4081-83AA-124CFA799A2C</key>
 		<dict>
 			<key>ypos</key>
-			<real>910</real>
+			<real>1510</real>
 		</dict>
 		<key>CEF11258-C786-4A57-92B3-9C9AB21C52EB</key>
 		<dict>
 			<key>ypos</key>
-			<real>760</real>
+			<real>1260</real>
 		</dict>
 		<key>EEDAAD5D-6787-4076-9E9A-BA7B20B9B557</key>
 		<dict>
 			<key>ypos</key>
-			<real>1060</real>
+			<real>1660</real>
 		</dict>
 		<key>F028FDD9-79DE-4707-9F82-7EF4661F436E</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
+		<key>F2114B82-1948-4054-A554-C9826BC5ADCA</key>
+		<dict>
+			<key>ypos</key>
+			<real>660</real>
+		</dict>
 		<key>F776373A-EC81-4548-8127-958986750A66</key>
 		<dict>
 			<key>ypos</key>
-			<real>210</real>
+			<real>310</real>
+		</dict>
+		<key>FA9E197E-3EF6-4230-8A82-8955E0AE704C</key>
+		<dict>
+			<key>ypos</key>
+			<real>1360</real>
 		</dict>
 		<key>FE7F94F8-EC51-42C7-BD65-3F68A63E060F</key>
 		<dict>
 			<key>ypos</key>
-			<real>660</real>
+			<real>1060</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

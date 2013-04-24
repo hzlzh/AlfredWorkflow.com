@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.farrell.pkm.alfredworkflow</string>
+	<key>connections</key>
+	<dict>
+		<key>541C66E9-29CB-4C5C-B741-81C2A482FC1F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F57407D6-CBFB-459A-ABA5-23593C73B495</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>67851157-5987-4B55-BDD9-90A9347C46A5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>27041F92-F8C1-41A8-BFD2-698DBFCAB2B4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>78A70680-7C8A-4CC4-AE71-A070E3E8CCD9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4731A219-0E2E-47D9-A64B-E127EBEDB32A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>96A609DD-13FB-44C7-9ADB-F3BC94017A65</key>
+		<array/>
+		<key>C0190356-1EDC-4E5C-8187-9E3C4C69FBD1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E210FAF8-CB40-47EF-BDEA-91BC06902219</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E106723F-9932-431B-8250-64F2983338FC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4382CA20-B8AF-4F0F-A38E-3632141383E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E894CAC8-3680-4863-B8A5-EFCFD78B56F3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>57806311-F059-4C9E-80B7-ECEC58773818</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F606DB4B-6E17-4E32-A336-0320E57B140F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8BD781B0-5BE2-48E2-9216-F7B3782D1EB9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>will Farrell</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Package Managers</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>96A609DD-13FB-44C7-9ADB-F3BC94017A65</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>npm</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+$w = new Workflows();
+$query = urlencode( "{query}" );
+
+
+if ($query) {
+	$data = $w-&gt;request('https://npmjs.org/search?q='.$query);
+	//echo $data;
+	$items = explode('&lt;li class="search-result package"&gt;', $data);
+	array_shift($items);
+	//$items = array_pop($items);
+	
+	foreach($items as $item) {
+		//echo $item;
+		preg_match('/&lt;h2&gt;(.*?)&lt;\/h2&gt;/i', $item, $matches);
+		$title = strip_tags($matches[1]);
+		
+		preg_match_all('/&lt;p[^&gt;]*&gt;([\s\S]*?)&lt;\/p&gt;/i', $item, $matches);
+		//print_r($matches);
+		$author = trim(strip_tags($matches[1][0]));
+		$author = preg_replace("/[\s]+/", " ", $author);
+		$details = trim(strip_tags($matches[1][1]));
+		
+		$w-&gt;result( $title, 'https://npmjs.org/package/'.$title, $title.' ~ '.$author, $details, 'npm.png' );
+	}
+}
+
+if ( count( $w-&gt;results() ) == 0 ) {
+	$w-&gt;result( 'bower', 'na', 'No Repository found', 'No components were found that match your query', 'bower.png', 'no' );
+}
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Search npm for "{query}"</string>
+				<key>title</key>
+				<string>Search npm</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E106723F-9932-431B-8250-64F2983338FC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<true/>
+				<key>url</key>
+				<string>https://npmjs.org/search?q={query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4382CA20-B8AF-4F0F-A38E-3632141383E6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<true/>
+				<key>url</key>
+				<string>http://gruntjs.com/plugins/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>E210FAF8-CB40-47EF-BDEA-91BC06902219</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>grunt</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+$w = new Workflows();
+$query = urlencode( "{query}" );
+
+// cache package database
+$cache_timestamp = $w-&gt;get( 'grunt.timestamp', 'settings.plist' );
+
+if (!$cache_timestamp || $cache_timestamp &lt; (time() - 14 * 86400)) {
+	$url = "http://gruntjs.com/plugin-list";
+	$pluginlist = $w-&gt;request( $url );
+	
+	$w-&gt;write($pluginlist, 'grunt.json');
+	$plugins = json_decode( $pluginlist );
+	
+	$w-&gt;set( 'grunt.timestamp', time(), 'settings.plist' );
+} else {
+	$plugins = $w-&gt;read('grunt.json');
+}
+
+foreach($plugins as $plugin ) {
+	// search for keyword
+	$found = false;
+	if (strpos($plugin-&gt;name, $query) !== false) {
+		$found = true;
+	}
+	if (strpos($plugin-&gt;description, $query) !== false) {
+		$found = true;
+	}
+	foreach($plugin-&gt;keywords as $keyword) {
+		if (strpos($keyword, $query) !== false) {
+			$found = true;
+			//print_r($plugin);
+			break;
+		}
+	}
+
+	if ($found) {
+		//print_r($plugin);
+		$title = str_replace('grunt-', '', $plugin-&gt;name); // remove grunt- from title
+		
+		// add author to title
+		if (isset($plugin-&gt;author) &amp;&amp; isset($plugin-&gt;author-&gt;name)) {
+			$title .= " by " . $plugin-&gt;author-&gt;name;
+		}
+		$w-&gt;result( $plugin-&gt;name, $plugin-&gt;github, $title, $plugin-&gt;description, 'grunt.png' );
+	}
+}
+
+if ( count( $w-&gt;results() ) == 0 ) {
+	$w-&gt;result( 'grunt', 'na', 'No Repository found', 'No plugins were found that match your query', 'icon.png', 'no' );
+}
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Search grunt for "{query}"</string>
+				<key>title</key>
+				<string>Search grunt</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C0190356-1EDC-4E5C-8187-9E3C4C69FBD1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<true/>
+				<key>url</key>
+				<string>http://sindresorhus.com/bower-components/#!/search/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>57806311-F059-4C9E-80B7-ECEC58773818</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>bower</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+$w = new Workflows();
+$query = urlencode( "{query}" );
+
+if ($query) {
+	$list = $w-&gt;request('https://bower.herokuapp.com/packages/search/'.$query);
+
+	$items = json_decode( $list );
+	
+	foreach($items as $item ) {
+		
+		$w-&gt;result( $item-&gt;url, $item-&gt;url, $item-&gt;name, $item-&gt;url, 'bower.png' );
+	}
+}
+
+if ( count( $w-&gt;results() ) == 0 ) {
+	$w-&gt;result( 'bower', 'na', 'No Repository found', 'No components were found that match your query', 'bower.png', 'no' );
+}
+syslog(LOG_ERR, $w-&gt;toxml());
+echo trim($w-&gt;toxml());</string>
+				<key>subtext</key>
+				<string>Search bower for "{query}"</string>
+				<key>title</key>
+				<string>Search bower</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E894CAC8-3680-4863-B8A5-EFCFD78B56F3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<true/>
+				<key>url</key>
+				<string>https://packagist.org/search/?q={query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>27041F92-F8C1-41A8-BFD2-698DBFCAB2B4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>composer</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search Compoer for "{query}"</string>
+				<key>title</key>
+				<string>Composer</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>67851157-5987-4B55-BDD9-90A9347C46A5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>brew</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search homebrew for "{query}"</string>
+				<key>title</key>
+				<string>Search homebrew</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>78A70680-7C8A-4CC4-AE71-A070E3E8CCD9</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>http://braumeister.org/search/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4731A219-0E2E-47D9-A64B-E127EBEDB32A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>rpm</string>
+				<key>text</key>
+				<string>Red Hat Package Manager</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>541C66E9-29CB-4C5C-B741-81C2A482FC1F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<true/>
+				<key>url</key>
+				<string>http://rpmfind.net/linux/rpm2html/search.php?query={query}&amp;system=&amp;arch=</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>F57407D6-CBFB-459A-ABA5-23593C73B495</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>brew-php</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search homebrew-php for "{query}"</string>
+				<key>title</key>
+				<string>Search homebrew-php</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F606DB4B-6E17-4E32-A336-0320E57B140F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>https://github.com/josegonzalez/homebrew-php/tree/master/Formula</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>8BD781B0-5BE2-48E2-9216-F7B3782D1EB9</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>27041F92-F8C1-41A8-BFD2-698DBFCAB2B4</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>4382CA20-B8AF-4F0F-A38E-3632141383E6</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>4731A219-0E2E-47D9-A64B-E127EBEDB32A</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>541C66E9-29CB-4C5C-B741-81C2A482FC1F</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>57806311-F059-4C9E-80B7-ECEC58773818</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>67851157-5987-4B55-BDD9-90A9347C46A5</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>78A70680-7C8A-4CC4-AE71-A070E3E8CCD9</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>8BD781B0-5BE2-48E2-9216-F7B3782D1EB9</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>96A609DD-13FB-44C7-9ADB-F3BC94017A65</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C0190356-1EDC-4E5C-8187-9E3C4C69FBD1</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>E106723F-9932-431B-8250-64F2983338FC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E210FAF8-CB40-47EF-BDEA-91BC06902219</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>E894CAC8-3680-4863-B8A5-EFCFD78B56F3</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>F57407D6-CBFB-459A-ABA5-23593C73B495</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>F606DB4B-6E17-4E32-A336-0320E57B140F</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>github.com/willfarrell</string>
+</dict>
+</plist>
