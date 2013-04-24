@@ -1,0 +1,27 @@
+[
+    {
+      "workflow_name": "test1",
+      "workflow_version": "2.0",
+      "workflow_description_small": "An Alfred workflow to make Skype phone call to the phone number selected by Alfred\'s Contacts feature",
+      "workflow_type": "Everyday Useful workflows",
+      "workflow_language": "English (British) (en_GB)",
+      "workflow_release_page": "https://github.com/guiguan/Skype-Call",
+      "workflow_download_link": "http://www.guiguan.net/downloads/Skype-Call.alfredworkflow",
+      "workflow_author_name": "Guan Gui",
+      "workflow_author_site": "http://www.guiguan.net",
+      "workflow_file": "Skype-Call.alfredworkflow",
+      "workflow_screenshot": "Select-A-Phone-Number.png"
+    },{
+      "workflow_name": "demo2",
+      "workflow_version": "3.0",
+      "workflow_description_small": "An Al1test11fred workflow to make Skype phone call to the phone number selected by Alfred\'s Contacts feature",
+      "workflow_type": "Everyday Useful workflows",
+      "workflow_language": "English (British) (en_GB)",
+      "workflow_release_page": "https://github.com/guiguan/Skype-Call",
+      "workflow_download_link": "http://www.guiguan.net/downloads/Skype-Call.alfredworkflow",
+      "workflow_author_name": "Guan Gui",
+      "workflow_author_site": "http://www.guiguan.net",
+      "workflow_file": "Skype-Call.alfredworkflow",
+      "workflow_screenshot": "Select-A-Phone-Number.png"
+    }
+]
