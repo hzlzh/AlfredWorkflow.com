@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dk.xam.alfred.skype</string>
+	<key>connections</key>
+	<dict>
+		<key>C6F9E1EF-5B7A-4772-A52C-76C69124F49C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>53928B16-9C83-4FDC-BC59-19A6EBAE1CF2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Max Rydahl Andersen</string>
+	<key>description</key>
+	<string>Call Skype and send DTMF codes for conference calls</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Skype (DTMF)</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  handle_string(q)
+end alfred_script
+
+## handle_string("+4179830")##handle_string("+18004518679,#%23")display dialog "running!"
+handle_string({query})
+on dial_skype(num)		set connect_wait to 10 (* seconds to wait before sending additional tones *)	set dtmf_wait to 1 (* seconds to wait between sending DTMF tones *)	set pause_char to "," (* character used to indicate a pause *)	set pause_wait to 2 (* seconds to wait for a pause *)		if num starts with "tel:" then		set num to (text ((count "tel:") + 1) thru -1 of num)	end if		(* remove any spaces in the number otherwise Skype won't make the call *)	set num to replace_string(num, " ", "")	(* remove any dashes in the number otherwise Skype won't make the call *)	set num to replace_string(num, "-", "")	(* replace %23 with # since launchBar seem to force encoding of numbers *)	set num to replace_string(num, "%23", "#")		set parts to split(num, pause_char)				set parts_count to count parts		set phone_number to item 1 of parts		if (parts_count &gt; 1) then		set dtmf_parts to items 2 through -1 of parts	else		set dtmf_parts to {}	end if		display dialog "Number: " &amp; phone_number &amp; " Ext: " &amp; dtmf_parts	tell application "Skype"		set active_call to send command "CALL " &amp; phone_number script name "s2"		if active_call contains "ERROR" then			display dialog "Error while attempting call of " &amp; phone_number &amp; " " &amp; active_call			return		end if		set skype_call_id to word 2 of active_call		#set call_status to send command "GET CALL " &amp; skype_call_id script name "s2"		#display dialog "call status: " &amp; call_status &amp; " for " &amp; skype_call_id		delay connect_wait		set bridge to "ALTER CALL " &amp; skype_call_id &amp; " DTMF "		repeat with dtmf in the items of dtmf_parts			repeat with tone in the characters of dtmf				set dtmf_response to send command bridge &amp; " " &amp; tone script name "s2"				if dtmf_response contains "ERROR" then					display dialog "Error while sending DTMF tone '" &amp; tone &amp; "' " &amp; dtmf_response					return				end if				delay dtmf_wait			end repeat			delay pause_wait		end repeat	end tell	end dial_skypeon split(str, sep)	set {tid, AppleScript's text item delimiters} to {AppleScript's text item delimiters, sep}	set AppleScript's text item delimiters to sep	set parts to text items of str	set AppleScript's text item delimiters to tid	return partsend spliton replace_string(str, fr, t)	set {tid, AppleScript's text item delimiters} to {AppleScript's text item delimiters, fr}	set temp to text items of str	set AppleScript's text item delimiters to t	set str to temp as text	set AppleScript's text item delimiters to tid	return strend replace_string(* for LaunchBar *)on handle_string(s)	my dial_skype(s)	open location "x-launchbar:hide"end handle_string(* comment out for QuickSilver *)(* 
+using terms from application "QuickSilver"
+	on process text qsText
+		my dial_skype(qsText)
+	end process text
+end
+*)</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>53928B16-9C83-4FDC-BC59-19A6EBAE1CF2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>name</key>
+				<string>Call Skype (DTMF)</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.contact</string>
+			<key>uid</key>
+			<string>C6F9E1EF-5B7A-4772-A52C-76C69124F49C</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Call number via Skype but pause when ',' are in the string.
+
+Great for automatic entering conference calls.
+
+Install and setup "Call Skype (DTMF)" as an custom action for phone number in Contacts.
+
+Example number: +41 234 5678,,123456#,1#
+
+This will call "+412345678" wait 2x1 second, send 123456#, wait 1 second, send 1# and you are into your conference call.
+
+You can even use spaces and -'s, that Skype normally do not like. They are automatically stripped by this workflow. 
+
+Made by Max Rydahl Andersen</string>
+	<key>uidata</key>
+	<dict>
+		<key>53928B16-9C83-4FDC-BC59-19A6EBAE1CF2</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C6F9E1EF-5B7A-4772-A52C-76C69124F49C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://xam.dk</string>
+</dict>
+</plist>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>1.1</string>
+	<key>connections</key>
+	<dict>
+		<key>9D5525DB-5B55-4DDF-98B8-E1B86042C402</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C96608B3-F5B7-4C52-B5DD-CBDE4C135CBF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>MacGeeky</string>
+	<key>description</key>
+	<string>Closes every visible window from every application, except the frontmost window</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>CloseAllWindows</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>9D5525DB-5B55-4DDF-98B8-E1B86042C402</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)-- tell application "System Events" to set the visible of every process to trueset white_list to the path to frontmost application as Unicode texttry	tell application "System Events"		if white_list does not contain "Alfred Preferences" then			tell application "System Events"				click button 1 of windows of application process "Alfred Preferences"			end tell								end if	end tellend try--display dialog white_listtry	tell application "System Events"		set process_list to the name of every process whose visible is true	end tell	repeat with i from 1 to (number of items in process_list)		set this_process to item i of the process_list		if this_process is not in the white_list and this_process is not "Tweetbot" then			tell application this_process				close every window without saving			end tell		end if	end repeat							if process_list contains "Tweetbot" and white_list does not contain "Tweetbot" then		tell application "System Events"			click button 1 of window 1 of application process "Tweetbot"		end tell	end ifend trytell application "Finder"	set mainWindow to front window	set frontID to id of mainWindow	set background to (every window whose id is not frontID)	repeat with thisWindow in background		close thisWindow	end repeatend tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C96608B3-F5B7-4C52-B5DD-CBDE4C135CBF</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Closes all the background windows on your Mac - from every app running. Just leaves the frontmost window untouched.
+
+Activated with a shortcut</string>
+	<key>uidata</key>
+	<dict>
+		<key>9D5525DB-5B55-4DDF-98B8-E1B86042C402</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C96608B3-F5B7-4C52-B5DD-CBDE4C135CBF</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://macgeeky.no</string>
+</dict>
+</plist>

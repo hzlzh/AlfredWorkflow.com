@@ -432,6 +432,21 @@ class Workflows {
 
 		return $out;
 	}
+	
+	public function filetime( $a )
+	{
+		if ( file_exists( $a ) ):
+			if ( file_exists( $this->path.'/'.$a ) ):
+				return filemtime($this->path.'/'.$a);
+			endif;
+		elseif ( file_exists( $this->data."/".$a ) ):
+			return filemtime($this->data.'/'.$a);
+		elseif ( file_exists( $this->cache."/".$a ) ):
+			return filemtime($this->cache.'/'.$a);
+		endif;
+		
+		return false;
+	}
 
 	/**
 	* Description:
