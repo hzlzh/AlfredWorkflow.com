@@ -5,23 +5,27 @@
  
 Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in coding new workflows yourself.
 
-## Workflows' JSON API (new) 
+## Workflows' JSON API (updated 2013.4.25) 
 
-* **(Recommended)** API on Github: [https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json](https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json)
-* API backup: [http://www.alfredworkflow.com/workflows-api/](http://www.alfredworkflow.com/workflows-api/)
+* **(Recommended)** API on Github: [https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow_api.json](https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow_api.json)  
+* <del>https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json</del>
+* *(for debug use)*API backup: [http://www.alfredworkflow.com/workflows-api/](http://www.alfredworkflow.com/workflows-api/)
 
 -- API info --  
 
-* Download Link by Author **=** `workflow-download-link`   
-* **(Important!)** Backup download link on Github **=** `https://raw.github.com/hzlzh/AlfredWorkflow.com/master/Downloads/Workflows/` **+** `workflow-file`
+* Download Link by Author **=** `workflow_download_link`   
+* **(Important!)** Backup download link on Github **=** `https://raw.github.com/hzlzh/AlfredWorkflow.com/master/Downloads/Workflows/` **+** `workflow_file`
 
 *[PHP]demo:*
 
 ```php
 <?php
-    $json = file_get_contents( 'https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json');
+    $json = file_get_contents( 'https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow_api.json');
     $obj=json_decode($json);
-    var_dump($obj);
+    // var_dump($obj);
+    foreach( $obj as $key => $item ){
+        echo $item -> workflow_name;
+    }
 ?>
 ```
 
