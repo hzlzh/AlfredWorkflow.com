@@ -1,7 +1,9 @@
 [AlfredWorkflow.com](http://AlfredWorkflow.com 'Alfred 2 Workflows List') (beta)
 ====
 ### Search, Install and Share, No Need to Reinvent the Wheel.
- **([Alfred 2] powerpack required)**   
+ ([Alfred 2] powerpack required)  
+ 
+ **Now you can use [Workflow Searcher] to search workflows.**
  
 Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in coding new workflows yourself.
 
@@ -52,3 +54,5 @@ Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in co
 
 
 [Alfred 2]: http://www.alfredapp.com/
+[Workflow Searcher]: https://github.com/hzlzh/Alfred-Workflows/
+ 
