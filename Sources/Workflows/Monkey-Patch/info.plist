@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.benzi.a2w.monkeypatch</string>
+	<key>connections</key>
+	<dict>
+		<key>0986E5FF-3B1F-467D-8AB9-A5785B5074C5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C21ECD13-A831-49ED-A86E-4B111B93C44E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>93FCF7A4-0388-4561-A723-900B327FE7DF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0986E5FF-3B1F-467D-8AB9-A5785B5074C5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Benzi Ahamed</string>
+	<key>description</key>
+	<string>Yet another Alleyoop-based workflow updater</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Monkey Patch</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Monkey Patch</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C21ECD13-A831-49ED-A86E-4B111B93C44E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>mp</string>
+				<key>script</key>
+				<string>/usr/bin/python mp.py "{query}"</string>
+				<key>title</key>
+				<string>Monkey Patch workflow updater</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>93FCF7A4-0388-4561-A723-900B327FE7DF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>/usr/bin/python mp.py {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0986E5FF-3B1F-467D-8AB9-A5785B5074C5</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Icon by
+
+Zille Sophie Bostinius
+After many years of being too young to be serious about life, I finally found meaning in graphic design and art direction. Im still very young though. Yeah.
+
+http://thenounproject.com/zbostinius/#</string>
+	<key>uidata</key>
+	<dict>
+		<key>0986E5FF-3B1F-467D-8AB9-A5785B5074C5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>93FCF7A4-0388-4561-A723-900B327FE7DF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C21ECD13-A831-49ED-A86E-4B111B93C44E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>benzi.site44.com</string>
+</dict>
+</plist>

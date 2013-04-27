@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>786E9DDA-C819-4337-A493-F781C7CCF6D5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>95873D25-FA94-4914-9CFC-F795E62253B2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A4C956D1-1E28-40FC-8504-0C5B465A2054</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4654A230-1959-4122-A3EA-31B1DF59B4CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>MacGeeky</string>
+	<key>description</key>
+	<string>Tweets both title and URL of frontmost tab in Safari - using the implemented share function in OS X.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>TweetSafariTitleURL</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+ set supported to trueset OSlang to do shell script "defaults read NSGlobalDomain AppleLanguages"set OSlang to first word of OSlangif OSlang is "en" then	set deling to "Share"else if OSlang is "nb" then	set deling to "Del"else	set supported to false	display dialog "Your OS X language is not supported by this Alfred V2 extension… Sorry!"end ifif supported is true then	tell application "System Events"		set tittel to title of window 1 of application process "Safari"		tell process "Safari"			set frontmost to true						try				click menu item "Twitter" of menu 1 of menu item deling of menu 1 of menu bar item 3 of menu bar 1				delay 1.2				keystroke tittel &amp; ": "			end try		end tell	end tellend if
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>95873D25-FA94-4914-9CFC-F795E62253B2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>786E9DDA-C819-4337-A493-F781C7CCF6D5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+ set supported to trueset OSlang to do shell script "defaults read NSGlobalDomain AppleLanguages"set OSlang to first word of OSlangif OSlang is "en" then	set deling to "Share"else if OSlang is "nb" then	set deling to "Del"else	set supported to false	display dialog "Your OS X language is not supported by this Alfred V2 extension… Sorry!"end ifif supported is true then	tell application "System Events"		-- set tittel to title of window 1 of application process "Safari"		tell process "Safari"			set frontmost to true						try				click menu item "Twitter" of menu 1 of menu item deling of menu 1 of menu bar item 3 of menu bar 1				--delay 1.2				--keystroke tittel &amp; ": "			end try		end tell	end tellend if
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>4654A230-1959-4122-A3EA-31B1DF59B4CE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>Without title, just the URL</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>A4C956D1-1E28-40FC-8504-0C5B465A2054</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>4654A230-1959-4122-A3EA-31B1DF59B4CE</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>786E9DDA-C819-4337-A493-F781C7CCF6D5</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>95873D25-FA94-4914-9CFC-F795E62253B2</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A4C956D1-1E28-40FC-8504-0C5B465A2054</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://macgeeky.no</string>
+</dict>
+</plist>
