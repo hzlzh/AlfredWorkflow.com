@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>de.leenno.terminalfinder</string>
 	<key>connections</key>
 	<dict>
 		<key>76584C39-BB00-4E7D-9BE0-4ACCBB2829F6</key>
@@ -83,28 +83,8 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>if</string>
-				<key>subtext</key>
-				<string>Open current iTerm directory in Finder</string>
-				<key>text</key>
-				<string>iTerm → Finder</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>9F9DC1C6-5DE4-49F7-9BAA-14E4CA01C956</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>applescript</key>
-				<string>on alfred_script(q)
-	tell application "Finder"		set pathList to (quoted form of POSIX path of (folder of the front window as alias))	end tell	tell application "System Events"		do shell script "Open -a Terminal " &amp; pathList	end tellend alfred_script</string>
+				<string>on alfred_script(q)	tell application "Finder"		set pathList to (quoted form of POSIX path of (folder of the front window as alias))	end tell		tell application "System Events"		if not (exists (processes where name is "Terminal")) then			do shell script "open -a Terminal " &amp; pathList		else			tell application "Terminal"				activate				tell application "System Events" to tell process "Terminal.app" to keystroke "t" using command down				do script ("cd " &amp; pathList) in first window			end tell		end if	end tellend alfred_script</string>
 				<key>cachescript</key>
 				<false/>
 			</dict>
@@ -112,25 +92,6 @@
 			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
 			<string>7113EA2C-468F-40D5-B2AA-C7E5E3D020A4</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>fi</string>
-				<key>subtext</key>
-				<string>Open current Finder directory in iTerm</string>
-				<key>text</key>
-				<string>Finder → iTerm</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>AA3CDA14-C3B5-442B-B117-D61A244C6625</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -156,23 +117,6 @@
 			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
-	tell application "iTerm"
-		tell the current session of current terminal
-			write text "open -a Finder ./"		end tell
-	end tellend alfred_script</string>
-				<key>cachescript</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>C5615B51-DAE5-4A23-8376-67AA21C3ECC3</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)
 	tell application "Terminal"		do script "open -a Finder ./" in first window	end tellend alfred_script</string>
 				<key>cachescript</key>
 				<false/>
@@ -185,9 +129,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>fi</string>
+				<key>subtext</key>
+				<string>Open current Finder directory in iTerm</string>
+				<key>text</key>
+				<string>Finder → iTerm</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>AA3CDA14-C3B5-442B-B117-D61A244C6625</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
-	tell application "Finder"		set pathList to (quoted form of POSIX path of (folder of the front window as alias))	end tell	tell application "System Events"		do shell script "Open -a iTerm " &amp; pathList	end tellend alfred_script</string>
+	tell application "Finder"		set pathList to (quoted form of POSIX path of (folder of the front window as alias))	end tell		tell application "System Events"		set isRunning to (exists (processes where name is "iTerm"))	end tell		tell application "iTerm"		set termCount to count of terminals				if termCount is 0 then			set myTerm to (make new terminal)		else			set myTerm to the first terminal		end if				tell myTerm			if not isRunning and termCount is not 0 then				set mySession to current session			else				set mySession to (launch session "Default")			end if			tell mySession to write text "cd " &amp; pathList					end tell
+		activate	end tellend alfred_script</string>
 				<key>cachescript</key>
 				<false/>
 			</dict>
@@ -195,6 +159,42 @@
 			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
 			<string>BFDCE43A-5AE3-4362-88D9-D0D3CD119C81</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>if</string>
+				<key>subtext</key>
+				<string>Open current iTerm directory in Finder</string>
+				<key>text</key>
+				<string>iTerm → Finder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9F9DC1C6-5DE4-49F7-9BAA-14E4CA01C956</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "iTerm"
+		tell the current session of current terminal
+			write text "open -a Finder ./"		end tell
+	end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C5615B51-DAE5-4A23-8376-67AA21C3ECC3</string>
 		</dict>
 	</array>
 	<key>readme</key>

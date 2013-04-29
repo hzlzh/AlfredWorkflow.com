@@ -1,90 +1,112 @@
-# helpers
-def get_time_as_arr(ts)
-  Time.at(ts).to_a
-end
-
-def get_time_from_arr(arr)
-  Time.local(arr[5], arr[4], arr[3], arr[2], arr[1], arr[0]).to_i
-end
-
-def add_year(ts, num_year)
-  arr = get_time_as_arr(ts)
-  arr[5] += num_year
-  get_time_from_arr(arr)
-end
-
-def add_month(ts, num_month)
-  arr   = get_time_as_arr(ts)
-  month = arr[4] + num_month - 1 # make 0-based
-  year  = arr[5]
-  
-  unless month.between?(0, 11)
-    if month < 0
-      year -= (month.abs / 12) + 1
-    else  
-      year += month / 12
-    end
-    month = month % 12
-  end
-
-  max_days  = [31, (year % 4 == 0) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-  arr[3]
-  if arr[3] > max_days[month]
-    arr[3] = max_days[month]
-  end
-
-  arr[4] = month + 1
-  arr[5] = year
-  get_time_from_arr(arr)
-end
-
-
 # query
 q = ARGV[0] || ""
 
 
-# date format
+# format given by query?
 if q =~ /"/
   format = q.scan(/"([^"]+)"/).last[0]
+  unless format.empty? || format =~ /%/
+    format.gsub!(/([aAbBcdeHIjlmMpPSwWyYZ])/i, '%\1')
+  end
+
+# read format from file
 else
-  file   = File.open('format.txt', "r")
-  format = file.read
-  file.close
-end
+  filename_old = 'format.txt'
+  filename_new = 'format2.txt'
 
-
-# set some vars, make them 0-based
-ts = Time.now.to_i
-
-
-# calculate time units
-q.split(' ').each do |s|
-  quantifier = s.to_i
-  if s =~ /\d+y/
-    ts = add_year(ts, quantifier)
-  elsif s =~ /\d+m/ && (s =~ /\d+min/).nil?
-    ts = add_month(ts, quantifier)
-  elsif s =~ /\d+w/
-    ts += quantifier * 7*24*60*60
-  elsif s =~ /\d+d/
-    ts += quantifier * 24*60*60
-  elsif s =~ /\d+h/
-    ts += quantifier * 60*60
-  elsif s =~ /\d+min/
-    ts += quantifier * 60
-  elsif s =~ /\d+s/
-    ts += quantifier
+  # did migration from PHP's 'date' to strftime already happen?
+  if File.exist?(filename_new)
+    file   = File.open(filename_new, "r")
+    format = file.read.strip
+    file.close
+  
+  # do migration
   else
-    next
+    old_file   = File.open(filename_old, "r")
+    format     = old_file.read.strip
+    old_file.close
+
+    replacements = {
+      :a => '%P',
+      :A => '%p',
+      :B => '',   # swatch internet time doesn't exist in strftime
+      :c => '',
+      :d => '%d',
+      :D => '%a',
+      :e => '',   # timezone identifier does not exist in strftime
+      :F => '%B',
+      :g => '%l',
+      :G => '',   # 24-h clock without leading zeros doesn't exist in strftime
+      :h => '%I',
+      :H => '%H',
+      :i => '%M',
+      :I => '',   # daylight savings time boolean does not exist in strftime
+      :j => '%e',
+      :l => '%A',
+      :L => '',   # leap year or not doesn't exist in strftime
+      :m => '%m',
+      :M => '%b',
+      :n => '%m', # month wothout leading zeros doesn't exist in strftime
+      :N => '',   # day of week 1-7 doesn't exist in strftime
+      :o => '%Y', # not completely compatatible to ISO-8601 but ok
+      :O => '',   # diff to Greenwich does not exist in strftime
+      :P => '',   # diff to Greenwich does not exist in strftime
+      :r => '%c', # doesn't match RFC 2822 exactly but ok
+      :S => '',   # endings like 'st', 'nd', 'rd', 'th' do not exist in strftime
+      :s => '%S',
+      :t => '',   # amount of days a month has doesn't exist in strftime
+      :T => '%Z',
+      :u => '',   # microsecond does not exist in strftime
+      :U => '',   # seconds since unix epoch does not exist in strftime
+      :w => '%w',
+      :W => '%W', # 1-54 will become 0-53
+      :y => '%y',
+      :Y => '%Y',
+      :z => '%j', # 0-365 will become 1-366 in strftime
+      :Z => ''    # timezone offset does not exist in strftime
+    }
+
+    new_format = ''
+    format.split("").each do |c|
+        new_format += replacements[c.to_sym] || c
+    end
+
+    File.open(filename_new, 'w') {|f| f.write(new_format) }
+    File.delete(filename_old)
+    format = new_format
   end
 end
 
 
-# format time
-ts_formatted = `echo "<?php echo date('#{format}', #{ts});" | php`.strip
+# convert to unix 'date' params
+params = []
+q.split(' ').each do |s|
+  quantifier = s.to_i
   
+  if s =~ /\d+y/
+    unit_symbol = "y"
+  elsif s =~ /\d+m/ && (s =~ /\d+min/).nil?
+    unit_symbol = "m"
+  elsif s =~ /\d+w/
+    unit_symbol = "w"
+  elsif s =~ /\d+d/
+    unit_symbol = "d"
+  elsif s =~ /\d+h/
+    unit_symbol = "H"
+  elsif s =~ /\d+min/
+    unit_symbol = "M"
+  elsif s =~ /\d+s/
+    unit_symbol = "S"
+  else
+    next
+  end
+
+  params << '-v' + (quantifier > -1 ? '+' : '') + quantifier.to_s + unit_symbol
+end
+
 
 # return result
+ts_formatted = `echo $(date #{params.join(' ')} "+#{format}")`.strip
 puts <<ENDS_HERE
 <items>
   <item uid="date" arg="#{ts_formatted}">

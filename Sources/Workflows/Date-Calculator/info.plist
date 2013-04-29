@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>de.leenno.datecalculator</string>
 	<key>connections</key>
 	<dict>
 		<key>1BB7558D-E38D-42D8-A02A-5C59994DB34B</key>
@@ -66,31 +66,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>if ["{query}" == ""]
-then
-	open "http://php.net/manual/en/function.date.php"
-else
-	if [ -f "format.txt" ]; then
-		rm format.txt
-	fi
-	in=$(echo "{query}" | tr -d "\\")
-	echo "$in" &gt; format.txt
-	echo "Saved date format \"{query}\""
-fi</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>1BB7558D-E38D-42D8-A02A-5C59994DB34B</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -110,6 +85,34 @@ fi</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>B21A55CA-05F3-486A-B703-2356F1CFE09D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>if ["{query}" == ""]
+then
+	open "http://strfti.me/"
+else
+	if [ -f "format.txt" ]; then
+		rm format.txt
+	fi
+	if [ -f "format2.txt" ]; then
+		rm format2.txt
+	fi
+	in=$(echo "{query}" | tr -d "\\")
+	echo "$in" &gt; format2.txt
+	echo "Saved date format \"{query}\""
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1BB7558D-E38D-42D8-A02A-5C59994DB34B</string>
 		</dict>
 		<dict>
 			<key>config</key>
