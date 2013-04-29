@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>de.oderwat.lastchangedfiles</string>
+	<key>connections</key>
+	<dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1E7153FD-6D71-46AE-AD8D-2350DEF43554</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E4C8693A-29D7-4F16-AB10-889C103D65BE</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Browse in Alfred</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Hans Raaf</string>
+	<key>description</key>
+	<string>Lists the last changed or saved files in the Users home directory</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Last changed files</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>1E7153FD-6D71-46AE-AD8D-2350DEF43554</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>.last</string>
+				<key>runningsubtext</key>
+				<string>Scanning...</string>
+				<key>script</key>
+				<string>require('workflows.php');
+$w = new Workflows();
+
+$query='{query}';
+if($query) {
+ $filter="&amp;&amp; kMDItemFSName=\"".escapeshellarg($query)."*\"cdw";
+} else {
+ $filter='';
+}
+
+$res=&lt;&lt;&lt;EOT
+/usr/bin/mdfind -onlyin ~/ '(kMDItemDateAdded &gt;= \$time.now(-172800) || kMDItemContentModificationDate &gt;= \$time.now(-172800))
+&amp;&amp; kMDItemIsApplicationManaged!=1
+&amp;&amp; kMDItemSupportFileType!="MDSystemFile"
+&amp;&amp; kMDItemFSName!="*.MYD"
+&amp;&amp; kMDItemFSName!="*.MYI"
+&amp;&amp; kMDItemFSName!="*.opt"
+&amp;&amp; kMDItemFSName!="*.itc"
+&amp;&amp; kMDItemFSName!="*.frm"
+&amp;&amp; kMDItemFSName!="*.agilekeychain"
+&amp;&amp; kMDItemKind!="com.ynab*"
+&amp;&amp; kMDItemKind!="Safari-Lesezeichen"
+&amp;&amp; kMDItemKind!="E-Mail"
+&amp;&amp; kMDItemKind!="Parallels virtual machine"
+$filter)'
+EOT;
+
+ob_start();
+passthru($res);
+$tmp=ob_get_contents();
+ob_end_clean();
+
+$recent=array();
+
+$tmp=explode("\n",$tmp);
+foreach($tmp as $file) {
+	if(preg_match('%^/Users/[^/]+/Library/%',$file)) continue;
+	if(preg_match('%^/Users/[^/]+/Music/iTunes/%',$file)) continue;
+	if(preg_match('%^/Users/[^/]+/Documents/Microsoft User Data/%',$file)) continue;
+	if(preg_match('%^/Users/[^/]+/Documents/My Games/.*%',$file)) continue;
+
+	// My personal blacklist
+	if(@is_dir('/Users/hara')) {
+		if(preg_match('%^/Users/.*[^/]+/devsys/.*/storage/%',$file)) continue;
+		if(preg_match('%^/Users/.*[^/]+/devsys/mysql.*/%',$file)) continue;
+		if(preg_match('%^/Users/.*[^/]+/devsys/workspace/.*/.*\.(php|html|txt|jpg|gif|png)%',$file)) continue;
+		if(preg_match('%^/Users/.*[^/]+/Documents/Kunden/.*/VDN/%',$file)) continue;
+	}
+
+	$key=@filectime($file);
+	if($key &amp;&amp; $file) {
+		$recent[$key.':'.$file]=$file;
+	}
+}
+
+if ( count( $recent ) == 0 ) {
+	$w-&gt;result( 'doc', 'na', 'No Documents', 'No recent documents were found.', 'icon.png', 'no' );
+} else {
+	krsort($recent);
+/*
+$fh=fopen("/Users/hara/debug.txt","w");
+fputs($fh,implode("\n",$recent));
+fclose($fh);
+*/
+	foreach( $recent as $key=&gt;$doc ) {
+		$w-&gt;result( null, $doc, basename( $doc ), dirname( $doc ), 'fileicon:'.$doc, 'yes', '', 'file');
+	}
+}
+
+$data=$w-&gt;toxml();
+
+/*
+$fh=fopen("/Users/hara/debug.txt","w");
+fputs($fh,$data);
+fclose($fh);
+*/
+echo $data;</string>
+				<key>subtext</key>
+				<string>Show the last changed user files</string>
+				<key>title</key>
+				<string>Last changed files</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict/>
+			<key>type</key>
+			<string>alfred.workflow.action.browseinalfred</string>
+			<key>uid</key>
+			<string>E4C8693A-29D7-4F16-AB10-889C103D65BE</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow was inspired by the way "Trickster" enhances my workday with quick access to recently changed files (like a screenshot, download, doc). I wanted to have Alfred do something similar and came up with this workflow!
+
+Thanks to @jdfwarrior for his workflow class (http://dferg.us/workflows-class)
+
+V1.0 - Initial release
+V1.5 - Added Allyoop and filtering .opt files
+V1.6 - Made files from the result list draggable! (YEAH!)
+V1.7 - Changed how files are chosen to include files recently created even if they have an old timestamp. Added Microsoft Office Support files to the blacklist. Added Parallels VM Files to the Blacklist.
+V1.8 - Changed to the new Alleyoop! Update it if you use it!</string>
+	<key>uidata</key>
+	<dict>
+		<key>1E7153FD-6D71-46AE-AD8D-2350DEF43554</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>E4C8693A-29D7-4F16-AB10-889C103D65BE</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>oderwat.de</string>
+</dict>
+</plist>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A1FA98EE-7A5C-4D72-9720-1171AE4DB682</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mitchell Weholt</string>
+	<key>description</key>
+	<string>play Spotify track</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Spotify Search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>set q to words of "{query}"set AppleScript's text item delimiters to "+"set search1 to q as stringset AppleScript's text item delimiters to ""set myFile to (POSIX path of (path to temporary items)) &amp; "curl_file.xml"do shell script "curl -L " &amp; "http://ws.spotify.com/search/1/track?q=" &amp; search1 &amp; " -o " &amp; myFileset theText to read myFileset the Text2 to paragraph 7 of theTextset theSearch to text 16 thru 51 of Text2tell application "Spotify"	play track theSearchend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A1FA98EE-7A5C-4D72-9720-1171AE4DB682</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>sp</string>
+				<key>subtext</key>
+				<string>play Spotify track</string>
+				<key>text</key>
+				<string>Play Track</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>A1FA98EE-7A5C-4D72-9720-1171AE4DB682</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
