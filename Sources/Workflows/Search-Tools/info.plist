@@ -17,6 +17,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>20000100-1BDB-4B24-9F6E-D7194038EC99</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FE48BE9F-8CD0-442D-A4CD-71E545104B23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>2B4DEDDD-2AA0-4C7F-94A2-E6B399A900B9</key>
 		<array>
 			<dict>
@@ -29,6 +40,17 @@
 			</dict>
 		</array>
 		<key>50C7835B-93A6-43A4-88E5-A1FD257A38C1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FE48BE9F-8CD0-442D-A4CD-71E545104B23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>81705C6C-95CA-474A-9DE4-4667113EAB65</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -76,7 +98,7 @@
 	<key>createdby</key>
 	<string>pi1ot</string>
 	<key>description</key>
-	<string>Search Tools for News, Zhihu, Weibo, Wiki, Google...</string>
+	<string>国人搜索工具包，支持谷歌、维基、微博、知乎、必应、新浪新闻、IMFDB等，详见Readme</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -107,21 +129,6 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>13B6CFF6-AB27-4934-92B1-AA290E63AF93</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>FE48BE9F-8CD0-442D-A4CD-71E545104B23</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -201,12 +208,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>FE48BE9F-8CD0-442D-A4CD-71E545104B23</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>g</string>
+				<string>gg</string>
 				<key>runningsubtext</key>
 				<string>Searching {query} ...</string>
 				<key>script</key>
@@ -248,15 +270,83 @@
 			<key>uid</key>
 			<string>948ECBA7-261A-4F0B-B39E-4923BF484583</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>g</string>
+				<key>script</key>
+				<string>python search.py suggest {query}</string>
+				<key>subtext</key>
+				<string>searching {query} ...</string>
+				<key>title</key>
+				<string>Google Suggest for {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>81705C6C-95CA-474A-9DE4-4667113EAB65</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>b</string>
+				<key>script</key>
+				<string>python search.py bing {query}</string>
+				<key>subtext</key>
+				<string>searching {query} ...</string>
+				<key>title</key>
+				<string>Bing Suggest for {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>20000100-1BDB-4B24-9F6E-D7194038EC99</string>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string>v0.5</string>
+	<string>谷歌(g)、维基百科(k)、微博(w)、知乎(z)、必应(b)、新浪新闻(n)、IMFDB(imf)的实时搜索工具，括号中为默认热键
+
+google和wikipedia接口默认通过本地goagent代理（127.0.0.1:8087）和HTTPS访问，若需修改请编辑search.py中set_proxy()函数
+
+因谷歌、微博、知乎未提供不限流量可匿名访问的API，故其结果均为解析HTML输出而得，若有改版可能失效
+
+v0.7
+*增加必应搜索suggest功能，搜索结果仍使用谷歌
+*为提高响应速度谷歌搜索功能改用google suggest结果
+*原谷歌搜索实时结果热键改为(gg)
+
+v0.6
+*增加IMFDB搜索功能
+*增加无结果提示</string>
 	<key>uidata</key>
 	<dict>
 		<key>13B6CFF6-AB27-4934-92B1-AA290E63AF93</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
+		</dict>
+		<key>20000100-1BDB-4B24-9F6E-D7194038EC99</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
 		</dict>
 		<key>2B4DEDDD-2AA0-4C7F-94A2-E6B399A900B9</key>
 		<dict>
@@ -267,6 +357,11 @@
 		<dict>
 			<key>ypos</key>
 			<real>250</real>
+		</dict>
+		<key>81705C6C-95CA-474A-9DE4-4667113EAB65</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
 		</dict>
 		<key>948ECBA7-261A-4F0B-B39E-4923BF484583</key>
 		<dict>
@@ -286,7 +381,7 @@
 		<key>FE48BE9F-8CD0-442D-A4CD-71E545104B23</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>370</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
