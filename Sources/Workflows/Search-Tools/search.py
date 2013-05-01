@@ -28,7 +28,7 @@ def set_proxy():
 		#httpsHandler = urllib2.HTTPSHandler( debuglevel=1 )
 		#opener = urllib2.build_opener( httpHandler, httpsHandler,
 		#	proxy_handler, urllib2.HTTPCookieProcessor(cookies) )
-
+        
 		urllib2.install_opener( opener )
 	return
 
@@ -37,8 +37,8 @@ def search_sina( query ):
 	args = { "app_key":"1335320450", "c":"news", "sort":"rel", "range":"all", "ie":"utf-8", "video":"1", "q":query }
 	response = json.loads( urllib2.urlopen("http://platform.sina.com.cn/search/search?"+urllib.urlencode(args)).read() )
 	news = response["result"]["list"]
-	result = []
 	
+	result = []
 	default_title = u"更多详细结果……"
 	if len(news) == 0:
 		default_title = u"找不到结果，请使用网页查询……"
@@ -57,8 +57,8 @@ def search_wiki( query ):
 	args = { "action":"query", "list":"search", "srprop":"timestamp", "format":"json", "srsearch":query }
 	response = json.loads( urllib2.urlopen("https://zh.wikipedia.org/w/api.php?"+urllib.urlencode(args)).read() )
 	wiki = response["query"]["search"]
-	result = []
 	
+	result = []
 	default_title = u"更多详细结果……"
 	if len(wiki) == 0:
 		default_title = u"找不到结果，请使用网页查询……"
@@ -76,8 +76,8 @@ def search_imfdb( query ):
 	args = { "action":"query", "list":"search", "srprop":"timestamp", "format":"json", "srsearch":query }
 	response = json.loads( urllib2.urlopen("http://www.imfdb.org/api.php?"+urllib.urlencode(args)).read() )
 	wiki = response["query"]["search"]
-	result = []
 	
+	result = []
 	default_title = u"更多详细结果……"
 	if len(wiki) == 0:
 		default_title = u"找不到结果，请使用网页查询……"
@@ -130,6 +130,32 @@ def search_google( query ):
 		result = []
 		result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, u"找不到结果，请使用网页查询……", default_link, ("google.png") ) )
 	
+	return result
+	
+################################################################################
+def search_suggest( query, api ):
+	if api == "bing":
+		args = { "query":query }
+		response = urllib2.urlopen("http://api.bing.com/osjson.aspx?"+urllib.urlencode(args)).read()
+		suggests = json.loads(response)[1]
+	else:
+		set_proxy()
+		args = { "output":"firefox", "hl":"zh-CN", "q":query }
+		response = urllib2.urlopen("https://www.google.com.hk/complete/search?"+urllib.urlencode(args)).read()
+		suggests = json.loads(unicode(response,"gbk"))[1]
+	
+	result = []
+	default_title = u"更多详细结果……"
+	if len(suggests) == 0:
+		default_title = u"找不到提示建议，请使用网页查询……"
+	args = { "hl":"zh-CN", "q":query }
+	default_link = "https://www.google.com/search?" + urllib.urlencode( args )
+	result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, default_title, default_link, ("google.png") ) )
+    
+	for q in suggests:
+		args = { "hl":"zh-CN", "q":q.encode("gb18030") }
+		link = "https://www.google.com/search?" + urllib.urlencode( args ) 
+		result.append( alfred.Item( {"uid":alfred.uid(q), "arg":link}, q, link, ("google.png")) ) 
 	return result
 
 ################################################################################
@@ -257,6 +283,10 @@ def main():
 		result = search_imfdb( query )
 	elif param == "google":
 		result = search_google( query )
+	elif param == "suggest":
+		result = search_suggest( query, "google" )
+	elif param == "bing":
+		result = search_suggest( query, "bing" )
 
 	alfred.write( alfred.xml(result) )
 
