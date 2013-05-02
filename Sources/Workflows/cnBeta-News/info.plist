@@ -21,7 +21,7 @@
 	<key>createdby</key>
 	<string>David Lin</string>
 	<key>description</key>
-	<string>A workflow for getting the news from cnBeta.</string>
+	<string>查看 cnBeta 网站新闻</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -47,101 +47,30 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>cnbeta</string>
+				<string>cb</string>
 				<key>runningsubtext</key>
-				<string>Please wait...</string>
+				<string>请稍后...</string>
 				<key>script</key>
 				<string>/**
- * a workflow for cnBeta news.
- * @version 1.0b
+ * a workflow for cnBeta.
+ * @version 1.0
  * @author David Lin(voidman.me@gmail.com)
  */
 
-define('CNBETA_NEWS_ID', 'cbnews');
-
-define('CNBETA_NEWS_NOT_FOUND_TITLE', 'No news found.');
-define('CNBETA_NEWS_NOT_FOUND_CONTENT', 'Please try to visit http://www.cnbeta.com :)');
-
-define('CNBETA_NEWS_URL_BASE', 'http://www.cnbeta.com');
-define('CNBETA_NEWS_SHOW_NEWS_ICON', true);
-define('CNBETA_NEWS_NEWS_ICON_DIR', 'newsicons');
-define('CNBETA_NEWS_NEWS_ICON_DEFAULT', 'icon.png');
-
-require 'simple_html_dom.php';
-require 'workflows.php';
-
-$w = new Workflows();
-
-$context = stream_context_create(array(
-                'http' =&gt; array(
-                    'method' =&gt; "GET",
-                    'timeout' =&gt; 10
-                )
-            )
-        );
-$html = file_get_html(CNBETA_NEWS_URL_BASE, 0, $context);
-
-if (!$html) {
-    $w-&gt;result(CNBETA_NEWS_ID, CNBETA_NEWS_URL_BASE, CNBETA_NEWS_NOT_FOUND, CNBETA_NEWS_NOT_FOUND_DESC, CNBETA_NEWS_NEWS_ICON_DEFAULT);
-} else {
-    foreach ($html-&gt;find('div.newslist') as $element) {
-
-        $title = $element-&gt;find('strong', 0)-&gt;plaintext;
-        $title = iconv('GB2312', 'UTF-8', $title);
-
-        $url = $element-&gt;find('a', 0)-&gt;href;
-
-        $id = 0;
-        if (preg_match("/\/articles\/([0-9]+).htm/", $url, $matches)) {
-            $id = $matches[1];
-        }
-
-        $content = $element-&gt;find('dd.desc &gt; span', 0)-&gt;plaintext;
-        $content = iconv('GB2312', 'UTF-8', trim($content));
-
-        $content = trim(preg_replace("/感谢.+的投递/", '', $content));
-
-        if (!CNBETA_NEWS_SHOW_NEWS_ICON) {
-            $iconPath = CNBETA_NEWS_NEWS_ICON_DEFAULT;
-        } else {
-            $iconUrl = $element-&gt;find('dd.desc &gt; a &gt; img', 0)-&gt;src;
-            $iconName = basename(($iconUrl));
-            $iconPath = CNBETA_NEWS_NEWS_ICON_DIR . DIRECTORY_SEPARATOR . $iconName;
-            if (!file_exists(CNBETA_NEWS_NEWS_ICON_DIR)) {
-                mkdir(CNBETA_NEWS_NEWS_ICON_DIR);
-            }
-            if (!file_exists($iconPath)) {
-                file_put_contents($iconPath, file_get_contents($iconUrl));
-            }
-            $iconPath = file_exists($iconPath) ? $iconPath : CNBETA_NEWS_NEWS_ICON_DEFAULT;
-        }
-
-        $w-&gt;result($id, CNBETA_NEWS_URL_BASE.$url, $title, $content, $iconPath);
-    }
-
-    if ( count( $w-&gt;results() ) == 0 ) {
-        $w-&gt;result(CNBETA_NEWS_ID, CNBETA_NEWS_URL_BASE, CNBETA_NEWS_NOT_FOUND, CNBETA_NEWS_NOT_FOUND_DESC, CNBETA_NEWS_NEWS_ICON_DEFAULT);
-    }
-
-    $html-&gt;clear();
-    unset($html);
-}
-
-echo $w-&gt;toxml();
-
-unset($w);</string>
+$query = urlencode("{query}");
+require 'CnbetaWorkflow.php';</string>
 				<key>subtext</key>
-				<string>Reading the latest news from cnbeta.com</string>
+				<string>请输入命令，如 new 或 top10；查看帮助请输入 help</string>
 				<key>title</key>
 				<string>cnBeta News</string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
@@ -170,6 +99,6 @@ unset($w);</string>
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string>http://voidman.com</string>
+	<string>https://github.com/voidman/Alfred-Workflows</string>
 </dict>
 </plist>

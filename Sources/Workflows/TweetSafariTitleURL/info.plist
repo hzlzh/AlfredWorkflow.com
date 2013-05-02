@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>95873D25-FA94-4914-9CFC-F795E62253B2</string>
+				<string>12C2675A-8BAD-4F3D-B689-DEA3B27EF89E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -43,8 +43,10 @@
 			<key>config</key>
 			<dict>
 				<key>applescript</key>
-				<string>on alfred_script(q)
- set supported to trueset OSlang to do shell script "defaults read NSGlobalDomain AppleLanguages"set OSlang to first word of OSlangif OSlang is "en" then	set deling to "Share"else if OSlang is "nb" then	set deling to "Del"else	set supported to false	display dialog "Your OS X language is not supported by this Alfred V2 extension… Sorry!"end ifif supported is true then	tell application "System Events"		set tittel to title of window 1 of application process "Safari"		tell process "Safari"			set frontmost to true						try				click menu item "Twitter" of menu 1 of menu item deling of menu 1 of menu bar item 3 of menu bar 1				delay 1.2				keystroke tittel &amp; ": "			end try		end tell	end tellend if
+				<string>property SuffixOptions : {".no", ".com", ".net", ".org", ".info", ".us", ".biz", ".tv", ".mobi", ".cc", ".ws", ".bz", ".tc", ".vg", ".ms", ".gs", ".name", ".co.uk", ".de", ".be", ".eu", ".at", ".com.mx", "org.uk", ".me.uk", ".co.nz", ".net.nz", ".org.nz", ".cn", ".tw"}
+
+on alfred_script(q)tell application "Safari"	tell document 1		set TheURL to URL	end tellend tellset TheSuffix to ""repeat with CurrentSuffix in SuffixOptions	if TheURL contains (CurrentSuffix &amp; "/") then		set TheSuffix to CurrentSuffix		exit repeat	end ifend repeatif TheSuffix = "" then	beep -- couldn't find a Suffix and return orginal URLelse	set SuffixOffset to offset of (CurrentSuffix &amp; "/") in TheURL	set JustDomain to (characters 1 thru (SuffixOffset - 1) of TheURL) as string	set PointOffSet to 0	repeat with NegOffSet from (length of JustDomain) to 1 by -1		if character NegOffSet of JustDomain is "." or character NegOffSet of JustDomain is "/" then			set PointOffSet to NegOffSet			exit repeat		end if	end repeat	set JustDomain to (characters (PointOffSet + 1) thru (length of JustDomain) of JustDomain as string) &amp; CurrentSuffix	set dmn to (characters 1 thru (SuffixOffset - 1) of TheURL) as string	set dmn to (characters (PointOffSet + 1) thru (length of dmn) of dmn as string)	end if-- Er OS-språket støttet?set supported to trueset OSlang to do shell script "defaults read NSGlobalDomain AppleLanguages"set OSlang to first word of OSlangif OSlang is "en" then	set deling to "Share"else if OSlang is "nb" then	set deling to "Del"else	set supported to false	return "Your OS X language is not supported by this Alfred V2 extension… Sorry!"end iftell application "Safari"	set TheURL to URL of document 1end tellif supported is true then	tell application "System Events"		set tittel to title of window 1 of application process "Safari"	end tell		-- Finner og ekskluderer domenenavn/nettsidenavn mellom tittel og URL...		set enTittel to "| " &amp; JustDomain as string	set toTittel to "| " &amp; dmn as string	set enTittela to "- " &amp; JustDomain as string	set toTittela to "- " &amp; dmn as string		if tittel ends with enTittela then		set teller to count characters in enTittela		set teller to (-1) - (teller + 1)		set nyTittel to characters 1 thru teller of tittel as string				tell application "System Events"			tell process "Safari"				set frontmost to true								try					click menu item "Twitter" of menu 1 of menu item deling of menu 1 of menu bar item 3 of menu bar 1					delay 1.2					keystroke nyTittel &amp; ": "				end try			end tell		end tell			else if tittel ends with toTittela then		set teller to count characters in toTittela		set teller to (-1) - (teller + 1)		set nyTittel to characters 1 thru teller of tittel as string				tell application "System Events"			tell process "Safari"				set frontmost to true								try					click menu item "Twitter" of menu 1 of menu item deling of menu 1 of menu bar item 3 of menu bar 1					delay 1.2					keystroke nyTittel &amp; ": "				end try			end tell		end tell					else if tittel ends with enTittel then		set teller to count characters in enTittel				--display dialog teller		--set teller2 to count number of characters in tittel		set teller to (-1) - (teller + 1)				set nyTittel to (characters 1 thru teller of tittel) as string				tell application "System Events"			tell process "Safari"				set frontmost to true								try					click menu item "Twitter" of menu 1 of menu item deling of menu 1 of menu bar item 3 of menu bar 1					delay 1.2					keystroke nyTittel &amp; ": "				end try			end tell		end tell							else if tittel ends with toTittel then		set teller to count characters in toTittel		display dialog teller		-- set teller2 to count number of characters in tittel				set teller to (-1) - (teller + 1)				set nyTittel to (characters 1 thru teller of tittel) as string				tell application "System Events"			tell process "Safari"				set frontmost to true								try					click menu item "Twitter" of menu 1 of menu item deling of menu 1 of menu bar item 3 of menu bar 1					delay 1.2					keystroke nyTittel &amp; ": "				end try			end tell		end tell			else if tittel contains "|" then		set SuffixOffset to offset of "|" in tittel						set nyTittel to (characters 1 thru (SuffixOffset - 2) of tittel) as string								tell application "System Events"			tell process "Safari"				set frontmost to true								try					click menu item "Twitter" of menu 1 of menu item deling of menu 1 of menu bar item 3 of menu bar 1					delay 1.2					keystroke nyTittel &amp; ": "				end try			end tell		end tell	else if tittel contains "-" then		set suffixa to offset of "-" in tittel		set nyTittel to characters 1 thru (suffixa - 2) of tittel as string				tell application "System Events"			tell process "Safari"				set frontmost to true								try					click menu item "Twitter" of menu 1 of menu item deling of menu 1 of menu bar item 3 of menu bar 1					delay 1.2					keystroke nyTittel &amp; ": "				end try			end tell		end tell	else		tell application "System Events"			tell process "Safari"				set frontmost to true								try					click menu item "Twitter" of menu 1 of menu item deling of menu 1 of menu bar item 3 of menu bar 1					delay 1.2					keystroke tittel &amp; ": "				end try			end tell		end tell	end ifend if
+
 end alfred_script</string>
 				<key>cachescript</key>
 				<false/>
@@ -52,7 +54,7 @@ end alfred_script</string>
 			<key>type</key>
 			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
-			<string>95873D25-FA94-4914-9CFC-F795E62253B2</string>
+			<string>12C2675A-8BAD-4F3D-B689-DEA3B27EF89E</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -60,7 +62,9 @@ end alfred_script</string>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
-				<integer>0</integer>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>Title + URL</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -94,7 +98,7 @@ end alfred_script</string>
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Without title, just the URL</string>
+				<string>No title, only URL</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -110,20 +114,20 @@ end alfred_script</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>12C2675A-8BAD-4F3D-B689-DEA3B27EF89E</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
 		<key>4654A230-1959-4122-A3EA-31B1DF59B4CE</key>
 		<dict>
 			<key>ypos</key>
-			<real>130</real>
+			<real>140</real>
 		</dict>
 		<key>786E9DDA-C819-4337-A493-F781C7CCF6D5</key>
 		<dict>
 			<key>ypos</key>
 			<real>20</real>
-		</dict>
-		<key>95873D25-FA94-4914-9CFC-F795E62253B2</key>
-		<dict>
-			<key>ypos</key>
-			<real>10</real>
 		</dict>
 		<key>A4C956D1-1E28-40FC-8504-0C5B465A2054</key>
 		<dict>
