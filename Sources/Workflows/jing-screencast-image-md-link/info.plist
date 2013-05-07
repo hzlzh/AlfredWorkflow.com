@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>816667CB-E309-42DA-A6AE-856C215E2717</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C217D91D-B206-46E5-9D44-E7855BCAD612</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C217D91D-B206-46E5-9D44-E7855BCAD612</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E244FEC6-9942-4EC6-A9D8-BBE08A039FDB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>yeerkunth</string>
+	<key>description</key>
+	<string>A shorcut to past markdown format link after picture uploaded via Jing in Screencast</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Jing Screencast Image markdown link</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>2</integer>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>816667CB-E309-42DA-A6AE-856C215E2717</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>text = "{query}"
+matcher = /\&lt;a href=\"(?&lt;link&gt;.+)\"\&gt;/.match(text)
+if !matcher 
+	puts text
+else
+	link = matcher[:link]
+	md_link = '![](' + link + ')'
+	puts md_link
+end
+</string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C217D91D-B206-46E5-9D44-E7855BCAD612</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>E244FEC6-9942-4EC6-A9D8-BBE08A039FDB</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>816667CB-E309-42DA-A6AE-856C215E2717</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C217D91D-B206-46E5-9D44-E7855BCAD612</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E244FEC6-9942-4EC6-A9D8-BBE08A039FDB</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

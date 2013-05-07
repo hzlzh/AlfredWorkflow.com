@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>org.glaubitz.alfred.airfoil</string>
+	<key>connections</key>
+	<dict>
+		<key>3B526A2C-AF8D-41E2-9674-AD4D284CB679</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5570A5FD-39EA-4DE6-85B1-01F86EBB0FF0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2C2B5ADC-50D0-4495-AFB6-C05077291E5B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5570A5FD-39EA-4DE6-85B1-01F86EBB0FF0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FE6E013B-F496-4110-974C-AE7DE868A1FE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6744BA2A-F0A2-40A5-93A6-5D286AA5EEE8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>jan</string>
+	<key>description</key>
+	<string>Connect and disconnect to speakers from Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Airfoil</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+--set spkId to "com.rogueamoeba.airfoil.LocalSpeaker"set spkId to qtell application "Airfoil"		set spkList to every speaker whose id is spkId	set spk to first item of spkList		if not (connected of spk) then		connect to spk	else		disconnect from spk	end if	end tell
+
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>2C2B5ADC-50D0-4495-AFB6-C05077291E5B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>afspeaker</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>tell application "Airfoil"		set res to "&lt;?xml version='1.0'?&gt;&lt;items&gt;"	set aList to every speaker		set listThem to {}		repeat with spk in aList		set listThem to listThem &amp; {{name of spk, id of spk}}	end repeat		repeat with aSpeaker in aList		set spkName to name of aSpeaker		set spkId to id of aSpeaker		set spkActive to connected of aSpeaker		if (spkActive) then			set subTitle to "Disconnect from " &amp; spkName		else			set subTitle to "Connect to " &amp; spkName		end if		set itemText to "&lt;item uid=\"" &amp; spkId &amp; "\" arg=\"" &amp; spkId &amp; "\"&gt;&lt;title&gt;" &amp; spkName &amp; "&lt;/title&gt;&lt;subtitle&gt;" &amp; subTitle &amp; "&lt;/subtitle&gt;"		set itemText to itemText &amp; "&lt;icon&gt;airfoil.png&lt;/icon&gt;&lt;/item&gt;"		set res to res &amp; itemText	end repeat		set res to res &amp; "&lt;/items&gt;"	end tell</string>
+				<key>title</key>
+				<string>Airfoil Speaker Selection</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>afspeaker</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>6744BA2A-F0A2-40A5-93A6-5D286AA5EEE8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>afsource</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>tell application "Airfoil"		set res to "&lt;?xml version='1.0'?&gt;&lt;items&gt;"	set aList to every application source		set listThem to {}		repeat with src in aList		set listThem to listThem &amp; {{name of src, id of src}}	end repeat		repeat with src in aList		set srcName to name of src		set srcId to id of src		set itemText to "&lt;item uid=\"" &amp; srcId &amp; "\" arg=\"" &amp; srcId &amp; "\"&gt;&lt;title&gt;" &amp; srcName &amp; "&lt;/title&gt;&lt;subtitle&gt;" &amp; "select " &amp; srcName &amp; "&lt;/subtitle&gt;"		set itemText to itemText &amp; "&lt;icon type=\"fileicon\"&gt;/Applications/" &amp; name of src &amp; ".app&lt;/icon&gt;&lt;/item&gt;"		set res to res &amp; itemText	end repeat		set res to res &amp; "&lt;/items&gt;"	end tell</string>
+				<key>title</key>
+				<string>Airfoil Source Selection</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5570A5FD-39EA-4DE6-85B1-01F86EBB0FF0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+--set srcId to "2" as integerset srcId to q as integertell application "Airfoil"	set srcList to every application source whose id is srcId	set src to first item of srcList	set current audio source to srcend tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>FE6E013B-F496-4110-974C-AE7DE868A1FE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>afsource</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>3B526A2C-AF8D-41E2-9674-AD4D284CB679</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Airfoil and the Airfoil icon are the property of Rogue Amoeba Software, LLC.</string>
+	<key>uidata</key>
+	<dict>
+		<key>2C2B5ADC-50D0-4495-AFB6-C05077291E5B</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>3B526A2C-AF8D-41E2-9674-AD4D284CB679</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>5570A5FD-39EA-4DE6-85B1-01F86EBB0FF0</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>6744BA2A-F0A2-40A5-93A6-5D286AA5EEE8</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>FE6E013B-F496-4110-974C-AE7DE868A1FE</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.glaubitz.org</string>
+</dict>
+</plist>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.benzi.a2w.radium3</string>
+	<key>connections</key>
+	<dict>
+		<key>FEC5EC07-89FA-4C07-A6CA-157518A15DB4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AF8D7A55-5C79-44E1-B83B-7E79C49B0AD8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Benzi Ahamed</string>
+	<key>description</key>
+	<string>Control Radium via Alfred. Chocolatey goodness :-)</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Radium</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tell application "System Events"	set radiumIsUp to ¬		(count of (every process whose name is "Radium")) &gt; 0end tellif radiumIsUp is false then	tell application "Radium"		activate	end tell
+	do shell script "sleep 5"end iftell application "Radium"	{query}end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>AF8D7A55-5C79-44E1-B83B-7E79C49B0AD8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>r</string>
+				<key>script</key>
+				<string>set workflowFolder to do shell script "pwd"set wlib to load script POSIX file (workflowFolder &amp; "/q_workflow.scpt")set wf to wlib's new_workflow()set AppleScript's text item delimiters to {" - "}tell application "System Events"	set process_list to name of every process	if "Radium" is in process_list then		tell application "Radium"			set track_name to track name			set station_name to station name						set is_playing to playing			if is_playing then				set icon to "pause.png"			else				set icon to "play.png"			end if			if track_name is missing value then				set title to station_name				set subtitle to ""			else				set track_info to track_name's text items				set info_size to count of track_info				set artist to text item 1 of track_info				if info_size is equal to 1 then					set track to text item 1 of track_info					set artist to ""				else if info_size is greater than 1 then					set artist to text item 1 of track_info					set track to text item 2 of track_info				end if				set title to track				set subtitle to artist &amp; " ● " &amp; station_name			end if			add_result of wf with isValid given theUid:"", theArg:"playpause", theTitle:title, theAutocomplete:"", theSubtitle:subtitle, theIcon:icon, theType:""			wf's to_xml("")		end tell	else		add_result of wf with isValid given theUid:"", theArg:"activate", theTitle:"Radium is not running", theAutocomplete:"", theSubtitle:"Start Radium", theIcon:"icon.png", theType:""		wf's to_xml("")	end ifend tell</string>
+				<key>subtext</key>
+				<string>Control what's playing on Radium</string>
+				<key>title</key>
+				<string>Radium</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FEC5EC07-89FA-4C07-A6CA-157518A15DB4</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>AF8D7A55-5C79-44E1-B83B-7E79C49B0AD8</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>FEC5EC07-89FA-4C07-A6CA-157518A15DB4</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>benzi-ahamed.tumblr.com</string>
+</dict>
+</plist>

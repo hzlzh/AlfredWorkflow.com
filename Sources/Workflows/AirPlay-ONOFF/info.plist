@@ -3,14 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>1.10</string>
+	<string>1.11</string>
 	<key>connections</key>
 	<dict>
 		<key>03B5C7BA-B6A7-4B09-AB2E-5C5C25DF2D47</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>9BB927C4-AC6D-4273-8B8E-983AD760C937</string>
+				<string>5ADC1AF4-93F2-4BE3-8504-0C1F8BC31DAE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2E58201A-FF45-4233-8920-5215CADBAD9F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5ADC1AF4-93F2-4BE3-8504-0C1F8BC31DAE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -21,7 +32,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>9BB927C4-AC6D-4273-8B8E-983AD760C937</string>
+				<string>5ADC1AF4-93F2-4BE3-8504-0C1F8BC31DAE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -32,7 +43,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>9BB927C4-AC6D-4273-8B8E-983AD760C937</string>
+				<string>5ADC1AF4-93F2-4BE3-8504-0C1F8BC31DAE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -175,19 +186,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)	if q is "on" then		set device to 2	else if q is "off" then		set device to 1	end if		tell application "System Preferences"		reveal anchor "output" of pane id "com.apple.preference.sound"	end tell		tell application "System Events" to tell process "System Preferences"		tell table 1 of scroll area 1 of tab group 1 of window 1			select row device		end tell	end tell	quit application "System Preferences"	end alfred_script</string>
-				<key>cachescript</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>9BB927C4-AC6D-4273-8B8E-983AD760C937</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -203,6 +201,22 @@ end alfred_script</string>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>03B5C7BA-B6A7-4B09-AB2E-5C5C25DF2D47</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)	if q is "on" then		set device to "AirPlay"		tell application "System Preferences"			reveal anchor "output" of pane id "com.apple.preference.sound"		end tell				tell application "System Events" to tell process "System Preferences"			tell table 1 of scroll area 1 of tab group 1 of window 1				select (row 1 where value of text field 2 is device)			end tell		end tell		quit application "System Preferences"	else if q is "off" then		set device to 1		tell application "System Preferences"			reveal anchor "output" of pane id "com.apple.preference.sound"		end tell				tell application "System Events" to tell process "System Preferences"			tell table 1 of scroll area 1 of tab group 1 of window 1				select row device			end tell		end tell		quit application "System Preferences"	else if q is "usb" then		set device to "USB"		tell application "System Preferences"			reveal anchor "output" of pane id "com.apple.preference.sound"		end tell				tell application "System Events" to tell process "System Preferences"			tell table 1 of scroll area 1 of tab group 1 of window 1				select (row 1 where value of text field 2 is device)			end tell		end tell		quit application "System Preferences"(* else if q is "INSERT-KEYWORD" then
+		set device to "INSERT-AUDIO-DEVICE-NAME"
+		tell application "System Preferences"			reveal anchor "output" of pane id "com.apple.preference.sound"		end tell				tell application "System Events" to tell process "System Preferences"			tell table 1 of scroll area 1 of tab group 1 of window 1				select (row 1 where value of text field 1 is device)			end tell		end tell		quit application "System Preferences"
+*)	end if	end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>5ADC1AF4-93F2-4BE3-8504-0C1F8BC31DAE</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -223,6 +237,25 @@ end alfred_script</string>
 			<key>uid</key>
 			<string>87805E39-1D40-4E6D-922A-673FCDB39E86</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>usb</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>2E58201A-FF45-4233-8920-5215CADBAD9F</string>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -233,20 +266,25 @@ end alfred_script</string>
 			<key>ypos</key>
 			<real>320</real>
 		</dict>
+		<key>2E58201A-FF45-4233-8920-5215CADBAD9F</key>
+		<dict>
+			<key>ypos</key>
+			<real>560</real>
+		</dict>
 		<key>46032ED7-2D8C-4011-9395-BE30A035A730</key>
 		<dict>
 			<key>ypos</key>
 			<real>250</real>
 		</dict>
+		<key>5ADC1AF4-93F2-4BE3-8504-0C1F8BC31DAE</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
 		<key>87805E39-1D40-4E6D-922A-673FCDB39E86</key>
 		<dict>
 			<key>ypos</key>
 			<real>440</real>
-		</dict>
-		<key>9BB927C4-AC6D-4273-8B8E-983AD760C937</key>
-		<dict>
-			<key>ypos</key>
-			<real>250</real>
 		</dict>
 		<key>C0CD9CBD-9DDB-499A-9C17-F01473FA1520</key>
 		<dict>

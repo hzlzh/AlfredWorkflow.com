@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.guiguan.Uni-Call</string>
+	<key>connections</key>
+	<dict>
+		<key>4BFCA6E8-65B9-4A44-9550-75E7319D88D1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F5F02C46-B0CD-4244-86B8-7302D9CFAE57</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>54C2F3DC-1B4B-476D-9E47-214A16D51F39</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>674DE779-72F5-4632-932B-FD1404CBE0FA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7016D8DA-6748-4E96-BDA2-FBF05F0BAD5B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7667D1EB-1962-4049-A475-472CCB778F4B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>981DEDD4-2F6E-41C6-AF93-DFAECAB74618</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>824B81E3-2C65-454B-86A7-033401A2223F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>837858F2-B0C0-4662-A51C-DD4135810516</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D635F69F-C7A5-49ED-8D7D-900627932693</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Guan Gui</string>
+	<key>description</key>
+	<string>The fastest way to make Skype, FaceTime or bluetooth phone call on Mac OS X</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Uni Call</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>call</string>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./bin/Uni\ Call {query}</string>
+				<key>subtext</key>
+				<string>Lay out all possible call options for your contact</string>
+				<key>title</key>
+				<string>Uni Call</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D635F69F-C7A5-49ED-8D7D-900627932693</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>query={query}
+
+case "$query" in
+	"[CTSkype]"*)
+		osascript skypecall.scpt ${query#'[CTSkype]'};;
+	"[CTFaceTime]"*)
+		open "facetime:${query#'[CTFaceTime]'}";;
+	"[CTPhoneAmego]"*)
+		open "phoneAmego:${query#'[CTPhoneAmego]'};alert=no";;
+esac</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>calls</string>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./bin/Uni\ Call -s {query}</string>
+				<key>subtext</key>
+				<string>Make a Skype call to your contact</string>
+				<key>title</key>
+				<string>Skype Call</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7016D8DA-6748-4E96-BDA2-FBF05F0BAD5B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>name</key>
+				<string>Skype Call</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.contact</string>
+			<key>uid</key>
+			<string>824B81E3-2C65-454B-86A7-033401A2223F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>osascript skypecall.scpt {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>837858F2-B0C0-4662-A51C-DD4135810516</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>callf</string>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./bin/Uni\ Call -f {query}</string>
+				<key>subtext</key>
+				<string>Make a FaceTime call to your contact</string>
+				<key>title</key>
+				<string>FaceTime Call</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>674DE779-72F5-4632-932B-FD1404CBE0FA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open "facetime:{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F5F02C46-B0CD-4244-86B8-7302D9CFAE57</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>name</key>
+				<string>FaceTime Call</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.contact</string>
+			<key>uid</key>
+			<string>4BFCA6E8-65B9-4A44-9550-75E7319D88D1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>callp</string>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./bin/Uni\ Call -p {query}</string>
+				<key>subtext</key>
+				<string>Make a bluetooth phone call to your contact via Phone Amego</string>
+				<key>title</key>
+				<string>Phone Amego Call</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>54C2F3DC-1B4B-476D-9E47-214A16D51F39</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>name</key>
+				<string>Phone Amego Call</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.contact</string>
+			<key>uid</key>
+			<string>7667D1EB-1962-4049-A475-472CCB778F4B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open "phoneAmego:{query};alert=no"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>981DEDD4-2F6E-41C6-AF93-DFAECAB74618</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Uni Call
+v4.0
+
+The fastest way to make Skype, FaceTime or bluetooth phone call on Mac OS X
+------------------------------------------------
+
+When you would like to make a call, simply type:
+
+	call TARGET
+
+where the TARGET could be:
+
+1. a phone number (Skype, FaceTime, Phone Amego)
+2. a Skype username (Skype)
+3. an email address (FaceTime)
+4. combination of contact details stored in your Apple Contacts: first/last names or corresponding phonetic names, nicknames, organisations (All)
+
+When typing the TARGET, the top N closest fuzzy matching results drawn from Apple Contacts will be provided to you in a timely manner. You can choose one of the results to start the call immediately. Meanwhile, you can use the following options to control your search:
+
+1. **-a**: lay out all possible call options for your contact (default)
+
+		call -a TARGET
+		call TARGET
+	
+2. **-s**: make a Skype call to your contact
+
+		call -s TARGET
+		calls TARGET
+		
+3. **-f**: make a FaceTime call to your contact
+
+		call -f TARGET
+		callf TARGET
+		
+4. **-p**: make a bluetooth phone call to your contact via Phone Amego
+
+		call -p TARGET
+		callp TARGET
+		
+5. **-!**: prohibit contact thumbnails caching
+
+		call -!a TARGET		# search for all without thumbnails
+		call -s! TARGET		# search for Skype without thumbnails
+		
+6. Combination of the above options, the order of which will determine the order of results for each person in your Apple Contacts
+
+		call -sf TARGET		# search Skype and FaceTime
+		call -p!f TARGET	# search Phone Amego and FaceTime without thumbnails
+		call -sfp! TARGET	# equivalent to call -a! TARGET
+
+Alternatively, you can make calls using Alfred's Contacts Feature. There will be three contact actions available for you to choose from in **_Alfred's Contacts Feature_**: Skype Call, FaceTime Call and Phone Amego Call.
+
+Uni Call workflow supports [Alleyoop auto-updater](http://www.alfredforum.com/topic/1582-alleyoop-update-alfred-workflows/).It has been tested on Skype 6.3.0.602 and Alfred 2.0.3 (187).
+
+------------------------------------------------
+For more details, please visit http://guiguan.github.io/Uni-Call/
+
+Enjoy calling!</string>
+	<key>uidata</key>
+	<dict>
+		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>4BFCA6E8-65B9-4A44-9550-75E7319D88D1</key>
+		<dict>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>54C2F3DC-1B4B-476D-9E47-214A16D51F39</key>
+		<dict>
+			<key>ypos</key>
+			<real>440</real>
+		</dict>
+		<key>674DE779-72F5-4632-932B-FD1404CBE0FA</key>
+		<dict>
+			<key>ypos</key>
+			<real>320</real>
+		</dict>
+		<key>7016D8DA-6748-4E96-BDA2-FBF05F0BAD5B</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>7667D1EB-1962-4049-A475-472CCB778F4B</key>
+		<dict>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>824B81E3-2C65-454B-86A7-033401A2223F</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>837858F2-B0C0-4662-A51C-DD4135810516</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>981DEDD4-2F6E-41C6-AF93-DFAECAB74618</key>
+		<dict>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>D635F69F-C7A5-49ED-8D7D-900627932693</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>F5F02C46-B0CD-4244-86B8-7302D9CFAE57</key>
+		<dict>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://guiguan.github.io/Uni-Call/</string>
+</dict>
+</plist>

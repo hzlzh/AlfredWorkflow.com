@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.lemonlee.iphonetethertoggle</string>
+	<key>connections</key>
+	<dict>
+		<key>8C7BF020-56EA-4096-B5C0-E44AA2A39F5E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AA281685-88F5-4EB7-849B-C662013CA477</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>LemonLee</string>
+	<key>description</key>
+	<string>Toggle tethering with your iPhone on / off</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>iPhone Tethering Toggle</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>iph</string>
+				<key>script</key>
+				<string>DEVICENAME=$(networksetup -listallhardwareports | grep -Eo "iPhone.*$");
+
+echo "&lt;?xml version=\"1.0\"?&gt;"
+echo "&lt;items&gt;"
+
+if [[ $(networksetup -getnetworkserviceenabled "$DEVICENAME" | grep -c "Enabled") == 0 ]]
+then
+	// Turn iPhone USB Tethering On
+	echo "&lt;item uid=\"iphone usb tethering enable\" arg=\"on\"&gt;&lt;title&gt;Turn $DEVICENAME Tethering On&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+
+else
+
+	// IPv4
+	IPv4=$(networksetup -getinfo "$DEVICENAME" | grep "IP address" | egrep -o "([0-9]{1,3}\.){3,3}[0-9]{1,3}")
+	if [[ ! -z "$IPv4" ]]
+	then echo "&lt;item uid=\"\" arg=\"$IPv4\"&gt;&lt;title&gt;$IPv4&lt;/title&gt;&lt;subtitle&gt;IPv4 address&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+	fi
+
+	// IPv6
+	IPv6=$(networksetup -getinfo "$DEVICENAME" | grep "IPv6 IP address")
+	IPv6=${IPv6:17}
+	if [[ "$IPv6" != "none" ]]
+	then echo "&lt;item uid=\"\" arg=\"$IPv6\"&gt;&lt;title&gt;$IPv6&lt;/title&gt;&lt;subtitle&gt;IPv6 address&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+	fi
+
+
+	// Turn iPhone USB Tethering Off
+	echo "&lt;item uid=\"\" arg=\"off\"&gt;&lt;title&gt;Turn $DEVICENAME Tethering Off&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+
+fi
+
+echo "&lt;/items&gt;"
+</string>
+				<key>subtext</key>
+				<string>Turn iPhone USB Tethering On / Off</string>
+				<key>title</key>
+				<string>iPhone USB Tethering Toggle</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8C7BF020-56EA-4096-B5C0-E44AA2A39F5E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>DEVICENAME=$(networksetup -listallhardwareports | grep -Eo "iPhone.*$");
+
+
+if [[ "{query}" == "off" ]]
+then
+	sudo networksetup -setnetworkserviceenabled "$DEVICENAME" off
+elif [[ "{query}" == "on" ]]
+then
+	sudo networksetup -setnetworkserviceenabled "$DEVICENAME" on
+else
+	echo "{query}" | pbcopy
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AA281685-88F5-4EB7-849B-C662013CA477</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Based on wifi toggle by Jonas Eriksen</string>
+	<key>uidata</key>
+	<dict>
+		<key>8C7BF020-56EA-4096-B5C0-E44AA2A39F5E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>AA281685-88F5-4EB7-849B-C662013CA477</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
