@@ -1,36 +1,27 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import sys
-from lxml import etree
-from nsc import createXML
-
-# create items element for Alfred
-items = etree.Element("items")
+import alp
 
 # calculate decimal number
 decimal = int(sys.argv[1], 8)
 # create associative array and create xml from it
-d = {'uid':"decimal", 'arg':str(decimal), 'title':str(decimal), 'subtitle':"Decimal", 'icon':'icons/decimal.png'}
-item = createXML(d)
-# append new item to items
-items.append(item)
+decimalDic = dict(title=str(decimal), subtitle="Decimal", uid="decimal", valid=True, arg=str(decimal), icon="icons/decimal.png")
+d = alp.Item(**decimalDic)
 
 
 # calculate binary number
 binary = bin(decimal)[2:]
 # create associative array and create xml from it
-b = {'uid':"binary", 'arg':binary, 'title':binary, 'subtitle':"Binary", 'icon':'icons/binary.png'}
-item = createXML(b)
-# append new item to items
-items.append(item)
+binaryDic = dict(title=str(binary), subtitle="Binary", uid="binary", valid=True, arg=str(binary), icon="icons/binary.png")
+b = alp.Item(**binaryDic)
 
 
 # calculate hex number
 hexadec = hex(decimal)[2:]
 # create associative array and create xml from it
-h = {'uid':"hexadec", 'arg':hexadec, 'title':hexadec, 'subtitle':"Hexdecimal", 'icon':'icons/hex.png'}
-item = createXML(h)
-# append new item to items
-items.append(item)
+hexDic = dict(title=str(hexadec), subtitle="Hexadecimal", uid="hex", valid=True, arg=str(hexadec), icon="icons/hex.png")
+h = alp.Item(**hexDic)
 
-print (etree.tostring(items, pretty_print=True, xml_declaration=True))
+itemsList = [d, b, h]
+alp.feedback(itemsList)
