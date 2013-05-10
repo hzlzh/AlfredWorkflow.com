@@ -3,12 +3,12 @@
 * * * 
 
 **Author:** [Hans-Helge B&uuml;rger](http://www.hanshelgebuerger.de "Hans-Helge Bürger - Webpage")  
-**Date:** 05. January 2013	
-**Version:** v2.0	
+**Date:** 07. May 2013	
+**Version:** v2.1	
 **Licence:** [Attribution 3.0 Unported (CC BY 3.0)](http://creativecommons.org/licenses/by/3.0/ "Attribution 3.0 Unported (CC BY 3.0)")
 
 ## Quick Installation
-### Download [NSC v2.0](https://github.com/obstschale/NSC/raw/alfredextension/nsc-v2.0.alfredworkflow)
+### Download [NSC v2.1](https://github.com/obstschale/NSC/raw/alfredextension/nsc-v2.1.alfredworkflow)
 
 
 ---
@@ -68,6 +68,18 @@ Another cool feature of Alfred 2 is that you can pass arguments to other parts o
 ---
 
 ## Changelog
+### v.2.1
+* add: conversion upto base 62 (case-sensitive letters if base is greater than 35)
+* add: add info.plist to repo
+* add: all scripts uses now [alp](https://github.com/phyllisstein/alp) to generate XML feedback 
+
+### v2.01
+* bug: base 1 led into an infinite loop (thx to [@kevinlsw](https://github.com/kevinlsw) | [#2](https://github.com/obstschale/NSC/issues/2))
+* add: new int2base function which uses now letters as input/output within `convert`
+* add: NSC uses [alp](https://github.com/phyllisstein/alp) to generate XML feedback
+
+
+
 ### v2.0
 * NSC is now an Alfred Workflow and works with Alfred 2
 * add: convert from/into decimal, binary, octal, hex
@@ -95,8 +107,6 @@ Another cool feature of Alfred 2 is that you can pass arguments to other parts o
 * add: can convert from `decimal` to `binary` and `hexadecimal` with PHP builtin functions
 
 ## Roadmap
-* make it possible to enter/output letters with `convert`
-* add funtionality to deal with base larger than 62 (10 digits + 26 lowercase + 26 uppercase letters) (any ideas are welcome)
 * convert floating numbers
 
 ---
