@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.arjun.timezonecalc</string>
+	<key>connections</key>
+	<dict>
+		<key>01ECACDA-FB1F-4C33-A363-37CDA0BDF747</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6B8FFEE3-FEEA-49CF-9EB2-EA0D187A4999</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>⌘+Enter to copy this text to clipboard</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>6D1433B8-4096-4BF5-B746-3F8C4E3A4336</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>851253D5-0B21-4BD2-BD87-2C683FAF9C58</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>42E85C21-53BD-4C78-BEA8-224519D45BBF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9CD24421-1CE2-4F20-B1D5-B15A9844F366</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60DB6ED1-695B-4318-8F12-AD2CF1D7EA9D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Arjun Roychowdhury</string>
+	<key>description</key>
+	<string>Converts arbitrary time zones including support for many timezones</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Freetext timezone convertor</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>6B8FFEE3-FEEA-49CF-9EB2-EA0D187A4999</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>tzc</string>
+				<key>runningsubtext</key>
+				<string>Waiting for destination</string>
+				<key>script</key>
+				<string>perl ./tz.pl "{query}"</string>
+				<key>subtext</key>
+				<string>Calculates dates and times between multiple timezones</string>
+				<key>title</key>
+				<string>Timezone Calculator</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>01ECACDA-FB1F-4C33-A363-37CDA0BDF747</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>6D1433B8-4096-4BF5-B746-3F8C4E3A4336</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tzc edit</string>
+				<key>text</key>
+				<string>Edit Timezone Convenience Mappings</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>851253D5-0B21-4BD2-BD87-2C683FAF9C58</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>open -a TextEdit ./mycities.txt</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>42E85C21-53BD-4C78-BEA8-224519D45BBF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>tzc help</string>
+				<key>text</key>
+				<string>Help for TZCalc</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9CD24421-1CE2-4F20-B1D5-B15A9844F366</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open -a Safari ./tz_help.html</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>60DB6ED1-695B-4318-8F12-AD2CF1D7EA9D</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>TZCALC VERSION 1.2
+-------------------
+
+This is a workflow that allows you to enter freeform text to convert between multiple timezones.
+
+Examples:
+"tzc 10am md to germany,paris,london"
+"tzc Aug 13 2015 12:45pm germany to india, ca, paris"
+
+For convenience, you can map shortcuts so you don't have to remember the long timezones (example 'md' can map to 'America/New_York'). 
+
+Also, if you enter the name of a place that is not recognizable, it will use Google APIs to guess and convert it to a timezone
+
+To add/edit the convenience mappings, the command is
+
+"tzc edit"
+
+
+MODULES REQUIRED
+=================
+
+This workflow uses 'DateTime' and some other modules in Perl, which you may not have installed on your system. You also need to have Xcode and developer tools installed (all free). Please refer to the thread in alfred forum where I describe how to install it http://www.alfredforum.com/topic/2074-freetext-timezone-converter-workflow/</string>
+	<key>uidata</key>
+	<dict>
+		<key>01ECACDA-FB1F-4C33-A363-37CDA0BDF747</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>42E85C21-53BD-4C78-BEA8-224519D45BBF</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>60DB6ED1-695B-4318-8F12-AD2CF1D7EA9D</key>
+		<dict>
+			<key>ypos</key>
+			<real>360</real>
+		</dict>
+		<key>6B8FFEE3-FEEA-49CF-9EB2-EA0D187A4999</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>6D1433B8-4096-4BF5-B746-3F8C4E3A4336</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>851253D5-0B21-4BD2-BD87-2C683FAF9C58</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>9CD24421-1CE2-4F20-B1D5-B15A9844F366</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

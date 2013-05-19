@@ -12,5 +12,5 @@ $root = "";
 // date format: http://www.php.net/manual/en/datetime.createfromformat.php
 $date_format = "Y-m-d H:i";
 // timezones: http://www.php.net/manual/en/timezones.php
-$server_timezone = "Europe/Berlin";
+$server_timezone = "Asia/Shanghai";
 $enable_cache = true;

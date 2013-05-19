@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>nianca.screenlocker</string>
+	<key>connections</key>
+	<dict>
+		<key>F3AADECF-7EF4-4DCB-8D5B-E5F0D65CB421</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BD2CE9C2-EFB4-4E73-9CAB-AFDAD8DC6D03</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Nigel Smith</string>
+	<key>description</key>
+	<string>Locks the screen based on the shortcut given</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Lock Screen</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>command</key>
+				<integer>6</integer>
+				<key>confirm</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.systemcommand</string>
+			<key>uid</key>
+			<string>BD2CE9C2-EFB4-4E73-9CAB-AFDAD8DC6D03</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F3AADECF-7EF4-4DCB-8D5B-E5F0D65CB421</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>BD2CE9C2-EFB4-4E73-9CAB-AFDAD8DC6D03</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>F3AADECF-7EF4-4DCB-8D5B-E5F0D65CB421</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://nianca.net</string>
+</dict>
+</plist>

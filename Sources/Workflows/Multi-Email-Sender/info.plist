@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.arjun.multiemail</string>
+	<key>connections</key>
+	<dict>
+		<key>C0F58F1A-CC3A-482F-A53D-3107EB4A5B02</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AEBE6E4C-74F3-49E5-BAA1-A049C78C7BF5</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>⌘+Enter to copy this text to clipboard</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A30468C2-168B-469B-AB46-F2BD1EF1C63C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C5DA010F-F747-4577-A28E-27A85F5B23A5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>90AAB30E-D111-4DE6-8F47-B7C671BB2072</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AEBE6E4C-74F3-49E5-BAA1-A049C78C7BF5</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>⌘+Enter to copy the emails to clipboard</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Arjun Roychowdhury</string>
+	<key>description</key>
+	<string>Extends the alfred 'email' keyword to be able to send emails to multiple people</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Multi Email Sender</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>open "mailto:{query}"
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>90AAB30E-D111-4DE6-8F47-B7C671BB2072</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>memail</string>
+				<key>runningsubtext</key>
+				<string>Searching your Contacts...</string>
+				<key>script</key>
+				<string>/usr/bin/perl ./findaddr.pl "{query}"</string>
+				<key>subtext</key>
+				<string>Send emails to more than one person, including CC!</string>
+				<key>title</key>
+				<string>Multi Email</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C5DA010F-F747-4577-A28E-27A85F5B23A5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>AEBE6E4C-74F3-49E5-BAA1-A049C78C7BF5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>x={query}
+y=${x/\?cc/&amp;cc}
+open "https://mail.google.com/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;to=$y"
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>A30468C2-168B-469B-AB46-F2BD1EF1C63C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>memailg</string>
+				<key>runningsubtext</key>
+				<string>Searching your Contacts...</string>
+				<key>script</key>
+				<string>/usr/bin/perl ./findaddr.pl "{query}"
+
+
+
+</string>
+				<key>subtext</key>
+				<string>Send emails to more than one person, including CC!</string>
+				<key>title</key>
+				<string>Multi Email (using Gmail)</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C0F58F1A-CC3A-482F-A53D-3107EB4A5B02</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>allows you to add multiple people to send emails to. Reads entries from the mac address book.
+
+Also supports cc:
+
+For cc: just type in a "/" character and all emails after that will be in CC
+
+There are currently two keywords supported:
+1) memail - sends email using your default client
+2) memailg - sends email using web based gmail</string>
+	<key>uidata</key>
+	<dict>
+		<key>90AAB30E-D111-4DE6-8F47-B7C671BB2072</key>
+		<dict>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+		<key>A30468C2-168B-469B-AB46-F2BD1EF1C63C</key>
+		<dict>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>AEBE6E4C-74F3-49E5-BAA1-A049C78C7BF5</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>C0F58F1A-CC3A-482F-A53D-3107EB4A5B02</key>
+		<dict>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>C5DA010F-F747-4577-A28E-27A85F5B23A5</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,0 +1,399 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>FLIR Tags</title>
+<link rel=stylesheet type='text/css' href='style.css' title='Style'>
+</head>
+<body>
+<h2 class=top>FLIR Tags</h2>
+<p>Information extracted from the maker notes of JPEG images from thermal
+imaging cameras by FLIR Systems Inc.</p>
+<blockquote>
+<table class=frame><tr><td>
+<table class=inner cellspacing=1>
+<tr class=h><th>Tag&nbsp;ID</th><th>Tag Name</th>
+<th>Writable</th><th>Values / <span class=n>Notes</span></th></tr>
+<tr>
+<td title='0x0001 = 1'>0x0001</td>
+<td>ImageMaximumTemperature</td>
+<td class=c>rational64u</td>
+<td><span class=s><span class=n>(these temperatures may be in Celcius, Kelvin or Fahrenheit, but there is no
+way to tell which)</span></span></td></tr>
+<tr class=b>
+<td title='0x0002 = 2'>0x0002</td>
+<td>ImageMinimumTemperature</td>
+<td class=c>rational64u</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td title='0x0003 = 3'>0x0003</td>
+<td>Emissivity</td>
+<td class=c title=' ~ = Writable only with -n'>rational64u~</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td title='0x0004 = 4'>0x0004</td>
+<td>UnknownTemperature?</td>
+<td class=c>rational64u</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td title='0x0005 = 5'>0x0005</td>
+<td>UnknownMaximumTemperature?</td>
+<td class=c>rational64u</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td title='0x0006 = 6'>0x0006</td>
+<td>UnknownMinimumTemperature?</td>
+<td class=c>rational64u</td>
+<td>&nbsp;</td></tr>
+</table></td></tr></table></blockquote>
+
+<h2><a name='APP1'>FLIR APP1 Tags</a></h2>
+<p>Information extracted from the FLIR APP1 segment of JPEG images.</p>
+<blockquote>
+<table class=frame><tr><td>
+<table class=inner cellspacing=1>
+<tr class=h><th>Tag&nbsp;ID</th><th>Tag Name</th>
+<th>Writable</th><th>Values / <span class=n>Notes</span></th></tr>
+<tr>
+<td title='0x0001 = 1'>0x0001</td>
+<td>RawData</td>
+<td class=c>-</td>
+<td>--&gt; <a href='FLIR.html#RawData'>FLIR RawData Tags</a></td></tr>
+<tr class=b>
+<td title='0x0020 = 32'>0x0020</td>
+<td>CameraInfo</td>
+<td class=c>-</td>
+<td>--&gt; <a href='FLIR.html#CameraInfo'>FLIR CameraInfo Tags</a></td></tr>
+<tr>
+<td title='0x0022 = 34'>0x0022</td>
+<td>PaletteInfo</td>
+<td class=c>-</td>
+<td>--&gt; <a href='FLIR.html#PaletteInfo'>FLIR PaletteInfo Tags</a></td></tr>
+<tr class=b>
+<td title='0x0023 = 35'>0x0023</td>
+<td>TextInfo</td>
+<td class=c>-</td>
+<td>--&gt; <a href='FLIR.html#TextInfo'>FLIR TextInfo Tags</a></td></tr>
+<tr>
+<td title='0x0024 = 36'>0x0024</td>
+<td>EmbeddedAudioFile</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td title='0x002b = 43'>0x002b</td>
+<td>GPSInfo</td>
+<td class=c>-</td>
+<td>--&gt; <a href='FLIR.html#GPSInfo'>FLIR GPSInfo Tags</a></td></tr>
+<tr>
+<td title='0x002e = 46'>0x002e</td>
+<td>ParamInfo</td>
+<td class=c>-</td>
+<td>--&gt; <a href='FLIR.html#ParamInfo'>FLIR ParamInfo Tags</a></td></tr>
+</table></td></tr></table></blockquote>
+
+<h2><a name='RawData'>FLIR RawData Tags</a></h2>
+<p>The thermal data may be stored either as raw data, or in PNG format. If
+stored as raw data, ExifTool adds a TIFF header to allow the data to be
+viewed as a TIFF image.  If stored in PNG format, the PNG image is extracted
+as-is.  Note that most FLIR cameras using the PNG format seem to write the
+16-bit raw image data in the wrong byte order.</p>
+<blockquote>
+<table class=frame><tr><td>
+<table class=inner cellspacing=1>
+<tr class=h><th>Index2</th><th>Tag Name</th>
+<th>Writable</th><th>Values / <span class=n>Notes</span></th></tr>
+<tr>
+<td class=r title='1 = 0x1'>1</td>
+<td>RawThermalImageWidth</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='2 = 0x2'>2</td>
+<td>RawThermalImageHeight</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='16 = 0x10'>16</td>
+<td>RawThermalImageType</td>
+<td class=c>N</td>
+<td><span class=s><span class=n>(TIFF or PNG)</span></span></td></tr>
+<tr class=b>
+<td class=r title='16 = 0x10'>16.1</td>
+<td>RawThermalImage</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+</table></td></tr></table></blockquote>
+
+<h2><a name='CameraInfo'>FLIR CameraInfo Tags</a></h2>
+<blockquote>
+<table class=frame><tr><td>
+<table class=inner cellspacing=1>
+<tr class=h><th>Index1</th><th>Tag Name</th>
+<th>Writable</th><th>Values / <span class=n>Notes</span></th></tr>
+<tr>
+<td class=r title='32 = 0x20'>32</td>
+<td>Emissivity</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='36 = 0x24'>36</td>
+<td>ObjectDistance</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='40 = 0x28'>40</td>
+<td>ReflectedApparentTemperature</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='44 = 0x2c'>44</td>
+<td>AtmosphericTemperature</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='48 = 0x30'>48</td>
+<td>IRWindowTemperature</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='52 = 0x34'>52</td>
+<td>IRWindowTransmission</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='60 = 0x3c'>60</td>
+<td>RelativeHumidity</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='144 = 0x90'>144</td>
+<td>CameraMaximumTemperature</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='148 = 0x94'>148</td>
+<td>CameraMinimumTemperature</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='152 = 0x98'>152</td>
+<td>UnknownTemperature1?</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='156 = 0x9c'>156</td>
+<td>UnknownTemperature2?</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='160 = 0xa0'>160</td>
+<td>UnknownTemperature3?</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='164 = 0xa4'>164</td>
+<td>UnknownTemperature4?</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='168 = 0xa8'>168</td>
+<td>UnknownTemperature5?</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='172 = 0xac'>172</td>
+<td>UnknownTemperature6?</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='212 = 0xd4'>212</td>
+<td>CameraModel</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='244 = 0xf4'>244</td>
+<td>CameraPartNumber</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='260 = 0x104'>260</td>
+<td>CameraSerialNumber</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='276 = 0x114'>276</td>
+<td>CameraSoftware</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='368 = 0x170'>368</td>
+<td>LensModel</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='400 = 0x190'>400</td>
+<td>LensPartNumber</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='416 = 0x1a0'>416</td>
+<td>LensSerialNumber</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+</table></td></tr></table></blockquote>
+
+<h2><a name='PaletteInfo'>FLIR PaletteInfo Tags</a></h2>
+<blockquote>
+<table class=frame><tr><td>
+<table class=inner cellspacing=1>
+<tr class=h><th>Index1</th><th>Tag Name</th>
+<th>Writable</th><th>Values / <span class=n>Notes</span></th></tr>
+<tr>
+<td class=r title='0 = 0x0'>0</td>
+<td>PaletteColors</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='6 = 0x6'>6</td>
+<td>AboveColor</td>
+<td class=c>N</td>
+<td><span class=s><span class=n>(Y Cb Cr color components)</span></span></td></tr>
+<tr>
+<td class=r title='9 = 0x9'>9</td>
+<td>BelowColor</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='12 = 0xc'>12</td>
+<td>OverflowColor</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='15 = 0xf'>15</td>
+<td>UnderflowColor</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='18 = 0x12'>18</td>
+<td>Isotherm1Color</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='21 = 0x15'>21</td>
+<td>Isotherm2Color</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='26 = 0x1a'>26</td>
+<td>PaletteMethod</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='27 = 0x1b'>27</td>
+<td>PaletteStretch</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='48 = 0x30'>48</td>
+<td>PaletteFileName</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td class=r title='80 = 0x50'>80</td>
+<td>PaletteName</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td class=r title='112 = 0x70'>112</td>
+<td>Palette</td>
+<td class=c>N</td>
+<td><span class=s><span class=n>(Y Cb Cr byte values for each palette color)</span></span></td></tr>
+</table></td></tr></table></blockquote>
+
+<h2><a name='TextInfo'>FLIR TextInfo Tags</a></h2>
+<blockquote>
+<table class=frame><tr><td>
+<table class=inner cellspacing=1>
+<tr class=h><th>Tag Name</th>
+<th>Writable</th><th>Values / <span class=n>Notes</span></th></tr>
+<tr>
+<td>Label0</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td>Label1</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Label2</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td>Label3</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Value0</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td>Value1</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Value2</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td>Value3</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+</table></td></tr></table></blockquote>
+
+<h2><a name='GPSInfo'>FLIR GPSInfo Tags</a></h2>
+<blockquote>
+<table class=frame><tr><td>
+<table class=inner cellspacing=1>
+<tr class=h><th>Index1</th><th>Tag Name</th>
+<th>Writable</th><th>Values / <span class=n>Notes</span></th></tr>
+<tr>
+<td class=r title='88 = 0x58'>88</td>
+<td>GPSMapDatum</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+</table></td></tr></table></blockquote>
+
+<h2><a name='ParamInfo'>FLIR ParamInfo Tags</a></h2>
+<blockquote>
+<table class=frame><tr><td>
+<table class=inner cellspacing=1>
+<tr class=h><th>Tag Name</th>
+<th>Writable</th><th>Values / <span class=n>Notes</span></th></tr>
+<tr>
+<td>DateTimeGenerated</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td>Param0</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Param1</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td>Param2</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>Param3</td>
+<td class=c>N</td>
+<td>&nbsp;</td></tr>
+</table></td></tr></table></blockquote>
+
+<hr>
+(This document generated automatically by Image::ExifTool::BuildTagLookup)
+<br><i>Last revised Apr 5, 2013</i>
+<p class=lf><a href='index.html'>&lt;-- ExifTool Tag Names</a></p>
+</body>
+</html>

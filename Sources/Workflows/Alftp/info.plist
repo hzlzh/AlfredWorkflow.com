@@ -43,6 +43,14 @@
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>BBC0E96D-1DD2-46AD-B0EF-E485130511E5</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Search movie with Douban workflow</string>
+			</dict>
 		</array>
 		<key>E9C9DE0C-08D7-4AF1-86ED-F0C8AA123878</key>
 		<array/>
@@ -50,7 +58,7 @@
 	<key>createdby</key>
 	<string>Janlay Wu</string>
 	<key>description</key>
-	<string>Alftp: An FTP browser for Alfred 2</string>
+	<string>An FTP browser for Alfred 2</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -78,21 +86,6 @@ echo "wget $params";
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>6F60ACDF-4204-44E1-8F9F-CECDA3D168E8</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)
-	tell application "Alfred 2" to search "ftp " &amp; q
-end alfred_script</string>
-				<key>cachescript</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>E9C9DE0C-08D7-4AF1-86ED-F0C8AA123878</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -127,7 +120,7 @@ require_once "config.php";
 require_once "workflows.php";
 require_once "alftp.php";</string>
 				<key>title</key>
-				<string>Alftp: An FTP browser for Alfred 2</string>
+				<string>Alftp: an FTP browser for Alfred 2</string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>
@@ -138,9 +131,67 @@ require_once "alftp.php";</string>
 			<key>uid</key>
 			<string>9F397B69-5323-4A71-98A3-8AC28BD35DE4</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "Alfred 2" to search "ftp " &amp; q
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>E9C9DE0C-08D7-4AF1-86ED-F0C8AA123878</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on split(theString, theDelimiter)
+    set oldDelimiters to AppleScript's text item delimiters
+    set AppleScript's text item delimiters to theDelimiter
+    set theArray to every text item of theString
+    set AppleScript's text item delimiters to oldDelimiters
+    return theArray
+end split
+
+on extractTitle(path)
+	set arr to (reverse of split(path, "/"))
+
+	repeat with title in arr
+		if (contents of title is not "") then return title
+	end repeat
+
+	return null
+end extractTitle
+
+on extractName(title)
+	set y to ".20"
+	if title contains ".19" then set y to ".19"
+	set AppleScript's text item delimiters to y
+	return (text item 1 of title)
+end extractName
+
+on alfred_script(q)
+	set title to extractTitle(q)
+	set n to extractName(title)
+
+	tell application "Alfred 2" to search "movie " &amp; n
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>BBC0E96D-1DD2-46AD-B0EF-E485130511E5</string>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string>v0.2
+	<string>v0.3
 
 Will support any other protocols just like curl does :)</string>
 	<key>uidata</key>
@@ -159,6 +210,11 @@ Will support any other protocols just like curl does :)</string>
 		<dict>
 			<key>ypos</key>
 			<real>140</real>
+		</dict>
+		<key>BBC0E96D-1DD2-46AD-B0EF-E485130511E5</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
 		</dict>
 		<key>E9C9DE0C-08D7-4AF1-86ED-F0C8AA123878</key>
 		<dict>

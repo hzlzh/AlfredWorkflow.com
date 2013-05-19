@@ -125,16 +125,18 @@ function output($dir, $list) {
 	}
 
     foreach($list as $index=>$entry) {
-    	$icon_name = 'GenericDocumentIcon.icns';
+        $info = pathinfo($entry['name']);
 		$path = (substr($dir, -1) == '/' ? $dir : "$dir/") . $entry["name"];
 
     	// TODO: need to optimize performance in loop
     	if($entry["flag"] == 'd') {
     		$path = "$path/";
-    		$icon_name = getCachedItem($path) ? 'DropFolderIcon.icns' : 'GenericFolderIcon.icns';
-    	};
+    		$icon = $GLOBALS["icon_path"] . (getCachedItem($path) ? 'DropFolderIcon.icns' : 'GenericFolderIcon.icns');
+    	} else {
+            $icon = array_key_exists('extension', $info) ? "filetype:.". $info['extension'] : $GLOBALS["icon_path"] . 'GenericDocumentIcon.icns';
+        }
 
-        $wf->result($index + 1, $path, $entry["name"], ($entry["flag"] == '-' ? get_filesize($entry["size"] . ', ') : '') ."Last modified: ". $entry["lastmodifieddate"], $GLOBALS["icon_path"] . $icon_name, $entry["flag"] == '-');
+        $wf->result($index + 1, $path, $entry["name"], ($entry["flag"] == '-' ? get_filesize($entry["size"]) . '. ' : '') ."Last modified: ". $entry["lastmodifieddate"], $icon, $entry["flag"] == '-');
     }
 
 	echo $wf->toxml();

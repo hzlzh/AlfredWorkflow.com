@@ -1,0 +1,47 @@
+
+<!-- saved from url=(0057)http://blog.roychowdhury.org/~arjunrc/cgi-bin/tzhelp.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" type="text/css" href="./TimeZone Calculator Help_files/tz.css">
+				<title>Simple TimeZone Converter Help</title>
+	</head>
+	<body>
+					<h1> Simple TimeZone Converter Help </h1>
+
+					<h2> Quick Start </h2>
+
+					The format is:<br><br>
+
+					<font color="blue"><i>source</i> to <i>destination1 [, destination2,..., destinationN]</i></font> <br><br>
+
+					Where <i>source</i> is the time (and/or date) you want to convert from, <i>destination</i> is the TIMEZONE you want to convert to.<br>
+					Timezones can be entered as "full timezones" (e.g. America/New_York), "short codes" (EST), or convenience names(e.g. "maryland","ca")<br> *see note on convenience names below<br/> If you enter a place that is not recognizable, it will use Google APIs to try and convert the place to a Time Zone</br/><br/>
+
+
+					<font color="red">NOTE:If you have not mapped a timezone to a convenience name, you MUST use the proper timezone name. See 
+					<a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones">HERE</a> (Column titled TZ) for list of proper time zone names</font><br/>
+					<h3>Valid Examples:</h3>
+					<font color="blue">
+					"tzc 9:30pm mar 14 2008 india to paris,london,amsterdam,MST"<br>
+					"tzc 10:0 pm est to mst"<br>
+					"tzc 10pm CST to IsT" <br>
+					"tzc november 12, 1990 14:00 america/new_york to pst" <br>
+					"tzc 12 nov 2007 3pm pst to gmt" <br>
+					"tzc est to mst" (this will tell you what the current local time in est is in ist)<br>
+					<br><br>
+					</font>
+					As you can see, the text can be very free flowing and the parser accepts many variations. <br>
+					You can play around and figure out what variations don't work. <br>
+					The need was not to have a fool proof parser, but use one that accepts many acceptable formats. <br><br>
+
+					You can add new convienence mappings ad-infinitum. Just type in 'tzc edit' to add convenience mappings<br> 
+					
+					<br><br>
+					The format is: <font color="blue">convenience_name:timezone</font><br>
+					example: to say "rockville" should map to "America/New_York", simply add:<br>
+					rockville:America/New_York to the end of mycities.txt<br>
+					Now, if you enter "8:30pm rockville to london", the program will know rockville is America/New_York<br>
+
+					
+
+	
+</body></html>
