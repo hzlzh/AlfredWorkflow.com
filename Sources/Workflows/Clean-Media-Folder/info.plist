@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>0D1A3A6F-944D-453D-9C02-833100FC91DC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C1024E4D-3D4A-4BCC-8411-29827B9762C5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C1EC85DC-39AC-41FC-9C27-000669640D3C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0D1A3A6F-944D-453D-9C02-833100FC91DC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Tim Kilåker</string>
+	<key>description</key>
+	<string>Deletes everything except .mkv, .avi and .srt from current Finder folder.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Clean Media Folder</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>set extensionList to {"mkv", "srt", "avi"}tell application "Finder"
+	delete (every item of (target of front Finder window) whose name extension is 	not in extensionList)end tell
+</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0D1A3A6F-944D-453D-9C02-833100FC91DC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>mtidy</string>
+				<key>subtext</key>
+				<string>Clean current folder</string>
+				<key>text</key>
+				<string>Clean movie folder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C1EC85DC-39AC-41FC-9C27-000669640D3C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>1</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Media folder has been cleaned.</string>
+				<key>title</key>
+				<string>Clean Media Folder</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C1024E4D-3D4A-4BCC-8411-29827B9762C5</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Cleans any media folder. 
+Deletes everything except .mkv, .avi and .srt from current Finder folder.
+Edit script to appropriate name extensions.</string>
+	<key>uidata</key>
+	<dict>
+		<key>0D1A3A6F-944D-453D-9C02-833100FC91DC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C1024E4D-3D4A-4BCC-8411-29827B9762C5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C1EC85DC-39AC-41FC-9C27-000669640D3C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/TKilaker/alfred-clean-media-filder</string>
+</dict>
+</plist>

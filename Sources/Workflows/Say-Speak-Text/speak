@@ -1,0 +1,219 @@
+#!/usr/bin/env bash
+
+# --- This workflow's bundle ID; sadly, must be duplicated from the workflow's settings for now.
+BUNDLE_ID='net.same2u.alfred.say'
+# ---
+
+query=$1  # Query is passed in as a *single* parameter.
+
+  # Parse the query.
+listVoices=0
+voiceSpecs=''
+voiceSpecType=''
+voiceSpecIsSuffix=0
+if [[ -n $query ]]; then
+  if [[ $query != [@#\ ]* ]]; then # Special case: allow typing a voice name directly after the keyword (no space), and without ID char (@).    
+    listVoices=1
+    voiceSpecType='@'
+      # Parse into voice specifier(s) (1st token) and text to pronounce (rest) (while trimming surrounding whitespace).
+    IFS=' ' read -r voiceSpecs txt <<<"$query"
+  else # Parse for an embedded voice specifier or list of embedded voice specifiers (","-separated, no internal whitespace).
+    # PREFIX form (e.g, " @fio Speak to me."):
+    if [[ $query =~ ^\ *([@#])([,[:alnum:]_\-]*)\ *([^\ ].*)?$ ]]; then # !! not capturing trailing whitespace turned out to be too tricky - we trim it below.
+      listVoices=1
+      voiceSpecType=${BASH_REMATCH[1]}
+      voiceSpecs=${BASH_REMATCH[2]}
+      IFS=' ' read -r txt <<<"${BASH_REMATCH[3]}"  # trim trailing whitespace, if any.
+    # Postfix form (e.g, " Speak to me. @fio"; trailing whitespace breaks the voice-spec. recognition - in fact, such whitespace can be used to use the special chars. as literals):
+    elif [[ $query =~ ^\ +([^@#]+)\ +([@#])([,[:alnum:]_\-]*)$ ]]; then
+      voiceSpecIsSuffix=1
+      listVoices=1
+      txt=${BASH_REMATCH[1]}
+      voiceSpecType=${BASH_REMATCH[2]}
+      voiceSpecs=${BASH_REMATCH[3]}
+    else # No embedded voice spec.
+      # Entire query is text to speak; just remove surrounding whitespace.
+      IFS=' ' read -r txt <<<"$query"      
+    fi
+  fi
+fi
+
+# Activate for debugging via Terminal.
+# pv listVoices voiceSpecIsSuffix voiceSpecType voiceSpecs txt
+# ~/MkUtil/growl "[$voiceSpecs]"
+
+CACHE_FOLDER="$HOME/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/$BUNDLE_ID"
+
+CACHEFILE_VOICES="$CACHE_FOLDER/voices.txt" # plain-text list of all voice names, language spec., sample text
+CACHEFILE_FILTER="$CACHE_FOLDER/voices.xml" # the script-filter XML document last output
+CACHEFILE_LASTVSPEC="$CACHE_FOLDER/lastVspec.txt" # the last pattern used to select a voice
+CACHEFILE_LASTQUERY="$CACHE_FOLDER/lastQuery.txt" # the query exactly as entered
+CACHEFILE_TEXT="$CACHE_FOLDER/say.txt" # text to speak - to be read by next workflow step
+
+# Ensure existence of cache folder.
+[[ -d $CACHE_FOLDER ]] || mkdir -p "$CACHE_FOLDER" || exit
+
+# To avoid a stale cache of voices, we always recreate it if there's no text (yet) to pronounce.
+if [[ -z $txt ]]; then
+    # Create and cache the plain-text list of all voices.
+    ./voice > "$CACHEFILE_VOICES"
+fi
+
+if (( listVoices )); then # create list of all / matching languages
+  
+  useCached=0
+  # Note: to avoid risk of a stale cache, we recreate the cache whenever there's no text or
+  #       a 1-character text (at which point the subtitles change) - longer texts are then potentially cached.
+  if [[ -n $voiceSpecs && ${#txt} -gt 1 ]]; then
+    # Decide if we can use the cached version of the filter doc.
+    if [[ -f $CACHEFILE_LASTVSPEC && -f $CACHEFILE_FILTER ]]; then
+      [[ ${voiceSpecType}${voiceSpecs} == $(< "$CACHEFILE_LASTVSPEC") ]] && useCached=1
+    fi
+  fi
+
+  # Activate for debugging
+  # (( useCached )) && ~/MkUtil/growl cached
+  # pv  useCached  # will show only when run from Terminal
+
+  # Create the filter XML doc with the list of all/matching languages.
+  if (( ! useCached )); then
+
+    # Turn on case-INsensitive matching.
+    shopt -s nocasematch
+
+    if [[ -n $voiceSpecs ]]; then
+      IFS=',' read -ra voiceSpecsArray <<<"$voiceSpecs"
+    fi
+
+    # !! XML declaration should not be preceded by whitespace.
+    cat > "$CACHEFILE_FILTER" <<EOF
+<?xml version="1.0"?>
+<items>
+EOF
+   
+    subtitleSuffix='; + Opt to make default.'
+
+    numMatches=0
+    items=''
+    voices=''
+    while IFS='#' read -r vnameAndLang demoText; do
+      IFS=' ' read -r demoText <<<"$demoText" # trim leading whitespace
+      # !! The voice name can have embedded whitespace, so we need to use a
+      # !! regex to parse voice name and language ID apart.
+      [[ $vnameAndLang =~ (.+)\ +([[:alpha:]][[:alpha:]][_-][[:alpha:]]+) ]]
+      IFS=' ' read -r vname <<<"${BASH_REMATCH[1]}"
+      vlang=${BASH_REMATCH[2]}
+      if [[ -z $voiceSpecs ]]; then
+        include=1
+      else
+        # Decide whether to include the voice at hand based on the voice specifiers.
+        # We use simple *prefix* matching.
+        # Note:
+        #   - names: some voice names have embedded spaces - we simply remove them for comparison (the spec. is assumed never to have spaces)
+        #   - language: for the comparison we remove "_" and "-" characters from the language identifier
+        #               (Almost all languages use "_" as the separator between the language ID and region identifier (e.g., "en_US"), EXCEPT the Scottish voice, which uses "-": "en-scotland")
+        # !! With multiple specifiers, a limitation of the current matching is that the result set will always reflect the alphabetical voice-name sorting; for instance, if you
+        # !! specify "#enau,engb" to contrast Australian and British English, the matching voices will not generally be grouped by language.
+        include=0
+        for voiceSpec in "${voiceSpecsArray[@]}"; do
+          if [[ ($voiceSpecType ==  '@' && ${vname// /} == $voiceSpec*) || ($voiceSpecType == '#' && ${vlang//[_\-]/} == ${voiceSpec//[-\_]/}*) ]]; then
+            include=1
+            break
+          fi
+        done
+      fi
+      if (( include )); then
+        if [[ -z $txt ]]; then
+           subtitle="Speak demo text with this voice$subtitleSuffix \"$demoText\""
+        else
+           subtitle="Speak specified text with this voice$subtitleSuffix"
+        fi
+        # Output filter item.
+        # !! Because Alfred replaces the *entire* query when autocompleting, we must construct our values accordingly.
+        autocompleteAttr=''
+        if [[ -n $voiceSpecs && -n $voiceSpecType ]]; then
+          if [[ -z $txt ]]; then            
+            autocompleteAttr="autocomplete=\"@${vname// /} \""
+          else
+            # Sadly, we must HTML-encode the text - since this will become part of an *attribute*, using CDATA is not an option.
+            txtEscaped=${txt//&/&quot;}
+            txtEscaped=${txtEscaped//\"/&quot;}
+            txtEscaped=${txtEscaped//</&lt;}
+            txtEscaped=${txtEscaped//>/&gt;}
+            autocompleteAttr="autocomplete=\" $txtEscaped @${vname// /}\""
+          fi
+        fi
+        items+=$'\n'"<item $autocompleteAttr arg='$vname' lang='$vlang'><title><![CDATA[$vname ($vlang)]]></title><subtitle><![CDATA[$subtitle]]></subtitle><icon>icon.png</icon></item>"
+        voices+=",$vname"
+        (( ++numMatches ))
+      fi
+    done < "$CACHEFILE_VOICES"
+
+    if (( numMatches == 0 )); then
+      cat >> "$CACHEFILE_FILTER" <<EOF
+        <item valid="no">
+          <title><![CDATA[(No matching voice found.)]]></title>
+          <subtitle><![CDATA[Specify @{voiceName} or #{languageID} at the beginning or end. To use these chars. as literals, add a space after.]]></subtitle>
+          <icon>icon.png</icon>
+        </item>
+EOF
+    else
+        if (( numMatches > 1 )); then
+          cat >> "$CACHEFILE_FILTER" <<EOF
+            <item arg='${voices:1}'>
+              <title><![CDATA[Speak with ALL matching voices]]></title>
+              <subtitle><![CDATA[Specify @{voiceName} or #{languageID} at the beginning or end. To use these chars. as literals, add a space after.]]></subtitle>
+              <icon>icon.png</icon>
+            </item>
+EOF
+        fi
+        echo "$items" >> "$CACHEFILE_FILTER"    
+    fi
+
+
+    cat >> "$CACHEFILE_FILTER" <<EOF
+</items>
+EOF
+
+  fi
+
+  # Output the script-filter doc.
+  cat "$CACHEFILE_FILTER"
+
+else # use default voice
+
+  # Determine the name of the system (default) voice.
+  defaultVoice=$(defaults read com.apple.speech.voice.prefs SelectedVoiceName)
+
+  subtitle='Type @ or # to see available voices, @{voiceName} or #{languageID} to filter (prefix matching).'
+  if [[ -z $txt && ! -z $query ]]; then
+    title="Speak demo text with default voice ($defaultVoice)"
+    subtitle='Demo text: "'$(egrep "^$defaultVoice " "$CACHEFILE_VOICES" | awk -F '# ' '{ print $2; }')'"'
+  elif [[ -z $query ]]; then 
+    title="Type text to speak"  # action to speak demo text"
+  else    
+    title="Speak with default voice ($defaultVoice)"
+  fi
+
+  # Note: we pass placeholder '~' for the default voice so that the subsequent workflow steps can detect the case where a voice was not selected at all.
+  cat <<EOF
+  <?xml version="1.0"?>
+  <items>
+    <item arg="~">
+      <title>$title</title>
+      <subtitle><![CDATA[$subtitle]]></subtitle>
+      <icon>icon.png</icon>
+    </item>
+  </items>
+EOF
+
+fi
+
+# Remember the last voice specifier so that we can decide whether we need to recreate the filter doc next time.
+[[ -n $voiceSpecType ]] && printf '%s' "${voiceSpecType}${voiceSpecs}" > "$CACHEFILE_LASTVSPEC"
+
+# Remember the last query so that the next workflow step can redisplay it.
+printf '%s' "$query" > "$CACHEFILE_LASTQUERY"
+
+# Cache the text to speak (for simplicity, even when empty) for the next workflow step.
+printf '%s' "$txt" > "$CACHEFILE_TEXT"  

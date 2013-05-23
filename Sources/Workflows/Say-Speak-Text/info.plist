@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.same2u.alfred.say</string>
+	<key>connections</key>
+	<dict>
+		<key>4F3995F6-30EC-4FE2-A891-C4D1A7684E19</key>
+		<array/>
+		<key>516880CA-C0EE-452F-A2D1-B75D3633F4F4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>85518D68-C988-4854-8CC1-1403CE111805</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5FB7051B-D903-4E3E-8930-F63EEECF749B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7657C6CF-C893-4203-AAB9-4AB77406AD19</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>83FF13F0-D6C1-4AE9-B890-9A2AB798EF2B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4F3995F6-30EC-4FE2-A891-C4D1A7684E19</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F1C651CD-53A8-40D5-B79F-AE8744FA8344</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Make this voice the default voice.</string>
+			</dict>
+		</array>
+		<key>F1C651CD-53A8-40D5-B79F-AE8744FA8344</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>98C19F4B-3EF6-4B4C-85B7-C296069E5AE8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Michael Klement &lt;mklement0+gh@gmail.com&gt;</string>
+	<key>description</key>
+	<string>Speak specified text using OS X text-to-speech synthesis</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Say - Speak Text</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string># Simply speak the input text with the default voice.
+say -- "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>85518D68-C988-4854-8CC1-1403CE111805</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>516880CA-C0EE-452F-A2D1-B75D3633F4F4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/usr/bin/env bash
+
+# --- This workflow's bundle ID; sadly, must be duplicated from the workflow's settings for now.
+BUNDLE_ID='net.same2u.alfred.say'
+# -- This workflow's keyword;  sadly, must be duplicated from the workflow's settings for now.
+KEYWORD='say'
+# ---
+CACHE_FOLDER="$HOME/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/$BUNDLE_ID"
+
+CACHE_FILE_TEXT="$CACHE_FOLDER/say.txt"
+CACHE_FILE_LASTQUERY="$CACHE_FOLDER/lastQuery.txt" # the last query submitted, exactly as entered
+
+redisplay() {
+	local lastQuery=$(&lt;"$CACHE_FILE_LASTQUERY")
+	osascript -e 'tell application "Alfred 2" to search "'"${KEYWORD}${lastQuery//\"/\\\"}"'"'
+}
+
+# The voice name(s) are passed in from the script filter.
+vnames="{query}"
+
+# ~/MkUtil/growl "[$vnames]"
+
+# The text to speak is taken from a cache file.
+# If no text was given, we'll use the demo text - see below.
+txt="$(&lt;"$CACHE_FILE_TEXT")"
+useDemoText=0
+[[ -z $txt ]] &amp;&amp; useDemoText=1
+
+# REDISPLAY Alfred right away, so the user can continue to experiment.
+redisplay
+
+	# Loop over all specified voices and speak the text.
+IFS=',' read -ra vnameArray &lt;&lt;&lt;"$vnames"
+for vname in "${vnameArray[@]}"; do 
+
+		# Accept '~' as a placeholder for the default voice.
+	if [[ $vname == "~" ]]; then
+		vname=$(./voice -db)
+	fi
+
+	# If no text was given, use the sample text, as displayed in 
+	# System Preferences and output by `say -v \?`
+	if (( useDemoText )); then
+	  txt="$(say -v ? | egrep "^$vname +[a-z][a-z][_\-]\w+ " | awk -F '#' '{ print $2; }')"
+	fi
+
+	# Speak.
+	say -v "$vname" -- "$txt"
+
+done
+
+
+# !! We do NOT clean up our cache files,
+# !! as that would interfere with redisplaying the same query.
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4F3995F6-30EC-4FE2-A891-C4D1A7684E19</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>say</string>
+				<key>runningsubtext</key>
+				<string>Preparing...</string>
+				<key>script</key>
+				<string>./speak "{query}"</string>
+				<key>subtext</key>
+				<string>Speak text out loud using text-to-speech synthesis.</string>
+				<key>title</key>
+				<string>Speak specified text</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>83FF13F0-D6C1-4AE9-B890-9A2AB798EF2B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Say</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>98C19F4B-3EF6-4B4C-85B7-C296069E5AE8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string># --- This workflow's bundle ID; sadly, must be duplicated from the workflow's settings for now.
+BUNDLE_ID='net.same2u.alfred.say'
+# -- This workflow's keyword;  sadly, must be duplicated from the workflow's settings for now.
+KEYWORD='say'
+# ---
+CACHE_FOLDER="$HOME/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/$BUNDLE_ID"
+
+CACHE_FILE_TEXT="$CACHE_FOLDER/say.txt"
+CACHE_FILE_LASTQUERY="$CACHE_FOLDER/lastQuery.txt" # the last query submitted, exactly as entered
+
+# Redisplays Alfred with the same query as before, so the user can continue to experiment.
+redisplay() {
+	local lastQuery=$(&lt;"$CACHE_FILE_LASTQUERY")
+	osascript -e 'tell application "Alfred 2" to search "'"${KEYWORD}${lastQuery//\"/\\\"}"'"'
+}
+
+vname="{query}"
+
+# Make sure that a SINGLE, SPECIFIC voice was specified.
+# Sadly, we cannot prevent error cases up front, as Alfred will allow
+# invoking the modifier on *any* valid result item.
+# The best we can do is display an error message and let the user try again.
+if [[ $vname == '~' ]]; then
+	# This means that no voice was ever selected and the command was
+	# invoked on the speak-with-default-voice result.
+	osascript -e 'tell application "SystemUIServer" to display alert "In order to set the default voice, please select a specific voice first -- by typing @ (optionally followed by a voice name or prefix) or # (optionally followed by a language ID or prefix) -- and try again." as warning' &gt; /dev/null
+	# REDISPLAY Alfred, so the user can try again.
+	redisplay
+ exit
+elif fgrep "," &lt;&lt;&lt;"$vname" &gt; /dev/null; then
+	# This means that the speak-with-ALL-matching-voices command was selected.
+	osascript -e 'tell application "SystemUIServer" to display alert "In order to set the default voice, please select a specific voice and try again." as warning' &gt; /dev/null
+	# REDISPLAY Alfred, so the user can try again.
+	redisplay
+ exit
+fi
+
+./voice --set-default "$vname" 2&gt;&amp;1
+
+# REDISPLAY Alfred, so the user can continue to experiment.
+redisplay</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F1C651CD-53A8-40D5-B79F-AE8744FA8344</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>say</string>
+				<key>runningsubtext</key>
+				<string>Preparing...</string>
+				<key>script</key>
+				<string>cat &lt;&lt;EOF
+&lt;?xml version="1.0"?&gt;
+&lt;items&gt;
+
+  &lt;item&gt;
+    &lt;title&gt;Manage Voices
+&lt;/title&gt;
+    &lt;subtitle&gt;Open System Preferences to manage and download voices and configure other text-to-speech options.&lt;/subtitle&gt;
+	&lt;icon&gt;icon-config.png&lt;/icon&gt;
+  &lt;/item&gt;
+
+&lt;/items&gt;
+EOF
+</string>
+				<key>subtext</key>
+				<string>Open System Preferences to manage and download voices and configure other text-to-speech options.</string>
+				<key>title</key>
+				<string>Manage Voices</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5FB7051B-D903-4E3E-8930-F63EEECF749B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+   tell application "System Preferences"
+          reveal pane id "com.apple.preference.speech"
+          tell pane id "com.apple.preference.speech"
+               reveal anchor "TTS"
+          end tell
+          activate
+     end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7657C6CF-C893-4203-AAB9-4AB77406AD19</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>4F3995F6-30EC-4FE2-A891-C4D1A7684E19</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>516880CA-C0EE-452F-A2D1-B75D3633F4F4</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>5FB7051B-D903-4E3E-8930-F63EEECF749B</key>
+		<dict>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>7657C6CF-C893-4203-AAB9-4AB77406AD19</key>
+		<dict>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>83FF13F0-D6C1-4AE9-B890-9A2AB798EF2B</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>85518D68-C988-4854-8CC1-1403CE111805</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>98C19F4B-3EF6-4B4C-85B7-C296069E5AE8</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>F1C651CD-53A8-40D5-B79F-AE8744FA8344</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.evgeny.golubev.alfred.openinfirefox</string>
+	<key>connections</key>
+	<dict>
+		<key>2082B006-ED81-4455-961B-8A1D85DC1C1F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EC62E915-CD01-49CB-BAF5-D5615F6E9830</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>70A0BC9D-FBA6-4CE6-BBAA-45BD8B2B4490</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DC48D362-38E5-4A99-8E69-9428BB586AB3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9BF76AA8-E0D5-4A2B-8CB3-3CA891FF4941</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Only open selected Safari in Firefox</string>
+			</dict>
+		</array>
+		<key>9BF76AA8-E0D5-4A2B-8CB3-3CA891FF4941</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8127B9A1-8B18-4E8D-88F8-9B6086A5C20D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DC48D362-38E5-4A99-8E69-9428BB586AB3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8127B9A1-8B18-4E8D-88F8-9B6086A5C20D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EC62E915-CD01-49CB-BAF5-D5615F6E9830</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8127B9A1-8B18-4E8D-88F8-9B6086A5C20D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Evgeny Golubev</string>
+	<key>description</key>
+	<string>Open url or tab in Firefox</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Open in Firefox</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+set AppleScript's text item delimiters to "||"set qitems to text items of qset AppleScript's text item delimiters to {""}
+
+tell application "Safari" to close tab (item 4 of qitems as integer) of window (item 3 of qitems as integer)
+
+tell application "Firefox"	open location (item 1 of qitems)	delay 1	activateend tell
+
+return item 2 of qitems
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>DC48D362-38E5-4A99-8E69-9428BB586AB3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>open safari tab in firefox</string>
+				<key>runningsubtext</key>
+				<string>Loading tabs...</string>
+				<key>script</key>
+				<string>try
+
+# get the workflow's source folder
+set workflowFolder to (do shell script "pwd")
+
+# load the Workflow library
+set wlib to load script POSIX file (workflowFolder &amp; "/q_workflow.scpt")
+
+# create a new Workflow Class
+set wf to wlib's new_workflow()
+
+# start parsing the argument
+set q to wf's q_trim("{query}")
+
+#if no argument, show the initial feedback
+if length of q = 0 then
+	tell application "Safari"
+		set currentIndex to 0
+		set t to current tab of window 1
+		if URL of t is not "topsites://" and URL of t is not "" then
+			set tabURL to URL of t &amp; ""
+			set tabName to name of t
+			set windowIndex to 1
+			set tabIndex to index of t
+			set currentIndex to index of t
+
+			add_result of wf with isValid given theUid: "1||current", theArg: "" &amp; tabURL &amp; "||" &amp; tabName &amp; "||" &amp; windowIndex &amp; "||" &amp; tabIndex, theTitle: tabName, theSubtitle: tabURL, theIcon:"", theAutocomplete:"", theType:""
+		end if
+					
+		repeat with w in every window
+			if visible of w and name of w is not "" then
+				repeat with t in every tab in w
+					if URL of t is not "topsites://" and URL of t is not "" and (index of w is not 1 or index of t is not currentIndex) then
+						set tabURL to URL of t &amp; ""
+						set tabName to name of t
+						set windowIndex to index of w
+						set tabIndex to index of t
+	
+						add_result of wf with isValid given theUid: windowIndex &amp; "||" &amp; tabIndex, theArg: "" &amp; tabURL &amp; "||" &amp; tabName &amp; "||" &amp; windowIndex &amp; "||" &amp; tabIndex, theTitle: tabName, theSubtitle: tabURL, theIcon:"", theAutocomplete:"", theType:""
+					end if
+				end repeat
+			end if
+		end repeat
+	end tell
+else
+	tell application "Safari"
+		repeat with w in every window
+			if visible of w and name of w is not "" then
+				repeat with t in every tab in w
+					if URL of t is not "topsites://" and URL of t is not ""  and name of t contains q then
+						set tabURL to URL of t
+						set tabName to name of t
+						set windowIndex to index of w
+						set tabIndex to index of t
+	
+						add_result of wf with isValid given theUid: windowIndex &amp; "||" &amp; tabIndex, theArg: "" &amp; tabURL &amp; "||" &amp; tabName &amp; "||" &amp; windowIndex &amp; "||" &amp; tabIndex, theTitle: tabName, theSubtitle: tabURL, theIcon:"", theAutocomplete:"", theType:""
+					end if
+				end repeat
+			end if
+		end repeat
+	end tell
+end if
+
+# show the feedback results
+return wf's to_xml("")
+
+on error msg
+	# in case of an error, send a Notification to MacOS
+	wlib's q_send_notification("ERROR", msg, "")
+end try</string>
+				<key>subtext</key>
+				<string>Close and open selected Safari tab in Firefox</string>
+				<key>title</key>
+				<string>Open Safari tab in Firefox</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>70A0BC9D-FBA6-4CE6-BBAA-45BD8B2B4490</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<true/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>We Firefox it for you!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8127B9A1-8B18-4E8D-88F8-9B6086A5C20D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+set AppleScript's text item delimiters to "||"set qitems to text items of qset AppleScript's text item delimiters to {""}
+
+tell application "Firefox"	open location (item 1 of qitems)	delay 1	activateend tell
+
+return item 2 of qitems
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>9BF76AA8-E0D5-4A2B-8CB3-3CA891FF4941</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>public.html</string>
+				</array>
+				<key>name</key>
+				<string>Open in Firefox</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>2082B006-ED81-4455-961B-8A1D85DC1C1F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/Applications/Firefox.app</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>EC62E915-CD01-49CB-BAF5-D5615F6E9830</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2082B006-ED81-4455-961B-8A1D85DC1C1F</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>70A0BC9D-FBA6-4CE6-BBAA-45BD8B2B4490</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+		<key>8127B9A1-8B18-4E8D-88F8-9B6086A5C20D</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>9BF76AA8-E0D5-4A2B-8CB3-3CA891FF4941</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>DC48D362-38E5-4A99-8E69-9428BB586AB3</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>EC62E915-CD01-49CB-BAF5-D5615F6E9830</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://golubev.eu/</string>
+</dict>
+</plist>
