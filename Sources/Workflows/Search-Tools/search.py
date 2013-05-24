@@ -181,7 +181,7 @@ def search_zhihu( query ):
 				continue
 			title = strip_html( line[title_begin+2:title_end] )
 			
-		elif "answer" in line and title!="":
+		elif "class=\"answer" in line and title!="":
 			link_begin = line.find( "<a href=\"/question/" )
 			link_end = line.find( "\" class=\"answer" )
 			answers_begin = line.find( "<i></i>" )
