@@ -1,0 +1,24 @@
+#!/usr/bin/osascript
+
+on run argv
+  try
+    my getDTDBs()
+  on error errmsg
+    return errmsg
+  end try
+end run
+
+on getDTDBs()
+  set retVal to ""
+  tell application "DEVONthink Pro"
+    repeat with theDB in databases
+      set dbUUID to uuid of theDB as string
+      set dbName to name of theDB as string
+      if (length of retVal) > 0 then
+        set retVal to retVal & "\n"
+      end if
+      set retVal to retVal & dbUUID & "|" & dbName
+    end repeat
+  end tell
+  return retVal
+end getDTDBs

@@ -1,0 +1,72 @@
+. workflowHandler.sh
+
+QUERY="$1"
+UUID=$(date +"%s")
+DB=$(getPref "searchdb" 0)
+DATADIR="$(getDataDir)"
+DBFILE="${DATADIR}/databases"
+
+setupDatabases() {
+	./setup > "$DBFILE"
+}
+
+showDatabases() {
+	addResult "${UUID}1" "all" "All databases" "" "icon.png" "yes"
+	COUNT=1
+	while read DB; do
+		DBUUID=${DB%%|*}
+		DBNAME=${DB##*|}
+		addResult "${UUID}${COUNT}" "$DBUUID" "$DBNAME" "" "icon.png" "yes"
+		let COUNT+=1
+	done < "$DBFILE"
+}
+
+showResults() {
+	OLDIFS="$IFS"
+	IFS='
+'
+
+	if [ "$DB" == "all" ]; then
+		MATCHES=$(/usr/bin/mdfind "(kMDItemContentType == 'com.devon-technologies.metadata.think' || kMDItemContentType == 'com.devon-technologies.metadata.thinkpro') && (kMDItemDisplayName == '*${QUERY}*'cd || kMDItemFinderComment == '*${QUERY}*'cd || kMDItemTextContent == '*${QUERY}*'cd || kMDItemTitle == '*${QUERY}*'cd)")
+	else
+		MATCHES=$(/usr/bin/mdfind "(kMDItemContentType == 'com.devon-technologies.metadata.think' || kMDItemContentType == 'com.devon-technologies.metadata.thinkpro') && (kMDItemDisplayName == '*${QUERY}*'cd || kMDItemFinderComment == '*${QUERY}*'cd || kMDItemTextContent == '*${QUERY}*'cd || kMDItemTitle == '*${QUERY}*'cd)" | grep "$DB")
+	fi
+
+	COUNT=1
+	for MATCH in ${MATCHES[*]}; do
+		FILENAME=$(/usr/bin/mdls -name "kMDItemDisplayName" -raw $MATCH)
+		DBUUID=$(echo "$MATCH" | rev | cut -d "/" -f 3 | rev)
+		DBNAME=$(grep "$DBUUID" "$DBFILE" | cut -d "|" -f 2)
+		addResult "${RANDOM}${COUNT}" "$MATCH" "$FILENAME" "$DBNAME" "icon.png" "yes"
+		let COUNT+=1
+	done
+
+	IFS="$OLDIFS"
+}
+
+resetWorkflow() {
+	setPref "searchterm" "" 0
+	setPref "searchdb" "" 0
+}
+
+main() {
+	if [ ! -d "$DATADIR" ]; then
+		mkdir -p "$DATADIR"
+	fi
+
+	if [ ! -f "$DBFILE" ]; then
+		setupDatabases
+	fi
+	
+	if [ -z "$DB" ]; then
+		setPref "searchterm" "$QUERY" 0
+		showDatabases
+	else
+		showResults
+		resetWorkflow
+	fi
+	
+	getXMLResults
+}
+
+main

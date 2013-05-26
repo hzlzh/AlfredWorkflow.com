@@ -1,0 +1,177 @@
+#!/bin/bash
+
+# Application Client Information
+GA_CLIENT_ID="163630416313.apps.googleusercontent.com"
+GA_CLIENT_SECRET="Z70Sx27MRGB6LEu1GwxUMP19"
+GA_REDIRECT_URI="urn:ietf:wg:oauth:2.0:oob"
+GA_SCOPE="https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fanalytics"
+
+
+################################################################################
+# request the auth code                                                        #
+################################################################################
+reqAuthCode() {
+    open "https://accounts.google.com/o/oauth2/auth?scope=${GA_SCOPE}&redirect_uri=${GA_REDIRECT_URI}&response_type=code&client_id=${GA_CLIENT_ID}&access_type=offline"
+}
+
+################################################################################
+# request the access and refresh tokens                                        #
+#                                                                              #
+# args:                                                                        #
+#   $1 - auth code                                                             #
+#                                                                              #
+# return:                                                                      #
+#   access and refresh tokens each on a separate line                          #
+################################################################################
+reqToken() {
+    local URL="https://accounts.google.com/o/oauth2/token"
+    local DATA="code=$1&redirect_uri=${GA_REDIRECT_URI}&client_id=${GA_CLIENT_ID}&scope=${GA_SCOPE}&client_secret=${GA_CLIENT_SECRET}&grant_type=authorization_code"
+    local RESPONSE=$(curl -s -d "$DATA" $URL)
+    local ATOKEN=$(echo $RESPONSE | awk -F"," '{print $1}' | awk -F":" '{print $2}' | sed s/\"//g | tr -d ' ')
+    local RTOKEN=$(echo $RESPONSE | awk -F"," '{print $4}' | awk -F":" '{print $2}' | sed s/\"//g | sed s/}// | tr -d ' ')
+    echo "access|$ATOKEN"
+    echo "refresh|$RTOKEN"
+}
+
+################################################################################
+# refresh an expired access token                                              #
+#                                                                              #
+# args:                                                                        #
+#   $1 - refresh token                                                         #
+#                                                                              #
+# return:                                                                      #
+#   access token                                                               #
+################################################################################
+refreshAccessToken() {
+    local URL="https://accounts.google.com/o/oauth2/token"
+    local DATA="client_secret=${GA_CLIENT_SECRET}&grant_type=refresh_token&refresh_token=$1&client_id=${GA_CLIENT_ID}"
+    local RESPONSE=$(curl -s -d "$DATA" $URL)
+    local TOKEN=$(echo "$RESPONSE" | grep "access_token" | awk -F"," '{print $1}' | awk -F":" '{print $2}' | sed s/\"//g | tr -d ' ')
+    echo "$TOKEN"
+}
+
+################################################################################
+# check if the access token is expired                                         #
+#                                                                              #
+# args:                                                                        #
+#   $1 - access token                                                          #
+#                                                                              #
+# return:                                                                      #
+#   0 - not expired                                                            #
+#   1 - expired                                                                #
+################################################################################
+isExpired() {
+    local URL="https://www.googleapis.com/oauth2/v1/tokeninfo"
+    local EXPIRED=$(curl -s ${URL}?access_token=$1 | grep -c "invalid")
+    echo $EXPIRED
+}
+
+################################################################################
+################################################################################
+listProfiles() {
+    local URL="https://www.googleapis.com/analytics/v3/management/accounts/~all/webproperties/~all/profiles/"
+    local RESPONSE=$(curl -s ${URL}?access_token=$1)
+    echo "$RESPONSE"
+}
+
+################################################################################
+# query metrics from goole analytics                                           #
+#                                                                              #
+# args:                                                                        #
+#   $1 - profile id                                                            #
+#   $2 - metric(s)                                                             #
+#   $3 - dimension(s)                                                          #
+#   $4 - start date (yyyy-mm-dd)                                               #
+#   $5 - end date (yyyy-mm-dd)                                                 #
+#   $6 - sort                                                                  #
+#   $7 - access token                                                          #
+#                                                                              #
+#                                                                              #
+#                                                                              #
+#                                                                              #
+################################################################################
+queryMetrics() {
+    local URL="https://www.googleapis.com/analytics/v3/data/ga"
+    local DATA="ids=ga:$1&metrics=$2&dimensions=$3&start-date=$4&end-date=$5&access_token=$7"
+	if [ ! -z "$6" ]; then
+		DATA="${DATA}&sort=$6"
+	fi
+    local RESPONSE=$(curl -s "${URL}?${DATA}")
+    echo "$RESPONSE"
+}
+
+################################################################################
+# show the usage information                                                   #
+################################################################################
+usage() {
+    echo "Usage: ga <command> [args]"
+    echo "Google Analytics command line tool"
+    echo
+    echo "Available commands:"
+    echo "  -a                  request the auth code"
+    echo "  -e <access token>   check if the token is expired"
+    echo "  -m <profile id> <metric> <dimension> <start date> <end date> <access token>   query metrics"
+    echo "  -p <access token>   list available profiles"
+    echo "  -r <refresh token>  refresh the access token"
+    echo "  -t <auth code>      request the token"
+}
+
+################################################################################
+################################################################################
+main() {
+    local CMD="$1"
+    local ARG="$2"
+
+    if [ -z "$CMD" ]; then
+        usage
+        exit
+    fi
+
+
+
+    case "$CMD" in
+        -a)
+            reqAuthCode
+            ;;
+        -e)
+            if [ -z "$ARG" ]; then
+                usage
+            else
+                isExpired "$ARG"
+            fi
+            ;;
+        -m)
+            if [ -z "$ARG" ]; then
+                usage
+            else
+                queryMetrics "$2" "$3" "$4" "$5" "$6" "$7" "$8"
+            fi
+            ;;
+        -p)
+            if [ -z "$ARG" ]; then
+                usage
+            else
+                listProfiles "$ARG"
+            fi
+            ;;
+        -r)
+            if [ -z "$ARG" ]; then
+                usage
+            else
+                refreshAccessToken "$ARG"
+            fi
+            ;;
+        -t)
+            if [ -z "$ARG" ]; then
+                usage
+            else
+                reqToken "$ARG"
+            fi
+            ;;
+        *)
+            usage
+            ;;
+    esac
+}
+
+main "$@"

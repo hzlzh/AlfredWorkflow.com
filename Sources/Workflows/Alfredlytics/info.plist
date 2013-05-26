@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.markokaestner.googleanalytics</string>
+	<key>connections</key>
+	<dict>
+		<key>2745932A-ECA7-4098-8E14-18699D434781</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B5B0FE25-9D50-47FF-8F12-571963B6FF2F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3BF9951A-7B98-435E-8265-1E271839CD8D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>79C92520-DDE6-4DB8-9C63-30E907209A20</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>79C92520-DDE6-4DB8-9C63-30E907209A20</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FED36BF8-5F54-4567-9E4F-6C651FC6FC3B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7B8998AF-A609-426F-BDFA-45ECF9BA285C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E71DF154-8141-4BEC-841B-3250D0D689F8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>87ADF2F7-786F-4668-AC05-8CE9FF47DCF0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7B8998AF-A609-426F-BDFA-45ECF9BA285C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Marko Kaestner</string>
+	<key>description</key>
+	<string>Google Analytics Alfred 2 Workflow</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Alfredlytics</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>.ga</string>
+				<key>runningsubtext</key>
+				<string>Loading Metrics…</string>
+				<key>script</key>
+				<string>./analytics.sh "{query}" 2&gt;&amp;1 | tee ga.log</string>
+				<key>subtext</key>
+				<string>Show Google Analytics Data</string>
+				<key>title</key>
+				<string>Google Analytics Data</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2745932A-ECA7-4098-8E14-18699D434781</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>70</integer>
+				<key>script</key>
+				<string>set theQuery to "{query}"
+tell application "Alfred 2" to search ".ga " &amp; theQuery</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B5B0FE25-9D50-47FF-8F12-571963B6FF2F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>. workflowHandler.sh
+
+QUERY="{query}"
+
+if [ "$QUERY" == "auth" ]; then
+	./ga -a
+else
+	setPref "acode" "$QUERY" 1
+	echo "$QUERY"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7B8998AF-A609-426F-BDFA-45ECF9BA285C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Authorization Code saved</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E71DF154-8141-4BEC-841B-3250D0D689F8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>.gaauth</string>
+				<key>script</key>
+				<string>. workflowHandler.sh
+
+QUERY="{query}"
+RANDOM=$(date +%s)
+
+if [ -z "$QUERY" ]; then
+	addResult "$RANDOM" "auth" "Authorize Workflow" "" "icon.png" "yes"
+else
+	addResult "$RANDOM" "$QUERY" "Save Authorization Code" "$QUERY" "icon.png" "yes"
+fi
+
+getXMLResults</string>
+				<key>subtext</key>
+				<string>Authorize Workflow to access Google Analytics Data</string>
+				<key>title</key>
+				<string>Google Analytics :: Authorization</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>87ADF2F7-786F-4668-AC05-8CE9FF47DCF0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>. workflowHandler.sh
+
+QUERY="{query}"
+
+setPref "profile" "$QUERY" 1
+
+echo "$QUERY"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>79C92520-DDE6-4DB8-9C63-30E907209A20</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Default Profile saved</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>FED36BF8-5F54-4567-9E4F-6C651FC6FC3B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>.gaprofile</string>
+				<key>runningsubtext</key>
+				<string>Loading available profiles...</string>
+				<key>script</key>
+				<string>. workflowHandler.sh
+
+RANDOM=$(date +%s)
+ATOKEN=$(getPref "atoken" 1)
+
+if [ -z "$ATOKEN" ]; then
+	AUTH=$(getPref "acode" 1)
+	RESPONSE=$(./ga -t "$AUTH")
+	ATOKEN=$(echo "$RESPONSE" | grep "access" | cut -d "|" -f 2)
+	RTOKEN=$(echo "$RESPONSE" | grep "refresh" | cut -d "|" -f 2)
+	setPref "atoken" "$ATOKEN" 1
+	setPref "rtoken" "$RTOKEN" 1
+else
+	EXPIRED=$(./ga -e "$ATOKEN")
+
+	if [ "$EXPIRED" == "1" ]; then
+		REFRESH=$(getPref "rtoken" 1)
+		ATOKEN=$(./ga -r "$REFRESH")
+		setPref "atoken" "$ATOKEN" 1
+	fi
+fi
+
+OLDIFS="$IFS"
+IFS='
+'
+
+PROFILES=$(./ga -p "$ATOKEN" | ./JSON.sh -b | grep -E "\"id\"|\"name\"|\"websiteUrl\"" | cut -d "]" -f 2 | cut -d "\"" -f 2 | paste -d '|' - - -)
+
+for P in ${PROFILES[*]}; do
+	PID=$(echo "$P" | cut -d "|" -f 1)
+	PNAME=$(echo "$P" | cut -d "|" -f 2)
+	PURL=$(echo "$P" | cut -d "|" -f 3)
+	addResult "${RANDOM}" "$PID" "$PNAME" "$PURL" "icon.png" "yes"
+done
+
+IFS="$OLDIFS"
+
+getXMLResults</string>
+				<key>title</key>
+				<string>Google Analytics :: Set Profile</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3BF9951A-7B98-435E-8265-1E271839CD8D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4783E557-3F3A-4883-9719-E6C5630FB836</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2745932A-ECA7-4098-8E14-18699D434781</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>3BF9951A-7B98-435E-8265-1E271839CD8D</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>4783E557-3F3A-4883-9719-E6C5630FB836</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>79C92520-DDE6-4DB8-9C63-30E907209A20</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>7B8998AF-A609-426F-BDFA-45ECF9BA285C</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>87ADF2F7-786F-4668-AC05-8CE9FF47DCF0</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>B5B0FE25-9D50-47FF-8F12-571963B6FF2F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E71DF154-8141-4BEC-841B-3250D0D689F8</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>FED36BF8-5F54-4567-9E4F-6C651FC6FC3B</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://markokaestner.com</string>
+</dict>
+</plist>

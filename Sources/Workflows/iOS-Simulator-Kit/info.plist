@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>iOSSimulatorKit@Kam</string>
+	<key>connections</key>
+	<dict>
+		<key>01CE50AD-EB3B-45E0-B01D-52EF1A7ABA20</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>918657BE-AA30-4FFC-8579-D0229C9B2E04</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>47E1C540-0F37-4579-9C8F-D29E5A8A19FD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3EDC2BFD-2D7A-40DD-B89D-E14F8CFBE0B0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>88467375-0AB8-4E43-AC27-6C4F5DF0E597</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DE495132-EB2A-4AF9-B06F-92B5AC414688</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Kam</string>
+	<key>description</key>
+	<string>Operate iOS Simulator</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>iOS Simulator Kit</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	selectMenu({"iPhone Simulator", "Hardware", "Device", q}, false)
+end alfred_script
+-- "https://gist.github.com/dvessel/1101060"-- `selectMenu`, by Jacob Rus, September 2006 modified by Joon Park, 2011-- Found on http://hints.macworld.com/article.php?story=20060921045743404-- -- Accepts a list of form: `{"Finder", "View", "Arrange By", "Date"}`-- Execute the specified menu item.  In this case, assuming the Finder -- is the active application, arranging the frontmost folder by date.---- This will return true or false depending on availability and null if the menu-- item doesn't exist at all. Use `checkMenu` to only check the state.on selectMenu(mList, checkOnly)	local appName, topMenu, r		-- Validate our input	if mList's length &lt; 3 then error "Menu list is not long enough"		-- Set these variables for clarity and brevity later on	set {appName, topMenu} to (items 1 through 2 of mList)	set r to (items 3 through (mList's length) of mList)		-- Set focus for the target app.	tell application appName to activate		-- This overly-long line calls the RecursiveSelect function with	-- two arguments: r, and a reference to the top-level menu	tell application "System Events" to my RecursiveSelect(r, ((process appName)'s ¬		(menu bar 1)'s (menu bar item topMenu)'s (menu topMenu)), checkOnly)	end selectMenuon checkMenu(mList)	-- Don't select, only check.	selectMenu(mList, true)end checkMenuon RecursiveSelect(mList, parentObject, checkOnly)	local f, r		-- `f` = first item, `r` = rest of items	set f to item 1 of mList	if mList's length &gt; 1 then set r to (items 2 through (mList's length) of mList)		-- either actually click the menu item, or recurse again	tell application "System Events"		try			if mList's length is 1 then				if checkOnly is not true then					pick parentObject's menu item f				end if				return enabled of parentObject's menu item f											else				my RecursiveSelect(r, (parentObject's (menu item f)'s (menu f)), checkOnly)			end if		on error			return null		end try	end tellend RecursiveSelect</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>3EDC2BFD-2D7A-40DD-B89D-E14F8CFBE0B0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ios device</string>
+				<key>runningsubtext</key>
+				<string>Loading iOS Simulator Devices...</string>
+				<key>script</key>
+				<string>set workflowFolder to do shell script "pwd"set w to load script POSIX file (workflowFolder &amp; "/q_workflow.scpt")set wf to w's new_workflow()
+
+run application "iPhone Simulator"
+tell application "System Events"	tell process "iPhone Simulator"		tell menu bar 1						tell menu bar item "Hardware"				tell menu 1					tell menu item "Device"																		repeat with listVar in menu items of menu 1
+							set device to name of listVar
+							
+							if device contains "iPhone" then
+								set icon to "iPhone.png"
+							else
+								set icon to "iPad.png"
+							end if
+							add_result of wf with isValid given theUid:"iOSSimulatorVersion", theArg: device, theTitle: device, theSubtitle:missing value, theAutocomplete:missing value, theIcon:icon, theType:missing value						end repeat																	end tell				end tell			end tell		end tell	end tellend tell
+wf's to_xml("")</string>
+				<key>title</key>
+				<string>iOS Simulator Devices</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>47E1C540-0F37-4579-9C8F-D29E5A8A19FD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ios version</string>
+				<key>runningsubtext</key>
+				<string>Loading iOS Simulator Versions...</string>
+				<key>script</key>
+				<string>set workflowFolder to do shell script "pwd"set w to load script POSIX file (workflowFolder &amp; "/q_workflow.scpt")set wf to w's new_workflow()
+
+run application "iPhone Simulator"
+tell application "System Events"	tell process "iPhone Simulator"		tell menu bar 1						tell menu bar item "Hardware"				tell menu 1					tell menu item "Version"												repeat with listVar in menu items of menu 1
+							set versionString to name of listVar
+
+							if versionString contains "5." then
+								set icon to "ios5.png"
+							else if versionString contains "6." then
+								set icon to "ios6.png"
+							else
+								set icon to "ios.png"
+							end if
+								add_result of wf with isValid given theUid:"iOSSimulatorVersion", theArg: versionString, theTitle: versionString, theSubtitle:missing value, theAutocomplete:missing value, theIcon:icon, theType:missing value						end repeat																	end tell				end tell			end tell		end tell	end tellend tell
+wf's to_xml("")</string>
+				<key>title</key>
+				<string>iOS Simulator Versions</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>88467375-0AB8-4E43-AC27-6C4F5DF0E597</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	selectMenu({"iPhone Simulator", "Hardware", "Version", q}, false)
+end alfred_script
+-- "https://gist.github.com/dvessel/1101060"-- `selectMenu`, by Jacob Rus, September 2006 modified by Joon Park, 2011-- Found on http://hints.macworld.com/article.php?story=20060921045743404-- -- Accepts a list of form: `{"Finder", "View", "Arrange By", "Date"}`-- Execute the specified menu item.  In this case, assuming the Finder -- is the active application, arranging the frontmost folder by date.---- This will return true or false depending on availability and null if the menu-- item doesn't exist at all. Use `checkMenu` to only check the state.on selectMenu(mList, checkOnly)	local appName, topMenu, r		-- Validate our input	if mList's length &lt; 3 then error "Menu list is not long enough"		-- Set these variables for clarity and brevity later on	set {appName, topMenu} to (items 1 through 2 of mList)	set r to (items 3 through (mList's length) of mList)		-- Set focus for the target app.	tell application appName to activate		-- This overly-long line calls the RecursiveSelect function with	-- two arguments: r, and a reference to the top-level menu	tell application "System Events" to my RecursiveSelect(r, ((process appName)'s ¬		(menu bar 1)'s (menu bar item topMenu)'s (menu topMenu)), checkOnly)	end selectMenuon checkMenu(mList)	-- Don't select, only check.	selectMenu(mList, true)end checkMenuon RecursiveSelect(mList, parentObject, checkOnly)	local f, r		-- `f` = first item, `r` = rest of items	set f to item 1 of mList	if mList's length &gt; 1 then set r to (items 2 through (mList's length) of mList)		-- either actually click the menu item, or recurse again	tell application "System Events"		try			if mList's length is 1 then				if checkOnly is not true then					pick parentObject's menu item f				end if				return enabled of parentObject's menu item f											else				my RecursiveSelect(r, (parentObject's (menu item f)'s (menu f)), checkOnly)			end if		on error			return null		end try	end tellend RecursiveSelect</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>DE495132-EB2A-4AF9-B06F-92B5AC414688</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "iPhone Simulator"
+		quit
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>918657BE-AA30-4FFC-8579-D0229C9B2E04</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ios quit</string>
+				<key>text</key>
+				<string>Quit iOS Simulator</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>01CE50AD-EB3B-45E0-B01D-52EF1A7ABA20</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>01CE50AD-EB3B-45E0-B01D-52EF1A7ABA20</key>
+		<dict>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
+		<key>3EDC2BFD-2D7A-40DD-B89D-E14F8CFBE0B0</key>
+		<dict>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+		<key>47E1C540-0F37-4579-9C8F-D29E5A8A19FD</key>
+		<dict>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+		<key>88467375-0AB8-4E43-AC27-6C4F5DF0E597</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>918657BE-AA30-4FFC-8579-D0229C9B2E04</key>
+		<dict>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
+		<key>DE495132-EB2A-4AF9-B06F-92B5AC414688</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/superkam/iOS_Simulator_Kit</string>
+</dict>
+</plist>
