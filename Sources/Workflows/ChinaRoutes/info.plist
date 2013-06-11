@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>zieglar.chinaroute</string>
+	<key>connections</key>
+	<dict>
+		<key>557682B0-99E2-4704-B030-E5B25446EC16</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>34602D45-FCCB-4E9E-921D-2002F29AA108</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6A5DA6BA-E1EC-45D8-A6B3-B7ACF4157DE8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8708FA8B-869D-401A-B15C-4332599E2002</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>741DACCA-B625-4757-885A-907E2902C27B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>34602D45-FCCB-4E9E-921D-2002F29AA108</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>791DFDCF-CDE3-4DE1-BA19-6E87C3870362</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>741DACCA-B625-4757-885A-907E2902C27B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8452F404-E405-4E95-A6BA-435FCDA8B282</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A29AC362-0A14-4200-B45C-173F2B8B5F65</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8708FA8B-869D-401A-B15C-4332599E2002</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>34602D45-FCCB-4E9E-921D-2002F29AA108</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9E02CCA3-5A1B-4737-B9C3-99DAEAE8E658</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>557682B0-99E2-4704-B030-E5B25446EC16</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A29AC362-0A14-4200-B45C-173F2B8B5F65</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>34602D45-FCCB-4E9E-921D-2002F29AA108</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>zieglar</string>
+	<key>description</key>
+	<string>更新本地路由表</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ChinaRoutes</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+if [ -f "ip" ] &amp;&amp; [ -f "oldgw" ]; then
+    echo "路由表已经添加，为了避免有错误数据，请先运行路由表清除命令";
+else
+	python update.py
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A29AC362-0A14-4200-B45C-173F2B8B5F65</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>routeupdate</string>
+				<key>subtext</key>
+				<string>数据量有些大，请等待通知弹出后再操作</string>
+				<key>text</key>
+				<string>生成本地路由表</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8452F404-E405-4E95-A6BA-435FCDA8B282</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+if [ -f "ip" ]; then
+    if [ -f "oldgw" ]; then
+        echo "路由表已经存在，请先运行路由表清除命令";
+    else
+        OLDGW=`netstat -nr | grep '^default' | grep -v 'ppp' | sed 's/default *\([0-9\.]*\) .*/\1/' | sed '/^$/d'`
+        for ip in ` awk '{print $1}' ip`
+        {
+            echo "{query}" | sudo -S route add $ip $OLDGW &gt;/dev/null;
+        }
+        echo $OLDGW &gt; oldgw;
+
+		long=`sw_vers -productVersion`
+		short=${long:0:4}
+		if [ "$short" == "10.4" ]; then
+		    lookupd -flushcache
+		elif [ "$short" == "10.5" ] || [ "$short" == "10.6" ]; then
+		    dscacheutil -flushcache
+		elif [ "$short" == "10.7" ] || [ "$short" == "10.8" ]; then
+		    sudo killall -HUP mDNSResponder
+		fi
+
+        echo "路由表添加完毕";
+    fi
+else
+    echo "数据文件不存在，请先更新IP数据";
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8708FA8B-869D-401A-B15C-4332599E2002</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>routeadd</string>
+				<key>subtext</key>
+				<string>请输入你当前登录帐号的密码</string>
+				<key>text</key>
+				<string>添加路由表</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6A5DA6BA-E1EC-45D8-A6B3-B7ACF4157DE8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>ChinaRoute</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>34602D45-FCCB-4E9E-921D-2002F29AA108</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+if [ -f "ip" ]; then
+    if [ -f "oldgw" ]; then
+        OLDGW=`cat oldgw`;
+        for ip in ` awk '{print $1}' ip`
+        {
+            echo "{query}" | sudo -S route delete $ip $OLDGW &gt;/dev/null;
+        }
+        rm -rf oldgw;
+
+		long=`sw_vers -productVersion`
+		short=${long:0:4}
+		if [ "$short" == "10.4" ]; then
+		    lookupd -flushcache
+		elif [ "$short" == "10.5" ] || [ "$short" == "10.6" ]; then
+		    dscacheutil -flushcache
+		elif [ "$short" == "10.7" ] || [ "$short" == "10.8" ]; then
+		    sudo killall -HUP mDNSResponder
+		fi
+
+        echo "路由表清除完毕";
+    else
+        echo "路由表未被添加";
+    fi
+else
+    echo "数据文件不存在，请先更新IP数据";
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>741DACCA-B625-4757-885A-907E2902C27B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>routeremove</string>
+				<key>subtext</key>
+				<string>请输入你当前登录帐号的密码</string>
+				<key>text</key>
+				<string>移除路由表</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>791DFDCF-CDE3-4DE1-BA19-6E87C3870362</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>if [ -f "oldgw" ]; then
+    echo "路由表已经添加";
+else
+    echo "路由表未被添加";
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>557682B0-99E2-4704-B030-E5B25446EC16</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>routestatus</string>
+				<key>subtext</key>
+				<string>查看路由表是否添加</string>
+				<key>text</key>
+				<string>路由表状态</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9E02CCA3-5A1B-4737-B9C3-99DAEAE8E658</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>添加和移除路由表必须输入当前登录帐号的密码才能操作</string>
+	<key>uidata</key>
+	<dict>
+		<key>34602D45-FCCB-4E9E-921D-2002F29AA108</key>
+		<dict>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+		<key>557682B0-99E2-4704-B030-E5B25446EC16</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>6A5DA6BA-E1EC-45D8-A6B3-B7ACF4157DE8</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>741DACCA-B625-4757-885A-907E2902C27B</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>791DFDCF-CDE3-4DE1-BA19-6E87C3870362</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>8452F404-E405-4E95-A6BA-435FCDA8B282</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8708FA8B-869D-401A-B15C-4332599E2002</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>9E02CCA3-5A1B-4737-B9C3-99DAEAE8E658</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>A29AC362-0A14-4200-B45C-173F2B8B5F65</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>twitter.com/zieglar</string>
+</dict>
+</plist>

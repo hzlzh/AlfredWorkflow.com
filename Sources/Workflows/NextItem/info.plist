@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.customct.NextItem</string>
+	<key>connections</key>
+	<dict>
+		<key>0F9C3D42-44DD-4C60-94C5-F5A99A637065</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F63FC3CD-1400-4E4D-A3EB-8C7FED471811</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>1342057C-3C45-4A7E-9FC1-CD14CC836F5C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9FAE724F-88B0-4ACF-9331-7BACFB109609</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>194013D0-ED00-4E91-8914-1DF2398CD344</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>57C09C63-9925-45D6-A11D-0DFE0A101AB3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>346622CC-5B10-4E18-BA60-8D97AF2C0823</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5689C22-CDE3-4C99-B618-5189B37D424F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>55DD3B32-6C5C-4749-9DAA-3FBF186FC91B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9FAE724F-88B0-4ACF-9331-7BACFB109609</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>56004CED-63E4-4314-A328-1646272029D6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B94D745A-42D9-401F-94A4-BFE7C7FC4C69</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>57C09C63-9925-45D6-A11D-0DFE0A101AB3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5689C22-CDE3-4C99-B618-5189B37D424F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7795A230-07BB-4C98-A95B-935EBEE3EC65</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>910F25D4-AE2B-47D8-9157-F7414739BFF7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>78DC9AEE-1D2B-4626-9FE6-F6A9D6FE5559</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9FAE724F-88B0-4ACF-9331-7BACFB109609</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>910F25D4-AE2B-47D8-9157-F7414739BFF7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E39601D7-A33C-4F84-BA1D-0D70D8D86472</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9638A95E-172B-483E-9960-EBBEA593B01D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5689C22-CDE3-4C99-B618-5189B37D424F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9FAE724F-88B0-4ACF-9331-7BACFB109609</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3DCD534B-39F0-4620-B890-C823FB452C66</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8E1B351-FF2C-4AD8-97CF-FB01050C5031</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B94D745A-42D9-401F-94A4-BFE7C7FC4C69</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5689C22-CDE3-4C99-B618-5189B37D424F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C71D51DB-D0B8-4799-AEC6-2FB788A23EF9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>346622CC-5B10-4E18-BA60-8D97AF2C0823</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E6C9D51F-69DC-41AB-8159-56B5D2E8A758</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9638A95E-172B-483E-9960-EBBEA593B01D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EC491961-ABA6-4B16-ACD4-8761A91B0428</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F932FA9F-C71A-4C58-86DA-49E4768B56F1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F63FC3CD-1400-4E4D-A3EB-8C7FED471811</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5689C22-CDE3-4C99-B618-5189B37D424F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F932FA9F-C71A-4C58-86DA-49E4768B56F1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5689C22-CDE3-4C99-B618-5189B37D424F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Richard Guay</string>
+	<key>description</key>
+	<string>Gives the next item in the list to look at.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Next Item</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>78DC9AEE-1D2B-4626-9FE6-F6A9D6FE5559</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>include_once("workflows.php");
+$wf = new Workflows();
+
+$itnum = intval("{query}");
+$fname = "";
+if ($itnum != 0) {
+   $fname = "/URLList{$itnum}.txt";
+} else {
+   $fname = "/URLList1.txt";
+   $itnum = 1;
+}
+$fh = fopen($wf-&gt;data() . $fname,"r");
+$list = array();
+$i = 0;
+if ($fh) {
+    while (($line = fgets($fh)) !== false) {
+    	$list[$i] = trim($line);
+    	$i++;
+    }
+    if (!feof($fh)) {
+        echo "Error: unexpected fgets() fail\n";
+    }
+    fclose($fh);
+} else {
+	echo "Error opening file.";
+}
+
+$newnum = (int) file_get_contents($wf-&gt;data().'/number.txt');
+
+
+echo $list[$newnum];
+
+if($itnum == 1) {
+	file_put_contents($wf-&gt;data().'/number.txt', $newnum + 1);
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9FAE724F-88B0-4ACF-9331-7BACFB109609</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>3DCD534B-39F0-4620-B890-C823FB452C66</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ni:l</string>
+				<key>subtext</key>
+				<string>Get the next item in list {query}</string>
+				<key>text</key>
+				<string>Next Item</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1342057C-3C45-4A7E-9FC1-CD14CC836F5C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Next Item</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B8E1B351-FF2C-4AD8-97CF-FB01050C5031</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ni:item</string>
+				<key>subtext</key>
+				<string>Copies the next Item in the list to clipboard.</string>
+				<key>text</key>
+				<string>Next Item</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>55DD3B32-6C5C-4749-9DAA-3FBF186FC91B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>include_once("workflows.php");
+
+$wf = new Workflows();
+
+file_put_contents($wf-&gt;data()."/number.txt","0");
+
+$loc = $wf-&gt;data() . "/URLList.txt";
+$num = 1;
+while(unlink($loc)) {
+	$loc = $wf-&gt;data() . "/URLList{$num}.txt";
+	$num = $num + 1;
+}
+
+echo "Everything cleared.";</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>910F25D4-AE2B-47D8-9157-F7414739BFF7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Next Item Clear</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E39601D7-A33C-4F84-BA1D-0D70D8D86472</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ni:clear</string>
+				<key>subtext</key>
+				<string>This is used to clear the item count.</string>
+				<key>text</key>
+				<string>Next Item</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>7795A230-07BB-4C98-A95B-935EBEE3EC65</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Next Item: Set Item file</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>E6C9D51F-69DC-41AB-8159-56B5D2E8A758</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>include_once("workflows.php");
+
+$wf = new Workflows();
+$dest = $wf-&gt;data()."/URLList.txt";
+$source = "{query}";
+
+if(copy($source,$dest)) {
+	echo "Successful!";
+	file_put_contents($wf-&gt;data()."/number.txt","0");
+} else {
+	echo "Could not copy {query}";
+}
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9638A95E-172B-483E-9960-EBBEA593B01D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ni:inc</string>
+				<key>subtext</key>
+				<string>Increment the item count.</string>
+				<key>text</key>
+				<string>Next Item</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>194013D0-ED00-4E91-8914-1DF2398CD344</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>include_once("workflows.php");
+
+$wf = new Workflows();
+
+$nf = $wf-&gt;data()."/number.txt";
+$num = (int) file_get_contents($nf);
+file_put_contents($nf,$num+1);
+echo "Next URL is " . ($num + 1);
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>57C09C63-9925-45D6-A11D-0DFE0A101AB3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>include_once("workflows.php");
+
+$wf = new Workflows();
+
+$nf = $wf-&gt;data()."/number.txt";
+$num = (int) file_get_contents($nf);
+file_put_contents($nf,($num - 1));
+echo "Next Item count is " . ($num - 1);
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>346622CC-5B10-4E18-BA60-8D97AF2C0823</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ni:dec</string>
+				<key>subtext</key>
+				<string>Decrement the item count.</string>
+				<key>text</key>
+				<string>Next Item</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C71D51DB-D0B8-4799-AEC6-2FB788A23EF9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Next Item</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D5689C22-CDE3-4C99-B618-5189B37D424F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>include_once("workflows.php");
+
+$wf = new Workflows();
+
+$nf = $wf-&gt;data()."/number.txt";
+file_put_contents($nf, {query});
+echo "Next Item count is " . {query};
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F932FA9F-C71A-4C58-86DA-49E4768B56F1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ni:set</string>
+				<key>subtext</key>
+				<string>Set the next item sequence number to {query}.</string>
+				<key>text</key>
+				<string>Next Item</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EC491961-ABA6-4B16-ACD4-8761A91B0428</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>include_once("workflows.php");
+
+$wf = new Workflows();
+$mfname = $wf-&gt;data()."/URLList.txt";
+$listnum = intval("{query}");
+$nfname = $wf-&gt;data() . "/URLList{$listnum}.txt";
+
+if(copy($mfname,$nfname)) {
+	echo "Successfully copied to list {$listnum}!";
+	file_put_contents($wf-&gt;data()."/number.txt","0");
+} else {
+	echo "Could not copy {query}";
+}
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B94D745A-42D9-401F-94A4-BFE7C7FC4C69</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ni:move</string>
+				<key>subtext</key>
+				<string>Move the last list to list {query}</string>
+				<key>text</key>
+				<string>Next Item</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>56004CED-63E4-4314-A328-1646272029D6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>include_once("workflows.php");
+
+$wf = new Workflows();
+
+$num = (int) file_get_contents($wf-&gt;data().'/number.txt');
+
+echo $num;</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F63FC3CD-1400-4E4D-A3EB-8C7FED471811</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ni:current</string>
+				<key>subtext</key>
+				<string>Current Count</string>
+				<key>text</key>
+				<string>Next Item</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0F9C3D42-44DD-4C60-94C5-F5A99A637065</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This little workflow allows you to sequentially step through items in multiple list files. You use the "Next Item: Set File" file action on the file containing a list of items: One item per line. For example, a list of urls; one per line. Then the hot key (you will have to set yourself since mine being &lt;alt&gt;&lt;command&gt;n will be erased) will take the next item from the specified first list and copy it to the clipboard and to a notification. If you view all lists before the first list, you will see each corresponding item for each list. The counter is only incremented after passing the item from the first list.
+
+"ni:move #" will move the last set file to the # list. If you do not move the file items to a list number, then it will not get sent to you.
+
+"ni:item" will give the next item from the first list and increment the counter.
+
+ni:l #" will give the next item from the # list, but the count will not be incremented unless it is list 1.
+
+"ni:inc" and "ni:dec" will increment or decrement the counter. 
+
+"ni:set" allows you to set the counter to any number. 
+
+"ni:clear" will clear the counter and erase the temporary files. 
+
+"ni:current" will display the current count number.
+
+The items are addressed using a zero reference. Therefore, if the counter is 1, the the second line in the file will be displayed.
+
+Setting a new list will clear the count. The file specified is copied to a work area that all the other scripts will use to access it. Therefore, you do not need to worry about the original file being changed.</string>
+	<key>uidata</key>
+	<dict>
+		<key>0F9C3D42-44DD-4C60-94C5-F5A99A637065</key>
+		<dict>
+			<key>ypos</key>
+			<real>960</real>
+		</dict>
+		<key>1342057C-3C45-4A7E-9FC1-CD14CC836F5C</key>
+		<dict>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+		<key>194013D0-ED00-4E91-8914-1DF2398CD344</key>
+		<dict>
+			<key>ypos</key>
+			<real>520</real>
+		</dict>
+		<key>346622CC-5B10-4E18-BA60-8D97AF2C0823</key>
+		<dict>
+			<key>ypos</key>
+			<real>630</real>
+		</dict>
+		<key>3DCD534B-39F0-4620-B890-C823FB452C66</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>55DD3B32-6C5C-4749-9DAA-3FBF186FC91B</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>56004CED-63E4-4314-A328-1646272029D6</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>57C09C63-9925-45D6-A11D-0DFE0A101AB3</key>
+		<dict>
+			<key>ypos</key>
+			<real>520</real>
+		</dict>
+		<key>7795A230-07BB-4C98-A95B-935EBEE3EC65</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>78DC9AEE-1D2B-4626-9FE6-F6A9D6FE5559</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>910F25D4-AE2B-47D8-9157-F7414739BFF7</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>9638A95E-172B-483E-9960-EBBEA593B01D</key>
+		<dict>
+			<key>ypos</key>
+			<real>410</real>
+		</dict>
+		<key>9FAE724F-88B0-4ACF-9331-7BACFB109609</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B8E1B351-FF2C-4AD8-97CF-FB01050C5031</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>B94D745A-42D9-401F-94A4-BFE7C7FC4C69</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>C71D51DB-D0B8-4799-AEC6-2FB788A23EF9</key>
+		<dict>
+			<key>ypos</key>
+			<real>630</real>
+		</dict>
+		<key>D5689C22-CDE3-4C99-B618-5189B37D424F</key>
+		<dict>
+			<key>ypos</key>
+			<real>690</real>
+		</dict>
+		<key>E39601D7-A33C-4F84-BA1D-0D70D8D86472</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>E6C9D51F-69DC-41AB-8159-56B5D2E8A758</key>
+		<dict>
+			<key>ypos</key>
+			<real>410</real>
+		</dict>
+		<key>EC491961-ABA6-4B16-ACD4-8761A91B0428</key>
+		<dict>
+			<key>ypos</key>
+			<real>740</real>
+		</dict>
+		<key>F63FC3CD-1400-4E4D-A3EB-8C7FED471811</key>
+		<dict>
+			<key>ypos</key>
+			<real>960</real>
+		</dict>
+		<key>F932FA9F-C71A-4C58-86DA-49E4768B56F1</key>
+		<dict>
+			<key>ypos</key>
+			<real>740</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.customct.com/shop/alfred-2-workflows/</string>
+</dict>
+</plist>

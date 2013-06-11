@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>rtmemailusingalfred</string>
+	<key>connections</key>
+	<dict>
+		<key>210DB44D-8E5E-4FDA-81B6-B3AFAC48A6B2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1BF3CA6D-D61A-466C-96D1-44822E6B5500</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Anna Berlee</string>
+	<key>description</key>
+	<string>Send a task to Remember the Milk via Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Email to RTM with Alfred</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>set recipientName to "Remember the Milk"set recipientAddress to "REPLACE THIS WITH YOUR RTM EMAIL ADDRESS"set theSubject to "{query}"tell application "Sparrow"	set theMessage to make new outgoing message with properties {subject:theSubject}	tell theMessage		make new to recipient with properties {name:recipientName, address:recipientAddress}		sendmessage	end tellend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1BF3CA6D-D61A-466C-96D1-44822E6B5500</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>rtm</string>
+				<key>subtext</key>
+				<string>^date *recurrence !priority #list #tag @location</string>
+				<key>text</key>
+				<string>Email to RTM</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>210DB44D-8E5E-4FDA-81B6-B3AFAC48A6B2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1BF3CA6D-D61A-466C-96D1-44822E6B5500</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>210DB44D-8E5E-4FDA-81B6-B3AFAC48A6B2</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.annaberlee.nl</string>
+</dict>
+</plist>
