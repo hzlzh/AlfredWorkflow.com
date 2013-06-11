@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>axelpeigne.trashdownloads</string>
+	<key>connections</key>
+	<dict>
+		<key>03CEE938-693B-42C7-AE29-D97BA9E08CFC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8194BAA9-5807-42DA-AF1A-3508AB18568B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1C24286C-C313-46AA-93C8-6B761A5B4DFB</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Permanently delete all the downloads files and the files contained in the trash !</string>
+			</dict>
+		</array>
+		<key>1C24286C-C313-46AA-93C8-6B761A5B4DFB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5BF78CF5-7568-43F0-ABEA-CD925EAFFF82</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8194BAA9-5807-42DA-AF1A-3508AB18568B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C9F9EBFE-8B03-4387-B17A-DD162AB769EE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Axel Peigné</string>
+	<key>description</key>
+	<string>Empty your Downloads folder into the trash</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Trash Downloads</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>throw</string>
+				<key>subtext</key>
+				<string>Press "cmd" to also empty the trash</string>
+				<key>text</key>
+				<string>Throw your download folder to the trash</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>03CEE938-693B-42C7-AE29-D97BA9E08CFC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Downloads files moved to the trash !</string>
+				<key>title</key>
+				<string>Files successfully moved</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C9F9EBFE-8B03-4387-B17A-DD162AB769EE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>tell application "Finder"	set allDownloads to every item of folder (path to downloads folder as text)	delete allDownloadsend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8194BAA9-5807-42DA-AF1A-3508AB18568B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>tell application "Finder"	set allDownloads to every item of folder (path to downloads folder as text)	delete allDownloads
+	empty trashend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1C24286C-C313-46AA-93C8-6B761A5B4DFB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Downloaded files have been permanently deleted</string>
+				<key>title</key>
+				<string>Files successfully deleted</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>5BF78CF5-7568-43F0-ABEA-CD925EAFFF82</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow will move all files from the Downloads folder to the trash.
+
+To move all the files from your Downloads folder to the trash, simply execute the "throw" command in Alfred. The files will not be permanently deleted and you will still be able to find them on the trash. You can also empty the trash in the same action as the "throw" action by pressing the "cmd" key while executing the action in Alfred. Then, the files in the Downloads folder will be moved to the trash and the trash will be deleted. Warning: be careful while using this because there is no undo button and your files will be permanently gone !</string>
+	<key>uidata</key>
+	<dict>
+		<key>03CEE938-693B-42C7-AE29-D97BA9E08CFC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>1C24286C-C313-46AA-93C8-6B761A5B4DFB</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>5BF78CF5-7568-43F0-ABEA-CD925EAFFF82</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>8194BAA9-5807-42DA-AF1A-3508AB18568B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C9F9EBFE-8B03-4387-B17A-DD162AB769EE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.alfredforum.com/topic/2537-throw-all-your-downloads-with-only-one-shortcut/</string>
+</dict>
+</plist>

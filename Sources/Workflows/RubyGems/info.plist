@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>oyokoon.rubygems</string>
+	<key>connections</key>
+	<dict>
+		<key>256D3EAE-6F96-4F7C-BDC5-B9954344AC6B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>04CC3F9C-6EF8-4DC2-AB6F-387F937B934B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E8C0DA34-C4F9-44BB-94F3-1AC828D2D860</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>04CC3F9C-6EF8-4DC2-AB6F-387F937B934B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Nathan Le Ray</string>
+	<key>description</key>
+	<string>Find gems on RubyGems.org</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>RubyGems</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>to_gem</string>
+				<key>subtext</key>
+				<string>Open the gem on RubyGems.org</string>
+				<key>text</key>
+				<string>Open gem '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E8C0DA34-C4F9-44BB-94F3-1AC828D2D860</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<true/>
+				<key>url</key>
+				<string>https://rubygems.org/gems/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>04CC3F9C-6EF8-4DC2-AB6F-387F937B934B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>gem</string>
+				<key>runningsubtext</key>
+				<string>Searching on RubyGems...</string>
+				<key>script</key>
+				<string>require('workflows.php');
+
+$w = new Workflows();
+
+$query = urlencode("{query}");
+
+$json = $w-&gt;request("https://rubygems.org/api/v1/search.json?query=$query");
+
+$results = array();
+$results = json_decode($json);
+
+if (count($results) &gt; 0) {
+	foreach($results as $gem) {
+		$w-&gt;result($gem-&gt;name, $gem-&gt;name, $gem-&gt;name, $gem-&gt;info, 'icon.png', 'yes', $gem-&gt;name);
+	}
+}
+else {
+	$w-&gt;result(time(), '', 'No Results', "No results were found for {query}", 'icon.png', 'no', time());
+}
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Search matching gems on RubyGems.org</string>
+				<key>title</key>
+				<string>Search for gem '{query}'</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>256D3EAE-6F96-4F7C-BDC5-B9954344AC6B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>04CC3F9C-6EF8-4DC2-AB6F-387F937B934B</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>256D3EAE-6F96-4F7C-BDC5-B9954344AC6B</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>E8C0DA34-C4F9-44BB-94F3-1AC828D2D860</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://sxnlabs.com</string>
+</dict>
+</plist>

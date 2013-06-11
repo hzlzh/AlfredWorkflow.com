@@ -42,7 +42,7 @@ getXMLResults() {
 # Escapes XML special characters with their entities
 ###############################################################################
 xmlEncode() {
-  echo "$1" | sed 's/&/&amp;/' | sed 's/>/&gt;/' | sed 's/</&lt;/' | sed "s/\'/&apos;/" | sed 's/\"/&quot;/'
+  echo "$1" | sed s/"&"/"\&amp;"/ | sed s/">"/"\&gt;"/ | sed s/"<"/"\&lt;"/ | sed s/"\'"/"\&apos;"/ | sed s/"\""/"\&quot;"/
 }
 
 ###############################################################################
@@ -99,12 +99,12 @@ setPref() {
   fi
 
   local KEY_EXISTS=$(grep -c "$1=" "$PREFFILE")
-  if [ "$KEY_EXISTS" = "0" ]; then
-    echo "$1=$2" >> "$PREFFILE"
-  else
-    sed -i "" s/"$1=.*"/"$1=$2"/ "$PREFFILE"
+  if [ "$KEY_EXISTS" = "1" ]; then
+    local TMP=$(grep -ve "^$1" "$PREFFILE")
+    echo "$TMP" > "$PREFFILE"
   fi
-}
+  echo "$1=$2" >> "$PREFFILE"
+  }
 
 ###############################################################################
 # Read a value for a given key from the workflow preferences

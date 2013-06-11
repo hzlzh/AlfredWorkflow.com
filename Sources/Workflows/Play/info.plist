@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>pstadler/alfred-play</string>
+	<key>connections</key>
+	<dict>
+		<key>8BF1F33F-7248-4DB6-B0CF-A1AC38A0A7B0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D79F1156-7C48-4F3C-93B4-1D844A0386F5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>90C08CD8-8B57-41C2-8CAA-40F3AB1DD85D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D79F1156-7C48-4F3C-93B4-1D844A0386F5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9A707F0E-3DD0-4B38-9751-1950336303B3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D79F1156-7C48-4F3C-93B4-1D844A0386F5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D79F1156-7C48-4F3C-93B4-1D844A0386F5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>141F9D75-1ED4-44AF-8504-F189B0C410C1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Patrick Stadler</string>
+	<key>description</key>
+	<string>Intelligent Hotkeys for iTunes and Spotify</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Play</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>playpause</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>90C08CD8-8B57-41C2-8CAA-40F3AB1DD85D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>next track</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>9A707F0E-3DD0-4B38-9751-1950336303B3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>141F9D75-1ED4-44AF-8504-F189B0C410C1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>property lastActiveApp : ""
+
+on send_command(player, command)
+	run script "tell application \"" &amp; player &amp; "\" to " &amp; command
+	set lastActiveApp to player
+end send_command
+
+on alfred_script(q)
+	tell application "iTunes" to set itunesState to (player state as text)
+	tell application "Spotify" to set spotifyState to (player state as text)
+	tell application "System Events"
+		set frontmostApp to item 1 of (get name of processes whose frontmost is true)
+	end tell
+
+	if itunesState is equal to "playing" then
+		send_command("iTunes", q)
+	else if spotifyState is equal to "playing" then
+		send_command("Spotify", q)
+	else if frontmostApp is equal to "iTunes" or frontmostApp is equal to "Spotify" then
+		send_command(frontmostApp, q)
+	else if lastActiveApp is equal to "iTunes" then
+		send_command("iTunes", q)
+	else if lastActiveApp is equal to "Spotify" then
+		send_command("Spotify", q)
+	end if
+
+	if q is equal to "playpause" then
+		set currentState to (run script "tell application \"" &amp; lastActiveApp &amp; "\" to return (player state as text)")
+		if currentState is equal to "playing"
+			set currentState to "▶"
+		else
+			set currentState to "❚❚"
+		end if
+		return currentState &amp; "  " &amp; lastActiveApp
+	end if
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>D79F1156-7C48-4F3C-93B4-1D844A0386F5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>previous track</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>8BF1F33F-7248-4DB6-B0CF-A1AC38A0A7B0</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>141F9D75-1ED4-44AF-8504-F189B0C410C1</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>8BF1F33F-7248-4DB6-B0CF-A1AC38A0A7B0</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>90C08CD8-8B57-41C2-8CAA-40F3AB1DD85D</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9A707F0E-3DD0-4B38-9751-1950336303B3</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>D79F1156-7C48-4F3C-93B4-1D844A0386F5</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/pstadler/alfred-play</string>
+</dict>
+</plist>

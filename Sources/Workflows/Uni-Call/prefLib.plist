@@ -2,6 +2,114 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CallTrunk Call</key>
+	<dict>
+		<key>connections</key>
+		<dict>
+			<key>40A993D6-613C-4D0B-9083-E73ADD85C9B5</key>
+			<array>
+				<dict>
+					<key>destinationuid</key>
+					<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+					<key>modifiers</key>
+					<integer>0</integer>
+					<key>modifiersubtext</key>
+					<string></string>
+				</dict>
+			</array>
+			<key>7C77EC82-6545-4451-AFFF-00A017A524B2</key>
+			<array>
+				<dict>
+					<key>destinationuid</key>
+					<string>C0388279-4206-43B1-B04E-AB8C66C6CA72</string>
+					<key>modifiers</key>
+					<integer>0</integer>
+					<key>modifiersubtext</key>
+					<string></string>
+				</dict>
+			</array>
+		</dict>
+		<key>objects</key>
+		<array>
+			<dict>
+				<key>config</key>
+				<dict>
+					<key>name</key>
+					<string>CallTrunk Call</string>
+				</dict>
+				<key>type</key>
+				<string>alfred.workflow.trigger.contact</string>
+				<key>uid</key>
+				<string>7C77EC82-6545-4451-AFFF-00A017A524B2</string>
+				<key>version</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>config</key>
+				<dict>
+					<key>escaping</key>
+					<integer>127</integer>
+					<key>script</key>
+					<string>osascript bin/calltrunkcall.scpt {query}/US</string>
+					<key>type</key>
+					<integer>0</integer>
+				</dict>
+				<key>type</key>
+				<string>alfred.workflow.action.script</string>
+				<key>uid</key>
+				<string>C0388279-4206-43B1-B04E-AB8C66C6CA72</string>
+				<key>version</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>config</key>
+				<dict>
+					<key>argumenttype</key>
+					<integer>0</integer>
+					<key>escaping</key>
+					<integer>102</integer>
+					<key>keyword</key>
+					<string>callk</string>
+					<key>runningsubtext</key>
+					<string>Searching...</string>
+					<key>script</key>
+					<string>./bin/Uni\ Call\ Basestation -k "{query}"</string>
+					<key>subtext</key>
+					<string>Make a CallTrunk call to your contact</string>
+					<key>title</key>
+					<string>CallTrunk Call</string>
+					<key>type</key>
+					<integer>0</integer>
+					<key>withspace</key>
+					<true/>
+				</dict>
+				<key>type</key>
+				<string>alfred.workflow.input.scriptfilter</string>
+				<key>uid</key>
+				<string>40A993D6-613C-4D0B-9083-E73ADD85C9B5</string>
+				<key>version</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+		<key>uidata</key>
+		<dict>
+			<key>40A993D6-613C-4D0B-9083-E73ADD85C9B5</key>
+			<dict>
+				<key>ypos</key>
+				<real>920</real>
+			</dict>
+			<key>7C77EC82-6545-4451-AFFF-00A017A524B2</key>
+			<dict>
+				<key>ypos</key>
+				<real>980</real>
+			</dict>
+			<key>C0388279-4206-43B1-B04E-AB8C66C6CA72</key>
+			<dict>
+				<key>ypos</key>
+				<real>980</real>
+			</dict>
+		</dict>
+	</dict>
 	<key>FaceTime Call</key>
 	<dict>
 		<key>connections</key>
@@ -101,6 +209,114 @@
 			<dict>
 				<key>ypos</key>
 				<real>380</real>
+			</dict>
+		</dict>
+	</dict>
+	<key>Fritz!Box Call</key>
+	<dict>
+		<key>connections</key>
+		<dict>
+			<key>05088DC0-D882-4E8B-B130-F087F7C04FC2</key>
+			<array>
+				<dict>
+					<key>destinationuid</key>
+					<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+					<key>modifiers</key>
+					<integer>0</integer>
+					<key>modifiersubtext</key>
+					<string></string>
+				</dict>
+			</array>
+			<key>B3FB4D6B-48F3-4418-BC4A-0ECA50FA8F82</key>
+			<array>
+				<dict>
+					<key>destinationuid</key>
+					<string>44DE1718-7C29-419B-8B73-EED948E778C6</string>
+					<key>modifiers</key>
+					<integer>0</integer>
+					<key>modifiersubtext</key>
+					<string></string>
+				</dict>
+			</array>
+		</dict>
+		<key>objects</key>
+		<array>
+			<dict>
+				<key>config</key>
+				<dict>
+					<key>escaping</key>
+					<integer>127</integer>
+					<key>script</key>
+					<string>osascript bin/fritz!boxcall.scpt {query}</string>
+					<key>type</key>
+					<integer>0</integer>
+				</dict>
+				<key>type</key>
+				<string>alfred.workflow.action.script</string>
+				<key>uid</key>
+				<string>44DE1718-7C29-419B-8B73-EED948E778C6</string>
+				<key>version</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>config</key>
+				<dict>
+					<key>name</key>
+					<string>Fritz!Box Call</string>
+				</dict>
+				<key>type</key>
+				<string>alfred.workflow.trigger.contact</string>
+				<key>uid</key>
+				<string>B3FB4D6B-48F3-4418-BC4A-0ECA50FA8F82</string>
+				<key>version</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>config</key>
+				<dict>
+					<key>argumenttype</key>
+					<integer>0</integer>
+					<key>escaping</key>
+					<integer>102</integer>
+					<key>keyword</key>
+					<string>callz</string>
+					<key>runningsubtext</key>
+					<string>Searching...</string>
+					<key>script</key>
+					<string>./bin/Uni\ Call\ Basestation -z "{query}"</string>
+					<key>subtext</key>
+					<string>Make a Fritz!Box call to your contact via Frizzix</string>
+					<key>title</key>
+					<string>Fritz!Box Call</string>
+					<key>type</key>
+					<integer>0</integer>
+					<key>withspace</key>
+					<true/>
+				</dict>
+				<key>type</key>
+				<string>alfred.workflow.input.scriptfilter</string>
+				<key>uid</key>
+				<string>05088DC0-D882-4E8B-B130-F087F7C04FC2</string>
+				<key>version</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+		<key>uidata</key>
+		<dict>
+			<key>05088DC0-D882-4E8B-B130-F087F7C04FC2</key>
+			<dict>
+				<key>ypos</key>
+				<real>1040</real>
+			</dict>
+			<key>44DE1718-7C29-419B-8B73-EED948E778C6</key>
+			<dict>
+				<key>ypos</key>
+				<real>1100</real>
+			</dict>
+			<key>B3FB4D6B-48F3-4418-BC4A-0ECA50FA8F82</key>
+			<dict>
+				<key>ypos</key>
+				<real>1100</real>
 			</dict>
 		</dict>
 	</dict>
