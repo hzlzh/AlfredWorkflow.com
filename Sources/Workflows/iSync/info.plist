@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>v1.1</string>
+	<key>connections</key>
+	<dict>
+		<key>B4D1AC7D-3325-4D39-B255-15AE9B484AB4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0F36149E-738F-4DC6-A85C-305714FB3D3B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>64BB9B3E-3B75-4BAC-824B-B6340B498EC5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>MacGeeky</string>
+	<key>description</key>
+	<string>Synkroniserer iEnheter i Tunes</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>iSync</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>set q to "{query}"
+
+tell application "iTunes" to update sources whose index is q</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>0F36149E-738F-4DC6-A85C-305714FB3D3B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>isync</string>
+				<key>script</key>
+				<string>set output_text to "&lt;?xml version='1.0'?&gt;&lt;items&gt;"set q to "{query}"set displayedList to {}tell application "iTunes"		repeat with iEnhet in (sources whose kind is iPod as list)		set theName to name of iEnhet		set indx to index of iEnhet				--set theImage to image of iEnhet				if (theName starts with q) or (q is "") then			if not (displayedList contains theName) then				set output_text to output_text &amp; "
+	&lt;item uid='" &amp; theName &amp; "' arg='" &amp; indx &amp; "' valid='yes'&gt;
+		&lt;title&gt;" &amp; theName &amp; "&lt;/title&gt;
+		&lt;icon&gt;icon.png&lt;/icon&gt;
+	&lt;/item&gt;"				set the end of displayedList to theName			end if		end if			end repeatend tellset output_text to output_text &amp; "
+&lt;/items&gt;"output_text</string>
+				<key>title</key>
+				<string>Synchronize iDevice's</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B4D1AC7D-3325-4D39-B255-15AE9B484AB4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>title</key>
+				<string>Sync'ing iDevice</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>64BB9B3E-3B75-4BAC-824B-B6340B498EC5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0F36149E-738F-4DC6-A85C-305714FB3D3B</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+		<key>64BB9B3E-3B75-4BAC-824B-B6340B498EC5</key>
+		<dict>
+			<key>ypos</key>
+			<real>290</real>
+		</dict>
+		<key>B4D1AC7D-3325-4D39-B255-15AE9B484AB4</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://macgeeky.no</string>
+</dict>
+</plist>

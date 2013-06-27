@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>me.alexw.install_apps</string>
+	<key>connections</key>
+	<dict>
+		<key>3CBCF406-6C6E-41B7-AE39-F2BB26193E44</key>
+		<array/>
+		<key>B0468528-2BC2-4158-ACB8-9B94A2FBF516</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3CBCF406-6C6E-41B7-AE39-F2BB26193E44</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>alex wolkov</string>
+	<key>description</key>
+	<string>Quickly download and install mac apps (brew cask apps)</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Install Mac Apps</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>python install.py install {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3CBCF406-6C6E-41B7-AE39-F2BB26193E44</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>install</string>
+				<key>runningsubtext</key>
+				<string>Searching</string>
+				<key>script</key>
+				<string>python actions.py filter {query}</string>
+				<key>subtext</key>
+				<string>Search for an app to install</string>
+				<key>title</key>
+				<string>Install mac apps</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B0468528-2BC2-4158-ACB8-9B94A2FBF516</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Quicky install mac apps
+Install and name of app, and that's it!
+Based on the community list of brew cask</string>
+	<key>uidata</key>
+	<dict>
+		<key>3CBCF406-6C6E-41B7-AE39-F2BB26193E44</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>B0468528-2BC2-4158-ACB8-9B94A2FBF516</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>4B88F008-4864-45F6-BC36-6394253E4F19</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F6D0C47E-E4BD-431B-BC51-01978B338495</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F6D0C47E-E4BD-431B-BC51-01978B338495</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0523C16D-5D87-4846-8106-CD0C9552E640</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Chad Stovern</string>
+	<key>description</key>
+	<string>This workflow uses Mac OS X built–in sendmail binary to quickly send updates to your iDoneThis account.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>iDoneThis For Alfred 2</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>idone</string>
+				<key>subtext</key>
+				<string>submit to iDoneThis</string>
+				<key>text</key>
+				<string>idone</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4B88F008-4864-45F6-BC36-6394253E4F19</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string># iDoneThis For Alfred 2
+
+## Set your name &amp; email address tied to your iDoneThis account here
+from_name="John Doe"
+from_addr="jdoe@example.com"
+
+## Mail Script
+body={query}
+printf "From: ${from_name} &lt;${from_addr}&gt;\nTo: iDoneThis Today&lt;today@today.idonethis.com&gt;\nSubject: Sent via iDoneThis For Alfred 2\n\n${body}\n" | /usr/sbin/sendmail -F "${from_name}" -f "${from_addr}" "today@today.idonethis.com"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F6D0C47E-E4BD-431B-BC51-01978B338495</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Update posted successfully…</string>
+				<key>title</key>
+				<string>iDoneThis For Alfred 2</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0523C16D-5D87-4846-8106-CD0C9552E640</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># iDoneThis For Alfred 2
+
+## Contact
+Script &amp; attempt at creating an icon by:  
+Chad Stovern  
+&lt;chadhs@digitalnomad.im&gt;  
+&lt;http://www.digitalnomad.im&gt;
+
+## Summary
+
+This workflow uses Mac OS X built–in sendmail binary to quickly send updates to your [iDoneThis.com](http://idonethis.com) account.
+
+## Installation
+
+Simply download and double–click the workflow file to install.  
+Then edit the bash script to fill out your name and the email address tied to your [iDoneThis.com](http://idonethis.com) account; it will be at the top of the script and look just like this.
+
+	## Set your name &amp; email address here
+	from_name="John Doe"
+	from_addr="jdoe@example.com"
+
+Type "idid" followed bey your update and press enter; you're done!</string>
+	<key>uidata</key>
+	<dict>
+		<key>0523C16D-5D87-4846-8106-CD0C9552E640</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>4B88F008-4864-45F6-BC36-6394253E4F19</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>F6D0C47E-E4BD-431B-BC51-01978B338495</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.digitalnomad.im</string>
+</dict>
+</plist>

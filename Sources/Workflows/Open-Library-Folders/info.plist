@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>v1.01</string>
+	<key>connections</key>
+	<dict>
+		<key>09F4D5C5-970A-487C-8F76-5D584188EE40</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2C2B5ADC-50D0-4495-AFB6-C05077291E5B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>0F37CFF6-4328-4FE7-918B-2A426BEBC57B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EF8DCC0F-264E-4ED4-A0E4-0D99E92748A2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>19F63BD5-A903-4429-B9AD-5D90D0753D43</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EF8DCC0F-264E-4ED4-A0E4-0D99E92748A2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>60D4B7DF-C167-4795-A583-DF609A9283F2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>626FD736-76A2-4207-A9D2-6652BD257753</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>65D396B1-66DA-4548-9E60-99EAA17072B6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2C2B5ADC-50D0-4495-AFB6-C05077291E5B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A736F1E2-0194-4A03-A9A4-FC401A4CB857</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2C2B5ADC-50D0-4495-AFB6-C05077291E5B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C49AA421-774E-4EF1-9DA6-87729C516048</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2C2B5ADC-50D0-4495-AFB6-C05077291E5B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E2CB652F-C76C-463C-8D67-2360E8A4FA88</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EF8DCC0F-264E-4ED4-A0E4-0D99E92748A2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>MacGeeky</string>
+	<key>description</key>
+	<string>one by one</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Open Library Folders</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>hd</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>65D396B1-66DA-4548-9E60-99EAA17072B6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)	tell application "Finder" to set bootDisk to name of startup disk			if q is "system" then		set bane to bootDisk &amp; ":System:Library"	else if q is "hd" then		set bane to bootDisk &amp; ":Library"	else if q is "user" then		set bane to path to library folder from user domain as string	end if			tell application "Finder" to open folder bane	tell application "Finder" to activateend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>2C2B5ADC-50D0-4495-AFB6-C05077291E5B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>library</string>
+				<key>subtext</key>
+				<string>System, User, HD</string>
+				<key>text</key>
+				<string>Open Library Folders</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C49AA421-774E-4EF1-9DA6-87729C516048</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>system</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>09F4D5C5-970A-487C-8F76-5D584188EE40</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>user</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>A736F1E2-0194-4A03-A9A4-FC401A4CB857</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<true/>
+				<key>keyword</key>
+				<string>plist</string>
+				<key>scopes</key>
+				<array>
+					<string>/Library</string>
+					<string>/System/Library</string>
+					<string>~/Library</string>
+				</array>
+				<key>subtext</key>
+				<string>Search the library folders for .plist files</string>
+				<key>title</key>
+				<string>Library Plist Search</string>
+				<key>types</key>
+				<array>
+					<string>com.apple.property-list</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>60D4B7DF-C167-4795-A583-DF609A9283F2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>626FD736-76A2-4207-A9D2-6652BD257753</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>hd</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>19F63BD5-A903-4429-B9AD-5D90D0753D43</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>user</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>0F37CFF6-4328-4FE7-918B-2A426BEBC57B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)	tell application "Finder" to set bootDisk to name of startup disk				if q is "hd" then		set bane to bootDisk &amp; ":Library:Application Support"	else if q is "user" then		set baneMid to path to library folder from user domain as string		set bane to baneMid &amp; "Application Support"	end if			tell application "Finder" to open folder bane	tell application "Finder" to activateend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>EF8DCC0F-264E-4ED4-A0E4-0D99E92748A2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>appsup</string>
+				<key>subtext</key>
+				<string>Keywords: hd, user</string>
+				<key>text</key>
+				<string>Open Application Support Folder</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E2CB652F-C76C-463C-8D67-2360E8A4FA88</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Keywords:
+
+Open each of the three different Library folders by keywords this way:
+
+/System/Library/ = library system
+/Macintosh HD/Library/ = library hd
+~/Library/ = library user
+
+If you would like to use keyboard shortcuts to open the folders - just setup the shortcuts you would like to use in the Alfred preferences. 
+
+Each shortcut has a keyword in the bottom (hd, system and user) - use these to identify what each of the shortcuts does.</string>
+	<key>uidata</key>
+	<dict>
+		<key>09F4D5C5-970A-487C-8F76-5D584188EE40</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>0F37CFF6-4328-4FE7-918B-2A426BEBC57B</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>19F63BD5-A903-4429-B9AD-5D90D0753D43</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>2C2B5ADC-50D0-4495-AFB6-C05077291E5B</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>60D4B7DF-C167-4795-A583-DF609A9283F2</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>626FD736-76A2-4207-A9D2-6652BD257753</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>65D396B1-66DA-4548-9E60-99EAA17072B6</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A736F1E2-0194-4A03-A9A4-FC401A4CB857</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>C49AA421-774E-4EF1-9DA6-87729C516048</key>
+		<dict>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+		<key>E2CB652F-C76C-463C-8D67-2360E8A4FA88</key>
+		<dict>
+			<key>ypos</key>
+			<real>580</real>
+		</dict>
+		<key>EF8DCC0F-264E-4ED4-A0E4-0D99E92748A2</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://macgeeky.no/alfred-v2/</string>
+</dict>
+</plist>

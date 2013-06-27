@@ -1,4 +1,4 @@
-[AlfredWorkflow.com](http://AlfredWorkflow.com 'Alfred 2 Workflows List') (beta)
+[AlfredWorkflow.com](http://AlfredWorkflow.com 'Alfred 2 Workflows List') (330+ added)
 ====
 ### Search, Install and Share, No Need to Reinvent the Wheel.
  ([Alfred 2] powerpack required)  
@@ -7,7 +7,7 @@
  
 Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in coding new workflows yourself.
 
-## Workflows' JSON API (updated 2013.4.25) 
+## Workflows' JSON API (updated 2013.6.27) 
 
 * **(Recommended)** API on Github:  
 * [https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow_api.json](https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow_api.json)(new)  

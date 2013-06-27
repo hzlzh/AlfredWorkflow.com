@@ -6,7 +6,18 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
-		<key>D9413737-68AF-44E7-8F3D-214676DFD4EF</key>
+		<key>1CDD71C9-6FA7-4886-8792-358DC4825B8C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3387B057-FF89-44FF-8D81-1C1CB554C09C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7B358A3F-B206-4B26-BF0E-B9643D6808DE</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -25,11 +36,19 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>F0F03219-0C30-4884-A6C9-9465D512B11C</key>
+		<key>D9413737-68AF-44E7-8F3D-214676DFD4EF</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>3387B057-FF89-44FF-8D81-1C1CB554C09C</string>
+				<string>967B18E7-BA96-4F09-B4E5-A773DE0FD3DC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>77AA5EBA-F831-4E9E-9E7D-FD7665B66FD1</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -50,47 +69,9 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>cat file_list | xargs -0 ./labelcolor {query}
-
-rm file_list
-
-exit 0</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>3387B057-FF89-44FF-8D81-1C1CB554C09C</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>labelcolor</string>
-				<key>subtext</key>
-				<string>none (removes label), orange, red, yellow, blue, purple, green, gray</string>
-				<key>text</key>
-				<string>labelcolor</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>F0F03219-0C30-4884-A6C9-9465D512B11C</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
-	tell application "Alfred 2" to search "labelcolor "
+	tell application "Alfred 2" to search "labelcolor"
 end alfred_script</string>
 				<key>cachescript</key>
 				<false/>
@@ -99,21 +80,8 @@ end alfred_script</string>
 			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
 			<string>967B18E7-BA96-4F09-B4E5-A773DE0FD3DC</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>echo "{query}" | perl -pe 's/[\t\n]/\0/g' &gt; file_list</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>77AA5EBA-F831-4E9E-9E7D-FD7665B66FD1</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -129,18 +97,159 @@ end alfred_script</string>
 			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
 			<string>D9413737-68AF-44E7-8F3D-214676DFD4EF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>7B358A3F-B206-4B26-BF0E-B9643D6808DE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>echo "{query}" | perl -pe 's/[\t\n]/\0/g' &gt; file_list</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>77AA5EBA-F831-4E9E-9E7D-FD7665B66FD1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>labelcolor</string>
+				<key>runningsubtext</key>
+				<string>Please wait…</string>
+				<key>script</key>
+				<string>cat &lt;&lt; EOF
+&lt;?xml version='1.0'?&gt;&lt;items&gt;
+  &lt;item uid='none' arg='none' valid='yes' autocomplete=''&gt;
+    &lt;title&gt;None&lt;/title&gt;
+    &lt;subtitle&gt;Removes label&lt;/subtitle&gt;
+    &lt;icon&gt;colors/none.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid='orange' arg='orange' valid='yes' autocomplete=''&gt;
+    &lt;title&gt;Orange&lt;/title&gt;
+    &lt;subtitle&gt;Applies the orange label&lt;/subtitle&gt;
+    &lt;icon&gt;colors/orange.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid='red' arg='red' valid='yes' autocomplete=''&gt;
+    &lt;title&gt;Red&lt;/title&gt;
+    &lt;subtitle&gt;Applies the red label&lt;/subtitle&gt;
+    &lt;icon&gt;colors/red.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid='yellow' arg='yellow' valid='yes' autocomplete=''&gt;
+    &lt;title&gt;Yellow&lt;/title&gt;
+    &lt;subtitle&gt;Applies the yellow label&lt;/subtitle&gt;
+    &lt;icon&gt;colors/yellow.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid='blue' arg='blue' valid='yes' autocomplete=''&gt;
+    &lt;title&gt;Blue&lt;/title&gt;
+    &lt;subtitle&gt;Applies the blue label&lt;/subtitle&gt;
+    &lt;icon&gt;colors/blue.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid='purple' arg='purple' valid='yes' autocomplete=''&gt;
+    &lt;title&gt;Purple&lt;/title&gt;
+    &lt;subtitle&gt;Applies the purple label&lt;/subtitle&gt;
+    &lt;icon&gt;colors/purple.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid='green' arg='green' valid='yes' autocomplete=''&gt;
+    &lt;title&gt;Green&lt;/title&gt;
+    &lt;subtitle&gt;Applies the green label&lt;/subtitle&gt;
+    &lt;icon&gt;colors/green.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item uid='gray' arg='gray' valid='yes' autocomplete=''&gt;
+    &lt;title&gt;Gray&lt;/title&gt;
+    &lt;subtitle&gt;Applies the gray label&lt;/subtitle&gt;
+    &lt;icon&gt;colors/gray.png&lt;/icon&gt;
+  &lt;/item&gt;
+&lt;/items&gt;
+EOF</string>
+				<key>subtext</key>
+				<string>none (removes label), orange, red, yellow, blue, purple, green, gray</string>
+				<key>title</key>
+				<string>labelcolor</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1CDD71C9-6FA7-4886-8792-358DC4825B8C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>cat file_list | xargs -0 ./labelcolor {query}
+
+rm file_list
+
+exit 0</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3387B057-FF89-44FF-8D81-1C1CB554C09C</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>1CDD71C9-6FA7-4886-8792-358DC4825B8C</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
 		<key>3387B057-FF89-44FF-8D81-1C1CB554C09C</key>
 		<dict>
 			<key>ypos</key>
 			<real>250</real>
 		</dict>
 		<key>77AA5EBA-F831-4E9E-9E7D-FD7665B66FD1</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>7B358A3F-B206-4B26-BF0E-B9643D6808DE</key>
 		<dict>
 			<key>ypos</key>
 			<real>130</real>
@@ -154,11 +263,6 @@ end alfred_script</string>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
-		</dict>
-		<key>F0F03219-0C30-4884-A6C9-9465D512B11C</key>
-		<dict>
-			<key>ypos</key>
-			<real>250</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

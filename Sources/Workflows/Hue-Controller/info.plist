@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>hue-alfred-workflow</string>
+	<key>connections</key>
+	<dict>
+		<key>024CCF2C-F278-4295-B1AF-CCF8771F79AB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B6CCCE87-79BC-4AA7-9CBB-2597A4C7D3CC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3E49D8E7-3290-4C0F-A00E-31A96C8DA163</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E57B0A2C-A834-4643-B74F-E32927BF48CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B6CCCE87-79BC-4AA7-9CBB-2597A4C7D3CC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CFDFE33B-7FFC-4F4D-A692-80C56EDFF968</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E57B0A2C-A834-4643-B74F-E32927BF48CE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CFDFE33B-7FFC-4F4D-A692-80C56EDFF968</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Benjamin Knight</string>
+	<key>description</key>
+	<string>Control Philips Hue lights with Alfred.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Hue Controller</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>hue</string>
+				<key>runningsubtext</key>
+				<string>Connecting with bridge...</string>
+				<key>script</key>
+				<string>php -f filter.php -- "{query}"</string>
+				<key>title</key>
+				<string>Hue Controller</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>024CCF2C-F278-4295-B1AF-CCF8771F79AB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Hue Controller</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CFDFE33B-7FFC-4F4D-A692-80C56EDFF968</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>import request
+
+
+query = r'''{query}'''
+request.send(query)
+</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B6CCCE87-79BC-4AA7-9CBB-2597A4C7D3CC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>php -f setup.php -- "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E57B0A2C-A834-4643-B74F-E32927BF48CE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>setup-hue</string>
+				<key>subtext</key>
+				<string>Press the button on the bridge then use this script to configure the Alfred Hue Controller.</string>
+				<key>text</key>
+				<string>Link with Philips Hue Bridge</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3E49D8E7-3290-4C0F-A00E-31A96C8DA163</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>https://github.com/benknight/hue-alfred-workflow/blob/master/README.md</string>
+	<key>uidata</key>
+	<dict>
+		<key>024CCF2C-F278-4295-B1AF-CCF8771F79AB</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>3E49D8E7-3290-4C0F-A00E-31A96C8DA163</key>
+		<dict>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+		<key>B6CCCE87-79BC-4AA7-9CBB-2597A4C7D3CC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>CFDFE33B-7FFC-4F4D-A692-80C56EDFF968</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E57B0A2C-A834-4643-B74F-E32927BF48CE</key>
+		<dict>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/benknight/hue-alfred-workflow</string>
+</dict>
+</plist>

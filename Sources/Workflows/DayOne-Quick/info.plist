@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>7848D057-0223-4537-9CB9-C64B9D52A401</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9D12D25E-F68D-45A0-953B-9C125DE29BB3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9D12D25E-F68D-45A0-953B-9C125DE29BB3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E29CE278-199C-4134-BBEA-9C7A8AFB5EB1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>me</string>
+	<key>description</key>
+	<string>Quickly add an entry to DayOne</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>DayOne Quick</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>doq</string>
+				<key>subtext</key>
+				<string>Quickly add an entry to DayOne</string>
+				<key>text</key>
+				<string>DayOne Quick</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>7848D057-0223-4537-9CB9-C64B9D52A401</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>echo "{query}" | dayone new</string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9D12D25E-F68D-45A0-953B-9C125DE29BB3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Your entry has been added.</string>
+				<key>title</key>
+				<string>DayOne Quick</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E29CE278-199C-4134-BBEA-9C7A8AFB5EB1</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>7848D057-0223-4537-9CB9-C64B9D52A401</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9D12D25E-F68D-45A0-953B-9C125DE29BB3</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E29CE278-199C-4134-BBEA-9C7A8AFB5EB1</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

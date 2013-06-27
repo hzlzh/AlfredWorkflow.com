@@ -214,7 +214,7 @@
 
 case "$query" in
 	"[CTSkype]"*)
-		osascript bin/skypecall.scpt ${query#'[CTSkype]'};;
+		./bin/Skype\ Call ${query#'[CTSkype]'};;
 	"[CTFaceTime]"*)
 		open "facetime:${query#'[CTFaceTime]'}";;
 	"[CTPhoneAmego]"*)
@@ -305,7 +305,7 @@ esac</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>osascript bin/skypecall.scpt {query}</string>
+				<string>./bin/Skype\ Call {query}</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -752,7 +752,7 @@ fi</string>
 	</array>
 	<key>readme</key>
 	<string>Uni Call
-v5.1
+v5.2
 
 The missing universal phone call workflow for Alfred
 ----------------------------------------------------

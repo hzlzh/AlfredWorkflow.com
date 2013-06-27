@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>findcards.alfredpython</string>
+	<key>connections</key>
+	<dict>
+		<key>2F3A7709-FD7D-4AF8-94ED-B99696491AFF</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Benjamin Gray</string>
+	<key>description</key>
+	<string>Find cards from anki collection</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Search for anki cards</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>as</string>
+				<key>runningsubtext</key>
+				<string>searching...</string>
+				<key>script</key>
+				<string># usage: searchAnki.py pathToColleciton &lt;query&gt;
+
+python searchAnki.py &lt;pathToYourAnkiCollection&gt; {query}</string>
+				<key>subtext</key>
+				<string>search within flashcards</string>
+				<key>title</key>
+				<string>anki search</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2F3A7709-FD7D-4AF8-94ED-B99696491AFF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Searches your anki collection for flashcard questions and answers.
+
+Edit the script to add the path to your anki collection. To find it using alfred, type apostrophe (') followed by the word 'collection' like this:
+
+'collection
+
+This should give you the path to your anki database, which this workflow will use without without modifying it.</string>
+	<key>uidata</key>
+	<dict>
+		<key>2F3A7709-FD7D-4AF8-94ED-B99696491AFF</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

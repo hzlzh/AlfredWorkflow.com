@@ -1,5 +1,5 @@
 {
-	"version": 1.6,
+	"version": 2.1,
 	"download_url": "https://raw.github.com/vitorgalvao/alfred-workflows/master/bin/WatchList.alfredworkflow",
-	"description": "It now warns if you try to 'play' and have no unwatched files"
+	"description": "Show a notification when a file is marked as unwatched"
 }

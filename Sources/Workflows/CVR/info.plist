@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dk.afogh.alfred.cvr</string>
+	<key>connections</key>
+	<dict>
+		<key>73CC9D0A-6EB6-4277-8B1F-48ABA99A1069</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D1486C5D-5728-4DAC-8AFB-A391FC1EB9E4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Anders Fogh Eriksen</string>
+	<key>description</key>
+	<string>Lav CVR opslag</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>CVR</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>cvr</string>
+				<key>runningsubtext</key>
+				<string>Henter...</string>
+				<key>script</key>
+				<string>from cvr import lookup
+lookup("{query}")</string>
+				<key>subtext</key>
+				<string>F.eks. 10150817 eller Erhvervsstyrelsen</string>
+				<key>title</key>
+				<string>CVR opslag</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>73CC9D0A-6EB6-4277-8B1F-48ABA99A1069</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>https://cvrapi.dk/pretty/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>D1486C5D-5728-4DAC-8AFB-A391FC1EB9E4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>73CC9D0A-6EB6-4277-8B1F-48ABA99A1069</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>D1486C5D-5728-4DAC-8AFB-A391FC1EB9E4</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>afogh.dk</string>
+</dict>
+</plist>

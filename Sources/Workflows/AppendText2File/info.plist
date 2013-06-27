@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>49E4BE8E-6EF4-41D5-9DBA-422926F91189</key>
+		<array/>
+		<key>CD31AD66-AE96-42F1-A1B4-E5B4429F1032</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>49E4BE8E-6EF4-41D5-9DBA-422926F91189</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Chad Stovern</string>
+	<key>description</key>
+	<string>Adds text to the end of a text file</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>AppendText2File</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string># AppendText2File
+## contact: chadhs@digitalnomad.im
+## notes: used in conjunction with Alfred 2 to append text to a file.
+
+#############################
+## SET YOUR TEXT FILE HERE ##
+#############################
+original="/Users/userhomedir/path/textfile.txt"
+
+## set your backup file here (DEFAULT VALUE RECOMMENDED)
+backup="/tmp/`basename $original`.bak-`date +%Y%m%d-%H%M%S`"
+
+## notification settings
+notify=`which /Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier`
+
+## make the backup and get the md5 sum of the original and backup files
+cp $original $backup
+ohash=`md5 -q $original`
+bhash=`md5 -q $backup`
+
+## if the hashes match continue // if not bail
+if [ "$ohash" == "$bhash" ]
+then
+    ## append to the original file
+    echo {query} &gt;&gt; $original
+    ## if terminal-notifier is installed show notification on SUCCESS
+    [ -n $notify ] &amp;&amp; $notify -title "AppendText2File: Successful" -subtitle "text: \"{query}\"" -message "to file: `basename ${original}`"
+else
+    ## if terminal-notifier is installed show notification on FAILURE
+    [ -n $notify ] &amp;&amp; $notify -title "AppendText2File: FAILED!" -subtitle "text: \"{query}\"" -message "to file: `basename ${original}`"
+    ## bail if md5 sums do not match // meaning something went wrong
+    exit 1
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>49E4BE8E-6EF4-41D5-9DBA-422926F91189</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>aptext</string>
+				<key>text</key>
+				<string>AppendText2File</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CD31AD66-AE96-42F1-A1B4-E5B4429F1032</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># AppendText2File
+## Alfred 2 workflow for appending text to a file
+
+## Contact: chadhs@digitalnomad.im
+## Credits: script &amp; terrible placeholder icon by Chad Stovern
+
+## Installation Instructions
+
+- double click the workflow file to install
+- edit the keyword input to your liking
+- edit the embedded bash script line that defines your target text file to append to (NO RELATIVE PATHS); look for this section:
+
+	#############################
+	## SET YOUR TEXT FILE HERE ##
+	#############################
+	original="/Users/username/Dropbox/yourfile.txt"
+
+### Optional Notification Support
+
+- if you'd like desktop notifications install terminal-notifier here: https://github.com/alloy/terminal-notifier/downloads ***NOT*** the ruby gem install
+
+## Usage
+
+- activate alfred and type in your keyword
+- after your keyword type the exact text you want to append to your file
+- press enter to append
+
+## Protips
+
+- install the plugin more than once and choose a different keyword to create shortcuts to append to multiple files
+- change the name of the workflow AND the keyword title for each file you install it for
+
+example keywords:  apideas approjects apblog</string>
+	<key>uidata</key>
+	<dict>
+		<key>49E4BE8E-6EF4-41D5-9DBA-422926F91189</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>CD31AD66-AE96-42F1-A1B4-E5B4429F1032</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.digitalnomad.im</string>
+</dict>
+</plist>

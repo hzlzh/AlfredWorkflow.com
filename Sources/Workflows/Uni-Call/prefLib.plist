@@ -817,7 +817,7 @@ fi</string>
 					<key>escaping</key>
 					<integer>127</integer>
 					<key>script</key>
-					<string>osascript bin/skypecall.scpt {query}</string>
+					<string>./bin/Skype\ Call {query}</string>
 					<key>type</key>
 					<integer>0</integer>
 				</dict>

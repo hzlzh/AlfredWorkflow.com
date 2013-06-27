@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>1.00</string>
+	<key>connections</key>
+	<dict>
+		<key>2FC5BD05-7B9E-4EEE-8663-C6E2DA9DEBB2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C2CBE797-23CA-407A-B078-1DB527324C08</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>69B68607-049A-4060-9A86-278DA5B02770</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F580B479-6EC2-477C-8524-008ED7A83285</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9CB301A0-12CF-41CB-A688-0263B88D1C97</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C2CBE797-23CA-407A-B078-1DB527324C08</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>MacGeeky</string>
+	<key>description</key>
+	<string>Insert and format URL or Image in Markdown</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Markdown Help</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on frontApp()	tell application "System Events" to return name of the first process whose frontmost is true
+end frontApp
+
+on alfred_script(q)		set ImgURL to the clipboard		set htmlKode to "&lt;img src='" &amp; ImgURL &amp; "' width='" &amp; q &amp; "' /&gt;"	--set the clipboard to htmlKode			tell application frontApp()		activate document 1				tell application "System Events" to keystroke htmlKode			end tell	end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F580B479-6EC2-477C-8524-008ED7A83285</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>img</string>
+				<key>text</key>
+				<string>Insert Image in Markdown</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>69B68607-049A-4060-9A86-278DA5B02770</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>9CB301A0-12CF-41CB-A688-0263B88D1C97</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>--alfred_script("")on is_running(appName)	tell application "System Events" to (name of processes) contains appNameend is_runningon frontApp()	tell application "System Events" to return name of the first process whose frontmost is trueend frontAppon alfred_script(q)		tell application "System Events"		set appsRunning to every application process	end tell	tell application "Finder" to set bootDisk to name of startup disk		set baneMid to path to library folder from user domain as string	set bane to baneMid &amp; "Preferences"		if q is "reset" then		tell application "Finder" to delete file "com.markdown.alfred.plist" of folder bane		error number -128	else		tell application "Finder"			if exists file "com.markdown.alfred.plist" of folder bane then				set isThere to yes			else				set isThere to no			end if		end tell				if isThere is no then			display dialog "Setup: Which browser?" buttons {"'Safari'", "'Google Chrome'"}			set answ to button returned of result as text			--set answ to answ as 			do shell script "defaults write com.markdown.alfred.plist browser " &amp; answ			set chosenBrowser to do shell script "defaults read com.markdown.alfred.plist browser"		else			set chosenBrowser to do shell script "defaults read com.markdown.alfred.plist browser"		end if				if chosenBrowser is "Google Chrome" then			if (is_running("Google Chrome")) then				try					tell application "Google Chrome" to set theURL to URL of active tab of first window				on error					set theURL to the clipboard				end try			else				display dialog "Google Chrome is not running!"			end if		else			if (is_running("Safari")) then				--try				tell application "Safari" to set theURL to URL of current tab of window 1 --end try			else				display dialog "Safari is not running!"			end if					end if						set spm to (display dialog "Insert URL: " with title "URL formatting" with icon 1 buttons {"Cancel", "OK"} default button "OK" default answer theURL)		set URLen to text returned of spm		set knapp to button returned of spm						if knapp is "OK" then			tell application frontApp() to activate			tell application "System Events" to keystroke "c" using {command down}			delay 0.3			set ankertekst to the clipboard						set markdownText to "[" &amp; ankertekst &amp; "](" &amp; URLen &amp; ")"						set the clipboard to markdownText			tell application "System Events"				keystroke "v" using {command down}			end tell		end if	end ifend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C2CBE797-23CA-407A-B078-1DB527324C08</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>markurl</string>
+				<key>subtext</key>
+				<string>Format URLs and images</string>
+				<key>text</key>
+				<string>Markdown Format</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2FC5BD05-7B9E-4EEE-8663-C6E2DA9DEBB2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Text links:
+
+1. select text you would like to use as anchor text in markdown application
+
+2. activate workflow with keyboard shortcut (setup first) or the keyword 'markurl'
+
+3. choose between Safari and Google Chrome (to grab URL from) the first time you run the workflow, it will be remembered. To reset the browser choice later, use the keywords 'markurl reset'
+
+Images:
+
+1. Copy image URL to the clipboard
+2. in the application you would like to insert the image (in markdown) - activate Alfred with the following keyword: img
+3. Optionally, you can add the width of image after the img keyword. Example: img 500</string>
+	<key>uidata</key>
+	<dict>
+		<key>2FC5BD05-7B9E-4EEE-8663-C6E2DA9DEBB2</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>69B68607-049A-4060-9A86-278DA5B02770</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>9CB301A0-12CF-41CB-A688-0263B88D1C97</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>C2CBE797-23CA-407A-B078-1DB527324C08</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>F580B479-6EC2-477C-8524-008ED7A83285</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://macgeeky.no/alfred-v2/</string>
+</dict>
+</plist>

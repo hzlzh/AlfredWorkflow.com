@@ -113,7 +113,7 @@
 				<key>script</key>
 				<string>#!/bin/bash
 
-if [ -f "ip" ] &amp;&amp; [ -f "oldgw" ]; then
+if [ -f "ip" ] &amp;&amp; [ -f "/tmp/oldgw" ]; then
     echo "路由表已经添加，为了避免有错误数据，请先运行路由表清除命令";
 else
 	python update.py
@@ -158,15 +158,10 @@ fi</string>
 				<string>#!/bin/bash
 
 if [ -f "ip" ]; then
-    if [ -f "oldgw" ]; then
+    if [ -f "/tmp/oldgw" ]; then
         echo "路由表已经存在，请先运行路由表清除命令";
     else
-        OLDGW=`netstat -nr | grep '^default' | grep -v 'ppp' | sed 's/default *\([0-9\.]*\) .*/\1/' | sed '/^$/d'`
-        for ip in ` awk '{print $1}' ip`
-        {
-            echo "{query}" | sudo -S route add $ip $OLDGW &gt;/dev/null;
-        }
-        echo $OLDGW &gt; oldgw;
+        echo "{query}" | sudo -S ./addroute.sh &gt;/dev/null;
 
 		long=`sw_vers -productVersion`
 		short=${long:0:4}
@@ -248,13 +243,8 @@ fi</string>
 				<string>#!/bin/bash
 
 if [ -f "ip" ]; then
-    if [ -f "oldgw" ]; then
-        OLDGW=`cat oldgw`;
-        for ip in ` awk '{print $1}' ip`
-        {
-            echo "{query}" | sudo -S route delete $ip $OLDGW &gt;/dev/null;
-        }
-        rm -rf oldgw;
+    if [ -f "/tmp/oldgw" ]; then
+        echo "{query}" | sudo -S ./removeroute.sh &gt;/dev/null;
 
 		long=`sw_vers -productVersion`
 		short=${long:0:4}
@@ -310,7 +300,7 @@ fi</string>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
-				<string>if [ -f "oldgw" ]; then
+				<string>if [ -f "/tmp/oldgw" ]; then
     echo "路由表已经添加";
 else
     echo "路由表未被添加";
