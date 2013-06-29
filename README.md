@@ -10,8 +10,7 @@ Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in co
 ## Workflows' JSON API (updated 2013.6.27) 
 
 * **(Recommended)** API on Github:  
-* [https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow_api.json](https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow_api.json)(new)  
-* <del>https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow-api.json</del>(old)
+* [https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow_api.json](https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow_api.json)  
 * *(for debug use)*API backup: [http://www.alfredworkflow.com/workflows-api/](http://www.alfredworkflow.com/workflows-api/)
 
 -- API info --  
@@ -39,15 +38,16 @@ Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in co
      |---- Sources/               source code(Learn from others' code)                 
      |---- index/                 part of index page
 
-## Submit your workflows
+## Submit & Update your workflows
 
 * Submit Alfred 2 Workflows -> [here](http://www.alfredworkflow.com/submit-alfred-workflow/)
+* Update Your Workflows version -> [Github pull request](https://github.com/hzlzh/AlfredWorkflow.com/issues/6)
 * Submit Alfred 2 Themes -> Commmming soon!
 
 ## Tips 
 * You can share a workflow with link like this:  
-`http://www.alfredworkflow.com/#Dev%20Doctor`  
-`http://www.alfredworkflow.com/#Translation`
+`http://www.alfredworkflow.com/#Translation`  
+`http://www.alfredworkflow.com/#Dev%20Doctor`
 
 * If you want to update a workflow under `/Downloads`, just make a `pull request`
 * More wiki on [submit page](http://www.alfredworkflow.com/submit-alfred-workflow/)
