@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>R3Studio.Workflow.ZhiHuDaily</string>
+	<key>connections</key>
+	<dict>
+		<key>DCC0F372-B28A-45FF-9308-30B1BB5708B9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>61068FA8-A98A-430B-9FC4-904A9E9B1DAB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Bill Cheng</string>
+	<key>description</key>
+	<string>Alfred Workflow For 知乎日报</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ZhiHuDaily</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>zhdaily</string>
+				<key>runningsubtext</key>
+				<string>载入中...</string>
+				<key>script</key>
+				<string>require 'ZhihuDailyWorkflow.php';
+
+$zhihu = new ZhiHuWorkFlow();
+$zhihu-&gt;show();</string>
+				<key>subtext</key>
+				<string>知乎日报Workflow</string>
+				<key>title</key>
+				<string>知乎日报</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>DCC0F372-B28A-45FF-9308-30B1BB5708B9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>61068FA8-A98A-430B-9FC4-904A9E9B1DAB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>61068FA8-A98A-430B-9FC4-904A9E9B1DAB</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>DCC0F372-B28A-45FF-9308-30B1BB5708B9</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.so898.me</string>
+</dict>
+</plist>

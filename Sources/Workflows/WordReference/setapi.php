@@ -2,8 +2,8 @@
 /**
 * Name: 		Wordreference.com (© WordReference.com) Workflow for Alfred 2 
 * Author: 		Anthony Kevins
-* Revised: 		06/06/2013
-* Version:		0.2
+* Revised: 		14/06/2013
+* Version:		0.3
 * Note:   	       Icon Source: A68 - Freelance Graphics Design (http://a68.pl)
 */
 

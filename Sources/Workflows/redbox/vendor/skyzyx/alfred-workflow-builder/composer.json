@@ -1,0 +1,30 @@
+{
+	"name": "skyzyx/alfred-workflow-builder",
+	"homepage": "https://github.com/skyzyx/alfred-workflow-builder",
+	"description":"Workflow Builder for Alfred 2",
+	"keywords":["alfred","workflow"],
+	"type":"library",
+	"license":"MIT",
+	"authors":[
+		{
+			"name":"Contributors",
+			"homepage":"https://github.com/skyzyx/alfred-workflow-builder/graphs/contributors"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3",
+		"seld/jsonlint": ">= 1.1",
+		"symfony/filesystem": "2.*",
+		"symfony/process": "2.*"
+	},
+	"suggest": {
+		"doctrine/cache": "Caching library.",
+		"guzzle/guzzle": "HTTP client library.",
+		"monolog/monolog": "Logging library."
+	},
+	"autoload": {
+		"psr-0": {
+			"Alfred": "src/"
+		}
+	}
+}

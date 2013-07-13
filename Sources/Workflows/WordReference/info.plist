@@ -32,7 +32,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>97A82514-7432-43B7-A326-19DECB54CD2F</string>
+				<string>E918F90D-D17A-4262-8569-9F62601F905E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -76,7 +76,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>CC3500E9-E330-415F-9E30-C081272E78C8</string>
+				<string>E918F90D-D17A-4262-8569-9F62601F905E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -87,7 +87,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>CD0CC9A8-8F98-4996-8C88-C20E95D96803</string>
+				<string>E918F90D-D17A-4262-8569-9F62601F905E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -98,7 +98,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>7B020AAA-D04B-4559-9341-83F301AE287E</string>
+				<string>E918F90D-D17A-4262-8569-9F62601F905E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -133,7 +133,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>F412BAAB-9F9A-49BD-B96B-DCF7802C793A</string>
+				<string>E918F90D-D17A-4262-8569-9F62601F905E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -157,13 +157,13 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>37</integer>
 				<key>keyword</key>
 				<string>fren</string>
 				<key>runningsubtext</key>
 				<string>Fetching translation</string>
 				<key>script</key>
-				<string>php -f fren.php {query}</string>
+				<string>php -f translate.php fren {query}</string>
 				<key>subtext</key>
 				<string>Type word to translate</string>
 				<key>title</key>
@@ -183,50 +183,16 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>http://www.wordreference.com/fren/{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>E918F90D-D17A-4262-8569-9F62601F905E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>http://www.wordreference.com/enfr/{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>CC3500E9-E330-415F-9E30-C081272E78C8</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>37</integer>
 				<key>keyword</key>
 				<string>enfr</string>
 				<key>runningsubtext</key>
 				<string>Fetching translation</string>
 				<key>script</key>
-				<string>php -f enfr.php {query}</string>
+				<string>php -f translate.php enfr {query}</string>
 				<key>subtext</key>
 				<string>Type word to translate</string>
 				<key>title</key>
@@ -249,13 +215,13 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>37</integer>
 				<key>keyword</key>
 				<string>iten</string>
 				<key>runningsubtext</key>
 				<string>Fetching translation</string>
 				<key>script</key>
-				<string>php -f iten.php {query}</string>
+				<string>php -f translate.php iten {query}</string>
 				<key>subtext</key>
 				<string>Type word to translate</string>
 				<key>title</key>
@@ -278,14 +244,14 @@
 				<key>plusspaces</key>
 				<false/>
 				<key>url</key>
-				<string>http://www.wordreference.com/iten/{query}</string>
+				<string>http://www.wordreference.com/{query}</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>F412BAAB-9F9A-49BD-B96B-DCF7802C793A</string>
+			<string>E918F90D-D17A-4262-8569-9F62601F905E</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -295,13 +261,13 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>37</integer>
 				<key>keyword</key>
 				<string>enit</string>
 				<key>runningsubtext</key>
 				<string>Fetching translation</string>
 				<key>script</key>
-				<string>php -f enit.php {query}</string>
+				<string>php -f translate.php enit {query}</string>
 				<key>subtext</key>
 				<string>Type word to translate</string>
 				<key>title</key>
@@ -321,50 +287,16 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>http://www.wordreference.com/enit/{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>7B020AAA-D04B-4559-9341-83F301AE287E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>http://www.wordreference.com/esen/{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>97A82514-7432-43B7-A326-19DECB54CD2F</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>37</integer>
 				<key>keyword</key>
 				<string>esen</string>
 				<key>runningsubtext</key>
 				<string>Fetching translation</string>
 				<key>script</key>
-				<string>php -f esen.php {query}</string>
+				<string>php -f translate.php esen {query}</string>
 				<key>subtext</key>
 				<string>Type word to translate</string>
 				<key>title</key>
@@ -384,33 +316,16 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>http://www.wordreference.com/enes/{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>CD0CC9A8-8F98-4996-8C88-C20E95D96803</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>37</integer>
 				<key>keyword</key>
 				<string>enes</string>
 				<key>runningsubtext</key>
 				<string>Fetching translation</string>
 				<key>script</key>
-				<string>php -f enes.php {query}</string>
+				<string>php -f translate.php enes {query}</string>
 				<key>subtext</key>
 				<string>Type word to translate</string>
 				<key>title</key>
@@ -673,11 +588,6 @@
 			<key>ypos</key>
 			<real>670</real>
 		</dict>
-		<key>7B020AAA-D04B-4559-9341-83F301AE287E</key>
-		<dict>
-			<key>ypos</key>
-			<real>340</real>
-		</dict>
 		<key>83B63B2E-AF69-47B9-9FE6-7C89FB84BD9C</key>
 		<dict>
 			<key>ypos</key>
@@ -693,11 +603,6 @@
 			<key>ypos</key>
 			<real>670</real>
 		</dict>
-		<key>97A82514-7432-43B7-A326-19DECB54CD2F</key>
-		<dict>
-			<key>ypos</key>
-			<real>450</real>
-		</dict>
 		<key>BDEFA835-ACE6-4DA0-923B-10F0AEBBDE71</key>
 		<dict>
 			<key>ypos</key>
@@ -707,16 +612,6 @@
 		<dict>
 			<key>ypos</key>
 			<real>1000</real>
-		</dict>
-		<key>CC3500E9-E330-415F-9E30-C081272E78C8</key>
-		<dict>
-			<key>ypos</key>
-			<real>120</real>
-		</dict>
-		<key>CD0CC9A8-8F98-4996-8C88-C20E95D96803</key>
-		<dict>
-			<key>ypos</key>
-			<real>560</real>
 		</dict>
 		<key>D3386A49-D99B-4214-A321-70CD3F1EBDDC</key>
 		<dict>
@@ -746,12 +641,7 @@
 		<key>E918F90D-D17A-4262-8569-9F62601F905E</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
-		</dict>
-		<key>F412BAAB-9F9A-49BD-B96B-DCF7802C793A</key>
-		<dict>
-			<key>ypos</key>
-			<real>230</real>
+			<real>280</real>
 		</dict>
 		<key>F92FBA51-5625-4C68-9A4B-962F4A999F5E</key>
 		<dict>
