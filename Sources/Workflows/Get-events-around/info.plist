@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>comdaveboyle.geteventsaround</string>
+	<key>connections</key>
+	<dict>
+		<key>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>194B021A-719E-4C4B-997F-3E083A076BA2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CD69778A-A49B-44D1-9F54-B24359DEF8B8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Dave Boyle</string>
+	<key>description</key>
+	<string>Query your calendars to return the events for a specified period before and after the date</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Get events around</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>194B021A-719E-4C4B-997F-3E083A076BA2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+set str to q as stringset AppleScript's text item delimiters to " " as stringconsidering case	set len to str's last text item's lengthend consideringset AppleScript's text item delimiters to ""set theoffset to (-(" "'s length) - len)set thedays to text (theoffset + 1) thru -1 of qif (count (thedays)) is not 4 then	set q to text 1 thru (theoffset - 1) of qelse	set thedays to 7end ifset q to date qdo shell script "/usr/local/bin/icalBuddy -ic 1ED62DCA-ADC7-4A4C-A6B0-52EDB3342B87,92C54AEB-97CA-4300-A646-406457ABA32C,C36069C2-6937-4F43-9FC7-31D7DF221BFE,EBE1CD9A-2CDF-4163-AEF2-F70F845FB43E -iep \"title,datetime\" -sc -sd eventsFrom:\"" &amp; (q - thedays * days) &amp; "\" to:\"" &amp; (q + thedays * days) &amp; "\""
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>around</string>
+				<key>subtext</key>
+				<string>Add in a number after the date to retireve events for that number of days before and afterwards</string>
+				<key>text</key>
+				<string>Query Calendars for the date</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CD69778A-A49B-44D1-9F54-B24359DEF8B8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow queries your calendars, and returns the events for a set period before and afterwards.
+
+It uses icalbuddy, which you need to download and install from here - http://hasseg.org/icalBuddy/
+
+Usage:
+------
+
+Enter 'goto' as the keyword, followed by a date, and an optional variable for the number of days before and after that date eg:
+
+around 20 December 2013 4
+
+Will return events 4 days before and after 20th December 2013.
+
+If you don't add the number of days as a modifier, the default is 7.
+
+Customisation:
+--------------
+
+You need to add in the UID references to the calendars to query. 
+
+To do this, open Terminal and type 'icalbuddy calendars' which will give you the UID reference for each calendar used by iCal/Calendars on your mac. 
+
+Pick the calendars you want to query, and copy the long UID into the script section after -ic separating each UID with a single comma</string>
+	<key>uidata</key>
+	<dict>
+		<key>194B021A-719E-4C4B-997F-3E083A076BA2</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>CD69778A-A49B-44D1-9F54-B24359DEF8B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://dave.boyle.net</string>
+</dict>
+</plist>

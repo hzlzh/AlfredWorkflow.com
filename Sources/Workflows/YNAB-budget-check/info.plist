@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.jamesoff.alfred.ynab</string>
+	<key>connections</key>
+	<dict>
+		<key>CAACF668-E5B4-4C31-BC01-C0AD7B2EBDCC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D28BAB5-1641-4293-A9CA-788A534A59C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D31ADF6C-2129-4654-B183-8913E0657724</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CAACF668-E5B4-4C31-BC01-C0AD7B2EBDCC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>James Seward</string>
+	<key>description</key>
+	<string>Check how much you have left in a YNAB category this month</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>YNAB budget check</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>python configure.py {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CAACF668-E5B4-4C31-BC01-C0AD7B2EBDCC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array>
+					<string>dyn.ah62d4qmuhk2x48psqfvdk</string>
+				</array>
+				<key>name</key>
+				<string>Use for YNAB lookups</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>D31ADF6C-2129-4654-B183-8913E0657724</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>YNAB Budget</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2D28BAB5-1641-4293-A9CA-788A534A59C7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>budget</string>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>python ./ynab-parse.py {query}</string>
+				<key>subtext</key>
+				<string>Check balance in a YNAB category</string>
+				<key>title</key>
+				<string>YNAB Budget Lookup</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3B8FCED4-B70A-48B1-ADF9-AD3340C9B531</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Use the "budget" keyword and type a category name to see how much you have left in that category this month.
+
+By default looks for a budget in ~/Dropbox/YNAB and then ~/Documents/YNAB. If you don't keep it in either of those places, locate the file in Alfred and you will find "Use for YNAB lookups" in the File Action list.
+
+(A quick way to find it is to bring up Alfred, hit space, and then type ynab4)
+
+
+
+Uses ALP from https://github.com/phyllisstein/alp</string>
+	<key>uidata</key>
+	<dict>
+		<key>2D28BAB5-1641-4293-A9CA-788A534A59C7</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>3B8FCED4-B70A-48B1-ADF9-AD3340C9B531</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>CAACF668-E5B4-4C31-BC01-C0AD7B2EBDCC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D31ADF6C-2129-4654-B183-8913E0657724</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://jamesoff.net</string>
+</dict>
+</plist>

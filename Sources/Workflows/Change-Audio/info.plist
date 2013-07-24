@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.daveboyle.audiooutput</string>
+	<key>connections</key>
+	<dict>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Dave Boyle</string>
+	<key>description</key>
+	<string>Change the audio output</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Change Audio</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>aud</string>
+				<key>text</key>
+				<string>Set audio output</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>script</key>
+				<string>response="{query}"
+if [ $response = "dis" ]
+then
+	/usr/bin/audiodevice output Display\ Audio
+	echo "Display Audio Active"
+elif [ $response = "usb" ]
+then
+	/usr/bin/audiodevice output Plantronics\ Headset
+	echo "Plantronics Headset Active"
+elif [ $response = "blue" ]
+then
+	/usr/local/bin/blueutil on	
+	/usr/bin/audiodevice output Motorola\ S305
+	echo "Bluetooth Headset Active"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow enables you to quickly change the mac's output. It requires Audiodevice (whoshacks.blogspot.co.uk/2009/01/change-audio-devices-via-shell-script.html) to be installed.
+
+You need to edit the script code to change the names of the respective devices to whatever the name of the devices on your setup; if those devices have spaces in, remember to escape them using backslashes
+
+You can get the names of the devices by using the command 'audiodevice output list' in terminal.</string>
+	<key>uidata</key>
+	<dict>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>A70A4E1E-712E-4575-967A-0AA64960904D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://daveboyle.net</string>
+</dict>
+</plist>

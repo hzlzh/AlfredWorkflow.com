@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.customct.s3cmd</string>
+	<key>connections</key>
+	<dict>
+		<key>1A537264-4EBC-4D97-AC6A-388C4F4A74F3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5191F04-549B-440A-9B72-67455F4B61C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>298073FA-D6D3-4773-9714-3E3B69CB27AC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5191F04-549B-440A-9B72-67455F4B61C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2C8267D8-1CA9-4AFF-89E3-B09EF085FB36</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5191F04-549B-440A-9B72-67455F4B61C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>37295536-4444-4920-B613-C7F705C209C3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>298073FA-D6D3-4773-9714-3E3B69CB27AC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>41196B33-8D47-4E22-A827-A3B4C9D04184</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5191F04-549B-440A-9B72-67455F4B61C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>42912B86-AE9D-4AB1-A8E6-BF81103E78E2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A3600619-A622-4D0A-A043-31D7A4BEEA93</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>461072AF-1819-44DF-9E8B-B3498F28884D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5191F04-549B-440A-9B72-67455F4B61C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>80ABC221-4B10-4820-90ED-9AEBC46B8465</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>461072AF-1819-44DF-9E8B-B3498F28884D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>942BF09C-2BB2-4DC8-BDF3-A042519BE57A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>41196B33-8D47-4E22-A827-A3B4C9D04184</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A3600619-A622-4D0A-A043-31D7A4BEEA93</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5191F04-549B-440A-9B72-67455F4B61C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AE33EA07-5219-47A1-9498-9966867EE133</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B82AD7B8-402F-45E0-8A04-6C7A9C3FB8E5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B82AD7B8-402F-45E0-8A04-6C7A9C3FB8E5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E5191F04-549B-440A-9B72-67455F4B61C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F6D616BB-7C0F-4217-A09A-B886B9ECB5A0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1A537264-4EBC-4D97-AC6A-388C4F4A74F3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Richard Guay</string>
+	<key>description</key>
+	<string>This workflow makes moving files with s3cmd easy!</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>s3cmd Toolkit</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>/bin/zsh ./cpVideoDir "{query}" | python "./PyCon.py" &gt;/dev/null 2&gt;&amp;1 &amp;
+
+echo "Launched the upload!"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1A537264-4EBC-4D97-AC6A-388C4F4A74F3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemAlternateNames</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>s3c:copydir</string>
+				<key>scopes</key>
+				<array/>
+				<key>subtext</key>
+				<string>Copy the movies in the specified directory to S3</string>
+				<key>title</key>
+				<string>s3cmd Toolkit</string>
+				<key>types</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>F6D616BB-7C0F-4217-A09A-B886B9ECB5A0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>
+#########################
+# Contants.
+#########################
+VPREFS="${HOME}/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/"
+NVPREFS="${HOME}/Library/Application Support/Alfred 2/Workflow Data/"
+
+###############################################################################
+# Read the bundleid from the workflow's info.plist
+###############################################################################
+getBundleId() {
+  /usr/libexec/PlistBuddy  -c "Print :bundleid" "info.plist"
+}
+
+###############################################################################
+# Get the workflow data dir
+###############################################################################
+getDataDir() {
+  local BUNDLEID=$(getBundleId)
+  echo "${NVPREFS}${BUNDLEID}"
+}
+
+if [ ! -d "$(getDataDir)" ]; then
+   mkdir -p "$(getDataDir)";
+   touch "$(getDataDir)/s3basename.txt";
+fi
+
+# Get the s3 base directory name stored.
+#DirName=`cat "$(getDataDir)/s3basename.txt"`;
+
+# Set the s3 base directory name.
+echo "{query}" &gt; "$(getDataDir)/s3basename.txt";
+
+# Tell the user.
+echo "Set the s3 base directory name to {query}";
+</string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>298073FA-D6D3-4773-9714-3E3B69CB27AC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>s3c:base</string>
+				<key>subtext</key>
+				<string>Set the base directory on s3.</string>
+				<key>text</key>
+				<string>s3cmd Toolkit</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>37295536-4444-4920-B613-C7F705C209C3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>s3cmd Toolkit</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E5191F04-549B-440A-9B72-67455F4B61C7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>s3c:copy file</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>AE33EA07-5219-47A1-9498-9966867EE133</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>zsh cpFile "{query}" | python PyCon.py &gt;/dev/null 2&gt;&amp;1 &amp;
+
+echo "Copying {query} to s3!";</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B82AD7B8-402F-45E0-8A04-6C7A9C3FB8E5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>
+#########################
+# Contants.
+#########################
+VPREFS="${HOME}/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/"
+NVPREFS="${HOME}/Library/Application Support/Alfred 2/Workflow Data/"
+
+###############################################################################
+# Read the bundleid from the workflow's info.plist
+###############################################################################
+getBundleId() {
+  /usr/libexec/PlistBuddy  -c "Print :bundleid" "info.plist"
+}
+
+###############################################################################
+# Get the workflow data dir
+###############################################################################
+getDataDir() {
+  local BUNDLEID=$(getBundleId)
+  echo "${NVPREFS}${BUNDLEID}"
+}
+
+if [ ! -d "$(getDataDir)" ]; then
+   mkdir -p "$(getDataDir)";
+   touch "$(getDataDir)/s3basename.txt";
+fi
+
+# Get the s3 base directory name stored.
+DirName=`cat "$(getDataDir)/s3basename.txt"`;
+
+# Tell the user.
+echo "Set the s3 base directory is $DirName.";
+</string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A3600619-A622-4D0A-A043-31D7A4BEEA93</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>s3c:sbase</string>
+				<key>subtext</key>
+				<string>Show s3 directory</string>
+				<key>text</key>
+				<string>s3cmd ToolKit</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>42912B86-AE9D-4AB1-A8E6-BF81103E78E2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>
+#########################
+# Contants.
+#########################
+VPREFS="${HOME}/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/"
+NVPREFS="${HOME}/Library/Application Support/Alfred 2/Workflow Data/"
+
+###############################################################################
+# Read the bundleid from the workflow's info.plist
+###############################################################################
+getBundleId() {
+  /usr/libexec/PlistBuddy  -c "Print :bundleid" "info.plist"
+}
+
+###############################################################################
+# Get the workflow data dir
+###############################################################################
+getDataDir() {
+  local BUNDLEID=$(getBundleId)
+  echo "${NVPREFS}${BUNDLEID}"
+}
+
+if [ ! -d "$(getDataDir)" ]; then
+   mkdir -p "$(getDataDir)";
+   touch "$(getDataDir)/s3basename.txt";
+   touch "$(getDataDir)/targetDir.txt";
+fi
+
+# Set target directory name.
+echo "{query}" &gt; "$(getDataDir)/targetDir.txt";
+
+# Tell the user.
+echo "Set the target directory name to {query}";
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>41196B33-8D47-4E22-A827-A3B4C9D04184</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>s3c:target</string>
+				<key>subtext</key>
+				<string>Set the Target Directory Name.</string>
+				<key>text</key>
+				<string>s3cmd ToolKit</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>942BF09C-2BB2-4DC8-BDF3-A042519BE57A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>s3c:starget</string>
+				<key>subtext</key>
+				<string>Show the target directory</string>
+				<key>text</key>
+				<string>s3cmd ToolKit</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>80ABC221-4B10-4820-90ED-9AEBC46B8465</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>
+#########################
+# Contants.
+#########################
+VPREFS="${HOME}/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/"
+NVPREFS="${HOME}/Library/Application Support/Alfred 2/Workflow Data/"
+
+###############################################################################
+# Read the bundleid from the workflow's info.plist
+###############################################################################
+getBundleId() {
+  /usr/libexec/PlistBuddy  -c "Print :bundleid" "info.plist"
+}
+
+###############################################################################
+# Get the workflow data dir
+###############################################################################
+getDataDir() {
+  local BUNDLEID=$(getBundleId)
+  echo "${NVPREFS}${BUNDLEID}"
+}
+
+if [ ! -d "$(getDataDir)" ]; then
+   mkdir -p "$(getDataDir)";
+   touch "$(getDataDir)/s3basename.txt";
+fi
+
+# Get the s3 base directory name stored.
+DirName=`cat "$(getDataDir)/targetDir.txt"`;
+
+# Tell the user.
+echo "Set the target directory is $DirName.";
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>461072AF-1819-44DF-9E8B-B3498F28884D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>s3c:list</string>
+				<key>runningsubtext</key>
+				<string>Loading directories...</string>
+				<key>script</key>
+				<string>include_once("workflows.php");
+
+$wf = new Workflows();
+
+$name = "/{query}.*/i";
+exec("/Users/richardguay/bin/s3cmd ls", $listdir);
+
+$count = 1;
+foreach($listdir as $dirItem) {
+	if((strcmp($dirItem,"") != 0)&amp;&amp;(preg_match($name,$dirItem) === 1)){
+		$wf-&gt;result('s3cmd:list' . $count, $dirItem, $dirItem, '', 'icon.png', 'yes', 'auto');
+		$count = $count + 1;
+	}
+}
+
+//
+// Add the default list of cleaners.
+//
+$wf-&gt;result('s3c999', '', 'Quit', '', 'icon.png', 'no', '');
+
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>List directories and set target</string>
+				<key>title</key>
+				<string>s3cmd Toolkit</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2C8267D8-1CA9-4AFF-89E3-B09EF085FB36</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1A537264-4EBC-4D97-AC6A-388C4F4A74F3</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>298073FA-D6D3-4773-9714-3E3B69CB27AC</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>2C8267D8-1CA9-4AFF-89E3-B09EF085FB36</key>
+		<dict>
+			<key>ypos</key>
+			<real>740</real>
+		</dict>
+		<key>37295536-4444-4920-B613-C7F705C209C3</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>41196B33-8D47-4E22-A827-A3B4C9D04184</key>
+		<dict>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>42912B86-AE9D-4AB1-A8E6-BF81103E78E2</key>
+		<dict>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>461072AF-1819-44DF-9E8B-B3498F28884D</key>
+		<dict>
+			<key>ypos</key>
+			<real>620</real>
+		</dict>
+		<key>80ABC221-4B10-4820-90ED-9AEBC46B8465</key>
+		<dict>
+			<key>ypos</key>
+			<real>620</real>
+		</dict>
+		<key>942BF09C-2BB2-4DC8-BDF3-A042519BE57A</key>
+		<dict>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>A3600619-A622-4D0A-A043-31D7A4BEEA93</key>
+		<dict>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>AE33EA07-5219-47A1-9498-9966867EE133</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>B82AD7B8-402F-45E0-8A04-6C7A9C3FB8E5</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>E5191F04-549B-440A-9B72-67455F4B61C7</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>F6D616BB-7C0F-4217-A09A-B886B9ECB5A0</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.customct.com/shop/alfred-2-workflows/</string>
+</dict>
+</plist>

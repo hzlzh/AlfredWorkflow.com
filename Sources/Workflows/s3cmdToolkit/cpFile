@@ -1,0 +1,45 @@
+source ~/.zshrc;
+
+#########################
+# Contants.
+#########################
+VPREFS="${HOME}/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/"
+NVPREFS="${HOME}/Library/Application Support/Alfred 2/Workflow Data/"
+
+###############################################################################
+# Read the bundleid from the workflow's info.plist
+###############################################################################
+getBundleId() {
+  /usr/libexec/PlistBuddy  -c "Print :bundleid" "info.plist"
+}
+
+###############################################################################
+# Get the workflow data dir
+###############################################################################
+getDataDir() {
+  local BUNDLEID=$(getBundleId)
+  echo "${NVPREFS}${BUNDLEID}"
+}
+
+if [ ! -d "$(getDataDir)" ]; then
+   mkdir -p "$(getDataDir)";
+   touch "$(getDataDir)/s3basename.txt";
+   touch "$(getDataDir)/targetDir.txt";
+fi
+
+#
+# Get the s3 base directory name stored.
+#
+DirName=`cat "$(getDataDir)/s3basename.txt"`;
+tDir=`cat "$(getDataDir)/targetDir.txt"`;
+
+cfile="${@[1]}";
+
+echo "Copying $cfile to $tDir.";
+
+#
+# Get the name without the path.
+#
+s3cmd put "$cfile" "$DirName/$tDir/"
+
+echo "All done!"
