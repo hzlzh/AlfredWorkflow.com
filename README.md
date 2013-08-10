@@ -47,6 +47,7 @@ Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in co
 * Submit Alfred 2 Themes -> Commmming soon!
 
 ## Tips 
+
 * You can share a workflow with link like this:  
 `http://www.alfredworkflow.com/#Translation`  
 `http://www.alfredworkflow.com/#Dev%20Doctor`
@@ -54,8 +55,9 @@ Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in co
 * If you want to update a workflow under `/Downloads`, just make a `pull request`
 * More wiki on [submit page](http://www.alfredworkflow.com/submit-alfred-workflow/)
 
-## License 
-Released under [MIT](http://opensource.org/licenses/MIT) license.  
+## License
+
+Released under [MIT](http://rem.mit-license.org/)  LICENSE
 
 [Alfred 2]: http://www.alfredapp.com/
 [Workflow Searcher]: https://github.com/hzlzh/Alfred-Workflows/
