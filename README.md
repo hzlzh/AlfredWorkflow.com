@@ -54,9 +54,8 @@ Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in co
 * If you want to update a workflow under `/Downloads`, just make a `pull request`
 * More wiki on [submit page](http://www.alfredworkflow.com/submit-alfred-workflow/)
 
-## Credits 
-
-Released under the [\[MIT\]](LICENSE) License.  
+## License 
+Released under [MIT](http://opensource.org/licenses/MIT) license.  
 
 [Alfred 2]: http://www.alfredapp.com/
 [Workflow Searcher]: https://github.com/hzlzh/Alfred-Workflows/
