@@ -1,0 +1,32 @@
+=== 1.5.2 / 2013-03-29
+
+  * [New]( Travis CI Status Image )
+  * [New]( Automate cached feedback save and load! )
+  * [New]( Setting class to save and load user configures )
+  * [New]( add load and dump for feedback )
+  * [New]( Alfred.search(query) to launch alfred with query )
+
+=== 1.2.6 / 2013-03-27
+
+  ! automate rescue feedback
+  * save @bundle_id for reaccess
+
+=== 1.2.3 / 2013-03-25
+
+  * add function to output rescue feedback xml items
+  * add a few query regexp builders
+  ! refactor feedback items
+  ! add autotest support
+  ! add rspec test
+
+=== 1.1.0 / 2013-03-24
+
+  * reorganize Alfred module to multiple files
+  * use FileItem < Item classes to manage feedback item
+  * add default query match for Item and FileItem
+
+
+=== 1.0.0 / 2013-03-21
+
+  * Birthday!
+

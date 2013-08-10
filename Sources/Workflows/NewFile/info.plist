@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>D03807E1-1B7E-4FBD-B4C0-877B87E2AB86</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FB4DA8FF-AA8E-4EE8-9479-17FCC7D09C6C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FB4DA8FF-AA8E-4EE8-9479-17FCC7D09C6C</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Vítor Galvão</string>
+	<key>description</key>
+	<string>Creates a new file in the current Finder directory</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>NewFile</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>dirPath=$(osascript -e 'tell application "System Events" to set frontApp to name of first process whose frontmost is trueif (frontApp is "Finder") then		try		tell application "Finder" to set dirPath to (POSIX path of (folder of the front window as alias))	on error		set dirPath to (POSIX path of (path to desktop))	end try	else	set dirPath to (POSIX path of (path to desktop))	end ifreturn dirPath')
+
+fileExtension=$(echo {query} | sed -n 's/\(.*\)\.\(.*\)$/.\2/p')
+fileNoExtension=$(echo {query} | sed 's/\(.*\)\.\(.*\)$/\1/')
+
+if [[ -z ${fileExtension} ]]; then
+	fileExtension=".txt"
+fi
+
+touch "${dirPath}${fileNoExtension}${fileExtension}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FB4DA8FF-AA8E-4EE8-9479-17FCC7D09C6C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>nf</string>
+				<key>subtext</key>
+				<string>Type a name (if no extension is given, '.txt' will be used)</string>
+				<key>text</key>
+				<string>NewFile</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D03807E1-1B7E-4FBD-B4C0-877B87E2AB86</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>D03807E1-1B7E-4FBD-B4C0-877B87E2AB86</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>FB4DA8FF-AA8E-4EE8-9479-17FCC7D09C6C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://vitorgalvao.com/</string>
+</dict>
+</plist>

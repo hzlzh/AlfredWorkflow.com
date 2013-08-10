@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    alfred-workflow (1.8.0)
+      plist (>= 3.1.0)
+    plist (3.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  alfred-workflow
+  plist

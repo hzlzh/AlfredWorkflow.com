@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>159A291E-3339-491E-8D3F-79091BE0319B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CD69778A-A49B-44D1-9F54-B24359DEF8B8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Liu Juntao</string>
+	<key>description</key>
+	<string>Add event in iCal - what [at] hh:mm [on] dd/mm/yy [in] location [#] calendar</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Add Event to Calendar</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>cal</string>
+				<key>subtext</key>
+				<string>Add event in iCal - what [at] hour [on] dd/mm/yy [in] location [#] calendar</string>
+				<key>text</key>
+				<string>Add Event to Calendar</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CD69778A-A49B-44D1-9F54-B24359DEF8B8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>-- Developed by liu juntao(jinuljt@gmail.com)on alfred_script(query)
+	set theCalendar to "Personal" --define here your own default iCal calendar	set str_weekdays to {"mon", "tue", "wed", "thu", "fri", "sat", "sun"}	set start to current date	set seconds of start to 0		set atSep to " at " --time HH:MM	set onSep to " on " --date DD/MM/YYYY or tomorrow or [mon-sun]	set inSep to " in " --location	set calSep to " # " --calendar name	set alldayFlag to true	set theSummary to ""	set theLocation to ""		-- set event time	if query contains atSep then		set text item delimiters to atSep		set hm to text item 2 of query		set text item delimiters to " "		set hm to text item 1 of hm				if hm contains ":" then			set text item delimiters to ":"			set h to text item 1 of hm			set m to text item 2 of hm		else			-- TODO support am/pm			set h to hm			set m to 0		end if		set hours of start to h		set minutes of start to m		set alldayFlag to false	end if		-- set date	if query contains onSep then		set text item delimiters to onSep		set dmy to text item 2 of query		set text item delimiters to " "		set dmy to text item 1 of dmy		set w to ((weekday of start as integer) + 5) mod 7 + 1		if dmy is equal to "tomorrow" then			set start to start + 24 * hours		else if str_weekdays contains dmy then			repeat with n from 1 to count of str_weekdays				if dmy is equal to item n of str_weekdays then					set start to start + calc_days(w, n) * days				end if			end repeat		else			set text item delimiters to "/"			try				set day of start to (text item 1 of dmy)				set month of start to text item 2 of dmy				set year of start to text item 3 of dmy			end try		end if	end if		-- set location	if query contains inSep then		set text item delimiters to inSep		set theLocation to text item 2 of query		set text item delimiters to calSep		set theLocation to text item 1 of theLocation	end if		-- set calendar	if query contains calSep then		set text item delimiters to calSep		set theCalendar to text item 2 of query		set text item delimiters to " "		set theCalendar to text item 1 of theCalendar			end if		if query contains atSep then		set text item delimiters to atSep		set theSummary to text item 1 of query	else if query contains onSep then		set text item delimiters to onSep		set theSummary to text item 1 of query	else if query contains inSep then		set text item delimiters to inSep		set theSummary to text item 1 of query	else if query contains calSep then		set text item delimiters to calSep		set theSummary to text item 1 of query	else		set theSummary to query	end if	(*display dialog theSummary buttons "OK" default button "OK"	display dialog theLocation buttons "OK" default button "OK"	display dialog alldayFlag buttons "OK" default button "OK"	display dialog theCalendar buttons "OK" default button "OK"	display dialog start buttons "OK" default button "OK"*)		tell application "Calendar"		activate		tell calendar theCalendar			make new event at end with properties {description:"alfred create event", summary:theSummary, location:theLocation, start date:start, end date:start + 60 * minutes, allday event:alldayFlag}		end tell	end tell	return theSummaryend alfred_scripton calc_days(from_weekday, to_weekday)	log from_weekday	log to_weekday	if to_weekday ≥ from_weekday then		return to_weekday - from_weekday	else		return 7 - from_weekday + to_weekday	end ifend calc_days</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Add new event</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>159A291E-3339-491E-8D3F-79091BE0319B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>add calendar event from alfred
+
+support string format date(mon,tue,wed,thu,fri,sat,sun and tomorrow)</string>
+	<key>uidata</key>
+	<dict>
+		<key>159A291E-3339-491E-8D3F-79091BE0319B</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>CD69778A-A49B-44D1-9F54-B24359DEF8B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://jinu.me</string>
+</dict>
+</plist>

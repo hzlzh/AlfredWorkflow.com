@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>findervolumes</string>
+	<key>connections</key>
+	<dict>
+		<key>476E12DE-EC8B-4905-8AE2-2BDBBF53A419</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>51DF21A4-8167-4291-97D3-D75E2505B407</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Eject this drive</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9FF77845-02D7-453A-BE66-7D75E714DF3A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Eject all ejectable volumes</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>39A21211-AF56-4C21-B3FB-0562F949CF75</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>51DF21A4-8167-4291-97D3-D75E2505B407</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>85734812-6E44-4D34-9D26-38853EA978D2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9FF77845-02D7-453A-BE66-7D75E714DF3A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>85734812-6E44-4D34-9D26-38853EA978D2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Thiago A.</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Browse Finder Volumes</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>VOLUME=`basename "{query}"`
+/usr/bin/osascript -e "tell application \"Finder\" to eject \"$VOLUME\""
+if [ $? -eq 0 ]; then
+	echo "Volume $VOLUME successfully ejected"
+else
+	echo "Volume $VOLUME couldn't be ejected"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>51DF21A4-8167-4291-97D3-D75E2505B407</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>85734812-6E44-4D34-9D26-38853EA978D2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>/usr/bin/osascript -e "tell application \"Finder\" to eject (every disk whose ejectable is true)"
+if [ $? -eq 0 ]; then
+	echo "All volumes ejected"
+else
+	echo "Couldn't eject the volumes"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9FF77845-02D7-453A-BE66-7D75E714DF3A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>vol</string>
+				<key>script</key>
+				<string>/usr/bin/ruby volumes.rb "{query}"</string>
+				<key>subtext</key>
+				<string>Browse Finder volumes</string>
+				<key>title</key>
+				<string>Browse Finder volumes</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>476E12DE-EC8B-4905-8AE2-2BDBBF53A419</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+open "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>39A21211-AF56-4C21-B3FB-0562F949CF75</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>39A21211-AF56-4C21-B3FB-0562F949CF75</key>
+		<dict>
+			<key>ypos</key>
+			<real>290</real>
+		</dict>
+		<key>476E12DE-EC8B-4905-8AE2-2BDBBF53A419</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>51DF21A4-8167-4291-97D3-D75E2505B407</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>85734812-6E44-4D34-9D26-38853EA978D2</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>9FF77845-02D7-453A-BE66-7D75E714DF3A</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

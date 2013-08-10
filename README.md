@@ -1,16 +1,15 @@
-[AlfredWorkflow.com](http://AlfredWorkflow.com 'Alfred 2 Workflows List') (340+ added)
+[AlfredWorkflow.com](http://AlfredWorkflow.com 'Alfred 2 Workflows List')
 ====
-### Search, Install and Share, No Need to Reinvent the Wheel.
+#### Search, Install and Share, No Need to Reinvent the Wheel.  -- (370+ added)
  ([Alfred 2] powerpack required)  
  
  **Now you can use [Workflow Searcher] to search workflows.**
+
+[![Get Workflow Searcher](https://raw.github.com/hzlzh/AlfredWorkflow.com/master/index/css/images/downlaod-btn.png)](https://raw.github.com/hzlzh/Alfred-Workflows/master/Downloads/Workflow-Searcher.alfredworkflow)
  
 Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in coding new workflows yourself.
 
-## Workflows' JSON API (updated 2013.7.13) 
-
-----
-
+## Workflows' JSON API (updated 2013.8.10) 
 
 * **(Recommended)** API on Github:  
 * [https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow_api.json](https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow_api.json)  
@@ -55,6 +54,9 @@ Also you can `Fork` or `Star`this repo(`/Sources`) to get some inspiration in co
 * If you want to update a workflow under `/Downloads`, just make a `pull request`
 * More wiki on [submit page](http://www.alfredworkflow.com/submit-alfred-workflow/)
 
+## Credits 
+
+Released under the [\[MIT\]](LICENSE) License.  
 
 [Alfred 2]: http://www.alfredapp.com/
 [Workflow Searcher]: https://github.com/hzlzh/Alfred-Workflows/
