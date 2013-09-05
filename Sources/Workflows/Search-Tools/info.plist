@@ -129,6 +129,8 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>13B6CFF6-AB27-4934-92B1-AA290E63AF93</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -154,6 +156,8 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>2B4DEDDD-2AA0-4C7F-94A2-E6B399A900B9</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -179,6 +183,8 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>50C7835B-93A6-43A4-88E5-A1FD257A38C1</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -204,6 +210,8 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>BA178525-ABC7-47B0-B553-8A9A96365FBE</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -219,6 +227,8 @@
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>FE48BE9F-8CD0-442D-A4CD-71E545104B23</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -244,6 +254,8 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>A2A0A287-0C74-4968-AA52-092D3F5E25FC</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -269,6 +281,8 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>948ECBA7-261A-4F0B-B39E-4923BF484583</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -294,6 +308,8 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>81705C6C-95CA-474A-9DE4-4667113EAB65</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -319,6 +335,8 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>20000100-1BDB-4B24-9F6E-D7194038EC99</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -327,6 +345,10 @@
 google和wikipedia接口默认通过本地goagent代理（127.0.0.1:8087）和HTTPS访问，若需修改请编辑search.py中set_proxy()函数
 
 因谷歌、微博、知乎未提供不限流量可匿名访问的API，故其结果均为解析HTML输出而得，若有改版可能失效
+
+v0.7.2
+*谷歌搜索升级
+*更全面的通过代理访问维基百科和微博搜索，以避免被查封
 
 v0.7.1
 *知乎搜索升级

@@ -1,0 +1,11 @@
+// create new buffer and paste clipboard 
+
+newbuf = jEdit.newFile( view );
+view.goToBuffer( newbuf );
+Registers.paste( textArea, '$' );
+
+/*
+/Applications/Develop/jEdit.app/Contents/MacOS/jedit 
+	-reuseview -run=~/Library/jEdit/macros/Paste_New.bsh
+*/
+
