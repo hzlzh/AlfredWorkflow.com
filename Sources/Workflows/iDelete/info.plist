@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>530C512A-1BB7-446F-A6B2-F50863EDD4CC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E025CDBB-D30F-44FA-B97C-91FAB10F9304</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>MacGeeky</string>
+	<key>description</key>
+	<string>Sletter alt i nedlastingsmappen foruten innhold med etikett/farge</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>iDelete</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>idelete</string>
+				<key>subtext</key>
+				<string>Sletter alt i nedlastingsmappen</string>
+				<key>text</key>
+				<string>iDeleteDownloads</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>530C512A-1BB7-446F-A6B2-F50863EDD4CC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "Finder"		set Nedlastinger to (path to downloads folder)	set slettbart to (items of Nedlastinger where label index = 0)		delete slettbart	end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>E025CDBB-D30F-44FA-B97C-91FAB10F9304</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>530C512A-1BB7-446F-A6B2-F50863EDD4CC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E025CDBB-D30F-44FA-B97C-91FAB10F9304</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://macgeeky.no</string>
+</dict>
+</plist>

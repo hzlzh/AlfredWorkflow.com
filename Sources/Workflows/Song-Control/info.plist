@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>1B14AF25-7B8A-482D-9ED8-AE4F299355F6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0C68BEDF-E124-438E-A92C-A32CAD2A0669</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2FF39797-C6BB-40AA-9B55-8FBA4D5E1348</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E0E3D9C6-8FE2-4EDE-9D1C-83D51916B55B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>535DE290-AFE1-4C06-9EA8-0A30CAA65185</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BA1AFFCB-C23E-4F4B-8421-45C381779E21</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>63C103AD-BB27-4209-B964-3B37D2E6CCD4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E0E3D9C6-8FE2-4EDE-9D1C-83D51916B55B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>867A15FC-0085-4CC8-8DF8-A8D3B0B30F95</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E384B61D-CAC4-4A6F-94E8-7D0D16019C04</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8EA432BE-2C32-47ED-B175-11A6AF11A093</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7944282-7EBD-4B56-95B0-329BA361AFFF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AF4763EA-4D2B-4525-9DD6-46765867D6BD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>868395B6-D1A4-461E-9E66-D51C9A1E8FFB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>BA1AFFCB-C23E-4F4B-8421-45C381779E21</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AD9B93E3-AF30-41AF-966B-253B86FB74B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E384B61D-CAC4-4A6F-94E8-7D0D16019C04</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DF4E42F3-5AD7-4D8B-BAE1-0AC05E84F169</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Chris Sauve</string>
+	<key>description</key>
+	<string>Lets you quickly rate and manage the playlist membership of the current iTunes track</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Song Control</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>set query to "{query}" -- get the querytell application "iTunes"	if query is "null" then		activate -- user chose to activate iTunes	else		set my text item delimiters to "-"		set actionItems to every text item of query -- actions come as 'remove||add-playlistID-trackID'		set action to item 1 of actionItems		set playlistID to (item 2 of actionItems) as string		set songId to (item 3 of actionItems) as integer		set my text item delimiters to ""				set thePlaylist to item 1 of (every playlist whose persistent ID is playlistID) -- store the playlist		set playlistName to name of thePlaylist		set songName to "The song"				try			if action is "add" then				set theSong to item 1 of (every track whose database ID is songId) -- store the song				set songName to name of theSong				duplicate theSong to thePlaylist				return quote &amp; songName &amp; quote &amp; " added to playlist " &amp; quote &amp; playlistName &amp; quote			else				set theSong to first track of thePlaylist whose database ID is songId -- store the song				set songName to name of theSong				if persistent ID of current playlist is playlistID then next track				tell thePlaylist					delete theSong				end tell				return quote &amp; songName &amp; quote &amp; " removed from playlist " &amp; quote &amp; playlistName &amp; quote			end if		on error			if action is "add" then				return "Oops. " &amp; quote &amp; songName &amp; quote &amp; " couldn't be added to playlist " &amp; quote &amp; playlistName &amp; quote			else				return "Oops. " &amp; quote &amp; songName &amp; quote &amp; " couldn't be removed from playlist " &amp; quote &amp; playlistName &amp; quote			end if		end try			end ifend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E384B61D-CAC4-4A6F-94E8-7D0D16019C04</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>keyword</key>
+				<string>list</string>
+				<key>runningsubtext</key>
+				<string>Please Wait...</string>
+				<key>script</key>
+				<string>try	tell application "iTunes"		set currentTrack to name of current track -- get the name of the current track		set trackID to database ID of current track -- get the ID for use in checking playlist membership	end tellon error	-- offer to send to itunes if no song playing	return "&lt;?xml version='1.0'?&gt;&lt;items&gt;" &amp; my createItem("play", "null", "Launch iTunes", "No track currently playing", "icon.png")end tryset query to "{query}" -- get the search queryset listLimit to 20 -- max playlists shown-- search iTunes playlists for the querytell application "iTunes"	-- Playlist search	if query is "*" then		set allPlaylists to every user playlist whose smart is false and special kind is none	else		set allPlaylists to every user playlist whose name contains query and smart is false and special kind is none	end if	set xml to "&lt;?xml version='1.0'?&gt;&lt;items&gt;" -- create XML string		-- inform user that no results were found (prompt to launch iTunes instead)	if length of allPlaylists is 0 then		set xml to xml &amp; my createItem("play", "null", "Launch iTunes", ("No playlists found with " &amp; quote &amp; query &amp; quote), "icon.png")	else		set playlistIndex to 0		-- create the playlist entries		repeat with aPlaylist in allPlaylists						-- respect the playlist limit			if playlistIndex ≥ listLimit then				exit repeat			end if						set playlistId to (get persistent ID of aPlaylist)			set playlistName to name of aPlaylist			set searchR to search aPlaylist for currentTrack			if length of (search aPlaylist for currentTrack) &gt; 0 then				set action to "remove-" &amp; playlistId &amp; "-" &amp; trackID				set subtitleText to "REMOVE " &amp; quote &amp; currentTrack &amp; quote &amp; " from playlist " &amp; quote &amp; playlistName &amp; quote			else				set subtitleText to "ADD " &amp; quote &amp; currentTrack &amp; quote &amp; " to playlist " &amp; quote &amp; playlistName &amp; quote				set action to "add-" &amp; playlistId &amp; "-" &amp; trackID			end if									-- add song information to XML			set xml to xml &amp; my createItem(("playlist-" &amp; playlistId), action, playlistName, subtitleText, "icon.png")			set playlistIndex to playlistIndex + 1		end repeat				set xml to xml &amp; "&lt;/items&gt;"			end if	end tellreturn xml -- return XML-- Helper Functionson replaceString(replaceThis, withThat, original)	set my text item delimiters to replaceThis	set tempItems to every text item of original	set my text item delimiters to withThat	return tempItems as textend replaceString-- escape XML forbidden characters in the given stringon escapeXmlChars(str)	set str to replaceString("&amp;", "&amp;amp;", str)	set str to replaceString("'", "&amp;apos;", str)	set str to replaceString("\"", "&amp;quot;", str)	set str to replaceString("&lt;", "&amp;lt;", str)	set str to replaceString("&gt;", "&amp;gt;", str)	return strend escapeXmlChars-- create XML itemon createItem(uid, arg, title, subtitle, icon)	-- escape forbidden XML characters	set title to escapeXmlChars(title)	set subtitle to escapeXmlChars(subtitle)		return "&lt;item uid='" &amp; uid &amp; "' arg='" &amp; arg &amp; "'&gt;
+	&lt;title&gt;" &amp; title &amp; "&lt;/title&gt;
+	&lt;subtitle&gt;" &amp; subtitle &amp; "&lt;/subtitle&gt;
+	&lt;icon&gt;" &amp; icon &amp; "&lt;/icon&gt;
+	&lt;/item&gt;"end createItem</string>
+				<key>subtext</key>
+				<string>Add track to playlist {query}</string>
+				<key>title</key>
+				<string>Add Current Track to a Playlist</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>867A15FC-0085-4CC8-8DF8-A8D3B0B30F95</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Song Control</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>DF4E42F3-5AD7-4D8B-BAE1-0AC05E84F169</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>set query to "{query}" -- get the querytell application "iTunes"	if query is "null" then return "Sorry, the input you provided didn't match up to a star rating"	if query is "play" then		activate	end if	set my text item delimiters to "-"	set actionItems to every text item of query -- comes as {rating-songID}	set theRating to item 1 of actionItems as number	set theID to item 2 of actionItems as number	set theSong to item 1 of (every track whose database ID is theID)	set the rating of theSong to theRating	return "Rated " &amp; quote &amp; name of theSong &amp; quote &amp; " by " &amp; quote &amp; artist of theSong &amp; quote &amp; " " &amp; item 1 of (my parseRating(theRating / 20))end tellon parseRating(query)	if query is 0 then		set stars to "• • • • •"		set theRating to 0	else if query is 0.5 then		set stars to "½☆☆☆☆"		set theRating to 10	else if query is 1 then		set stars to "★☆☆☆☆"		set theRating to 20	else if query is 1.5 then		set stars to "★½☆☆☆"		set theRating to 30	else if query is 2 then		set stars to "★★☆☆☆"		set theRating to 40	else if query is 2.5 then		set stars to "★★½☆☆"		set theRating to 50	else if query is 3 then		set stars to "★★★☆☆"		set theRating to 60	else if query is 3.5 then		set stars to "★★★½☆"		set theRating to 70	else if query is 4 then		set stars to "★★★★☆"		set theRating to 80	else if query is 4.5 then		set stars to "★★★★½"		set theRating to 90	else if query is 5 then		set stars to "★★★★★"		set theRating to 100	else		set stars to "• • • • •"		set theRating to "null"	end if		return {stars, theRating}end parseRating</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BA1AFFCB-C23E-4F4B-8421-45C381779E21</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Song Control</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>AD9B93E3-AF30-41AF-966B-253B86FB74B8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>rate</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>set query to "{query}" -- get the querytell application "iTunes"	try		set theTrack to name of current track		set theArtist to artist of current track		set theCurrentRating to rating of current track		set theID to database ID of current track	on error		return my createItem("play", "play", "No Song Currently Playing", "Open iTunes instead", "icon.png")	end try		if application "iTunes" is not running then		return my createItem("play", "play", "No Song Currently Playing", "Open iTunes instead", "icon.png")	end if		set currentStars to my parseRating(theCurrentRating / 20) -- both of these return {starImage, rating/100}	set desiredStars to my parseRating(query as number)	set my text item delimiters to ""	set theRating to item 2 of desiredStars	set action to (theRating &amp; "-" &amp; theID) as text		return my createItem("play", action, quote &amp; theTrack &amp; quote &amp; " by " &amp; quote &amp; theArtist &amp; quote, "Desired rating: " &amp; item 1 of desiredStars &amp; " (note: current rating is " &amp; item 1 of currentStars &amp; ")", "icon.png")	end tell-- Helper Functionson replaceString(replaceThis, withThat, original)	set my text item delimiters to replaceThis	set tempItems to every text item of original	set my text item delimiters to withThat	return tempItems as textend replaceString-- escape XML forbidden characters in the given stringon escapeXmlChars(str)	set str to replaceString("&amp;", "&amp;amp;", str)	set str to replaceString("'", "&amp;apos;", str)	set str to replaceString("\"", "&amp;quot;", str)	set str to replaceString("&lt;", "&amp;lt;", str)	set str to replaceString("&gt;", "&amp;gt;", str)	return strend escapeXmlChars-- create XML itemon createItem(uid, arg, title, subtitle, icon)	-- escape forbidden XML characters	set title to escapeXmlChars(title)	set subtitle to escapeXmlChars(subtitle)			return "&lt;?xml version='1.0'?&gt;&lt;items&gt;
+	&lt;item uid='" &amp; uid &amp; "' arg='" &amp; arg &amp; "'&gt;
+	&lt;title&gt;" &amp; title &amp; "&lt;/title&gt;
+	&lt;subtitle&gt;" &amp; subtitle &amp; "&lt;/subtitle&gt;
+	&lt;icon&gt;" &amp; icon &amp; "&lt;/icon&gt;
+	&lt;/item&gt;&lt;/items&gt;"end createItem-- Gives a star visualization and score out of 100 for a score out of 5on parseRating(query)	if query is 0 then		set stars to "• • • • •"		set theRating to 0	else if query is 0.5 then		set stars to "½☆☆☆☆"		set theRating to 10	else if query is 1 then		set stars to "★☆☆☆☆"		set theRating to 20	else if query is 1.5 then		set stars to "★½☆☆☆"		set theRating to 30	else if query is 2 then		set stars to "★★☆☆☆"		set theRating to 40	else if query is 2.5 then		set stars to "★★½☆☆"		set theRating to 50	else if query is 3 then		set stars to "★★★☆☆"		set theRating to 60	else if query is 3.5 then		set stars to "★★★½☆"		set theRating to 70	else if query is 4 then		set stars to "★★★★☆"		set theRating to 80	else if query is 4.5 then		set stars to "★★★★½"		set theRating to 90	else if query is 5 then		set stars to "★★★★★"		set theRating to 100	else		set stars to "• • • • •"		set theRating to "null"	end if		return {stars, theRating}end parseRating</string>
+				<key>subtext</key>
+				<string>Give the song a new rating</string>
+				<key>title</key>
+				<string>Rate Current Track</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>535DE290-AFE1-4C06-9EA8-0A30CAA65185</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>pause</string>
+				<key>subtext</key>
+				<string>Give me a break.</string>
+				<key>text</key>
+				<string>Pause</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2FF39797-C6BB-40AA-9B55-8FBA4D5E1348</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>play</string>
+				<key>subtext</key>
+				<string>Turn the music back on!</string>
+				<key>text</key>
+				<string>Play</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>63C103AD-BB27-4209-B964-3B37D2E6CCD4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>command</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.itunescommand</string>
+			<key>uid</key>
+			<string>E0E3D9C6-8FE2-4EDE-9D1C-83D51916B55B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>previous</string>
+				<key>subtext</key>
+				<string>Take me back to the paradise city...</string>
+				<key>text</key>
+				<string>Previous Track</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>AF4763EA-4D2B-4525-9DD6-46765867D6BD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>command</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.itunescommand</string>
+			<key>uid</key>
+			<string>868395B6-D1A4-461E-9E66-D51C9A1E8FFB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>command</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.itunescommand</string>
+			<key>uid</key>
+			<string>0C68BEDF-E124-438E-A92C-A32CAD2A0669</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>next</string>
+				<key>subtext</key>
+				<string>Always move forward</string>
+				<key>text</key>
+				<string>Next Track</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1B14AF25-7B8A-482D-9ED8-AE4F299355F6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>random</string>
+				<key>subtext</key>
+				<string>Live on the edge!</string>
+				<key>text</key>
+				<string>Play a Random Song</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8EA432BE-2C32-47ED-B175-11A6AF11A093</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>tell application "iTunes"	set theMusic to user playlist "Music"	set randomTrack to random number from 1 to count of tracks of theMusic	play track randomTrack of theMusicend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E7944282-7EBD-4B56-95B0-329BA361AFFF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>sinfo</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>tell application "iTunes"	try		set currentTrack to current track	on error		return my createItem("null", "null", "No Sogn Currently Playing", "Come on, give me something to do!", "icon.png")	end try		set trackName to name of currentTrack	set artistName to artist of currentTrack	set albumName to album of currentTrack	set theRating to item 1 of my parseRating((rating of currentTrack) / 20)		set mainText to quote &amp; trackName &amp; quote &amp; " (" &amp; theRating &amp; ")"	set subText to "By " &amp; quote &amp; artistName &amp; quote &amp; " off the album " &amp; quote &amp; albumName &amp; quote	return my createItem("null", "null", mainText, subText, "icon.png")end tell-- Helper Functionson replaceString(replaceThis, withThat, original)	set my text item delimiters to replaceThis	set tempItems to every text item of original	set my text item delimiters to withThat	return tempItems as textend replaceString-- escape XML forbidden characters in the given stringon escapeXmlChars(str)	set str to replaceString("&amp;", "&amp;amp;", str)	set str to replaceString("'", "&amp;apos;", str)	set str to replaceString("\"", "&amp;quot;", str)	set str to replaceString("&lt;", "&amp;lt;", str)	set str to replaceString("&gt;", "&amp;gt;", str)	return strend escapeXmlChars-- create XML itemon createItem(uid, arg, title, subtitle, icon)	-- escape forbidden XML characters	set title to escapeXmlChars(title)	set subtitle to escapeXmlChars(subtitle)			return "&lt;?xml version='1.0'?&gt;&lt;items&gt;
+	&lt;item uid='" &amp; uid &amp; "' arg='" &amp; arg &amp; "'&gt;
+	&lt;title&gt;" &amp; title &amp; "&lt;/title&gt;
+	&lt;subtitle&gt;" &amp; subtitle &amp; "&lt;/subtitle&gt;
+	&lt;icon&gt;" &amp; icon &amp; "&lt;/icon&gt;
+	&lt;/item&gt;&lt;/items&gt;"end createItem-- Gives a star visualization and score out of 100 for a score out of 5on parseRating(query)	if query is 0 then		set stars to "• • • • •"		set theRating to 0	else if query is 0.5 then		set stars to "½☆☆☆☆"		set theRating to 10	else if query is 1 then		set stars to "★☆☆☆☆"		set theRating to 20	else if query is 1.5 then		set stars to "★½☆☆☆"		set theRating to 30	else if query is 2 then		set stars to "★★☆☆☆"		set theRating to 40	else if query is 2.5 then		set stars to "★★½☆☆"		set theRating to 50	else if query is 3 then		set stars to "★★★☆☆"		set theRating to 60	else if query is 3.5 then		set stars to "★★★½☆"		set theRating to 70	else if query is 4 then		set stars to "★★★★☆"		set theRating to 80	else if query is 4.5 then		set stars to "★★★★½"		set theRating to 90	else if query is 5 then		set stars to "★★★★★"		set theRating to 100	else		set stars to "• • • • •"		set theRating to "null"	end if		return {stars, theRating}end parseRating</string>
+				<key>subtext</key>
+				<string>Display the track, artist, and album name, as well as the star rating of the current track</string>
+				<key>title</key>
+				<string>Get Song Info</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8FE01184-3FE7-4CF2-BF47-FEF12D3CFE44</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0C68BEDF-E124-438E-A92C-A32CAD2A0669</key>
+		<dict>
+			<key>ypos</key>
+			<real>580</real>
+		</dict>
+		<key>1B14AF25-7B8A-482D-9ED8-AE4F299355F6</key>
+		<dict>
+			<key>ypos</key>
+			<real>580</real>
+		</dict>
+		<key>2FF39797-C6BB-40AA-9B55-8FBA4D5E1348</key>
+		<dict>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
+		<key>535DE290-AFE1-4C06-9EA8-0A30CAA65185</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>63C103AD-BB27-4209-B964-3B37D2E6CCD4</key>
+		<dict>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>867A15FC-0085-4CC8-8DF8-A8D3B0B30F95</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>868395B6-D1A4-461E-9E66-D51C9A1E8FFB</key>
+		<dict>
+			<key>ypos</key>
+			<real>480</real>
+		</dict>
+		<key>8EA432BE-2C32-47ED-B175-11A6AF11A093</key>
+		<dict>
+			<key>ypos</key>
+			<real>680</real>
+		</dict>
+		<key>8FE01184-3FE7-4CF2-BF47-FEF12D3CFE44</key>
+		<dict>
+			<key>ypos</key>
+			<real>780</real>
+		</dict>
+		<key>AD9B93E3-AF30-41AF-966B-253B86FB74B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>AF4763EA-4D2B-4525-9DD6-46765867D6BD</key>
+		<dict>
+			<key>ypos</key>
+			<real>480</real>
+		</dict>
+		<key>BA1AFFCB-C23E-4F4B-8421-45C381779E21</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>DF4E42F3-5AD7-4D8B-BAE1-0AC05E84F169</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E0E3D9C6-8FE2-4EDE-9D1C-83D51916B55B</key>
+		<dict>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>E384B61D-CAC4-4A6F-94E8-7D0D16019C04</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E7944282-7EBD-4B56-95B0-329BA361AFFF</key>
+		<dict>
+			<key>ypos</key>
+			<real>680</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://pxldot.com</string>
+</dict>
+</plist>

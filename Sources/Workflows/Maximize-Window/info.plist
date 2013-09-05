@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>9D5525DB-5B55-4DDF-98B8-E1B86042C402</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C96608B3-F5B7-4C52-B5DD-CBDE4C135CBF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>MacGeeky</string>
+	<key>description</key>
+	<string>Maximizes window - MS Windows style</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Maximize Window</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+	tell application "Finder" to set dtb to bounds of window of desktop	tell application (path to frontmost application as text)	try		set bounds of window 1 to dtb	end try	end tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C96608B3-F5B7-4C52-B5DD-CBDE4C135CBF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>9D5525DB-5B55-4DDF-98B8-E1B86042C402</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>9D5525DB-5B55-4DDF-98B8-E1B86042C402</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C96608B3-F5B7-4C52-B5DD-CBDE4C135CBF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://macgeeky.no</string>
+</dict>
+</plist>

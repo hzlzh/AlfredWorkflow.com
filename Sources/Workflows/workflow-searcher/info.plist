@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.workflowsearcher.hzlzh</string>
+	<key>connections</key>
+	<dict>
+		<key>5781539F-3A42-4724-BE8A-AF9E749F1FDE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ABD9DFE8-DA6B-4F46-AD34-4F6926FE883C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>ABD9DFE8-DA6B-4F46-AD34-4F6926FE883C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2B3CC67B-A963-4638-BFCA-A3FE12BA5587</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>⌘ &gt; Only copy the link to Clipboard!</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>64842A1D-75E7-4103-BD08-4DCB0AA137AE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>741DB4F2-5EC9-478D-8CBB-463E10EFC171</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>⌘ &gt; Only copy the link to Clipboard!</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A97E7797-7E7A-43C6-BFCE-863F4C2B3B4A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5C0825B6-635B-478A-839C-3457CD7772BE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>hzlzh</string>
+	<key>description</key>
+	<string>Search workflows from AlfredWorkflow.com List API</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Workflow Searcher</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Download Link copied!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2B3CC67B-A963-4638-BFCA-A3FE12BA5587</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>64842A1D-75E7-4103-BD08-4DCB0AA137AE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>741DB4F2-5EC9-478D-8CBB-463E10EFC171</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>5781539F-3A42-4724-BE8A-AF9E749F1FDE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>wf</string>
+				<key>runningsubtext</key>
+				<string>Wait, searching … … on AlfredWorkflow.com API</string>
+				<key>script</key>
+				<string>/*
+# Project Source
+
+* API: https://github.com/hzlzh/AlfredWorkflow.com
+
+* Github: https://github.com/hzlzh/Alfred-Workflows
+* Blog Post: https://zlz.im/Alfred-Workflows/
+
+# Contact
+
+* hzlzh (hzlzh.dev@gmail.com)
+* Twitter: https://twitter.com/hzlzh
+*/
+require_once('workflows.php');
+require_once('FileCache.php');
+
+function load_data($api) {
+    
+    $opts = array(  
+        'http'=&gt;array(  
+        'method'=&gt;"GET",  
+        'timeout'=&gt;10
+        )
+    );  
+    $context = stream_context_create($opts);       
+    $obj = false;
+    
+    
+    $fck  = md5('api2');
+    $data = FileCache::get($fck);
+        if(!$data)
+        {
+            $xml = @file_get_contents( $api,false, $context);
+            $data = $xml;            
+            FileCache::set($fck,$data,360);
+        }
+    $obj=json_decode($data);
+
+    return $obj;
+}
+
+$wf = new Workflows();
+
+$orig = "{query}";
+
+
+date_default_timezone_set('Asia/Shanghai');
+if($orig){
+    $obj = load_data('https://raw.github.com/hzlzh/AlfredWorkflow.com/master/workflow_api.json');
+
+    $int = 1;
+    if($obj != null):
+        foreach( $obj as $key =&gt; $item ):
+            if(!stristr($item -&gt; workflow_name, $orig) &amp;&amp; !stristr($item -&gt; workflow_description_small, $orig) &amp;&amp; !stristr($item -&gt; workflow_author_name, $orig)) continue;
+
+            $workflow_name = $item -&gt; workflow_name;
+            $workflow_version = $item -&gt; workflow_version;
+            $workflow_description_small = $item -&gt; workflow_description_small;
+            $workflow_type = $item -&gt; workflow_type;
+            $workflow_release_page = $item -&gt; workflow_release_page;
+            $workflow_type = $item -&gt; workflow_type;
+            $workflow_author_name = $item -&gt; workflow_author_name;
+            $workflow_author_site = $item -&gt; workflow_author_site;
+            $workflow_download_link = $item -&gt; workflow_download_link;
+            $workflow_file = $item -&gt; workflow_file;
+            $workflow_screenshot = $item -&gt; workflow_screenshot;
+
+            $wf-&gt;result( $workflow_name, $workflow_download_link, '[v'.$workflow_version.'] '.$workflow_name . ' — @'.$workflow_author_name,  $workflow_description_small, 'default.png'  );
+            $int++; 
+        endforeach;
+    endif;
+}
+
+$results = $wf-&gt;results();
+if ( count( $results ) == 0 ):
+    $wf-&gt;result( 'alfredworkflow_500', 'Please make sure your internet works well.', 'No responce, try again!', 'Please make sure your internet works well.', 'icon.png' );
+endif;
+
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>The result is from AlfredWorkflow.com API</string>
+				<key>title</key>
+				<string>Input keyword to search workflows.</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>ABD9DFE8-DA6B-4F46-AD34-4F6926FE883C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Also backup download avaliable on AlfredWorkflow.com</string>
+				<key>title</key>
+				<string>Download Link copied!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A97E7797-7E7A-43C6-BFCE-863F4C2B3B4A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>5C0825B6-635B-478A-839C-3457CD7772BE</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Project Source
+
+* Github: https://github.com/hzlzh/Alfred-Workflows
+* Blog Post: https://zlz.im/Alfred-Workflows/
+
+# Contact
+
+* hzlzh (hzlzh.dev@gmail.com)
+* Twitter: https://twitter.com/hzlzh</string>
+	<key>uidata</key>
+	<dict>
+		<key>2B3CC67B-A963-4638-BFCA-A3FE12BA5587</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>5781539F-3A42-4724-BE8A-AF9E749F1FDE</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>5C0825B6-635B-478A-839C-3457CD7772BE</key>
+		<dict>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>64842A1D-75E7-4103-BD08-4DCB0AA137AE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>741DB4F2-5EC9-478D-8CBB-463E10EFC171</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>A97E7797-7E7A-43C6-BFCE-863F4C2B3B4A</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>ABD9DFE8-DA6B-4F46-AD34-4F6926FE883C</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://zlz.im/</string>
+</dict>
+</plist>

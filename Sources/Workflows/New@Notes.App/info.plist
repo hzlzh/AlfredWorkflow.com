@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.shownsoft.NewNotesAS</string>
+	<key>connections</key>
+	<dict>
+		<key>DFB73A81-21AB-4619-AB5B-C0BC5CCF7F5F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3B303D14-B700-49E9-A5FD-E60E22E2FDE0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Shawn</string>
+	<key>description</key>
+	<string>Create a note to Notes.app</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>New@Notes.App</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>nnn</string>
+				<key>subtext</key>
+				<string>Quick add note to Notes.app</string>
+				<key>text</key>
+				<string>Create new note</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>DFB73A81-21AB-4619-AB5B-C0BC5CCF7F5F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "Notes"
+		activate
+		make new note at folder "Notes" with properties {name:{q}, body:{q}}
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>3B303D14-B700-49E9-A5FD-E60E22E2FDE0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>3B303D14-B700-49E9-A5FD-E60E22E2FDE0</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>DFB73A81-21AB-4619-AB5B-C0BC5CCF7F5F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://shownsoft.com</string>
+</dict>
+</plist>

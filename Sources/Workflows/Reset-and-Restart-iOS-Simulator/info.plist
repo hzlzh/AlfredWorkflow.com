@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.firesofmay.launch-ios-sim</string>
+	<key>connections</key>
+	<dict>
+		<key>711686C3-B61E-473B-B69D-691E113EE5E4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B9CDA201-F4DB-481D-B0EE-29B63B95C9BA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F1973716-B0C9-4185-8D68-53E1E48F9E62</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9F543FFD-7BF1-4F5B-89C6-9D3174E57A1C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F1973716-B0C9-4185-8D68-53E1E48F9E62</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A375BC4A-5496-48E3-84E8-BCC2846BFBB0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>711686C3-B61E-473B-B69D-691E113EE5E4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9F543FFD-7BF1-4F5B-89C6-9D3174E57A1C</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>iOS Simulator Reset ONLY</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mayank Jain</string>
+	<key>description</key>
+	<string>Resets all the simulators [and runs it again.]</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Reset and Restart iOS Simulator</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>killall "iPhone Simulator"
+
+sleep 2
+
+/bin/rm -rf /Users/$(whoami)/Library/Application\ Support/iPhone\ Simulator/
+
+mkdir -p /Users/$(whoami)/Library/Application\ Support/iPhone\ Simulator/{5.0,5.1,6.0,6.1}/Media/DCIM/100APPLE/
+
+find ~/Library/Application\ Support/iPhone\ Simulator/ -type d -name '100APPLE' -exec cp ./images/* {} \;
+
+
+echo "Done iOS Reset and Restart"
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>711686C3-B61E-473B-B69D-691E113EE5E4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>on run project_loc	tell application "Xcode"		open project_loc		activate	end tell		tell application "System Events"		tell application process "Xcode"			click menu item "Stop" of menu 1 of menu bar item "Product" of menu bar 1		end tell	end tell	tell application "System Events"		tell application process "Xcode"			click menu item "Run" of menu 1 of menu bar item "Product" of menu bar 1		end tell	end tellend run</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>B9CDA201-F4DB-481D-B0EE-29B63B95C9BA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ios-reset</string>
+				<key>subtext</key>
+				<string>Resets all the simulators and restart the current one in xcode again.</string>
+				<key>text</key>
+				<string>ios-reset</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A375BC4A-5496-48E3-84E8-BCC2846BFBB0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>path_to_pic="src/office/ios/pictures"
+
+killall "iPhone Simulator"
+
+sleep 2
+
+/bin/rm -rf /Users/$(whoami)/Library/Application\ Support/iPhone\ Simulator/
+
+mkdir -p /Users/$(whoami)/Library/Application\ Support/iPhone\ Simulator/{5.0,5.1,6.0,6.1}/Media/DCIM/100APPLE/
+
+find ~/Library/Application\ Support/iPhone\ Simulator/ -type d -name '100APPLE' -exec cp ./images/* {} \;
+
+
+echo "Done iOS Reset and Restart"
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9F543FFD-7BF1-4F5B-89C6-9D3174E57A1C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Done</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F1973716-B0C9-4185-8D68-53E1E48F9E62</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>711686C3-B61E-473B-B69D-691E113EE5E4</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>9F543FFD-7BF1-4F5B-89C6-9D3174E57A1C</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>A375BC4A-5496-48E3-84E8-BCC2846BFBB0</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>B9CDA201-F4DB-481D-B0EE-29B63B95C9BA</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>F1973716-B0C9-4185-8D68-53E1E48F9E62</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

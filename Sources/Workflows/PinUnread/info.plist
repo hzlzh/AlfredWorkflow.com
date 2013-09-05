@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.vitorgalvao.alfred.pinunread</string>
+	<key>connections</key>
+	<dict>
+		<key>3DB86996-958C-4655-8079-9B10E65243D5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5A99239F-CE3C-43BC-B930-B2B2A52F8438</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>489CDD9D-C887-46DA-8D02-96BEDAB6015A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>45660886-4591-4FD2-B13C-B3CEEF023E38</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D7CD0455-C27A-4021-B033-05D88CB54327</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy URL to the clipboard</string>
+			</dict>
+		</array>
+		<key>5A99239F-CE3C-43BC-B930-B2B2A52F8438</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>94D014F3-F55A-403C-9643-EA109DBE172B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Vítor Galvão</string>
+	<key>description</key>
+	<string>Open and manage your Pinboard “toread” bookmarks</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>PinUnread</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pun</string>
+				<key>runningsubtext</key>
+				<string>Getting your unread bookmarks…</string>
+				<key>script</key>
+				<string>source ./workflowHandler.sh
+
+IFS=$'\n'
+
+if [[ ! -d "$(getDataDir)" ]]; then
+cat &lt;&lt; EOF
+	&lt;?xml version='1.0'?&gt;&lt;items&gt;
+	  &lt;item uid='Configure PinAdd Warning' valid='no'&gt;
+	    &lt;title&gt;Your account isn't configured yet&lt;/title&gt;
+	    &lt;subtitle&gt;run configurepinunread to set it&lt;/subtitle&gt;
+	    &lt;icon&gt;icon.png&lt;/icon&gt;
+	  &lt;/item&gt;
+	&lt;/items&gt;
+EOF
+else
+	unreaditems="$(getDataDir)/unreaditems.txt"
+	user="$(getPref user 1)"
+	secret="$(getPref secret 1)"
+
+	if [[ -z $(find "${unreaditems}" -mmin -5) ]] || [[ ! -f "${unreaditems}" ]] ; then
+		curl --silent "https://feeds.pinboard.in/json/secret:${secret}/u:${user}/toread/" | python -mjson.tool | perl -pe 's/^\s+|\s+$//' | grep "^\"d\":\|^\"u\":" | perl -pe 's/\n//; print "\n" unless 1 == $. || /^"u":/' | perl -pe 's/^"d": | "u": |"//g' | perl -MHTML::Entities -CS -pe '$_ = encode_entities($_, "&amp;&lt;")' &gt; "${unreaditems}"
+	fi
+
+	echo "&lt;?xml version='1.0'?&gt;&lt;items&gt;"
+	for item in $(grep -in ".*{query}.*" "${unreaditems}"); do
+		line="$(echo ${item} | sed 's/:.*//')"
+		title="$(echo ${item} | sed 's/.*:\(.*\),.*/\1/')"
+		url="$(echo ${item} | sed 's/.*,//')"
+		echo "&lt;item uuid='${line}' arg='${line}' valid='yes'&gt;"
+		echo "&lt;title&gt;${title}&lt;/title&gt;"
+		echo "&lt;subtitle&gt;${url}&lt;/subtitle&gt;"
+		echo "&lt;icon&gt;icon.png&lt;/icon&gt;"
+		echo "&lt;/item&gt;"
+	done
+	echo "&lt;/items&gt;"
+fi</string>
+				<key>subtext</key>
+				<string>Open and manage your Pinboard “toread” bookmarks</string>
+				<key>title</key>
+				<string>PinUnread</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>489CDD9D-C887-46DA-8D02-96BEDAB6015A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>./pinunread read {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>45660886-4591-4FD2-B13C-B3CEEF023E38</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>./pinunread copy {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D7CD0455-C27A-4021-B033-05D88CB54327</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Account configured.</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>94D014F3-F55A-403C-9643-EA109DBE172B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>configurepinunread</string>
+				<key>subtext</key>
+				<string>your-api-token your-preferred-action (see the “Readme” info for more details)</string>
+				<key>text</key>
+				<string>Configure your account</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3DB86996-958C-4655-8079-9B10E65243D5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>source ./workflowHandler.sh
+
+token="$(cut -d " " -f1 &lt;(echo "{query}"))"
+action="$(cut -d " " -f2 &lt;(echo "{query}"))"
+
+user=$(echo "${token}" | sed 's/:.*//')
+secret=$(curl --silent "https://api.pinboard.in/v1/user/secret/?auth_token=${token}" | grep 'result' | sed 's/&lt;result&gt;\(.*\)&lt;\/result&gt;/\1/')
+
+setPref user "${user}" 1
+setPref token "${token}" 1
+setPref secret "${secret}" 1
+setPref action "${action}" 1</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5A99239F-CE3C-43BC-B930-B2B2A52F8438</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Before using this workflow, you need to configure it with your Pinboard account by running “configurepinunread” followed by your api token and your preferred action.
+
+You can get the API token of you Pinboard account by visiting
+https://pinboard.in/settings/password
+
+Your preferred action may be one of
+delete, archive, or keep
+“Delete” will remove the bookmark from your account, after you act (open or copy the link) on it; “archive” will mark the bookmark as read; “keep” will leave it untouched.
+
+An example configuration would be
+configurepinadd username:HSJWJK2HHSKI14QPDOIK delete</string>
+	<key>uidata</key>
+	<dict>
+		<key>3DB86996-958C-4655-8079-9B10E65243D5</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>45660886-4591-4FD2-B13C-B3CEEF023E38</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>489CDD9D-C887-46DA-8D02-96BEDAB6015A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>5A99239F-CE3C-43BC-B930-B2B2A52F8438</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>94D014F3-F55A-403C-9643-EA109DBE172B</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>D7CD0455-C27A-4021-B033-05D88CB54327</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://vitorgalvao.com/</string>
+</dict>
+</plist>

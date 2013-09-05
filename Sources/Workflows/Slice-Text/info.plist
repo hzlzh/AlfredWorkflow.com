@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>D2BB6140-6F3F-4D57-99C7-D405C2FE6822</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FCC8C68F-ADE2-45FD-A3B8-8C54AE0F5C11</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Amaresh Sundaram Kuppuswamy</string>
+	<key>description</key>
+	<string>Sends the selected text to Slicereader</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Slice Text</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+	if q is not equal to "" then
+		tell application "Slicereader" to activate
+		set query to "slicereader://read?txt=" &amp; q
+		tell application "Finder" to open location query
+	end if
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>FCC8C68F-ADE2-45FD-A3B8-8C54AE0F5C11</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>D2BB6140-6F3F-4D57-99C7-D405C2FE6822</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Requires Slicereader http://mthr.me/slicereader/
+
+Thanks to Mutahhir Ali Hayat http://mthr.me/</string>
+	<key>uidata</key>
+	<dict>
+		<key>D2BB6140-6F3F-4D57-99C7-D405C2FE6822</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>FCC8C68F-ADE2-45FD-A3B8-8C54AE0F5C11</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

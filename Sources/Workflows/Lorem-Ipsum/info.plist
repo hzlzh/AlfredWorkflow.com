@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>3159164D-0113-4816-B172-1C61F2F99123</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C2B52CFE-5195-4B93-9A3A-5564CE080E37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C2B52CFE-5195-4B93-9A3A-5564CE080E37</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B3170ACF-482B-46BD-BFD0-B4917B2F9AE0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>565129AA-EC9C-44BF-915B-7FCBDAD014E2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jeremy Pippin</string>
+	<key>description</key>
+	<string>Generates sample text using loripsum.net</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Lorem Ipsum</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>// Query in the form of 5 (for 5 paragraphs) or 5 p.  Default is 1 paragraph.
+$query = "{query}";
+$params = empty($query) ? array(1, 'p') : explode(' ', $query);
+
+// Get the count and the type from the $params.
+$count = intval($params[0]) ? intval($params[0]) : 1;
+$type  = (empty($params[1]) || !in_array($params[1], array('p', 'w'))) ? 'p' : $params[1];
+
+// Fetch from loripsum.net and trim the output.
+$output = file_get_contents("http://loripsum.net/api/$count/prude/plaintext");
+$output = trim($output);
+
+// Loripsum.net only delivers paragraphs, so if words were requested the output 
+// must be shortened.
+if ($type == 'w') {
+  // Strip the punctuation from the graph.
+  $output = preg_replace('/[^a-zA-Z 0-9]+/', '', strtolower($output));
+  
+  // Turn the output into an array and grab the first $count words.
+  $output = explode(' ', $output);
+  $output = array_slice($output, 0, $count);
+  $output[0] = ucwords($output[0]);
+  
+  // Then reassemble.
+  $output = implode(' ', $output) . '.';
+}
+
+echo $output;</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C2B52CFE-5195-4B93-9A3A-5564CE080E37</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Your text has been copied to the clipboard.</string>
+				<key>title</key>
+				<string>Lorem Ipsum</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B3170ACF-482B-46BD-BFD0-B4917B2F9AE0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>li</string>
+				<key>text</key>
+				<string>Generate Lorem Ipsum</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3159164D-0113-4816-B172-1C61F2F99123</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>565129AA-EC9C-44BF-915B-7FCBDAD014E2</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>OVERVIEW:
+
+This workflow implements the Loripsum.net API to produce lorem ipsum text to your specification.
+
+
+USAGE:
+
+Use the keyword 'li' followed by an integer to get that many paragraphs. Result will be copied to the clipboard and pasted into the foremost application.
+
+You may also follow the number with the letter 'w' to get words instead.
+
+Example: "li 5 w" (produces "Lorem ipsum dolor sit amet.")
+
+
+ACKNOWLEDGEMENTS:
+
+This workflow is entirely dependent on Loripsum.net and can generate no content without the API made freely available by Loripsum.net.  All praise be to Loripsum.net</string>
+	<key>uidata</key>
+	<dict>
+		<key>3159164D-0113-4816-B172-1C61F2F99123</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>565129AA-EC9C-44BF-915B-7FCBDAD014E2</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>B3170ACF-482B-46BD-BFD0-B4917B2F9AE0</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C2B52CFE-5195-4B93-9A3A-5564CE080E37</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

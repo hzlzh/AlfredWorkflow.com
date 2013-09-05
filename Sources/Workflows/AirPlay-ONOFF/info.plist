@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>1.11</string>
+	<key>connections</key>
+	<dict>
+		<key>03B5C7BA-B6A7-4B09-AB2E-5C5C25DF2D47</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5ADC1AF4-93F2-4BE3-8504-0C1F8BC31DAE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2E58201A-FF45-4233-8920-5215CADBAD9F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5ADC1AF4-93F2-4BE3-8504-0C1F8BC31DAE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>46032ED7-2D8C-4011-9395-BE30A035A730</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5ADC1AF4-93F2-4BE3-8504-0C1F8BC31DAE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>87805E39-1D40-4E6D-922A-673FCDB39E86</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5ADC1AF4-93F2-4BE3-8504-0C1F8BC31DAE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C0CD9CBD-9DDB-499A-9C17-F01473FA1520</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CCD91BD2-A064-41B3-9228-5B161A987B8D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CBC176BA-DA26-4EE7-A2D7-3FA2550C255A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CCD91BD2-A064-41B3-9228-5B161A987B8D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DD86497F-8038-4CFB-B5A2-ED2C912A8737</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CCD91BD2-A064-41B3-9228-5B161A987B8D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>MacGeeky</string>
+	<key>description</key>
+	<string>Switch AirPlay Mirroring or AirPlay Audio on or off</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>AirPlay ON/OFF</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>air</string>
+				<key>subtext</key>
+				<string>"on" or "off"</string>
+				<key>text</key>
+				<string>AirPlay on or off</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CBC176BA-DA26-4EE7-A2D7-3FA2550C255A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+ if q is "on" then	set valg to "Apple TV"else if q is "off" then	set valg to 1end iftell application "System Preferences"	set current pane to pane "com.apple.preference.displays"	activateend telltell application "System Events"	tell process "System Preferences"		click pop up button 1 of window 1		click menu item valg of menu 1 of pop up button 1 of window 1	end tellend telltell application "System Preferences"	quitend tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>CCD91BD2-A064-41B3-9228-5B161A987B8D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>off</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>DD86497F-8038-4CFB-B5A2-ED2C912A8737</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>on</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>C0CD9CBD-9DDB-499A-9C17-F01473FA1520</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>audio</string>
+				<key>text</key>
+				<string>Switch Airplay Audio on/off</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>46032ED7-2D8C-4011-9395-BE30A035A730</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>on</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>03B5C7BA-B6A7-4B09-AB2E-5C5C25DF2D47</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)	if q is "on" then		set device to "AirPlay"		tell application "System Preferences"			reveal anchor "output" of pane id "com.apple.preference.sound"		end tell				tell application "System Events" to tell process "System Preferences"			tell table 1 of scroll area 1 of tab group 1 of window 1				select (row 1 where value of text field 2 is device)			end tell		end tell		quit application "System Preferences"	else if q is "off" then		set device to 1		tell application "System Preferences"			reveal anchor "output" of pane id "com.apple.preference.sound"		end tell				tell application "System Events" to tell process "System Preferences"			tell table 1 of scroll area 1 of tab group 1 of window 1				select row device			end tell		end tell		quit application "System Preferences"	else if q is "usb" then		set device to "USB"		tell application "System Preferences"			reveal anchor "output" of pane id "com.apple.preference.sound"		end tell				tell application "System Events" to tell process "System Preferences"			tell table 1 of scroll area 1 of tab group 1 of window 1				select (row 1 where value of text field 2 is device)			end tell		end tell		quit application "System Preferences"(* else if q is "INSERT-KEYWORD" then
+		set device to "INSERT-AUDIO-DEVICE-NAME"
+		tell application "System Preferences"			reveal anchor "output" of pane id "com.apple.preference.sound"		end tell				tell application "System Events" to tell process "System Preferences"			tell table 1 of scroll area 1 of tab group 1 of window 1				select (row 1 where value of text field 1 is device)			end tell		end tell		quit application "System Preferences"
+*)	end if	end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>5ADC1AF4-93F2-4BE3-8504-0C1F8BC31DAE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>off</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>87805E39-1D40-4E6D-922A-673FCDB39E86</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>usb</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>2E58201A-FF45-4233-8920-5215CADBAD9F</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>03B5C7BA-B6A7-4B09-AB2E-5C5C25DF2D47</key>
+		<dict>
+			<key>ypos</key>
+			<real>320</real>
+		</dict>
+		<key>2E58201A-FF45-4233-8920-5215CADBAD9F</key>
+		<dict>
+			<key>ypos</key>
+			<real>560</real>
+		</dict>
+		<key>46032ED7-2D8C-4011-9395-BE30A035A730</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>5ADC1AF4-93F2-4BE3-8504-0C1F8BC31DAE</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>87805E39-1D40-4E6D-922A-673FCDB39E86</key>
+		<dict>
+			<key>ypos</key>
+			<real>440</real>
+		</dict>
+		<key>C0CD9CBD-9DDB-499A-9C17-F01473FA1520</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>CBC176BA-DA26-4EE7-A2D7-3FA2550C255A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>CCD91BD2-A064-41B3-9228-5B161A987B8D</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>DD86497F-8038-4CFB-B5A2-ED2C912A8737</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://twitter.com/macgeeky</string>
+</dict>
+</plist>

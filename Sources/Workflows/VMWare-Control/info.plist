@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.tedwise.vmwarecontrol</string>
+	<key>connections</key>
+	<dict>
+		<key>0816100C-A182-4435-8B39-6C4A5DFBBEBF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A3978DD7-684C-41FC-B198-04B4A55E6F83</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>EA29BB54-3E00-4D42-9A43-7A19BB736D7C</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Action to select VM window</string>
+			</dict>
+		</array>
+		<key>0BE4FF28-1ADD-4CE6-9104-D9AB1CF72C13</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>743CD08E-D07E-4261-9C4E-60697F65F5B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>11A88FF7-59F1-42E5-915B-A53DC541EFFD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>743CD08E-D07E-4261-9C4E-60697F65F5B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>525650A1-3702-4773-9CBA-FC9A72FB9059</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>743CD08E-D07E-4261-9C4E-60697F65F5B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>743CD08E-D07E-4261-9C4E-60697F65F5B8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CF370333-7F97-4544-A99E-A7C5F4F104A3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A3978DD7-684C-41FC-B198-04B4A55E6F83</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F1B9E8F6-9DF2-46E2-840A-9AEA87E45B55</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>09647218-9F2D-4A60-B9FC-58A5E02BFCEE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AEE4F28B-388C-4645-AD4F-62C84404DC66</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F1B9E8F6-9DF2-46E2-840A-9AEA87E45B55</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>09647218-9F2D-4A60-B9FC-58A5E02BFCEE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CD0C1511-7BDE-4D19-B1B5-6269E0E6C0B8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>743CD08E-D07E-4261-9C4E-60697F65F5B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D31C518A-5B7A-4AC1-BAFD-D00BA9AF19D1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>743CD08E-D07E-4261-9C4E-60697F65F5B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D473FC16-9C53-443E-8559-7BEA6EA70B5B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EA29BB54-3E00-4D42-9A43-7A19BB736D7C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E2664F7E-FB35-4820-B90D-BB83DA272FF3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>743CD08E-D07E-4261-9C4E-60697F65F5B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E79FD50F-E920-4E4A-B18C-FE604C5E3F79</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>743CD08E-D07E-4261-9C4E-60697F65F5B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F526A449-A8F4-4732-86F0-DF2DAC4EF0E3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>743CD08E-D07E-4261-9C4E-60697F65F5B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Ted Wise</string>
+	<key>description</key>
+	<string>Control VMWare Fusion instances (1.1)</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>VMWare Control</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vm start</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby main.rb start {query}</string>
+				<key>subtext</key>
+				<string>Start a VM (add nogui to suppress gui)</string>
+				<key>title</key>
+				<string>Start Virtual Machine</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D31C518A-5B7A-4AC1-BAFD-D00BA9AF19D1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vm stop</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby main.rb stop {query}</string>
+				<key>subtext</key>
+				<string>Stop a VM (add hard to force stop)</string>
+				<key>title</key>
+				<string>Stop Virtual Machine</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0BE4FF28-1ADD-4CE6-9104-D9AB1CF72C13</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vm reset</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby main.rb reset {query}</string>
+				<key>subtext</key>
+				<string>Reset a VM (add hard to force stop)</string>
+				<key>title</key>
+				<string>Reset a Virtual Machine</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F526A449-A8F4-4732-86F0-DF2DAC4EF0E3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vm suspend</string>
+				<key>runningsubtext</key>
+				<string>Loading.</string>
+				<key>script</key>
+				<string>ruby main.rb suspend {query}</string>
+				<key>subtext</key>
+				<string>Suspend a VM (add hard to force stop)</string>
+				<key>title</key>
+				<string>Suspend a Virtual Machine</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>11A88FF7-59F1-42E5-915B-A53DC541EFFD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>ruby main.rb run "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>743CD08E-D07E-4261-9C4E-60697F65F5B8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vm pause</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby main.rb pause</string>
+				<key>subtext</key>
+				<string>Pause a VM</string>
+				<key>title</key>
+				<string>Pause a Virtual Machine</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>525650A1-3702-4773-9CBA-FC9A72FB9059</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>VMWare command executed</string>
+				<key>title</key>
+				<string>VMWare</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CF370333-7F97-4544-A99E-A7C5F4F104A3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vm unpause</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby main.rb unpause</string>
+				<key>subtext</key>
+				<string>Unpause a VM</string>
+				<key>title</key>
+				<string>Unpause a Virtual Machine</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E79FD50F-E920-4E4A-B18C-FE604C5E3F79</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>vm snapshot</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby main.rb snapshot "{query}"</string>
+				<key>subtext</key>
+				<string>Snapshot a VM (a title is required)</string>
+				<key>title</key>
+				<string>Snapshot a Virtual Machine</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E2664F7E-FB35-4820-B90D-BB83DA272FF3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>vm revert</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby main.rb revert "{query}"</string>
+				<key>subtext</key>
+				<string>Revert to a snapshot of a VM (a title is required)</string>
+				<key>title</key>
+				<string>Revert to snapshot of a Virtual Machine</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CD0C1511-7BDE-4D19-B1B5-6269E0E6C0B8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vm ip</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby main.rb ip</string>
+				<key>subtext</key>
+				<string>List all VM IP addresses for running VMs</string>
+				<key>title</key>
+				<string>List Virtual Machine IP Addresses</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>AEE4F28B-388C-4645-AD4F-62C84404DC66</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>F1B9E8F6-9DF2-46E2-840A-9AEA87E45B55</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>puts "{query}".chomp.split("|||")[1]</string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A3978DD7-684C-41FC-B198-04B4A55E6F83</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Copied to clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>09647218-9F2D-4A60-B9FC-58A5E02BFCEE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vm list</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby main.rb list</string>
+				<key>subtext</key>
+				<string>List all VMs and their status</string>
+				<key>title</key>
+				<string>List Virtual Machines</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0816100C-A182-4435-8B39-6C4A5DFBBEBF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vm switch</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby main.rb switch</string>
+				<key>subtext</key>
+				<string>List all running VMs to activate</string>
+				<key>title</key>
+				<string>Open Virtual Machine Window</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D473FC16-9C53-443E-8559-7BEA6EA70B5B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>line = "{query}"
+name = line.chomp.split("|||")[0]
+`osascript activate_window.scpt "#{name}"`</string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>EA29BB54-3E00-4D42-9A43-7A19BB736D7C</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>The following commands are available:
+ 
+vm list - Provides a list of VM's and their status (running or stopped). Choosing one copies the path to the vmx file to the clipboard.
+vm ip - Provides a list of running VM's and their IP addresses. Choosing one copies the IP address to the clipboard.
+vm start [nogui] - List the VM's that are currently stopped so you can start them. Optionally, if you add 'nogui' it will start them without showing the VMWare window.
+vm stop [hard] / vm suspend [hard] / vm reset [hard] - List the VM's that are currently running so you can stop, suspend or reset them. Optionally, if you add 'hard' it will force the action.
+vm pause / vm unpause - Get a list of VM's that are currently running so you can pause or unpause them. A paused VM counts as running.
+vm snapshot &lt;name&gt; - Get a list of VM's that are currently running so you can create a named snapshot of a VM's current state. The snapshot name is not optional.
+vm revert &lt;name&gt; - Get a list of VM's that are currently running so that you can revert one to a named snapshot. The snapshot name is not optional.</string>
+	<key>uidata</key>
+	<dict>
+		<key>0816100C-A182-4435-8B39-6C4A5DFBBEBF</key>
+		<dict>
+			<key>ypos</key>
+			<real>1090</real>
+		</dict>
+		<key>09647218-9F2D-4A60-B9FC-58A5E02BFCEE</key>
+		<dict>
+			<key>ypos</key>
+			<real>1090</real>
+		</dict>
+		<key>0BE4FF28-1ADD-4CE6-9104-D9AB1CF72C13</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>11A88FF7-59F1-42E5-915B-A53DC541EFFD</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>525650A1-3702-4773-9CBA-FC9A72FB9059</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>743CD08E-D07E-4261-9C4E-60697F65F5B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>A3978DD7-684C-41FC-B198-04B4A55E6F83</key>
+		<dict>
+			<key>ypos</key>
+			<real>1090</real>
+		</dict>
+		<key>AEE4F28B-388C-4645-AD4F-62C84404DC66</key>
+		<dict>
+			<key>ypos</key>
+			<real>970</real>
+		</dict>
+		<key>CD0C1511-7BDE-4D19-B1B5-6269E0E6C0B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>CF370333-7F97-4544-A99E-A7C5F4F104A3</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>D31C518A-5B7A-4AC1-BAFD-D00BA9AF19D1</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D473FC16-9C53-443E-8559-7BEA6EA70B5B</key>
+		<dict>
+			<key>ypos</key>
+			<real>1210</real>
+		</dict>
+		<key>E2664F7E-FB35-4820-B90D-BB83DA272FF3</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>E79FD50F-E920-4E4A-B18C-FE604C5E3F79</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>EA29BB54-3E00-4D42-9A43-7A19BB736D7C</key>
+		<dict>
+			<key>ypos</key>
+			<real>1210</real>
+		</dict>
+		<key>F1B9E8F6-9DF2-46E2-840A-9AEA87E45B55</key>
+		<dict>
+			<key>ypos</key>
+			<real>970</real>
+		</dict>
+		<key>F526A449-A8F4-4732-86F0-DF2DAC4EF0E3</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://tedwise.com</string>
+</dict>
+</plist>

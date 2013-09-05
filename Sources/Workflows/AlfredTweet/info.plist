@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>jdfwarrior.alfredtweet</string>
+	<key>connections</key>
+	<dict>
+		<key>091D8EAB-A478-4E23-93D0-FC0A6A367EC6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E9F692A9-D81B-472C-8272-CF859489CE2B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>1511D264-EC55-442C-9481-25F1FE31E548</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6B05C998-7459-4505-A806-00E5E337AEED</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>1F92B38B-3C7B-48F8-BE02-7EC7A65800A4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9D10F1E4-AAAF-461A-9455-AE8EE1BA26A8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>22F4B251-2B17-4E29-9BAE-24912A747341</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>652D258A-8639-418B-9DE1-FF898EFA1184</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>31892C07-204C-4748-BC65-671EFA940B43</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7FC1D3A8-6AF6-4351-AC13-26B62797F7B7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F6BD633B-BCE2-44DD-806A-7BF1F75D155D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>319B88C0-437E-49BF-A6BB-07C5A65D4B6A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F39D251-8B69-46EC-862B-6E7E10E94A8A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3256C393-3513-485A-BF1C-8C054777DED5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9E453443-969F-41E3-8D6C-4A48D3994D59</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3CE68138-E606-4C6D-9BFA-6213853A5CCD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3256C393-3513-485A-BF1C-8C054777DED5</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Delete list</string>
+			</dict>
+		</array>
+		<key>4278AA92-6A43-4D5B-99EA-5D5F55DEF40F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FFBFB0DE-6C7E-4396-930B-A2C18772A733</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>44B9E14F-64F7-4395-958B-4D1702142C48</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6DCB10E3-7E90-44E9-A4E5-88C6795FB4CA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5D7C8EF6-2EB4-494B-8CB8-267BFBBFE350</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8D22D07-AF6D-4FEA-A368-735BB504252F</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Tweet the current track</string>
+			</dict>
+		</array>
+		<key>652D258A-8639-418B-9DE1-FF898EFA1184</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6B579188-7287-4A90-AD9F-7775B2616B17</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6DCB10E3-7E90-44E9-A4E5-88C6795FB4CA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8410728A-44F9-43AC-B71D-D4DDF55230BD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6F39D251-8B69-46EC-862B-6E7E10E94A8A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A4E28E4F-2596-421F-AC19-7F0CC67ADC25</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8C192C65-5570-4CB1-A6E6-BCDE2178DEA7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DB9B08FA-A36C-4ACA-B0A8-FD3088E6906D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9A555992-F78F-4609-B6B3-6FE99C79F4BA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C6C7DF43-0DA2-4449-8CBA-AC6B0B1C0C9B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9D10F1E4-AAAF-461A-9455-AE8EE1BA26A8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C00BA9FA-4A76-494C-B413-E72D954E525D</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Press enter to update your status</string>
+			</dict>
+		</array>
+		<key>A5FACA42-6917-4441-B19C-11129A0B9121</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8C192C65-5570-4CB1-A6E6-BCDE2178DEA7</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Send Direct Message</string>
+			</dict>
+		</array>
+		<key>AF0C5C4C-0C69-483E-AFC1-4CF2DB8142C9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F9D894DA-CE4D-42BC-A2F6-707806165515</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B8D22D07-AF6D-4FEA-A368-735BB504252F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BD0390A4-3B1E-4DC1-BC83-989AC5C0E671</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C00BA9FA-4A76-494C-B413-E72D954E525D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6265830F-E2A6-4983-B256-3A8626D41572</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E9F692A9-D81B-472C-8272-CF859489CE2B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>741417ED-7A82-4F4D-987D-74E83158E54C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F6BD633B-BCE2-44DD-806A-7BF1F75D155D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>61CCD6DD-0B4D-4267-82E4-C96898D6CB92</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F797D8FB-D006-404A-BC26-0B706B957468</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9A555992-F78F-4609-B6B3-6FE99C79F4BA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FFBFB0DE-6C7E-4396-930B-A2C18772A733</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>793D403F-383D-4D5A-B72B-D0CF84CBC41F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>David Ferguson</string>
+	<key>description</key>
+	<string>Tweeting from Alfred like never before!</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>AlfredTweet</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>require_once('alfredtweet.php');
+$alfredtweet = new AlfredTweet();
+$alfredtweet-&gt;unblock({query});</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9A555992-F78F-4609-B6B3-6FE99C79F4BA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Finished Building Database.</string>
+				<key>title</key>
+				<string>AlfredTweet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>61CCD6DD-0B4D-4267-82E4-C96898D6CB92</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>unfollow</string>
+				<key>subtext</key>
+				<string>Unfollow user on Twitter</string>
+				<key>text</key>
+				<string>Unfollow User</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>22F4B251-2B17-4E29-9BAE-24912A747341</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>require_once('alfredtweet.php');
+$twitter = new AlfredTweet();
+$twitter-&gt;unfollow({query});
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>652D258A-8639-418B-9DE1-FF898EFA1184</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>tweet</string>
+				<key>script</key>
+				<string>php -f counter.php -- "{query}"</string>
+				<key>subtext</key>
+				<string>Post an update to your twitter timeline</string>
+				<key>title</key>
+				<string>Send Tweet</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9D10F1E4-AAAF-461A-9455-AE8EE1BA26A8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>AlfredTweet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>793D403F-383D-4D5A-B72B-D0CF84CBC41F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>mentions</string>
+				<key>runningsubtext</key>
+				<string>Fetching Twitter mentions …</string>
+				<key>script</key>
+				<string>require_once('alfredtweet.php');
+require_once('workflows.php');
+
+$at = new AlfredTweet();
+$w  = new Workflows();
+
+$mentions = $at-&gt;mentions();
+$username = $at-&gt;whoami();
+
+foreach( $mentions as $mention ):
+	$users = array();
+	foreach( $mention-&gt;entities-&gt;user_mentions as $user ):
+		if ( $user-&gt;screen_name != $username ):
+			array_push( $users, '@'.$user-&gt;screen_name );
+		endif;
+	endforeach;
+	array_push( $users, '@'.$mention-&gt;user-&gt;screen_name );
+	$users = implode( " ", $users );
+	$uid = exec( 'uuidgen' );
+	$w-&gt;result( 'alfredtweet.'.$uid, $users.' ', $mention-&gt;user-&gt;screen_name, $mention-&gt;text, 'icon.png' );
+endforeach;
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>View your last 10 Twitter mentions</string>
+				<key>title</key>
+				<string>Twitter Mentions</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>AF0C5C4C-0C69-483E-AFC1-4CF2DB8142C9</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>require('workflows.php');
+require('alfredtweet.php');
+require('sqlitedb.php');
+
+$w = new Workflows();
+$at = new AlfredTweet();
+$db = new SQLiteDB('autocomplete.db');
+
+$table = array(
+	'handle' =&gt; 'text PRIMARY KEY'
+);
+
+$db-&gt;create_table( $table, 'users' );
+$db-&gt;truncate( 'users' );
+
+$temp = $at-&gt;friends();
+$friends = array();
+foreach( $temp-&gt;ids as $friend ):
+	array_push( $friends, $friend );
+endforeach;
+
+$temp = $at-&gt;followers();
+$followers = array();
+foreach( $temp-&gt;ids as $follower ):
+	array_push( $followers, $follower );
+endforeach;
+
+$friends = array_chunk( $friends, 100 );
+$followers = array_chunk( $followers, 100 );
+
+foreach( $friends as $set ):
+	$list = implode( ',', $set );
+	$lump = $at-&gt;lookup( $list );
+	foreach( $lump as $user ):
+		$user = array(
+			'handle' =&gt; $user-&gt;screen_name
+		);
+		$db-&gt;insert( $user, 'users' );
+	endforeach;
+endforeach;
+
+foreach( $followers as $set ):
+	$list = implode( ',', $set );
+	$lump = $at-&gt;lookup( $list );
+	foreach( $lump as $user ):
+		$user = array(
+			'handle' =&gt; $user-&gt;screen_name
+		);
+		$db-&gt;insert( $user, 'users' );
+	endforeach;
+endforeach;</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F6BD633B-BCE2-44DD-806A-7BF1F75D155D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>search</string>
+				<key>runningsubtext</key>
+				<string>Searching Twitter</string>
+				<key>script</key>
+				<string>require('workflows.php');
+require('alfredtweet.php');
+$w = new Workflows();
+$at = new AlfredTweet();
+
+$in = "{query}";
+if ( strlen( $in ) &gt; 3 ):
+	$results = $at-&gt;search( $in );
+	if ( count( $results ) == 0 ):
+		$w-&gt;result( 'na', 'na', 'No search results found', 'Unable to find tweets matching your query', 'icon.png', 'no' );
+	else:
+		foreach( $results-&gt;statuses as $result ):
+			$w-&gt;result( $result-&gt;id, 'http://twitter.com/alfredtweet/status/'.$result-&gt;id_str, $result-&gt;user-&gt;screen_name, $result-&gt;text, 'icon.png', 'yes' );
+		endforeach;
+	endif;
+endif;
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Seach Twitter for matching Tweets</string>
+				<key>title</key>
+				<string>Search Twitter</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1511D264-EC55-442C-9481-25F1FE31E548</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>AlfredTweet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6265830F-E2A6-4983-B256-3A8626D41572</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>AlfredTweet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8410728A-44F9-43AC-B71D-D4DDF55230BD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>block</string>
+				<key>subtext</key>
+				<string>Block user on Twitter</string>
+				<key>text</key>
+				<string>Block User</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4278AA92-6A43-4D5B-99EA-5D5F55DEF40F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>AlfredTweet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9E453443-969F-41E3-8D6C-4A48D3994D59</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>AlfredTweet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>DB9B08FA-A36C-4ACA-B0A8-FD3088E6906D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Building database. This may take a minute.</string>
+				<key>title</key>
+				<string>AlfredTweet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>7FC1D3A8-6AF6-4351-AC13-26B62797F7B7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>follow</string>
+				<key>subtext</key>
+				<string>Begin following user on Twitter</string>
+				<key>text</key>
+				<string>Follow User</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>44B9E14F-64F7-4395-958B-4D1702142C48</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>require('alfredtweet.php');
+require('sqlitedb.php');
+
+$text = "{query}";
+
+$db = new SQLiteDB( 'autocomplete.db' );
+
+$table = array( 'handle' =&gt; 'text PRIMARY KEY' );
+$db-&gt;create_table( $table, 'users' );
+
+preg_match_all( '/@[a-zA-Z0-9]{1,}/', $text, $usernames );
+
+foreach( $usernames[0] as $user ):
+	$user = array( 'handle' =&gt; str_replace( '@', '', $user ) );
+	$db-&gt;insert( $user, 'users' );
+endforeach;
+
+$alfredtweet = new AlfredTweet();
+$alfredtweet-&gt;tweet( $text );</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C00BA9FA-4A76-494C-B413-E72D954E525D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>require('alfredtweet.php');
+$at = new AlfredTweet();
+
+$in = {query};
+$at-&gt;destroylist( $in );</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3256C393-3513-485A-BF1C-8C054777DED5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>autocomplete</string>
+				<key>subtext</key>
+				<string>Populate auto complete database with friends and followers</string>
+				<key>text</key>
+				<string>Build Auto Complete Database</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>31892C07-204C-4748-BC65-671EFA940B43</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>php -f setup.php -- "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6F39D251-8B69-46EC-862B-6E7E10E94A8A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>list</string>
+				<key>subtext</key>
+				<string>Create a new Twitter List</string>
+				<key>text</key>
+				<string>Create New List</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>091D8EAB-A478-4E23-93D0-FC0A6A367EC6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>require('workflows.php');
+require('alfredtweet.php');
+$w = new Workflows();
+$at = new AlfredTweet();
+
+$in = "{query}";
+$in = explode( ' ', $in );
+$message = implode( ' ', array_slice( $in, 1 ) );
+$user = substr( $in[0], 1 );
+
+$at-&gt;dm( $user, $message );</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8C192C65-5570-4CB1-A6E6-BCDE2178DEA7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>AlfredTweet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6B579188-7287-4A90-AD9F-7775B2616B17</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>require_once('alfredtweet.php');
+$alfredtweet = new AlfredTweet();
+$alfredtweet-&gt;block({query});</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FFBFB0DE-6C7E-4396-930B-A2C18772A733</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>AlfredTweet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C6C7DF43-0DA2-4449-8CBA-AC6B0B1C0C9B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>alfredtweet</string>
+				<key>subtext</key>
+				<string>Sign into Twitter and authenticate for AlfredTweet</string>
+				<key>text</key>
+				<string>Setup AlfredTweet</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>319B88C0-437E-49BF-A6BB-07C5A65D4B6A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>require_once('alfredtweet.php');
+$twitter = new AlfredTweet();
+$twitter-&gt;follow({query});
+</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6DCB10E3-7E90-44E9-A4E5-88C6795FB4CA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>dm</string>
+				<key>script</key>
+				<string>require('workflows.php');
+require('sqlitedb.php');
+$w = new Workflows();
+$db = new SQLiteDB( 'autocomplete.db' );
+
+$table = array( 'handle' =&gt; 'text PRIMARY KEY' );
+$db-&gt;create_table( $table, 'users' );
+
+$in = "{query}";
+$in = explode( " ", $in );
+$temp = $in;
+$user = $temp[0];
+if ( isset( $temp[1] ) ):
+	$message = array_slice( $temp, 1 );
+	$message = implode( ' ', $message );
+else:
+	$message = '';
+endif; 
+if ( isset( $user ) &amp;&amp; isset( $message ) &amp;&amp; $message != '' ):
+	$w-&gt;result( 'dm', $user.' '.$message.' ', 'Send Direcet Message', 'Send '.$message. ' to '.$user, 'icon.png' );
+else:
+	$w-&gt;result( 'dm', '', 'Send Direcet Message', 'Send '.$message. ' to '.$user, 'icon.png', 'no' );
+endif;
+
+if ( count( $in ) == 1 ):
+	if ( preg_match( '^@[a-zA-Z0-9-_]{2,}^' , $in[0] ) ):
+		$search = substr( $in[0], 1 );
+		$matches = $db-&gt;select('*')-&gt;from('users')-&gt;like( 'handle', $search )-&gt;get();
+		foreach( $matches as $match ):
+			$w-&gt;result('autoc', '@'.$match-&gt;handle, $match-&gt;handle, '', 'icon.png', 'no', '@'.$match-&gt;handle.' ' );
+		endforeach;
+	endif;
+endif;
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Send a direct message to a user</string>
+				<key>title</key>
+				<string>Send Direct Message</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A5FACA42-6917-4441-B19C-11129A0B9121</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>require('workflows.php');
+require('alfredtweet.php');
+$w = new Workflows();
+$at = new AlfredTweet();
+
+$in = "{query}";
+$create = $at-&gt;createlist( $in );</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E9F692A9-D81B-472C-8272-CF859489CE2B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>1F92B38B-3C7B-48F8-BE02-7EC7A65800A4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>playing</string>
+				<key>script</key>
+				<string>php -f playing.php</string>
+				<key>subtext</key>
+				<string>Tweet your currently playing track</string>
+				<key>title</key>
+				<string>Tweet Now Playing</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5D7C8EF6-2EB4-494B-8CB8-267BFBBFE350</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>AlfredTweet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A4E28E4F-2596-421F-AC19-7F0CC67ADC25</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>require_once('alfredtweet.php');
+$alfredtweet = new AlfredTweet();
+$alfredtweet-&gt;tweet("{query}");</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B8D22D07-AF6D-4FEA-A368-735BB504252F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>6B05C998-7459-4505-A806-00E5E337AEED</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>lists</string>
+				<key>runningsubtext</key>
+				<string>Fetching your lists</string>
+				<key>script</key>
+				<string>require('workflows.php');
+require('alfredtweet.php');
+$w = new Workflows();
+$at = new AlfredTweet();
+
+$lists = $at-&gt;lists();
+foreach( $lists as $list ):
+	$description = $list-&gt;member_count. ' members / '.$list-&gt;subscriber_count.' subscribers. Cmd+Enter to delete list.';
+	$w-&gt;result( $list-&gt;slug, $list-&gt;id, $list-&gt;name, $description, 'icon.png' );
+endforeach;
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>View and manage your Twitter lists</string>
+				<key>title</key>
+				<string>View Your Twitter Lists</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3CE68138-E606-4C6D-9BFA-6213853A5CCD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "Alfred 2" to search "tweet " &amp; q
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F9D894DA-CE4D-42BC-A2F6-707806165515</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>AlfredTweet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>BD0390A4-3B1E-4DC1-BC83-989AC5C0E671</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>AlfredTweet</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>741417ED-7A82-4F4D-987D-74E83158E54C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>unblock</string>
+				<key>subtext</key>
+				<string>Unblock user on Twitter</string>
+				<key>text</key>
+				<string>Unblock User</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F797D8FB-D006-404A-BC26-0B706B957468</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>091D8EAB-A478-4E23-93D0-FC0A6A367EC6</key>
+		<dict>
+			<key>ypos</key>
+			<real>1330</real>
+		</dict>
+		<key>1511D264-EC55-442C-9481-25F1FE31E548</key>
+		<dict>
+			<key>ypos</key>
+			<real>1570</real>
+		</dict>
+		<key>1F92B38B-3C7B-48F8-BE02-7EC7A65800A4</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>22F4B251-2B17-4E29-9BAE-24912A747341</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>31892C07-204C-4748-BC65-671EFA940B43</key>
+		<dict>
+			<key>ypos</key>
+			<real>970</real>
+		</dict>
+		<key>319B88C0-437E-49BF-A6BB-07C5A65D4B6A</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>3256C393-3513-485A-BF1C-8C054777DED5</key>
+		<dict>
+			<key>ypos</key>
+			<real>1210</real>
+		</dict>
+		<key>3CE68138-E606-4C6D-9BFA-6213853A5CCD</key>
+		<dict>
+			<key>ypos</key>
+			<real>1210</real>
+		</dict>
+		<key>4278AA92-6A43-4D5B-99EA-5D5F55DEF40F</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>44B9E14F-64F7-4395-958B-4D1702142C48</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>5D7C8EF6-2EB4-494B-8CB8-267BFBBFE350</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>61CCD6DD-0B4D-4267-82E4-C96898D6CB92</key>
+		<dict>
+			<key>ypos</key>
+			<real>1090</real>
+		</dict>
+		<key>6265830F-E2A6-4983-B256-3A8626D41572</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>652D258A-8639-418B-9DE1-FF898EFA1184</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>6B05C998-7459-4505-A806-00E5E337AEED</key>
+		<dict>
+			<key>ypos</key>
+			<real>1570</real>
+		</dict>
+		<key>6B579188-7287-4A90-AD9F-7775B2616B17</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>6DCB10E3-7E90-44E9-A4E5-88C6795FB4CA</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>6F39D251-8B69-46EC-862B-6E7E10E94A8A</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>741417ED-7A82-4F4D-987D-74E83158E54C</key>
+		<dict>
+			<key>ypos</key>
+			<real>1330</real>
+		</dict>
+		<key>793D403F-383D-4D5A-B72B-D0CF84CBC41F</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>7FC1D3A8-6AF6-4351-AC13-26B62797F7B7</key>
+		<dict>
+			<key>ypos</key>
+			<real>970</real>
+		</dict>
+		<key>8410728A-44F9-43AC-B71D-D4DDF55230BD</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8C192C65-5570-4CB1-A6E6-BCDE2178DEA7</key>
+		<dict>
+			<key>ypos</key>
+			<real>1450</real>
+		</dict>
+		<key>9A555992-F78F-4609-B6B3-6FE99C79F4BA</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>9D10F1E4-AAAF-461A-9455-AE8EE1BA26A8</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>9E453443-969F-41E3-8D6C-4A48D3994D59</key>
+		<dict>
+			<key>ypos</key>
+			<real>1210</real>
+		</dict>
+		<key>A4E28E4F-2596-421F-AC19-7F0CC67ADC25</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>A5FACA42-6917-4441-B19C-11129A0B9121</key>
+		<dict>
+			<key>ypos</key>
+			<real>1450</real>
+		</dict>
+		<key>AF0C5C4C-0C69-483E-AFC1-4CF2DB8142C9</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>B8D22D07-AF6D-4FEA-A368-735BB504252F</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>BD0390A4-3B1E-4DC1-BC83-989AC5C0E671</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>C00BA9FA-4A76-494C-B413-E72D954E525D</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>C6C7DF43-0DA2-4449-8CBA-AC6B0B1C0C9B</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>DB9B08FA-A36C-4ACA-B0A8-FD3088E6906D</key>
+		<dict>
+			<key>ypos</key>
+			<real>1450</real>
+		</dict>
+		<key>E9F692A9-D81B-472C-8272-CF859489CE2B</key>
+		<dict>
+			<key>ypos</key>
+			<real>1330</real>
+		</dict>
+		<key>F6BD633B-BCE2-44DD-806A-7BF1F75D155D</key>
+		<dict>
+			<key>ypos</key>
+			<real>1090</real>
+		</dict>
+		<key>F797D8FB-D006-404A-BC26-0B706B957468</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>F9D894DA-CE4D-42BC-A2F6-707806165515</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>FFBFB0DE-6C7E-4396-930B-A2C18772A733</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>jdfwarrior.tumblr.com</string>
+</dict>
+</plist>

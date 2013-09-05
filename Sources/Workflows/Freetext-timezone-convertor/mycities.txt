@@ -1,0 +1,39 @@
+# list of convenience mappings
+# feel free to add here
+# make sure you keep the convenience:timezone mapping
+# to see the list of valid timezones, see TZ column of http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# No spaces allowed in convenience names 
+#
+#  - /arc
+
+est			:EST5EDT
+et			:EST5EDT
+maryland	:America/New_York
+md			:America/New_York
+ca			:PST8PDT
+california	:PST8PDT
+sanjose		:PST8PDT
+sjc			:PST8PDT
+pacific		:PST8PDT
+finland		:Europe/Helsinki
+oulu		:Europe/Helsinki
+paris		:Europe/Paris
+ist			:Asia/Kolkata
+india		:Asia/Kolkata
+delhi		:Asia/Kolkata
+stockholm	:Europe/Stockholm
+amsterdam	:Europe/Amsterdam
+malaysia	:Asia/Kuala_Lumpur
+uk			:Europe/London
+london		:Europe/London
+singapore	:Asia/Singapore
+japan		:Asia/Tokyo
+germany		:Europe/Berlin
+central		:CST6CDT
+tx			:CST6CDT
+texas		:CST6CDT
+mountain	:MST7MDT
+gmt			:Europe/London
+china		:Asia/Hong_Kong
+shanghai	:Asia/Hong_Kong
+

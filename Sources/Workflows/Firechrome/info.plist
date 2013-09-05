@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>de.leenno.firechrome</string>
 	<key>connections</key>
 	<dict>
 		<key>33510AEF-70C4-4B37-B9A4-1E9D382DCA4D</key>

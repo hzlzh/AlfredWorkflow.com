@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>me.chenglei.smzdm</string>
+	<key>connections</key>
+	<dict>
+		<key>31F0E18F-873C-4133-B462-3A2B9E7F6CFB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>908C3AE6-E7D7-41A6-9034-65930D488BB8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>dlutcat</string>
+	<key>description</key>
+	<string>查看什么值得买（www.smzdm.com）上的最新优惠信息。</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>smzdm</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>zdm</string>
+				<key>runningsubtext</key>
+				<string>Fetching…</string>
+				<key>script</key>
+				<string>from zdm import get_items
+
+uri = 'http://feed.smzdm.com/'
+print(get_items(uri))</string>
+				<key>subtext</key>
+				<string>获取smzdm最新优惠</string>
+				<key>title</key>
+				<string>smzdm</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>31F0E18F-873C-4133-B462-3A2B9E7F6CFB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>908C3AE6-E7D7-41A6-9034-65930D488BB8</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>31F0E18F-873C-4133-B462-3A2B9E7F6CFB</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>908C3AE6-E7D7-41A6-9034-65930D488BB8</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://chenglei.me</string>
+</dict>
+</plist>

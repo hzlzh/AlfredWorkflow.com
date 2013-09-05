@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>rodgerw.AboutThisMac.v1</string>
+	<key>connections</key>
+	<dict>
+		<key>0D105A45-360A-4581-A8D6-A85316050009</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4F71E8EF-685C-4848-93B6-4335F4BBF707</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open Apple Support Site for This Hardware</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>87DFBB43-164A-40D3-8220-2044EF339F61</string>
+				<key>modifiers</key>
+				<integer>8388608</integer>
+				<key>modifiersubtext</key>
+				<string>Copy to clipboard</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2C38DAC5-0D1C-42D6-A0B5-0BB78388E88A</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Paste to front most app</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>85759AC0-0F71-426E-92A2-22B35960118F</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open Apple Specifications Site for This Hardware</string>
+			</dict>
+		</array>
+		<key>4F71E8EF-685C-4848-93B6-4335F4BBF707</key>
+		<array/>
+		<key>B06C48AE-704C-47F9-99AB-0E0A18A98A47</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F224FB67-14BD-4BC9-99DA-38B57C9C31AC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F224FB67-14BD-4BC9-99DA-38B57C9C31AC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>66C4C781-1A3A-49D0-9DD5-5CF4D1476F07</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Rodger W</string>
+	<key>description</key>
+	<string>Shows "About This Mac" info in Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>About This Mac</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string># This will take you to the product support website for your hardware
+
+INJECT=$(cat mymac.txt | awk 'NR==2')
+open "http://support-sp.apple.com/sp/index?page=psp&amp;cc=$INJECT"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4F71E8EF-685C-4848-93B6-4335F4BBF707</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>87DFBB43-164A-40D3-8220-2044EF339F61</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>about</string>
+				<key>runningsubtext</key>
+				<string>Retrieving &amp; Parsing...</string>
+				<key>script</key>
+				<string># Generate parsing files of system information if they do not already exist
+#
+function writefiles {
+system_profiler SPHardwareDataType &gt; hardware.txt
+system_profiler SPMemoryDataType &gt; memory.txt
+system_profiler SPSoftwareDataType &gt; software.txt
+system_profiler SPDisplaysDataType &gt; graphics.txt
+defaults read ~/Library/Preferences/com.apple.SystemProfiler.plist | awk '/CPU Names/{getline;print}' | awk '{$1=$2=""; print $0}' | sed -e 's/"//g' -e 's/);//g' -e 's/(//g' | sed 's/^ *//' &gt; mymac.txt
+defaults read ~/Library/Preferences/com.apple.SystemProfiler.plist | awk '/CPU Names/{getline;print}' | awk '{print $1}' | sed -e 's/"//g' -e 's/-.*//' &gt;&gt; mymac.txt
+
+IDENTIFIER=$(cat hardware.txt | grep 'Model Identifier' | awk '{print $NF}')
+HWICONPATH=$(cat HardwareIcons.xml | grep $IDENTIFIER | awk '{print $2}')
+HWICON=$(sips -Z 64 -s format png $HWICONPATH --out mymac.png)
+}
+
+if [ ! -f *.txt ] ; then
+writefiles
+fi
+
+
+# Using multiple computers with one profile directory
+#
+CHECKSERIAL=$(system_profiler SPHardwareDataType | awk '/Serial Number/ {print $NF}')
+SERIALTEXT=$(cat hardware.txt | awk '/Serial Number/ {print $NF}')
+
+if [ "$CHECKSERIAL" != "$SERIALTEXT" ];then
+writefiles
+fi
+
+
+# Grab hardware icon based on model identifier
+#
+MYMACICON=mymac.png
+
+
+# HARDWARE parsing
+#
+SYSTEM_SERIAL=$(cat hardware.txt | awk '/Serial Number/ {print $NF}')
+PROC_SPEED=$(cat hardware.txt | awk '/Processor Speed/ {print substr($0, index($0,$3))}')
+PROC_NAME=$(cat hardware.txt | awk '/Processor Name/ {print substr($0, index($0,$3))}')
+IDENTIFIER=$(cat hardware.txt | awk '/Model Identifier/ {print $NF}')
+
+# MEMORY parsing
+#
+SYS_MEM=$(cat memory.txt | grep 'Size' | awk '{SUM += $2} END {print SUM,$3}' | tail -1)
+MEM_SPEED=$(cat memory.txt | awk '/Speed/ {print substr($0, index($0,$2))}' | head -1)
+#MEM_TYPE=$(cat memory.txt | awk '/Type/ {print $NF}' | head -1)
+MEM_TYPE=$(cat memory.txt | awk '/Type/ {print substr($0, index($0,$2))}' | head -1)
+
+
+# SOFTWARE parsing
+#
+VERSION=$(cat software.txt | awk '/System Version/ {print substr($0, index($0,$3))}')
+
+
+# For Time Since Boot we run a command each time the workflow runs to get the correct time.
+#
+THEN=$(sysctl kern.boottime | awk '{print $5}' | sed "s/,//")
+NOW=$(date +%s)
+DIFF=$(($NOW-$THEN))
+
+DAYS=$(($DIFF/86400));
+DIFF=$(($DIFF-($DAYS*86400)))
+HOURS=$(($DIFF/3600))
+DIFF=$(($DIFF-($HOURS*3600)))
+MINUTES=$(($DIFF/60))
+
+function format {
+if [ $1 == 1 ]; then
+	echo $1 ' ' $2
+elif [ $1 == 0 ]; then
+	echo ''
+else
+	echo $1 ' ' $2's'
+fi
+}
+
+UPTIME=$(echo `format $DAYS "day"` `format $HOURS "hour"` `format $MINUTES "minute"` | sed 's/^ *//')
+
+
+# GRAPHICS parsing
+#
+GFXSUB1=
+	NUMGFX=$(cat graphics.txt SPDisplaysDataType | grep 'Bus' | awk '{print NR}' | tail -1)
+	if [ $NUMGFX == 1 ]; then
+		GFXSUB1=$(cat graphics.txt | grep 'Resolution:' | awk 'NR==1 {print $1,$2,$3,$4}')
+	else
+		GFXSUB1="Onboard Graphics"
+	fi
+
+GFXSUB2=
+	NUMGFX=$(cat graphics.txt SPDisplaysDataType | grep 'Bus' | awk '{print NR}' | tail -1)
+	if [ $NUMGFX == 2 ]; then
+	GFXSUB2=$(cat graphics.txt | grep 'Resolution:' | awk 'NR==1 {print $1,$2,$3,$4}')
+	else
+	GFXSUB2=
+	fi
+
+GRAPHICS1_CHIPSET=$(cat graphics.txt | grep 'Chipset Model' | awk 'NR==1 {print substr($0, index($0,$3))}')
+GRAPHICS1_VRAM=$(cat graphics.txt | grep 'VRAM (Total)' | awk 'NR==1 {print substr($0, index($0,$3))}' | sed 's/^/ /')
+GRAPHICS2_CHIPSET=$(cat graphics.txt | grep 'Chipset Model' | awk 'NR==2 {print substr($0, index($0,$3))}')
+GRAPHICS2_VRAM=$(cat graphics.txt | grep 'VRAM (Total)' | awk 'NR==2 {print substr($0, index($0,$3))}' | sed 's/^/ /')
+
+GRAPHICS_ICON1=
+	GFXVENDOR1=$(cat graphics.txt | grep 'Vendor' | awk 'NR==1 {print $2}')
+	if [ $GFXVENDOR1 == ATI ]; then
+	GRAPHICS_ICON1=graphicsati.png
+	fi
+	GFXVENDOR2=$(cat graphics.txt | grep 'Vendor' | awk 'NR==1 {print $2}')
+	if [ $GFXVENDOR1 == Intel ]; then
+	GRAPHICS_ICON1=graphicsintelhd.png
+	fi
+	GFXVENDOR3=$(cat graphics.txt | grep 'Vendor' | awk 'NR==1 {print $2}')
+	if [ $GFXVENDOR1 == NVIDIA ]; then
+	GRAPHICS_ICON1=graphicsnvidia.png
+	fi
+
+GRAPHICS_ICON2=
+	GFXVENDOR2=$(cat graphics.txt | grep 'Vendor' | awk 'NR==2 {print $2}')
+	if [ $GFXVENDOR2 == ATI ]; then
+	GRAPHICS_ICON2=graphicsati.png
+	fi
+	GFXVENDOR2=$(cat graphics.txt | grep 'Vendor' | awk 'NR==2 {print $2}')
+	if [ $GFXVENDOR2 == Intel ]; then
+	GRAPHICS_ICON2=graphicsintelhd.png
+	fi
+	GFXVENDOR3=$(cat graphics.txt | grep 'Vendor' | awk 'NR==2 {print $2}')
+	if [ $GFXVENDOR2 == NVIDIA ]; then
+	GRAPHICS_ICON2=graphicsnvidia.png
+	fi
+
+
+# Get Human Readable "System"
+#
+MACHINE=$(cat mymac.txt | awk 'NR==1')
+
+
+# Get OS version and display correct icon
+#
+OSICON=
+SWVER=$(sw_vers -productVersion | awk '{print substr($1,1,4)}')
+if [ $SWVER == 10.6 ]; then
+OSICON=SnowLeopard.png
+elif [ $SWVER == 10.7 ]; then
+OSICON=Lion.png
+else
+OSICON=MountainLion.png
+fi
+
+
+# Alfred RESULTS Display
+#
+cat &lt;&lt; EOB
+&lt;?xml version="1.0"?&gt;
+&lt;items&gt;
+  &lt;item arg="$MACHINE" valid="yes"&gt;
+    &lt;title&gt;$MACHINE ($IDENTIFIER)&lt;/title&gt;
+	&lt;subtitle&gt;System (Model Identifier)&lt;/subtitle&gt;
+	&lt;icon&gt;$MYMACICON&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item arg="$PROC_SPEED $PROC_NAME"&gt;
+    &lt;title&gt;$PROC_SPEED $PROC_NAME&lt;/title&gt;
+	&lt;subtitle&gt;Processor&lt;/subtitle&gt;
+	&lt;icon&gt;cpu.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item arg="$SYS_MEM $MEM_SPEED $MEM_TYPE"&gt;
+    &lt;title&gt;$SYS_MEM $MEM_SPEED $MEM_TYPE&lt;/title&gt;
+	&lt;subtitle&gt;Memory&lt;/subtitle&gt;
+	&lt;icon&gt;ram.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item arg="$GRAPHICS1_CHIPSET$GRAPHICS1_VRAM"&gt;
+    &lt;title&gt;$GRAPHICS1_CHIPSET$GRAPHICS1_VRAM&lt;/title&gt;
+	&lt;subtitle&gt;$GFXSUB1&lt;/subtitle&gt;
+	&lt;icon&gt;$GRAPHICS_ICON1&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item arg="$GRAPHICS2_CHIPSET$GRAPHICS2_VRAM"&gt;
+    &lt;title&gt;$GRAPHICS2_CHIPSET$GRAPHICS2_VRAM&lt;/title&gt;
+	&lt;subtitle&gt;$GFXSUB2&lt;/subtitle&gt;
+	&lt;icon&gt;$GRAPHICS_ICON2&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item arg="$SYSTEM_SERIAL"&gt;
+    &lt;title&gt;$SYSTEM_SERIAL&lt;/title&gt;
+	&lt;subtitle&gt;Serial Number&lt;/subtitle&gt;
+	&lt;icon&gt;AppleCare.png&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item arg="$VERSION"&gt;
+    &lt;title&gt;$VERSION&lt;/title&gt;
+	&lt;subtitle&gt;System Version (Build)&lt;/subtitle&gt;
+	&lt;icon&gt;$OSICON&lt;/icon&gt;
+  &lt;/item&gt;
+  &lt;item arg="$UPTIME"&gt;
+    &lt;title&gt;$UPTIME&lt;/title&gt;
+	&lt;subtitle&gt;Time Since Boot&lt;/subtitle&gt;
+	&lt;icon&gt;uptime.png&lt;/icon&gt;
+  &lt;/item&gt;
+&lt;/items&gt;
+EOB</string>
+				<key>subtext</key>
+				<string>System Information</string>
+				<key>title</key>
+				<string>About This Mac</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0D105A45-360A-4581-A8D6-A85316050009</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>2C38DAC5-0D1C-42D6-A0B5-0BB78388E88A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string># This will take you to the technical specifications website for your hardware
+
+INJECT=$(cat mymac.txt | awk 'NR==2')
+open "http://support-sp.apple.com/sp/index?page=cpuspec&amp;cc=$INJECT"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>85759AC0-0F71-426E-92A2-22B35960118F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>xabout</string>
+				<key>subtext</key>
+				<string>Delete dynamic files for "About This Mac"</string>
+				<key>text</key>
+				<string>Reset About This Mac Workflow</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B06C48AE-704C-47F9-99AB-0E0A18A98A47</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>if [ ! -f *.txt ];
+	[ ! -f mymac.png ];
+then
+echo "Workflow Already Reset"
+else
+find . -name "*.txt" | xargs rm
+find . -name "mymac.png" | xargs rm
+echo "Workflow Reset"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F224FB67-14BD-4BC9-99DA-38B57C9C31AC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>About This Mac</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>66C4C781-1A3A-49D0-9DD5-5CF4D1476F07</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0D105A45-360A-4581-A8D6-A85316050009</key>
+		<dict>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+		<key>2C38DAC5-0D1C-42D6-A0B5-0BB78388E88A</key>
+		<dict>
+			<key>ypos</key>
+			<real>150</real>
+		</dict>
+		<key>4F71E8EF-685C-4848-93B6-4335F4BBF707</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>66C4C781-1A3A-49D0-9DD5-5CF4D1476F07</key>
+		<dict>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>85759AC0-0F71-426E-92A2-22B35960118F</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>87DFBB43-164A-40D3-8220-2044EF339F61</key>
+		<dict>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+		<key>B06C48AE-704C-47F9-99AB-0E0A18A98A47</key>
+		<dict>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>F224FB67-14BD-4BC9-99DA-38B57C9C31AC</key>
+		<dict>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>manyk.deviantart.com</string>
+</dict>
+</plist>

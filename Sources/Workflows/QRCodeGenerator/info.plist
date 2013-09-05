@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>zhxl.me/#qrcode</string>
+	<key>connections</key>
+	<dict>
+		<key>041F39CE-F278-45B9-BDBF-AA8119457AF2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2C0DFA92-3CCA-4507-B167-1AD69604601C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2C0DFA92-3CCA-4507-B167-1AD69604601C</key>
+		<array/>
+		<key>63F762D5-51ED-463A-BFE8-CDC6E0B8EE4B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2C0DFA92-3CCA-4507-B167-1AD69604601C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Larryzh</string>
+	<key>description</key>
+	<string>利用 Google Chart API 通过选取或输入的方式生成二维码</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>QRCode 生成器</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>$query = urlencode( "{query}" );
+$url = "http://chart.apis.google.com/chart?cht=qr&amp;chs=300x300&amp;chl=$query&amp;chld=H|0";
+$file = fopen($url, 'r');
+$line = '';
+while(!feof($file)) {
+    $line = $line . fgets($file);
+}
+$image = imagecreatefromstring($line);
+imagegif($image, './qrcode.gif');
+
+exec('open ./qrcode.gif');</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2C0DFA92-3CCA-4507-B167-1AD69604601C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>qr</string>
+				<key>subtext</key>
+				<string>请输入欲转换的内容</string>
+				<key>text</key>
+				<string>二维码转换</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>63F762D5-51ED-463A-BFE8-CDC6E0B8EE4B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>041F39CE-F278-45B9-BDBF-AA8119457AF2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>041F39CE-F278-45B9-BDBF-AA8119457AF2</key>
+		<dict>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>2C0DFA92-3CCA-4507-B167-1AD69604601C</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>63F762D5-51ED-463A-BFE8-CDC6E0B8EE4B</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://zhxl.me</string>
+</dict>
+</plist>

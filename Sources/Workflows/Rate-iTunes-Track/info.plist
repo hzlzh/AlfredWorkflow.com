@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.snratio.rateitunes</string>
+	<key>connections</key>
+	<dict>
+		<key>192326E6-041E-44E0-9660-C2E6C781CF67</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>220429FA-4F6B-424E-8C62-A7699E0BFA71</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>220429FA-4F6B-424E-8C62-A7699E0BFA71</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D65FC8D0-C5AC-4644-8A66-573993DEB42F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9E43C5B4-2224-4AC3-B1A0-2A41570A1BED</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>220429FA-4F6B-424E-8C62-A7699E0BFA71</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B2860909-1C16-4460-87C5-5E2851DE1F61</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>220429FA-4F6B-424E-8C62-A7699E0BFA71</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C664E1E4-EB74-42E6-B9DA-595047CCE7B7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>220429FA-4F6B-424E-8C62-A7699E0BFA71</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D4415B3B-E6DA-46F1-AE32-866AFBD98F10</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>220429FA-4F6B-424E-8C62-A7699E0BFA71</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D76C267B-2452-4A35-B240-F956465BECDC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>220429FA-4F6B-424E-8C62-A7699E0BFA71</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E3AA2C3B-52E9-4DA7-9129-9166B2DEA034</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>220429FA-4F6B-424E-8C62-A7699E0BFA71</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>David Klem</string>
+	<key>description</key>
+	<string>Assign a star rating to the currently playing track in iTunes</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Rate iTunes Track</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string># Check for proper input value
+if [[ "{query}" =~ ^[0-5]\.* ]]; then
+
+
+	# Check if iTunes is running and playing a song
+	if [ $(osascript -e 'if application "iTunes" is running then return true') ]; then
+		iTunesPlaying=$(osascript -e 'tell application "iTunes" to if player state is playing then return true')
+	fi
+
+	if [[ $iTunesPlaying == true ]]; then
+
+		# Grab interesting data for Notification
+		infoline=$(osascript -e 'tell application "iTunes" to "" &amp; album of current track &amp; " by " &amp; artist of current track')
+		track=$(osascript -e 'tell application "iTunes" to name of current track')
+
+		# Get "stars" from numerical value
+		case "{query}" in
+			0.*) stars="½☆☆☆☆"; rating=10 ;;
+			1) stars="★☆☆☆☆"; rating=20 ;;
+			1.*) stars="★½☆☆☆"; rating=30 ;;
+			2) stars="★★☆☆☆"; rating=40 ;;
+			2.*) stars="★★½☆☆"; rating=50 ;;
+			3) stars="★★★☆☆"; rating=60 ;;
+			3.*) stars="★★★½☆"; rating=70 ;;
+			4) stars="★★★★☆"; rating=80 ;;
+			4.*) stars="★★★★½"; rating=90 ;;
+			5) stars="★★★★★"; rating=100 ;;
+			5.*) stars="★★★★★"; rating=100 ;;
+			*) stars="• • • • •"; rating=0 ;;
+		esac
+
+		# Set rating of the current track to user input
+		osascript -e "tell application \"iTunes\" to set rating of current track to $rating"
+
+		echo "$track  $stars"
+		echo "$infoline"
+	fi
+else
+	echo "❌ Rating not Valid
+     Nothing modified"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>220429FA-4F6B-424E-8C62-A7699E0BFA71</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>4</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>C664E1E4-EB74-42E6-B9DA-595047CCE7B7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>5</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>D4415B3B-E6DA-46F1-AE32-866AFBD98F10</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>1</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>E3AA2C3B-52E9-4DA7-9129-9166B2DEA034</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>3</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>D76C267B-2452-4A35-B240-F956465BECDC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>0</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>192326E6-041E-44E0-9660-C2E6C781CF67</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>2</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>B2860909-1C16-4460-87C5-5E2851DE1F61</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Rate iTunes Track</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D65FC8D0-C5AC-4644-8A66-573993DEB42F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>rate</string>
+				<key>runningsubtext</key>
+				<string>gathering...</string>
+				<key>script</key>
+				<string>echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;'
+echo "&lt;item arg=\"{query}\" uid=\"rating\" valid=\"yes\"&gt;"
+echo "&lt;title&gt;Rate current track&lt;/title&gt;"
+echo "&lt;subtitle&gt;Rate song {query} stars&lt;/subtitle&gt;"
+echo "&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;&lt;/items&gt;"
+echo "&lt;/items&gt;"</string>
+				<key>subtext</key>
+				<string>Rate current song {query} stars</string>
+				<key>title</key>
+				<string>Rate iTunes Track</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9E43C5B4-2224-4AC3-B1A0-2A41570A1BED</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>rate</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>## Check if iTunes is running and playing a song
+if [ $(osascript -e 'if application "iTunes" is running then return true') ]; then
+	iTunesPlaying=$(osascript -e 'tell application "iTunes" to if player state is playing then return true')
+fi
+
+## If iTunes is playing, start grabbing the data
+if [[ $iTunesPlaying == true ]]; then
+	valid="yes"
+	title=$(osascript -e 'tell application "iTunes" to "" &amp; artist of current track &amp; " - " &amp; name of current track')
+	rating=$(osascript -e 'tell application "iTunes" to rating of current track')
+
+	## Convert to star ratings
+	case $rating in
+		10) stars="½☆☆☆☆";;
+		20) stars="★☆☆☆☆" ;;
+		30) stars="★½☆☆☆" ;;
+		40) stars="★★☆☆☆" ;;
+		50) stars="★★½☆☆" ;;
+		60) stars="★★★☆☆" ;;
+		70) stars="★★★½☆" ;;
+		80) stars="★★★★☆" ;;
+		90) stars="★★★★½" ;;
+		100) stars="★★★★★" ;;
+		*) stars="• • • • •" ;;
+	esac
+	
+	subtitle="Current rating: $stars"
+else
+	title="No song playing"
+	subtitle=""
+	valid="no"
+fi
+
+
+## XML to Alfred
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;'
+echo "&lt;item arg=\"{query}\" uid=\"rating\" valid=\"$valid\"&gt;"
+echo "&lt;title&gt;$title&lt;/title&gt;"
+echo "&lt;subtitle&gt;$subtitle&lt;/subtitle&gt;"
+echo "&lt;icon&gt;info.png&lt;/icon&gt;&lt;/item&gt;&lt;/items&gt;"
+echo "&lt;/items&gt;"</string>
+				<key>subtext</key>
+				<string>Please wait...</string>
+				<key>title</key>
+				<string>Gathering song data</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>74390362-CFDE-4330-810D-D13A8C172131</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Description
+Rate iTunes Track is an Alfred 2 workflow designed to allow to allow the user to easily rate the currently playing track in iTunes.
+
+To enable half star ratings, issue the following command from within Terminal.
+
+defaults write com.apple.iTunes allow-half-stars -bool TRUE
+
+Installation
+"Rate iTunes Track.alfredworkflow" is the only file required to use the workflow. Just download and open the .workflow file to install within Alfred 2.
+
+Usage
+Invoke Alfred 2, and type rate &lt;rating&gt; where rating is a number from 0-5. A selection of 0 clears the track rating. Now also supports half ratings such as 0.5, 1.5, 2.5, 3.5 or 4.5 to give the appropriate half star rating.
+
+Two panels will be shown, the top panel is where the rating is entered. The bottom panel only shows the current track information. If selected, nothing will happen. Separated into two panels for rating reliability. (The query wasn't passed properly if the Applescript didn't execute completely)
+
+Project Notes
+Added the bash scripts separately for reference and historical purposes, and to track changes to the individual scripts. You can also rename the .alfredworkflow extension to .zip, and extract normally.</string>
+	<key>uidata</key>
+	<dict>
+		<key>192326E6-041E-44E0-9660-C2E6C781CF67</key>
+		<dict>
+			<key>ypos</key>
+			<real>840</real>
+		</dict>
+		<key>220429FA-4F6B-424E-8C62-A7699E0BFA71</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>74390362-CFDE-4330-810D-D13A8C172131</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>9E43C5B4-2224-4AC3-B1A0-2A41570A1BED</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>B2860909-1C16-4460-87C5-5E2851DE1F61</key>
+		<dict>
+			<key>ypos</key>
+			<real>600</real>
+		</dict>
+		<key>C664E1E4-EB74-42E6-B9DA-595047CCE7B7</key>
+		<dict>
+			<key>ypos</key>
+			<real>360</real>
+		</dict>
+		<key>D4415B3B-E6DA-46F1-AE32-866AFBD98F10</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>D65FC8D0-C5AC-4644-8A66-573993DEB42F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>D76C267B-2452-4A35-B240-F956465BECDC</key>
+		<dict>
+			<key>ypos</key>
+			<real>480</real>
+		</dict>
+		<key>E3AA2C3B-52E9-4DA7-9129-9166B2DEA034</key>
+		<dict>
+			<key>ypos</key>
+			<real>720</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>github.com/dklem</string>
+</dict>
+</plist>

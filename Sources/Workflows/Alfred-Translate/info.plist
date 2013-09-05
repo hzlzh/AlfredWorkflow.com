@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfred-translate.hzlzh</string>
+	<key>connections</key>
+	<dict/>
+	<key>createdby</key>
+	<string>hzlzh</string>
+	<key>description</key>
+	<string>Translate using Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Alfred-Translate</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>1</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>argumenttext</key>
+				<string>d </string>
+				<key>hotkey</key>
+				<integer>17</integer>
+				<key>hotmod</key>
+				<integer>1572864</integer>
+				<key>hotstring</key>
+				<string>T</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>4ACEF39F-2AEA-4F39-88CD-407D2D024B8F</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>How To Use?
+Check the `README.png` under the workflow folder</string>
+	<key>uidata</key>
+	<dict>
+		<key>4ACEF39F-2AEA-4F39-88CD-407D2D024B8F</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://zlz.im/</string>
+</dict>
+</plist>

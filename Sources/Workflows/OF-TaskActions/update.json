@@ -1,4 +1,4 @@
 {
-    "version": 2.3,
-    "remote_json": "https://github.com/markokaestner/alfred2/blob/master/workflows/OF-TaskActions/package/OF-TaskActions.json?raw=true"
+    "version": 3.0,
+    "remote_json": "https://raw.github.com/markokaestner/of-task-actions/master/package/OF-TaskActions.json"
 }

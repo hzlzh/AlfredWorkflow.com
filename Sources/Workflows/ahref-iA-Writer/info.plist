@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>1.0</string>
+	<key>connections</key>
+	<dict>
+		<key>F2AA7A38-D7D3-4440-A03D-15CC37F5FC11</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>27A7074F-008A-4FBF-8834-DB6ADB40FA57</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>MacGeeky</string>
+	<key>description</key>
+	<string>iA Writer - Insert URL from Safari</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ahref iA Writer</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "System Events"	if exists process "Safari" then		tell application "Safari" to set var1 to URL of document 1	end ifend tellset spm to (display dialog "Skriv inn nettadressen: " with title "Sett inn URL" with icon 1 buttons {"Cancel", "OK"} default button "OK" default answer var1)set URLen to text returned of spmset knapp to button returned of spmif knapp is "OK" then	tell application "iA Writer" to activate	tell application "System Events" to keystroke "c" using {command down}	delay 0.3	set ankertekst to the clipboard		set markdownText to "[" &amp; ankertekst &amp; "](" &amp; URLen &amp; ")"		set the clipboard to markdownText	tell application "System Events"		keystroke "v" using {command down}	end tellend if
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>27A7074F-008A-4FBF-8834-DB6ADB40FA57</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F2AA7A38-D7D3-4440-A03D-15CC37F5FC11</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>1. Highlight the text you want to use as anchor text in the markdown formated URL. 
+
+2. Then press the keyboard shortcut to trigger the applescript. 
+
+3. A text input box will appear with the URL of the active Safari tab as default text. Change it if you want.
+
+4. When you press enter the extension will format a markdown URL with the highlighted text as anchor text.</string>
+	<key>uidata</key>
+	<dict>
+		<key>27A7074F-008A-4FBF-8834-DB6ADB40FA57</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>F2AA7A38-D7D3-4440-A03D-15CC37F5FC11</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://twitter.com/macgeeky</string>
+</dict>
+</plist>

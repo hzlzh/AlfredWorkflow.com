@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>AlfredEver</string>
+	<key>connections</key>
+	<dict>
+		<key>BE4483F5-21D9-4EB4-A17C-C2831E020F3F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6CED0DA2-DBC6-4061-9EB3-73B5C0D79905</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F5B78DB8-2D7C-4FE4-A2C0-5007F0C005C2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BE4483F5-21D9-4EB4-A17C-C2831E020F3F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>hirofumi_kaneko</string>
+	<key>description</key>
+	<string>Send text to Evernote.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>AlfredEver</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Send text to Evernote!</string>
+				<key>title</key>
+				<string>AlfredEver</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6CED0DA2-DBC6-4061-9EB3-73B5C0D79905</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>memo</string>
+				<key>subtext</key>
+				<string>Send text to Evernote.</string>
+				<key>text</key>
+				<string>AlfredEver</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F5B78DB8-2D7C-4FE4-A2C0-5007F0C005C2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)	set _inputText to qset AppleScript's text item delimiters to "-open"set _text to text items of _inputTextset AppleScript's text item delimiters to "#"set _item to text items of item 1 of _textset _memo to text items of item 1 of _itemset _space to the rest of _itemset _tagList to {}set AppleScript's text item delimiters to " "repeat with tag in _space	set end of _tagList to item 1 of text items of tagend repeatset AppleScript's text item delimiters to ","-- Evernotetell application "Evernote"	set _newNote to create note with text _memo title _memo tags _tagList	if (offset in _inputText of "-open") &gt; 0 then		set _window to open note window with _newNote		activate _window	end ifend tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>BE4483F5-21D9-4EB4-A17C-C2831E020F3F</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>6CED0DA2-DBC6-4061-9EB3-73B5C0D79905</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>BE4483F5-21D9-4EB4-A17C-C2831E020F3F</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>F5B78DB8-2D7C-4FE4-A2C0-5007F0C005C2</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>blog.azzip-azzip.com</string>
+</dict>
+</plist>

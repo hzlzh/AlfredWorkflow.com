@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.farrell.dash.alfredworkflow</string>
+	<key>connections</key>
+	<dict>
+		<key>0B21F30E-8CEA-4BE7-A5D0-C577000751B3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>181C3A57-73C4-41A9-AF06-8523EFF05408</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>23EE01A0-2849-40FE-8DDA-96BA6E2BE1A8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>259CF07B-766E-45F6-8549-0379154BC2DD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>377947CA-5729-4A90-9670-2EFF4F8D0B83</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>48AF5EDC-87EA-4958-B1BE-71EC5AEA8A2A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5C09F008-55F3-4966-BACC-DF3176E148A5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>763E9013-2E4A-44B3-BF66-36BF12877C8C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>84D861E6-B822-4D4B-AA74-FA011864E718</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9F2FE4E2-809B-4E48-96F3-43F1AB8CE856</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C82F501E-51E8-4BCE-9D3A-24ECEFA9AC42</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CBB1EF45-392B-467C-8A2C-A58159175EAD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D582DE74-1AF6-4EE6-8AB1-69C183EA0A55</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FE07FB7A-2793-4821-AF73-930844D4A08F</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>will Farrell</string>
+	<key>description</key>
+	<string>Documentation Lookup</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Dash</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>FE07FB7A-2793-4821-AF73-930844D4A08F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>dash</string>
+				<key>runningsubtext</key>
+				<string>Seaching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "{query}"</string>
+				<key>subtext</key>
+				<string>Search Dash for "{query}"</string>
+				<key>title</key>
+				<string>Search Dash</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5C09F008-55F3-4966-BACC-DF3176E148A5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>html</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "html:{query}"</string>
+				<key>subtext</key>
+				<string>Search HTML for "{query}"</string>
+				<key>title</key>
+				<string>Search HTML</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0B21F30E-8CEA-4BE7-A5D0-C577000751B3</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>css</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "css:{query}"</string>
+				<key>subtext</key>
+				<string>Search CSS for "{query}"</string>
+				<key>title</key>
+				<string>Search CSS</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C82F501E-51E8-4BCE-9D3A-24ECEFA9AC42</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>js</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "js:{query}"</string>
+				<key>subtext</key>
+				<string>Search JS for "{query}"</string>
+				<key>title</key>
+				<string>Search JS</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>763E9013-2E4A-44B3-BF66-36BF12877C8C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>jquery</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "jquery:{query}"</string>
+				<key>subtext</key>
+				<string>Search jQuery for "{query}"</string>
+				<key>title</key>
+				<string>Search jQuery</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>259CF07B-766E-45F6-8549-0379154BC2DD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>angularjs</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "angularjs:{query}"</string>
+				<key>subtext</key>
+				<string>Search AngularJS for "{query}"</string>
+				<key>title</key>
+				<string>Search AngularJS</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>23EE01A0-2849-40FE-8DDA-96BA6E2BE1A8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>bootstrap</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "bootstrap:{query}"</string>
+				<key>subtext</key>
+				<string>Search Twitter Bootstrap for "{query}"</string>
+				<key>title</key>
+				<string>Search Twitter Bootstrap</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D582DE74-1AF6-4EE6-8AB1-69C183EA0A55</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>dash-workflow-callback://{query}</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>93F7A067-A613-4F70-99D8-7522C3F1DC37</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>nodejs</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "nodejs:{query}"</string>
+				<key>subtext</key>
+				<string>Search node.js for "{query}"</string>
+				<key>title</key>
+				<string>Search node.js</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CBB1EF45-392B-467C-8A2C-A58159175EAD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>php</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "php:{query}"</string>
+				<key>subtext</key>
+				<string>Search PHP for "{query}"</string>
+				<key>title</key>
+				<string>Search PHP</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>181C3A57-73C4-41A9-AF06-8523EFF05408</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>redis</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "redis:{query}"</string>
+				<key>subtext</key>
+				<string>Search redis for "{query}"</string>
+				<key>title</key>
+				<string>Search redis</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>377947CA-5729-4A90-9670-2EFF4F8D0B83</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>mysql</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "mysql:{query}"</string>
+				<key>subtext</key>
+				<string>Search MySQL for "{query}"</string>
+				<key>title</key>
+				<string>Search MySQL</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>48AF5EDC-87EA-4958-B1BE-71EC5AEA8A2A</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>cpp</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "mysql:{query}"</string>
+				<key>subtext</key>
+				<string>Search C++ for "{query}"</string>
+				<key>title</key>
+				<string>Search C++</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9F2FE4E2-809B-4E48-96F3-43F1AB8CE856</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>sgv</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>./dashAlfredWorkflow "mysql:{query}"</string>
+				<key>subtext</key>
+				<string>Search SVG for "{query}"</string>
+				<key>title</key>
+				<string>Search SVG</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>84D861E6-B822-4D4B-AA74-FA011864E718</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Usage:
+'dash {query}'
+'dash keyword:{query}'
+
+The keyword is either a docset keyword (defined in Preferences &gt; Docsets) or a search profile keyword trigger (defined by clicking on the loupe icon of the main search field).
+
+You can edit this extension to always include a keyword by editing the Script Filter to:
+
+./dashAlfredWorkflow "keyword:{query}"</string>
+	<key>uidata</key>
+	<dict>
+		<key>0B21F30E-8CEA-4BE7-A5D0-C577000751B3</key>
+		<dict>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>181C3A57-73C4-41A9-AF06-8523EFF05408</key>
+		<dict>
+			<key>ypos</key>
+			<real>950</real>
+		</dict>
+		<key>23EE01A0-2849-40FE-8DDA-96BA6E2BE1A8</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>259CF07B-766E-45F6-8549-0379154BC2DD</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>377947CA-5729-4A90-9670-2EFF4F8D0B83</key>
+		<dict>
+			<key>ypos</key>
+			<real>1050</real>
+		</dict>
+		<key>48AF5EDC-87EA-4958-B1BE-71EC5AEA8A2A</key>
+		<dict>
+			<key>ypos</key>
+			<real>1150</real>
+		</dict>
+		<key>5C09F008-55F3-4966-BACC-DF3176E148A5</key>
+		<dict>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+		<key>763E9013-2E4A-44B3-BF66-36BF12877C8C</key>
+		<dict>
+			<key>ypos</key>
+			<real>410</real>
+		</dict>
+		<key>84D861E6-B822-4D4B-AA74-FA011864E718</key>
+		<dict>
+			<key>ypos</key>
+			<real>1410</real>
+		</dict>
+		<key>93F7A067-A613-4F70-99D8-7522C3F1DC37</key>
+		<dict>
+			<key>ypos</key>
+			<real>780</real>
+		</dict>
+		<key>9F2FE4E2-809B-4E48-96F3-43F1AB8CE856</key>
+		<dict>
+			<key>ypos</key>
+			<real>1290</real>
+		</dict>
+		<key>C82F501E-51E8-4BCE-9D3A-24ECEFA9AC42</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>CBB1EF45-392B-467C-8A2C-A58159175EAD</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>D582DE74-1AF6-4EE6-8AB1-69C183EA0A55</key>
+		<dict>
+			<key>ypos</key>
+			<real>710</real>
+		</dict>
+		<key>FE07FB7A-2793-4821-AF73-930844D4A08F</key>
+		<dict>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>github.com/willfarrell</string>
+</dict>
+</plist>

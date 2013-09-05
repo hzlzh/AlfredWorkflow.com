@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.fenprace.flowerpassword</string>
+	<key>connections</key>
+	<dict>
+		<key>9193B305-81D5-424F-A7E5-A11F80451727</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>59A7E18A-28CB-4F94-B3C0-A05315D26FD5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Prace Fen</string>
+	<key>description</key>
+	<string>快速生成花密密码</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>花密</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>fp</string>
+				<key>script</key>
+				<string>require "./huami"
+
+query = '{query}'.split
+result = Huami.huami(query[1], query[0])
+
+puts &lt;&lt;-XML
+
+&lt;?xml version="1.0"?&gt;
+&lt;items&gt;
+  &lt;item uid="flowerpassword" arg="#{result}" valid="yes"&gt;
+    &lt;title&gt;#{result}&lt;/title&gt;
+    &lt;subtitle&gt;回车复制到剪贴板&lt;/subtitle&gt;
+    &lt;icon&gt;icon.png&lt;/icon&gt;
+  &lt;/item&gt;
+&lt;/items&gt;
+
+XML</string>
+				<key>subtext</key>
+				<string>Usage: fp &lt;记忆密码&gt; &lt;区分代号&gt;</string>
+				<key>title</key>
+				<string>生成花密密码</string>
+				<key>type</key>
+				<integer>2</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9193B305-81D5-424F-A7E5-A11F80451727</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>59A7E18A-28CB-4F94-B3C0-A05315D26FD5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>#花密
+
+## Features:
+－ 快速生成花蜜密码
+－ 复制到剪贴板
+
+## Author
+- Prace Fen
+- email: fenprace[AT]gmail.com
+- Twitter: @fenprace
+
+## License
+WTFPL v2: http://www.wtfpl.net/
+
+# Thanks
+The core code is from the huami.rb project: https://github.com/yesmeck/huami.rb, the author is yesmeck.</string>
+	<key>uidata</key>
+	<dict>
+		<key>59A7E18A-28CB-4F94-B3C0-A05315D26FD5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9193B305-81D5-424F-A7E5-A11F80451727</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://fenprace.writings.io/</string>
+</dict>
+</plist>

@@ -1,0 +1,42 @@
+#!/bin/bash
+
+source ./workflowHandler.sh
+unreaditems="$(getDataDir)/unreaditems.txt"
+
+token="$(getPref token 1)"
+action="$(getPref action 1)"
+
+url=$(sed -n "${2}p" "${unreaditems}" | sed 's/.*,//' | perl -MHTML::Entities -CS -pe '$_ = decode_entities($_, "&<")')
+encodedurl=$(echo "${url}" | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+
+if [[ "${1}" == "read" ]]; then
+	open "${url}"
+elif [[ "${1}" == "copy" ]]; then
+	echo "${url}" | pbcopy
+fi
+
+sed -i '' "${2}d" "${unreaditems}"
+
+if [[ "${action}" == "delete" ]]; then
+	curl --silent "https://api.pinboard.in/v1/posts/delete?url=${encodedurl}&auth_token=${token}"
+elif [[ "${action}" == "archive" ]]; then
+	randomfile="/tmp/pinunread${RANDOM}.tmp"
+	curl --silent "https://api.pinboard.in/v1/posts/get?url=${encodedurl}&auth_token=${token}" | sed '1d;2d;4d;5d' > ${randomfile}
+
+	title='&description='$(cat ${randomfile} | perl -pe 's/.*description="(.*?)".*/\1/' | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+	description=$(cat ${randomfile} | perl -pe 's/.*extended="(.*?)".*/\1/')
+	tags=$(cat ${randomfile} | perl -pe 's/.*tag="(.*?)".*/\1/')
+	private=$(cat ${randomfile} | grep 'shared="no"')
+
+	if [[ ! -z "${description}" ]]; then
+		description='&extended='$(echo "${description}" | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+	fi
+	if [[ ! -z "${tags}" ]]; then
+		tags='&tags='$(echo "${tags}" | perl -MURI::Escape -wlne 'print uri_escape ($_)')
+	fi
+	if [[ ! -z "${private}" ]]; then
+		private='&shared=no'
+	fi
+
+	curl --silent "https://api.pinboard.in/v1/posts/add?url=${encodedurl}&description=${title}&auth_token=${token}${tags}${description}${private}"
+fi

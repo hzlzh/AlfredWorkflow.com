@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.i0xbean.pac-helper</string>
+	<key>connections</key>
+	<dict>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>i0xbean</string>
+	<key>description</key>
+	<string>快速切换 autoproxy 的 pac_url 配置</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>pac-helper</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string># set it by yourself
+proxy_1=""
+proxy_2=""
+
+DEVICE=$(networksetup -listnetworkserviceorder | awk '
+    BEGIN {
+        "netstat -rn | grep default " | getline var
+        split(var, ARRAY, " ")
+    }
+
+    { if ($5 ~ ARRAY[6]) { NAME=$3 } }
+
+    END { print NAME }
+')
+
+proxy_url=""
+disable_flag="flag"
+
+case "{query}" in
+    1)
+		proxy_url="$proxy_1"
+    ;;
+    2)
+		proxy_url="$proxy_2"
+    ;;
+    # set more pac in here.
+    *)
+		proxy_url="$disable_flag"
+    ;;
+esac
+
+if [ -n "$proxy_url" ]; then
+	if [ "$proxy_url" = "$disable_flag" ]; then
+		networksetup -setautoproxystate ${DEVICE%,*} off
+		echo "disable autoproxy"
+	else
+		networksetup -setautoproxyurl ${DEVICE%,*} ${proxy_url}
+		echo "switch to ${proxy_url}"
+	fi
+else
+	echo "please set your pac url."
+fi
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>pac</string>
+				<key>subtext</key>
+				<string>快速切换 pac 配置</string>
+				<key>text</key>
+				<string>pac-helper</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>快速切换 pac 配置
+
+- `pac 1` ： 切换到 pac1
+- `pac N` ： 切换到 pacN
+- `pac [空 | others]` : disable autoproxy
+
+
+具体配置 url 见第二步 shell
+
+
+
+图标取自：https://itunes.apple.com/cn/app/pac-chain-compact/id392915414?mt=8</string>
+	<key>uidata</key>
+	<dict>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>A70A4E1E-712E-4575-967A-0AA64960904D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>i0xbean.com</string>
+</dict>
+</plist>

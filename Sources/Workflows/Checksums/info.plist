@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>de.oderwat.checksums</string>
+	<key>connections</key>
+	<dict>
+		<key>337E0597-BCBC-4BC0-8FE4-12FA928A57B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>281506F8-74B2-4CE5-B915-C7276BB9C4E4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B47EA6BA-C6E3-4FF5-B339-B25E7BF0CECF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1CC1FFC5-1CFA-4EEA-9904-6F260EBF0014</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Hans Raaf</string>
+	<key>description</key>
+	<string>Shows useful checksums for the current browsed file</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Checksums</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Checksums</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>B47EA6BA-C6E3-4FF5-B339-B25E7BF0CECF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>tell application "Alfred 2" to search "chksum: {query}"</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1CC1FFC5-1CFA-4EEA-9904-6F260EBF0014</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>281506F8-74B2-4CE5-B915-C7276BB9C4E4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>38</integer>
+				<key>keyword</key>
+				<string>chksum:</string>
+				<key>runningsubtext</key>
+				<string>Scanning...</string>
+				<key>script</key>
+				<string>if [ -f "{query}" ];
+then
+CK_MD5=$(openssl md5 "{query}" | sed -e 's/.*= //')
+CK_CRC32=$(crc32 "{query}")
+CK_SHA1=$(openssl sha1 "{query}" | sed -e 's/.*= //')
+CK_SHA256=$(shasum -a 256 "{query}")
+CK_RMD160=$(openssl rmd160 "{query}" | sed -e 's/.*= //')
+
+cat&lt;&lt;EOB
+&lt;?xml version="1.0"?&gt;
+&lt;items&gt;
+&lt;item uid="1:ck_md5" arg="$CK_MD5"&gt;
+&lt;title&gt;MD5: $CK_MD5&lt;/title&gt;
+&lt;subtitle&gt;Press Enter to paste, or Cmd+C to copy&lt;/subtitle&gt;
+&lt;icon&gt;icon.png&lt;/icon&gt;
+&lt;/item&gt;
+&lt;item uid="2:ck_crc32" arg="$CK_CRC32"&gt;
+&lt;title&gt;CRC32: $CK_CRC32&lt;/title&gt;
+&lt;subtitle&gt;Press Enter to paste, or Cmd+C to copy&lt;/subtitle&gt;
+&lt;icon&gt;icon.png&lt;/icon&gt;
+&lt;/item&gt;
+&lt;item uid="3:ck_sha1" arg="$CK_SHA1"&gt;
+&lt;title&gt;SHA1: $CK_SHA1&lt;/title&gt;
+&lt;subtitle&gt;Press Enter to paste, or Cmd+C to copy&lt;/subtitle&gt;
+&lt;icon&gt;icon.png&lt;/icon&gt;
+&lt;/item&gt;
+&lt;item uid="4:ck_sha256" arg="$CK_SHA256"&gt;
+&lt;title&gt;SHA256: $CK_SHA256&lt;/title&gt;
+&lt;subtitle&gt;Press Enter to paste, or Cmd+C to copy&lt;/subtitle&gt;
+&lt;icon&gt;icon.png&lt;/icon&gt;
+&lt;/item&gt;
+&lt;item uid="5:ck_rmd160" arg="$CK_RMD160"&gt;
+&lt;title&gt;RMD160: $CK_RMD160&lt;/title&gt;
+&lt;subtitle&gt;Press Enter to paste, or Cmd+C to copy&lt;/subtitle&gt;
+&lt;icon&gt;icon.png&lt;/icon&gt;
+&lt;/item&gt;
+&lt;/items&gt;
+EOB
+
+else
+
+cat&lt;&lt;EOB
+&lt;?xml version="1.0"?&gt;
+&lt;items&gt;
+&lt;item uid="0" arg=""&gt;
+&lt;title&gt;File not found!&lt;/title&gt;
+&lt;subtitle&gt;Enter the path to a file to checksum&lt;/subtitle&gt;
+&lt;icon&gt;icon.png&lt;/icon&gt;
+&lt;/item&gt;
+&lt;/items&gt;
+EOB
+
+fi
+</string>
+				<key>subtext</key>
+				<string>Show checksums for the given file</string>
+				<key>title</key>
+				<string>Checksums</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>337E0597-BCBC-4BC0-8FE4-12FA928A57B4</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow generates some useful checksums from file contents. It is implemented as file action which makes it easy to use!
+
+It works pretty nice with my "Last changed files" workflow and also can be used to checksum a file in finder by setting a hotkey to the "File Selection" in "Find File".</string>
+	<key>uidata</key>
+	<dict>
+		<key>1CC1FFC5-1CFA-4EEA-9904-6F260EBF0014</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>281506F8-74B2-4CE5-B915-C7276BB9C4E4</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>337E0597-BCBC-4BC0-8FE4-12FA928A57B4</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>B47EA6BA-C6E3-4FF5-B339-B25E7BF0CECF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://oderwat.de/</string>
+</dict>
+</plist>

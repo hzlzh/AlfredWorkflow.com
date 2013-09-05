@@ -22,7 +22,7 @@
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string>Open album in Spotify</string>
+				<string>Play album with Spotify</string>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -30,7 +30,33 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Open artist in Spotify</string>
+				<string>Play artist in Spotify</string>
+			</dict>
+		</array>
+		<key>2D26D8E2-52A2-4BF9-B693-0D5190C6CC23</key>
+		<array/>
+		<key>4367DDDE-C360-4642-908E-EB1F916727CC</key>
+		<array/>
+		<key>4EB5FB5E-6472-4757-A479-B206B6080036</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA0A3B7F-B5F1-4F92-9013-217E6F17C588</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5AF7EEEC-2E55-482C-8750-4CE6AD752683</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60EA5756-7B07-4DCA-959A-C3B0E90150AC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 			</dict>
 		</array>
 		<key>5F3AF2C8-064F-4C10-8D99-22E212825BFE</key>
@@ -38,6 +64,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>BD7525EE-BFFD-4CB1-B617-A7A9492B39C0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>60EA5756-7B07-4DCA-959A-C3B0E90150AC</key>
+		<array/>
+		<key>81BA0BC2-F1CB-46DC-A715-C38A1A0E055E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CB842E97-4DDD-4663-8630-EAF7407CBA1D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -59,6 +98,78 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>C7CFF014-DBC8-4663-A0AB-219C57A427EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F7D7D2CE-77EE-45C4-ADAA-1B45A6577FFF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CB842E97-4DDD-4663-8630-EAF7407CBA1D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>29A1FCD7-3432-4BFF-89DB-4111B3169AD5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CD9D3654-8137-49B2-80DC-095E97A58E67</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4367DDDE-C360-4642-908E-EB1F916727CC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D4442911-E17B-49CC-8F7F-EAC1830B11CD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E3215F64-F5B9-4639-93D1-1D643339E2E7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DA0A3B7F-B5F1-4F92-9013-217E6F17C588</key>
+		<array/>
+		<key>E3215F64-F5B9-4639-93D1-1D643339E2E7</key>
+		<array/>
+		<key>F250A59C-0B2D-4A08-9085-9CA0A2FB2DCC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2D26D8E2-52A2-4BF9-B693-0D5190C6CC23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F4382654-9318-4849-82E4-550AC235148C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60EA5756-7B07-4DCA-959A-C3B0E90150AC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F7D7D2CE-77EE-45C4-ADAA-1B45A6577FFF</key>
+		<array/>
 	</dict>
 	<key>createdby</key>
 	<string>vdesabou</string>
@@ -67,36 +178,9 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Spotify Mini Player 1.5</string>
+	<string>Spotify Mini Player</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>62</integer>
-				<key>keyword</key>
-				<string>spot_mini</string>
-				<key>runningsubtext</key>
-				<string>Please wait...</string>
-				<key>script</key>
-				<string>php -f main.php -- "{query}"</string>
-				<key>subtext</key>
-				<string>Search in your playlists for tracks, artists, and albums</string>
-				<key>title</key>
-				<string>Spotify Mini Player</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>18496AC4-EA42-444C-A906-642E38259C96</string>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -126,14 +210,41 @@
 				<key>escaping</key>
 				<integer>38</integer>
 				<key>script</key>
-				<string>ksh action.ksh "{query}" "ARTIST"</string>
+				<string>ksh action.ksh "{query}" "TRACK"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>9845C770-A2CC-4752-A542-D71BE1081691</string>
+			<string>5F3AF2C8-064F-4C10-8D99-22E212825BFE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>spot_mini</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>php -f main.php -- "{query}" 2&gt;&amp;1 | tee output.log</string>
+				<key>subtext</key>
+				<string>Search in your playlists for tracks, artists, and albums</string>
+				<key>title</key>
+				<string>Spotify Mini Player</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>18496AC4-EA42-444C-A906-642E38259C96</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -158,21 +269,6 @@
 				<key>escaping</key>
 				<integer>38</integer>
 				<key>script</key>
-				<string>ksh action.ksh "{query}" "TRACK"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>5F3AF2C8-064F-4C10-8D99-22E212825BFE</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>38</integer>
-				<key>script</key>
 				<string>ksh action.ksh "{query}" "ALBUM"</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -182,14 +278,336 @@
 			<key>uid</key>
 			<string>8DF18F9A-B3A5-4B14-8360-AD850CF5C143</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>38</integer>
+				<key>script</key>
+				<string>ksh action.ksh "{query}" "ARTIST"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9845C770-A2CC-4752-A542-D71BE1081691</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+    tell application "Spotify"
+		if shuffling enabled is true then
+			if shuffling is true then
+				set shuffling to false
+				return "Shuffle is disabled."
+			else
+				set shuffling to true
+				return "Shuffle is enabled."
+			end if
+		else
+			return "Shuffling is not currently enabled."
+		end if
+    end tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>CB842E97-4DDD-4663-8630-EAF7407CBA1D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>shuffle</string>
+				<key>subtext</key>
+				<string>Activate shuffling in Spotify</string>
+				<key>text</key>
+				<string>Shuffle</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>81BA0BC2-F1CB-46DC-A715-C38A1A0E055E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Spotify Mini Player</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>29A1FCD7-3432-4BFF-89DB-4111B3169AD5</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>next</string>
+				<key>subtext</key>
+				<string>Play the next track in Spotify</string>
+				<key>text</key>
+				<string>Next Track</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4EB5FB5E-6472-4757-A479-B206B6080036</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)		tell application "Spotify"
+		next track
+	end tell	end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>DA0A3B7F-B5F1-4F92-9013-217E6F17C588</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)		tell application "Spotify"
+		previous track
+	end tell	end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>4367DDDE-C360-4642-908E-EB1F916727CC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>previous</string>
+				<key>subtext</key>
+				<string>Play the previous track in Spotify</string>
+				<key>text</key>
+				<string>Previous Track</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CD9D3654-8137-49B2-80DC-095E97A58E67</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>play</string>
+				<key>subtext</key>
+				<string>Play / Pause the current Spotify track</string>
+				<key>text</key>
+				<string>Play / Pause</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5AF7EEEC-2E55-482C-8750-4CE6AD752683</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)		tell application "Spotify"		playpause
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>60EA5756-7B07-4DCA-959A-C3B0E90150AC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>pause</string>
+				<key>subtext</key>
+				<string>Play / Pause the current Spotify track</string>
+				<key>text</key>
+				<string>Play / Pause</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F4382654-9318-4849-82E4-550AC235148C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>mute</string>
+				<key>subtext</key>
+				<string>Mute Spotify</string>
+				<key>text</key>
+				<string>Mute Spotify Volume</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C7CFF014-DBC8-4663-A0AB-219C57A427EE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+    tell application "Spotify"
+		if sound volume is less than or equal to 0 then
+			set sound volume to 100
+		else
+			set sound volume to 0
+		end if
+    end tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F7D7D2CE-77EE-45C4-ADAA-1B45A6577FFF</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>volmax</string>
+				<key>subtext</key>
+				<string>Set the Spotify Volume to Maximum</string>
+				<key>text</key>
+				<string>Set Spotify Volume to Maximum</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D4442911-E17B-49CC-8F7F-EAC1830B11CD</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+    tell application "Spotify"
+		set sound volume to 100
+    end tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>E3215F64-F5B9-4639-93D1-1D643339E2E7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>volmid</string>
+				<key>subtext</key>
+				<string>Set the Spotify Volume to 50%</string>
+				<key>text</key>
+				<string>Set Spotify Volume to 50%</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F250A59C-0B2D-4A08-9085-9CA0A2FB2DCC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+    tell application "Spotify"
+		set sound volume to 50
+    end tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>2D26D8E2-52A2-4BF9-B693-0D5190C6CC23</string>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Based on fabulous work done for Spotifious Workflow:
 
 https://github.com/citelao/Spotify-for-Alfred
-
-Alfred forum post (http://www.alfredforum.com/topic/1644-spotifious-a-natural-spotify-controller-for-alfred/?hl=spotify)
-
 
 Spotify App spotify-export (https://github.com/jamesrwhite/spotify-export) must be installed</string>
 	<key>uidata</key>
@@ -199,10 +617,45 @@ Spotify App spotify-export (https://github.com/jamesrwhite/spotify-export) must 
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
+		<key>29A1FCD7-3432-4BFF-89DB-4111B3169AD5</key>
+		<dict>
+			<key>ypos</key>
+			<real>390</real>
+		</dict>
+		<key>2D26D8E2-52A2-4BF9-B693-0D5190C6CC23</key>
+		<dict>
+			<key>ypos</key>
+			<real>1230</real>
+		</dict>
+		<key>4367DDDE-C360-4642-908E-EB1F916727CC</key>
+		<dict>
+			<key>ypos</key>
+			<real>630</real>
+		</dict>
+		<key>4EB5FB5E-6472-4757-A479-B206B6080036</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>5AF7EEEC-2E55-482C-8750-4CE6AD752683</key>
+		<dict>
+			<key>ypos</key>
+			<real>750</real>
+		</dict>
 		<key>5F3AF2C8-064F-4C10-8D99-22E212825BFE</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
+		</dict>
+		<key>60EA5756-7B07-4DCA-959A-C3B0E90150AC</key>
+		<dict>
+			<key>ypos</key>
+			<real>750</real>
+		</dict>
+		<key>81BA0BC2-F1CB-46DC-A715-C38A1A0E055E</key>
+		<dict>
+			<key>ypos</key>
+			<real>390</real>
 		</dict>
 		<key>8DF18F9A-B3A5-4B14-8360-AD850CF5C143</key>
 		<dict>
@@ -224,8 +677,53 @@ Spotify App spotify-export (https://github.com/jamesrwhite/spotify-export) must 
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
+		<key>C7CFF014-DBC8-4663-A0AB-219C57A427EE</key>
+		<dict>
+			<key>ypos</key>
+			<real>990</real>
+		</dict>
+		<key>CB842E97-4DDD-4663-8630-EAF7407CBA1D</key>
+		<dict>
+			<key>ypos</key>
+			<real>390</real>
+		</dict>
+		<key>CD9D3654-8137-49B2-80DC-095E97A58E67</key>
+		<dict>
+			<key>ypos</key>
+			<real>630</real>
+		</dict>
+		<key>D4442911-E17B-49CC-8F7F-EAC1830B11CD</key>
+		<dict>
+			<key>ypos</key>
+			<real>1110</real>
+		</dict>
+		<key>DA0A3B7F-B5F1-4F92-9013-217E6F17C588</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>E3215F64-F5B9-4639-93D1-1D643339E2E7</key>
+		<dict>
+			<key>ypos</key>
+			<real>1110</real>
+		</dict>
+		<key>F250A59C-0B2D-4A08-9085-9CA0A2FB2DCC</key>
+		<dict>
+			<key>ypos</key>
+			<real>1230</real>
+		</dict>
+		<key>F4382654-9318-4849-82E4-550AC235148C</key>
+		<dict>
+			<key>ypos</key>
+			<real>870</real>
+		</dict>
+		<key>F7D7D2CE-77EE-45C4-ADAA-1B45A6577FFF</key>
+		<dict>
+			<key>ypos</key>
+			<real>990</real>
+		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string>http://www.alfredforum.com/topic/1892-spotify-mini-player-kind-of/</string>
+	<string>https://github.com/vdesabou/alfred-spotify-mini-player</string>
 </dict>
 </plist>

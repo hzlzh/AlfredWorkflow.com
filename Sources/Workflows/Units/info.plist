@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>thijsdejong.alfred.units.1.1</string>
+	<key>connections</key>
+	<dict>
+		<key>E819E629-E614-405F-9B9B-4AD9DD9265D7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>75124D41-9359-4EC8-98B4-111AEC64ACDC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9503009D-49FD-480E-8082-46461A62F6AC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Thijs de Jong</string>
+	<key>description</key>
+	<string>a better version than 1.0</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Units</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>keyword</key>
+				<string>units</string>
+				<key>runningsubtext</key>
+				<string>wait for it...</string>
+				<key>script</key>
+				<string>/*
+ units v.1.0.1
+ by : thijs de jong
+ www.designandsuch.com
+ thijsdjong@gmail.com
+*/
+require_once 'units_v2.php';
+$x = new Units();
+$x-&gt;convert("{query}");</string>
+				<key>title</key>
+				<string>Convert units</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E819E629-E614-405F-9B9B-4AD9DD9265D7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>75124D41-9359-4EC8-98B4-111AEC64ACDC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>copied to clipboard</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9503009D-49FD-480E-8082-46461A62F6AC</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>75124D41-9359-4EC8-98B4-111AEC64ACDC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9503009D-49FD-480E-8082-46461A62F6AC</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>E819E629-E614-405F-9B9B-4AD9DD9265D7</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>designandsuch.com</string>
+</dict>
+</plist>

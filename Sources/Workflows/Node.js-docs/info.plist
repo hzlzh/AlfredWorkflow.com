@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.oscar-broman.node</string>
+	<key>connections</key>
+	<dict>
+		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C23D094C-7058-4C54-B813-732CE5E28788</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Oscar Broman</string>
+	<key>description</key>
+	<string>Search the Node.js docs</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Node.js docs</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>106</integer>
+				<key>keyword</key>
+				<string>node</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string>ini_set('log_errors', 1);
+ini_set('error_log', 'php-errors.log');
+error_reporting(E_ALL);
+
+require_once('workflows.php');
+
+$wf = new Workflows();
+
+$query = &lt;&lt;&lt;EOD
+{query}
+EOD;
+
+$docsIndex = include('docs-index.php');
+
+if ($query === 'reindex' || !$docsIndex-&gt;index) {
+	$wf-&gt;result('0.' . time(), '_INDEX_', 'Index the Node.js docs', 'Rebuild the Node.js docs index', 'icon.png');
+} else {
+	$results = $docsIndex-&gt;filter($query);
+
+	foreach ($results as $i =&gt; $entry) {
+		$wf-&gt;result($i . '.' . time(), $entry-&gt;url, $entry-&gt;title, $entry-&gt;category, 'icon.png');
+	}
+}
+
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Search the Node.js docs with suggestions</string>
+				<key>title</key>
+				<string>Search Node.js docs</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>63F60794-BB56-4415-9372-BAF974C3A7E1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>110</integer>
+				<key>script</key>
+				<string>$url = "{query}";
+
+if ($url === '_INDEX_') {
+	$docsIndex = require('docs-index.php');
+
+	$docsIndex-&gt;rebuild();
+} else {
+	`open $url`;
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C23D094C-7058-4C54-B813-732CE5E28788</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>C23D094C-7058-4C54-B813-732CE5E28788</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/oscar-broman</string>
+</dict>
+</plist>

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.vdesabou.ml.builtin.services</string>
+	<key>connections</key>
+	<dict>
+		<key>0A294727-5556-4045-8D0F-2CF320CF9706</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7801A5A4-845B-4A28-90E3-4498D66A3F72</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5C9031A7-52E4-4EE9-80CE-0C4BD1A8C6B4</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Upload file to Droplr and add url at the end of message (only for facebook, twitter, imessage and email)</string>
+			</dict>
+		</array>
+		<key>33E342C4-064F-4152-BE3C-1D0427506826</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>35B93386-30BE-4992-A757-2405BC43B489</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5206A75A-39FD-4084-B8A3-8739AED62C91</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B812494E-65FA-4A2F-B69D-4F415A4DCF9E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5C9031A7-52E4-4EE9-80CE-0C4BD1A8C6B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>30B67D52-9776-4605-BA57-74D88DBA6AF0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5D0AD413-7AA8-450B-89F7-0E338C9C64B8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>35B93386-30BE-4992-A757-2405BC43B489</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7801A5A4-845B-4A28-90E3-4498D66A3F72</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>30B67D52-9776-4605-BA57-74D88DBA6AF0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7A994322-2AB8-4864-BFE2-D70B04EF3B2D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B812494E-65FA-4A2F-B69D-4F415A4DCF9E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F1AC8869-D9DD-42C3-BC95-DBFC24C942A1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B812494E-65FA-4A2F-B69D-4F415A4DCF9E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F362AD8A-2F3A-4A3E-B3DC-332530AB5F22</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B812494E-65FA-4A2F-B69D-4F415A4DCF9E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>vdesabou</string>
+	<key>description</key>
+	<string>Use Mountain Lion Built-in Sharing</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Mountain Lion Built-in Sharing</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>echo "{query}" &gt; file_list
+
+osascript &lt;&lt;EOT
+tell application "Alfred 2" to search "share "
+EOT</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>35B93386-30BE-4992-A757-2405BC43B489</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Built-in Sharing</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>5D0AD413-7AA8-450B-89F7-0E338C9C64B8</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>33E342C4-064F-4152-BE3C-1D0427506826</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>38</integer>
+				<key>keyword</key>
+				<string>share</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>ksh share.ksh "{query}"</string>
+				<key>subtext</key>
+				<string>Select a file to share using File Action or Hotkey</string>
+				<key>title</key>
+				<string>Share using Mountain Lion Built-in Sharing</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0A294727-5556-4045-8D0F-2CF320CF9706</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>38</integer>
+				<key>script</key>
+				<string>ksh action.ksh "{query}" ""</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7801A5A4-845B-4A28-90E3-4498D66A3F72</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Built-in Sharing</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>30B67D52-9776-4605-BA57-74D88DBA6AF0</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>1</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>share </string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>3C6974D9-955C-4F0F-B4CD-8CB2C12574FA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>38</integer>
+				<key>script</key>
+				<string>ksh action.ksh "{query}" "droplr"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5C9031A7-52E4-4EE9-80CE-0C4BD1A8C6B4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>twitter</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F1AC8869-D9DD-42C3-BC95-DBFC24C942A1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>message</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F362AD8A-2F3A-4A3E-B3DC-332530AB5F22</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>./terminal-share.app/Contents/MacOS/terminal-share -service "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B812494E-65FA-4A2F-B69D-4F415A4DCF9E</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>facebook</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>7A994322-2AB8-4864-BFE2-D70B04EF3B2D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>email</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>5206A75A-39FD-4084-B8A3-8739AED62C91</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow is using terminal-share from https://github.com/mattt/terminal-share.
+
+------
+License for terminal-share (https://github.com/mattt/terminal-share):
+
+Copyright (c) 2012 Mattt Thompson (http://mattt.me/)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</string>
+	<key>uidata</key>
+	<dict>
+		<key>0A294727-5556-4045-8D0F-2CF320CF9706</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>30B67D52-9776-4605-BA57-74D88DBA6AF0</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>33E342C4-064F-4152-BE3C-1D0427506826</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>35B93386-30BE-4992-A757-2405BC43B489</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>3C6974D9-955C-4F0F-B4CD-8CB2C12574FA</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>5206A75A-39FD-4084-B8A3-8739AED62C91</key>
+		<dict>
+			<key>ypos</key>
+			<real>820</real>
+		</dict>
+		<key>5C9031A7-52E4-4EE9-80CE-0C4BD1A8C6B4</key>
+		<dict>
+			<key>ypos</key>
+			<real>350</real>
+		</dict>
+		<key>5D0AD413-7AA8-450B-89F7-0E338C9C64B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>7801A5A4-845B-4A28-90E3-4498D66A3F72</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>7A994322-2AB8-4864-BFE2-D70B04EF3B2D</key>
+		<dict>
+			<key>ypos</key>
+			<real>700</real>
+		</dict>
+		<key>B812494E-65FA-4A2F-B69D-4F415A4DCF9E</key>
+		<dict>
+			<key>ypos</key>
+			<real>640</real>
+		</dict>
+		<key>F1AC8869-D9DD-42C3-BC95-DBFC24C942A1</key>
+		<dict>
+			<key>ypos</key>
+			<real>460</real>
+		</dict>
+		<key>F362AD8A-2F3A-4A3E-B3DC-332530AB5F22</key>
+		<dict>
+			<key>ypos</key>
+			<real>580</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/vdesabou/alfred-mountain-lion-builtin-sharing</string>
+</dict>
+</plist>

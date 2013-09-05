@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+  <title>Metadata Sidecar Files</title>
+<link rel=stylesheet type='text/css' href='style.css' title='Style'>
+<style type="text/css">
+<!--
+blockquote  { margin-top: 1em; margin-bottom: 1em }
+pre         { color: #800; margin-left: 4em }
+pre.code    { color: #000; padding: 0; margin: 0 }
+.lt         { color: #666 }
+.ind        { margin-left: 2.5em }
+p.a         { margin: 1em 2em 0 1em }
+p.b         { margin: 0 2em 1em 2.2em; color: #666 }
+p.c         { margin: 1em 2em 1em 2.2em; color: #666 }
+-->
+</style>
+</head>
+<body>
+<div class='index'>
+<a href="#xmp">XMP Sidecar Files</a>
+<br><a href="#xml">ExifTool XML Files</a>
+<br><a href="#exif">EXIF Files</a>
+<br><a href="#mie">MIE Files</a>
+</div>
+
+<h1 class=up>Metadata Sidecar Files</h1>
+
+<p>Metadata for images and other file types may be stored in a separate metadata
+file. These are the only files that exiftool can create from scratch.  A common
+example of this is the XMP "sidecar" file (which is discussed in the next
+section in some detail).  Other supported metadata file types are EXIF, MIE,
+ICC and VRD.  As well, ExifTool supports XML-format output, which can also be
+used to generate metadata sidecar files.</p>
+
+<hr>
+<a name="xmp"></a>
+<h3>XMP Sidecar Files</h3>
+
+<p>There are a number of different ways to generate an XMP sidecar file with
+exiftool, and the method you choose depends on your circumstances and
+preferences. Below are a number of example commands which write an output XMP
+file from information in a source file of any type.</p>
+
+<p class=a>1. Copy same-named tags from all information types to preferred locations in XMP:</p>
+<p class=b>(<code><i>SRC</i>.<i>EXT</i></code> is the source file name and
+extension, and <code><i>DST</i></code> is the destination file name)</p>
+<pre>exiftool -tagsfromfile <i>SRC</i>.<i>EXT</i> <i>DST</i>.xmp</pre>
+
+<p class=a>2. Rewrite source file to destination XMP file:</p>
+<p class=b>(same effect as above, but the command will exit with an error if the output XMP file already exists)</p>
+<pre>exiftool <i>SRC</i>.<i>EXT</i> -o <i>DST</i>.xmp</pre>
+
+<p class=a>3. Copy XMP, preserving original locations:</p>
+<p class=b>(ie. copies XMP tags only to the same namespaces in the destination file)</p>
+<pre>exiftool -tagsfromfile <i>SRC</i>.<i>EXT</i> -all:all <i>DST</i>.xmp</pre>
+<p class=c>Advanced: Notice that <code>-all:all</code> is used above instead of
+<code>-xmp:all</code> even though only XMP tags will be copied (since the destination
+is an XMP file).  This is because <code>-all:all</code> preserves the family 1 group
+(ie. XMP namespace) while <code>-xmp:all</code> would copy tags to the preferred XMP
+namespace, which may be different for XMP tags that exist in multiple namespaces.
+To get the best of both worlds, <code>"-xmp:all>all:all"</code> may be used to
+avoid the inefficiencies of assigning tags which aren't copied, while still
+preserving the family 1 group.</p>
+
+<p class=a>4. Rewrite source to XMP file, preserving locations:</p>
+<p class=b>(same effect as above, but the command will fail if the XMP file already exists)</p>
+<pre>exiftool <i>SRC</i>.<i>EXT</i> -o <i>DST</i>.xmp -all:all</pre>
+
+<p class=a>5. Generate XMP from EXIF and IPTC using standard tag name mappings:</p>
+<p class=b> (the <code>.args</code> files are available in the full ExifTool distribution)</p>
+<pre>exiftool -tagsfromfile <i>SRC</i>.<i>EXT</i> -@ exif2xmp.args -@ iptc2xmp.args <i>DST</i>.xmp</pre>
+
+<p class=a>6. Copy XMP as a block to an XMP file:</p>
+<p class=b>(writing as a block is the only way to transfer unknown or non-writable XMP tags)</p>
+<pre>exiftool -tagsfromfile <i>SRC</i>.<i>EXT</i> -xmp <i>DST</i>.xmp</pre>
+
+<p>7. Extract XMP as a block and write to output XMP file: <span class=lt>(same effect as above)</span></p>
+<pre>exiftool -xmp -b <i>SRC</i>.<i>EXT</i> > <i>DST</i>.xmp</pre>
+
+<p class=a>8. Extract XMP as a block to an output text file with .xmp extension:</p>
+<p class=b>(same effect as above, but the destination file name will be the same
+as the source file, and this command will fail if the XMP file exists while the
+previous command will overwrite an existing file)</p>
+<pre>exiftool -xmp -b -w xmp <i>SRC</i>.<i>EXT</i></pre>
+
+<p>9. Restore all XMP tags from an XMP sidecar file to XMP in a JPG image:</p>
+<pre>exiftool -tagsfromfile <i>SRC</i>.xmp -all:all <i>DST</i>.jpg</pre>
+
+<p class=a>10. Restore XMP as a block from an XMP sidecar file to a JPG image:</p>
+<p class=b>(same effect as above except that any non-writable XMP tags would be
+copied by this command, and the 2 kB of padding recommended by the XMP
+specification is not added when copying as a block)</p>
+<pre>exiftool -tagsfromfile <i>SRC</i>.xmp -xmp <i>DST</i>.jpg</pre>
+
+<h4>Batch Processing</h4>
+
+<p>When batch-generating sidecar files from many images, the <code>-o</code>
+form of the command is easier to use:</p>
+
+<pre>exiftool -ext <i>EXT</i> -o %d%f.xmp -r <i>DIR</i></pre>
+
+<p>where <code><i>DIR</i></code> is the name of the directory containing the
+images.  Multiple <code>-ext</code> options may be used to process different
+file types in a single command.</p>
+
+<p>However, this technique can not be used to add information to XMP
+sidecar files that already exist.  For this, the <code>-tagsFromFile</code>
+form must be used:</p>
+
+<pre>exiftool -ext xmp -tagsfromfile %d%f.<i>EXT</i> -r <i>DIR</i></pre>
+
+<p>But note that this command searches for the XMP files instead of the image
+files, so it will not generate new XMP sidecar files if some images don't
+have them.  For this, the advanced (ie. tricky and confusing to use)
+<code>-srcfile</code> option comes in handy:</p>
+
+<pre>exiftool -ext <i>EXT</i> -tagsfromfile @ -srcfile %d%f.xmp -r <i>DIR</i></pre>
+
+<p>The <code>-srcfile</code> option also allows multiple files to be specified,
+in which case the first existing file is processed.  This feature allows a
+sidecar file to be used only if it already exists. For example, this command
+writes to a sidecar XMP file if it exists, or the original file otherwise:</p>
+
+<pre>exiftool -ext <i>EXT</i> -artist="Phil" -srcfile %d%f.xmp -srcfile @ <i>DIR</i></pre>
+
+<p>Any of these commands may be used to process sidecar files stored in a
+directory other than that of the original images by specifying a directory name
+instead of "<code>%d</code>" in the filename format string.  For example,</p>
+
+<pre>exiftool -ext <i>EXT</i> -o <i>DSTDIR</i>/%f.xmp -r <i>SRCDIR</i></pre>
+
+<p>will output XMP files to <code><i>DSTDIR</i></code> with information
+from images in <code><i>SRCDIR</i></code>.</p>
+
+<h4>Via the API</h4>
+
+<p>By specifying different tags in the
+<a href="ExifTool.html#SetNewValuesFromFile">SetNewValuesFromFile</a>
+call, the above examples numbered 1-6 are programmed like this:</p>
+
+<blockquote><table class='box'><tr><td><pre class='code'>
+$exifTool-><a href="ExifTool.html#SetNewValuesFromFile">SetNewValuesFromFile</a>('SRC.EXT', @tags_to_copy);
+$exifTool-><a href="ExifTool.html#WriteInfo">WriteInfo</a>(undef, 'DST.xmp');
+</pre></td></tr></table></blockquote>
+
+<p>and examples 7 and 8 use this general technique:</p>
+
+<blockquote><table class='box'><tr><td><pre class='code'>
+my $info = <a href="ExifTool.html#ImageInfo">ImageInfo</a>('SRC.EXT', 'xmp');
+die "No XMP" unless $$info{XMP};
+open FILE, '&gt;DST.xmp';
+print FILE ${$$info{XMP}};
+close FILE;
+</pre></td></tr></table></blockquote>
+
+<hr>
+<a name="xml"></a>
+<h3>ExifTool XML Files</h3>
+
+<p>Closely related to the XMP sidecar file is the XML file written using the
+exiftool <code>-X</code> option.  This file is RDF/XML format like XMP, but uses
+exiftool-specific namespaces to give an exact mapping for all exiftool tag
+names.  This type of file is better suited to general information
+storage/recovery since it facilitates copying of more original metadata than an
+XMP file, but it doesn't have the portability of an XMP file or the ability to
+store native-format data like a MIE file, and ExifTool can not be used to edit
+XML files as it can with other metadata files.  Below are example commands
+demonstrating the use of exiftool XML files.</p>
+
+<p>Create an exiftool XML sidecar file:</p>
+<pre>exiftool a.jpg -X > a.xml</pre>
+
+<p>Restore original meta information from exiftool XML file:</p>
+<pre>exiftool -tagsfromfile a.xml -all:all a.jpg</pre>
+
+<h4>Via the API</h4>
+
+<p>There is no way to automatically produce a sidecar exiftool XML file via the
+API since this function is accomplished with an output formatting option of the
+exiftool application.  However, the the API may be used to read and copy tags
+from an exiftool XML file just like any other file format.  When reading
+ExifTool XML files, all tags except those in the <code>ExifTool</code>,
+<code>File</code> and <code>Composite</code> groups are extracted with their
+original family 1 groups to facilitate copying of these tags back into their
+original locations in an image.</p>
+
+<hr>
+<a name="exif"></a>
+<h3>EXIF Files</h3>
+
+<p>EXIF files store EXIF information in the same format as in the APP1 segment
+of a JPEG image (<i>with the exception that there is no size limit for an
+EXIF file, while EXIF data in a JPEG image is limited to a maximum of 65527
+bytes</i>). The three commands below illustrate techniques for copying the
+entire EXIF block from a source image (<code><i>SRCFILE</i></code>) to an
+output EXIF file (<code>out.exif</code>):</p>
+
+<pre>exiftool -exif -b <i>SRCFILE</i> > out.exif
+
+exiftool -tagsfromfile <i>SRCFILE</i> -exif out.exif
+
+exiftool -o out.exif -exif <i>SRCFILE</i></pre>
+
+<p>It is the specification of the <a href="TagNames/Extra.html">Extra</a> EXIF
+tag in each of the above commands (the "<code>-exif</code>" argument) that
+causes the EXIF information to be extracted as a block.  JPEG, PNG, JP2, MIE and
+MIFF files all support storage of EXIF data blocks in this format, although
+exiftool does not current write MIFF images.</p>
+
+<p>Tags may also be copied individually to and from an EXIF file, but remember
+that this will not copy "unsafe" tags unless they are specified explicitly. This
+technique must be used when creating an EXIF sidecar file if the source file
+does not contain EXIF:</p>
+
+<pre>exiftool -o out.exif -all -unsafe <i>SRCFILE</i>
+</pre>
+
+<p>or for all files in a directory:</p>
+
+<pre>exiftool -o %f.exif -all -unsafe <i>DIR</i>
+</pre>
+
+<hr>
+<a name="mie"></a>
+<h3>MIE Files</h3>
+
+<p>The <a href="MIE1.1-20070121.pdf">MIE file format</a> allows storage of
+native binary meta information, and is the best option for saving metadata from
+a file in its original format.  Here are two examples that copy all individual
+tags plus the ICC Profile to a MIE sidecar file:</p>
+
+<pre>exiftool -tagsfromfile a.jpg -all:all -icc_profile a.mie</pre>
+<pre>exiftool -o a.mie -all:all -icc_profile a.jpg</pre>
+
+<p>And the following command performs the inverse operation, restoring metadata
+in a JPG image from a MIE file:</p>
+
+<pre>exiftool -tagsfromfile a.mie -all:all -icc_profile a.jpg</pre>
+
+<p>Information can also be copied in block form to a MIE file.  This allows
+preservation of the original data structure as well as unknown and non-writable
+tags.  The command below copies the full EXIF segment as a block from a JPEG
+image,</p>
+
+<pre>exiftool -tagsfromfile a.jpg -exif a.mie</pre>
+
+<p>which is functionally different from copying all writable EXIF tags
+individually with a command more like this</p>
+
+<pre>exiftool -tagsfromfile a.jpg -exif:all a.mie</pre>
+
+<p>Block-writable tags are listed in the
+<a href="TagNames/Extra.html">Extra Tags documentation</a>.</p>
+
+<p>MIE files also have the ability to store information in compressed format with
+the <code>-z</code> option (provided Compress::Zlib is installed on your system),
+which may be useful if disk space is at a premium.</p>
+
+<hr>
+<i>Created Nov 12, 2008</i><br>
+<i>Last revised Oct 7, 2012</i>
+<p class='lf'><a href="index.html">&lt;-- Back to ExifTool home page</a></p>
+</body>
+</html>

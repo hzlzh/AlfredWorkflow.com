@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.customct.TextSoapCleaners</string>
+	<key>connections</key>
+	<dict>
+		<key>082489F7-CC2F-4DDB-8513-4FB5C3DDE4B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>37849192-4D3E-49F1-AE67-BB4E1D968AC3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>37849192-4D3E-49F1-AE67-BB4E1D968AC3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>99D7AFAE-FD38-4236-897E-EE1596B8F6FA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>347EC65E-BF78-47B3-91D3-24C085C9CC09</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Richard Guay</string>
+	<key>description</key>
+	<string>This workflow allows for working with the TextSoap program from Alfred.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>TextSoap Cleaners</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Performed "{query}" cleaner!</string>
+				<key>title</key>
+				<string>TextSoap on Clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>99D7AFAE-FD38-4236-897E-EE1596B8F6FA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+   tell application "textsoap7agent"
+	   if q is equal to "" then set q to pickCleaner	   if q is not equal to "#CANCEL" then 
+			cleanClipboard with q
+	   else
+			set q to "Canceled."
+	   end if   end tell
+   return q
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>37849192-4D3E-49F1-AE67-BB4E1D968AC3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>tclean</string>
+				<key>runningsubtext</key>
+				<string>Loading Previous Cleaners...</string>
+				<key>script</key>
+				<string>include_once("workflows.php");
+$wf = new Workflows();
+$name = "/{query}.*/i";
+$listCleaners = explode("\n",file_get_contents($wf-&gt;data()."/cleaners.txt"));
+
+$count = 1;
+foreach($listCleaners as $cleaner) {
+	if((strcmp($cleaner,"") != 0)&amp;&amp;(preg_match($name,$cleaner) === 1)){
+		$wf-&gt;result('TextSoap' . $count, $cleaner, '"' . $cleaner . '" cleaner.', '', 'icon.png', 'yes', 'auto');
+		$count = $count + 1;
+	}
+}
+
+//
+// Add the default list of cleaners.
+//
+$wf-&gt;result('TextSoap999', '', 'Give List of Cleaners.', '', 'icon.png', 'yes', '');
+
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Select a previously used cleaner or List for a list of cleaners.</string>
+				<key>title</key>
+				<string>TextSoap on Clipboard</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>082489F7-CC2F-4DDB-8513-4FB5C3DDE4B4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>include_once("workflows.php");
+$wf = new Workflows();
+$name = "{query}";
+$file = $wf-&gt;data()."/cleaners.txt";
+if(strcmp($name,"Canceled.") != 0) {
+	$listCleaners = file_get_contents($file);
+	file_put_contents($wf-&gt;data()."/cleaners.txt",$listCleaners . $name . "\n");
+}
+shell_exec("sort '$file' | uniq - cleaners1.txt; mv cleaners1.txt '$file'");</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>347EC65E-BF78-47B3-91D3-24C085C9CC09</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow is for using the TextSoap cleaners on text. Each keyword is described below:
+
+To Use: The "tclean" keyword to select from a list of cleaners or a previously used cleaner. The particular TextSoap cleaner will be performed on the contents of the clipboard.</string>
+	<key>uidata</key>
+	<dict>
+		<key>082489F7-CC2F-4DDB-8513-4FB5C3DDE4B4</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>347EC65E-BF78-47B3-91D3-24C085C9CC09</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>37849192-4D3E-49F1-AE67-BB4E1D968AC3</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>99D7AFAE-FD38-4236-897E-EE1596B8F6FA</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.customct.com/shop/alfred-2-workflows/</string>
+</dict>
+</plist>

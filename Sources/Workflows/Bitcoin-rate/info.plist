@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>spuder.Alfred.Bitcoin</string>
+	<key>connections</key>
+	<dict>
+		<key>8F532014-9D5A-4F5B-8175-2184BF962167</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EB4F74EA-7B52-4723-8F6E-C7B7E4ABB01C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8F63B85E-D34A-48CA-B213-4C3BF78BE1CB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A0F9EFE7-4C1F-4690-9F8C-B5057F0DE700</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Spencer Owen</string>
+	<key>description</key>
+	<string>Displays current exchange rate. Opens mtgox webpages</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Bitcoin rate</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/MultiBit.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>EB4F74EA-7B52-4723-8F6E-C7B7E4ABB01C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>https://mining.bitcoin.cz</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>8F63B85E-D34A-48CA-B213-4C3BF78BE1CB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>6</integer>
+				<key>keyword</key>
+				<string>bitcoin</string>
+				<key>runningsubtext</key>
+				<string>Retreiving mtgox...</string>
+				<key>script</key>
+				<string>
+# Created by spencer owen
+# https://github.com/spudstud/alfred-bitcoin-workflow
+
+# User can change which number(s) are returned by editing currentValue
+
+import json
+import urllib2
+from xml.etree.ElementTree import Element, SubElement, Comment,  tostring
+
+# Api v2 url for rates
+url="http://data.mtgox.com/api/2/BTCUSD/money/ticker"
+jsonURL=urllib2.urlopen(url)
+jsonObject=json.load(jsonURL)
+
+
+# mtgox json datastream returns many statistics
+# Setting values for future convience, not actually used in this script
+highValue    	= jsonObject['data']['high']['display']
+lowValue        = jsonObject['data']['low']['display']
+avgValue        = jsonObject['data']['avg']['display']
+vwapValue       = jsonObject['data']['vwap']['display']
+volValue		= jsonObject['data']['vol']['display']
+last_localValue	= jsonObject['data']['last_local']['display']
+last_origValue	= jsonObject['data']['last_orig']['display']
+last_all 		= jsonObject['data']['last_all']['display']
+lastValue       = jsonObject['data']['last']['display']
+buyValue		= jsonObject['data']['buy']['display']
+sellValue		= jsonObject['data']['sell']['display']
+nowValue        = jsonObject['data']['now'] # now does not contain subfields
+
+# Change curentValue to equal which ever datastream value you wish to display when executed
+# defautl is lastValue
+currentValue = lastValue
+
+
+
+# Create a single string with xml data (bad practice)
+#print ("&lt;items&gt;&lt;item uid='currentPrice' arg='"+currentValue+"' valid='yes'&gt;&lt;title&gt;MtGox Current Price&lt;/title&gt;&lt;subtitle&gt;"+ currentValue +"&lt;/subtitle&gt;&lt;icon&gt;MtGox.png&lt;/icon&gt;&lt;/item&gt;&lt;/items&gt;" ).encode('ascii', 'xmlcharrefreplace')
+
+#&lt;items&gt;
+	# &lt;item uid='currentPrice' arg='"+currentValue+"' valid='yes'&gt;
+	# 	&lt;title&gt;MtGox Current Price&lt;/title&gt;
+	# 	&lt;subtitle&gt;"+ currentValue +"&lt;/subtitle&gt;
+	# 	&lt;icon&gt;MtGox.png&lt;/icon&gt;&lt;/item&gt;&lt;/items&gt;
+
+# Create a xml object that matches the documentaion ^
+# http://www.alfredforum.com/topic/5-generating-feedback-in-workflows/
+
+items = Element('items')
+
+item = SubElement(items, 'item')
+item.set('uid', 'mtgoxprice')
+item.set('arg', str(currentValue)) # arg allows you to pass a string to other displays (notification center)
+item.set('valid', 'yes')
+
+title = SubElement(item, 'title')
+title.text = "MtGox Current Rate"
+
+subtitle = SubElement(item, 'subtitle')
+subtitle.text = str(currentValue)
+
+icon = SubElement(item, 'icon')
+icon.text = "MtGox.png"
+
+print tostring(items)
+</string>
+				<key>subtext</key>
+				<string>Get current bitcoin exchange rate</string>
+				<key>title</key>
+				<string>Bitcoin</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8F532014-9D5A-4F5B-8175-2184BF962167</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>https://btcmine.com/user/stats/</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>7701A63B-6011-43E2-9D08-E5AF010C30F7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<true/>
+				<key>url</key>
+				<string>https://mtgox.com</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A0F9EFE7-4C1F-4690-9F8C-B5057F0DE700</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>bitcoin</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>985478AB-A6E8-428A-B89B-45B07E383481</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Useage:
+Type in "Bitcon"
+Alfred will show the current trade rate of mtgox bitcoins
+
+Optional:
+Pressing enter will open the bitcoin wallet and websites specified in workflow
+
+Default Wallet: 
+- MultiBit
+
+Default Websites:
+- MtGox
+- mining.bitcoin.cz (slush)</string>
+	<key>uidata</key>
+	<dict>
+		<key>7701A63B-6011-43E2-9D08-E5AF010C30F7</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>8F532014-9D5A-4F5B-8175-2184BF962167</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>8F63B85E-D34A-48CA-B213-4C3BF78BE1CB</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>985478AB-A6E8-428A-B89B-45B07E383481</key>
+		<dict>
+			<key>ypos</key>
+			<real>470</real>
+		</dict>
+		<key>A0F9EFE7-4C1F-4690-9F8C-B5057F0DE700</key>
+		<dict>
+			<key>ypos</key>
+			<real>400</real>
+		</dict>
+		<key>EB4F74EA-7B52-4723-8F6E-C7B7E4ABB01C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.alfredforum.com/topic/2219-bitcoin-exchange-rate/</string>
+</dict>
+</plist>

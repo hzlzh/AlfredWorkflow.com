@@ -13,6 +13,7 @@ class AlfredWorkflow
       'author'        => data['workflow-author-name'],
       'description'   => data['workflow-description-small'],
       'download_link' => data['workflow-download-link'],
+      'filename'      => 'workflow.alfredworkflow',
       'name'          => data['workflow-name'],
       'version'       => data['workflow-version']
     }

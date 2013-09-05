@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.ryanparman.workflow.redbox</string>
+	<key>connections</key>
+	<dict>
+		<key>86F16A5E-0701-4D5E-B595-5F686CA3EE9B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>64CECAD8-BCE8-42E1-A376-739FEEFA0B1A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Ryan Parman</string>
+	<key>description</key>
+	<string>Search Redbox for movie rentals</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Redbox</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>redbox</string>
+				<key>runningsubtext</key>
+				<string>Retrieving data…</string>
+				<key>script</key>
+				<string>php ./workflow.php "{query}"</string>
+				<key>subtext</key>
+				<string>Search for movie rentals</string>
+				<key>title</key>
+				<string>Redbox</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>86F16A5E-0701-4D5E-B595-5F686CA3EE9B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>https://www.redbox.com/search/?q={query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>64CECAD8-BCE8-42E1-A376-739FEEFA0B1A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>64CECAD8-BCE8-42E1-A376-739FEEFA0B1A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>86F16A5E-0701-4D5E-B595-5F686CA3EE9B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>ryanparman.com</string>
+</dict>
+</plist>

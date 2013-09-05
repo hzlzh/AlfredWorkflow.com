@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>duplicati.apri</string>
+	<key>connections</key>
+	<dict>
+		<key>3D2EE130-1418-4A4F-B074-A40B11A7C9FF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6270ED16-46EB-4E43-92B9-1C6BF79112EA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6270ED16-46EB-4E43-92B9-1C6BF79112EA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1563DF5A-7C26-4B55-B411-02CB56EA7CA0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Massimiliano Massara</string>
+	<key>description</key>
+	<string>cancella i duplicati dal menù apri</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Duplicati apri</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Fatto! rimosso i duplicati</string>
+				<key>title</key>
+				<string>Duplicato apri</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>1563DF5A-7C26-4B55-B411-02CB56EA7CA0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>duplicato</string>
+				<key>subtext</key>
+				<string>rimuovi i duplicati dal menù apri</string>
+				<key>text</key>
+				<string>Duplicato Apri</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3D2EE130-1418-4A4F-B074-A40B11A7C9FF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>/System/Library/Frameworks/CoreServices.framework/Versions/Current/Frameworks/LaunchServices.framework/Versions/Current/Support/lsregister -kill -r -all system,local,user</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6270ED16-46EB-4E43-92B9-1C6BF79112EA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1563DF5A-7C26-4B55-B411-02CB56EA7CA0</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>3D2EE130-1418-4A4F-B074-A40B11A7C9FF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>6270ED16-46EB-4E43-92B9-1C6BF79112EA</key>
+		<dict>
+			<key>ypos</key>
+			<real>80</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>bitesidea.net</string>
+</dict>
+</plist>

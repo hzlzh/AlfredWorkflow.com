@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>me.krry.bluth</string>
+	<key>connections</key>
+	<dict>
+		<key>157AD406-1D5F-484A-B3AE-FE793601DB85</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>78BC8C48-4D4B-4642-9481-72460B75DA70</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F4F62AA5-28FB-499F-B989-EDC3E1435935</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>157AD406-1D5F-484A-B3AE-FE793601DB85</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Kerry Snyder</string>
+	<key>description</key>
+	<string>Turn Bluetooth "on" or "off" using blueutil</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Toggle Bluetooth</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<true/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Your bluetooth is now</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>78BC8C48-4D4B-4642-9481-72460B75DA70</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>if [[ {query} == "off" ]]
+then
+/usr/local/bin/blueutil off
+echo "off"
+else 
+/usr/local/bin/blueutil on
+echo "on"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>157AD406-1D5F-484A-B3AE-FE793601DB85</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>blue</string>
+				<key>subtext</key>
+				<string>Toggle Bluetooth "on" or "off"</string>
+				<key>text</key>
+				<string>Blue Yourself</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F4F62AA5-28FB-499F-B989-EDC3E1435935</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Requires the installation of blueutil, available via Mac brew, and assumes a symlink or other link to blueutil available at:
+
+	/usr/local/bin/blueutil
+
+If you have brew installed, use the command:
+
+	brew install blueutil
+
+If not, install blueutil on your own, or install brew first.</string>
+	<key>uidata</key>
+	<dict>
+		<key>157AD406-1D5F-484A-B3AE-FE793601DB85</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>78BC8C48-4D4B-4642-9481-72460B75DA70</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+		<key>F4F62AA5-28FB-499F-B989-EDC3E1435935</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://krry.me</string>
+</dict>
+</plist>

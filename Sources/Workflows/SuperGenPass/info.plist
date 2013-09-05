@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.camazotz.supergenpass-alfred</string>
+	<key>connections</key>
+	<dict>
+		<key>E102DA64-5597-49BC-8D45-7504A2475619</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E945109C-75E8-4655-8F00-B0078A0AF1BD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mark Smith</string>
+	<key>description</key>
+	<string>SuperGenPass-compatible password generator.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>SuperGenPass</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>sgp</string>
+				<key>subtext</key>
+				<string>Generate password for domain '{query}'</string>
+				<key>text</key>
+				<string>SuperGenPass</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E102DA64-5597-49BC-8D45-7504A2475619</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>./sgp --gui {query}
+
+# When entering the master password, the default selected
+# button is the Show button. To make Copy the selected button
+# instead, use the --copy option:
+#
+# ./sgp --gui --copy {query}
+
+# The default generated password length is 10. To specify
+# a different length, use the --length option:
+#
+# ./sgp --gui --length 12 {query}
+
+# By default, it's not possible to verify the master password
+# typed. If you want to verify it, generate the password for
+# the domain example.com and specify it using the --example
+# option:
+#
+# ./sgp --gui --example c5BfJam6iD {query}
+#
+# When specified, the master password you type will be
+# rejected unless it generates the same password for example.com.</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E945109C-75E8-4655-8F00-B0078A0AF1BD</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>E102DA64-5597-49BC-8D45-7504A2475619</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E945109C-75E8-4655-8F00-B0078A0AF1BD</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>1.1.0</string>
+	<key>webaddress</key>
+	<string>http://camazotz.com/supergenpass-alfred</string>
+</dict>
+</plist>

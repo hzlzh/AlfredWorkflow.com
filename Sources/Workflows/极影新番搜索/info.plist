@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.leomoyu.alfred.jiyingsearch</string>
+	<key>connections</key>
+	<dict>
+		<key>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3F078753-0111-40B1-9949-11C6475671CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Le0sama</string>
+	<key>description</key>
+	<string>Workflow for bt.ktxp.com</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>极影新番搜索</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>3F078753-0111-40B1-9949-11C6475671CE</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>jy</string>
+				<key>runningsubtext</key>
+				<string>努力加载中，主人...</string>
+				<key>script</key>
+				<string># -*- coding: utf-8 -*-
+
+__author__ = 'Sagacity'
+
+import urllib
+import xml.dom.minidom
+
+theQuery = u"{query}"
+
+rssurl = 'http://bt.ktxp.com/rss-sort-1.xml'
+urldoc = xml.dom.minidom.parse( urllib.urlopen( rssurl ) )
+
+print "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;"
+for item in urldoc.getElementsByTagName('item'):
+    title = item.getElementsByTagName('title')[0].firstChild.data
+    link = item.getElementsByTagName('link')[0].firstChild.data
+
+    if title.__contains__(theQuery) or theQuery == "all":
+        print "    &lt;item uid=\"ktxp\" arg=\""+ link +"\"&gt;"
+        print "        &lt;title&gt;" + title.encode('utf-8') + "&lt;/title&gt;"
+        print "        &lt;subtitle&gt;" + title.encode('utf-8') + "&lt;/subtitle&gt;"
+        print '''        &lt;icon type="fileicon"&gt;/Applications/QuickTime Player.app/&lt;/icon&gt;
+    &lt;/item&gt;'''
+print "&lt;/items&gt;\n"</string>
+				<key>subtext</key>
+				<string>请输入想要穿越的世界线，主人...</string>
+				<key>title</key>
+				<string>极影新番搜索</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>感谢 @sagacity 大叔提供源码_(:з」∠)_</string>
+	<key>uidata</key>
+	<dict>
+		<key>3F078753-0111-40B1-9949-11C6475671CE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://leomoyu.com/</string>
+</dict>
+</plist>

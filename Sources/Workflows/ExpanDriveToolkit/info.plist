@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.customct.ExpanDrive</string>
+	<key>connections</key>
+	<dict>
+		<key>160A6C34-5261-4C79-8042-E014FE43E1FD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>478821AC-687A-464C-BF11-38AD5423297A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5557BC7D-C729-4B04-A4DC-E22832DA4ED8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7DF73A88-C485-4D9D-85E9-7DB5FAA9E844</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>478821AC-687A-464C-BF11-38AD5423297A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6573AD28-2610-4667-8908-66236A658025</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>73E05652-0C25-492B-9AC0-6ADF2CD1237F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>73E05652-0C25-492B-9AC0-6ADF2CD1237F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>478821AC-687A-464C-BF11-38AD5423297A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>78D550AB-17A2-42A8-A80D-418F70C8C248</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>160A6C34-5261-4C79-8042-E014FE43E1FD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F6664667-59BE-4784-B78B-0AAF6CB43ED9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5557BC7D-C729-4B04-A4DC-E22832DA4ED8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Richard Guay</string>
+	<key>description</key>
+	<string>A workflow for working with ExpanDrive S3, FTP, SFTP manager</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ExpanDrive Toolkit</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>
+#########################
+# Contants.
+#########################
+VPREFS="${HOME}/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/"
+NVPREFS="${HOME}/Library/Application Support/Alfred 2/Workflow Data/"
+
+###############################################################################
+# Read the bundleid from the workflow's info.plist
+###############################################################################
+getBundleId() {
+  /usr/libexec/PlistBuddy  -c "Print :bundleid" "info.plist"
+}
+
+###############################################################################
+# Get the workflow data dir
+###############################################################################
+getDataDir() {
+  local BUNDLEID=$(getBundleId)
+  echo "${NVPREFS}${BUNDLEID}"
+}
+
+if [ ! -d "$(getDataDir)" ]; then
+   mkdir -p "$(getDataDir)";
+   touch "$(getDataDir)/head.txt";
+   touch "$(getDataDir)/dirname.txt";
+fi
+
+HeadName=`cat "$(getDataDir)/head.txt"`;
+clean=`sed 's/\/Volumes\/Envato//' &lt;&lt;&lt; "{query}"`;
+DirName=`cat "$(getDataDir)/dirname.txt"`;
+echo "$DirName$clean";
+</string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5557BC7D-C729-4B04-A4DC-E22832DA4ED8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>7DF73A88-C485-4D9D-85E9-7DB5FAA9E844</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F6664667-59BE-4784-B78B-0AAF6CB43ED9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>64</integer>
+				<key>script</key>
+				<string>
+#########################
+# Contants.
+#########################
+VPREFS="${HOME}/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/"
+NVPREFS="${HOME}/Library/Application Support/Alfred 2/Workflow Data/"
+
+###############################################################################
+# Read the bundleid from the workflow's info.plist
+###############################################################################
+getBundleId() {
+  /usr/libexec/PlistBuddy  -c "Print :bundleid" "info.plist"
+}
+
+###############################################################################
+# Get the workflow data dir
+###############################################################################
+getDataDir() {
+  local BUNDLEID=$(getBundleId)
+  echo "${NVPREFS}${BUNDLEID}"
+}
+
+if [ ! -d "$(getDataDir)" ]; then
+   mkdir -p "$(getDataDir)";
+   touch "$(getDataDir)/head.txt";
+   touch "$(getDataDir)/dirname.txt";
+fi
+
+echo "{query}" &gt; "$(getDataDir)/head.txt";
+
+echo "Set the ExpanDrive directory to: {query}";
+</string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>160A6C34-5261-4C79-8042-E014FE43E1FD</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>ExpanDrive Toolkit</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>478821AC-687A-464C-BF11-38AD5423297A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ed:edir</string>
+				<key>subtext</key>
+				<string>Give the name of the ExpanDrive to replace.</string>
+				<key>text</key>
+				<string>ExpanDrive Toolkit</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>78D550AB-17A2-42A8-A80D-418F70C8C248</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ed:wdir</string>
+				<key>subtext</key>
+				<string>Set the directory name for making the reference to it web accessable.</string>
+				<key>text</key>
+				<string>ExpanDrive Toolkit</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6573AD28-2610-4667-8908-66236A658025</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>
+#########################
+# Contants.
+#########################
+VPREFS="${HOME}/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/"
+NVPREFS="${HOME}/Library/Application Support/Alfred 2/Workflow Data/"
+
+###############################################################################
+# Read the bundleid from the workflow's info.plist
+###############################################################################
+getBundleId() {
+  /usr/libexec/PlistBuddy  -c "Print :bundleid" "info.plist"
+}
+
+###############################################################################
+# Get the workflow data dir
+###############################################################################
+getDataDir() {
+  local BUNDLEID=$(getBundleId)
+  echo "${NVPREFS}${BUNDLEID}"
+}
+
+if [ ! -d "$(getDataDir)" ]; then
+   mkdir -p "$(getDataDir)";
+   touch "$(getDataDir)/head.txt";
+   touch "$(getDataDir)/dirname.txt";
+fi
+
+echo "{query}" &gt; "$(getDataDir)/dirname.txt";
+
+echo "Set the ExpanDrive directory to: {query}";
+</string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>73E05652-0C25-492B-9AC0-6ADF2CD1237F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>The first macro is used to get the current OSX selection that should be a file inside an ExpanDrive directory structure. It will then replace the ExpanDrive name to the name given to be used. I assigned it to the hotkey of &lt;ctl&gt;&lt;alt&gt;&lt;cmd&gt;e, but you can change it to whatever you want. 
+
+The keyword "ed:edir" allows you to set the directory of the ExpanDrive that you want to replace the name with.
+
+The keyword "ed:wdir" allows you to set the web facing name for that directory.</string>
+	<key>uidata</key>
+	<dict>
+		<key>160A6C34-5261-4C79-8042-E014FE43E1FD</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>478821AC-687A-464C-BF11-38AD5423297A</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>5557BC7D-C729-4B04-A4DC-E22832DA4ED8</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>6573AD28-2610-4667-8908-66236A658025</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>73E05652-0C25-492B-9AC0-6ADF2CD1237F</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>78D550AB-17A2-42A8-A80D-418F70C8C248</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>7DF73A88-C485-4D9D-85E9-7DB5FAA9E844</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>F6664667-59BE-4784-B78B-0AAF6CB43ED9</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.customct.com/shop/alfred-2-workflows/</string>
+</dict>
+</plist>

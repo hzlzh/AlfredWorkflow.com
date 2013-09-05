@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>feeds.delicious.com</string>
+	<key>connections</key>
+	<dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F590AA5C-1B4F-4027-AE0B-47B6C50CA2AF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8AE7A80D-A792-4EDB-9B17-2A35122B35C4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2DECA882-7997-4867-A439-463F4F6EB864</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D03AA54E-38AC-4425-AD96-12EE83327484</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8AE7A80D-A792-4EDB-9B17-2A35122B35C4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>iamsk</string>
+	<key>description</key>
+	<string>recent bookmarks from delicious</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>delicious</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string>com.google.Chrome</string>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>F590AA5C-1B4F-4027-AE0B-47B6C50CA2AF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>delicious</string>
+				<key>script</key>
+				<string>import os
+import deliciousapi
+import alp
+from alp import Item, core
+
+
+def bookmarks2items(bookmarks):
+    items = []
+    for bookmark in bookmarks:
+        item = Item(
+            uid=alp.bundle(),
+            arg=bookmark[0],
+            valid=True,
+            title=bookmark[2],
+            subtitle=bookmark[1][0],
+            icon='logo.png')
+        items.append(item)
+    return items
+
+dapi = deliciousapi.DeliciousAPI()
+
+query = "{query}"
+
+infoPath = os.path.abspath("./info.plist")
+
+plist = core.readPlist(infoPath)
+
+DEFAULT_USERNAME = plist['username']
+if query:
+    bookmarks = dapi.get_user_with_tag(DEFAULT_USERNAME, query, max_bookmarks=10).bookmarks
+else:
+    bookmarks = dapi.get_user(DEFAULT_USERNAME, max_bookmarks=10).bookmarks
+
+items = bookmarks2items(bookmarks)
+
+alp.feedback(items)</string>
+				<key>title</key>
+				<string>bookmarks</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>1</integer>
+				<key>script</key>
+				<string>import os
+from alp import core
+
+query = "{query}"
+
+infoPath = os.path.abspath("./info.plist")
+
+plist = core.readPlist(infoPath)
+
+plist['username'] = query
+
+core.writePlist(plist, infoPath)</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8AE7A80D-A792-4EDB-9B17-2A35122B35C4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>set delicious account successful!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2DECA882-7997-4867-A439-463F4F6EB864</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>delconfig</string>
+				<key>script</key>
+				<string>import alp
+from alp import Item
+
+query = "{query}"
+
+item = Item(
+            uid=alp.bundle(),
+            arg=query,
+            valid=True,
+            title=query,
+            subtitle='set username for delicious',
+            icon='logo.png')
+
+alp.feedback([item])</string>
+				<key>title</key>
+				<string>set username for delicious</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D03AA54E-38AC-4425-AD96-12EE83327484</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2DECA882-7997-4867-A439-463F4F6EB864</key>
+		<dict>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>8AE7A80D-A792-4EDB-9B17-2A35122B35C4</key>
+		<dict>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>D03AA54E-38AC-4425-AD96-12EE83327484</key>
+		<dict>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>F590AA5C-1B4F-4027-AE0B-47B6C50CA2AF</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>username</key>
+	<string>iamsk</string>
+	<key>webaddress</key>
+	<string>iamsk.info</string>
+</dict>
+</plist>

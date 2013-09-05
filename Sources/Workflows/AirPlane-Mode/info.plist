@@ -3,101 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>jakestech.airplane.alfred2</string>
+	<string>com.daveboyle.airplane</string>
 	<key>connections</key>
 	<dict>
-		<key>1BF8D2D3-32F8-4F13-8C9D-9B72323C0A91</key>
+		<key>6B71D91F-5887-44AC-9586-714381034D08</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E808F4C2-47AA-483E-A0D6-6F9691129B06</string>
+				<string>305E3D5B-079B-42EF-9358-E1549F8BD7A9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>264447EF-5294-4F91-AEF8-DB6C18DCE32D</key>
+		<key>C07D3235-6510-42CA-80D5-D544B5AA1B6A</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8CB9E2DD-A4FC-4AA5-B229-88174066B821</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>5070504C-240C-4BC0-BBF9-4FB1E84F1B05</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>F988B67C-1A74-423F-AB74-9AD65C2D49AE</string>
-				<key>modifiers</key>
-				<integer>262144</integer>
-				<key>modifiersubtext</key>
-				<string>Toggles bluetooth only.</string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>7C24829E-6EDA-48DF-93AE-4C238B4A6355</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>264447EF-5294-4F91-AEF8-DB6C18DCE32D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>E1577A8C-AD1D-4CB8-81B7-967855014F3A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>1BF8D2D3-32F8-4F13-8C9D-9B72323C0A91</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>Toggle wifi only.</string>
-			</dict>
-		</array>
-		<key>7C24829E-6EDA-48DF-93AE-4C238B4A6355</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>8CB9E2DD-A4FC-4AA5-B229-88174066B821</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>E1577A8C-AD1D-4CB8-81B7-967855014F3A</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>8CB9E2DD-A4FC-4AA5-B229-88174066B821</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>F988B67C-1A74-423F-AB74-9AD65C2D49AE</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>48C83F85-6D5F-4053-A5A0-6F83A098A002</string>
+				<string>6B71D91F-5887-44AC-9586-714381034D08</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -106,27 +30,32 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Jacob Elias</string>
+	<string>Dave Boyle</string>
 	<key>description</key>
-	<string>Toggle your bluetooth, wifi, and lower your brightness.</string>
+	<string>Airplane mode on</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>AirPlane Mode</string>
+	<string>Airplane Mode</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>63</integer>
+				<integer>127</integer>
 				<key>script</key>
-				<string>#!/bin/bash
-if [ "$(./blueutil status)" = "Status: on" ]
+				<string>response="{query}"
+if [ $response = "on" ]
 then
-	./blueutil off
-else
-	./blueutil on
+	/usr/local/bin/blueutil off;networksetup -setairportpower en1 off
+	echo "Airplane Mode Activated"
+
+elif [ $response = "off" ]
+then
+
+	/usr/local/bin/blueutil on;networksetup -setairportpower en1 on
+	echo "Airplane Mode Deactivated"
 fi</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -134,73 +63,9 @@ fi</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>F988B67C-1A74-423F-AB74-9AD65C2D49AE</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>script</key>
-				<string># Built by: Jonas Eriksen
-# www.aiyo.dk/alfredapp
-
-#Function to search keychain for the network password
-get_pw () {
- if [ "$1" ]
- then
-  security 2&gt;&amp;1 &gt;/dev/null  find-generic-password -ga AirPort -l "$1" | cut -d '"' -f 2 | grep -v security:
- fi
-}
-#Find the device name
-DEVICE=$(networksetup -listallhardwareports | grep -A 2 -E "AirPort|Wi-Fi" | grep -m 1 -o -e en[0-9]);
-#Toggle or change network?
-case "{query}" in
-"")
- #Toggle the power of the Wi-Fi/Airport
- if [ $(networksetup -getairportpower $DEVICE | grep -c On) == 0 ]
- then
-  networksetup -setairportpower $DEVICE On
- else
-  networksetup -setairportpower $DEVICE Off
- fi
-;;
-"?")
-  echo $(networksetup -getairportnetwork $DEVICE)
-  echo
-  networksetup -getinfo Wi-Fi
-;;
-*)
- #Change network - Make sure that the Airport is on
- if [ $(networksetup -getairportpower $DEVICE | grep -c On) == 0 ]
- then
-  networksetup -setairportpower $DEVICE On
- fi
- #Fuzzy match to known networks
- NETWORK=$(networksetup -listpreferredwirelessnetworks en1 | egrep -im 1 "[[:alnum:]]*{query}[[:alnum:]]*$");
- #If a match is found - try to connect to Network
- if [ -z "$NETWORK" ]
- then
-  echo "Unable to match \"{query}\" to a know network.";
- else
-  ERROR=$(networksetup -setairportnetwork en1 "$(echo $NETWORK)" $(get_pw "$(echo $NETWORK)") );
-  if [ -z "$ERROR" ]
-  then
-   echo "Successfully connected to network $NETWORK.";
-  else
-   echo $ERROR;
-  fi
- fi
-;;
-esac
-</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>E1577A8C-AD1D-4CB8-81B7-967855014F3A</string>
+			<string>6B71D91F-5887-44AC-9586-714381034D08</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -208,254 +73,66 @@ esac
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<false/>
+				<true/>
 				<key>output</key>
 				<integer>0</integer>
 				<key>removeextension</key>
 				<false/>
 				<key>sticky</key>
 				<false/>
-				<key>text</key>
-				<string>Wifi toggled.</string>
 				<key>title</key>
-				<string>AirPlane Mode</string>
+				<string>Airplane Mode ON</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>E808F4C2-47AA-483E-A0D6-6F9691129B06</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>script</key>
-				<string>ChangeBrightness(0.25) --Set this value between 0 and 1 to adjust brightnesson ChangeBrightness(BrightnessValue)		tell application "System Preferences"		--activate		set current pane to pane "com.apple.preference.displays"	end tell	tell application "System Events" to tell process "System Preferences"				tell radio button "Display" of tab group 1 of window 1 to if value is 0 then			repeat until value is 1				click			end repeat		end if						tell slider 1 of group 1 of tab group 1 of window 1 to set value to BrightnessValue	end tell	tell application "System Preferences" to quitend ChangeBrightness</string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>264447EF-5294-4F91-AEF8-DB6C18DCE32D</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>Bluetoot &amp; Wifi Toggled, brightness lowered.</string>
-				<key>title</key>
-				<string>AirPlane Mode</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>8CB9E2DD-A4FC-4AA5-B229-88174066B821</string>
+			<string>305E3D5B-079B-42EF-9358-E1549F8BD7A9</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>2</integer>
+				<integer>0</integer>
 				<key>keyword</key>
-				<string>airplane</string>
+				<string>ap</string>
 				<key>subtext</key>
-				<string>Turn off bluetooth, wifi and lower your brightness</string>
+				<string>ON or OFF</string>
 				<key>text</key>
-				<string>Toggle AirPlane mode.</string>
+				<string>Airplane Mode</string>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>5070504C-240C-4BC0-BBF9-4FB1E84F1B05</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>script</key>
-				<string>#!/bin/bash
-if [ "$(./blueutil status)" = "Status: on" ]
-then
-	./blueutil off
-else
-	./blueutil on
-fi</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>7C24829E-6EDA-48DF-93AE-4C238B4A6355</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>63</integer>
-				<key>script</key>
-				<string># Built by: Jonas Eriksen
-# www.aiyo.dk/alfredapp
-
-#Function to search keychain for the network password
-get_pw () {
- if [ "$1" ]
- then
-  security 2&gt;&amp;1 &gt;/dev/null  find-generic-password -ga AirPort -l "$1" | cut -d '"' -f 2 | grep -v security:
- fi
-}
-#Find the device name
-DEVICE=$(networksetup -listallhardwareports | grep -A 2 -E "AirPort|Wi-Fi" | grep -m 1 -o -e en[0-9]);
-#Toggle or change network?
-case "{query}" in
-"")
- #Toggle the power of the Wi-Fi/Airport
- if [ $(networksetup -getairportpower $DEVICE | grep -c On) == 0 ]
- then
-  networksetup -setairportpower $DEVICE On
- else
-  networksetup -setairportpower $DEVICE Off
- fi
-;;
-"?")
-  echo $(networksetup -getairportnetwork $DEVICE)
-  echo
-  networksetup -getinfo Wi-Fi
-;;
-*)
- #Change network - Make sure that the Airport is on
- if [ $(networksetup -getairportpower $DEVICE | grep -c On) == 0 ]
- then
-  networksetup -setairportpower $DEVICE On
- fi
- #Fuzzy match to known networks
- NETWORK=$(networksetup -listpreferredwirelessnetworks en1 | egrep -im 1 "[[:alnum:]]*{query}[[:alnum:]]*$");
- #If a match is found - try to connect to Network
- if [ -z "$NETWORK" ]
- then
-  echo "Unable to match \"{query}\" to a know network.";
- else
-  ERROR=$(networksetup -setairportnetwork en1 "$(echo $NETWORK)" $(get_pw "$(echo $NETWORK)") );
-  if [ -z "$ERROR" ]
-  then
-   echo "Successfully connected to network $NETWORK.";
-  else
-   echo $ERROR;
-  fi
- fi
-;;
-esac
-</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>1BF8D2D3-32F8-4F13-8C9D-9B72323C0A91</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>Bluetooth toggled.</string>
-				<key>title</key>
-				<string>AirPlane Mode</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>48C83F85-6D5F-4053-A5A0-6F83A098A002</string>
+			<string>C07D3235-6510-42CA-80D5-D544B5AA1B6A</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Note:
-
-For wifi and bluetooth, all it does is toggle. If your bluetooth is regularly off then remove that script from the workflow.
-
-To change the brightness set on the workflow edit the decimal number on the middle script, and be sure to keep the number between 0 and 1.
-
-Credits:
-
-Icon: Louie Mantia (mantia.me)
-
-Toggle Bluetooth Script: Petr Manas (petrmanas.name)
-
-Toggle Wi-Fi Script: Sayz Lim (http://sayzlim.net/extension)</string>
+	<string>Type AP then ON or OFF to turn bluetooth and airport on/off</string>
 	<key>uidata</key>
 	<dict>
-		<key>1BF8D2D3-32F8-4F13-8C9D-9B72323C0A91</key>
+		<key>305E3D5B-079B-42EF-9358-E1549F8BD7A9</key>
 		<dict>
 			<key>ypos</key>
-			<real>500</real>
+			<real>180</real>
 		</dict>
-		<key>264447EF-5294-4F91-AEF8-DB6C18DCE32D</key>
-		<dict>
-			<key>ypos</key>
-			<real>250</real>
-		</dict>
-		<key>48C83F85-6D5F-4053-A5A0-6F83A098A002</key>
-		<dict>
-			<key>ypos</key>
-			<real>140</real>
-		</dict>
-		<key>5070504C-240C-4BC0-BBF9-4FB1E84F1B05</key>
-		<dict>
-			<key>ypos</key>
-			<real>250</real>
-		</dict>
-		<key>7C24829E-6EDA-48DF-93AE-4C238B4A6355</key>
-		<dict>
-			<key>ypos</key>
-			<real>110</real>
-		</dict>
-		<key>8CB9E2DD-A4FC-4AA5-B229-88174066B821</key>
-		<dict>
-			<key>ypos</key>
-			<real>250</real>
-		</dict>
-		<key>E1577A8C-AD1D-4CB8-81B7-967855014F3A</key>
-		<dict>
-			<key>ypos</key>
-			<real>400</real>
-		</dict>
-		<key>E808F4C2-47AA-483E-A0D6-6F9691129B06</key>
-		<dict>
-			<key>ypos</key>
-			<real>360</real>
-		</dict>
-		<key>F988B67C-1A74-423F-AB74-9AD65C2D49AE</key>
+		<key>6B71D91F-5887-44AC-9586-714381034D08</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
+		<key>C07D3235-6510-42CA-80D5-D544B5AA1B6A</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string>jakestech.tumblr.com</string>
+	<string>http://daveboyle.net</string>
 </dict>
 </plist>

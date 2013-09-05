@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.tedwise.pubmed</string>
+	<key>connections</key>
+	<dict>
+		<key>279E2C71-F15A-4784-B3C6-90CCB036325F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B7D4EBCC-1B7E-4537-A0E7-D7140B5F5199</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FCC430CF-F6E6-42F0-909D-2B2A54883087</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>796C3CEA-AE9E-41F1-A626-1302A1FF927D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Ted Wise</string>
+	<key>description</key>
+	<string>Two different methods to get autocomplete for PubMed. (1.1)</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Search PubMed</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>pubmed</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby pubmed.rb "{query}"</string>
+				<key>subtext</key>
+				<string>Search articles in PubMed</string>
+				<key>title</key>
+				<string>Search PubMed</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>279E2C71-F15A-4784-B3C6-90CCB036325F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>http://www.ncbi.nlm.nih.gov/pubmed/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>B7D4EBCC-1B7E-4537-A0E7-D7140B5F5199</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>http://www.ncbi.nlm.nih.gov/pubmed?term={query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>796C3CEA-AE9E-41F1-A626-1302A1FF927D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>pubmed2</string>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby pubmed_lookup.rb "{query}"</string>
+				<key>subtext</key>
+				<string>Search articles in PubMed</string>
+				<key>title</key>
+				<string>Search PubMed</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FCC430CF-F6E6-42F0-909D-2B2A54883087</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>279E2C71-F15A-4784-B3C6-90CCB036325F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>796C3CEA-AE9E-41F1-A626-1302A1FF927D</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>B7D4EBCC-1B7E-4537-A0E7-D7140B5F5199</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>FCC430CF-F6E6-42F0-909D-2B2A54883087</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://tedwise.com</string>
+</dict>
+</plist>

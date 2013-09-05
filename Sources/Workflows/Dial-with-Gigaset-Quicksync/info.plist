@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<array/>
+		<key>E710E68E-C6DA-472E-B08E-FBB5983136C8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Berni Steiner</string>
+	<key>description</key>
+	<string>Use keyword "dial" or a custom contacts action</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Dial with Gigaset Quicksync</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>dial</string>
+				<key>subtext</key>
+				<string>Uses Quicksync to dial out given number</string>
+				<key>text</key>
+				<string>Dial with Gigaset phone</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>264A09D9-DE34-403A-9524-C67F6525811D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "QuickSyncServices.service"
+		dial q with phone "DE900 IP PRO"	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7686C74A-A33F-49C2-8231-40F1569A481A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>name</key>
+				<string>Call Contact with Quicksync</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.contact</string>
+			<key>uid</key>
+			<string>E710E68E-C6DA-472E-B08E-FBB5983136C8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow uses the Gigaset QuickSync software to initiate dialing directly on the phone device.
+http://www.gigaset.com/en_HQ/support/downloads/quicksync.html
+
+Usage: 
+
+Use the keyword "dial" followed by the number you want to send to your phone for dialing it immediately.
+Or add a custom action to dial from the contacts search, as described here:
+http://support.alfredapp.com/workflows:config:triggers-contact-action
+
+General notice:
+
+You might need to adjust the name of your IP phone, depending on which name it has in the Gigaset Quicksync software itself.
+Go to Workflows, Dial with Gigaset Quicksync and edit the "Run NSAppleScript". 
+Change the string "DE900 IP PRO" to the name of your connected Gigaset phone. If you are not sure, start the QuickSync.app and use the name written below your list of connected phone devices.</string>
+	<key>uidata</key>
+	<dict>
+		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>E710E68E-C6DA-472E-B08E-FBB5983136C8</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.jahuuu.de/wp/post/52</string>
+</dict>
+</plist>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>sparrowmail</string>
+	<key>connections</key>
+	<dict>
+		<key>DCF7DC1F-0DB8-4C9F-8BC6-35DBFA9B8E7F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>43D36D54-118A-4BDA-923D-CEEB31096307</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Shie Benaderet</string>
+	<key>description</key>
+	<string>Open a new email in Sparrow start typing contact name</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Send from Sparrow</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)	tell application "System Events"		set isSparrowRunning to exists (processes where name is "Sparrow")	end tell	if not isSparrowRunning then		tell application "Sparrow" to launch		delay 0.5	end if	tell application "Sparrow" to activate --- activates sparrow	tell application "System Events"		tell process "Sparrow" --- implying Sparrow is already activated			key code 45 using {command down} --- send cmd+N to Sparrow invoking new email			keystroke q --- enter the query		end tell	end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>43D36D54-118A-4BDA-923D-CEEB31096307</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>email</string>
+				<key>subtext</key>
+				<string>Send an email to...</string>
+				<key>text</key>
+				<string>Email</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>DCF7DC1F-0DB8-4C9F-8BC6-35DBFA9B8E7F</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>v 1.0
+I don't know how to make it pick from your contacts within Alfred, but this works (just disable the default email task before enabling)</string>
+	<key>uidata</key>
+	<dict>
+		<key>43D36D54-118A-4BDA-923D-CEEB31096307</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+		<key>DCF7DC1F-0DB8-4C9F-8BC6-35DBFA9B8E7F</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.github.debaser121.pwgen</string>
+	<key>connections</key>
+	<dict>
+		<key>E0571D23-EDDE-4B64-84B6-5EFB1C386D67</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CCA1C9FF-FDE8-4DA5-8B61-9AF2F58349C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9609FC5D-DD40-4CFF-8095-3733FACF2352</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy to the clipboard and paste it in the active window</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>David Loose</string>
+	<key>description</key>
+	<string>Generate long, easy-to-remember passwords ala passphra.se</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Password Generator</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>pw</string>
+				<key>runningsubtext</key>
+				<string>Generating...</string>
+				<key>script</key>
+				<string>python pw_gen.py -a -p 5</string>
+				<key>subtext</key>
+				<string>Copy to the clipboard</string>
+				<key>title</key>
+				<string>Generate some decent passwords</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E0571D23-EDDE-4B64-84B6-5EFB1C386D67</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>CCA1C9FF-FDE8-4DA5-8B61-9AF2F58349C7</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>9609FC5D-DD40-4CFF-8095-3733FACF2352</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>All credit goes to Randall Munroe, Jeff Preshing, and Jinn Lynn. Please blame them if something goes horribly wrong (kidding!)
+
+The concept comes from Mr. Munroe's excellent web comic, XKCD. For an explanation of why you'd want to use these passwords instead of randomly-generated gobbledegook, see http://xkcd.com/936/
+
+The code is a poorly-ported Python version of Mr. Preshing's original JavaScript on http://passphra.se. The original is available from http://passphra.se/passphrase.js.php?language=en licensed under a modified version of the BSD license. See the included pw_gen.py file for more details.
+
+I borrowed Jinn Lynn's Python module for Alfred integration. Visit him online at http://jeeker.net. I couldn't find a direct link to his Alfred module, but it's included in this bundle (obviously). The code is licensed under the MIT license. See http://opensource.org/licenses/MIT.</string>
+	<key>uidata</key>
+	<dict>
+		<key>9609FC5D-DD40-4CFF-8095-3733FACF2352</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>CCA1C9FF-FDE8-4DA5-8B61-9AF2F58349C7</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E0571D23-EDDE-4B64-84B6-5EFB1C386D67</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://github.com/debaser121</string>
+</dict>
+</plist>

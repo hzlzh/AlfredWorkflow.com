@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>de.oderwat.rename</string>
+	<key>connections</key>
+	<dict>
+		<key>211AF86C-943B-4361-A4D3-01D35A82CF2C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D6999C52-53FE-4EBB-982A-18F0BE31E6EA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4D232414-0E65-48A4-98D5-9D90D853D421</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C1ED875C-83B3-417E-BB4A-4582CB30CDA6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8A58E309-E0B2-416D-9634-061848EAEBE4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5138E0DF-9BBC-467C-A5BC-97F95536336F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C1ED875C-83B3-417E-BB4A-4582CB30CDA6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>80962591-9303-4306-87EE-5D501CA250FA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5138E0DF-9BBC-467C-A5BC-97F95536336F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4D232414-0E65-48A4-98D5-9D90D853D421</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Rename and copy resulting filepath to clipboard</string>
+			</dict>
+		</array>
+		<key>EDDEE658-B1FF-4D6F-B08B-7A43CD24DAC4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>211AF86C-943B-4361-A4D3-01D35A82CF2C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Hans Raaf</string>
+	<key>description</key>
+	<string>Rename the selected file</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Rename File</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>File renamed...</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C1ED875C-83B3-417E-BB4A-4582CB30CDA6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>to:</string>
+				<key>subtext</key>
+				<string>Rename file to ...</string>
+				<key>text</key>
+				<string>Rename To</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>80962591-9303-4306-87EE-5D501CA250FA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>file=$(cat rename.orig)
+path=$(dirname "$file")
+mv "$file" "$path/{query}"
+echo "$path/{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5138E0DF-9BBC-467C-A5BC-97F95536336F</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>8A58E309-E0B2-416D-9634-061848EAEBE4</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>tell application "Alfred 2" to search "to: {query}"</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>D6999C52-53FE-4EBB-982A-18F0BE31E6EA</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>file=$(cat rename.orig)
+path=$(dirname "$file")
+mv "$file" "$path/{query}"
+echo -n "$path/{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4D232414-0E65-48A4-98D5-9D90D853D421</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>echo "{query}" &gt; rename.orig
+echo -n "$(basename '{query}')"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>211AF86C-943B-4361-A4D3-01D35A82CF2C</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<false/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>Rename File</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>EDDEE658-B1FF-4D6F-B08B-7A43CD24DAC4</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This was originally done by David Ferguson.
+
+I changed a bit how it works:
+
+1. It uses "mv" instead of cp / remove. This way it will work on folders (and bundles)
+2. I made it so that the original name is shown when you rename a file.</string>
+	<key>uidata</key>
+	<dict>
+		<key>211AF86C-943B-4361-A4D3-01D35A82CF2C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>4D232414-0E65-48A4-98D5-9D90D853D421</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
+		<key>5138E0DF-9BBC-467C-A5BC-97F95536336F</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>80962591-9303-4306-87EE-5D501CA250FA</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>8A58E309-E0B2-416D-9634-061848EAEBE4</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>C1ED875C-83B3-417E-BB4A-4582CB30CDA6</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>D6999C52-53FE-4EBB-982A-18F0BE31E6EA</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>EDDEE658-B1FF-4D6F-B08B-7A43CD24DAC4</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>oderwat.de</string>
+</dict>
+</plist>

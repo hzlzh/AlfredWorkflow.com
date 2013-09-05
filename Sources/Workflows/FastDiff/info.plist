@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.monkeycz.alfred.fastdiff</string>
+	<key>connections</key>
+	<dict>
+		<key>69FA6CCF-CB39-40AA-A1CD-73D5924F3FAD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A29A6629-2607-4813-BDDC-741142B87C1B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8ABFF811-A1C9-43B3-80E2-B19AB44A24B3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>69FA6CCF-CB39-40AA-A1CD-73D5924F3FAD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>monkeycz</string>
+	<key>description</key>
+	<string>Diff the selected file or text via hotkey</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>FastDiff</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>FastDiff</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A29A6629-2607-4813-BDDC-741142B87C1B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>hotkey</key>
+				<integer>2</integer>
+				<key>hotmod</key>
+				<integer>1835008</integer>
+				<key>hotstring</key>
+				<string>D</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>8ABFF811-A1C9-43B3-80E2-B19AB44A24B3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>#################################################
+# FastDiff for Alfred 2
+#
+# Author: monkeycz
+# E-Mail: monkeycz@hotmail.com
+#################################################
+
+import os, tempfile, time
+
+tempfile_pool = set()
+
+def get_compare_file_path(query):
+	if query and query[0] == '/' and os.path.exists(query):
+		return query
+	else:
+		f = tempfile.NamedTemporaryFile(mode='w', prefix='fastdiff-')
+		f.write(query)
+		f.flush()
+		tempfile_pool.add(f)
+		return f.name
+
+def main():
+	query = """{query}"""
+
+	if not query:
+		print 'Please select a file or text segment.'
+		return
+
+	transfer_file_path = '/tmp/fastdiff'
+
+	if os.path.exists(transfer_file_path):
+		transfer_content = open(transfer_file_path, 'r').read()
+
+		a_file_path = get_compare_file_path(transfer_content)
+		b_file_path = get_compare_file_path(query)
+
+		if os.path.exists('/Applications/iTerm2.app'):
+			os.system('''
+app_existed=$(cat &lt;&lt; EOB &gt;&gt; /tmp/app_existed.scpt; osascript /tmp/app_existed.scpt "ITRM"; rm /tmp/app_existed.scpt;
+on run(argv)
+	try
+		set appCreator to argv as string
+	on error
+		set appCreator to ""
+	end try
+	tell application "System Events"
+		set appInstances to count (every process whose creator type is appCreator)
+		if appInstances &gt; 0 then
+			set appExisted to true
+		else
+			set appExisted to false
+		end if
+	end tell
+	return appExisted
+end run
+EOB)
+$(cat &lt;&lt; EOB &gt;&gt; /tmp/launch_iterm2.scpt; osascript /tmp/launch_iterm2.scpt "$app_existed"; rm /tmp/launch_iterm2.scpt;
+on run(argv)
+	try
+		set appExisted to argv as string
+	on error
+		set appExisted to "true"
+	end try
+	tell application "iTerm2"
+		activate
+		if appExisted is "true" then
+			set _term to current terminal
+			try
+				get _term
+			on error
+				set _term to (make new terminal)
+			end try
+			tell _term
+				launch session "Default"
+				set _session to current session
+			end tell
+		else
+			try
+				set _session to current session of current terminal
+			on error
+				set _term to (make new terminal)
+				tell _term
+					launch session "Default"
+					set _session to current session
+				end tell
+			end try
+		end if
+		tell _session
+			write text "vimdiff %s %s; exit;"
+		end tell
+	end tell
+end run
+EOB)
+			''' % (a_file_path, b_file_path))
+		else:
+			os.system('''
+$(cat &lt;&lt; EOB &gt;&gt; /tmp/launch_terminal.scpt; osascript /tmp/launch_terminal.scpt; rm /tmp/launch_terminal.scpt;
+on run(argv)
+	tell application "Terminal"
+		activate
+		set currentTab to do script "vimdiff %s %s; exit;"
+	end tell
+end run
+EOB)
+			''' % (a_file_path, b_file_path))
+		time.sleep(2)
+
+		os.remove(transfer_file_path)
+
+		print 'Get diff `right` context. Diffing...'
+	else:
+		open(transfer_file_path, 'w').write(query)
+		print 'Get diff `left` content.'
+
+try:
+	main()
+except Exception as e:
+	print 'Error: %s' % e</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>69FA6CCF-CB39-40AA-A1CD-73D5924F3FAD</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>The default hotkey is " + \". 
+
+Step 1, Select a file or text segment then press the hotkey.
+Step 2, Select another file or text segment then press the hotkey.
+
+Well, the vimdiff will be launched in a new Terminal tab page and diff your selected.</string>
+	<key>uidata</key>
+	<dict>
+		<key>69FA6CCF-CB39-40AA-A1CD-73D5924F3FAD</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8ABFF811-A1C9-43B3-80E2-B19AB44A24B3</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A29A6629-2607-4813-BDDC-741142B87C1B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/monkeycz/alfred-fastdiff</string>
+</dict>
+</plist>

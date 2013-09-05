@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>Tristan Kelkermans</string>
+	<key>connections</key>
+	<dict>
+		<key>4DAAF97C-A8F0-4DFE-B315-3918F7E8E3FB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9377DFFA-C19B-4CD5-98C2-2589D0769FBE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>ECC24DF9-63AE-4B8C-9961-11CDB0F6AE62</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4DAAF97C-A8F0-4DFE-B315-3918F7E8E3FB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Tristan Kelkermans</string>
+	<key>description</key>
+	<string>Start or Stop Nessus</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Nessus</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  set action to q 
+  if action = "start" then
+  	do shell script "launchctl load -w /Library/LaunchDaemons/com.tenablesecurity.nessusd.plist" with administrator privileges
+	set result to "Nessus has started"
+  else if action = "stop" then
+	do shell script "launchctl unload -w /Library/LaunchDaemons/com.tenablesecurity.nessusd.plist" with administrator privileges
+	set result to "Nessus has stoped"
+  else
+	set result to "Command hasn't been executed"
+  end if
+end alfred_script
+return result</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>4DAAF97C-A8F0-4DFE-B315-3918F7E8E3FB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>nessus</string>
+				<key>subtext</key>
+				<string>Nessus {start|stop}</string>
+				<key>text</key>
+				<string>Nessus</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>ECC24DF9-63AE-4B8C-9961-11CDB0F6AE62</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Nessus</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9377DFFA-C19B-4CD5-98C2-2589D0769FBE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Type "nessus stop" to stop nessus
+Type "nessus start" to sart nessus
+
+Do whatever you want with it :)</string>
+	<key>uidata</key>
+	<dict>
+		<key>4DAAF97C-A8F0-4DFE-B315-3918F7E8E3FB</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+		<key>9377DFFA-C19B-4CD5-98C2-2589D0769FBE</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+		<key>ECC24DF9-63AE-4B8C-9961-11CDB0F6AE62</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

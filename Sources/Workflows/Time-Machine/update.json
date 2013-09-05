@@ -1,0 +1,5 @@
+{
+    "version": 1.1,
+    "remote_json": "http://tedwise.com/files/time_machine.json",
+    "description": "Add last backup."
+}

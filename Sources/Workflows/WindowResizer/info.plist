@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>windowresizer</string>
+	<key>connections</key>
+	<dict>
+		<key>30219683-3900-4BC5-A4C8-2E292B1D0A44</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A5B2D46A-D914-4230-9FF0-77EBEEB611CC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Garth Braithwaite</string>
+	<key>description</key>
+	<string>Resize the topmost window to pixel dimensions</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Window Resizer</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>resizer</string>
+				<key>subtext</key>
+				<string>WIDTHxHEIGHT</string>
+				<key>text</key>
+				<string>Resize Topmost Window</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>30219683-3900-4BC5-A4C8-2E292B1D0A44</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>to splitString(aString, delimiter)	set retVal to {}	set prevDelimiter to AppleScript's text item delimiters	set AppleScript's text item delimiters to {delimiter}	set retVal to every text item of aString	set AppleScript's text item delimiters to prevDelimiter	return retValend splitString
+on alfred_script(q)
+	set newDimensions to splitString(q as text, "x")
+	tell application "System Events"		set frontApp to name of first application process whose frontmost is true	end tell
+	tell application "System Events" to tell application process frontApp		tell window 1			set size to {item 1 of newDimensions, item 2 of newDimensions}		end tell	end tell 
+end alfred_script
+</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>A5B2D46A-D914-4230-9FF0-77EBEEB611CC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>30219683-3900-4BC5-A4C8-2E292B1D0A44</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A5B2D46A-D914-4230-9FF0-77EBEEB611CC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://garthdb.com</string>
+</dict>
+</plist>

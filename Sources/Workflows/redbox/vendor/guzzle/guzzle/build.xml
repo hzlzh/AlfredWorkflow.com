@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="guzzle" default="test">
+    <!-- set local values, like git location -->
+    <property file="phing/build.properties" override="true" />
+
+    <property name="dir.output" value="${project.basedir}/build/artifacts" />
+    <property name="dir.imports" value="${project.basedir}/phing/imports" />
+    <property name="dir.bin" value="${project.basedir}/bin" />
+    <property name="repo.dir" value="${project.basedir}" />
+
+    <import file="${dir.imports}/dependencies.xml"/>
+    <import file="${dir.imports}/test.xml"/>
+    <import file="${dir.imports}/deploy.xml"/>
+    <!-- <import file="${dir.imports}/metrics.xml"/> -->
+
+    <target name="test" description="Run unit tests" depends="test-init">
+        <trycatch>
+            <try>
+                <exec passthru="true" command="vendor/bin/phpunit" checkReturn="true" />
+            </try>
+            <finally>
+                <testserver cmd="${cmd.testserver}" action="stop" />
+            </finally>
+        </trycatch>
+    </target>
+
+    <target name="test-init" depends="install-dependencies" description="Initialize test dependencies">
+        <testserver cmd="${cmd.testserver}" action="start" />
+        <copy file="phpunit.xml.dist" tofile="phpunit.xml" overwrite="false" />
+    </target>
+
+    <target name="build-init" description="Initialize local phing properties">
+        <copy file="phing/build.properties.dist" tofile="phing/build.properties" overwrite="false" />
+    </target>
+
+    <target name="clean">
+        <delete dir="${dir.output}"/>
+        <delete dir="${project.basedir}/build/pearwork"/>
+    </target>
+
+    <target name="prepare" depends="clean,test-init,build-init">
+        <mkdir dir="${dir.output}"/>
+        <mkdir dir="${dir.output}/logs" />
+    </target>
+
+    <target name="coverage" depends="prepare">
+        <exec passthru="true" command="vendor/bin/phpunit --coverage-html=${dir.output}/coverage --coverage-clover=${dir.output}/logs/clover.xml" />
+    </target>
+
+    <target name="view-coverage">
+        <exec passthru="true" command="open ${dir.output}/coverage/index.html" />
+    </target>
+
+</project>

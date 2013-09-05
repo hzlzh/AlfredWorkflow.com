@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.evgeny.golubev.alfred.localservercommands</string>
+	<key>connections</key>
+	<dict>
+		<key>AB096855-C72C-4F61-B7A4-AEF09CCE832B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2652B80F-672B-4702-942D-2749A15961C2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F2618CA3-00EA-454A-BAD3-F9C10AEBF3F5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AB096855-C72C-4F61-B7A4-AEF09CCE832B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Evgeny Golubev</string>
+	<key>description</key>
+	<string>Some commands for local Apache and MySQL servers</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Local Server Commands</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>title</key>
+				<string>Local Servers Command Applied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2652B80F-672B-4702-942D-2749A15961C2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>set q to "{query}"
+set command to ""
+
+if q = "apache.start" then
+	set command to "apachectl start"
+else if q = "apache.restart" then
+	set command to "apachectl restart"
+else if q = "apache.stop" then
+	set command to "apachectl stop"
+else if q = "mysql.start" then
+	set command to "mysql.server start"
+else if q = "mysql.restart" then
+	set command to "mysql.server restart"
+else if q = "mysql.stop" then
+	set command to "mysql.server stop"
+end if
+
+if command is not "" then
+	do shell script "sudo " &amp; command with administrator privileges
+end if</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AB096855-C72C-4F61-B7A4-AEF09CCE832B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>local server</string>
+				<key>runningsubtext</key>
+				<string>Servers status loading...</string>
+				<key>script</key>
+				<string>php -f workflow.php</string>
+				<key>subtext</key>
+				<string>Control your local server enviroment.</string>
+				<key>title</key>
+				<string>Local Server Commands</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F2618CA3-00EA-454A-BAD3-F9C10AEBF3F5</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2652B80F-672B-4702-942D-2749A15961C2</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>AB096855-C72C-4F61-B7A4-AEF09CCE832B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>F2618CA3-00EA-454A-BAD3-F9C10AEBF3F5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://golubev.eu/</string>
+</dict>
+</plist>
