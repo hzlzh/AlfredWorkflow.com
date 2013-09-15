@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: "type_translation ? row : ordered_map_for(columns, row)"
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Executes the given SQL statement. If additional parameters are given, they are treated as bind variables, and are bound to the placeholders in the query.
+- !ruby/struct:SM::Flow::P 
+  body: Note that if any of the values passed to this are hashes, then the key/value pairs are each bound separately, with the key being used as the name of the placeholder to bind the value to.
+- !ruby/struct:SM::Flow::P 
+  body: The block is optional. If given, it will be invoked for each row returned by the query. Otherwise, any results are accumulated into an array and returned wholesale.
+- !ruby/struct:SM::Flow::P 
+  body: "See also #execute2, #query, and #execute_batch for additional ways of executing statements."
+full_name: SQLite3::Database#execute
+is_singleton: false
+name: execute
+params: "(sql, bind_vars = [], *args, &block) {|type_translation ? row : ordered_map_for(columns, row)| ...}"
+visibility: public

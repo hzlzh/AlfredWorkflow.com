@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: json.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>json.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>lib/json.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Jan 31 19:03:07 -0700 2013</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>JavaScript Object Notation (<a href="../../classes/JSON.html">JSON</a>)</h1>
+<p>
+<a href="../../classes/JSON.html">JSON</a> is a lightweight
+data-interchange format. It is easy for us humans to read and write. Plus,
+equally simple for machines to generate or parse. <a
+href="../../classes/JSON.html">JSON</a> is completely language agnostic,
+making it the ideal interchange format.
+</p>
+<p>
+Built on two universally available structures:
+</p>
+<pre>
+  1. A collection of name/value pairs. Often referred to as an _object_, hash table, record, struct, keyed list, or associative array.
+  2. An ordered list of values. More commonly called an _array_, vector, sequence or list.
+</pre>
+<p>
+To read more about <a href="../../classes/JSON.html">JSON</a> visit: <a
+href="http://json.org">json.org</a>
+</p>
+<h2>Parsing <a href="../../classes/JSON.html">JSON</a></h2>
+<p>
+To parse a <a href="../../classes/JSON.html">JSON</a> string received by
+another application or generated within your existing application:
+</p>
+<pre>
+  require 'json'
+
+  my_hash = JSON.parse('{&quot;hello&quot;: &quot;goodbye&quot;}')
+  puts my_hash[&quot;hello&quot;] =&gt; &quot;goodbye&quot;
+</pre>
+<p>
+Notice the extra quotes <tt>&#8217;&#8217;</tt> around the hash notation.
+Ruby expects the argument to be a string and can&#8216;t convert objects
+like a hash or array.
+</p>
+<p>
+Ruby converts your string into a hash
+</p>
+<h2>Generating <a href="../../classes/JSON.html">JSON</a></h2>
+<p>
+Creating a <a href="../../classes/JSON.html">JSON</a> string for
+communication or serialization is just as simple.
+</p>
+<pre>
+  require 'json'
+
+  my_hash = {:hello =&gt; &quot;goodbye&quot;}
+  puts JSON.generate(my_hash) =&gt; &quot;{\&quot;hello\&quot;:\&quot;goodbye\&quot;}&quot;
+</pre>
+<p>
+Or an alternative way:
+</p>
+<pre>
+  require 'json'
+  puts {:hello =&gt; &quot;goodbye&quot;}.to_json =&gt; &quot;{\&quot;hello\&quot;:\&quot;goodbye\&quot;}&quot;
+</pre>
+<p>
+<tt><a href="../../classes/JSON.html#M000041">JSON.generate</a></tt> only
+allows objects or arrays to be converted to <a
+href="../../classes/JSON.html">JSON</a> syntax. <tt>to_json</tt>, however,
+accepts many Ruby classes even though it acts only as a method for
+serialization:
+</p>
+<pre>
+  require 'json'
+
+  1.to_json =&gt; &quot;1&quot;
+</pre>
+
+    </div>
+
+    <div id="requires-list">
+      <h3 class="section-bar">Required files</h3>
+
+      <div class="name-list">
+      json/common&nbsp;&nbsp;
+      json/version&nbsp;&nbsp;
+      json/ext&nbsp;&nbsp;
+      json/pure&nbsp;&nbsp;
+      </div>
+    </div>
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

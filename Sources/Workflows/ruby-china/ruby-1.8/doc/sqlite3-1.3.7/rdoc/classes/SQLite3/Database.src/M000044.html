@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>execute_batch (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/sqlite3/database.rb, line 197</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">execute_batch</span>( <span class="ruby-identifier">sql</span>, <span class="ruby-identifier">bind_vars</span> = [], <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> )
+      <span class="ruby-comment cmt"># FIXME: remove this stuff later</span>
+      <span class="ruby-keyword kw">unless</span> [<span class="ruby-constant">Array</span>, <span class="ruby-constant">Hash</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">bind_vars</span>.<span class="ruby-identifier">class</span>)
+        <span class="ruby-identifier">bind_vars</span> = [<span class="ruby-identifier">bind_vars</span>]
+        <span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;\#{caller[0]} is calling SQLite3::Database#execute_batch with bind parameters\nthat are not a list of a hash.  Please switch to passing bind parameters as an\narray or hash. Support for this behavior will be removed in version 2.0.0.\n&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$VERBOSE</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-comment cmt"># FIXME: remove this stuff later</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">bind_vars</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-identifier">bind_vars</span> = []
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">bind_vars</span> = [<span class="ruby-keyword kw">nil</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">args</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;\#{caller[0]} is calling SQLite3::Database#execute_batch with nil or multiple bind params\nwithout using an array.  Please switch to passing bind parameters as an array.\nSupport for this behavior will be removed in version 2.0.0.\n&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$VERBOSE</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">sql</span> = <span class="ruby-identifier">sql</span>.<span class="ruby-identifier">strip</span>
+      <span class="ruby-keyword kw">until</span> <span class="ruby-identifier">sql</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">prepare</span>( <span class="ruby-identifier">sql</span> ) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">stmt</span><span class="ruby-operator">|</span>
+          <span class="ruby-comment cmt"># FIXME: this should probably use sqlite3's api for batch execution</span>
+          <span class="ruby-comment cmt"># This implementation requires stepping over the results.</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">bind_vars</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">bind_parameter_count</span>
+            <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">bind_params</span>(<span class="ruby-identifier">bind_vars</span>)
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">step</span>
+          <span class="ruby-identifier">sql</span> = <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">remainder</span>.<span class="ruby-identifier">strip</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

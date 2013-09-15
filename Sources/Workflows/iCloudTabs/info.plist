@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>8410FA80-4B33-4B9A-9E1F-03F3AE9BDBD3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>17DDEFE3-F13A-4974-8C1A-50B1A2FC4475</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Kevin Marchand</string>
+	<key>description</key>
+	<string>Retrieve iCloud tabs from all devices</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>iCloud Tabs</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>17DDEFE3-F13A-4974-8C1A-50B1A2FC4475</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>tabs</string>
+				<key>runningsubtext</key>
+				<string>Loading iCloud tabs...</string>
+				<key>script</key>
+				<string>#! python
+
+import os
+import shutil
+import tempfile
+import plistlib
+import xml.etree.ElementTree as ET
+
+
+def create_temporary_copy(path):
+    temp_dir = tempfile.gettempdir()
+    temp_path = os.path.join(temp_dir, 'safari_sync_plist_copy.plist')
+    shutil.copy2(os.path.expanduser(path), temp_path)
+    return temp_path
+
+temp_plist = create_temporary_copy(
+    '~/Library/SyncedPreferences/com.apple.Safari.plist')
+os.system('plutil -convert xml1 %s' % temp_plist)
+info = plistlib.readPlist(temp_plist)
+os.remove(temp_plist)
+
+devicetabs = []
+
+for x in info['values'].values():
+    devicetabs.append([x['value']['DeviceName'], x['value']['Tabs']])
+
+
+# Generate Alfred's XML
+
+root = ET.Element('items')
+
+for device in devicetabs:
+
+    device_name = device[0]
+
+    for tab in device[1]:
+
+        item = ET.SubElement(root, 'item')
+        item.set('uid', tab['URL'])
+        item.set('arg', tab['URL'])
+
+        title = ET.SubElement(item, 'title')
+        title.text = tab['Title']
+
+        subtitle = ET.SubElement(item, 'subtitle')
+        subtitle.text = 'iCloud Device: '+device_name
+
+        icon = ET.SubElement(item, 'icon')
+        icon.set('type', 'fileicon')
+        icon.text = '/Applications/Safari.app'
+
+print ET.tostring(root)
+</string>
+				<key>subtext</key>
+				<string>Load iCloud tabs from all devices</string>
+				<key>title</key>
+				<string>iCloud Tabs</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8410FA80-4B33-4B9A-9E1F-03F3AE9BDBD3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>17DDEFE3-F13A-4974-8C1A-50B1A2FC4475</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>8410FA80-4B33-4B9A-9E1F-03F3AE9BDBD3</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/kmarchand/iCloudTabsAlfredWorkflow</string>
+</dict>
+</plist>

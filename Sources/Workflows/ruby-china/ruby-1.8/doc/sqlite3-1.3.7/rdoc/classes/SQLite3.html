@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: SQLite3</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">SQLite3</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/sqlite3/constants_rb.html">
+                lib/sqlite3/constants.rb
+                </a>
+        <br />
+                <a href="../files/lib/sqlite3/database_rb.html">
+                lib/sqlite3/database.rb
+                </a>
+        <br />
+                <a href="../files/lib/sqlite3/errors_rb.html">
+                lib/sqlite3/errors.rb
+                </a>
+        <br />
+                <a href="../files/lib/sqlite3/pragmas_rb.html">
+                lib/sqlite3/pragmas.rb
+                </a>
+        <br />
+                <a href="../files/lib/sqlite3/resultset_rb.html">
+                lib/sqlite3/resultset.rb
+                </a>
+        <br />
+                <a href="../files/lib/sqlite3/statement_rb.html">
+                lib/sqlite3/statement.rb
+                </a>
+        <br />
+                <a href="../files/lib/sqlite3/translator_rb.html">
+                lib/sqlite3/translator.rb
+                </a>
+        <br />
+                <a href="../files/lib/sqlite3/value_rb.html">
+                lib/sqlite3/value.rb
+                </a>
+        <br />
+                <a href="../files/lib/sqlite3/version_rb.html">
+                lib/sqlite3/version.rb
+                </a>
+        <br />
+                <a href="../files/ext/sqlite3/backup_c.html">
+                ext/sqlite3/backup.c
+                </a>
+        <br />
+                <a href="../files/ext/sqlite3/database_c.html">
+                ext/sqlite3/database.c
+                </a>
+        <br />
+                <a href="../files/ext/sqlite3/sqlite3_c.html">
+                ext/sqlite3/sqlite3.c
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="SQLite3.html">SQLite3</a> is a wrapper around the popular database
+<a href="http://sqlite.org">sqlite</a>.
+</p>
+<p>
+For an example of usage, see <a
+href="SQLite3/Database.html">SQLite3::Database</a>.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000002">const_missing</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="SQLite3/Constants.html" class="link">SQLite3::Constants</a><br />
+Module <a href="SQLite3/Pragmas.html" class="link">SQLite3::Pragmas</a><br />
+Module <a href="SQLite3/VersionProxy.html" class="link">SQLite3::VersionProxy</a><br />
+Class <a href="SQLite3/AbortException.html" class="link">SQLite3::AbortException</a><br />
+Class <a href="SQLite3/AuthorizationException.html" class="link">SQLite3::AuthorizationException</a><br />
+Class <a href="SQLite3/Backup.html" class="link">SQLite3::Backup</a><br />
+Class <a href="SQLite3/Blob.html" class="link">SQLite3::Blob</a><br />
+Class <a href="SQLite3/BusyException.html" class="link">SQLite3::BusyException</a><br />
+Class <a href="SQLite3/CantOpenException.html" class="link">SQLite3::CantOpenException</a><br />
+Class <a href="SQLite3/ConstraintException.html" class="link">SQLite3::ConstraintException</a><br />
+Class <a href="SQLite3/CorruptException.html" class="link">SQLite3::CorruptException</a><br />
+Class <a href="SQLite3/Database.html" class="link">SQLite3::Database</a><br />
+Class <a href="SQLite3/EmptyException.html" class="link">SQLite3::EmptyException</a><br />
+Class <a href="SQLite3/Exception.html" class="link">SQLite3::Exception</a><br />
+Class <a href="SQLite3/FormatException.html" class="link">SQLite3::FormatException</a><br />
+Class <a href="SQLite3/FullException.html" class="link">SQLite3::FullException</a><br />
+Class <a href="SQLite3/IOException.html" class="link">SQLite3::IOException</a><br />
+Class <a href="SQLite3/InternalException.html" class="link">SQLite3::InternalException</a><br />
+Class <a href="SQLite3/InterruptException.html" class="link">SQLite3::InterruptException</a><br />
+Class <a href="SQLite3/LockedException.html" class="link">SQLite3::LockedException</a><br />
+Class <a href="SQLite3/MemoryException.html" class="link">SQLite3::MemoryException</a><br />
+Class <a href="SQLite3/MismatchException.html" class="link">SQLite3::MismatchException</a><br />
+Class <a href="SQLite3/MisuseException.html" class="link">SQLite3::MisuseException</a><br />
+Class <a href="SQLite3/NotADatabaseException.html" class="link">SQLite3::NotADatabaseException</a><br />
+Class <a href="SQLite3/NotFoundException.html" class="link">SQLite3::NotFoundException</a><br />
+Class <a href="SQLite3/PermissionException.html" class="link">SQLite3::PermissionException</a><br />
+Class <a href="SQLite3/ProtocolException.html" class="link">SQLite3::ProtocolException</a><br />
+Class <a href="SQLite3/RangeException.html" class="link">SQLite3::RangeException</a><br />
+Class <a href="SQLite3/ReadOnlyException.html" class="link">SQLite3::ReadOnlyException</a><br />
+Class <a href="SQLite3/ResultSet.html" class="link">SQLite3::ResultSet</a><br />
+Class <a href="SQLite3/SQLException.html" class="link">SQLite3::SQLException</a><br />
+Class <a href="SQLite3/SchemaChangedException.html" class="link">SQLite3::SchemaChangedException</a><br />
+Class <a href="SQLite3/Statement.html" class="link">SQLite3::Statement</a><br />
+Class <a href="SQLite3/TooBigException.html" class="link">SQLite3::TooBigException</a><br />
+Class <a href="SQLite3/Translator.html" class="link">SQLite3::Translator</a><br />
+Class <a href="SQLite3/UnsupportedException.html" class="link">SQLite3::UnsupportedException</a><br />
+Class <a href="SQLite3/Value.html" class="link">SQLite3::Value</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">'1.3.7'</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SQLITE_VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">rb_str_new2(SQLITE_VERSION)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SQLITE_VERSION_NUMBER</td>
+          <td>=</td>
+          <td class="context-item-value">INT2FIX(SQLITE_VERSION_NUMBER)</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000002" class="method-detail">
+        <a name="M000002"></a>
+
+        <div class="method-heading">
+          <a href="SQLite3.src/M000002.html" target="Code" class="method-signature"
+            onclick="popupCode('SQLite3.src/M000002.html');return false;">
+          <span class="method-name">const_missing</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

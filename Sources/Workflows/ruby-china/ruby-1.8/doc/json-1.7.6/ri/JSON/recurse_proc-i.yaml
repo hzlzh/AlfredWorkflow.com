@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Recursively calls passed <em>Proc</em> if the parsed data structure is an <em>Array</em> or <em>Hash</em>
+full_name: JSON#recurse_proc
+is_singleton: false
+name: recurse_proc
+params: (result, &proc)
+visibility: public

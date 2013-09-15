@@ -1,0 +1,53 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Generate a JSON document from the Ruby data structure <em>obj</em> and return it. <em>state</em> is * a JSON::State object,
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: or a Hash like object (responding to to_hash),
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: an object convertible into a hash by a to_h method,
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: that is used as or to configure a State object.
+- !ruby/struct:SM::Flow::P 
+  body: It defaults to a state object, that creates the shortest possible JSON text in one line, checks for circular data structures and doesn't allow NaN, Infinity, and -Infinity.
+- !ruby/struct:SM::Flow::P 
+  body: "A <em>state</em> hash can have the following keys:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>indent</b>: a string used to indent levels (default: ''),"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>space</b>: a string that is put after, a : or , delimiter (default: ''),"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>space_before</b>: a string that is put before a : pair delimiter (default: ''),"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>object_nl</b>: a string that is put at the end of a JSON object (default: ''),"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>array_nl</b>: a string that is put at the end of a JSON array (default: ''),"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>allow_nan</b>: true if NaN, Infinity, and -Infinity should be generated, otherwise an exception is thrown if these values are encountered. This options defaults to false."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>max_nesting</b>: The maximum depth of nesting allowed in the data structures from which JSON is to be generated. Disable depth checking with :max_nesting =&gt; false, it defaults to 100."
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: See also the fast_generate for the fastest creation method with the least amount of sanity checks, and the pretty_generate method for some defaults for pretty output.
+full_name: JSON#generate
+is_singleton: false
+name: generate
+params: (obj, opts = nil)
+visibility: public

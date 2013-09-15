@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: stmt.columns
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Executes the given SQL statement, exactly as with #execute. However, the first row returned (either via the block, or in the returned array) is always the names of the columns. Subsequent rows correspond to the data from the result set."
+- !ruby/struct:SM::Flow::P 
+  body: Thus, even if the query itself returns no rows, this method will always return at least one row--the names of the columns.
+- !ruby/struct:SM::Flow::P 
+  body: "See also #execute, #query, and #execute_batch for additional ways of executing statements."
+full_name: SQLite3::Database#execute2
+is_singleton: false
+name: execute2
+params: ( sql, *bind_vars ) {|stmt.columns| ...}
+visibility: public

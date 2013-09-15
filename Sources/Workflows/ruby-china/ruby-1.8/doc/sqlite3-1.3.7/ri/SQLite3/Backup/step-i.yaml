@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Copy database pages up to <tt>nPage</tt>. If negative, copy all remaining source pages.
+- !ruby/struct:SM::Flow::P 
+  body: If all pages are copied, it returns SQLite3::Constants::ErrorCode::DONE. When coping is not done, it returns SQLite3::Constants::ErrorCode::OK. When some errors occur, it returns the error code.
+full_name: SQLite3::Backup#step
+is_singleton: false
+name: step
+params: " SQLite3::Backup#step(nPage)\n"
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Plist::PTag::mappings
+is_singleton: true
+name: mappings
+params: ()
+visibility: public

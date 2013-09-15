@@ -1,0 +1,40 @@
+#!/usr/bin/ruby
+# coding: utf-8
+
+$LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
+require 'common'
+
+def main(query = nil)
+  devices = available_airplay_devices
+
+  if query && !query.empty?
+    devices = devices.select do |device|
+      device.name.downcase.include?(query)
+    end
+  end
+
+  return if devices.empty?
+
+  puts build_alfred_feedback_xml(devices)
+end
+
+def build_alfred_feedback_xml(devices)
+  xml = ''
+  xml << '<?xml version="1.0" encoding="UTF-8"?>'
+  xml << '<items>'
+
+  devices.each do |device|
+    uid = "itunes-airplay-device-#{device.persistentID}"
+    title = "#{device.selected ? 'Disable' : 'Enable'} speaker “#{device.name}”"
+    xml << %(<item uid="#{uid}" arg="#{device.persistentID}">)
+    xml << "<title>#{title}</title>"
+    xml << "<subtitle>Sound Volume: #{device.soundVolume}%</subtitle>" if device.selected
+    xml << '<icon type="fileicon">/Applications/iTunes.app</icon>'
+    xml << '</item>'
+  end
+
+  xml << '</items>'
+  xml
+end
+
+main(ARGV.first)

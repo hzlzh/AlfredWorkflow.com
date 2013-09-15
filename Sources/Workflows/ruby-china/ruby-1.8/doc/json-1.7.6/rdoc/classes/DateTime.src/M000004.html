@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>json_create (DateTime)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/json/add/date_time.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">json_create</span>(<span class="ruby-identifier">object</span>)
+    <span class="ruby-identifier">args</span> = <span class="ruby-identifier">object</span>.<span class="ruby-identifier">values_at</span>(<span class="ruby-value str">'y'</span>, <span class="ruby-value str">'m'</span>, <span class="ruby-value str">'d'</span>, <span class="ruby-value str">'H'</span>, <span class="ruby-value str">'M'</span>, <span class="ruby-value str">'S'</span>)
+    <span class="ruby-identifier">of_a</span>, <span class="ruby-identifier">of_b</span> = <span class="ruby-identifier">object</span>[<span class="ruby-value str">'of'</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">'/'</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">of_b</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">of_b</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">'0'</span>
+      <span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Rational</span>(<span class="ruby-identifier">of_a</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">of_b</span>.<span class="ruby-identifier">to_i</span>)
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">of_a</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">object</span>[<span class="ruby-value str">'sg'</span>]
+    <span class="ruby-identifier">civil</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

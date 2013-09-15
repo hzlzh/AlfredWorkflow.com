@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>encoding (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq: db.encoding
+ *
+ * Fetch the encoding set on this database
+ */
+static VALUE db_encoding(VALUE self)
+{
+  sqlite3RubyPtr ctx;
+  VALUE enc;
+
+  Data_Get_Struct(self, sqlite3Ruby, ctx);
+  REQUIRE_OPEN_DB(ctx);
+
+  enc = rb_iv_get(self, &quot;@encoding&quot;);
+
+  if(NIL_P(enc)) {
+    sqlite3_exec(ctx-&gt;db, &quot;PRAGMA encoding&quot;, enc_cb, (void *)self, NULL);
+  }
+
+  return rb_iv_get(self, &quot;@encoding&quot;);
+}</pre>
+</body>
+</html>

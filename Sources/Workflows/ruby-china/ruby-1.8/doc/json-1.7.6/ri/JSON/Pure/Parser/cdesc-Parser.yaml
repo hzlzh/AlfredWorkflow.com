@@ -1,0 +1,100 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This class implements the JSON parser that is used to parse a JSON string into a Ruby data structure.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STRING
+  value: "/\" ((?:[^\\x0-\\x1f\"\\\\] |                                    # escaped special characters:                                   \\\\[\"\\\\\\/bfnrt] |                                   \\\\u[0-9a-fA-F]{4} |                                    # match all but escaped special characters:                                   \\\\[\\x20-\\x21\\x23-\\x2e\\x30-\\x5b\\x5d-\\x61\\x63-\\x65\\x67-\\x6d\\x6f-\\x71\\x73\\x75-\\xff])*)                               \"/nx"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INTEGER
+  value: /(-?0|-?[1-9]\d*)/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FLOAT
+  value: "/(-?                                 (?:0|[1-9]\\d*)                                 (?:                                   \\.\\d+(?i:e[+-]?\\d+) |                                   \\.\\d+ |                                   (?i:e[+-]?\\d+)                                 )                                 )/x"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NAN
+  value: /NaN/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INFINITY
+  value: /Infinity/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MINUS_INFINITY
+  value: /-Infinity/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJECT_OPEN
+  value: /\{/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJECT_CLOSE
+  value: /\}/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ARRAY_OPEN
+  value: /\[/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ARRAY_CLOSE
+  value: /\]/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PAIR_DELIMITER
+  value: /:/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COLLECTION_DELIMITER
+  value: /,/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: "TRUE"
+  value: /true/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: "FALSE"
+  value: /false/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: "NULL"
+  value: /null/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: IGNORE
+  value: "%r(         (?:          //[^\\n\\r]*[\\n\\r]| # line comments          /\\*               # c-style comments          (?:           [^*/]|        # normal chars           /[^*]|        # slashes that do not start a nested comment           \\*[^/]|       # asterisks that do not end this comment           /(?=\\*/)      # single slash before this comment's end          )*            \\*/               # the End of this comment            |[ \\t\\r\\n]+       # whitespaces: space, horicontal tab, lf, cr         )+       )mx"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: UNPARSED
+  value: Object.new
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Unescape characters in strings.
+  name: UNESCAPE_MAP
+  value: Hash.new { |h, k| h[k] = k.chr }
+- !ruby/object:RI::Constant 
+  comment: 
+  name: EMPTY_8BIT_STRING
+  value: "''"
+full_name: JSON::Pure::Parser
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: parse
+- !ruby/object:RI::MethodSummary 
+  name: quirks_mode?
+- !ruby/object:RI::MethodSummary 
+  name: reset
+name: Parser
+superclass: StringScanner

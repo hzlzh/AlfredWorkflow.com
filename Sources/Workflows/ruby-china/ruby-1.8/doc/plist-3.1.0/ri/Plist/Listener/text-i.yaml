@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Plist::Listener#text
+is_singleton: false
+name: text
+params: ( contents )
+visibility: public

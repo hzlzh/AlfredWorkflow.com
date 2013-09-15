@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Interrupts the currently executing operation, causing it to abort.
+full_name: SQLite3::Database#interrupt
+is_singleton: false
+name: interrupt
+params: " interrupt\n"
+visibility: public

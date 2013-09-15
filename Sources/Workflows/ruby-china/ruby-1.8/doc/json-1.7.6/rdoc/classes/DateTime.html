@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: DateTime</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">DateTime</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/json/add/date_time_rb.html">
+                lib/json/add/date_time.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="DateTime.html">DateTime</a> serialization/deserialization
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000005">as_json</a>&nbsp;&nbsp;
+      <a href="#M000004">json_create</a>&nbsp;&nbsp;
+      <a href="#M000006">to_json</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+    <div id="aliases-list">
+      <h3 class="section-bar">External Aliases</h3>
+
+      <div class="name-list">
+                        <table summary="aliases">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">sg</td>
+          <td>-&gt;</td>
+          <td class="context-item-value">start</td>
+        </tr>
+                        </table>
+      </div>
+    </div>
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <a href="DateTime.src/M000004.html" target="Code" class="method-signature"
+            onclick="popupCode('DateTime.src/M000004.html');return false;">
+          <span class="method-name">json_create</span><span class="method-args">(object)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Deserializes <a href="JSON.html">JSON</a> string by converting year
+<tt>y</tt>, month <tt>m</tt>, day <tt>d</tt>, hour <tt>H</tt>, minute
+<tt>M</tt>, second <tt>S</tt>, offset <tt>of</tt> and Day of Calendar
+Reform <tt>sg</tt> to <a href="DateTime.html">DateTime</a>.
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="DateTime.src/M000005.html" target="Code" class="method-signature"
+            onclick="popupCode('DateTime.src/M000005.html');return false;">
+          <span class="method-name">as_json</span><span class="method-args">(*)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a hash, that will be turned into a <a href="JSON.html">JSON</a>
+object and represent this object.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="DateTime.src/M000006.html" target="Code" class="method-signature"
+            onclick="popupCode('DateTime.src/M000006.html');return false;">
+          <span class="method-name">to_json</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Stores class name (<a href="DateTime.html">DateTime</a>) with Julian year
+<tt>y</tt>, month <tt>m</tt>, day <tt>d</tt>, hour <tt>H</tt>, minute
+<tt>M</tt>, second <tt>S</tt>, offset <tt>of</tt> and Day of Calendar
+Reform <tt>sg</tt> as <a href="JSON.html">JSON</a> string
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

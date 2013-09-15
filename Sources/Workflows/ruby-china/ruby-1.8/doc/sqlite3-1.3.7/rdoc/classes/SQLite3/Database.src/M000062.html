@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq: SQLite3::Database.new(file, options = {})
+ *
+ * Create a new Database object that opens the given file. If utf16
+ * is +true+, the filename is interpreted as a UTF-16 encoded string.
+ *
+ * By default, the new database will return result rows as arrays
+ * (#results_as_hash) and has type translation disabled (#type_translation=).
+ */
+static VALUE initialize(int argc, VALUE *argv, VALUE self)
+{
+  sqlite3RubyPtr ctx;
+  VALUE file;
+  VALUE opts;
+  VALUE zvfs;
+#ifdef HAVE_SQLITE3_OPEN_V2
+  int mode = SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE;
+#endif
+  int status;
+
+  Data_Get_Struct(self, sqlite3Ruby, ctx);
+
+  rb_scan_args(argc, argv, &quot;12&quot;, &amp;file, &amp;opts, &amp;zvfs);
+#if defined StringValueCStr
+  StringValuePtr(file);
+  rb_check_safe_obj(file);
+#else
+  Check_SafeStr(file);
+#endif
+  if(NIL_P(opts)) opts = rb_hash_new();
+  else Check_Type(opts, T_HASH);
+
+#ifdef HAVE_RUBY_ENCODING_H
+  if(UTF16_LE_P(file) || UTF16_BE_P(file)) {
+    status = sqlite3_open16(utf16_string_value_ptr(file), &amp;ctx-&gt;db);
+  } else {
+#endif
+
+    if(Qtrue == rb_hash_aref(opts, sym_utf16)) {
+      status = sqlite3_open16(utf16_string_value_ptr(file), &amp;ctx-&gt;db);
+    } else {
+
+#ifdef HAVE_RUBY_ENCODING_H
+      if(!UTF8_P(file)) {
+        file = rb_str_export_to_enc(file, rb_utf8_encoding());
+      }
+#endif
+
+      if (Qtrue == rb_hash_aref(opts, ID2SYM(rb_intern(&quot;readonly&quot;)))) {
+#ifdef HAVE_SQLITE3_OPEN_V2
+        mode = SQLITE_OPEN_READONLY;
+#else
+        rb_raise(rb_eNotImpError, &quot;sqlite3-ruby was compiled against a version of sqlite that does not support readonly databases&quot;);
+#endif
+      }
+#ifdef HAVE_SQLITE3_OPEN_V2
+      status = sqlite3_open_v2(
+          StringValuePtr(file),
+          &amp;ctx-&gt;db,
+          mode,
+          NIL_P(zvfs) ? NULL : StringValuePtr(zvfs)
+      );
+#else
+      status = sqlite3_open(
+          StringValuePtr(file),
+          &amp;ctx-&gt;db
+      );
+#endif
+    }
+
+#ifdef HAVE_RUBY_ENCODING_H
+  }
+#endif
+
+  CHECK(ctx-&gt;db, status)
+
+  rb_iv_set(self, &quot;@tracefunc&quot;, Qnil);
+  rb_iv_set(self, &quot;@authorizer&quot;, Qnil);
+  rb_iv_set(self, &quot;@encoding&quot;, Qnil);
+  rb_iv_set(self, &quot;@busy_handler&quot;, Qnil);
+  rb_iv_set(self, &quot;@collations&quot;, rb_hash_new());
+  rb_iv_set(self, &quot;@functions&quot;, rb_hash_new());
+  rb_iv_set(self, &quot;@results_as_hash&quot;, rb_hash_aref(opts, sym_results_as_hash));
+  rb_iv_set(self, &quot;@type_translation&quot;, rb_hash_aref(opts, sym_type_translation));
+#ifdef HAVE_SQLITE3_OPEN_V2
+  rb_iv_set(self, &quot;@readonly&quot;, mode == SQLITE_OPEN_READONLY ? Qtrue : Qfalse);
+#else
+  rb_iv_set(self, &quot;@readonly&quot;, Qfalse);
+#endif
+
+  if(rb_block_given_p()) {
+    rb_yield(self);
+    rb_funcall(self, rb_intern(&quot;close&quot;), 0);
+  }
+
+  return self;
+}</pre>
+</body>
+</html>

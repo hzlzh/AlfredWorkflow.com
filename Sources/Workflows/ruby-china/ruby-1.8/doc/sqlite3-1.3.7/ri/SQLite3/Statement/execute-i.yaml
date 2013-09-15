@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: "@results if block_given?"
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Execute the statement. This creates a new ResultSet object for the statement's virtual machine. If a block was given, the new ResultSet will be yielded to it; otherwise, the ResultSet will be returned.
+- !ruby/struct:SM::Flow::P 
+  body: "Any parameters will be bound to the statement using #bind_params."
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  stmt = db.prepare( &quot;select * from table&quot; )\n  stmt.execute do |result|\n    ...\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: "See also #bind_params, #execute!."
+full_name: SQLite3::Statement#execute
+is_singleton: false
+name: execute
+params: ( *bind_vars ) {|@results if block_given?| ...}
+visibility: public

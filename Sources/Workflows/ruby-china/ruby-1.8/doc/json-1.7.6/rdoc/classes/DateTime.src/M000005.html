@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>as_json (DateTime)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/json/add/date_time.rb, line 28</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">as_json</span>(<span class="ruby-operator">*</span>)
+    {
+      <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">create_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>,
+      <span class="ruby-value str">'y'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">year</span>,
+      <span class="ruby-value str">'m'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">month</span>,
+      <span class="ruby-value str">'d'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">day</span>,
+      <span class="ruby-value str">'H'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">hour</span>,
+      <span class="ruby-value str">'M'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">min</span>,
+      <span class="ruby-value str">'S'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sec</span>,
+      <span class="ruby-value str">'of'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">offset</span>.<span class="ruby-identifier">to_s</span>,
+      <span class="ruby-value str">'sg'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">start</span>,
+    }
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

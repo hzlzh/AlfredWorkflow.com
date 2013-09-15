@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>remaining (SQLite3::Backup)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq: SQLite3::Backup#remaining
+ *
+ * Returns the number of pages still to be backed up.
+ *
+ * Note that the value is only updated after step() is called,
+ * so before calling step() returned value is invalid.
+ */
+static VALUE remaining(VALUE self)
+{
+  sqlite3BackupRubyPtr ctx;
+
+  Data_Get_Struct(self, sqlite3BackupRuby, ctx);
+  REQUIRE_OPEN_BACKUP(ctx);
+  return INT2NUM(sqlite3_backup_remaining(ctx-&gt;p));
+}</pre>
+</body>
+</html>

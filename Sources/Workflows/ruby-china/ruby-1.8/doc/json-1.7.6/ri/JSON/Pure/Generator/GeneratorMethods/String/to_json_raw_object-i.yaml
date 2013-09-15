@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method creates a raw object hash, that can be nested into other data structures and will be unparsed as a raw string. This method should be used, if you want to convert raw strings to JSON instead of UTF-8 strings, e. g. binary data.
+full_name: JSON::Pure::Generator::GeneratorMethods::String#to_json_raw_object
+is_singleton: false
+name: to_json_raw_object
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Raw Strings are JSON Objects (the raw bytes are stored in an array for the key &quot;raw&quot;). The Ruby String can be created by this module method.
+full_name: JSON::Pure::Generator::GeneratorMethods::String::Extend#json_create
+is_singleton: false
+name: json_create
+params: (o)
+visibility: public

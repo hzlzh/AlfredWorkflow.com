@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns true if NaN, Infinity, and -Infinity should be considered as valid JSON and output.
+full_name: JSON::Pure::Generator::State#allow_nan?
+is_singleton: false
+name: allow_nan?
+params: ()
+visibility: public

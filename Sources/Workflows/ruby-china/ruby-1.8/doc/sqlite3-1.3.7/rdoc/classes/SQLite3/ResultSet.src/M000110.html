@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>next (SQLite3::ResultSet)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/sqlite3/resultset.rb, line 107</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">next</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">results_as_hash</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">next_hash</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">row</span> = <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">step</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">done?</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">type_translation</span>
+        <span class="ruby-identifier">row</span> = <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">types</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">row</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">type</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+          <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">translator</span>.<span class="ruby-identifier">translate</span>( <span class="ruby-identifier">type</span>, <span class="ruby-identifier">value</span> )
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">row</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:fields</span>)
+        <span class="ruby-comment cmt"># FIXME: this can only happen if the translator returns something</span>
+        <span class="ruby-comment cmt"># that responds to `fields`.  Since we're removing the translator</span>
+        <span class="ruby-comment cmt"># in 2.0, we can remove this branch in 2.0.</span>
+        <span class="ruby-identifier">row</span> = <span class="ruby-constant">ArrayWithTypes</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">row</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-comment cmt"># FIXME: the `fields` and `types` methods are deprecated on this</span>
+        <span class="ruby-comment cmt"># object for version 2.0, so we can safely remove this branch</span>
+        <span class="ruby-comment cmt"># as well.</span>
+        <span class="ruby-identifier">row</span> = <span class="ruby-constant">ArrayWithTypesAndFields</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">row</span>)
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">row</span>.<span class="ruby-identifier">fields</span> = <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">columns</span>
+      <span class="ruby-identifier">row</span>.<span class="ruby-identifier">types</span> = <span class="ruby-ivar">@stmt</span>.<span class="ruby-identifier">types</span>
+      <span class="ruby-identifier">row</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

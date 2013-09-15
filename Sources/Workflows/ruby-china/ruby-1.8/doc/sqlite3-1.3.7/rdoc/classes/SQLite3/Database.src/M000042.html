@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>execute (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/sqlite3/database.rb, line 116</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">execute</span> <span class="ruby-identifier">sql</span>, <span class="ruby-identifier">bind_vars</span> = [], <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+      <span class="ruby-comment cmt"># FIXME: This is a terrible hack and should be removed but is required</span>
+      <span class="ruby-comment cmt"># for older versions of rails</span>
+      <span class="ruby-identifier">hack</span> = <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">:ActiveRecord</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">sql</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^PRAGMA index_list/</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">bind_vars</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-identifier">bind_vars</span> = []
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">bind_vars</span> = [<span class="ruby-identifier">bind_vars</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">args</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;\#{caller[0]} is calling SQLite3::Database#execute with nil or multiple bind params\nwithout using an array.  Please switch to passing bind parameters as an array.\nSupport for bind parameters as *args will be removed in 2.0.0.\n&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$VERBOSE</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">prepare</span>( <span class="ruby-identifier">sql</span> ) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">stmt</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">bind_params</span>(<span class="ruby-identifier">bind_vars</span>)
+        <span class="ruby-identifier">columns</span> = <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">columns</span>
+        <span class="ruby-identifier">stmt</span>    = <span class="ruby-constant">ResultSet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">stmt</span>).<span class="ruby-identifier">to_a</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type_translation</span>
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+          <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@results_as_hash</span>
+              <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">type_translation</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">row</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">ordered_map_for</span>(<span class="ruby-identifier">columns</span>, <span class="ruby-identifier">row</span>)
+            <span class="ruby-keyword kw">else</span>
+              <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">row</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@results_as_hash</span>
+            <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">h</span> = <span class="ruby-identifier">type_translation</span> <span class="ruby-value">? </span><span class="ruby-identifier">row</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">ordered_map_for</span>(<span class="ruby-identifier">columns</span>, <span class="ruby-identifier">row</span>)
+
+              <span class="ruby-comment cmt"># FIXME UGH TERRIBLE HACK!</span>
+              <span class="ruby-identifier">h</span>[<span class="ruby-value str">'unique'</span>] = <span class="ruby-identifier">h</span>[<span class="ruby-value str">'unique'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">hack</span>
+
+              <span class="ruby-identifier">h</span>
+            }
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">stmt</span>.<span class="ruby-identifier">to_a</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

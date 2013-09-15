@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: handle
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: SQLite3::Value
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: length
+- !ruby/object:RI::MethodSummary 
+  name: null?
+- !ruby/object:RI::MethodSummary 
+  name: to_blob
+- !ruby/object:RI::MethodSummary 
+  name: to_f
+- !ruby/object:RI::MethodSummary 
+  name: to_i
+- !ruby/object:RI::MethodSummary 
+  name: to_int64
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: type
+name: Value
+superclass: Object

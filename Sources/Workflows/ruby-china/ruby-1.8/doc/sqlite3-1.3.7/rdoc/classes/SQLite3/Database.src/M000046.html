@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>get_first_row (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/sqlite3/database.rb, line 284</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_first_row</span>( <span class="ruby-identifier">sql</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">bind_vars</span> )
+      <span class="ruby-identifier">execute</span>( <span class="ruby-identifier">sql</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">bind_vars</span> ).<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

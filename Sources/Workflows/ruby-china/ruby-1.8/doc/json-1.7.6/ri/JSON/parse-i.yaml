@@ -1,0 +1,35 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Parse the JSON document <em>source</em> into a Ruby data structure and return it.
+- !ruby/struct:SM::Flow::P 
+  body: "<em>opts</em> can have the following keys:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>max_nesting</b>: The maximum depth of nesting allowed in the parsed data structures. Disable depth checking with :max_nesting =&gt; false. It defaults to 100."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>allow_nan</b>: If set to true, allow NaN, Infinity and -Infinity in defiance of RFC 4627 to be parsed by the Parser. This option defaults to false."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>symbolize_names</b>: If set to true, returns symbols for the names (keys) in a JSON object. Otherwise strings are returned. Strings are the default."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>create_additions</b>: If set to false, the Parser doesn't create additions even if a matching class and create_id was found. This option defaults to true."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>object_class</b>: Defaults to Hash"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>array_class</b>: Defaults to Array"
+  type: :BULLET
+full_name: JSON#parse
+is_singleton: false
+name: parse
+params: (source, opts = {})
+visibility: public

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>collation (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq: db.collation(name, comparator)
+ *
+ * Add a collation with name +name+, and a +comparator+ object.  The
+ * +comparator+ object should implement a method called &quot;compare&quot; that takes
+ * two parameters and returns an integer less than, equal to, or greater than
+ * 0.
+ */
+static VALUE collation(VALUE self, VALUE name, VALUE comparator)
+{
+  sqlite3RubyPtr ctx;
+  Data_Get_Struct(self, sqlite3Ruby, ctx);
+  REQUIRE_OPEN_DB(ctx);
+
+  CHECK(ctx-&gt;db, sqlite3_create_collation(
+        ctx-&gt;db,
+        StringValuePtr(name),
+        SQLITE_UTF8,
+        (void *)comparator,
+        NIL_P(comparator) ? NULL : rb_comparator_func));
+
+  /* Make sure our comparator doesn't get garbage collected. */
+  rb_hash_aset(rb_iv_get(self, &quot;@collations&quot;), name, comparator);
+
+  return self;
+}</pre>
+</body>
+</html>

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Generates a valid JSON document from object <tt>obj</tt> and returns the result. If no valid JSON document can be created this method raises a GeneratorError exception.
+full_name: JSON::Pure::Generator::State#generate
+is_singleton: false
+name: generate
+params: (obj)
+visibility: public

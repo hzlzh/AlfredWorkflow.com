@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>authorizer= (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq: set_authorizer = auth
+ *
+ * Set the authorizer for this database.  +auth+ must respond to +call+, and
+ * +call+ must take 5 arguments.
+ *
+ * Installs (or removes) a block that will be invoked for every access
+ * to the database. If the block returns 0 (or +true+), the statement
+ * is allowed to proceed. Returning 1 or false causes an authorization error to
+ * occur, and returning 2 or nil causes the access to be silently denied.
+ */
+static VALUE set_authorizer(VALUE self, VALUE authorizer)
+{
+  sqlite3RubyPtr ctx;
+  int status;
+
+  Data_Get_Struct(self, sqlite3Ruby, ctx);
+  REQUIRE_OPEN_DB(ctx);
+
+  status = sqlite3_set_authorizer(
+      ctx-&gt;db, NIL_P(authorizer) ? NULL : rb_sqlite3_auth, (void *)self
+  );
+
+  CHECK(ctx-&gt;db, status);
+
+  rb_iv_set(self, &quot;@authorizer&quot;, authorizer);
+
+  return self;
+}</pre>
+</body>
+</html>

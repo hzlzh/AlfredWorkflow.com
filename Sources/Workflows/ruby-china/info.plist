@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>ruby-china</string>
+	<key>connections</key>
+	<dict>
+		<key>E018D4A6-740A-4CC5-A87C-A1792E31E777</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3A627F33-A226-4D10-A2BD-8FCC6C4BF34F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>kgtong</string>
+	<key>description</key>
+	<string>Get The Essays From Ruby China</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ruby-china</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>rc</string>
+				<key>runningsubtext</key>
+				<string>...</string>
+				<key>script</key>
+				<string># Put this init script directly into the Alfred script window and
+# it will load main.rb with console logging enabled for Ruby exceptions
+
+ENV['GEM_PATH'] = File.join(Dir.pwd, 'ruby-1.8')
+
+# Provide a facility to log messages to Console.app:
+def console_log(msg)
+  escape = proc{ |m| m.gsub("'", "'\\\\''") }
+  `logger -t 'Alfred Workflow' '#{escape[msg]}'`
+end
+# Yay! A way to debug Alfred scripts. You can use either method:
+#   raise "I need to explain how this happened…"
+#                   OR
+#   Alfred.log "parachutes away!"
+#
+# To see the messages, open up Console.app
+
+
+def load_ruby_file(filename)
+  ruby_code = IO.read(filename)
+  eval(ruby_code, binding, File.expand_path(filename))
+end
+
+
+begin
+  # Load the Alfred singleton object
+  load_ruby_file("alfred.rb")
+  Alfred = AlfredInit.new("{query}")
+
+  # Load your code from main.rb:
+  load_ruby_file("main.rb")
+rescue Exception =&gt; e
+  slice = -1
+  # Ignore final 2 lines of backtrace that always come from this file
+  slice = -3 if e.backtrace.size &gt; 2
+  bt = e.backtrace[0..slice].join("\n  ")
+  console_log "#{e.message} (#{e.class}) [query: {query}]\n  " + bt
+end</string>
+				<key>subtext</key>
+				<string>getting the topics from ruby-china.orz</string>
+				<key>title</key>
+				<string>Topics</string>
+				<key>type</key>
+				<integer>2</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E018D4A6-740A-4CC5-A87C-A1792E31E777</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>3A627F33-A226-4D10-A2BD-8FCC6C4BF34F</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>3A627F33-A226-4D10-A2BD-8FCC6C4BF34F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E018D4A6-740A-4CC5-A87C-A1792E31E777</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

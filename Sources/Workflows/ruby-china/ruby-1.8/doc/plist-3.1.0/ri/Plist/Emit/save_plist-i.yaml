@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Helper method for injecting into classes. Calls <tt>Plist::Emit.save_plist</tt> with <tt>self</tt>.
+full_name: Plist::Emit#save_plist
+is_singleton: false
+name: save_plist
+params: (filename)
+visibility: public

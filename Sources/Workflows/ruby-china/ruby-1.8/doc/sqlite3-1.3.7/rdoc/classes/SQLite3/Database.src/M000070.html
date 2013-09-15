@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>define_aggregator (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq: define_aggregator(name, aggregator)
+ *
+ * Define an aggregate function named +name+ using the object +aggregator+.
+ * +aggregator+ must respond to +step+ and +finalize+.  +step+ will be called
+ * with row information and +finalize+ must return the return value for the
+ * aggregator function.
+ */
+static VALUE define_aggregator(VALUE self, VALUE name, VALUE aggregator)
+{
+  sqlite3RubyPtr ctx;
+  int arity, status;
+
+  Data_Get_Struct(self, sqlite3Ruby, ctx);
+  REQUIRE_OPEN_DB(ctx);
+
+  arity = sqlite3_obj_method_arity(aggregator, rb_intern(&quot;step&quot;));
+
+  status = sqlite3_create_function(
+    ctx-&gt;db,
+    StringValuePtr(name),
+    arity,
+    SQLITE_UTF8,
+    (void *)aggregator,
+    NULL,
+    rb_sqlite3_step,
+    rb_sqlite3_final
+  );
+
+  rb_iv_set(self, &quot;@agregator&quot;, aggregator);
+
+  CHECK(ctx-&gt;db, status);
+
+  return self;
+}</pre>
+</body>
+</html>

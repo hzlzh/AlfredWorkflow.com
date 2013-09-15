@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Extends <em>modul</em> with the String::Extend module.
+full_name: JSON::Pure::Generator::GeneratorMethods::String::included
+is_singleton: true
+name: included
+params: (modul)
+visibility: public

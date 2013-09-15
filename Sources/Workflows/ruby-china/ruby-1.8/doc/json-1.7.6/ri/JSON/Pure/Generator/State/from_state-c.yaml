@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a State object from <em>opts</em>, which ought to be Hash to create a new State instance configured by <em>opts</em>, something else to create an unconfigured instance. If <em>opts</em> is a State object, it is just returned.
+full_name: JSON::Pure::Generator::State::from_state
+is_singleton: true
+name: from_state
+params: (opts)
+visibility: public

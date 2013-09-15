@@ -1,0 +1,39 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "This is another approach to creating an aggregate function (see #create_aggregate). Instead of explicitly specifying the name, callbacks, arity, and type, you specify a factory object (the &quot;handler&quot;) that knows how to obtain all of that information. The handler should respond to the following messages:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "+arity+:"
+    body: "corresponds to the <tt>arity</tt> parameter of #create_aggregate. This message is optional, and if the handler does not respond to it, the function will have an arity of -1."
+  - !ruby/struct:SM::Flow::LI 
+    label: "+name+:"
+    body: this is the name of the function. The handler <em>must</em> implement this message.
+  - !ruby/struct:SM::Flow::LI 
+    label: "+new+:"
+    body: this must be implemented by the handler. It should return a new instance of the object that will handle a specific invocation of the function.
+  type: :NOTE
+- !ruby/struct:SM::Flow::P 
+  body: "The handler instance (the object returned by the <tt>new</tt> message, described above), must respond to the following messages:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "+step+:"
+    body: "this is the method that will be called for each step of the aggregate function's evaluation. It should implement the same signature as the <tt>step</tt> callback for #create_aggregate."
+  - !ruby/struct:SM::Flow::LI 
+    label: "+finalize+:"
+    body: "this is the method that will be called to finalize the aggregate function's evaluation. It should implement the same signature as the <tt>finalize</tt> callback for #create_aggregate."
+  type: :NOTE
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class LengthsAggregateHandler\n    def self.arity; 1; end\n\n    def initialize\n      @total = 0\n    end\n\n    def step( ctx, name )\n      @total += ( name ? name.length : 0 )\n    end\n\n    def finalize( ctx )\n      ctx.result = @total\n    end\n  end\n\n  db.create_aggregate_handler( LengthsAggregateHandler )\n  puts db.get_first_value( &quot;select lengths(name) from A&quot; )\n"
+full_name: SQLite3::Database#create_aggregate_handler
+is_singleton: false
+name: create_aggregate_handler
+params: ( handler )
+visibility: public

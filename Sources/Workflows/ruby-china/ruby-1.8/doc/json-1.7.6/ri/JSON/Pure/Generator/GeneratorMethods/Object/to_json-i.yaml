@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Converts this object to a string (calling #to_s), converts it to a JSON string, and returns the result. This is a fallback, if no special method #to_json was defined for some object."
+full_name: JSON::Pure::Generator::GeneratorMethods::Object#to_json
+is_singleton: false
+name: to_json
+params: (*)
+visibility: public

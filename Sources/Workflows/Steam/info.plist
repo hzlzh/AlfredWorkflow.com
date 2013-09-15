@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.brianandjenny.steamactivator</string>
+	<key>connections</key>
+	<dict>
+		<key>1240238C-9692-4374-B80A-1D6FDE79D6AA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>138BCF96-6897-4847-A7C8-F9384B6299B6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>209CD29A-8F7F-4DC5-A007-49291F1926AF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
+		<array/>
+		<key>209CD29A-8F7F-4DC5-A007-49291F1926AF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D4ED1789-5BBA-42F5-BF6F-39423C7664AA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5769ABB1-2BA7-4F0C-BBE2-FA5D69C99054</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D4ED1789-5BBA-42F5-BF6F-39423C7664AA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B35B5EE7-98A2-46DD-A760-E6AA1C7CF635</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5769ABB1-2BA7-4F0C-BBE2-FA5D69C99054</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Brian Hartvigsen</string>
+	<key>description</key>
+	<string>Activate your Steam codes with a quick keystroke or keyword</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Steam</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string># get the workflow's source folder
+set workflowFolder to do shell script "pwd"
+
+# load the Workflow library
+set wlib to load script POSIX file (workflowFolder &amp; "/q_workflow.scpt")
+
+# create a new Workflow Classset wf to wlib's new_workflow_with_bundle("com.brianandjenny.steam")
+set q to "{query}"	-- Feel free to change this, I found 0.75 seems to work 100% of the time	set myDelay to 0.75		set productKey to q as string	if productKey is "" then		set productKey to (the clipboard) as string	end if		if productKey is "" then
+		return	end if		tell application "Steam"		activate		tell application "System Events"			tell process "Steam"				click menu item "Activate a Product on Steam..." of menu "Games" of menu bar item "Games" of menu bar 1				delay myDelay				key code 36				delay myDelay				key code 36				delay myDelay				repeat with x in characters 1 thru end of productKey					if (x ≥ "a" and x ≤ "z") or (x ≥ "0" and x ≤ "9") then						keystroke x					end if				end repeat				delay 0.25				key code 36				delay myDelay				repeat					if window "Steam - Working" exists then						delay 0.25					else						exit repeat					end if				end repeat				key code 36				delay myDelay				key code 53			end tell		end tell	end tell		tell application "System Events" to keystroke tab using command down
+
+set data_folder to wf's get_data()set data_file to "gamedata.dat"# Remove game datado shell script "rm " &amp; quoted form of POSIX path of (POSIX file (data_folder &amp; data_file) as alias)
+wf's set_value("games", {}, "")</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>1240238C-9692-4374-B80A-1D6FDE79D6AA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>steam</string>
+				<key>subtext</key>
+				<string>Get your game on!</string>
+				<key>text</key>
+				<string>Steam Activator</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string># get the workflow's source folder
+set workflowFolder to do shell script "pwd"
+
+# load the Workflow library
+set wlib to load script POSIX file (workflowFolder &amp; "/q_workflow.scpt")
+# create a new Workflow Classset wf to wlib's new_workflow_with_bundle("com.brianandjenny.steam")set steam_user to wf's get_value("username", "")if (steam_user is missing value or steam_user is "") and "{query}" is not "" then
+	wf's set_value("username", "{query}", "")
+	return "Set username to {query}"
+else
+	do shell script "open steam://run/{query}"
+end if</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>209CD29A-8F7F-4DC5-A007-49291F1926AF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>steam</string>
+				<key>runningsubtext</key>
+				<string>loading games</string>
+				<key>script</key>
+				<string># get the workflow's source folderset workflowFolder to do shell script "pwd"# load the Workflow libraryset wlib to load script POSIX file (workflowFolder &amp; "/q_workflow.scpt")# create a new Workflow Classset wf to wlib's new_workflow_with_bundle("com.brianandjenny.steam")set data_file to "gamedata.dat"set data_folder to wf's get_data()set steam_user to wf's get_value("username", "")if steam_user is missing value or steam_user is "" then	add_result of wf with isValid given theUid:missing value, theArg:"{query}", theTitle:"Enter your steam username", theSubtitle:"", theAutocomplete:missing value, theIcon:missing value, theType:missing value	return wf's to_xml("")end ifset last_retrieved to wf's get_value("last retrieved", "")set game_list to {}if last_retrieved is missing value or last_retrieved is "" or ((current date) - last_retrieved &gt; (12 * 60 * 60)) then	set gamedata to wf's request("http://steamcommunity.com/id/" &amp; steam_user &amp; "/games?tab=all&amp;xml=1")	wf's write_file(gamedata, data_file)	wf's set_value("last retrieved", current date, "")	tell application "System Events"		set list_of_games to XML element "games" of XML element "gamesList" of XML file (data_folder &amp; data_file)				repeat with el in XML elements of list_of_games			set game_id to value of XML element "appID" of el			set game_name to value of XML element "name" of el						set end of game_list to {appName:game_name, appId:game_id}		end repeat		wf's set_value("games", game_list, "")	end tellelse	set game_list to wf's get_value("games", "")end ifset q to wf's q_trim("{query}")repeat with game in game_list	if q is in appName of game or q is "" then		add_result of wf with isValid given theUid:appId of game, theArg:appId of game, theTitle:appName of game, theSubtitle:"", theAutocomplete:missing value, theIcon:missing value, theType:missing value	end ifend repeatwf's to_xml("")</string>
+				<key>subtext</key>
+				<string>Doing stuff</string>
+				<key>title</key>
+				<string>Steam Library</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>138BCF96-6897-4847-A7C8-F9384B6299B6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Steam</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D4ED1789-5BBA-42F5-BF6F-39423C7664AA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>steamclean</string>
+				<key>subtext</key>
+				<string>When you just need to start over again</string>
+				<key>text</key>
+				<string>Remove Steam user data</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B35B5EE7-98A2-46DD-A760-E6AA1C7CF635</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string># get the workflow's source folder
+set workflowFolder to do shell script "pwd"
+
+# load the Workflow library
+set wlib to load script POSIX file (workflowFolder &amp; "/q_workflow.scpt")
+# create a new Workflow Classset wf to wlib's new_workflow_with_bundle("com.brianandjenny.steam")set data_folder to wf's get_data()set data_file to "gamedata.dat"# Remove game datawf's set_value("last retrieved", "", "")
+
+if "{query}" = "reset" then
+	# Not a refresh, remove userdata	wf's set_value("username", "", "")	return "Removed all Steam data"
+end if
+
+return "Removed Steam game data"</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5769ABB1-2BA7-4F0C-BBE2-FA5D69C99054</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1240238C-9692-4374-B80A-1D6FDE79D6AA</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>138BCF96-6897-4847-A7C8-F9384B6299B6</key>
+		<dict>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>209CD29A-8F7F-4DC5-A007-49291F1926AF</key>
+		<dict>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>5769ABB1-2BA7-4F0C-BBE2-FA5D69C99054</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>B35B5EE7-98A2-46DD-A760-E6AA1C7CF635</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>D4ED1789-5BBA-42F5-BF6F-39423C7664AA</key>
+		<dict>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

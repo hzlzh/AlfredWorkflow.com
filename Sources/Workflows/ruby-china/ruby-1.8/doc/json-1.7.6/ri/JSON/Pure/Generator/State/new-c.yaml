@@ -1,0 +1,44 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Instantiates a new State object, configured by <em>opts</em>.
+- !ruby/struct:SM::Flow::P 
+  body: "<em>opts</em> can have the following keys:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>indent</b>: a string used to indent levels (default: ''),"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>space</b>: a string that is put after, a : or , delimiter (default: ''),"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>space_before</b>: a string that is put before a : pair delimiter (default: ''),"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>object_nl</b>: a string that is put at the end of a JSON object (default: ''),"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>array_nl</b>: a string that is put at the end of a JSON array (default: ''),"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>check_circular</b>: is deprecated now, use the :max_nesting option instead,"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>max_nesting</b>: sets the maximum level of data structure nesting in the generated JSON, max_nesting = 0 if no maximum should be checked."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>allow_nan</b>: true if NaN, Infinity, and -Infinity should be generated, otherwise an exception is thrown, if these values are encountered. This options defaults to false."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>quirks_mode</b>: Enables quirks_mode for parser, that is for example generating single JSON values instead of documents is possible."
+  type: :BULLET
+full_name: JSON::Pure::Generator::State::new
+is_singleton: true
+name: new
+params: (opts = {})
+visibility: public

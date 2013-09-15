@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: SQLite3::ResultSet</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">SQLite3::ResultSet</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/sqlite3/resultset_rb.html">
+                lib/sqlite3/resultset.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+The <a href="ResultSet.html">ResultSet</a> object encapsulates the
+enumerability of a query&#8216;s output. It is a simple cursor over the
+data that the query returns. It will very rarely (if ever) be instantiated
+directly. Instead, client&#8216;s should obtain a <a
+href="ResultSet.html">ResultSet</a> instance via <a
+href="Statement.html#M000092">Statement#execute</a>.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000113">close</a>&nbsp;&nbsp;
+      <a href="#M000114">closed?</a>&nbsp;&nbsp;
+      <a href="#M000116">columns</a>&nbsp;&nbsp;
+      <a href="#M000111">each</a>&nbsp;&nbsp;
+      <a href="#M000112">each_hash</a>&nbsp;&nbsp;
+      <a href="#M000109">eof?</a>&nbsp;&nbsp;
+      <a href="#M000107">new</a>&nbsp;&nbsp;
+      <a href="#M000110">next</a>&nbsp;&nbsp;
+      <a href="#M000117">next_hash</a>&nbsp;&nbsp;
+      <a href="#M000108">reset</a>&nbsp;&nbsp;
+      <a href="#M000115">types</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Enumerable</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000107" class="method-detail">
+        <a name="M000107"></a>
+
+        <div class="method-heading">
+          <a href="ResultSet.src/M000107.html" target="Code" class="method-signature"
+            onclick="popupCode('ResultSet.src/M000107.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(db, stmt)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Create a <a href="ResultSet.html#M000107">new</a> <a
+href="ResultSet.html">ResultSet</a> attached to the given database, using
+the given sql text.
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000113" class="method-detail">
+        <a name="M000113"></a>
+
+        <div class="method-heading">
+          <a href="ResultSet.src/M000113.html" target="Code" class="method-signature"
+            onclick="popupCode('ResultSet.src/M000113.html');return false;">
+          <span class="method-name">close</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Closes the statement that spawned this result set. <em>Use with
+caution!</em> Closing a result set will automatically <a
+href="ResultSet.html#M000113">close</a> any other result sets that were
+spawned from the same statement.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000114" class="method-detail">
+        <a name="M000114"></a>
+
+        <div class="method-heading">
+          <a href="ResultSet.src/M000114.html" target="Code" class="method-signature"
+            onclick="popupCode('ResultSet.src/M000114.html');return false;">
+          <span class="method-name">closed?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Queries whether the underlying statement has been closed or not.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
+
+        <div class="method-heading">
+          <a href="ResultSet.src/M000116.html" target="Code" class="method-signature"
+            onclick="popupCode('ResultSet.src/M000116.html');return false;">
+          <span class="method-name">columns</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the names of the <a href="ResultSet.html#M000116">columns</a>
+returned by this result set.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000111" class="method-detail">
+        <a name="M000111"></a>
+
+        <div class="method-heading">
+          <a href="ResultSet.src/M000111.html" target="Code" class="method-signature"
+            onclick="popupCode('ResultSet.src/M000111.html');return false;">
+          <span class="method-name">each</span><span class="method-args">() {|node| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Required by the Enumerable mixin. Provides an internal iterator over the
+rows of the result set.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000112" class="method-detail">
+        <a name="M000112"></a>
+
+        <div class="method-heading">
+          <a href="ResultSet.src/M000112.html" target="Code" class="method-signature"
+            onclick="popupCode('ResultSet.src/M000112.html');return false;">
+          <span class="method-name">each_hash</span><span class="method-args">() {|node| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Provides an internal iterator over the rows of the result set where <a
+href="ResultSet.html#M000111">each</a> row is yielded as a hash.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000109" class="method-detail">
+        <a name="M000109"></a>
+
+        <div class="method-heading">
+          <a href="ResultSet.src/M000109.html" target="Code" class="method-signature"
+            onclick="popupCode('ResultSet.src/M000109.html');return false;">
+          <span class="method-name">eof?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Query whether the cursor has reached the end of the result set or not.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000110" class="method-detail">
+        <a name="M000110"></a>
+
+        <div class="method-heading">
+          <a href="ResultSet.src/M000110.html" target="Code" class="method-signature"
+            onclick="popupCode('ResultSet.src/M000110.html');return false;">
+          <span class="method-name">next</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Obtain the <a href="ResultSet.html#M000110">next</a> row from the cursor.
+If there are no more rows to be had, this will return <tt>nil</tt>. If type
+translation is active on the corresponding database, the values in the row
+will be translated according to their <a
+href="ResultSet.html#M000115">types</a>.
+</p>
+<p>
+The returned value will be an array, unless Database#results_as_hash has
+been set to <tt>true</tt>, in which case the returned value will be a hash.
+</p>
+<p>
+For arrays, the column names are accessible via the <tt>fields</tt>
+property, and the column <a href="ResultSet.html#M000115">types</a> are
+accessible via the <tt><a href="ResultSet.html#M000115">types</a></tt>
+property.
+</p>
+<p>
+For hashes, the column names are the keys of the hash, and the column <a
+href="ResultSet.html#M000115">types</a> are accessible via the <tt><a
+href="ResultSet.html#M000115">types</a></tt> property.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
+
+        <div class="method-heading">
+          <a href="ResultSet.src/M000117.html" target="Code" class="method-signature"
+            onclick="popupCode('ResultSet.src/M000117.html');return false;">
+          <span class="method-name">next_hash</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return the <a href="ResultSet.html#M000110">next</a> row as a hash
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000108" class="method-detail">
+        <a name="M000108"></a>
+
+        <div class="method-heading">
+          <a href="ResultSet.src/M000108.html" target="Code" class="method-signature"
+            onclick="popupCode('ResultSet.src/M000108.html');return false;">
+          <span class="method-name">reset</span><span class="method-args">( *bind_params )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Reset the cursor, so that a result set which has reached end-of-file can be
+rewound and reiterated.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000115" class="method-detail">
+        <a name="M000115"></a>
+
+        <div class="method-heading">
+          <a href="ResultSet.src/M000115.html" target="Code" class="method-signature"
+            onclick="popupCode('ResultSet.src/M000115.html');return false;">
+          <span class="method-name">types</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="ResultSet.html#M000115">types</a> of the <a
+href="ResultSet.html#M000116">columns</a> returned by this result set.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

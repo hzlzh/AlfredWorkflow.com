@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.rdoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.rdoc</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.rdoc
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Jan 31 11:57:40 -0700 2013</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1><a href="../classes/SQLite3.html">SQLite3</a>/Ruby Interface</h1>
+<ul>
+<li><a
+href="http://github.com/luislavena/sqlite3-ruby">github.com/luislavena/sqlite3-ruby</a>
+
+</li>
+<li><a
+href="http://groups.google.com/group/sqlite3-ruby">groups.google.com/group/sqlite3-ruby</a>
+
+</li>
+</ul>
+<h2>DESCRIPTION</h2>
+<p>
+This module allows Ruby programs to interface with the <a
+href="../classes/SQLite3.html">SQLite3</a> database engine (<a
+href="http://www.sqlite.org">www.sqlite.org</a>). You must have the SQLite
+engine installed in order to build this module.
+</p>
+<p>
+Note that this module is only compatible with SQLite 3.6.16 or newer.
+</p>
+<h2>SYNOPSIS</h2>
+<pre>
+  require &quot;sqlite3&quot;
+
+  # Open a database
+  db = SQLite3::Database.new &quot;test.db&quot;
+
+  # Create a database
+  rows = db.execute &lt;&lt;-SQL
+    create table numbers (
+      name varchar(30),
+      val int
+    );
+  SQL
+
+  # Execute a few inserts
+  {
+    &quot;one&quot; =&gt; 1,
+    &quot;two&quot; =&gt; 2,
+  }.each do |pair|
+    db.execute &quot;insert into numbers values ( ?, ? )&quot;, pair
+  end
+
+  # Find a few rows
+  db.execute( &quot;select * from numbers&quot; ) do |row|
+    p row
+  end
+</pre>
+<h2>Compilation and Installation</h2>
+<p>
+Install <a href="../classes/SQLite3.html">SQLite3</a>, enabling the option
+SQLITE_ENABLE_COLUMN_METADATA (see <a
+href="http://www.sqlite.org/compile.html">www.sqlite.org/compile.html</a>
+for details).
+</p>
+<p>
+Then do the following:
+</p>
+<pre>
+  ruby setup.rb config
+  ruby setup.rb setup
+  ruby setup.rb install
+</pre>
+<p>
+Alternatively, you can download and install the RubyGem package for <a
+href="../classes/SQLite3.html">SQLite3</a>/Ruby (you must have RubyGems and
+<a href="../classes/SQLite3.html">SQLite3</a> installed, first):
+</p>
+<pre>
+  gem install sqlite3
+</pre>
+<p>
+If you have sqlite3 installed in a non-standard location, you can specify
+the location of the include and lib files by doing:
+</p>
+<pre>
+  gem install sqlite3 -- --with-sqlite3-include=/opt/local/include \
+     --with-sqlite3-lib=/opt/local/lib
+</pre>
+<h1>SUPPORT!!!</h1>
+<h2>OMG! Something has gone wrong! Where do I get help?</h2>
+<p>
+The best place to get help is from the <a
+href="http://groups.google.com/group/sqlite3-ruby">sqlite3-ruby mailing
+list</a> which can be found here:
+</p>
+<pre>
+  * http://groups.google.com/group/sqlite3-ruby
+</pre>
+<h2>I&#8216;ve found a bug! Where do I file it?</h2>
+<p>
+Uh oh. After contacting the mailing list, you&#8216;ve found that
+you&#8216;ve actually discovered a bug. You can file the bug at the <a
+href="http://github.com/luislavena/sqlite3-ruby/issues">github issues
+page</a> which can be found here:
+</p>
+<pre>
+  * http://github.com/luislavena/sqlite3-ruby/issues
+</pre>
+<h2>Usage</h2>
+<p>
+For help figuring out the <a
+href="../classes/SQLite3.html">SQLite3</a>/Ruby interface, check out the
+SYNOPSIS as well as the RDoc. It includes examples of usage. If you have
+any questions that you feel should be address in the FAQ, please send them
+to <a href="http://groups.google.com/group/sqlite3-ruby">the mailing
+list</a>
+</p>
+<h2>Source Code</h2>
+<p>
+The source repository is accessible via git:
+</p>
+<pre>
+  git clone git://github.com/luislavena/sqlite3-ruby.git
+</pre>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

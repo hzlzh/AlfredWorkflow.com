@@ -1,0 +1,111 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This is create identifier, which is used to decide if the <em>json_create</em> hook of a class should be called. It defaults to 'json_class'.
+  name: create_id
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "The global default options for the JSON.dump method:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: " :max_nesting: false\n :allow_nan:   true\n :quirks_mode: true\n"
+  name: dump_default_options
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the JSON generator module that is used by JSON. This is either JSON::Ext::Generator or JSON::Pure::Generator.
+  name: generator
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "The global default options for the JSON.load method:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: " :max_nesting: false\n :allow_nan:   true\n :quirks_mode: true\n"
+  name: load_default_options
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the JSON parser class that is used by JSON. This is either JSON::Ext::Parser or JSON::Pure::Parser.
+  name: parser
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the JSON generator state class that is used by JSON. This is either JSON::Ext::Generator::State or JSON::Pure::Generator::State.
+  name: state
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: const_defined_in?
+- !ruby/object:RI::MethodSummary 
+  name: const_defined_in?
+- !ruby/object:RI::MethodSummary 
+  name: iconv
+- !ruby/object:RI::MethodSummary 
+  name: iconv
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NaN
+  value: 0.0/0
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Infinity
+  value: 1.0/0
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MinusInfinity
+  value: -Infinity
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: For backwards compatibility
+  name: UnparserError
+  value: GeneratorError
+- !ruby/object:RI::Constant 
+  comment: 
+  name: JSON_LOADED
+  value: true unless defined?(::JSON::JSON_LOADED)
+- !ruby/object:RI::Constant 
+  comment: 
+  name: JSON_LOADED
+  value: true unless defined?(::JSON::JSON_LOADED)
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: JSON version
+  name: VERSION
+  value: "'1.7.6'"
+full_name: JSON
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: dump
+- !ruby/object:RI::MethodSummary 
+  name: fast_generate
+- !ruby/object:RI::MethodSummary 
+  name: generate
+- !ruby/object:RI::MethodSummary 
+  name: load
+- !ruby/object:RI::MethodSummary 
+  name: parse
+- !ruby/object:RI::MethodSummary 
+  name: parse!
+- !ruby/object:RI::MethodSummary 
+  name: pretty_generate
+- !ruby/object:RI::MethodSummary 
+  name: recurse_proc
+- !ruby/object:RI::MethodSummary 
+  name: restore
+name: JSON
+superclass: 

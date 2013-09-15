@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: API_CHANGES.rdoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>API_CHANGES.rdoc</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>API_CHANGES.rdoc
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Jan 31 11:57:40 -0700 2013</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>API Changes</h1>
+<ul>
+<li>SQLite3::Database#execute only accepts an array for bind parameters.
+
+</li>
+<li><a href="../classes/SQLite3/ResultSet.html">SQLite3::ResultSet</a> used to
+query the database for the first row, regardless of whether the user asked
+for it or not. I have removed that so that rows will not be returned until
+the user asks for them. This is a subtle but sometimes important change in
+behavior.
+
+<p>
+83882d2208ed189361617d5ab8532a325aaf729d
+</p>
+</li>
+<li>SQLite3::Database#trace now takes either a block or an object that responds
+to &quot;call&quot;. The previous implementation passed around a VALUE that
+was cast to a void *. This is dangerous because the value could get garbage
+collected before the proc was called. If the user wants data passed around
+with the block, they should use variables available to the closure or
+create an object.
+
+</li>
+<li>SQLite3::Statement#step automatically converts to ruby types, where before
+all values were automatically yielded as strings. This will only be a
+problem for people who were accessing information about the database that
+wasn&#8216;t previously passed through the pure ruby conversion code.
+
+</li>
+<li>SQLite3::Database#errmsg no longer takes a parameter to return error
+messages as UTF-16. Do people even use that? I opt for staying UTF-8 when
+possible. See test_integration.rb test_errmsg_utf16
+
+</li>
+<li>SQLite3::Database#authorize same changes as trace
+
+</li>
+<li>test/test_tc_database.rb was removed because we no longer use the Driver
+design pattern.
+
+</li>
+</ul>
+<h1>Garbage Collection Strategy</h1>
+<p>
+All statements keep pointers back to their respective database connections.
+The @connection instance variable on the Statement handle keeps the
+database connection alive. Memory allocated for a statement handler will be
+freed in two cases:
+</p>
+<ul>
+<li>close is called on the statement
+
+</li>
+<li>The <a href="../classes/SQLite3/Database.html">SQLite3::Database</a> object
+gets garbage collected
+
+</li>
+</ul>
+<p>
+We can&#8216;t free the memory for the statement in the garbage collection
+function for the statement handler. The reason is because there exists a
+race condition. We cannot guarantee the order in which objects will be
+garbage collected. So, it is possible that a connection and a statement are
+up for garbage collection. If the database connection were to be
+free&#8216;d before the statement, then boom. Instead we&#8216;ll be
+conservative and free unclosed statements when the connection is
+terminated.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>trace (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq:
+ *    trace { |sql| ... }
+ *    trace(Class.new { def call sql; end }.new)
+ *
+ * Installs (or removes) a block that will be invoked for every SQL
+ * statement executed. The block receives one parameter: the SQL statement
+ * executed. If the block is +nil+, any existing tracer will be uninstalled.
+ */
+static VALUE trace(int argc, VALUE *argv, VALUE self)
+{
+  sqlite3RubyPtr ctx;
+  VALUE block;
+
+  Data_Get_Struct(self, sqlite3Ruby, ctx);
+  REQUIRE_OPEN_DB(ctx);
+
+  rb_scan_args(argc, argv, &quot;01&quot;, &amp;block);
+
+  if(NIL_P(block) &amp;&amp; rb_block_given_p()) block = rb_block_proc();
+
+  rb_iv_set(self, &quot;@tracefunc&quot;, block);
+
+  sqlite3_trace(ctx-&gt;db, NIL_P(block) ? NULL : tracefunc, (void *)self);
+
+  return self;
+}</pre>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (SQLite3::Backup)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq: SQLite3::Backup.new(dstdb, dstname, srcdb, srcname)
+ *
+ * Initialize backup the backup.
+ *
+ * dstdb:
+ *   the destination SQLite3::Database object.
+ * dstname:
+ *   the destination's database name.
+ * srcdb:
+ *   the source SQLite3::Database object.
+ * srcname:
+ *   the source's database name.
+ *
+ * The database name is &quot;main&quot;, &quot;temp&quot;, or the name specified in an
+ * ATTACH statement.
+ *
+ * This feature requires SQLite 3.6.11 or later.
+ *
+ *   require 'sqlite3'
+ *   sdb = SQLite3::Database.new('src.sqlite3')
+ *
+ *   ddb = SQLite3::Database.new(':memory:')
+ *   b = SQLite3::Backup.new(ddb, 'main', sdb, 'main')
+ *   p [b.remaining, b.pagecount] # invalid value; for example [0, 0]
+ *   begin
+ *     p b.step(1) #=&gt; OK or DONE
+ *     p [b.remaining, b.pagecount]
+ *   end while b.remaining &gt; 0
+ *   b.finish
+ *
+ *   ddb = SQLite3::Database.new(':memory:')
+ *   b = SQLite3::Backup.new(ddb, 'main', sdb, 'main')
+ *   b.step(-1) #=&gt; DONE
+ *   b.finish
+ *
+ */
+static VALUE initialize(VALUE self, VALUE dstdb, VALUE dstname, VALUE srcdb, VALUE srcname)
+{
+  sqlite3BackupRubyPtr ctx;
+  sqlite3RubyPtr ddb_ctx, sdb_ctx;
+  sqlite3_backup *pBackup;
+
+  Data_Get_Struct(self, sqlite3BackupRuby, ctx);
+  Data_Get_Struct(dstdb, sqlite3Ruby, ddb_ctx);
+  Data_Get_Struct(srcdb, sqlite3Ruby, sdb_ctx);
+
+  if(!sdb_ctx-&gt;db)
+    rb_raise(rb_eArgError, &quot;cannot backup from a closed database&quot;);
+  if(!ddb_ctx-&gt;db)
+    rb_raise(rb_eArgError, &quot;cannot backup to a closed database&quot;);
+
+  pBackup = sqlite3_backup_init(ddb_ctx-&gt;db, StringValuePtr(dstname),
+    sdb_ctx-&gt;db, StringValuePtr(srcname));
+  if( pBackup ){
+    ctx-&gt;p = pBackup;
+  }
+  else {
+    CHECK(ddb_ctx-&gt;db, sqlite3_errcode(ddb_ctx-&gt;db));
+  }
+
+  return self;
+}</pre>
+</body>
+</html>

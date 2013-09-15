@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: UTF8
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: UTF16LE
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: UTF16BE
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: UTF16
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ANY
+  value: "5"
+full_name: SQLite3::Constants::TextRep
+includes: []
+
+instance_methods: []
+
+name: TextRep
+superclass: 

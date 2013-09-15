@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAJOR
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MINOR
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TINY
+  value: "7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BUILD
+  value: nil
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STRING
+  value: "[ MAJOR, MINOR, TINY, BUILD ].compact.join( \".\" )"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: ":beta-tag:"
+  name: VERSION
+  value: "::SQLite3::VERSION"
+full_name: SQLite3::VersionProxy
+includes: []
+
+instance_methods: []
+
+name: VersionProxy
+superclass: 

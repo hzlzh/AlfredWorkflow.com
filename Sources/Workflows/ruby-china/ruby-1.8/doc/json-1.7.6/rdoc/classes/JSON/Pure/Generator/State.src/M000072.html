@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>configure (JSON::Pure::Generator::State)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/json/pure/generator.rb, line 222</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>(<span class="ruby-identifier">opts</span>)
+          <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">opts</span>
+            <span class="ruby-identifier">instance_variable_set</span> <span class="ruby-node">&quot;@#{key}&quot;</span>, <span class="ruby-identifier">value</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-ivar">@indent</span>                = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:indent</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">:indent</span>)
+          <span class="ruby-ivar">@space</span>                 = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:space</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">:space</span>)
+          <span class="ruby-ivar">@space_before</span>          = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:space_before</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">:space_before</span>)
+          <span class="ruby-ivar">@object_nl</span>             = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:object_nl</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">:object_nl</span>)
+          <span class="ruby-ivar">@array_nl</span>              = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:array_nl</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">:array_nl</span>)
+          <span class="ruby-ivar">@allow_nan</span>             = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:allow_nan</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">:allow_nan</span>)
+          <span class="ruby-ivar">@ascii_only</span>            = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:ascii_only</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">:ascii_only</span>)
+          <span class="ruby-ivar">@depth</span>                 = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:depth</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
+          <span class="ruby-ivar">@quirks_mode</span>           = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:quirks_mode</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">:quirks_mode</span>)
+          <span class="ruby-ivar">@buffer_initial_length</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:buffer_initial_length</span>]
+
+          <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">opts</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">:max_nesting</span>) <span class="ruby-comment cmt"># defaults to 100</span>
+            <span class="ruby-ivar">@max_nesting</span> = <span class="ruby-value">100</span>
+          <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:max_nesting</span>]
+            <span class="ruby-ivar">@max_nesting</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:max_nesting</span>]
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-ivar">@max_nesting</span> = <span class="ruby-value">0</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">self</span>
+        <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

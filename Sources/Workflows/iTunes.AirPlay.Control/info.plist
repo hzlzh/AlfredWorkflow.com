@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>me.yujinakayama.alfred-itunes-airplay</string>
+	<key>connections</key>
+	<dict>
+		<key>A8818D44-1EF8-4CDF-9539-E95E50786C3A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D1A4572-8436-461D-91C4-BD1CEB8B0B4E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Yuji Nakayama</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>iTunes AirPlay Control</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>airplay</string>
+				<key>runningsubtext</key>
+				<string>Listing available speakers...</string>
+				<key>script</key>
+				<string>./bin/list_airplay_devices "{query}"</string>
+				<key>title</key>
+				<string>Control iTunes AirPlay speakers...</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A8818D44-1EF8-4CDF-9539-E95E50786C3A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>./bin/toggle_airplay_device "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>1D1A4572-8436-461D-91C4-BD1CEB8B0B4E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Version 0.0.1</string>
+	<key>uidata</key>
+	<dict>
+		<key>1D1A4572-8436-461D-91C4-BD1CEB8B0B4E</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>A8818D44-1EF8-4CDF-9539-E95E50786C3A</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/yujinakayama/alfred-itunes-airplay</string>
+</dict>
+</plist>

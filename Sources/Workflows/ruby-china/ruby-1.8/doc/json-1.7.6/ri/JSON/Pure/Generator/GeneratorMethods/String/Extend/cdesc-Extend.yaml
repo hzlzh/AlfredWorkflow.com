@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Module that holds the extinding methods if, the String module is included.
+constants: []
+
+full_name: JSON::Pure::Generator::GeneratorMethods::String::Extend
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: json_create
+name: Extend
+superclass: 

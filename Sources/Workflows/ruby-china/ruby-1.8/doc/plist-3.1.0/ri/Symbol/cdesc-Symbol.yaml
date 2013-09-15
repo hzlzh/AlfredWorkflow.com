@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: we need to add this so sorting hash keys works properly
+constants: []
+
+full_name: Symbol
+includes: []
+
+instance_methods: []
+
+name: Symbol
+superclass: Object

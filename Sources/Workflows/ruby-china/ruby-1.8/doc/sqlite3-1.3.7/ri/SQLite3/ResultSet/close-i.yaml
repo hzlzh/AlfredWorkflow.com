@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Closes the statement that spawned this result set. <em>Use with caution!</em> Closing a result set will automatically close any other result sets that were spawned from the same statement.
+full_name: SQLite3::ResultSet#close
+is_singleton: false
+name: close
+params: ()
+visibility: public

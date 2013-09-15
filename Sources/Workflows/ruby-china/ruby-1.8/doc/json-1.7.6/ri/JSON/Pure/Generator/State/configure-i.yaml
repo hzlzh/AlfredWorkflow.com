@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: merge
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Configure this State instance with the Hash <em>opts</em>, and return itself.
+full_name: JSON::Pure::Generator::State#configure
+is_singleton: false
+name: configure
+params: (opts)
+visibility: public

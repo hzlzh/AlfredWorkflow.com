@@ -1,0 +1,15 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: restore
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Load a ruby data structure from a JSON <em>source</em> and return it. A source can either be a string-like object, an IO-like object, or an object responding to the read method. If <em>proc</em> was given, it will be called with any nested Ruby object as an argument recursively in depth first order. The default options for the parser can be changed via the load_default_options method.
+- !ruby/struct:SM::Flow::P 
+  body: This method is part of the implementation of the load/dump interface of Marshal and YAML.
+full_name: JSON#load
+is_singleton: false
+name: load
+params: (source, proc = nil)
+visibility: public

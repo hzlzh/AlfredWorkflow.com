@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: JSON::Pure::Parser#quirks_mode?
+is_singleton: false
+name: quirks_mode?
+params: ()
+visibility: public

@@ -1,0 +1,6 @@
+{
+	"require": {
+		"php": ">=5.3.3",
+		"skyzyx/alfred-workflow-builder": "1.*"
+	}
+}

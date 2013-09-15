@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: Manifest.txt</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>Manifest.txt</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>Manifest.txt
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Jan 31 11:57:40 -0700 2013</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+API_CHANGES.rdoc CHANGELOG.rdoc ChangeLog.cvs LICENSE Manifest.txt
+README.rdoc Rakefile ext/sqlite3/backup.c ext/sqlite3/backup.h
+ext/sqlite3/database.c ext/sqlite3/database.h ext/sqlite3/exception.c
+ext/sqlite3/exception.h ext/sqlite3/extconf.rb ext/sqlite3/sqlite3.c
+ext/sqlite3/sqlite3_ruby.h ext/sqlite3/statement.c ext/sqlite3/statement.h
+faq/faq.rb faq/faq.yml lib/sqlite3.rb lib/sqlite3/constants.rb
+lib/sqlite3/database.rb lib/sqlite3/errors.rb lib/sqlite3/pragmas.rb
+lib/sqlite3/resultset.rb lib/sqlite3/statement.rb lib/sqlite3/translator.rb
+lib/sqlite3/value.rb lib/sqlite3/version.rb setup.rb tasks/faq.rake
+tasks/gem.rake tasks/native.rake tasks/vendor_sqlite3.rake test/helper.rb
+test/test_backup.rb test/test_collation.rb test/test_database.rb
+test/test_database_readonly.rb test/test_deprecated.rb
+test/test_encoding.rb test/test_integration.rb
+test/test_integration_open_close.rb test/test_integration_pending.rb
+test/test_integration_resultset.rb test/test_integration_statement.rb
+test/test_sqlite3.rb test/test_statement.rb test/test_statement_execute.rb
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

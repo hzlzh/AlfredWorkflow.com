@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Plist::Listener#tag_start
+is_singleton: false
+name: tag_start
+params: (name, attributes)
+visibility: public

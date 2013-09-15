@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>busy_handler (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq:
+ *    busy_handler { |count| ... }
+ *    busy_handler(Class.new { def call count; end }.new)
+ *
+ * Register a busy handler with this database instance. When a requested
+ * resource is busy, this handler will be invoked. If the handler returns
+ * +false+, the operation will be aborted; otherwise, the resource will
+ * be requested again.
+ *
+ * The handler will be invoked with the name of the resource that was
+ * busy, and the number of times it has been retried.
+ *
+ * See also the mutually exclusive #busy_timeout.
+ */
+static VALUE busy_handler(int argc, VALUE *argv, VALUE self)
+{
+  sqlite3RubyPtr ctx;
+  VALUE block;
+  int status;
+
+  Data_Get_Struct(self, sqlite3Ruby, ctx);
+  REQUIRE_OPEN_DB(ctx);
+
+  rb_scan_args(argc, argv, &quot;01&quot;, &amp;block);
+
+  if(NIL_P(block) &amp;&amp; rb_block_given_p()) block = rb_block_proc();
+
+  rb_iv_set(self, &quot;@busy_handler&quot;, block);
+
+  status = sqlite3_busy_handler(
+      ctx-&gt;db, NIL_P(block) ? NULL : rb_sqlite3_busy_handler, (void *)self);
+
+  CHECK(ctx-&gt;db, status);
+
+  return self;
+}</pre>
+</body>
+</html>

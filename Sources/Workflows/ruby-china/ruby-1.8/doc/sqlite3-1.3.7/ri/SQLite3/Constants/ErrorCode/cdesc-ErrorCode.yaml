@@ -1,0 +1,118 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OK
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ERROR
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INTERNAL
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PERM
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ABORT
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BUSY
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LOCKED
+  value: "6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NOMEM
+  value: "7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: READONLY
+  value: "8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INTERRUPT
+  value: "9"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: IOERR
+  value: "10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CORRUPT
+  value: "11"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NOTFOUND
+  value: "12"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FULL
+  value: "13"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CANTOPEN
+  value: "14"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PROTOCOL
+  value: "15"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: EMPTY
+  value: "16"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SCHEMA
+  value: "17"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOOBIG
+  value: "18"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CONSTRAINT
+  value: "19"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MISMATCH
+  value: "20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MISUSE
+  value: "21"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NOLFS
+  value: "22"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: AUTH
+  value: "23"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ROW
+  value: "100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DONE
+  value: "101"
+full_name: SQLite3::Constants::ErrorCode
+includes: []
+
+instance_methods: []
+
+name: ErrorCode
+superclass: 

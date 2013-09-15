@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: JSON::GenericObject::json_create
+is_singleton: true
+name: json_create
+params: (data)
+visibility: public

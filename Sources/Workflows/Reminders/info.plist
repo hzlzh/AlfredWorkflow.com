@@ -3,25 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.surrealroad.alfred-reminder</string>
+	<string>brockangelo-Reminders</string>
 	<key>connections</key>
 	<dict>
-		<key>A725F2F1-5A55-476A-9A26-E5B2BB71200E</key>
+		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>F71B4F2D-63BD-4B35-AA18-C6DDAA5A5CD9</string>
+				<string>C9F6966A-BAD8-4D09-BFCB-09EBBF1D0244</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>F71B4F2D-63BD-4B35-AA18-C6DDAA5A5CD9</key>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>159A291E-3339-491E-8D3F-79091BE0319B</string>
+				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -30,9 +30,9 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Jack James</string>
+	<string>Brock Angelo</string>
 	<key>description</key>
-	<string>Creates a new entry in Reminders.app</string>
+	<string>Create simple, one-time reminder notifications.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -43,32 +43,20 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>r</string>
-				<key>runningsubtext</key>
-				<string>Adds an entry to Reminders.app</string>
-				<key>script</key>
-				<string>property workflowFolder : do shell script "pwd"property lib: load script POSIX file (workflowFolder &amp; "/alfred_library.scpt")
-property wf: load script POSIX file (workflowFolder &amp; "/workflow.scpt")
-property bundleid : "com.surrealroad.alfred-reminder"property uid : "add-reminder"property addActionTitle : "Add Reminder"property cacheFile : "cache.plist"property cacheExpires : 2 * minutes
-
-set wf to wf's new_workflow_with_bundle(bundleid)my alfred_script("{query}")on alfred_script(q)	-- set create reminder action	set theText to ""	set valid to "no"	try		set reminder to lib's parseReminder(q)		set theText to theText of reminder		set theDate to theDate of reminder		set valid to valid of reminder		set theList to theList of reminder	end try		if theText is "" or valid is "no" then		set valid to "no"	else		set valid to "yes"	end if		if valid is "no" then		set subtitle to "Create a new reminder"	else		set subtitle to "Create a new reminder about " &amp; theText		if theDate is not "" then set subtitle to subtitle &amp; " on " &amp; (theDate as string)		if theList is not "" then set subtitle to subtitle &amp; " in " &amp; quoted form of theList	end if		set addAction to lib's alfred_result_item(uid, addActionTitle, subtitle, q, valid)		--fetch exisitng reminders	set reminderList to {}	set existingReminders to lib's fetchReminderList(wf, cacheFile, cacheExpires)	repeat with reminder_item in existingReminders		if q is "" or reminder_item's title contains q then ¬			set end of reminderList to lib's alfred_result_item(reminder_item's uid, reminder_item's title, "Set as complete (Created on " &amp; (reminder_item's creationdate) as string &amp; ")", "uid:" &amp; reminder_item's uid, "yes")	end repeat		return lib's alfred_result_items({addAction, reminderList})end alfred_script</string>
+				<string>remindme</string>
 				<key>subtext</key>
-				<string>Adds an entry to Reminders.app</string>
-				<key>title</key>
-				<string>Add Reminder</string>
-				<key>type</key>
-				<integer>6</integer>
+				<string>(remindme) (minutes) (about something)</string>
+				<key>text</key>
+				<string>Reminders</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>A725F2F1-5A55-476A-9A26-E5B2BB71200E</string>
+			<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -76,7 +64,7 @@ set wf to wf's new_workflow_with_bundle(bundleid)my alfred_script("{query}")
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<true/>
+				<false/>
 				<key>output</key>
 				<integer>0</integer>
 				<key>removeextension</key>
@@ -86,83 +74,58 @@ set wf to wf's new_workflow_with_bundle(bundleid)my alfred_script("{query}")
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>Reminders</string>
+				<string>Reminders: Reminder Set</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>159A291E-3339-491E-8D3F-79091BE0319B</string>
+			<string>C9F6966A-BAD8-4D09-BFCB-09EBBF1D0244</string>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>0</integer>
+				<integer>63</integer>
 				<key>script</key>
-				<string>property reminderList : ""property workflowFolder : do shell script "pwd"property lib: load script POSIX file (workflowFolder &amp; "/alfred_library.scpt")
-property wf: load script POSIX file (workflowFolder &amp; "/workflow.scpt")
-property bundleid : "com.surrealroad.alfred-reminder"property cacheFile : "cache.plist"
+				<string>growlnotify=$(which growlnotify | awk '{printf("%s",$0)}')
+if [ ! $growlnotify == /usr/local/bin/growlnotify ]; then
+  echo "growlnotify wasn't found."
+  echo "Download it here: http://growl.info/downloads#generaldownloads"
+  open http://growl.info/downloads#generaldownloads
+  exit 1
+fi
 
-set wf to wf's new_workflow_with_bundle(bundleid)my alfred_script("{query}")on alfred_script(q)	if q starts with "uid:" then		set theUID to (text items 5 thru -1 of q) as string		try		tell application id "com.apple.reminders"			set theReminder to (first item of (every reminder whose id is theUID))			set theText to name of theReminder			set completed of theReminder to true			set theResult to "Completed reminder: " &amp; theText		end tell
-		lib's cacheReminders(wf, cacheFile)		end try	else		set reminder to lib's parseReminder(q)		set theText to theText of reminder		set theDate to theDate of reminder		set valid to valid of reminder		set rList to theList of reminder				if valid is not "yes" then return "Could not understand command \"" &amp; q &amp; "\""				tell application id "com.apple.reminders"			if rList is not "" then				set theList to rList			else if reminderList is not "" then				set theList to reminderList			else				set theList to first list's name			end if			if theDate is not "" then				tell list theList to make new reminder with properties {name:theText, remind me date:theDate}			else				tell list theList to make new reminder with properties {name:theText}			end if			lib's cacheReminders(wf, cacheFile)		end tell		set theResult to "Created reminder: " &amp; theText	end if	return theResultend alfred_script</string>
+/bin/bash script.sh {query}</string>
 				<key>type</key>
-				<integer>6</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>F71B4F2D-63BD-4B35-AA18-C6DDAA5A5CD9</string>
+			<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>This creates a new reminder in reminders.app
- 
-To use, just type "r reminder_text" into Alfred. E.g. "r check out some of Alfred's other workflows"
-To set a reminder for a specific date, use any of the following commands:
-r today release the hamsters into the wild
-r tomorrow bring about financial ruin upon my enemies
-r in 5 minutes drop everything
-r in 2 hours laugh out loud in random thoughts list
-r in 3 days pick stuff up off the floor
-r on 24/12/13 to forget everything I know about things in movies
-r on 12 June 15 to come up with some interesting ideas
-r on 11 12 13 to check what the weather's like
-r on 31-12-99 23:22 to panic about the millennium bug
-r at 2pm to wait for nothing in particular
-r at 3.30 to ask some difficult questions
-
-The order of d/m/y (as well as HH:mm) I believe will depend on your region settings in the OS.
- 
-If you want to change the default reminder list, edit the applescript property at the top, otherwise it will just use the first one (unless you use "in Y list" at the end).
- 
-Changelog:
-
-Wednesday, 27 March 2013 – Renamed workflow to "Reminders"; Use application id instead of name, Alfred now shows existing reminders in his list (selecting one will mark it as complete); keyword is now optional
-Tuesday, 26 March 2013 – Now sets specified date as the reminder date, rather than due date; added pattern "r something in Y list"
-Wednesday, 20 March 2013 – You can now use the pattern "r at 1.30 to something"; Alfred will tell you what's going to happen before you press enter; split off code to library file
-Tuesday, 19 March 2013 – You can now use the pattern "r in X minutes/hours/days something"
-Sunday, 17 March 2013 – You can now specify a date for the reminder. See the examples above.
-
-Uses AppleScript implementation of the Workflow object class for Alfred 2 (https://github.com/qlassiqa/qWorkflow)</string>
+	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>159A291E-3339-491E-8D3F-79091BE0319B</key>
+		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
 		<dict>
 			<key>ypos</key>
-			<real>50</real>
+			<real>60</real>
 		</dict>
-		<key>A725F2F1-5A55-476A-9A26-E5B2BB71200E</key>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<dict>
 			<key>ypos</key>
-			<real>50</real>
+			<real>60</real>
 		</dict>
-		<key>F71B4F2D-63BD-4B35-AA18-C6DDAA5A5CD9</key>
+		<key>C9F6966A-BAD8-4D09-BFCB-09EBBF1D0244</key>
 		<dict>
 			<key>ypos</key>
-			<real>50</real>
+			<real>60</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string>http://www.surrealroad.com</string>
+	<string>http://approductive.wordpress.com/alfred-reminders/</string>
 </dict>
 </plist>

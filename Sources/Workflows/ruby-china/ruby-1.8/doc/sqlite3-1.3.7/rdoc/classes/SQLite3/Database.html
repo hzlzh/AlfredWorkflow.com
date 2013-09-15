@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: SQLite3::Database</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">SQLite3::Database</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/sqlite3/database_rb.html">
+                lib/sqlite3/database.rb
+                </a>
+        <br />
+                <a href="../../files/ext/sqlite3/backup_c.html">
+                ext/sqlite3/backup.c
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+call-seq: db.transaction_active?
+</p>
+<p>
+Returns <tt>true</tt> if there is a <a
+href="Database.html#M000058">transaction</a> active, and <tt>false</tt>
+otherwise.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000040">authorizer</a>&nbsp;&nbsp;
+      <a href="#M000076">authorizer=</a>&nbsp;&nbsp;
+      <a href="#M000077">busy_handler</a>&nbsp;&nbsp;
+      <a href="#M000078">busy_timeout=</a>&nbsp;&nbsp;
+      <a href="#M000075">changes</a>&nbsp;&nbsp;
+      <a href="#M000064">close</a>&nbsp;&nbsp;
+      <a href="#M000065">closed?</a>&nbsp;&nbsp;
+      <a href="#M000063">collation</a>&nbsp;&nbsp;
+      <a href="#M000059">commit</a>&nbsp;&nbsp;
+      <a href="#M000074">complete?</a>&nbsp;&nbsp;
+      <a href="#M000049">create_aggregate</a>&nbsp;&nbsp;
+      <a href="#M000054">create_aggregate_handler</a>&nbsp;&nbsp;
+      <a href="#M000048">create_function</a>&nbsp;&nbsp;
+      <a href="#M000070">define_aggregator</a>&nbsp;&nbsp;
+      <a href="#M000069">define_function</a>&nbsp;&nbsp;
+      <a href="#M000081">enable_load_extension</a>&nbsp;&nbsp;
+      <a href="#M000082">encoding</a>&nbsp;&nbsp;
+      <a href="#M000073">errcode</a>&nbsp;&nbsp;
+      <a href="#M000072">errmsg</a>&nbsp;&nbsp;
+      <a href="#M000042">execute</a>&nbsp;&nbsp;
+      <a href="#M000043">execute2</a>&nbsp;&nbsp;
+      <a href="#M000044">execute_batch</a>&nbsp;&nbsp;
+      <a href="#M000053">finalize</a>&nbsp;&nbsp;
+      <a href="#M000051">finalize</a>&nbsp;&nbsp;
+      <a href="#M000057">finalize</a>&nbsp;&nbsp;
+      <a href="#M000046">get_first_row</a>&nbsp;&nbsp;
+      <a href="#M000047">get_first_value</a>&nbsp;&nbsp;
+      <a href="#M000071">interrupt</a>&nbsp;&nbsp;
+      <a href="#M000068">last_insert_row_id</a>&nbsp;&nbsp;
+      <a href="#M000080">load_extension</a>&nbsp;&nbsp;
+      <a href="#M000062">new</a>&nbsp;&nbsp;
+      <a href="#M000055">new</a>&nbsp;&nbsp;
+      <a href="#M000041">prepare</a>&nbsp;&nbsp;
+      <a href="#M000045">query</a>&nbsp;&nbsp;
+      <a href="#M000038">quote</a>&nbsp;&nbsp;
+      <a href="#M000061">readonly?</a>&nbsp;&nbsp;
+      <a href="#M000060">rollback</a>&nbsp;&nbsp;
+      <a href="#M000050">step</a>&nbsp;&nbsp;
+      <a href="#M000056">step</a>&nbsp;&nbsp;
+      <a href="#M000052">step</a>&nbsp;&nbsp;
+      <a href="#M000066">total_changes</a>&nbsp;&nbsp;
+      <a href="#M000067">trace</a>&nbsp;&nbsp;
+      <a href="#M000058">transaction</a>&nbsp;&nbsp;
+      <a href="#M000079">transaction_active?</a>&nbsp;&nbsp;
+      <a href="#M000039">translator</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="Pragmas.html">Pragmas</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="Database/FunctionProxy.html" class="link">SQLite3::Database::FunctionProxy</a><br />
+
+    </div>
+
+
+    <div id="aliases-list">
+      <h3 class="section-bar">External Aliases</h3>
+
+      <div class="name-list">
+                        <table summary="aliases">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">new</td>
+          <td>-&gt;</td>
+          <td class="context-item-value">open</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">busy_timeout=</td>
+          <td>-&gt;</td>
+          <td class="context-item-value">busy_timeout</td>
+        </tr>
+                        </table>
+      </div>
+    </div>
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">collations</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">results_as_hash</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+A boolean that indicates whether rows in result sets should be returned as
+hashes or not. By default, rows are returned as arrays.
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000051" class="method-detail">
+        <a name="M000051"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000051.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000051.html');return false;">
+          <span class="method-name">finalize</span><span class="method-args">( &amp;block )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000062" class="method-detail">
+        <a name="M000062"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000062.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000062.html');return false;">
+          <span class="method-name"> SQLite3::Database.new(file, options = {})<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Create a <a href="Database.html#M000055">new</a> <a
+href="Database.html">Database</a> object that opens the given file. If
+utf16 is <tt>true</tt>, the filename is interpreted as a UTF-16 encoded
+string.
+</p>
+<p>
+By default, the <a href="Database.html#M000055">new</a> database will
+return result rows as arrays (results_as_hash) and has type translation
+disabled (type_translation=).
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000055" class="method-detail">
+        <a name="M000055"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000055.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000055.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(handler)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000038.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000038.html');return false;">
+          <span class="method-name">quote</span><span class="method-args">( string )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Quotes the given string, making it safe to use in an SQL statement. It
+replaces all instances of the single-<a
+href="Database.html#M000038">quote</a> character with two single-<a
+href="Database.html#M000038">quote</a> characters. The modified string is
+returned.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000050" class="method-detail">
+        <a name="M000050"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000050.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000050.html');return false;">
+          <span class="method-name">step</span><span class="method-args">( &amp;block )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000040.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000040.html');return false;">
+          <span class="method-name">authorizer</span><span class="method-args">( &amp;block )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Installs (or removes) a block that will be invoked for every access to the
+database. If the block returns 0 (or <tt>nil</tt>), the statement is
+allowed to proceed. Returning 1 causes an authorization error to occur, and
+returning 2 causes the access to be silently denied.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000076" class="method-detail">
+        <a name="M000076"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000076.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000076.html');return false;">
+          <span class="method-name"> set_authorizer = auth<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the <a href="Database.html#M000040">authorizer</a> for this database.
+<tt>auth</tt> must respond to <tt>call</tt>, and <tt>call</tt> must take 5
+arguments.
+</p>
+<p>
+Installs (or removes) a block that will be invoked for every access to the
+database. If the block returns 0 (or <tt>true</tt>), the statement is
+allowed to proceed. Returning 1 or false causes an authorization error to
+occur, and returning 2 or nil causes the access to be silently denied.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000077" class="method-detail">
+        <a name="M000077"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000077.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000077.html');return false;">
+          <span class="method-name">busy_handler { |count| ... }<br />
+busy_handler(Class.new { def call count; end }.new)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Register a busy handler with this database instance. When a requested
+resource is busy, this handler will be invoked. If the handler returns
+<tt>false</tt>, the operation will be aborted; otherwise, the resource will
+be requested again.
+</p>
+<p>
+The handler will be invoked with the name of the resource that was busy,
+and the number of times it has been retried.
+</p>
+<p>
+See also the mutually exclusive busy_timeout.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000078" class="method-detail">
+        <a name="M000078"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000078.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000078.html');return false;">
+          <span class="method-name"> db.busy_timeout = ms<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Indicates that if a request for a resource terminates because that resource
+is busy, SQLite should sleep and retry for up to the indicated number of
+milliseconds. By default, SQLite does not retry busy resources. To restore
+the default behavior, send 0 as the <tt>ms</tt> parameter.
+</p>
+<p>
+See also the mutually exclusive <a
+href="Database.html#M000077">busy_handler</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000075" class="method-detail">
+        <a name="M000075"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000075.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000075.html');return false;">
+          <span class="method-name"> changes<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the number of <a href="Database.html#M000075">changes</a> made to
+this database instance by the last operation performed. Note that a
+&quot;delete from table&quot; without a where clause will not affect this
+value.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000064" class="method-detail">
+        <a name="M000064"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000064.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000064.html');return false;">
+          <span class="method-name"> db.close<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Closes this database.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000065" class="method-detail">
+        <a name="M000065"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000065.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000065.html');return false;">
+          <span class="method-name"> db.closed?<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if this database instance has been closed (see <a
+href="Database.html#M000064">close</a>).
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000063" class="method-detail">
+        <a name="M000063"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000063.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000063.html');return false;">
+          <span class="method-name"> db.collation(name, comparator)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Add a <a href="Database.html#M000063">collation</a> with name
+<tt>name</tt>, and a <tt>comparator</tt> object. The <tt>comparator</tt>
+object should implement a method called &quot;compare&quot; that takes two
+parameters and returns an integer less than, equal to, or greater than 0.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000059" class="method-detail">
+        <a name="M000059"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000059.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000059.html');return false;">
+          <span class="method-name">commit</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Commits the current <a href="Database.html#M000058">transaction</a>. If
+there is no current <a href="Database.html#M000058">transaction</a>, this
+will cause an error to be raised. This returns <tt>true</tt>, in order to
+allow it to be used in idioms like <tt>abort? and <a
+href="Database.html#M000060">rollback</a> or <a
+href="Database.html#M000059">commit</a></tt>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000074" class="method-detail">
+        <a name="M000074"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000074.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000074.html');return false;">
+          <span class="method-name"> complete?(sql)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return <tt>true</tt> if the string is a valid (ie, parsable) SQL statement,
+and <tt>false</tt> otherwise.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000049" class="method-detail">
+        <a name="M000049"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000049.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000049.html');return false;">
+          <span class="method-name">create_aggregate</span><span class="method-args">( name, arity, step=nil, finalize=nil, text_rep=Constants::TextRep::ANY, &amp;block )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="Database.html#M000055">new</a> aggregate function for
+use in SQL statements. Aggregate functions are functions that apply over
+every row in the result set, instead of over just a single row. (A very
+common aggregate function is the &quot;count&quot; function, for
+determining the number of rows that match a <a
+href="Database.html#M000045">query</a>.)
+</p>
+<p>
+The <a href="Database.html#M000055">new</a> function will be added as
+<tt>name</tt>, with the given <tt>arity</tt>. (For variable arity
+functions, use -1 for the arity.)
+</p>
+<p>
+The <tt><a href="Database.html#M000050">step</a></tt> parameter must be a
+proc object that accepts as its first parameter a <a
+href="Database/FunctionProxy.html">FunctionProxy</a> instance (representing
+the function invocation), with any subsequent parameters (up to the
+function&#8216;s arity). The <tt><a
+href="Database.html#M000050">step</a></tt> callback will be invoked once
+for each row of the result set.
+</p>
+<p>
+The <tt><a href="Database.html#M000051">finalize</a></tt> parameter must be
+a <tt>proc</tt> object that accepts only a single parameter, the <a
+href="Database/FunctionProxy.html">FunctionProxy</a> instance representing
+the current function invocation. It should invoke FunctionProxy#result= to
+store the result of the function.
+</p>
+<p>
+Example:
+</p>
+<pre>
+  db.create_aggregate( &quot;lengths&quot;, 1 ) do
+    step do |func, value|
+      func[ :total ] ||= 0
+      func[ :total ] += ( value ? value.length : 0 )
+    end
+
+    finalize do |func|
+      func.result = func[ :total ] || 0
+    end
+  end
+
+  puts db.get_first_value( &quot;select lengths(name) from table&quot; )
+</pre>
+<p>
+See also <a href="Database.html#M000054">create_aggregate_handler</a> for a
+more object-oriented approach to aggregate functions.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000054" class="method-detail">
+        <a name="M000054"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000054.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000054.html');return false;">
+          <span class="method-name">create_aggregate_handler</span><span class="method-args">( handler )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is another approach to creating an aggregate function (see <a
+href="Database.html#M000049">create_aggregate</a>). Instead of explicitly
+specifying the name, callbacks, arity, and type, you specify a factory
+object (the &quot;handler&quot;) that knows how to obtain all of that
+information. The handler should respond to the following messages:
+</p>
+<table>
+<tr><td valign="top"><tt>arity</tt>:</td><td>corresponds to the <tt>arity</tt> parameter of <a
+href="Database.html#M000049">create_aggregate</a>. This message is
+optional, and if the handler does not respond to it, the function will have
+an arity of -1.
+
+</td></tr>
+<tr><td valign="top"><tt>name</tt>:</td><td>this is the name of the function. The handler <em>must</em> implement this
+message.
+
+</td></tr>
+<tr><td valign="top"><tt><a href="Database.html#M000055">new</a></tt>:</td><td>this must be implemented by the handler. It should return a <a
+href="Database.html#M000055">new</a> instance of the object that will
+handle a specific invocation of the function.
+
+</td></tr>
+</table>
+<p>
+The handler instance (the object returned by the <tt><a
+href="Database.html#M000055">new</a></tt> message, described above), must
+respond to the following messages:
+</p>
+<table>
+<tr><td valign="top"><tt><a href="Database.html#M000050">step</a></tt>:</td><td>this is the method that will be called for each <a
+href="Database.html#M000050">step</a> of the aggregate function&#8216;s
+evaluation. It should implement the same signature as the <tt><a
+href="Database.html#M000050">step</a></tt> callback for <a
+href="Database.html#M000049">create_aggregate</a>.
+
+</td></tr>
+<tr><td valign="top"><tt><a href="Database.html#M000051">finalize</a></tt>:</td><td>this is the method that will be called to <a
+href="Database.html#M000051">finalize</a> the aggregate function&#8216;s
+evaluation. It should implement the same signature as the <tt><a
+href="Database.html#M000051">finalize</a></tt> callback for <a
+href="Database.html#M000049">create_aggregate</a>.
+
+</td></tr>
+</table>
+<p>
+Example:
+</p>
+<pre>
+  class LengthsAggregateHandler
+    def self.arity; 1; end
+
+    def initialize
+      @total = 0
+    end
+
+    def step( ctx, name )
+      @total += ( name ? name.length : 0 )
+    end
+
+    def finalize( ctx )
+      ctx.result = @total
+    end
+  end
+
+  db.create_aggregate_handler( LengthsAggregateHandler )
+  puts db.get_first_value( &quot;select lengths(name) from A&quot; )
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000048" class="method-detail">
+        <a name="M000048"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000048.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000048.html');return false;">
+          <span class="method-name">create_function</span><span class="method-args">(name, arity, text_rep=Constants::TextRep::ANY, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="Database.html#M000055">new</a> function for use in SQL
+statements. It will be added as <tt>name</tt>, with the given
+<tt>arity</tt>. (For variable arity functions, use -1 for the arity.)
+</p>
+<p>
+The block should accept at least one parameter&#8212;the <a
+href="Database/FunctionProxy.html">FunctionProxy</a> instance that wraps
+this function invocation&#8212;and any other arguments it needs (up to its
+arity).
+</p>
+<p>
+The block does not return a value directly. Instead, it will invoke the
+FunctionProxy#result= method on the <tt>func</tt> parameter and indicate
+the return value that way.
+</p>
+<p>
+Example:
+</p>
+<pre>
+  db.create_function( &quot;maim&quot;, 1 ) do |func, value|
+    if value.nil?
+      func.result = nil
+    else
+      func.result = value.split(//).sort.join
+    end
+  end
+
+  puts db.get_first_value( &quot;select maim(name) from table&quot; )
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000070" class="method-detail">
+        <a name="M000070"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000070.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000070.html');return false;">
+          <span class="method-name"> define_aggregator(name, aggregator)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Define an aggregate function named <tt>name</tt> using the object
+<tt>aggregator</tt>. <tt>aggregator</tt> must respond to <tt><a
+href="Database.html#M000050">step</a></tt> and <tt><a
+href="Database.html#M000051">finalize</a></tt>. <tt><a
+href="Database.html#M000050">step</a></tt> will be called with row
+information and <tt><a href="Database.html#M000051">finalize</a></tt> must
+return the return value for the aggregator function.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000069" class="method-detail">
+        <a name="M000069"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000069.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000069.html');return false;">
+          <span class="method-name"> define_function(name) { |args,...| }<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Define a function named <tt>name</tt> with <tt>args</tt>. The arity of the
+block will be used as the arity for the function defined.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000081" class="method-detail">
+        <a name="M000081"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000081.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000081.html');return false;">
+          <span class="method-name"> db.enable_load_extension(onoff)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Enable or disable extension loading.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000082" class="method-detail">
+        <a name="M000082"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000082.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000082.html');return false;">
+          <span class="method-name"> db.encoding<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Fetch the <a href="Database.html#M000082">encoding</a> set on this database
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000073" class="method-detail">
+        <a name="M000073"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000073.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000073.html');return false;">
+          <span class="method-name"> errcode<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return an integer representing the last error to have occurred with this
+database.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000072" class="method-detail">
+        <a name="M000072"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000072.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000072.html');return false;">
+          <span class="method-name"> errmsg<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return a string describing the last error to have occurred with this
+database.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000042" class="method-detail">
+        <a name="M000042"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000042.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000042.html');return false;">
+          <span class="method-name">execute</span><span class="method-args">(sql, bind_vars = [], *args) {|type_translation ? row : ordered_map_for(columns, row)| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Executes the given SQL statement. If additional parameters are given, they
+are treated as bind variables, and are bound to the placeholders in the <a
+href="Database.html#M000045">query</a>.
+</p>
+<p>
+Note that if any of the values passed to this are hashes, then the
+key/value pairs are each bound separately, with the key being used as the
+name of the placeholder to bind the value to.
+</p>
+<p>
+The block is optional. If given, it will be invoked for each row returned
+by the <a href="Database.html#M000045">query</a>. Otherwise, any results
+are accumulated into an array and returned wholesale.
+</p>
+<p>
+See also <a href="Database.html#M000043">execute2</a>, <a
+href="Database.html#M000045">query</a>, and <a
+href="Database.html#M000044">execute_batch</a> for additional ways of
+executing statements.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000043" class="method-detail">
+        <a name="M000043"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000043.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000043.html');return false;">
+          <span class="method-name">execute2</span><span class="method-args">( sql, *bind_vars ) {|stmt.columns| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Executes the given SQL statement, exactly as with <a
+href="Database.html#M000042">execute</a>. However, the first row returned
+(either via the block, or in the returned array) is always the names of the
+columns. Subsequent rows correspond to the data from the result set.
+</p>
+<p>
+Thus, even if the <a href="Database.html#M000045">query</a> itself returns
+no rows, this method will always return at least one row&#8212;the names of
+the columns.
+</p>
+<p>
+See also <a href="Database.html#M000042">execute</a>, <a
+href="Database.html#M000045">query</a>, and <a
+href="Database.html#M000044">execute_batch</a> for additional ways of
+executing statements.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000044" class="method-detail">
+        <a name="M000044"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000044.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000044.html');return false;">
+          <span class="method-name">execute_batch</span><span class="method-args">( sql, bind_vars = [], *args )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Executes all SQL statements in the given string. By contrast, the other
+means of executing queries will only <a
+href="Database.html#M000042">execute</a> the first statement in the string,
+ignoring all subsequent statements. This will <a
+href="Database.html#M000042">execute</a> each one in turn. The same bind
+parameters, if given, will be applied to each statement.
+</p>
+<p>
+This always returns <tt>nil</tt>, making it unsuitable for queries that
+return rows.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000053" class="method-detail">
+        <a name="M000053"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000053.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000053.html');return false;">
+          <span class="method-name">finalize</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000057" class="method-detail">
+        <a name="M000057"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000057.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000057.html');return false;">
+          <span class="method-name">finalize</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000046.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000046.html');return false;">
+          <span class="method-name">get_first_row</span><span class="method-args">( sql, *bind_vars )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A convenience method for obtaining the first row of a result set, and
+discarding all others. It is otherwise identical to <a
+href="Database.html#M000042">execute</a>.
+</p>
+<p>
+See also <a href="Database.html#M000047">get_first_value</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000047" class="method-detail">
+        <a name="M000047"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000047.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000047.html');return false;">
+          <span class="method-name">get_first_value</span><span class="method-args">( sql, *bind_vars )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A convenience method for obtaining the first value of the first row of a
+result set, and discarding all other values and rows. It is otherwise
+identical to <a href="Database.html#M000042">execute</a>.
+</p>
+<p>
+See also <a href="Database.html#M000046">get_first_row</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000071" class="method-detail">
+        <a name="M000071"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000071.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000071.html');return false;">
+          <span class="method-name"> interrupt<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Interrupts the currently executing operation, causing it to abort.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000068" class="method-detail">
+        <a name="M000068"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000068.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000068.html');return false;">
+          <span class="method-name"> last_insert_row_id<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Obtains the unique row ID of the last row to be inserted by this <a
+href="Database.html">Database</a> instance.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000080" class="method-detail">
+        <a name="M000080"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000080.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000080.html');return false;">
+          <span class="method-name"> db.load_extension(file)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Loads an SQLite extension library from the named file. Extension loading
+must be enabled using db.enable_load_extension(true) prior to calling this
+API.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000041.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000041.html');return false;">
+          <span class="method-name">prepare</span><span class="method-args">(sql) {|stmt| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a <a href="Statement.html">Statement</a> object representing the
+given SQL. This does not <a href="Database.html#M000042">execute</a> the
+statement; it merely prepares the statement for execution.
+</p>
+<p>
+The <a href="Statement.html">Statement</a> can then be executed using <a
+href="Statement.html#M000092">Statement#execute</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000045.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000045.html');return false;">
+          <span class="method-name">query</span><span class="method-args">( sql, bind_vars = [], *args ) {|result| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is a convenience method for creating a statement, binding paramters to
+it, and calling <a href="Database.html#M000042">execute</a>:
+</p>
+<pre>
+  result = db.query( &quot;select * from foo where a=?&quot;, [5])
+  # is the same as
+  result = db.prepare( &quot;select * from foo where a=?&quot; ).execute( 5 )
+</pre>
+<p>
+You must be sure to call <tt><a href="Database.html#M000064">close</a></tt>
+on the <a href="ResultSet.html">ResultSet</a> instance that is returned, or
+you could have problems with locks on the table. If called with a block,
+<tt><a href="Database.html#M000064">close</a></tt> will be invoked
+implicitly when the block terminates.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000061" class="method-detail">
+        <a name="M000061"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000061.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000061.html');return false;">
+          <span class="method-name">readonly?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if the database has been open in readonly mode A
+helper to check before performing any operation
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000060" class="method-detail">
+        <a name="M000060"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000060.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000060.html');return false;">
+          <span class="method-name">rollback</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Rolls the current <a href="Database.html#M000058">transaction</a> back. If
+there is no current <a href="Database.html#M000058">transaction</a>, this
+will cause an error to be raised. This returns <tt>true</tt>, in order to
+allow it to be used in idioms like <tt>abort? and <a
+href="Database.html#M000060">rollback</a> or <a
+href="Database.html#M000059">commit</a></tt>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000056" class="method-detail">
+        <a name="M000056"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000056.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000056.html');return false;">
+          <span class="method-name">step</span><span class="method-args">( *args )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000052" class="method-detail">
+        <a name="M000052"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000052.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000052.html');return false;">
+          <span class="method-name">step</span><span class="method-args">( *args )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000066" class="method-detail">
+        <a name="M000066"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000066.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000066.html');return false;">
+          <span class="method-name"> total_changes<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the total number of <a href="Database.html#M000075">changes</a>
+made to this database instance since it was opened.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000067" class="method-detail">
+        <a name="M000067"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000067.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000067.html');return false;">
+          <span class="method-name">trace { |sql| ... }<br />
+trace(Class.new { def call sql; end }.new)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Installs (or removes) a block that will be invoked for every SQL statement
+executed. The block receives one parameter: the SQL statement executed. If
+the block is <tt>nil</tt>, any existing tracer will be uninstalled.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000058" class="method-detail">
+        <a name="M000058"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000058.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000058.html');return false;">
+          <span class="method-name">transaction</span><span class="method-args">( mode = :deferred ) {|self| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Begins a <a href="Database.html#M000055">new</a> <a
+href="Database.html#M000058">transaction</a>. Note that nested transactions
+are not allowed by SQLite, so attempting to nest a <a
+href="Database.html#M000058">transaction</a> will result in a runtime
+exception.
+</p>
+<p>
+The <tt>mode</tt> parameter may be either <tt>:deferred</tt> (the default),
+<tt>:immediate</tt>, or <tt>:exclusive</tt>.
+</p>
+<p>
+If a block is given, the database instance is yielded to it, and the <a
+href="Database.html#M000058">transaction</a> is committed when the block
+terminates. If the block raises an exception, a <a
+href="Database.html#M000060">rollback</a> will be performed instead. Note
+that if a block is given, <a href="Database.html#M000059">commit</a> and <a
+href="Database.html#M000060">rollback</a> should never be called explicitly
+or you&#8216;ll get an error when the block terminates.
+</p>
+<p>
+If a block is not given, it is the caller&#8216;s responsibility to end the
+<a href="Database.html#M000058">transaction</a> explicitly, either by
+calling <a href="Database.html#M000059">commit</a>, or by calling <a
+href="Database.html#M000060">rollback</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000079" class="method-detail">
+        <a name="M000079"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000079.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000079.html');return false;">
+          <span class="method-name"> db.transaction_active?<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns <tt>true</tt> if there is a <a
+href="Database.html#M000058">transaction</a> active, and <tt>false</tt>
+otherwise.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+          <a href="Database.src/M000039.html" target="Code" class="method-signature"
+            onclick="popupCode('Database.src/M000039.html');return false;">
+          <span class="method-name">translator</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return the type <a href="Database.html#M000039">translator</a> employed by
+this database instance. Each database instance has its own type <a
+href="Database.html#M000039">translator</a>; this allows for different type
+handlers to be installed in each instance without affecting other
+instances. Furthermore, the translators are instantiated lazily, so that if
+a database does not use type translation, it will not be burdened by the
+overhead of a useless type <a href="Database.html#M000039">translator</a>.
+(See the <a href="Translator.html">Translator</a> class.)
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

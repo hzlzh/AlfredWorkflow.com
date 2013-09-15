@@ -1,0 +1,88 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This string is put at the end of a line that holds a JSON array.
+  name: array_nl
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This integer returns the current depth data structure nesting in the generated JSON.
+  name: depth
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This string is used to indent levels in the JSON text.
+  name: indent
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This integer returns the maximum level of data structure nesting in the generated JSON, max_nesting = 0 if no maximum is checked.
+  name: max_nesting
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This string is put at the end of a line that holds a JSON object (or Hash).
+  name: object_nl
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: If this attribute is set to true, quirks mode is enabled, otherwise it's disabled.
+  name: quirks_mode
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This string is used to insert a space between the tokens in a JSON string.
+  name: space
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This string is used to insert a space before the ':' in JSON objects.
+  name: space_before
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: from_state
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This class is used to create State instances, that are use to hold data while generating a JSON text from a Ruby data structure.
+constants: []
+
+full_name: JSON::Pure::Generator::State
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RI::MethodSummary 
+  name: allow_nan?
+- !ruby/object:RI::MethodSummary 
+  name: ascii_only?
+- !ruby/object:RI::MethodSummary 
+  name: check_circular?
+- !ruby/object:RI::MethodSummary 
+  name: configure
+- !ruby/object:RI::MethodSummary 
+  name: generate
+- !ruby/object:RI::MethodSummary 
+  name: merge
+- !ruby/object:RI::MethodSummary 
+  name: quirks_mode?
+- !ruby/object:RI::MethodSummary 
+  name: to_h
+- !ruby/object:RI::MethodSummary 
+  name: to_hash
+name: State
+superclass: Object

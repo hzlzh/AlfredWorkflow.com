@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>enable_load_extension (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq: db.enable_load_extension(onoff)
+ *
+ * Enable or disable extension loading.
+ */
+static VALUE enable_load_extension(VALUE self, VALUE onoff)
+{
+  sqlite3RubyPtr ctx;
+  int onoffparam;
+  Data_Get_Struct(self, sqlite3Ruby, ctx);
+  REQUIRE_OPEN_DB(ctx);
+
+  if (Qtrue == onoff) {
+    onoffparam = 1;
+  } else if (Qfalse == onoff) {
+    onoffparam = 0;
+  } else {
+    onoffparam = (int)NUM2INT(onoff);
+  }
+
+  CHECK(ctx-&gt;db, sqlite3_enable_load_extension(ctx-&gt;db, onoffparam));
+
+  return self;
+}</pre>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.boto.cmoyer</string>
+	<key>connections</key>
+	<dict>
+		<key>14F2D76B-8097-480D-97D4-A322D82F5C77</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6B53C14F-6691-4266-9D5E-829B84D3232F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>38CA7AEF-B19A-499A-BD94-1110AAFFFF79</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Chris Moyer</string>
+	<key>description</key>
+	<string>Boto commands</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>boto</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>ssh</string>
+				<key>runningsubtext</key>
+				<string>Searching for instances</string>
+				<key>script</key>
+				<string>try:
+   import botoworkflow
+   botoworkflow.list_instances("{query}")
+except Exception, e:
+   import alp
+   alp.log(e)</string>
+				<key>subtext</key>
+				<string>Type a name to list available instances</string>
+				<key>title</key>
+				<string>SSH into an instance</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>14F2D76B-8097-480D-97D4-A322D82F5C77</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>6B53C14F-6691-4266-9D5E-829B84D3232F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>SSH</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>38CA7AEF-B19A-499A-BD94-1110AAFFFF79</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>14F2D76B-8097-480D-97D4-A322D82F5C77</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>38CA7AEF-B19A-499A-BD94-1110AAFFFF79</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>6B53C14F-6691-4266-9D5E-829B84D3232F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://boto.readthedocs.org</string>
+</dict>
+</plist>

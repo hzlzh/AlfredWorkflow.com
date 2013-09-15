@@ -1,0 +1,26 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Parse the JSON document <em>source</em> into a Ruby data structure and return it. The bang version of the parse method defaults to the more dangerous values for the <em>opts</em> hash, so be sure only to parse trusted <em>source</em> documents.
+- !ruby/struct:SM::Flow::P 
+  body: "<em>opts</em> can have the following keys:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>max_nesting</b>: The maximum depth of nesting allowed in the parsed data structures. Enable depth checking with :max_nesting =&gt; anInteger. The parse! methods defaults to not doing max depth checking: This can be dangerous if someone wants to fill up your stack."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>allow_nan</b>: If set to true, allow NaN, Infinity, and -Infinity in defiance of RFC 4627 to be parsed by the Parser. This option defaults to true."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>create_additions</b>: If set to false, the Parser doesn't create additions even if a matching class and create_id was found. This option defaults to true."
+  type: :BULLET
+full_name: JSON#parse!
+is_singleton: false
+name: parse!
+params: (source, opts = {})
+visibility: public

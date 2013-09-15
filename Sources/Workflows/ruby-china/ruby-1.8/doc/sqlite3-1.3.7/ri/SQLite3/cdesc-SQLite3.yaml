@@ -1,0 +1,31 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: const_missing
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: SQLite3 is a wrapper around the popular database sqlite[http://sqlite.org].
+- !ruby/struct:SM::Flow::P 
+  body: For an example of usage, see SQLite3::Database.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'1.3.7'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SQLITE_VERSION
+  value: rb_str_new2(SQLITE_VERSION)
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SQLITE_VERSION_NUMBER
+  value: INT2FIX(SQLITE_VERSION_NUMBER)
+full_name: SQLite3
+includes: []
+
+instance_methods: []
+
+name: SQLite3
+superclass: 

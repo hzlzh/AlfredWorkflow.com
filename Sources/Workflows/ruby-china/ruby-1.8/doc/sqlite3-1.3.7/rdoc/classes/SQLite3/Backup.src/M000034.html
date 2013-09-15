@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>step (SQLite3::Backup)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq: SQLite3::Backup#step(nPage)
+ *
+ * Copy database pages up to +nPage+.
+ * If negative, copy all remaining source pages.
+ *
+ * If all pages are copied, it returns SQLite3::Constants::ErrorCode::DONE.
+ * When coping is not done, it returns SQLite3::Constants::ErrorCode::OK.
+ * When some errors occur, it returns the error code.
+ */
+static VALUE step(VALUE self, VALUE nPage)
+{
+  sqlite3BackupRubyPtr ctx;
+  int status;
+
+  Data_Get_Struct(self, sqlite3BackupRuby, ctx);
+  REQUIRE_OPEN_BACKUP(ctx);
+  status = sqlite3_backup_step(ctx-&gt;p, NUM2INT(nPage));
+  return INT2NUM(status);
+}</pre>
+</body>
+</html>

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Indicates that if a request for a resource terminates because that resource is busy, SQLite should sleep and retry for up to the indicated number of milliseconds. By default, SQLite does not retry busy resources. To restore the default behavior, send 0 as the <tt>ms</tt> parameter.
+- !ruby/struct:SM::Flow::P 
+  body: "See also the mutually exclusive #busy_handler."
+full_name: SQLite3::Database#busy_timeout=
+is_singleton: false
+name: busy_timeout=
+params: " db.busy_timeout = ms\n"
+visibility: public

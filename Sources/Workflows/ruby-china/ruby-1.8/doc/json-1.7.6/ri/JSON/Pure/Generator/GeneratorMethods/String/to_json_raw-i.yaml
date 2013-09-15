@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method creates a JSON text from the result of a call to to_json_raw_object of this String.
+full_name: JSON::Pure::Generator::GeneratorMethods::String#to_json_raw
+is_singleton: false
+name: to_json_raw
+params: (*args)
+visibility: public

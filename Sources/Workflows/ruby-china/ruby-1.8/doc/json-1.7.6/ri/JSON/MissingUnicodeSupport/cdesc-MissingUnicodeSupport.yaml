@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This exception is raised if the required unicode support is missing on the system. Usually this means that the iconv library is not installed.
+constants: []
+
+full_name: JSON::MissingUnicodeSupport
+includes: []
+
+instance_methods: []
+
+name: MissingUnicodeSupport
+superclass: JSONError

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: If <em>object</em> is string-like, parse the string and return the parsed result as a Ruby data structure. Otherwise generate a JSON text from the Ruby data structure object and return it.
+- !ruby/struct:SM::Flow::P 
+  body: The <em>opts</em> argument is passed through to generate/parse respectively. See generate and parse for their documentation.
+full_name: JSON::[]
+is_singleton: true
+name: "[]"
+params: (object, opts = {})
+visibility: public

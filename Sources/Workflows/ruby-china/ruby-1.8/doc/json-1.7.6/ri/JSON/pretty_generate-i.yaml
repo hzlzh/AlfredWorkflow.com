@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Generate a JSON document from the Ruby data structure <em>obj</em> and return it. The returned document is a prettier form of the document returned by #unparse."
+- !ruby/struct:SM::Flow::P 
+  body: The <em>opts</em> argument can be used to configure the generator. See the generate method for a more detailed explanation.
+full_name: JSON#pretty_generate
+is_singleton: false
+name: pretty_generate
+params: (obj, opts = nil)
+visibility: public

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>busy_timeout= (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq: db.busy_timeout = ms
+ *
+ * Indicates that if a request for a resource terminates because that
+ * resource is busy, SQLite should sleep and retry for up to the indicated
+ * number of milliseconds. By default, SQLite does not retry
+ * busy resources. To restore the default behavior, send 0 as the
+ * +ms+ parameter.
+ *
+ * See also the mutually exclusive #busy_handler.
+ */
+static VALUE set_busy_timeout(VALUE self, VALUE timeout)
+{
+  sqlite3RubyPtr ctx;
+  Data_Get_Struct(self, sqlite3Ruby, ctx);
+  REQUIRE_OPEN_DB(ctx);
+
+  CHECK(ctx-&gt;db, sqlite3_busy_timeout(ctx-&gt;db, (int)NUM2INT(timeout)));
+
+  return self;
+}</pre>
+</body>
+</html>

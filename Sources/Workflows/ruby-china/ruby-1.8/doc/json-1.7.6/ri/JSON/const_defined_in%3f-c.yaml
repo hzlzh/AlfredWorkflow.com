@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: JSON::const_defined_in?
+is_singleton: true
+name: const_defined_in?
+params: (modul, constant)
+visibility: public

@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "The following Ruby classes are converted into native plist types:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Array, Bignum, Date, DateTime, Fixnum, Float, Hash, Integer, String, Symbol, Time\n"
+- !ruby/struct:SM::Flow::P 
+  body: Write us (via RubyForge) if you think another class can be coerced safely into one of the expected plist classes.
+- !ruby/struct:SM::Flow::P 
+  body: <tt>IO</tt> and <tt>StringIO</tt> objects are encoded and placed in &lt;data&gt; elements; other objects are <tt>Marshal.dump</tt>'ed unless they implement <tt>to_plist_node</tt>.
+- !ruby/struct:SM::Flow::P 
+  body: The <tt>envelope</tt> parameters dictates whether or not the resultant plist fragment is wrapped in the normal XML/plist header and footer. Set it to false if you only want the fragment.
+full_name: Plist::Emit::dump
+is_singleton: true
+name: dump
+params: (obj, envelope = true)
+visibility: public

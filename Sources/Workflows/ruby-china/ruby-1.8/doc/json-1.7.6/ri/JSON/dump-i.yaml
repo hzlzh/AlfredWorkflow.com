@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Dumps <em>obj</em> as a JSON string, i.e. calls generate on the object and returns the result.
+- !ruby/struct:SM::Flow::P 
+  body: If anIO (an IO-like object or an object that responds to the write method) was given, the resulting JSON is written to it.
+- !ruby/struct:SM::Flow::P 
+  body: If the number of nested arrays or objects exceeds <em>limit</em>, an ArgumentError exception is raised. This argument is similar (but not exactly the same!) to the <em>limit</em> argument in Marshal.dump.
+- !ruby/struct:SM::Flow::P 
+  body: The default options for the generator can be changed via the dump_default_options method.
+- !ruby/struct:SM::Flow::P 
+  body: This method is part of the implementation of the load/dump interface of Marshal and YAML.
+full_name: JSON#dump
+is_singleton: false
+name: dump
+params: (obj, anIO = nil, limit = nil)
+visibility: public

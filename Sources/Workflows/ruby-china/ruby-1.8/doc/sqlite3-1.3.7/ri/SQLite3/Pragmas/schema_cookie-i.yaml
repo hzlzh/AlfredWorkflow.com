@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: SQLite3::Pragmas#schema_cookie
+is_singleton: false
+name: schema_cookie
+params: ()
+visibility: public

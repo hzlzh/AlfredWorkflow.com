@@ -1,0 +1,59 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: dump
+- !ruby/object:RI::MethodSummary 
+  name: save_plist
+comment: 
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Create a plist
+- !ruby/struct:SM::Flow::P 
+  body: "You can dump an object to a plist in one of two ways:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>Plist::Emit.dump(obj)</tt>
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>obj.to_plist</tt>
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+    - !ruby/struct:SM::Flow::LI 
+      label: "*"
+      body: This requires that you mixin the <tt>Plist::Emit</tt> module, which is already done for <tt>Array</tt> and <tt>Hash</tt>.
+    type: :BULLET
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: "The following Ruby classes are converted into native plist types:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Array, Bignum, Date, DateTime, Fixnum, Float, Hash, Integer, String, Symbol, Time, true, false\n"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>Array</tt> and <tt>Hash</tt> are both recursive; their elements will be converted into plist nodes inside the &lt;array&gt; and &lt;dict&gt; containers (respectively).
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>IO</tt> (and its descendants) and <tt>StringIO</tt> objects are read from and their contents placed in a &lt;data&gt; element.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: User classes may implement <tt>to_plist_node</tt> to dictate how they should be serialized; otherwise the object will be passed to <tt>Marshal.dump</tt> and the result placed in a &lt;data&gt; element.
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: For detailed usage instructions, refer to USAGE[link:files/docs/USAGE.html] and the methods documented below.
+constants: []
+
+full_name: Plist::Emit
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: save_plist
+- !ruby/object:RI::MethodSummary 
+  name: to_plist
+name: Emit
+superclass: 

@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: to_hash
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the configuration instance variables as a hash, that can be passed to the configure method.
+full_name: JSON::Pure::Generator::State#to_h
+is_singleton: false
+name: to_h
+params: ()
+visibility: public

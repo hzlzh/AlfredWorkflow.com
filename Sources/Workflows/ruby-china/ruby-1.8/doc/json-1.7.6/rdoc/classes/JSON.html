@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: JSON</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">JSON</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/json/common_rb.html">
+                lib/json/common.rb
+                </a>
+        <br />
+                <a href="../files/lib/json/ext_rb.html">
+                lib/json/ext.rb
+                </a>
+        <br />
+                <a href="../files/lib/json/generic_object_rb.html">
+                lib/json/generic_object.rb
+                </a>
+        <br />
+                <a href="../files/lib/json/pure/generator_rb.html">
+                lib/json/pure/generator.rb
+                </a>
+        <br />
+                <a href="../files/lib/json/pure/parser_rb.html">
+                lib/json/pure/parser.rb
+                </a>
+        <br />
+                <a href="../files/lib/json/pure_rb.html">
+                lib/json/pure.rb
+                </a>
+        <br />
+                <a href="../files/lib/json/version_rb.html">
+                lib/json/version.rb
+                </a>
+        <br />
+                <a href="../files/lib/json_rb.html">
+                lib/json.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000038">[]</a>&nbsp;&nbsp;
+      <a href="#M000050">const_defined_in?</a>&nbsp;&nbsp;
+      <a href="#M000051">const_defined_in?</a>&nbsp;&nbsp;
+      <a href="#M000047">dump</a>&nbsp;&nbsp;
+      <a href="#M000042">fast_generate</a>&nbsp;&nbsp;
+      <a href="#M000041">generate</a>&nbsp;&nbsp;
+      <a href="#M000048">iconv</a>&nbsp;&nbsp;
+      <a href="#M000049">iconv</a>&nbsp;&nbsp;
+      <a href="#M000044">load</a>&nbsp;&nbsp;
+      <a href="#M000039">parse</a>&nbsp;&nbsp;
+      <a href="#M000040">parse!</a>&nbsp;&nbsp;
+      <a href="#M000043">pretty_generate</a>&nbsp;&nbsp;
+      <a href="#M000045">recurse_proc</a>&nbsp;&nbsp;
+      <a href="#M000046">restore</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="JSON/Ext.html" class="link">JSON::Ext</a><br />
+Module <a href="JSON/Pure.html" class="link">JSON::Pure</a><br />
+Class <a href="JSON/GeneratorError.html" class="link">JSON::GeneratorError</a><br />
+Class <a href="JSON/GenericObject.html" class="link">JSON::GenericObject</a><br />
+Class <a href="JSON/JSONError.html" class="link">JSON::JSONError</a><br />
+Class <a href="JSON/MissingUnicodeSupport.html" class="link">JSON::MissingUnicodeSupport</a><br />
+Class <a href="JSON/NestingError.html" class="link">JSON::NestingError</a><br />
+Class <a href="JSON/ParserError.html" class="link">JSON::ParserError</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NaN</td>
+          <td>=</td>
+          <td class="context-item-value">0.0/0</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Infinity</td>
+          <td>=</td>
+          <td class="context-item-value">1.0/0</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MinusInfinity</td>
+          <td>=</td>
+          <td class="context-item-value">-Infinity</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">UnparserError</td>
+          <td>=</td>
+          <td class="context-item-value">GeneratorError</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+For backwards compatibility
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">JSON_LOADED</td>
+          <td>=</td>
+          <td class="context-item-value">true unless defined?(::JSON::JSON_LOADED)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">JSON_LOADED</td>
+          <td>=</td>
+          <td class="context-item-value">true unless defined?(::JSON::JSON_LOADED)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">'1.7.6'</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="JSON.html">JSON</a> version
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">create_id</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+This is create identifier, which is used to decide if the
+<em>json_create</em> hook of a class should be called. It defaults to
+&#8216;json_class&#8217;.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">dump_default_options</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The global default options for the <a
+href="JSON.html#M000047">JSON.dump</a> method:
+
+<pre>
+ :max_nesting: false
+ :allow_nan:   true
+ :quirks_mode: true
+</pre>
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">generator</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+Returns the <a href="JSON.html">JSON</a> generator module that is used by
+<a href="JSON.html">JSON</a>. This is either JSON::Ext::Generator or <a
+href="JSON/Pure/Generator.html">JSON::Pure::Generator</a>.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">load_default_options</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The global default options for the <a
+href="JSON.html#M000044">JSON.load</a> method:
+
+<pre>
+ :max_nesting: false
+ :allow_nan:   true
+ :quirks_mode: true
+</pre>
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">parser</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+Returns the <a href="JSON.html">JSON</a> parser class that is used by <a
+href="JSON.html">JSON</a>. This is either JSON::Ext::Parser or <a
+href="JSON/Pure/Parser.html">JSON::Pure::Parser</a>.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">state</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Returns the <a href="JSON.html">JSON</a> generator state class that is used
+by <a href="JSON.html">JSON</a>. This is either JSON::Ext::Generator::State
+or <a
+href="JSON/Pure/Generator/State.html">JSON::Pure::Generator::State</a>.
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000038.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000038.html');return false;">
+          <span class="method-name">[]</span><span class="method-args">(object, opts = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+If <em>object</em> is string-like, <a href="JSON.html#M000039">parse</a>
+the string and return the parsed result as a Ruby data structure. Otherwise
+<a href="JSON.html#M000041">generate</a> a <a href="JSON.html">JSON</a>
+text from the Ruby data structure object and return it.
+</p>
+<p>
+The <em>opts</em> argument is passed through to generate/parse
+respectively. See <a href="JSON.html#M000041">generate</a> and <a
+href="JSON.html#M000039">parse</a> for their documentation.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000050" class="method-detail">
+        <a name="M000050"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000050.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000050.html');return false;">
+          <span class="method-name">const_defined_in?</span><span class="method-args">(modul, constant)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000051" class="method-detail">
+        <a name="M000051"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000051.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000051.html');return false;">
+          <span class="method-name">const_defined_in?</span><span class="method-args">(modul, constant)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000048" class="method-detail">
+        <a name="M000048"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000048.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000048.html');return false;">
+          <span class="method-name">iconv</span><span class="method-args">(to, from, string)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Encodes string using Ruby&#8216;s _String.encode_
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000049" class="method-detail">
+        <a name="M000049"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000049.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000049.html');return false;">
+          <span class="method-name">iconv</span><span class="method-args">(to, from, string)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Encodes string using <em><a href="JSON.html#M000048">iconv</a></em> library
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000047" class="method-detail">
+        <a name="M000047"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000047.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000047.html');return false;">
+          <span class="method-name">dump</span><span class="method-args">(obj, anIO = nil, limit = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Dumps <em>obj</em> as a <a href="JSON.html">JSON</a> string, i.e. calls <a
+href="JSON.html#M000041">generate</a> on the object and returns the result.
+</p>
+<p>
+If anIO (an IO-like object or an object that responds to the write method)
+was given, the resulting <a href="JSON.html">JSON</a> is written to it.
+</p>
+<p>
+If the number of nested arrays or objects exceeds <em>limit</em>, an
+ArgumentError exception is raised. This argument is similar (but not
+exactly the same!) to the <em>limit</em> argument in Marshal.dump.
+</p>
+<p>
+The default options for the generator can be changed via the
+dump_default_options method.
+</p>
+<p>
+This method is part of the implementation of the load/dump interface of
+Marshal and YAML.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000042" class="method-detail">
+        <a name="M000042"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000042.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000042.html');return false;">
+          <span class="method-name">fast_generate</span><span class="method-args">(obj, opts = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Generate a <a href="JSON.html">JSON</a> document from the Ruby data
+structure <em>obj</em> and return it. This method disables the checks for
+circles in Ruby objects.
+</p>
+<p>
+<b>WARNING</b>: Be careful not to pass any Ruby data structures with
+circles as <em>obj</em> argument because this will cause <a
+href="JSON.html">JSON</a> to go into an infinite loop.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000041.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000041.html');return false;">
+          <span class="method-name">generate</span><span class="method-args">(obj, opts = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Generate a <a href="JSON.html">JSON</a> document from the Ruby data
+structure <em>obj</em> and return it. <em>state</em> is * a JSON::State
+object,
+</p>
+<ul>
+<li>or a Hash like object (responding to to_hash),
+
+</li>
+<li>an object convertible into a hash by a to_h method,
+
+</li>
+</ul>
+<p>
+that is used as or to configure a State object.
+</p>
+<p>
+It defaults to a state object, that creates the shortest possible <a
+href="JSON.html">JSON</a> text in one line, checks for circular data
+structures and doesn&#8216;t allow NaN, Infinity, and -Infinity.
+</p>
+<p>
+A <em>state</em> hash can have the following keys:
+</p>
+<ul>
+<li><b>indent</b>: a string used to indent levels (default: &#8217;&#8217;),
+
+</li>
+<li><b>space</b>: a string that is put after, a : or , delimiter (default:
+&#8217;&#8217;),
+
+</li>
+<li><b>space_before</b>: a string that is put before a : pair delimiter
+(default: &#8217;&#8217;),
+
+</li>
+<li><b>object_nl</b>: a string that is put at the end of a <a
+href="JSON.html">JSON</a> object (default: &#8217;&#8217;),
+
+</li>
+<li><b>array_nl</b>: a string that is put at the end of a <a
+href="JSON.html">JSON</a> array (default: &#8217;&#8217;),
+
+</li>
+<li><b>allow_nan</b>: true if NaN, Infinity, and -Infinity should be generated,
+otherwise an exception is thrown if these values are encountered. This
+options defaults to false.
+
+</li>
+<li><b>max_nesting</b>: The maximum depth of nesting allowed in the data
+structures from which <a href="JSON.html">JSON</a> is to be generated.
+Disable depth checking with :max_nesting =&gt; false, it defaults to 100.
+
+</li>
+</ul>
+<p>
+See also the <a href="JSON.html#M000042">fast_generate</a> for the fastest
+creation method with the least amount of sanity checks, and the <a
+href="JSON.html#M000043">pretty_generate</a> method for some defaults for
+pretty output.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000044" class="method-detail">
+        <a name="M000044"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000044.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000044.html');return false;">
+          <span class="method-name">load</span><span class="method-args">(source, proc = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Load a ruby data structure from a <a href="JSON.html">JSON</a>
+<em>source</em> and return it. A source can either be a string-like object,
+an IO-like object, or an object responding to the read method. If
+<em>proc</em> was given, it will be called with any nested Ruby object as
+an argument recursively in depth first order. The default options for the
+parser can be changed via the load_default_options method.
+</p>
+<p>
+This method is part of the implementation of the load/dump interface of
+Marshal and YAML.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000039.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000039.html');return false;">
+          <span class="method-name">parse</span><span class="method-args">(source, opts = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Parse the <a href="JSON.html">JSON</a> document <em>source</em> into a Ruby
+data structure and return it.
+</p>
+<p>
+<em>opts</em> can have the following keys:
+</p>
+<ul>
+<li><b>max_nesting</b>: The maximum depth of nesting allowed in the parsed data
+structures. Disable depth checking with :max_nesting =&gt; false. It
+defaults to 100.
+
+</li>
+<li><b>allow_nan</b>: If set to true, allow NaN, Infinity and -Infinity in
+defiance of RFC 4627 to be parsed by the Parser. This option defaults to
+false.
+
+</li>
+<li><b>symbolize_names</b>: If set to true, returns symbols for the names
+(keys) in a <a href="JSON.html">JSON</a> object. Otherwise strings are
+returned. Strings are the default.
+
+</li>
+<li><b>create_additions</b>: If set to false, the Parser doesn&#8216;t create
+additions even if a matching class and create_id was found. This option
+defaults to true.
+
+</li>
+<li><b>object_class</b>: Defaults to Hash
+
+</li>
+<li><b>array_class</b>: Defaults to Array
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000040.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000040.html');return false;">
+          <span class="method-name">parse!</span><span class="method-args">(source, opts = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Parse the <a href="JSON.html">JSON</a> document <em>source</em> into a Ruby
+data structure and return it. The bang version of the <a
+href="JSON.html#M000039">parse</a> method defaults to the more dangerous
+values for the <em>opts</em> hash, so be sure only to <a
+href="JSON.html#M000039">parse</a> trusted <em>source</em> documents.
+</p>
+<p>
+<em>opts</em> can have the following keys:
+</p>
+<ul>
+<li><b>max_nesting</b>: The maximum depth of nesting allowed in the parsed data
+structures. Enable depth checking with :max_nesting =&gt; anInteger. The <a
+href="JSON.html#M000040">parse!</a> methods defaults to not doing max depth
+checking: This can be dangerous if someone wants to fill up your stack.
+
+</li>
+<li><b>allow_nan</b>: If set to true, allow NaN, Infinity, and -Infinity in
+defiance of RFC 4627 to be parsed by the Parser. This option defaults to
+true.
+
+</li>
+<li><b>create_additions</b>: If set to false, the Parser doesn&#8216;t create
+additions even if a matching class and create_id was found. This option
+defaults to true.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000043" class="method-detail">
+        <a name="M000043"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000043.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000043.html');return false;">
+          <span class="method-name">pretty_generate</span><span class="method-args">(obj, opts = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Generate a <a href="JSON.html">JSON</a> document from the Ruby data
+structure <em>obj</em> and return it. The returned document is a prettier
+form of the document returned by unparse.
+</p>
+<p>
+The <em>opts</em> argument can be used to configure the generator. See the
+<a href="JSON.html#M000041">generate</a> method for a more detailed
+explanation.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
+
+        <div class="method-heading">
+          <a href="JSON.src/M000045.html" target="Code" class="method-signature"
+            onclick="popupCode('JSON.src/M000045.html');return false;">
+          <span class="method-name">recurse_proc</span><span class="method-args">(result, &amp;proc)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Recursively calls passed <em>Proc</em> if the parsed data structure is an
+<em>Array</em> or <em>Hash</em>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
+
+        <div class="method-heading">
+          <span class="method-name">restore</span><span class="method-args">(source, proc = nil)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="JSON.html#M000044">load</a>
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+# coding: utf-8
+
+$LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
+require 'common'
+
+def main(persistent_id)
+  available_airplay_devices.each do |device|
+    next unless device.persistentID == persistent_id
+    device.selected = !device.selected
+    break
+  end
+end
+
+main(ARGV.first)

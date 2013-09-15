@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Plist</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Plist</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/plist/generator_rb.html">
+                lib/plist/generator.rb
+                </a>
+        <br />
+                <a href="../files/lib/plist/parser_rb.html">
+                lib/plist/parser.rb
+                </a>
+        <br />
+                <a href="../files/lib/plist_rb.html">
+                lib/plist.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="Plist.html">Plist</a> parses Mac OS X xml property list files into
+ruby data structures.
+</p>
+<h3>Load a plist file</h3>
+<p>
+This is the main point of the library:
+</p>
+<pre>
+  r = Plist::parse_xml( filename_or_xml )
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000001">parse_xml</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="Plist/Emit.html" class="link">Plist::Emit</a><br />
+Class <a href="Plist/Listener.html" class="link">Plist::Listener</a><br />
+Class <a href="Plist/PArray.html" class="link">Plist::PArray</a><br />
+Class <a href="Plist/PData.html" class="link">Plist::PData</a><br />
+Class <a href="Plist/PDate.html" class="link">Plist::PDate</a><br />
+Class <a href="Plist/PDict.html" class="link">Plist::PDict</a><br />
+Class <a href="Plist/PFalse.html" class="link">Plist::PFalse</a><br />
+Class <a href="Plist/PInteger.html" class="link">Plist::PInteger</a><br />
+Class <a href="Plist/PKey.html" class="link">Plist::PKey</a><br />
+Class <a href="Plist/PList.html" class="link">Plist::PList</a><br />
+Class <a href="Plist/PReal.html" class="link">Plist::PReal</a><br />
+Class <a href="Plist/PString.html" class="link">Plist::PString</a><br />
+Class <a href="Plist/PTag.html" class="link">Plist::PTag</a><br />
+Class <a href="Plist/PTrue.html" class="link">Plist::PTrue</a><br />
+Class <a href="Plist/StreamParser.html" class="link">Plist::StreamParser</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">'3.1.0'</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000001" class="method-detail">
+        <a name="M000001"></a>
+
+        <div class="method-heading">
+          <a href="Plist.src/M000001.html" target="Code" class="method-signature"
+            onclick="popupCode('Plist.src/M000001.html');return false;">
+          <span class="method-name">parse_xml</span><span class="method-args">( filename_or_xml )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Note that I don&#8216;t use these two elements much:
+</p>
+<pre>
+ + Date elements are returned as DateTime objects.
+ + Data elements are implemented as Tempfiles
+</pre>
+<p>
+Plist::parse_xml will blow up if it encounters a data element. If you
+encounter such an error, or if you have a Date element which can&#8216;t be
+parsed into a Time object, please send your plist file to plist@hexane.org
+so that I can implement the proper support.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

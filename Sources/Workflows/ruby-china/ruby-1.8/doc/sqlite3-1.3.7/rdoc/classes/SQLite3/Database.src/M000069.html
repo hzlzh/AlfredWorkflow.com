@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>define_function (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq: define_function(name) { |args,...| }
+ *
+ * Define a function named +name+ with +args+.  The arity of the block
+ * will be used as the arity for the function defined.
+ */
+static VALUE define_function(VALUE self, VALUE name)
+{
+  sqlite3RubyPtr ctx;
+  VALUE block;
+  int status;
+
+  Data_Get_Struct(self, sqlite3Ruby, ctx);
+  REQUIRE_OPEN_DB(ctx);
+
+  block = rb_block_proc();
+
+  status = sqlite3_create_function(
+    ctx-&gt;db,
+    StringValuePtr(name),
+    rb_proc_arity(block),
+    SQLITE_UTF8,
+    (void *)block,
+    rb_sqlite3_func,
+    NULL,
+    NULL
+  );
+
+  CHECK(ctx-&gt;db, status);
+
+  rb_hash_aset(rb_iv_get(self, &quot;@functions&quot;), name, block);
+
+  return self;
+}</pre>
+</body>
+</html>

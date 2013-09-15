@@ -1,0 +1,32 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: include REXML::StreamListener
+  name: open
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: include REXML::StreamListener
+  name: result
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Plist::Listener
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: tag_end
+- !ruby/object:RI::MethodSummary 
+  name: tag_start
+- !ruby/object:RI::MethodSummary 
+  name: text
+name: Listener
+superclass: Object

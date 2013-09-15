@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: parse_xml
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Plist parses Mac OS X xml property list files into ruby data structures.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Load a plist file
+- !ruby/struct:SM::Flow::P 
+  body: "This is the main point of the library:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  r = Plist::parse_xml( filename_or_xml )\n"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'3.1.0'"
+full_name: Plist
+includes: []
+
+instance_methods: []
+
+name: Plist
+superclass: 

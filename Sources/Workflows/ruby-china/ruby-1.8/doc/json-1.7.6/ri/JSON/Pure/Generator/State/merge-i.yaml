@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #configure"
+full_name: JSON::Pure::Generator::State#merge
+is_singleton: false
+name: merge
+params: (opts)
+visibility: public

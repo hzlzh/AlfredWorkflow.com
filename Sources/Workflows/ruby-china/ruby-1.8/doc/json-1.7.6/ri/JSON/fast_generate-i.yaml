@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Generate a JSON document from the Ruby data structure <em>obj</em> and return it. This method disables the checks for circles in Ruby objects.
+- !ruby/struct:SM::Flow::P 
+  body: "<b>WARNING</b>: Be careful not to pass any Ruby data structures with circles as <em>obj</em> argument because this will cause JSON to go into an infinite loop."
+full_name: JSON#fast_generate
+is_singleton: false
+name: fast_generate
+params: (obj, opts = nil)
+visibility: public

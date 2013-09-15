@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This string should be encoded with UTF-8 A call to this method returns a JSON string encoded with UTF16 big endian characters as \u????.
+full_name: JSON::Pure::Generator::GeneratorMethods::String#to_json
+is_singleton: false
+name: to_json
+params: (state = nil, *args)
+visibility: public

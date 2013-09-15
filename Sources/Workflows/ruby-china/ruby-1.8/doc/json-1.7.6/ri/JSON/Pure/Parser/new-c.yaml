@@ -1,0 +1,38 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a new JSON::Pure::Parser instance for the string <em>source</em>.
+- !ruby/struct:SM::Flow::P 
+  body: "It will be configured by the <em>opts</em> hash. <em>opts</em> can have the following keys:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>max_nesting</b>: The maximum depth of nesting allowed in the parsed data structures. Disable depth checking with :max_nesting =&gt; false|nil|0, it defaults to 100."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>allow_nan</b>: If set to true, allow NaN, Infinity and -Infinity in defiance of RFC 4627 to be parsed by the Parser. This option defaults to false."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>symbolize_names</b>: If set to true, returns symbols for the names (keys) in a JSON object. Otherwise strings are returned, which is also the default."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>create_additions</b>: If set to false, the Parser doesn't create additions even if a matchin class and create_id was found. This option defaults to true."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>object_class</b>: Defaults to Hash"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>array_class</b>: Defaults to Array"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>quirks_mode</b>: Enables quirks_mode for parser, that is for example parsing single JSON values instead of documents is possible."
+  type: :BULLET
+full_name: JSON::Pure::Parser::new
+is_singleton: true
+name: new
+params: (source, opts = {})
+visibility: public

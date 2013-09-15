@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a JSON string representation for this Integer number.
+full_name: JSON::Pure::Generator::GeneratorMethods::Integer#to_json
+is_singleton: false
+name: to_json
+params: (*)
+visibility: public

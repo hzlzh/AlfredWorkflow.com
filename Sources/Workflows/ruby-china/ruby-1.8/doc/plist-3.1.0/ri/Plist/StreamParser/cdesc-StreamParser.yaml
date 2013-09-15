@@ -1,0 +1,36 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TEXT
+  value: /([^<]+)/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: XMLDECL_PATTERN
+  value: /<\?xml\s+(.*?)\?>*/um
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOCTYPE_PATTERN
+  value: /\s*<!DOCTYPE\s+(.*?)(\[|>)/um
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COMMENT_START
+  value: /\A<!--/u
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COMMENT_END
+  value: /.*?-->/um
+full_name: Plist::StreamParser
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: parse
+name: StreamParser
+superclass: Object

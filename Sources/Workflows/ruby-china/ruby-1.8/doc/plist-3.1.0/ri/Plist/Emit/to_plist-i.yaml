@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Helper method for injecting into classes. Calls <tt>Plist::Emit.dump</tt> with <tt>self</tt>.
+full_name: Plist::Emit#to_plist
+is_singleton: false
+name: to_plist
+params: (envelope = true)
+visibility: public

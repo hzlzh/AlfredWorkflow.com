@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>load_extension (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/* call-seq: db.load_extension(file)
+ *
+ * Loads an SQLite extension library from the named file. Extension
+ * loading must be enabled using db.enable_load_extension(true) prior
+ * to calling this API.
+ */
+static VALUE load_extension(VALUE self, VALUE file)
+{
+  sqlite3RubyPtr ctx;
+  int status;
+  char *errMsg;
+  VALUE errexp;
+  Data_Get_Struct(self, sqlite3Ruby, ctx);
+  REQUIRE_OPEN_DB(ctx);
+
+  status = sqlite3_load_extension(ctx-&gt;db, RSTRING_PTR(file), 0, &amp;errMsg);
+  if (status != SQLITE_OK)
+  {
+    errexp = rb_exc_new2(rb_eRuntimeError, errMsg);
+    sqlite3_free(errMsg);
+    rb_exc_raise(errexp);
+  }
+
+  return self;
+}</pre>
+</body>
+</html>

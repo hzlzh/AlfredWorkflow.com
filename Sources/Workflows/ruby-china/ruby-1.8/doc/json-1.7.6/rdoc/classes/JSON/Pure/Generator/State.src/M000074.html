@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>to_h (JSON::Pure::Generator::State)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/json/pure/generator.rb, line 250</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_h</span>
+          <span class="ruby-identifier">result</span> = {}
+          <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">iv</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">instance_variables</span>
+            <span class="ruby-identifier">iv</span> = <span class="ruby-identifier">iv</span>.<span class="ruby-identifier">to_s</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+            <span class="ruby-identifier">result</span>[<span class="ruby-identifier">iv</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">iv</span>]
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">result</span>
+        <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

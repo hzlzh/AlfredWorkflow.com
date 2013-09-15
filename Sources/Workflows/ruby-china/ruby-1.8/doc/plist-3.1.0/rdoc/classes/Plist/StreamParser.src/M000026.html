@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>parse (Plist::StreamParser)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/plist/parser.rb, line 82</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse</span>
+      <span class="ruby-identifier">plist_tags</span> = <span class="ruby-constant">PTag</span><span class="ruby-operator">::</span><span class="ruby-identifier">mappings</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'|'</span>)
+      <span class="ruby-identifier">start_tag</span>  = <span class="ruby-node">/&lt;(#{plist_tags})([^&gt;]*)&gt;/i</span>
+      <span class="ruby-identifier">end_tag</span>    = <span class="ruby-node">/&lt;\/(#{plist_tags})[^&gt;]*&gt;/i</span>
+
+      <span class="ruby-identifier">require</span> <span class="ruby-value str">'strscan'</span>
+
+      <span class="ruby-ivar">@scanner</span> = <span class="ruby-constant">StringScanner</span>.<span class="ruby-identifier">new</span>( <span class="ruby-ivar">@xml</span> )
+      <span class="ruby-keyword kw">until</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">eos?</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-constant">COMMENT_START</span>)
+          <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-constant">COMMENT_END</span>)
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-constant">XMLDECL_PATTERN</span>)
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-constant">DOCTYPE_PATTERN</span>)
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">start_tag</span>)
+          <span class="ruby-ivar">@listener</span>.<span class="ruby-identifier">tag_start</span>(<span class="ruby-ivar">@scanner</span>[<span class="ruby-value">1</span>], <span class="ruby-keyword kw">nil</span>)
+          <span class="ruby-keyword kw">if</span> (<span class="ruby-ivar">@scanner</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\/$/</span>)
+            <span class="ruby-ivar">@listener</span>.<span class="ruby-identifier">tag_end</span>(<span class="ruby-ivar">@scanner</span>[<span class="ruby-value">1</span>])
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-constant">TEXT</span>)
+          <span class="ruby-ivar">@listener</span>.<span class="ruby-identifier">text</span>(<span class="ruby-ivar">@scanner</span>[<span class="ruby-value">1</span>])
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@scanner</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">end_tag</span>)
+          <span class="ruby-ivar">@listener</span>.<span class="ruby-identifier">tag_end</span>(<span class="ruby-ivar">@scanner</span>[<span class="ruby-value">1</span>])
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Unimplemented element&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

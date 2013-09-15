@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>transaction (SQLite3::Database)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/sqlite3/database.rb, line 488</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">transaction</span>( <span class="ruby-identifier">mode</span> = <span class="ruby-identifier">:deferred</span> )
+      <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;begin #{mode.to_s} transaction&quot;</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+        <span class="ruby-identifier">abort</span> = <span class="ruby-keyword kw">false</span>
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">self</span>
+        <span class="ruby-keyword kw">rescue</span> <span class="ruby-operator">::</span><span class="ruby-constant">Object</span>
+          <span class="ruby-identifier">abort</span> = <span class="ruby-keyword kw">true</span>
+          <span class="ruby-identifier">raise</span>
+        <span class="ruby-keyword kw">ensure</span>
+          <span class="ruby-identifier">abort</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">rollback</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">commit</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Commits the current transaction. If there is no current transaction, this will cause an error to be raised. This returns <tt>true</tt>, in order to allow it to be used in idioms like <tt>abort? and rollback or commit</tt>.
+full_name: SQLite3::Database#commit
+is_singleton: false
+name: commit
+params: ()
+visibility: public

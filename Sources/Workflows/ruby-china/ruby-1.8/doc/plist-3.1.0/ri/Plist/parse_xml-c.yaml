@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Note that I don't use these two elements much:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " + Date elements are returned as DateTime objects.\n + Data elements are implemented as Tempfiles\n"
+- !ruby/struct:SM::Flow::P 
+  body: Plist::parse_xml will blow up if it encounters a data element. If you encounter such an error, or if you have a Date element which can't be parsed into a Time object, please send your plist file to plist@hexane.org so that I can implement the proper support.
+full_name: Plist::parse_xml
+is_singleton: true
+name: parse_xml
+params: ( filename_or_xml )
+visibility: public
