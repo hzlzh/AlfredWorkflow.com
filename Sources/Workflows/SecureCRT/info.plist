@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>alfred.securecrt</string>
+	<key>connections</key>
+	<dict>
+		<key>68BE4353-1C7D-4EB8-AF84-16AB9930809D</key>
+		<array/>
+		<key>8D5199A6-8E59-49B3-B1EB-3F20A30328B6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>68BE4353-1C7D-4EB8-AF84-16AB9930809D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Brian Cartledge</string>
+	<key>description</key>
+	<string>Launch SecureCRT SSH Session</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>SecureCRT</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>get path to library folder from user domainset findthis to (result as string) &amp; "Application Support:VanDyke:SecureCRT:Config:Sessions"set replaceItWith to ""set newText to switchText of "{query}" from findthis to replaceItWithtrim_ext(newText, ".ini") -- remove .ini extensiondo shell script "/Applications/SecureCRT.app/Contents/MacOS/SecureCRT /T /S " &amp; result &amp; " &gt; /dev/null 2&gt;&amp;1 &amp;" -- start SecureCRTto switchText of theText from SearchString to ReplaceString -- remove sessions path	set OldDelims to AppleScript's AppleScript's text item delimiters	set AppleScript's AppleScript's text item delimiters to SearchString	set newText to text items of theText	set AppleScript's AppleScript's text item delimiters to ReplaceString	set newText to newText as text	set AppleScript's AppleScript's text item delimiters to OldDelims	return newTextend switchTexton trim_ext(strg, trim_characters)	set trim_list to every character of trim_characters	set right_counter to -1	repeat with J from 1 to length of strg		if (character right_counter of strg) is in trim_list then			set right_counter to right_counter - 1		else			exit repeat		end if	end repeat	try		set strg to text 1 through right_counter of strg	on error		set strg to ""	end try	return strgend trim_ext</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>68BE4353-1C7D-4EB8-AF84-16AB9930809D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<false/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>ssh</string>
+				<key>scopes</key>
+				<array>
+					<string>~/Library/Application Support/VanDyke/SecureCRT/Config/Sessions</string>
+				</array>
+				<key>title</key>
+				<string>Search SecureCRT ini</string>
+				<key>types</key>
+				<array>
+					<string>com.barebones.bbedit.ini-configuration</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>8D5199A6-8E59-49B3-B1EB-3F20A30328B6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Modifications may be needed if the path to your sessions folder is anything other than "/users/&lt;your username&gt;/Library/Application Support/VanDyke/SecureCRT/Config/Sessions"
+
+bacartledge@gmail.com
+@bcartledge1871
+
+Changelog
+=========
+
+Version 1.00 - First working version!</string>
+	<key>uidata</key>
+	<dict>
+		<key>68BE4353-1C7D-4EB8-AF84-16AB9930809D</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>8D5199A6-8E59-49B3-B1EB-3F20A30328B6</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

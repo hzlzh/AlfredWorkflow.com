@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.floatboth.chmod</string>
+	<key>connections</key>
+	<dict>
+		<key>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3B417D19-3821-4C42-9BE5-2524FFF1642B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>68B0A53B-7DF6-49C0-9313-DF336EC4E104</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Greg V</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>UNIX file permission (chmod) converter</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>3B417D19-3821-4C42-9BE5-2524FFF1642B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>chmod</string>
+				<key>script</key>
+				<string>puts '&lt;?xml version="1.0"?&gt;'
+puts '&lt;items&gt;'
+
+def oct_to_sym(x)
+  num = x.to_i(8).to_s(2)
+  result = ''
+  result &lt;&lt; (num.slice(0, 1) == '1' ? 'r' : '-')
+  result &lt;&lt; (num.slice(1, 1) == '1' ? 'w' : '-')
+  result &lt;&lt; (num.slice(2, 1) == '1' ? 'x' : '-')
+  result
+end
+
+def sym_to_oct(x)
+  x.gsub(/[rwx]/, '1').gsub('-', '0').to_i(2).to_s(8)
+end
+
+input = "{query}"
+
+if input =~ /[0-9]+/
+  input  = input.slice 1, 3 if input.length &gt;= 4
+  owner  = oct_to_sym input.slice(0, 1)
+  group  = oct_to_sym input.slice(1, 1)
+  others = oct_to_sym input.slice(2, 1)
+elsif input =~ /[drwx-]+/
+  input  = input.slice 1, 9 if input.length &gt;= 10
+  owner  = input.slice 0, 3
+  group  = input.slice 3, 3
+  others = input.slice 6, 3
+end
+
+chmod = "chmod #{sym_to_oct(owner + group + others)}"
+puts "  &lt;item uid=\"octal\" valid=\"yes\" arg=\"#{chmod}\"&gt;"
+puts "    &lt;title&gt;#{chmod}&lt;/title&gt;"
+puts '    &lt;subtitle&gt;Copy to clipboard&lt;/subtitle&gt;'
+puts '    &lt;icon&gt;icon.png&lt;/icon&gt;'
+puts '  &lt;/item&gt;'
+puts '  &lt;item uid="owner"&gt;'
+puts "    &lt;title&gt;Owner: #{owner}&lt;/title&gt;"
+puts '    &lt;icon&gt;owner.png&lt;/icon&gt;'
+puts '  &lt;/item&gt;'
+puts '  &lt;item uid="group"&gt;'
+puts "    &lt;title&gt;Group: #{group}&lt;/title&gt;"
+puts '    &lt;icon&gt;group.png&lt;/icon&gt;'
+puts '  &lt;/item&gt;'
+puts '  &lt;item uid="others"&gt;'
+puts "    &lt;title&gt;Others: #{others}&lt;/title&gt;"
+puts '    &lt;icon&gt;others.png&lt;/icon&gt;'
+puts '  &lt;/item&gt;'
+
+puts '&lt;/items&gt;'</string>
+				<key>title</key>
+				<string>UNIX file permission (chmod) converter</string>
+				<key>type</key>
+				<integer>2</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Copied: {query}</string>
+				<key>title</key>
+				<string>Alfred</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>68B0A53B-7DF6-49C0-9313-DF336EC4E104</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>3B417D19-3821-4C42-9BE5-2524FFF1642B</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>68B0A53B-7DF6-49C0-9313-DF336EC4E104</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>floatboth.com</string>
+</dict>
+</plist>

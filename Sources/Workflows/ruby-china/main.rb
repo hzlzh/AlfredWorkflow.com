@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require "open-uri"
+require "google-search"
 require "json"
 load 'alfred_feedback.rb'
 
@@ -25,7 +26,12 @@ when "t", "T"
   i = 0
   
   html_response.each do |result|
-      feedback.add_item({ :uid => result['id'], :title => result['title'], :subtitle => "#{result['node_name']} | by #{result['user']['login']} | #{result['replies_count']}条评论", :arg => "http://ruby-china.org/topics/#{result['id']}", :icon => {:name => "topics.png"}} )
+      feedback.add_item({ 
+        :uid => result['id'], 
+        :title => result['title'], 
+        :subtitle => "#{result['node_name']} | by #{result['user']['login']} | #{result['replies_count']}条评论", 
+        :arg => "http://ruby-china.org/topics/#{result['id']}", :icon => {:name => "topics.png"}
+      })
   
       i = 1 + i
       break if i >= 10
@@ -71,7 +77,13 @@ when "h", "H"
   
     i = 0
     topics.each do |topic|
-      feedback.add_item({ :title => topic[1], :subtitle =>"#{nodes[i]} | by #{authors[i]} | #{comments[i]}人喜欢", :arg => "http://ruby-china.org/#{topic[0]}", :icon => { :name => "hot_topics.png" }})
+      feedback.add_item({ 
+        :title => topic[1], 
+        :subtitle =>"#{nodes[i]} | by #{authors[i]} | #{comments[i]}人喜欢", 
+        :arg => "http://ruby-china.org/#{topic[0]}", 
+        :icon => { :name => "hot.png" }
+      })
+
       i += 1
     end
   end
@@ -108,12 +120,32 @@ when "n", "N"
       author.split('/')[1].split('"')[0]
     end
 
-    
     i = 0
     topics.each do |topic|
-      feedback.add_item({ :title => topic[1], :subtitle =>"#{nodes[i]} | by #{authors[i]}", :arg => "http://ruby-china.org/#{topic[0]}", :icon => { :name => "no_reply.png" }})
+      feedback.add_item({ 
+        :title => topic[1], 
+        :subtitle =>"#{nodes[i]} | by #{authors[i]}", 
+        :arg => "http://ruby-china.org/#{topic[0]}", 
+        :icon => { :name => "no_reply.png" }
+      })
+
       i += 1
     end
+  end
+else
+  search = Google::Search::Web.new(:query => "site:ruby-china.org #{type}")
+
+  i = 0
+
+  search.each do |result|
+    feedback.add_item({
+      :uid => "suggest #{type}", 
+      :title => result.title, 
+      :subtitle => result.uri, 
+      :arg => result.uri
+    })
+    i = 1 + i
+    break if i > 10 
   end
 end
 

@@ -21,7 +21,7 @@ def set_proxy():
 	proxy = "http://127.0.0.1:8087" # goagent proxy
 	if proxy != "":
 		cookies = cookielib.CookieJar()
-		proxy_handler = urllib2.ProxyHandler( {"http":proxy} )
+		proxy_handler = urllib2.ProxyHandler( {"http":proxy, "https":proxy} )
 		opener = urllib2.build_opener( proxy_handler, urllib2.HTTPCookieProcessor(cookies) )
 		
 		#httpHandler = urllib2.HTTPHandler( debuglevel=1 )
@@ -110,12 +110,12 @@ def search_google( query ):
 		buffer_line = line
 		if "rwt(" not in line or "<em>" not in line:
 			continue
-			
-		title_begin = line.find("event)\">")
+
+		title_begin = line.find("\"_blank\">")
 		title_end = line.find("</a>")
 		if title_begin==-1 or title_end==-1:
 			continue
-		title = strip_html( line[title_begin+8:title_end] )
+		title = strip_html( line[title_begin+9:title_end] )
 		
 		link_begin = prev_line.rfind("<a href=\"http")
 		link_end = prev_line.find("\" ",link_begin)
@@ -212,6 +212,7 @@ def search_zhihu( query ):
 
 ################################################################################
 def search_weibo( query ):
+	set_proxy()
 	params = { "xsort":"time" }
 	response = urllib2.urlopen( "http://s.weibo.com/weibo/"+urllib.quote_plus(query)
 		+"&"+urllib.urlencode(params) ).read().decode("unicode-escape").split( "\n" )
@@ -225,7 +226,7 @@ def search_weibo( query ):
 	link = ""	
 	for line in response:
 		if "pincode" in line:
-			result.append( alfred.Item( {"uid":alfred.uid(link), "arg":link}, u"搜素行为异常，请退出微博登录并打开以下网页输入验证码", default_link, ("weibo.png")) )				
+			result.append( alfred.Item( {"uid":alfred.uid(link), "arg":default_link}, u"搜素行为异常，请退出微博登录并打开以下网页输入验证码", default_link, ("weibo.png")) )				
 		
 		if u"您可能感兴趣的结果" in line:
 			break				
