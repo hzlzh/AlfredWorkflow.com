@@ -142,21 +142,6 @@
 				<integer>0</integer>
 				<key>argument</key>
 				<integer>1</integer>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 6fdd72916a93c35c762c463b7a1da3d8ece5a132
-				<key>hotkey</key>
-				<integer>38</integer>
-				<key>hotmod</key>
-				<integer>1310720</integer>
-				<key>hotstring</key>
-				<string>J</string>
-<<<<<<< HEAD
->>>>>>> 6fdd72916a93c35c762c463b7a1da3d8ece5a132
-=======
->>>>>>> 6fdd72916a93c35c762c463b7a1da3d8ece5a132
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -247,21 +232,6 @@ open "/Applications/Develop/jEdit.app"
 				<integer>0</integer>
 				<key>argument</key>
 				<integer>1</integer>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 6fdd72916a93c35c762c463b7a1da3d8ece5a132
-				<key>hotkey</key>
-				<integer>14</integer>
-				<key>hotmod</key>
-				<integer>1310720</integer>
-				<key>hotstring</key>
-				<string>E</string>
-<<<<<<< HEAD
->>>>>>> 6fdd72916a93c35c762c463b7a1da3d8ece5a132
-=======
->>>>>>> 6fdd72916a93c35c762c463b7a1da3d8ece5a132
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
