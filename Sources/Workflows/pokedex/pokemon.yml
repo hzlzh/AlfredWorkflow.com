@@ -1,0 +1,3693 @@
+---
+Bulbasaur:
+  number: '001'
+  description: A strange seed was planted on its back at birth. The plant sprouts
+    and grows with this POKéMON.
+  url_name: bulbasaur
+Ivysaur:
+  number: '002'
+  description: When the bulb on its back grows large, it appears to lose the ability
+    to stand on its hind legs.
+  url_name: ivysaur
+Venusaur:
+  number: '003'
+  description: The plant blooms when it is absorbing solar energy. It stays on the
+    move to seek sunlight.
+  url_name: venusaur
+Charmander:
+  number: '004'
+  description: Obviously prefers hot places. When it rains, steam is said to spout
+    from the tip of its tail.
+  url_name: charmander
+Charmeleon:
+  number: '005'
+  description: When it swings its burning tail, it elevates the temperature to unbearably
+    high levels.
+  url_name: charmeleon
+Charizard:
+  number: '006'
+  description: Spits fire that is hot enough to melt boulders. Known to cause forest
+    fires unintentionally.
+  url_name: charizard
+Squirtle:
+  number: '007'
+  description: After birth, its back swells and hardens into a shell. Powerfully sprays
+    foam from its mouth.
+  url_name: squirtle
+Wartortle:
+  number: 008
+  description: Often hides in water to stalk unwary prey. For swimming fast, it moves
+    its ears to maintain balance.
+  url_name: wartortle
+Blastoise:
+  number: 009
+  description: A brutal POKéMON with pressurized water jets on its shell. They are
+    used for high speed tackles.
+  url_name: blastoise
+Caterpie:
+  number: '010'
+  description: Its short feet are tipped with suction pads that enable it to tirelessly
+    climb slopes and walls.
+  url_name: caterpie
+Metapod:
+  number: '011'
+  description: This POKéMON is vulnerable to attack while its shell is soft, exposing
+    its weak and tender body.
+  url_name: metapod
+Butterfree:
+  number: '012'
+  description: In battle, it flaps its wings at high speed to release highly toxic
+    dust into the air.
+  url_name: butterfree
+Weedle:
+  number: '013'
+  description: Often found in forests, eating leaves. It has a sharp venomous stinger
+    on its head.
+  url_name: weedle
+Kakuna:
+  number: '014'
+  description: Almost incapable of moving, this POKéMON can only harden its shell
+    to protect itself from predators.
+  url_name: kakuna
+Beedrill:
+  number: '015'
+  description: Flies at high speed and attacks using its large venomous stingers on
+    its forelegs and tail.
+  url_name: beedrill
+Pidgey:
+  number: '016'
+  description: A common sight in forests and woods. It flaps its wings at ground level
+    to kick up blinding sand.
+  url_name: pidgey
+Pidgeotto:
+  number: '017'
+  description: Very protective of its sprawling territorial area, this POKéMON will
+    fiercely peck at any intruder.
+  url_name: pidgeotto
+Pidgeot:
+  number: 018
+  description: When hunting, it skims the surface of water at high speed to pick off
+    unwary prey such as MAGIKARP.
+  url_name: pidgeot
+Rattata:
+  number: 019
+  description: Bites anything when it attacks. Small and very quick, it is a common
+    sight in many places.
+  url_name: rattata
+Raticate:
+  number: '020'
+  description: It uses its whiskers to maintain its balance. It apparently slows down
+    if they are cut off.
+  url_name: raticate
+Spearow:
+  number: '021'
+  description: Eats bugs in grassy areas. It has to flap its short wings at high speed
+    to stay airborne.
+  url_name: spearow
+Fearow:
+  number: '022'
+  description: With its huge and magnificent wings, it can keep aloft without ever
+    having to land for rest.
+  url_name: fearow
+Ekans:
+  number: '023'
+  description: Moves silently and stealthily. Eats the eggs of birds, such as PIDGEY
+    and SPEAROW, whole.
+  url_name: ekans
+Arbok:
+  number: '024'
+  description: It is rumored that the ferocious warning markings on its belly differ
+    from area to area.
+  url_name: arbok
+Pikachu:
+  number: '025'
+  description: When several of these POKéMON gather, their electricity could build
+    and cause lightning storms.
+  url_name: pikachu
+Raichu:
+  number: '026'
+  description: Its long tail serves as a ground to protect itself from its own high
+    voltage power.
+  url_name: raichu
+Sandshrew:
+  number: '027'
+  description: Burrows deep underground in arid locations far from water. It only
+    emerges to hunt for food.
+  url_name: sandshrew
+Sandslash:
+  number: 028
+  description: Curls up into a spiny ball when threatened. It can roll while curled
+    up to attack or escape.
+  url_name: sandslash
+Nidoran♀:
+  number: 029
+  description: Although small, its venomous barbs render this POKéMON dangerous. The
+    female has smaller horns.
+  url_name: nidoran-f
+Nidorina:
+  number: '030'
+  description: The female’s horn develops slowly. Prefers physical attacks such as
+    clawing and biting.
+  url_name: nidorina
+Nidoqueen:
+  number: '031'
+  description: Its hard scales provide strong protection. It uses its hefty bulk to
+    execute powerful moves.
+  url_name: nidoqueen
+Nidoran♂:
+  number: '032'
+  description: Stiffens its ears to sense danger. The larger its horns, the more powerful
+    its secreted venom.
+  url_name: nidoran-m
+Nidorino:
+  number: '033'
+  description: An aggressive POKéMON that is quick to attack. The horn on its head
+    secretes a powerful venom.
+  url_name: nidorino
+Nidoking:
+  number: '034'
+  description: It uses its powerful tail in battle to smash, constrict, then break
+    the prey’s bones.
+  url_name: nidoking
+Clefairy:
+  number: '035'
+  description: Its magical and cute appeal has many admirers. It is rare and found
+    only in certain areas.
+  url_name: clefairy
+Clefable:
+  number: '036'
+  description: A timid fairy POKéMON that is rarely seen. It will run and hide the
+    moment it senses people.
+  url_name: clefable
+Vulpix:
+  number: '037'
+  description: At the time of birth, it has just one tail. The tail splits from its
+    tip as it grows older.
+  url_name: vulpix
+Ninetales:
+  number: 038
+  description: Very smart and very vengeful. Grabbing one of its many tails could
+    result in a 1000-year curse.
+  url_name: ninetales
+Jigglypuff:
+  number: 039
+  description: When its huge eyes light up, it sings a mysteriously soothing melody
+    that lulls its enemies to sleep.
+  url_name: jigglypuff
+Wigglytuff:
+  number: '040'
+  description: The body is soft and rubbery. When angered, it will suck in air and
+    inflate itself to an enormous size.
+  url_name: wigglytuff
+Zubat:
+  number: '041'
+  description: Forms colonies in perpetually dark places. Uses ultrasonic waves to
+    identify and approach targets.
+  url_name: zubat
+Golbat:
+  number: '042'
+  description: Once it strikes, it will not stop draining energy from the victim even
+    if it gets too heavy to fly.
+  url_name: golbat
+Oddish:
+  number: '043'
+  description: During the day, it keeps its face buried in the ground. At night, it
+    wanders around sowing its seeds.
+  url_name: oddish
+Gloom:
+  number: '044'
+  description: The fluid that oozes from its mouth isn’t drool. It is a nectar that
+    is used to attract prey.
+  url_name: gloom
+Vileplume:
+  number: '045'
+  description: The larger its petals, the more toxic pollen it contains. Its big head
+    is heavy and hard to hold up.
+  url_name: vileplume
+Paras:
+  number: '046'
+  description: Burrows to suck tree roots. The mushrooms on its back grow by drawing
+    nutrients from the bug host.
+  url_name: paras
+Parasect:
+  number: '047'
+  description: A host-parasite pair in which the parasite mushroom has taken over
+    the host bug. Prefers damp places.
+  url_name: parasect
+Venonat:
+  number: 048
+  description: Lives in the shadows of tall trees where it eats insects. It is attracted
+    by light at night.
+  url_name: venonat
+Venomoth:
+  number: 049
+  description: The dust-like scales covering its wings are color coded to indicate
+    the kinds of poison it has.
+  url_name: venomoth
+Diglett:
+  number: '050'
+  description: Lives about one yard underground where it feeds on plant roots. It
+    sometimes appears above ground.
+  url_name: diglett
+Dugtrio:
+  number: '051'
+  description: A team of DIGLETT triplets. It triggers huge earthquakes by burrowing
+    60 miles underground.
+  url_name: dugtrio
+Meowth:
+  number: '052'
+  description: Adores circular objects. Wanders the streets on a nightly basis to
+    look for dropped loose change.
+  url_name: meowth
+Persian:
+  number: '053'
+  description: Although its fur has many admirers, it is tough to raise as a pet because
+    of its fickle meanness.
+  url_name: persian
+Psyduck:
+  number: '054'
+  description: While lulling its enemies with its vacant look, this wily POKéMON will
+    use psychokinetic powers.
+  url_name: psyduck
+Golduck:
+  number: '055'
+  description: Often seen swimming elegantly by lake shores. It is often mistaken
+    for the Japanese monster, Kappa.
+  url_name: golduck
+Mankey:
+  number: '056'
+  description: Extremely quick to anger. It could be docile one moment then thrashing
+    away the next instant.
+  url_name: mankey
+Primeape:
+  number: '057'
+  description: Always furious and tenacious to boot. It will not abandon chasing its
+    quarry until it is caught.
+  url_name: primeape
+Growlithe:
+  number: 058
+  description: Very protective of its territory. It will bark and bite to repel intruders
+    from its space.
+  url_name: growlithe
+Arcanine:
+  number: 059
+  description: A POKéMON that has been admired since the past for its beauty. It runs
+    agilely as if on wings.
+  url_name: arcanine
+Poliwag:
+  number: '060'
+  description: Its newly grown legs prevent it from running. It appears to prefer
+    swimming than trying to stand.
+  url_name: poliwag
+Poliwhirl:
+  number: '061'
+  description: Capable of living in or out of water. When out of water, it sweats
+    to keep its body slimy.
+  url_name: poliwhirl
+Poliwrath:
+  number: '062'
+  description: An adept swimmer at both the front crawl and breast stroke. Easily
+    overtakes the best human swimmers.
+  url_name: poliwrath
+Abra:
+  number: '063'
+  description: Using its ability to read minds, it will identify impending danger
+    and TELEPORT to safety.
+  url_name: abra
+Kadabra:
+  number: '064'
+  description: It emits special alpha waves from its body that induce headaches just
+    by being close by.
+  url_name: kadabra
+Alakazam:
+  number: '065'
+  description: Its brain can outperform a supercomputer. Its intelligence quotient
+    is said to be 5,000.
+  url_name: alakazam
+Machop:
+  number: '066'
+  description: Loves to build its muscles. It trains in all styles of martial arts
+    to become even stronger.
+  url_name: machop
+Machoke:
+  number: '067'
+  description: Its muscular body is so powerful, it must wear a power save belt to
+    be able to regulate its motions.
+  url_name: machoke
+Machamp:
+  number: 068
+  description: Using its heavy muscles, it throws powerful punches that can send the
+    victim clear over the horizon.
+  url_name: machamp
+Bellsprout:
+  number: 069
+  description: A carnivorous POKéMON that traps and eats bugs. It uses its root feet
+    to soak up needed moisture.
+  url_name: bellsprout
+Weepinbell:
+  number: '070'
+  description: It spits out POISONPOWDER to immobilize the enemy and then finishes
+    it with a spray of ACID.
+  url_name: weepinbell
+Victreebel:
+  number: '071'
+  description: Said to live in huge colonies deep in jungles, although no one has
+    ever returned from there.
+  url_name: victreebel
+Tentacool:
+  number: '072'
+  description: Drifts in shallow seas. Anglers who hook them by accident are often
+    punished by its stinging acid.
+  url_name: tentacool
+Tentacruel:
+  number: '073'
+  description: The tentacles are normally kept short. On hunts, they are extended
+    to ensnare and immobilize prey.
+  url_name: tentacruel
+Geodude:
+  number: '074'
+  description: Found in fields and mountains. Mistaking them for boulders, people
+    often step or trip on them.
+  url_name: geodude
+Graveler:
+  number: '075'
+  description: Rolls down slopes to move. It rolls over any obstacle without slowing
+    or changing its direction.
+  url_name: graveler
+Golem:
+  number: '076'
+  description: Its boulder-like body is extremely hard. It can easily withstand dynamite
+    blasts without damage.
+  url_name: golem
+Ponyta:
+  number: '077'
+  description: Its hooves are 10 times harder than diamonds. It can trample anything
+    completely flat in little time.
+  url_name: ponyta
+Rapidash:
+  number: 078
+  description: Very competitive, this POKéMON will chase anything that moves fast
+    in the hopes of racing it.
+  url_name: rapidash
+Slowpoke:
+  number: 079
+  description: Incredibly slow and dopey. It takes 5 seconds for it to feel pain when
+    under attack.
+  url_name: slowpoke
+Slowbro:
+  number: 080
+  description: The SHELLDER that is latched onto SLOWPOKE’s tail is said to feed on
+    the host’s left over scraps.
+  url_name: slowbro
+Magnemite:
+  number: 081
+  description: Uses anti-gravity to stay suspended. Appears without warning and uses
+    THUNDER WAVE and similar moves.
+  url_name: magnemite
+Magneton:
+  number: 082
+  description: Formed by several MAGNEMITEs linked together. They frequently appear
+    when sunspots flare up.
+  url_name: magneton
+Farfetch'd:
+  number: 083
+  description: The sprig of green onions it holds is its weapon. It is used much like
+    a metal sword.
+  url_name: farfetchd
+Doduo:
+  number: 084
+  description: A bird that makes up for its poor flying with its fast foot speed.
+    Leaves giant footprints.
+  url_name: doduo
+Dodrio:
+  number: 085
+  description: Uses its three brains to execute complex plans. While two heads sleep,
+    one head stays awake.
+  url_name: dodrio
+Seel:
+  number: 086
+  description: The protruding horn on its head is very hard. It is used for bashing
+    through thick ice.
+  url_name: seel
+Dewgong:
+  number: 087
+  description: Stores thermal energy in its body. Swims at a steady 8 knots even in
+    intensely cold waters.
+  url_name: dewgong
+Grimer:
+  number: 088
+  description: Appears in filthy areas. Thrives by sucking up polluted sludge that
+    is pumped out of factories.
+  url_name: grimer
+Muk:
+  number: 089
+  description: Thickly covered with a filthy, vile sludge. It is so toxic, even its
+    footprints contain poison.
+  url_name: muk
+Shellder:
+  number: 090
+  description: Its hard shell repels any kind of attack. It is vulnerable only when
+    its shell is open.
+  url_name: shellder
+Cloyster:
+  number: 091
+  description: When attacked, it launches its horns in quick volleys. Its innards
+    have never been seen.
+  url_name: cloyster
+Gastly:
+  number: 092
+  description: Almost invisible, this gaseous POKéMON cloaks the target and puts it
+    to sleep without notice.
+  url_name: gastly
+Haunter:
+  number: 093
+  description: Because of its ability to slip through block walls, it is said to be
+    from another dimension.
+  url_name: haunter
+Gengar:
+  number: 094
+  description: Under a full moon, this POKéMON likes to mimic the shadows of people
+    and laugh at their fright.
+  url_name: gengar
+Onix:
+  number: 095
+  description: As it grows, the stone portions of its body harden to become similar
+    to a diamond, but colored black.
+  url_name: onix
+Drowzee:
+  number: 096
+  description: Puts enemies to sleep then eats their dreams. Occasionally gets sick
+    from eating bad dreams.
+  url_name: drowzee
+Hypno:
+  number: 097
+  description: When it locks eyes with an enemy, it will use a mix of PSI moves such
+    as HYPNOSIS and CONFUSION.
+  url_name: hypno
+Krabby:
+  number: 098
+  description: Its pincers are not only powerful weapons, they are used for balance
+    when walking sideways.
+  url_name: krabby
+Kingler:
+  number: 099
+  description: The large pincer has 10000 hp of crushing power. However, its huge
+    size makes it unwieldy to use.
+  url_name: kingler
+Voltorb:
+  number: '100'
+  description: Usually found in power plants. Easily mistaken for a POKé BALL, they
+    have zapped many people.
+  url_name: voltorb
+Electrode:
+  number: '101'
+  description: It stores electric energy under very high pressure. It often explodes
+    with little or no provocation.
+  url_name: electrode
+Exeggcute:
+  number: '102'
+  description: Often mistaken for eggs. When disturbed, they quickly gather and attack
+    in swarms.
+  url_name: exeggcute
+Exeggutor:
+  number: '103'
+  description: Legend has it that on rare occasions, one of its heads will drop off
+    and continue on as an EXEGGCUTE.
+  url_name: exeggutor
+Cubone:
+  number: '104'
+  description: Because it never removes its skull helmet, no one has ever seen this
+    POKéMON’s real face.
+  url_name: cubone
+Marowak:
+  number: '105'
+  description: The bone it holds is its key weapon. It throws the bone skillfully
+    like a boomerang to KO targets.
+  url_name: marowak
+Hitmonlee:
+  number: '106'
+  description: When in a hurry, its legs lengthen progressively. It runs smoothly
+    with extra long, loping strides.
+  url_name: hitmonlee
+Hitmonchan:
+  number: '107'
+  description: While apparently doing nothing, it fires punches in lightning fast
+    volleys that are impossible to see.
+  url_name: hitmonchan
+Lickitung:
+  number: '108'
+  description: Its tongue can be extended like a chameleon’s. It leaves a tingling
+    sensation when it licks enemies.
+  url_name: lickitung
+Koffing:
+  number: '109'
+  description: Because it stores several kinds of toxic gases in its body, it is prone
+    to exploding without warning.
+  url_name: koffing
+Weezing:
+  number: '110'
+  description: Where two kinds of poison gases meet, 2 KOFFINGs can fuse into a WEEZING
+    over many years.
+  url_name: weezing
+Rhyhorn:
+  number: '111'
+  description: Its massive bones are 1000 times harder than human bones. It can easily
+    knock a trailer flying.
+  url_name: rhyhorn
+Rhydon:
+  number: '112'
+  description: Protected by an armor-like hide, it is capable of living in molten
+    lava of 3,600 degrees.
+  url_name: rhydon
+Chansey:
+  number: '113'
+  description: A rare and elusive POKéMON that is said to bring happiness to those
+    who manage to get it.
+  url_name: chansey
+Tangela:
+  number: '114'
+  description: The whole body is swathed with wide vines that are similar to seaweed.
+    Its vines shake as it walks.
+  url_name: tangela
+Kangaskhan:
+  number: '115'
+  description: The infant rarely ventures out of its mother’s protective pouch until
+    it is 3 years old.
+  url_name: kangaskhan
+Horsea:
+  number: '116'
+  description: Known to shoot down flying bugs with precision blasts of ink from the
+    surface of the water.
+  url_name: horsea
+Seadra:
+  number: '117'
+  description: Capable of swimming backwards by rapidly flapping its wing-like pectoral
+    fins and stout tail.
+  url_name: seadra
+Goldeen:
+  number: '118'
+  description: Its tail fin billows like an elegant ballroom dress, giving it the
+    nickname of the Water Queen.
+  url_name: goldeen
+Seaking:
+  number: '119'
+  description: In the autumn spawning season, they can be seen swimming powerfully
+    up rivers and creeks.
+  url_name: seaking
+Staryu:
+  number: '120'
+  description: An enigmatic POKéMON that can effortlessly regenerate any appendage
+    it loses in battle.
+  url_name: staryu
+Starmie:
+  number: '121'
+  description: Its central core glows with the seven colors of the rainbow. Some people
+    value the core as a gem.
+  url_name: starmie
+Mr. Mime:
+  number: '122'
+  description: If interrupted while it is miming, it will slap around the offender
+    with its broad hands.
+  url_name: mr-mime
+Scyther:
+  number: '123'
+  description: With ninja-like agility and speed, it can create the illusion that
+    there is more than one.
+  url_name: scyther
+Jynx:
+  number: '124'
+  description: It seductively wiggles its hips as it walks. It can cause people to
+    dance in unison with it.
+  url_name: jynx
+Electabuzz:
+  number: '125'
+  description: Normally found near power plants, they can wander away and cause major
+    blackouts in cities.
+  url_name: electabuzz
+Magmar:
+  number: '126'
+  description: Its body always burns with an orange glow that enables it to hide perfectly
+    among flames.
+  url_name: magmar
+Pinsir:
+  number: '127'
+  description: If it fails to crush the victim in its pincers, it will swing it around
+    and toss it hard.
+  url_name: pinsir
+Tauros:
+  number: '128'
+  description: When it targets an enemy, it charges furiously while whipping its body
+    with its long tails.
+  url_name: tauros
+Magikarp:
+  number: '129'
+  description: In the distant past, it was somewhat stronger than the horribly weak
+    descendants that exist today.
+  url_name: magikarp
+Gyarados:
+  number: '130'
+  description: Rarely seen in the wild. Huge and vicious, it is capable of destroying
+    entire cities in a rage.
+  url_name: gyarados
+Lapras:
+  number: '131'
+  description: A POKéMON that has been overhunted almost to extinction. It can ferry
+    people across the water.
+  url_name: lapras
+Ditto:
+  number: '132'
+  description: Capable of copying an enemy’s genetic code to instantly transform itself
+    into a duplicate of the enemy.
+  url_name: ditto
+Eevee:
+  number: '133'
+  description: Its genetic code is irregular. It may mutate if it is exposed to radiation
+    from element STONEs.
+  url_name: eevee
+Vaporeon:
+  number: '134'
+  description: Lives close to water. Its long tail is ridged with a fin which is often
+    mistaken for a mermaid’s.
+  url_name: vaporeon
+Jolteon:
+  number: '135'
+  description: It accumulates negative ions in the atmosphere to blast out 10000volt
+    lightning bolts.
+  url_name: jolteon
+Flareon:
+  number: '136'
+  description: When storing thermal energy in its body, its temperature could soar
+    to over 1600 degrees.
+  url_name: flareon
+Porygon:
+  number: '137'
+  description: A POKéMON that consists entirely of programming code. Capable of moving
+    freely in cyberspace.
+  url_name: porygon
+Omanyte:
+  number: '138'
+  description: Although long extinct, in rare cases, it can be genetically resurrected
+    from fossils.
+  url_name: omanyte
+Omastar:
+  number: '139'
+  description: A prehistoric POKéMON that died out when its heavy shell made it impossible
+    to catch prey.
+  url_name: omastar
+Kabuto:
+  number: '140'
+  description: A POKéMON that was resurrected from a fossil found in what was once
+    the ocean floor eons ago.
+  url_name: kabuto
+Kabutops:
+  number: '141'
+  description: Its sleek shape is perfect for swimming. It slashes prey with its claws
+    and drains the body fluids.
+  url_name: kabutops
+Aerodactyl:
+  number: '142'
+  description: A ferocious, prehistoric POKéMON that goes for the enemy’s throat with
+    its serrated saw-like fangs.
+  url_name: aerodactyl
+Snorlax:
+  number: '143'
+  description: Very lazy. Just eats and sleeps. As its rotund bulk builds, it becomes
+    steadily more slothful.
+  url_name: snorlax
+Articuno:
+  number: '144'
+  description: A legendary bird POKéMON that is said to appear to doomed people who
+    are lost in icy mountains.
+  url_name: articuno
+Zapdos:
+  number: '145'
+  description: A legendary bird POKéMON that is said to appear from clouds while dropping
+    enormous lightning bolts.
+  url_name: zapdos
+Moltres:
+  number: '146'
+  description: Known as the legendary bird of fire. Every flap of its wings creates
+    a dazzling flash of flames.
+  url_name: moltres
+Dratini:
+  number: '147'
+  description: Long considered a mythical POKéMON until recently when a small colony
+    was found living underwater.
+  url_name: dratini
+Dragonair:
+  number: '148'
+  description: A mystical POKéMON that exudes a gentle aura. Has the ability to change
+    climate conditions.
+  url_name: dragonair
+Dragonite:
+  number: '149'
+  description: An extremely rarely seen marine POKéMON. Its intelligence is said to
+    match that of humans.
+  url_name: dragonite
+Mewtwo:
+  number: '150'
+  description: It was created by a scientist after years of horrific gene splicing
+    and DNA engineering experiments.
+  url_name: mewtwo
+Mew:
+  number: '151'
+  description: So rare that it is still said to be a mirage by many experts. Only
+    a few people have seen it worldwide.
+  url_name: mew
+Chikorita:
+  number: '152'
+  description: A sweet aroma gently wafts from the leaf on its head. It is docile
+    and loves to soak up the sun’s rays.
+  url_name: chikorita
+Bayleef:
+  number: '153'
+  description: The scent of spices comes from around its neck. Somehow, sniffing it
+    makes you want to fight.
+  url_name: bayleef
+Meganium:
+  number: '154'
+  description: The aroma that rises from its petals contains a substance that calms
+    aggressive feelings.
+  url_name: meganium
+Cyndaquil:
+  number: '155'
+  description: It is timid, and always curls itself up in a ball. If attacked, it
+    flares up its back for protection.
+  url_name: cyndaquil
+Quilava:
+  number: '156'
+  description: Be careful if it turns its back during battle. It means that it will
+    attack with the fire on its back.
+  url_name: quilava
+Typhlosion:
+  number: '157'
+  description: If its rage peaks, it becomes so hot that anything that touches it
+    will instantly go up in flames.
+  url_name: typhlosion
+Totodile:
+  number: '158'
+  description: Its well-developed jaws are powerful and capable of crushing anything.
+    Even its trainer must be careful.
+  url_name: totodile
+Croconaw:
+  number: '159'
+  description: If it loses a fang, a new one grows back in its place. There are always
+    48 fangs lining its mouth.
+  url_name: croconaw
+Feraligatr:
+  number: '160'
+  description: When it bites with its massive and powerful jaws, it shakes its head
+    and savagely tears its victim up.
+  url_name: feraligatr
+Sentret:
+  number: '161'
+  description: A very cautious POKéMON, it raises itself up using its tail to get
+    a better view of its surroundings.
+  url_name: sentret
+Furret:
+  number: '162'
+  description: It makes a nest to suit its long and skinny body. The nest is impossible
+    for other POKéMON to enter.
+  url_name: furret
+Hoothoot:
+  number: '163'
+  description: It always stands on one foot. It changes feet so fast, the movement
+    can rarely be seen.
+  url_name: hoothoot
+Noctowl:
+  number: '164'
+  description: Its eyes are specially adapted. They concentrate even faint light and
+    enable it to see in the dark.
+  url_name: noctowl
+Ledyba:
+  number: '165'
+  description: It is very timid. It will be afraid to move if it is alone. But it
+    will be active if it is in a group.
+  url_name: ledyba
+Ledian:
+  number: '166'
+  description: When the stars flicker in the night sky, it flutters about, scattering
+    a glowing powder.
+  url_name: ledian
+Spinarak:
+  number: '167'
+  description: It lies still in the same pose for days in its web, waiting for its
+    unsuspecting prey to wander close.
+  url_name: spinarak
+Ariados:
+  number: '168'
+  description: It spins string not only from its rear but also from its mouth. It
+    is hard to tell which end is which.
+  url_name: ariados
+Crobat:
+  number: '169'
+  description: It flies so silently through the dark on its four wings that it may
+    not be noticed even when nearby.
+  url_name: crobat
+Chinchou:
+  number: '170'
+  description: It shoots positive and negative electricity between the tips of its
+    two antennae and zaps its enemies.
+  url_name: chinchou
+Lanturn:
+  number: '171'
+  description: The light it emits is so bright that it can illuminate the sea’s surface
+    from a depth of over three miles.
+  url_name: lanturn
+Pichu:
+  number: '172'
+  description: It is not yet skilled at storing electricity. It may send out a jolt
+    if amused or startled.
+  url_name: pichu
+Cleffa:
+  number: '173'
+  description: Because of its unusual, star-like silhouette, people believe that it
+    came here on a meteor.
+  url_name: cleffa
+Igglybuff:
+  number: '174'
+  description: It has a very soft body. If it starts to roll, it will bounce all over
+    and be impossible to stop.
+  url_name: igglybuff
+Togepi:
+  number: '175'
+  description: The shell seems to be filled with joy. It is said that it will share
+    good luck when treated kindly.
+  url_name: togepi
+Togetic:
+  number: '176'
+  description: They say that it will appear before kindhearted, caring people and
+    shower them with happiness.
+  url_name: togetic
+Natu:
+  number: '177'
+  description: Because its wings aren’t yet fully grown, it has to hop to get around.
+    It is always staring at something.
+  url_name: natu
+Xatu:
+  number: '178'
+  description: They say that it stays still and quiet because it is seeing both the
+    past and future at the same time.
+  url_name: xatu
+Mareep:
+  number: '179'
+  description: If static electricity builds in its body, its fleece doubles in volume.
+    Touching it will shock you.
+  url_name: mareep
+Flaaffy:
+  number: '180'
+  description: As a result of storing too much electricity, it developed patches where
+    even downy wool won’t grow.
+  url_name: flaaffy
+Ampharos:
+  number: '181'
+  description: The tail’s tip shines brightly and can be seen from far away. It acts
+    as a beacon for lost people.
+  url_name: ampharos
+Bellossom:
+  number: '182'
+  description: BELLOSSOM gather at times and appear to dance. They say that the dance
+    is a ritual to summon the sun.
+  url_name: bellossom
+Marill:
+  number: '183'
+  description: The tip of its tail, which contains oil that is lighter than water,
+    lets it swim without drowning.
+  url_name: marill
+Azumarill:
+  number: '184'
+  description: By keeping still and listening intently, it can tell what is in even
+    wild, fastmoving rivers.
+  url_name: azumarill
+Sudowoodo:
+  number: '185'
+  description: Although it always pretends to be a tree, its composition appears to
+    be closer to a rock than a plant.
+  url_name: sudowoodo
+Politoed:
+  number: '186'
+  description: If POLIWAG and POLIWHIRL hear its echoing cry, they respond by gathering
+    from far and wide.
+  url_name: politoed
+Hoppip:
+  number: '187'
+  description: To keep from being blown away by the wind, they gather in clusters.
+    They do enjoy gentle breezes, though.
+  url_name: hoppip
+Skiploom:
+  number: '188'
+  description: The bloom on top of its head opens and closes as the temperature fluctuates
+    up and down.
+  url_name: skiploom
+Jumpluff:
+  number: '189'
+  description: Once it catches the wind, it deftly controls its cotton-puff spores
+    to float, even around the world.
+  url_name: jumpluff
+Aipom:
+  number: '190'
+  description: Its tail is so powerful that it can use it to grab a tree branch and
+    hold itself up in the air.
+  url_name: aipom
+Sunkern:
+  number: '191'
+  description: It may drop out of the sky suddenly. If attacked by a SPEAROW, it will
+    violently shake its leaves.
+  url_name: sunkern
+Sunflora:
+  number: '192'
+  description: It converts sunlight into energy. In the darkness after sunset, it
+    closes its petals and becomes still.
+  url_name: sunflora
+Yanma:
+  number: '193'
+  description: If it flaps its wings really fast, it can generate shock waves that
+    will shatter windows in the area.
+  url_name: yanma
+Wooper:
+  number: '194'
+  description: This POKéMON lives in cold water. It will leave the water to search
+    for food when it gets cold outside.
+  url_name: wooper
+Quagsire:
+  number: '195'
+  description: This carefree POKéMON has an easy-going nature. While swimming, it
+    always bumps into boat hulls.
+  url_name: quagsire
+Espeon:
+  number: '196'
+  description: It uses the fine hair that covers its body to sense air currents and
+    predict its enemy’s actions.
+  url_name: espeon
+Umbreon:
+  number: '197'
+  description: When agitated, this POKéMON protects itself by spraying poisonous sweat
+    from its pores.
+  url_name: umbreon
+Murkrow:
+  number: '198'
+  description: Feared and loathed by many, it is believed to bring misfortune to all
+    those who see it at night.
+  url_name: murkrow
+Slowking:
+  number: '199'
+  description: It has incredible intellect and intuition. Whatever the situation,
+    it remains calm and collected.
+  url_name: slowking
+Misdreavus:
+  number: '200'
+  description: It likes playing mischievous tricks such as screaming and wailing to
+    startle people at night.
+  url_name: misdreavus
+Unown:
+  number: '201'
+  description: Their shapes look like hieroglyphs on ancient tablets. It is said that
+    the two are somehow related.
+  url_name: unown
+Wobbuffet:
+  number: '202'
+  description: It hates light and shock. If attacked, it inflates its body to pump
+    up its counterstrike.
+  url_name: wobbuffet
+Girafarig:
+  number: '203'
+  description: Its tail has a small brain of its own. Beware! If you get close, it
+    may react to your scent and bite.
+  url_name: girafarig
+Pineco:
+  number: '204'
+  description: It likes to make its shell thicker by adding layers of tree bark. The
+    additional weight doesn’t bother it.
+  url_name: pineco
+Forretress:
+  number: '205'
+  description: Its entire body is shielded by a steel-hard shell. What lurks inside
+    the armor is a total mystery.
+  url_name: forretress
+Dunsparce:
+  number: '206'
+  description: When spotted, this POKéMON escapes backward by furiously boring into
+    the ground with its tail.
+  url_name: dunsparce
+Gligar:
+  number: '207'
+  description: It flies straight at its target’s face then clamps down on the startled
+    victim to inject poison.
+  url_name: gligar
+Steelix:
+  number: '208'
+  description: Its body has been compressed deep under the ground. As a result, it
+    is even harder than a diamond.
+  url_name: steelix
+Snubbull:
+  number: '209'
+  description: Although it looks frightening, it is actually kind and affectionate.
+    It is very popular among women.
+  url_name: snubbull
+Granbull:
+  number: '210'
+  description: It is actually timid and easily spooked. If attacked, it flails about
+    to fend off its attacker.
+  url_name: granbull
+Qwilfish:
+  number: '211'
+  description: To fire its poison spikes, it must inflate its body by drinking over
+    2.6 gallons of water all at once.
+  url_name: qwilfish
+Scizor:
+  number: '212'
+  description: It swings its eyepatterned pincers up to scare its foes. This makes
+    it look like it has three heads.
+  url_name: scizor
+Shuckle:
+  number: '213'
+  description: The BERRIES it stores in its vase-like shell decompose and become a
+    gooey liquid.
+  url_name: shuckle
+Heracross:
+  number: '214'
+  description: This powerful POKéMON thrusts its prized horn under its enemies’ bellies
+    then lifts and throws them.
+  url_name: heracross
+Sneasel:
+  number: '215'
+  description: Its paws conceal sharp claws. If attacked, it suddenly extends the
+    claws and startles its enemy.
+  url_name: sneasel
+Teddiursa:
+  number: '216'
+  description: If it finds honey, its crescent mark glows. It always licks its paws
+    because they are soaked with honey.
+  url_name: teddiursa
+Ursaring:
+  number: '217'
+  description: Although it is a good climber, it prefers to snap trees with its forelegs
+    and eat fallen BERRIES.
+  url_name: ursaring
+Slugma:
+  number: '218'
+  description: It never sleeps. It has to keep moving because if it stopped, its magma
+    body would cool and harden.
+  url_name: slugma
+Magcargo:
+  number: '219'
+  description: The shell on its back is just skin that has cooled and hardened. It
+    breaks easily with a slight touch.
+  url_name: magcargo
+Swinub:
+  number: '220'
+  description: It rubs its snout on the ground to find and dig up food. It sometimes
+    discovers hot springs.
+  url_name: swinub
+Piloswine:
+  number: '221'
+  description: Because the long hair all over its body obscures its sight, it just
+    keeps charging repeatedly.
+  url_name: piloswine
+Corsola:
+  number: '222'
+  description: It continuously sheds and grows. The tip of its head is prized as a
+    treasure for its beauty.
+  url_name: corsola
+Remoraid:
+  number: '223'
+  description: It has superb accuracy. The water it shoots out can strike even moving
+    prey from more than 300 feet.
+  url_name: remoraid
+Octillery:
+  number: '224'
+  description: It traps enemies with its suctioncupped tentacles then smashes them
+    with its rock-hard head.
+  url_name: octillery
+Delibird:
+  number: '225'
+  description: It carries food all day long. There are tales about lost people who
+    were saved by the food it had.
+  url_name: delibird
+Mantine:
+  number: '226'
+  description: As it majestically swims, it doesn’t care if REMORAID attach to it
+    for scavenging its leftovers.
+  url_name: mantine
+Skarmory:
+  number: '227'
+  description: Its sturdy wings look heavy, but they are actually hollow and light,
+    allowing it to fly freely in the sky.
+  url_name: skarmory
+Houndour:
+  number: '228'
+  description: It uses different kinds of cries for communicating with others of its
+    kind and for pursuing its prey.
+  url_name: houndour
+Houndoom:
+  number: '229'
+  description: If you are burned by the flames it shoots from its mouth, the pain
+    will never go away.
+  url_name: houndoom
+Kingdra:
+  number: '230'
+  description: It is said that it usually hides in underwater caves. It can create
+    whirlpools by yawning.
+  url_name: kingdra
+Phanpy:
+  number: '231'
+  description: It swings its long snout around playfully, but because it is so strong,
+    that can be dangerous.
+  url_name: phanpy
+Donphan:
+  number: '232'
+  description: It has sharp, hard tusks and a rugged hide. Its TACKLE is strong enough
+    to knock down a house.
+  url_name: donphan
+Porygon2:
+  number: '233'
+  description: This upgraded version of PORYGON is designed for space exploration.
+    It can’t fly, though.
+  url_name: porygon2
+Stantler:
+  number: '234'
+  description: The curved antlers subtly change the flow of air to create a strange
+    space where reality is distorted.
+  url_name: stantler
+Smeargle:
+  number: '235'
+  description: A special fluid oozes from the tip of its tail. It paints the fluid
+    everywhere to mark its territory.
+  url_name: smeargle
+Tyrogue:
+  number: '236'
+  description: It is always bursting with energy. To make itself stronger, it keeps
+    on fighting even if it loses.
+  url_name: tyrogue
+Hitmontop:
+  number: '237'
+  description: If you become enchanted by its smooth, elegant, dance-like kicks, you
+    may get drilled hard.
+  url_name: hitmontop
+Smoochum:
+  number: '238'
+  description: Its lips are the most sensitive parts on its body. It always uses its
+    lips first to examine things.
+  url_name: smoochum
+Elekid:
+  number: '239'
+  description: It rotates its arms to generate electricity, but it tires easily, so
+    it charges up only a little bit.
+  url_name: elekid
+Magby:
+  number: '240'
+  description: Each and every time it inhales and exhales, hot embers dribble out
+    of its mouth and nostrils.
+  url_name: magby
+Miltank:
+  number: '241'
+  description: Its milk is packed with nutrition, making it the ultimate beverage
+    for the sick or weary.
+  url_name: miltank
+Blissey:
+  number: '242'
+  description: Anyone who takes even one bite of BLISSEY’s egg becomes unfailingly
+    caring and pleasant to everyone.
+  url_name: blissey
+Raikou:
+  number: '243'
+  description: The rain clouds it carries let it fire thunderbolts at will. They say
+    that it descended with lightning.
+  url_name: raikou
+Entei:
+  number: '244'
+  description: Volcanoes erupt when it barks. Unable to restrain its extreme power,
+    it races headlong around the land.
+  url_name: entei
+Suicune:
+  number: '245'
+  description: Said to be the reincarnation of north winds, it can instantly purify
+    filthy, murky water.
+  url_name: suicune
+Larvitar:
+  number: '246'
+  description: It feeds on soil. After it has eaten a large mountain, it will fall
+    asleep so it can grow.
+  url_name: larvitar
+Pupitar:
+  number: '247'
+  description: Its shell is as hard as sheet rock, and it is also very strong. Its
+    THRASHING can topple a mountain.
+  url_name: pupitar
+Tyranitar:
+  number: '248'
+  description: Its body can’t be harmed by any sort of attack, so it is very eager
+    to make challenges against enemies.
+  url_name: tyranitar
+Lugia:
+  number: '249'
+  description: It is said that it quietly spends its time deep at the bottom of the
+    sea because its powers are too strong.
+  url_name: lugia
+Ho-oh:
+  number: '250'
+  description: Legends claim this POKéMON flies the world’s skies continuously on
+    its magnificent sevencolored wings.
+  url_name: ho-oh
+Celebi:
+  number: '251'
+  description: This POKéMON wanders across time. Grass and trees flourish in the forests
+    in which it has appeared.
+  url_name: celebi
+Treecko:
+  number: '252'
+  description: TREECKO has small hooks on the bottom of its feet that enable it to
+    scale vertical walls. This POKéMON attacks by slamming foes with its thick tail.
+  url_name: treecko
+Grovyle:
+  number: '253'
+  description: The leaves growing out of GROVYLE’s body are convenient for camouflaging
+    it from enemies in the forest. This POKéMON is a master at climbing trees in jungles.
+  url_name: grovyle
+Sceptile:
+  number: '254'
+  description: The leaves growing on SCEPTILE’s body are very sharp edged. This POKéMON
+    is very agile - it leaps all over the branches of trees and jumps on its foe from
+    above or behind.
+  url_name: sceptile
+Torchic:
+  number: '255'
+  description: TORCHIC sticks with its TRAINER, following behind with unsteady steps.
+    This POKéMON breathes fire of over 1,800 degrees F, including fireballs that leave
+    the foe scorched black.
+  url_name: torchic
+Combusken:
+  number: '256'
+  description: COMBUSKEN toughens up its legs and thighs by running through fields
+    and mountains. This POKéMON’s legs possess both speed and power, enabling it to
+    dole out ten kicks in one second.
+  url_name: combusken
+Blaziken:
+  number: '257'
+  description: In battle, BLAZIKEN blows out intense flames from its wrists and attacks
+    foes courageously. The stronger the foe, the more intensely this POKéMON’s wrists
+    burn.
+  url_name: blaziken
+Mudkip:
+  number: '258'
+  description: The fin on MUDKIP’s head acts as highly sensitive radar. Using this
+    fin to sense movements of water and air, this POKéMON can determine what is taking
+    place around it without using its eyes.
+  url_name: mudkip
+Marshtomp:
+  number: '259'
+  description: The surface of MARSHTOMP’s body is enveloped by a thin, sticky film
+    that enables it to live on land. This POKéMON plays in mud on beaches when the
+    ocean tide is low.
+  url_name: marshtomp
+Swampert:
+  number: '260'
+  description: SWAMPERT is very strong. It has enough power to easily drag a boulder
+    weighing more than a ton. This POKéMON also has powerful vision that lets it see
+    even in murky water.
+  url_name: swampert
+Poochyena:
+  number: '261'
+  description: At first sight, POOCHYENA takes a bite at anything that moves. This
+    POKéMON chases after prey until the victim becomes exhausted. However, it may
+    turn tail if the prey strikes back.
+  url_name: poochyena
+Mightyena:
+  number: '262'
+  description: MIGHTYENA gives obvious signals when it is preparing to attack. It
+    starts to growl deeply and then flattens its body. This POKéMON will bite savagely
+    with its sharply pointed fangs.
+  url_name: mightyena
+Zigzagoon:
+  number: '263'
+  description: ZIGZAGOON restlessly wanders everywhere at all times. This POKéMON
+    does so because it is very curious. It becomes interested in anything that it
+    happens to see.
+  url_name: zigzagoon
+Linoone:
+  number: '264'
+  description: LINOONE always runs full speed and only in straight lines. If facing
+    an obstacle, it makes a right-angle turn to evade it. This POKéMON is very challenged
+    by gently curving roads.
+  url_name: linoone
+Wurmple:
+  number: '265'
+  description: Using the spikes on its rear end,   WURMPLE peels the bark off trees
+    and feeds on the sap that oozes out. This POKéMON’s feet are tipped with suction
+    pads that allow it to cling to glass without slipping.
+  url_name: wurmple
+Silcoon:
+  number: '266'
+  description: SILCOON tethers itself to a tree branch using silk to keep from falling.
+    There,  this POKéMON hangs quietly while it awaits evolution. It peers out of
+    the silk cocoon through a small hole.
+  url_name: silcoon
+Beautifly:
+  number: '267'
+  description: BEAUTIFLY’s favorite food is the sweet pollen of flowers. If you want
+    to see this POKéMON, just leave a potted flower by an open window. BEAUTIFLY is
+    sure to come looking for pollen.
+  url_name: beautifly
+Cascoon:
+  number: '268'
+  description: CASCOON makes its protective cocoon by wrapping its body entirely with
+    a fine silk from its mouth. Once the silk goes around its body, it hardens. This
+    POKéMON prepares for its evolution inside the cocoon.
+  url_name: cascoon
+Dustox:
+  number: '269'
+  description: DUSTOX is instinctively drawn to light. Swarms of this POKéMON are
+    attracted by the bright lights of cities, where they wreak havoc by stripping
+    the leaves off roadside trees for food.
+  url_name: dustox
+Lotad:
+  number: '270'
+  description: LOTAD live in ponds and lakes, where they float on the surface. It
+    grows weak if its broad leaf dies. On rare occasions, this POKéMON travels on
+    land in search of clean water.
+  url_name: lotad
+Lombre:
+  number: '271'
+  description: LOMBRE is nocturnal - it will get active after dusk. It is also a mischief-maker.
+    When this POKéMON spots anglers, it tugs on their fishing lines from beneath the
+    surface and enjoys their consternation.
+  url_name: lombre
+Ludicolo:
+  number: '272'
+  description: LUDICOLO begins dancing as soon as it hears cheerful, festive music.
+    This POKéMON is said to appear when it hears the singing of children on hiking
+    outings.
+  url_name: ludicolo
+Seedot:
+  number: '273'
+  description: SEEDOT attaches itself to a tree branch using the top of its head.
+    It sucks moisture from the tree while hanging off the branch. The more water it
+    drinks, the glossier this POKéMON’s body becomes.
+  url_name: seedot
+Nuzleaf:
+  number: '274'
+  description: NUZLEAF live in densely overgrown forests. They occasionally venture
+    out of the forest to startle people. This POKéMON dislikes having its long nose
+    pinched.
+  url_name: nuzleaf
+Shiftry:
+  number: '275'
+  description: SHIFTRY is a mysterious POKéMON that is said to live atop towering
+    trees  dating back over a thousand years. It creates terrific windstorms with
+    the fans it holds.
+  url_name: shiftry
+Taillow:
+  number: '276'
+  description: TAILLOW courageously stands its ground against foes, however strong
+    they may be. This gutsy POKéMON will remain defiant even after a loss. On the
+    other hand, it cries loudly if it becomes hungry.
+  url_name: taillow
+Swellow:
+  number: '277'
+  description: SWELLOW flies high above our heads, making graceful arcs in the sky.
+    This POKéMON dives at a steep angle as soon as it spots its prey. The hapless
+    prey is tightly grasped by SWELLOW’s clawed feet, preventing escape.
+  url_name: swellow
+Wingull:
+  number: '278'
+  description: WINGULL has the habit of carrying prey and valuables in its beak and
+    hiding them in all sorts of locations. This POKéMON rides the winds and flies
+    as if it were skating across the sky.
+  url_name: wingull
+Pelipper:
+  number: '279'
+  description: PELIPPER is a flying transporter that carries small POKéMON and eggs
+    inside its massive bill. This POKéMON builds its nest on steep cliffs facing the
+    sea.
+  url_name: pelipper
+Ralts:
+  number: '280'
+  description: RALTS senses the emotions of people using the horns on its head. This
+    POKéMON rarely appears before people. But when it does, it draws closer if it
+    senses that the person has a positive disposition.
+  url_name: ralts
+Kirlia:
+  number: '281'
+  description: It is said that a KIRLIA that is exposed to the positive emotions of
+    its TRAINER grows beautiful. This POKéMON controls psychokinetic powers with its
+    highly developed brain.
+  url_name: kirlia
+Gardevoir:
+  number: '282'
+  description: GARDEVOIR has the ability to read the future. If it senses impending
+    danger to its TRAINER, this POKéMON is said to unleash its psychokinetic energy
+    at full power.
+  url_name: gardevoir
+Surskit:
+  number: '283'
+  description: From the tips of its feet, SURSKIT secretes an oil that enables it
+    to walk on water as if it were skating. This POKéMON feeds on microscopic organisms
+    in ponds and lakes.
+  url_name: surskit
+Masquerain:
+  number: '284'
+  description: MASQUERAIN intimidates enemies with the eyelike patterns on its antennas.
+    This POKéMON flaps its four wings to freely fly in any direction - even sideways
+    and backwards - as if it were a helicopter.
+  url_name: masquerain
+Shroomish:
+  number: '285'
+  description: SHROOMISH live in damp soil in the dark depths of forests. They are
+    often found keeping still under fallen leaves. This POKéMON feeds on compost that
+    is made up of fallen, rotted leaves.
+  url_name: shroomish
+Breloom:
+  number: '286'
+  description: BRELOOM closes in on its foe with light and sprightly footwork, then
+    throws punches with its stretchy arms. This POKéMON’s fighting technique puts
+    boxers to shame.
+  url_name: breloom
+Slakoth:
+  number: '287'
+  description: SLAKOTH lolls around for over twenty hours every day. Because it moves
+    so little, it does not need much food. This POKéMON’s sole daily meal consists
+    of just three leaves.
+  url_name: slakoth
+Vigoroth:
+  number: '288'
+  description: VIGOROTH is always itching and agitated to go on a wild rampage. It
+    simply can’t tolerate sitting still for even a minute. This POKéMON’s stress level
+    rises if it can’t be moving constantly.
+  url_name: vigoroth
+Slaking:
+  number: '289'
+  description: SLAKING spends all day lying down and lolling about. It eats grass
+    growing within its reach. If it eats all the grass it can reach, this POKéMON
+    reluctantly moves to another spot.
+  url_name: slaking
+Nincada:
+  number: '290'
+  description: NINCADA lives underground for many years in complete darkness. This
+    POKéMON absorbs nutrients from the roots of trees. It stays motionless as it waits
+    for evolution.
+  url_name: nincada
+Ninjask:
+  number: '291'
+  description: NINJASK moves around at such a high speed that it cannot be seen, even
+    while its crying can be clearly heard. For that reason, this POKéMON was long
+    believed to be invisible.
+  url_name: ninjask
+Shedinja:
+  number: '292'
+  description: SHEDINJA’s hard body doesn’t move - not even a twitch. In fact, its
+    body appears to be merely a hollow shell. It is believed that this POKéMON will
+    steal the spirit of anyone peering into its hollow body from its back.
+  url_name: shedinja
+Whismur:
+  number: '293'
+  description: Normally, WHISMUR’s voice is very quiet - it is barely audible even
+    if one is paying close attention. However, if this POKéMON senses danger, it starts
+    crying at an earsplitting volume.
+  url_name: whismur
+Loudred:
+  number: '294'
+  description: LOUDRED’s bellowing can completely decimate a wood-frame house. It
+    uses its voice to punish its foes. This POKéMON’s round ears serve as loudspeakers.
+  url_name: loudred
+Exploud:
+  number: '295'
+  description: EXPLOUD triggers earthquakes with the tremors it creates by bellowing.
+    If this POKéMON violently inhales from the ports on its body, it’s a sign that
+    it is preparing to let loose a huge bellow.
+  url_name: exploud
+Makuhita:
+  number: '296'
+  description: MAKUHITA is tenacious - it will keep getting up and attacking its foe
+    however many times it is knocked down. Every time it gets back up, this POKéMON
+    stores more energy in its body for evolving.
+  url_name: makuhita
+Hariyama:
+  number: '297'
+  description: HARIYAMA practices its straight-arm slaps in any number of locations.
+    One hit of this POKéMON’s powerful, openhanded, straight-arm punches could snap
+    a telephone pole in two.
+  url_name: hariyama
+Azurill:
+  number: '298'
+  description: AZURILL spins its tail as if it were a lasso, then hurls it far. The
+    momentum of the throw sends its body flying, too. Using this unique action, one
+    of these POKéMON managed to hurl itself a record 33 feet.
+  url_name: azurill
+Nosepass:
+  number: '299'
+  description: NOSEPASS’s magnetic nose is always pointed to the north. If two of
+    these POKéMON meet, they cannot turn their faces to each other when they are close
+    because their magnetic noses repel one another.
+  url_name: nosepass
+Skitty:
+  number: '300'
+  description: SKITTY has the habit of becoming fascinated by moving objects and chasing
+    them around. This POKéMON is known to chase after its own tail and become dizzy.
+  url_name: skitty
+Delcatty:
+  number: '301'
+  description: DELCATTY prefers to live an unfettered existence in which it can do
+    as it pleases at its own pace. Because this POKéMON eats and sleeps whenever it
+    decides, its daily routines are completely random.
+  url_name: delcatty
+Sableye:
+  number: '302'
+  description: SABLEYE lead quiet lives deep inside caverns. They are feared, however,
+    because these POKéMON are thought to steal the spirits of people when their eyes
+    burn with a sinister glow in the darkness.
+  url_name: sableye
+Mawile:
+  number: '303'
+  description: MAWHILE’s huge jaws are actually steel horns that have been transformed.
+    Its docile-looking face serves to lull its foe into letting down its guard. When
+    the foe least expects it, MAWHILE chomps it with its gaping jaws.
+  url_name: mawile
+Aron:
+  number: '304'
+  description: This POKéMON has a body of steel. To make its body, ARON feeds on iron
+    ore that it digs from mountains. Occasionally, it causes major trouble by eating
+    bridges and rails.
+  url_name: aron
+Lairon:
+  number: '305'
+  description: LAIRON tempers its steel body by drinking highly nutritious mineral
+    springwater until it is bloated. This POKéMON makes its nest close to springs
+    of delicious water.
+  url_name: lairon
+Aggron:
+  number: '306'
+  description: AGGRON claims an entire mountain as its own territory. It mercilessly
+    beats up anything that violates its environment. This POKéMON vigilantly patrols
+    its territory at all times.
+  url_name: aggron
+Meditite:
+  number: '307'
+  description: MEDITITE undertakes rigorous mental training deep in the mountains.
+    However, whenever it meditates, this POKéMON always loses its concentration and
+    focus. As a result, its training never ends.
+  url_name: meditite
+Medicham:
+  number: '308'
+  description: It is said that through meditation, MEDICHAM heightens energy inside
+    its body and sharpens its sixth sense. This POKéMON hides its presence by merging
+    itself with fields and mountains.
+  url_name: medicham
+Electrike:
+  number: '309'
+  description: ELECTRIKE stores electricity in its long body hair. This POKéMON stimulates
+    its leg muscles with electric charges. These jolts of power give its legs explosive
+    acceleration performance.
+  url_name: electrike
+Manectric:
+  number: '310'
+  description: MANECTRIC is constantly discharging electricity from its mane. The
+    sparks sometimes ignite forest fires. When it enters a battle, this POKéMON creates
+    thunderclouds.
+  url_name: manectric
+Plusle:
+  number: '311'
+  description: PLUSLE always acts as a cheerleader for its partners. Whenever a teammate
+    puts out a good effort in battle, this POKéMON shorts out its body to create the
+    crackling noises of sparks to show its joy.
+  url_name: plusle
+Minun:
+  number: '312'
+  description: MINUN is more concerned about cheering on its partners than its own
+    safety. It shorts out the electricity in its body to create brilliant showers
+    of sparks to cheer on its teammates.
+  url_name: minun
+Volbeat:
+  number: '313'
+  description: With the arrival of night, VOLBEAT emits light from its tail. It communicates
+    with others by adjusting the intensity and flashing of its light. This POKéMON
+    is attracted by the sweet aroma of ILLUMISE.
+  url_name: volbeat
+Illumise:
+  number: '314'
+  description: ILLUMISE attracts a swarm of VOLBEAT using a sweet fragrance. Once
+    the VOLBEAT have gathered, this POKéMON leads the lit-up swarm in drawing geometric
+    designs on the canvas of the night sky.
+  url_name: illumise
+Roselia:
+  number: '315'
+  description: ROSELIA shoots sharp thorns as projectiles at any opponent that tries
+    to steal the flowers on its arms. The aroma of this POKéMON brings serenity to
+    living things.
+  url_name: roselia
+Gulpin:
+  number: '316'
+  description: Virtually all of GULPIN’s body is its stomach. As a result, it can
+    swallow something its own size. This POKéMON’s stomach contains a special fluid
+    that digests anything.
+  url_name: gulpin
+Swalot:
+  number: '317'
+  description: When SWALOT spots prey, it spurts out a hideously toxic fluid from
+    its pores and sprays the target. Once the prey has weakened, this POKéMON gulps
+    it down whole with its cavernous mouth.
+  url_name: swalot
+Carvanha:
+  number: '318'
+  description: CARVANHA’s strongly developed jaws and its sharply pointed fangs pack
+    the destructive power to rip out boat hulls. Many boats have been attacked and
+    sunk by this POKéMON.
+  url_name: carvanha
+Sharpedo:
+  number: '319'
+  description: Nicknamed “the bully of the sea,” SHARPEDO is widely feared. Its cruel
+    fangs grow back immediately if they snap off. Just one of these POKéMON can thoroughly
+    tear apart a supertanker.
+  url_name: sharpedo
+Wailmer:
+  number: '320'
+  description: WAILMER’s nostrils are located above its eyes. This playful POKéMON
+    loves to startle people by forcefully snorting out seawater it stores inside its
+    body out of its nostrils.
+  url_name: wailmer
+Wailord:
+  number: '321'
+  description: WAILORD is the largest of all identified POKéMON up to now. This giant
+    POKéMON swims languorously in the vast open sea, eating massive amounts of food
+    at once with its enormous mouth.
+  url_name: wailord
+Numel:
+  number: '322'
+  description: NUMEL is extremely dull witted - it doesn’t notice being hit. However,
+    it can’t stand hunger for even a second. This POKéMON’s body is a seething cauldron
+    of boiling magma.
+  url_name: numel
+Camerupt:
+  number: '323'
+  description: CAMERUPT has a volcano inside its body. Magma of 18,000 degrees F courses
+    through its body. Occasionally, the humps on this POKéMON’s back erupt, spewing
+    the superheated magma.
+  url_name: camerupt
+Torkoal:
+  number: '324'
+  description: TORKOAL digs through mountains in search of coal. If it finds some,
+    it fills hollow spaces on its shell with the coal and burns it. If it is attacked,
+    this POKéMON spouts thick black smoke to beat a retreat.
+  url_name: torkoal
+Spoink:
+  number: '325'
+  description: SPOINK bounces around on its tail. The shock of its bouncing makes
+    its heart pump. As a result, this POKéMON cannot afford to stop bouncing - if
+    it stops, its heart will stop.
+  url_name: spoink
+Grumpig:
+  number: '326'
+  description: GRUMPIG uses the black pearls on its body to amplify its psychic power
+    waves for gaining total control over its foe. When this POKéMON uses its special
+    power, its snorting breath grows labored.
+  url_name: grumpig
+Spinda:
+  number: '327'
+  description: All the SPINDA that exist in the world are said to have utterly unique
+    spot patterns. The shaky, tottering steps of this POKéMON give it the appearance
+    of dancing.
+  url_name: spinda
+Trapinch:
+  number: '328'
+  description: TRAPINCH’s nest is a sloped, bowl-like pit dug in sand. This POKéMON
+    patiently waits for prey to tumble down the pit. Its giant jaws have enough strength
+    to crush even boulders.
+  url_name: trapinch
+Vibrava:
+  number: '329'
+  description: To make prey faint, VIBRAVA generates ultrasonic waves by vigorously
+    making its two wings vibrate. This POKéMON’s ultrasonic waves are so powerful,
+    they can bring on headaches in people.
+  url_name: vibrava
+Flygon:
+  number: '330'
+  description: FLYGON is nicknamed “the elemental  spirit of the desert.” Because
+    its flapping wings whip up a cloud of sand, this POKéMON is always enveloped in
+    a sandstorm while flying.
+  url_name: flygon
+Cacnea:
+  number: '331'
+  description: CACNEA lives in arid locations such as deserts. It releases a strong
+    aroma from its flower to attract prey. When prey comes near, this POKéMON shoots
+    sharp thorns from its body to bring the victim down.
+  url_name: cacnea
+Cacturne:
+  number: '332'
+  description: During the daytime, CACTURNE remains unmoving so that it does not lose
+    any moisture to the harsh desert sun. This POKéMON becomes active at night when
+    the temperature drops.
+  url_name: cacturne
+Swablu:
+  number: '333'
+  description: SWABLU has light and fluffy wings that are like cottony clouds. This
+    POKéMON is not frightened of people. It lands on the heads of people and sits
+    there like a cotton-fluff hat.
+  url_name: swablu
+Altaria:
+  number: '334'
+  description: ALTARIA dances and wheels through the sky among billowing, cotton-like
+    clouds. By singing melodies in its crystal-clear voice, this POKéMON makes its
+    listeners experience dreamy wonderment.
+  url_name: altaria
+Zangoose:
+  number: '335'
+  description: Memories of battling its arch-rival SEVIPER are etched into every cell
+    of ZANGOOSE’s body. This POKéMON adroitly dodges attacks with incredible agility.
+  url_name: zangoose
+Seviper:
+  number: '336'
+  description: SEVIPER shares a generations-long feud with ZANGOOSE. The scars on
+    its body are evidence of vicious battles. This POKéMON attacks using its sword-edged
+    tail.
+  url_name: seviper
+Lunatone:
+  number: '337'
+  description: LUNATONE was discovered at a location where a meteorite fell. As a
+    result, some people theorize that this POKéMON came from space. However, no one
+    has been able to prove this theory so far.
+  url_name: lunatone
+Solrock:
+  number: '338'
+  description: SOLROCK is a new species of POKéMON that is said to have fallen from
+    space. It floats in air and moves silently. In battle, this POKéMON releases intensely
+    bright light.
+  url_name: solrock
+Barboach:
+  number: '339'
+  description: BARBOACH’s sensitive whiskers serve as a superb radar system. This
+    POKéMON hides in mud, leaving only its two whiskers exposed while it waits for
+    prey to come along.
+  url_name: barboach
+Whiscash:
+  number: '340'
+  description: WHISCASH is extremely territorial. Just one of these POKéMON will claim
+    a large pond as its exclusive territory. If a foe approaches it, it thrashes about
+    and triggers a massive earthquake.
+  url_name: whiscash
+Corphish:
+  number: '341'
+  description: CORPHISH were originally foreign POKéMON that were imported as pets.
+    They eventually turned up in the wild. This POKéMON is very hardy and has greatly
+    increased its population.
+  url_name: corphish
+Crawdaunt:
+  number: '342'
+  description: CRAWDAUNT has an extremely violent nature that compels it to challenge
+    other living things to battle. Other life-forms refuse to live in ponds inhabited
+    by this POKéMON, making them desolate places.
+  url_name: crawdaunt
+Baltoy:
+  number: '343'
+  description: BALTOY moves while spinning around on its one foot. Primitive wall
+    paintings depicting this POKéMON living among people were discovered in some ancient
+    ruins.
+  url_name: baltoy
+Claydol:
+  number: '344'
+  description: CLAYDOL are said to be dolls of mud made by primitive humans and brought
+    to life by exposure to a mysterious ray. This POKéMON moves about while levitating.
+  url_name: claydol
+Lileep:
+  number: '345'
+  description: LILEEP became extinct approximately a hundred million years ago. This
+    ancient POKéMON attaches itself to a rock on the seafloor and catches approaching
+    prey using tentacles  shaped like flower petals.
+  url_name: lileep
+Cradily:
+  number: '346'
+  description: CRADILY roams around the ocean floor in search of food. This POKéMON
+    freely extends its tree trunk-like neck and captures unwary prey using its eight
+    tentacles.
+  url_name: cradily
+Anorith:
+  number: '347'
+  description: ANORITH was regenerated from a prehistoric fossil. This primitive POKéMON
+    once lived in warm seas. It grips its prey firmly between its two large claws.
+  url_name: anorith
+Armaldo:
+  number: '348'
+  description: ARMALDO’s tough armor makes all attacks bounce off. This POKéMON’s
+    two enormous claws can be freely extended or contracted. They have the power to
+    punch right through a steel slab.
+  url_name: armaldo
+Feebas:
+  number: '349'
+  description: FEEBAS’s fins are ragged and tattered from the start of its life. Because
+    of its shoddy appearance, this POKéMON is largely ignored. It is capable of living
+    in both the sea and in rivers.
+  url_name: feebas
+Milotic:
+  number: '350'
+  description: MILOTIC is said to be the most beautiful of all the POKéMON. It has
+    the power to becalm such emotions as anger and hostility to quell bitter feuding.
+  url_name: milotic
+Castform:
+  number: '351'
+  description: CASTFORM’s appearance changes with the weather. This POKéMON gained
+    the ability to use the vast power of nature to protect its tiny body.
+  url_name: castform
+Kecleon:
+  number: '352'
+  description: KECLEON is capable of changing its body colors at will to blend in
+    with its surroundings. There is one exception - this POKéMON can’t change the
+    zigzag pattern on its belly.
+  url_name: kecleon
+Shuppet:
+  number: '353'
+  description: SHUPPET is attracted by feelings of jealousy and vindictiveness. If
+    someone develops strong feelings of vengeance, this POKéMON will appear in a swarm
+    and line up beneath the eaves of that person’s home.
+  url_name: shuppet
+Banette:
+  number: '354'
+  description: BANETTE generates energy for laying strong curses by sticking pins
+    into its own body. This POKéMON was originally a pitiful plush doll that was thrown
+    away.
+  url_name: banette
+Duskull:
+  number: '355'
+  description: DUSKULL can pass through any wall no matter how thick it may be. Once
+    this POKéMON chooses a target, it will doggedly pursue the intended victim until
+    the break of dawn.
+  url_name: duskull
+Dusclops:
+  number: '356'
+  description: DUSCLOPS’s body is completely hollow - there is nothing at all inside.
+    It is said that its body is like a black hole. This POKéMON will absorb anything
+    into its body, but nothing will ever come back out.
+  url_name: dusclops
+Tropius:
+  number: '357'
+  description: The bunches of fruit around TROPIUS’s neck are very popular with children.
+    This POKéMON loves fruit, and eats it continuously. Apparently, its love for fruit
+    resulted in its own outgrowth of fruit.
+  url_name: tropius
+Chimecho:
+  number: '358'
+  description: CHIMECHO makes its cries echo inside its hollow body. When this POKéMON
+    becomes enraged, its cries result in ultrasonic waves that have the power to knock
+    foes flying.
+  url_name: chimecho
+Absol:
+  number: '359'
+  description: Every time ABSOL appears before people, it is followed by a disaster
+    such as an earthquake or a tidal wave. As a result, it came to be known as the
+    disaster POKéMON.
+  url_name: absol
+Wynaut:
+  number: '360'
+  description: WYNAUT can always be seen with a big, happy smile on its face. Look
+    at its tail to determine if it is angry. When angered, this POKéMON will be slapping
+    the ground with its tail.
+  url_name: wynaut
+Snorunt:
+  number: '361'
+  description: SNORUNT live in regions with heavy snowfall. In seasons without snow,
+    such as spring and summer, this POKéMON steals away to live quietly among stalactites
+    and stalagmites deep in caverns.
+  url_name: snorunt
+Glalie:
+  number: '362'
+  description: GLALIE has a body made of rock, which it hardens with an armor of ice.
+    This POKéMON has the ability to freeze moisture in the atmosphere into any shape
+    it desires.
+  url_name: glalie
+Spheal:
+  number: '363'
+  description: SPHEAL is much faster rolling than  walking to get around. When groups
+    of this POKéMON eat, they all clap at once to show their pleasure. Because of
+    this, their mealtimes are noisy.
+  url_name: spheal
+Sealeo:
+  number: '364'
+  description: SEALEO has the habit of always juggling on the tip of its nose anything
+    it sees for the first time. This POKéMON occasionally entertains itself by balancing
+    and rolling a SPHEAL on its nose.
+  url_name: sealeo
+Walrein:
+  number: '365'
+  description: WALREIN’s two massively developed tusks can totally shatter blocks
+    of ice weighing ten tons with one blow. This POKéMON’s thick coat of blubber insulates
+    it from subzero temperatures.
+  url_name: walrein
+Clamperl:
+  number: '366'
+  description: CLAMPERL’s sturdy shell is not only good for protection - it is also
+    used for clamping and catching prey. A fully grown CLAMPERL’s shell will be scored
+    with nicks and scratches all over.
+  url_name: clamperl
+Huntail:
+  number: '367'
+  description: HUNTAIL’s presence went unnoticed by people for a long time because
+    it lives at extreme depths in the sea. This POKéMON’s eyes can see clearly even
+    in the murky dark depths of the ocean.
+  url_name: huntail
+Gorebyss:
+  number: '368'
+  description: GOREBYSS lives in the southern seas at extreme depths. Its body is
+    built to withstand the enormous pressure of water at incredible depths. Because
+    of this, this POKéMON’s body is unharmed by ordinary attacks.
+  url_name: gorebyss
+Relicanth:
+  number: '369'
+  description: RELICANTH is a POKéMON species that existed for a hundred million years
+    without ever changing its form. This ancient POKéMON feeds on microscopic organisms
+    with its toothless mouth.
+  url_name: relicanth
+Luvdisc:
+  number: '370'
+  description: LUVDISC live in shallow seas in the tropics. This heart-shaped POKéMON
+    earned its name by swimming after loving couples it spotted in the ocean’s waves.
+  url_name: luvdisc
+Bagon:
+  number: '371'
+  description: BAGON has a dream of one day soaring in the sky. In doomed efforts
+    to fly, this POKéMON hurls itself off cliffs. As a result of its dives, its head
+    has  grown tough and as hard as tempered steel.
+  url_name: bagon
+Shelgon:
+  number: '372'
+  description: Inside SHELGON’s armor-like shell, cells are in the midst of transformation
+    to create an entirely new body. This POKéMON’s shell is extremely heavy, making
+    its movements sluggish.
+  url_name: shelgon
+Salamence:
+  number: '373'
+  description: SALAMENCE came about as a result of a strong, long-held dream of growing
+    wings. It is said that this powerful desire triggered a sudden mutation in this
+    POKéMON’s cells, causing it to sprout its magnificent wings.
+  url_name: salamence
+Beldum:
+  number: '374'
+  description: Instead of blood, a powerful magnetic force courses throughout BELDUM’s
+    body. This POKéMON communicates with others by sending controlled pulses of magnetism.
+  url_name: beldum
+Metang:
+  number: '375'
+  description: When two BELDUM fuse together, METANG is formed. The brains of the
+    BELDUM are joined by a magnetic nervous system. By linking its brains magnetically,
+    this POKéMON generates strong psychokinetic power.
+  url_name: metang
+Metagross:
+  number: '376'
+  description: METAGROSS has four brains in total. Combined, the four brains can breeze
+    through difficult calculations faster than a supercomputer. This POKéMON can float
+    in the air by tucking in its four legs.
+  url_name: metagross
+Regirock:
+  number: '377'
+  description: REGIROCK was sealed away by people long ago. If this POKéMON’s body
+    is damaged in battle, it is said to seek out suitable rocks on its own to repair
+    itself.
+  url_name: regirock
+Regice:
+  number: '378'
+  description: REGICE’s body was made during an ice age. The deep-frozen body can’t
+    be melted, even by fire. This POKéMON controls frigid air of minus 328 degrees
+    F.
+  url_name: regice
+Registeel:
+  number: '379'
+  description: REGISTEEL has a body that is harder than any kind of metal. Its body
+    is apparently hollow. No one has any idea what this POKéMON eats.
+  url_name: registeel
+Latias:
+  number: '380'
+  description: LATIAS is highly sensitive to the emotions of people. If it senses
+    any hostility, this POKéMON ruffles the feathers all over its body and cries shrilly
+    to intimidate the foe.
+  url_name: latias
+Latios:
+  number: '381'
+  description: LATIOS has the ability to make its foe see an image of what it has
+    seen or imagines in its head. This POKéMON is intelligent and understands human
+    speech.
+  url_name: latios
+Kyogre:
+  number: '382'
+  description: KYOGRE has the power to create massive rain clouds that cover the entire
+    sky and bring about torrential downpours. This POKéMON saved people who were suffering
+    from droughts.
+  url_name: kyogre
+Groudon:
+  number: '383'
+  description: GROUDON has long been described in  mythology as the POKéMON that raised
+    lands and expanded continents. This POKéMON took to sleep after a cataclysmic
+    battle with KYOGRE.
+  url_name: groudon
+Rayquaza:
+  number: '384'
+  description: RAYQUAZA lived for hundreds of millions of years in the earth’s ozone
+    layer,  never descending to the ground. This POKéMON appears to feed on water
+    and particles in the atmosphere.
+  url_name: rayquaza
+Jirachi:
+  number: '385'
+  description: A legend states that JIRACHI will make true any wish that is written
+    on notes attached to its head when it awakens. If this POKéMON senses danger,
+    it will fight without awakening.
+  url_name: jirachi
+Deoxys:
+  number: '386'
+  description: The DNA of a space virus underwent a sudden mutation upon exposure
+    to a laser beam and resulted in DEOXYS. The crystalline organ on this POKéMON’s
+    chest appears to be its brain.
+  url_name: deoxys
+Turtwig:
+  number: '387'
+  description: Made from soil, the shell on its back hardens when it drinks water.
+    It lives along lakes.
+  url_name: turtwig
+Grotle:
+  number: '388'
+  description: It lives along water in forests. In the daytime, it leaves the forest
+    to sunbathe its treed shell.
+  url_name: grotle
+Torterra:
+  number: '389'
+  description: Small Pokémon occasionally gather on its unmoving back to begin building
+    their nests.
+  url_name: torterra
+Chimchar:
+  number: '390'
+  description: It agilely scales sheer cliffs to live atop craggy mountains. Its fire
+    is put out when it sleeps.
+  url_name: chimchar
+Monferno:
+  number: '391'
+  description: To intimidate attackers, it stretches the fire on its tail to make
+    itself appear bigger.
+  url_name: monferno
+Infernape:
+  number: '392'
+  description: It uses a special kind of martial arts involving all its limbs. Its
+    fire never goes out.
+  url_name: infernape
+Piplup:
+  number: '393'
+  description: Because it is very proud, it hates accepting food from people. Its
+    thick down guards it from cold.
+  url_name: piplup
+Prinplup:
+  number: '394'
+  description: It lives alone, away from others. Apparently, every one of them believes
+    it is the most important.
+  url_name: prinplup
+Empoleon:
+  number: '395'
+  description: The three horns that extend from its beak attest to its power. The
+    leader has the biggest horns.
+  url_name: empoleon
+Starly:
+  number: '396'
+  description: They flock in great numbers. Though small, they flap their wings with
+    great power.
+  url_name: starly
+Staravia:
+  number: '397'
+  description: It flies around forests and fields in search of bug Pokémon. It stays
+    within a huge flock.
+  url_name: staravia
+Staraptor:
+  number: '398'
+  description: It has a savage nature. It will courageously challenge foes that are
+    much larger.
+  url_name: staraptor
+Bidoof:
+  number: '399'
+  description: With nerves of steel, nothing can perturb it. It is more agile and
+    active than it appears.
+  url_name: bidoof
+Bibarel:
+  number: '400'
+  description: It makes its nest by damming streams with bark and mud. It is known
+    as an industrious worker.
+  url_name: bibarel
+Kricketot:
+  number: '401'
+  description: It shakes its head back to front, causing its antennae to hit each
+    other and sound like a xylophone.
+  url_name: kricketot
+Kricketune:
+  number: '402'
+  description: It crosses its knifelike arms in front of its chest when it cries.
+    It can compose melodies ad lib.
+  url_name: kricketune
+Shinx:
+  number: '403'
+  description: All of its fur dazzles if danger is sensed. It flees while the foe
+    is momentarily blinded.
+  url_name: shinx
+Luxio:
+  number: '404'
+  description: Its claws loose electricity with enough amperage to cause fainting.
+    They live in small groups.
+  url_name: luxio
+Luxray:
+  number: '405'
+  description: It has eyes that can see through anything. It spots and captures prey
+    hiding behind objects.
+  url_name: luxray
+Budew:
+  number: '406'
+  description: Over the winter, it closes its bud and endures the cold. In spring,
+    the bud opens and releases pollen.
+  url_name: budew
+Roserade:
+  number: '407'
+  description: It attracts prey with a sweet aroma, then downs it with thorny whips
+    hidden in its arms.
+  url_name: roserade
+Cranidos:
+  number: '408'
+  description: It lived in jungles around 100 million years ago. Its skull is as hard
+    as iron.
+  url_name: cranidos
+Rampardos:
+  number: '409'
+  description: Its powerful head butt has enough power to shatter even the most durable
+    things upon impact.
+  url_name: rampardos
+Shieldon:
+  number: '410'
+  description: A Pokémon that lived in jungles around 100 million years ago. Its facial
+    hide is extremely hard.
+  url_name: shieldon
+Bastiodon:
+  number: '411'
+  description: Any frontal attack is repulsed. It is a docile Pokémon that feeds on
+    grass and berries.
+  url_name: bastiodon
+Burmy:
+  number: '412'
+  description: To shelter itself from cold, wintry winds, it covers itself with a
+    cloak made of twigs and leaves.
+  url_name: burmy
+Wormadam:
+  number: '413'
+  description: When BURMY evolved, its cloak became a part of this Pokémon’s body.
+    The cloak is never shed.
+  url_name: wormadam
+Mothim:
+  number: '414'
+  description: It loves the honey of flowers and steals honey collected by COMBEE.
+  url_name: mothim
+Combee:
+  number: '415'
+  description: A Pokémon formed by three others. It busily carries sweet floral honey
+    to VESPIQUEN.
+  url_name: combee
+Vespiquen:
+  number: '416'
+  description: Its abdomen is a honeycomb for grubs. It raises its grubs on honey
+    collected by COMBEE.
+  url_name: vespiquen
+Pachirisu:
+  number: '417'
+  description: It makes fur balls that crackle with static electricity. It stores
+    them with berries in tree holes.
+  url_name: pachirisu
+Buizel:
+  number: '418'
+  description: It has a flotation sac that is like an inflatable collar. It floats
+    on water with its head out.
+  url_name: buizel
+Floatzel:
+  number: '419'
+  description: It floats using its well-developed flotation sac. It assists in the
+    rescues of drowning people.
+  url_name: floatzel
+Cherubi:
+  number: '420'
+  description: The small ball holds the nutrients needed for evolution. Apparently,
+    it is very sweet and tasty.
+  url_name: cherubi
+Cherrim:
+  number: '421'
+  description: It blooms during times of strong sunlight. It tries to make up for
+    everything it endured as a bud.
+  url_name: cherrim
+Shellos:
+  number: '422'
+  description: Its colors and shapes differ from region to region. In the Sinnoh region,
+    two types are confirmed.
+  url_name: shellos
+Gastrodon:
+  number: '423'
+  description: It has a pliable body without any bones. If any part of its body is
+    torn off, it grows right back.
+  url_name: gastrodon
+Ambipom:
+  number: '424'
+  description: To eat, it deftly shucks nuts with its two tails. It rarely uses its
+    arms now.
+  url_name: ambipom
+Drifloon:
+  number: '425'
+  description: A Pokémon formed by the spirits of people and Pokémon. It loves damp,
+    humid seasons.
+  url_name: drifloon
+Drifblim:
+  number: '426'
+  description: It’s drowzy in daytime, but flies off in the evening in big groups.
+    No one knows where they go.
+  url_name: drifblim
+Buneary:
+  number: '427'
+  description: It slams foes by sharply uncoiling its rolled ears. It stings enough
+    to make a grown-up cry in pain.
+  url_name: buneary
+Lopunny:
+  number: '428'
+  description: An extremely cautious Pokémon. It cloaks its body with its fluffy ear
+    fur when it senses danger.
+  url_name: lopunny
+Mismagius:
+  number: '429'
+  description: Its cries sound like incantations. Those hearing it are tormented by
+    headaches and hallucinations.
+  url_name: mismagius
+Honchkrow:
+  number: '430'
+  description: Becoming active at night, it is known to swarm with numerous MURKROW
+    in tow.
+  url_name: honchkrow
+Glameow:
+  number: '431'
+  description: It claws if displeased and purrs when affectionate. Its fickleness
+    is very popular among some.
+  url_name: glameow
+Purugly:
+  number: '432'
+  description: It is a brazen brute that barges its way into another Pokémon’s nest
+    and claims it as its own.
+  url_name: purugly
+Chingling:
+  number: '433'
+  description: It emits cries by agitating an orb at the back of its throat. It moves
+    with flouncing hops.
+  url_name: chingling
+Stunky:
+  number: '434'
+  description: It protects itself by spraying a noxious fluid from its rear. The stench
+    lingers for 24 hours.
+  url_name: stunky
+Skuntank:
+  number: '435'
+  description: It sprays a vile-smelling fluid from the tip of its tail to attack.
+    Its range is over 160 feet.
+  url_name: skuntank
+Bronzor:
+  number: '436'
+  description: Implements shaped like it were discovered in ancient tombs. It is unknown
+    if they are related.
+  url_name: bronzor
+Bronzong:
+  number: '437'
+  description: One caused a news sensation when it was dug up at a construction site
+    after a 2,000-year sleep.
+  url_name: bronzong
+Bonsly:
+  number: '438'
+  description: It looks as if it is always crying. It is actually adjusting its body’s
+    fluid levels by eliminating excess.
+  url_name: bonsly
+Mime Jr.:
+  number: '439'
+  description: It habitually mimics foes. Once mimicked, the foe cannot take its eyes
+    off this Pokémon.
+  url_name: mime-jr
+Happiny:
+  number: '440'
+  description: It loves round white things. It carries an egg-shaped rock in imitation
+    of CHANSEY.
+  url_name: happiny
+Chatot:
+  number: '441'
+  description: It can learn and speak human words. If they gather, they all learn
+    the same saying.
+  url_name: chatot
+Spiritomb:
+  number: '442'
+  description: A Pokémon that was formed by 108 spirits. It is bound to a fissure
+    in an odd keystone.
+  url_name: spiritomb
+Gible:
+  number: '443'
+  description: It nests in small, horizontal holes in cave walls. It pounces to catch
+    prey that stray too close.
+  url_name: gible
+Gabite:
+  number: '444'
+  description: There is a long-held belief that medicine made from its scales will
+    heal even incurable illnesses.
+  url_name: gabite
+Garchomp:
+  number: '445'
+  description: When it folds up its body and extends its wings, it looks like a jet
+    plane. It flies at sonic speed.
+  url_name: garchomp
+Munchlax:
+  number: '446'
+  description: It wolfs down its weight in food once a day, swallowing food whole
+    with almost no chewing.
+  url_name: munchlax
+Riolu:
+  number: '447'
+  description: The aura that emanates from its body intensifies to alert others if
+    it is afraid or sad.
+  url_name: riolu
+Lucario:
+  number: '448'
+  description: It has the ability to sense the auras of all things. It understands
+    human speech.
+  url_name: lucario
+Hippopotas:
+  number: '449'
+  description: It lives in arid places. Instead of perspiration, it expels grainy
+    sand from its body.
+  url_name: hippopotas
+Hippowdon:
+  number: '450'
+  description: It blasts internally stored sand from ports on its body to create a
+    towering twister for attack.
+  url_name: hippowdon
+Skorupi:
+  number: '451'
+  description: It grips prey with its tail claws and injects poison. It tenaciously
+    hangs on until the poison takes.
+  url_name: skorupi
+Drapion:
+  number: '452'
+  description: It has the power in its clawed arms to make scrap of a car. The tips
+    of its claws release poison.
+  url_name: drapion
+Croagunk:
+  number: '453'
+  description: Its cheeks hold poison sacs. It tries to catch foes off guard to jab
+    them with toxic fingers.
+  url_name: croagunk
+Toxicroak:
+  number: '454'
+  description: Its knuckle claws secrete a toxin so vile that even a scratch could
+    prove fatal.
+  url_name: toxicroak
+Carnivine:
+  number: '455'
+  description: It attracts prey with its sweet-smelling saliva, then chomps down.
+    It takes a whole day to eat prey.
+  url_name: carnivine
+Finneon:
+  number: '456'
+  description: After long exposure to sunlight, the patterns on its tail fins shine
+    vividly when darkness arrives.
+  url_name: finneon
+Lumineon:
+  number: '457'
+  description: It lives on the deep-sea floor. It attracts prey by flashing the patterns
+    on its four tail fins.
+  url_name: lumineon
+Mantyke:
+  number: '458'
+  description: A friendly Pokémon that captures the subtle flows of seawater using
+    its two antennae.
+  url_name: mantyke
+Snover:
+  number: '459'
+  description: It lives on snowy mountains. Having had little contact with humans,
+    it is boldly inquisitive.
+  url_name: snover
+Abomasnow:
+  number: '460'
+  description: It whips up blizzards in mountains that are always buried in snow.
+    It is the abominable snowman.
+  url_name: abomasnow
+Weavile:
+  number: '461'
+  description: They live in cold regions, forming groups of four or five that hunt
+    prey with impressive coordination.
+  url_name: weavile
+Magnezone:
+  number: '462'
+  description: It evolved from exposure to a special magnetic field. Three units generate
+    magnetism.
+  url_name: magnezone
+Lickilicky:
+  number: '463'
+  description: It wraps things with its extensible tongue. Getting too close to it
+    will leave you soaked with drool.
+  url_name: lickilicky
+Rhyperior:
+  number: '464'
+  description: It puts rocks in holes in its palms and uses its muscles to shoot them.
+    GEODUDE are shot at rare times.
+  url_name: rhyperior
+Tangrowth:
+  number: '465'
+  description: It ensnares prey by extending arms made of vines. Losing arms to predators
+    does not trouble it.
+  url_name: tangrowth
+Electivire:
+  number: '466'
+  description: It pushes the tips of its two tails against the foe, then lets loose
+    with over 20,000 volts of power.
+  url_name: electivire
+Magmortar:
+  number: '467'
+  description: It blasts fireballs of over 3,600 degrees F from the ends of its arms.
+    It lives in volcanic craters.
+  url_name: magmortar
+Togekiss:
+  number: '468'
+  description: It will never appear where there is strife. Its sightings have become
+    rare recently.
+  url_name: togekiss
+Yanmega:
+  number: '469'
+  description: By churning its wings, it creates shock waves that inflict critical
+    internal injuries to foes.
+  url_name: yanmega
+Leafeon:
+  number: '470'
+  description: Just like a plant, it uses photosynthesis. As a result, it is always
+    enveloped in clear air.
+  url_name: leafeon
+Glaceon:
+  number: '471'
+  description: As a protective technique, it can completely freeze its fur to make
+    its hairs stand like needles.
+  url_name: glaceon
+Gliscor:
+  number: '472'
+  description: It observes prey while hanging inverted from branches. When the chance
+    presents itself, it swoops!
+  url_name: gliscor
+Mamoswine:
+  number: '473'
+  description: Its impressive tusks are made of ice. The population thinned when it
+    turned warm after the ice age.
+  url_name: mamoswine
+Porygon-Z:
+  number: '474'
+  description: Additional software was installed to make it a better Pokémon. It began
+    acting oddly, however.
+  url_name: porygon-z
+Gallade:
+  number: '475'
+  description: A master of courtesy and swordsmanship, it fights using extending swords
+    on its elbows.
+  url_name: gallade
+Probopass:
+  number: '476'
+  description: It exudes strong magnetism from all over. It controls three small units
+    called Mini-Noses.
+  url_name: probopass
+Dusknoir:
+  number: '477'
+  description: The antenna on its head captures radio waves from the world of spirits
+    that command it to take people there.
+  url_name: dusknoir
+Froslass:
+  number: '478'
+  description: It freezes foes with an icy breath nearly -60 degrees F. What seems
+    to be its body is actually hollow.
+  url_name: froslass
+Rotom:
+  number: '479'
+  description: Its body is composed of plasma. It is known to infiltrate electronic
+    devices and wreak havoc.
+  url_name: rotom
+Uxie:
+  number: '480'
+  description: Known as “The Being of Knowledge.” It is said that it can wipe out
+    the memory of those who see its eyes.
+  url_name: uxie
+Mesprit:
+  number: '481'
+  description: Known as “The Being of Emotion.” It taught humans the nobility of sorrow,
+    pain, and joy.
+  url_name: mesprit
+Azelf:
+  number: '482'
+  description: Known as “The Being of Willpower.” It sleeps at the bottom of a lake
+    to keep the world in balance.
+  url_name: azelf
+Dialga:
+  number: '483'
+  description: It has the power to control time. It appears in Sinnoh-region myths
+    as an ancient deity.
+  url_name: dialga
+Palkia:
+  number: '484'
+  description: It has the ability to distort space. It is described as a deity in
+    Sinnoh-region mythology.
+  url_name: palkia
+Heatran:
+  number: '485'
+  description: It dwells in volcanic caves. It digs in with its cross-shaped feet
+    to crawl on ceilings and walls.
+  url_name: heatran
+Regigigas:
+  number: '486'
+  description: There is an enduring legend that states this Pokémon towed continents
+    with ropes.
+  url_name: regigigas
+Giratina:
+  number: '487'
+  description: A Pokémon that is said to live in a world on the reverse side of ours.
+    It appears in an ancient cemetery.
+  url_name: giratina
+Cresselia:
+  number: '488'
+  description: Shiny particles are released from its wings like a veil. It is said
+    to represent the crescent moon.
+  url_name: cresselia
+Phione:
+  number: '489'
+  description: A Pokémon that lives in warm seas. It inflates the flotation sac on
+    its head to drift and search for food.
+  url_name: phione
+Manaphy:
+  number: '490'
+  description: Born on a cold seafloor, it will swim great distances to return to
+    its birthplace.
+  url_name: manaphy
+Darkrai:
+  number: '491'
+  description: It can lull people to sleep and make them dream. It is active during
+    nights of the new moon.
+  url_name: darkrai
+Shaymin:
+  number: '492'
+  description: It lives in flower patches and avoids detection by curling up to look
+    like a flowering plant.
+  url_name: shaymin
+Arceus:
+  number: '493'
+  description: It is described in mythology as the Pokémon that shaped the universe
+    with its 1,000 arms.
+  url_name: arceus
+Victini:
+  number: '494'
+  description: This Pokémon brings victory. It is said that Trainers with Victini
+    always win, regardless of the type of encounter.
+  url_name: victini
+Snivy:
+  number: '495'
+  description: It is very intelligent and calm. Being exposed to lots of sunlight
+    makes its movements swifter.
+  url_name: snivy
+Servine:
+  number: '496'
+  description: It moves along the ground as if sliding. Its swift movements befuddle
+    its foes, and it then attacks with a vine whip.
+  url_name: servine
+Serperior:
+  number: '497'
+  description: It can stop its opponents’ movements with just a glare. It takes in
+    solar energy and boosts it internally.
+  url_name: serperior
+Tepig:
+  number: '498'
+  description: It can deftly dodge its foe’s attacks while shooting fireballs from
+    its nose. It roasts berries before it eats them.
+  url_name: tepig
+Pignite:
+  number: '499'
+  description: When its internal fire flares up, its movements grow sharper and faster.
+    When in trouble, it emits smoke.
+  url_name: pignite
+Emboar:
+  number: '500'
+  description: It can throw a fire punch by setting its fists on fire with its fiery
+    chin. It cares deeply about its friends.
+  url_name: emboar
+Oshawott:
+  number: '501'
+  description: It fights using the scalchop on its stomach. In response to an attack,
+    it retaliates immediately by slashing.
+  url_name: oshawott
+Dewott:
+  number: '502'
+  description: Strict training is how it learns its flowing double-scalchop technique.
+  url_name: dewott
+Samurott:
+  number: '503'
+  description: One swing of the sword incorporated in its armor can fell an opponent.
+    A simple glare from one of them quiets everybody.
+  url_name: samurott
+Patrat:
+  number: '504'
+  description: Using food stored in cheek pouches, they can keep watch for days. They
+    use their tails to communicate with others.
+  url_name: patrat
+Watchog:
+  number: '505'
+  description: When they see an enemy, their tails stand high, and they spit the seeds
+    of berries stored in their cheek pouches.
+  url_name: watchog
+Lillipup:
+  number: '506'
+  description: It faces strong opponents with great courage. But, when at a disadvantage
+    in a fight, this intelligent Pokémon flees.
+  url_name: lillipup
+Herdier:
+  number: '507'
+  description: It has black, cape-like fur that is very hard and decreases the amount
+    of damage it receives.
+  url_name: herdier
+Stoutland:
+  number: '508'
+  description: It rescues people stranded by blizzards in the mountains. Its shaggy
+    fur shields it from the cold.
+  url_name: stoutland
+Purrloin:
+  number: '509'
+  description: They steal from people for fun, but their victims can’t help but forgive
+    them. Their deceptively cute act is perfect.
+  url_name: purrloin
+Liepard:
+  number: '510'
+  description: These Pokémon vanish and appear unexpectedly. Many Trainers are drawn
+    to their beautiful form and fur.
+  url_name: liepard
+Pansage:
+  number: '511'
+  description: This Pokémon dwells deep in the forest. Eating a leaf from its head
+    whisks weariness away as if by magic.
+  url_name: pansage
+Simisage:
+  number: '512'
+  description: Ill tempered, it fights by swinging its barbed tail around wildly.
+    The leaf growing on its head is very bitter.
+  url_name: simisage
+Pansear:
+  number: '513'
+  description: When it is angered, the temperature of its head tuft reaches 600° F.
+    It uses its tuft to roast berries.
+  url_name: pansear
+Simisear:
+  number: '514'
+  description: It loves sweets because they become energy for the fire burning inside
+    its body.
+  url_name: simisear
+Panpour:
+  number: '515'
+  description: The water stored inside the tuft on its head is full of nutrients.
+    Plants that receive its water grow large.
+  url_name: panpour
+Simipour:
+  number: '516'
+  description: The tuft on its head holds water. When the level runs low, it replenishes
+    the tuft by siphoning up water with its tail.
+  url_name: simipour
+Munna:
+  number: '517'
+  description: Munna always float in the air. People whose dreams are eaten by them
+    forget what the dreams had been about.
+  url_name: munna
+Musharna:
+  number: '518'
+  description: The mist emanating from their foreheads is packed with the dreams of
+    people and Pokémon.
+  url_name: musharna
+Pidove:
+  number: '519'
+  description: Each follows its Trainer’s orders as best it can, but they sometimes
+    fail to understand complicated commands.
+  url_name: pidove
+Tranquill:
+  number: '520'
+  description: It can return to its Trainer’s location regardless of the distance
+    separating them.
+  url_name: tranquill
+Unfezant:
+  number: '521'
+  description: Males swing their head plumage to threaten opponents. The females’
+    flying abilities surpass those of the males.
+  url_name: unfezant
+Blitzle:
+  number: '522'
+  description: Its mane shines when it discharges electricity. They use their flashing
+    manes to communicate with one another.
+  url_name: blitzle
+Zebstrika:
+  number: '523'
+  description: They have lightning-like movements. When Zebstrika run at full speed,
+    the sound of thunder reverberates.
+  url_name: zebstrika
+Roggenrola:
+  number: '524'
+  description: Its ear is hexagonal in shape. Compressed underground, its body is
+    as hard as steel.
+  url_name: roggenrola
+Boldore:
+  number: '525'
+  description: When it overflows with power, the orange crystal on its body glows.
+    It looks for underground water in caves.
+  url_name: boldore
+Gigalith:
+  number: '526'
+  description: Compressing the energy from its internal core lets it fire off an attack
+    capable of blowing away a mountain.
+  url_name: gigalith
+Woobat:
+  number: '527'
+  description: Its habitat is dark forests and caves. It emits ultrasonic waves from
+    its nose to learn about its surroundings.
+  url_name: woobat
+Swoobat:
+  number: '528'
+  description: It emits sound waves of various frequencies from its nose, including
+    some powerful enough to destroy rocks.
+  url_name: swoobat
+Drilbur:
+  number: '529'
+  description: It can dig through the ground at a speed of 30 mph. It could give a
+    car running aboveground a good race.
+  url_name: drilbur
+Excadrill:
+  number: '530'
+  description: It can help in tunnel construction. Its drill has evolved into steel
+    strong enough to bore through iron plates.
+  url_name: excadrill
+Audino:
+  number: '531'
+  description: It touches others with the feelers on its ears, using the sound of
+    their heartbeats to tell how they are feeling.
+  url_name: audino
+Timburr:
+  number: '532'
+  description: It fights by swinging a piece of lumber around. It is close to evolving
+    when it can handle the lumber without difficulty.
+  url_name: timburr
+Gurdurr:
+  number: '533'
+  description: This Pokémon is so muscular and strongly built that even a group of
+    wrestlers could not make it budge an inch.
+  url_name: gurdurr
+Conkeldurr:
+  number: '534'
+  description: It is thought that Conkeldurr taught humans how to make concrete more
+    than 2,000 years ago.
+  url_name: conkeldurr
+Tympole:
+  number: '535'
+  description: They warn others of danger by vibrating their cheeks to create a high-pitched
+    sound.
+  url_name: tympole
+Palpitoad:
+  number: '536'
+  description: When they vibrate the bumps on their heads, they can make waves in
+    water or earthquake-like vibrations on land.
+  url_name: palpitoad
+Seismitoad:
+  number: '537'
+  description: They shoot paralyzing liquid from their head bumps. They use vibration
+    to hurt their opponents.
+  url_name: seismitoad
+Throh:
+  number: '538'
+  description: When it tightens its belt, it becomes stronger. Wild Throh use vines
+    to weave their own belts.
+  url_name: throh
+Sawk:
+  number: '539'
+  description: The sound of Sawk punching boulders and trees can be heard all the
+    way from the mountains where they train.
+  url_name: sawk
+Sewaddle:
+  number: '540'
+  description: Leavanny dress it in clothes they made for it when it hatched. It hides
+    its head in its hood while it is sleeping.
+  url_name: sewaddle
+Swadloon:
+  number: '541'
+  description: Forests where Swadloon live have superb foliage because the nutrients
+    they make from fallen leaves nourish the plant life.
+  url_name: swadloon
+Leavanny:
+  number: '542'
+  description: Upon finding a small Pokémon, it weaves clothing for it from leaves,
+    using the cutters on its arms and sticky silk.
+  url_name: leavanny
+Venipede:
+  number: '543'
+  description: Its bite injects a potent poison, enough to paralyze large bird Pokémon
+    that try to prey on it.
+  url_name: venipede
+Whirlipede:
+  number: '544'
+  description: Protected by a hard shell, it spins its body like a wheel and crashes
+    furiously into its enemies.
+  url_name: whirlipede
+Scolipede:
+  number: '545'
+  description: With quick movements, it chases down its foes, attacking relentlessly
+    with its horns until it prevails.
+  url_name: scolipede
+Cottonee:
+  number: '546'
+  description: When attacked, it escapes by shooting cotton from its body. The cotton
+    serves as a decoy to distract the attacker.
+  url_name: cottonee
+Whimsicott:
+  number: '547'
+  description: Like the wind, it can slip through any gap, no matter how small. It
+    leaves balls of white fluff behind.
+  url_name: whimsicott
+Petilil:
+  number: '548'
+  description: The leaves on its head are very bitter. Eating one of these leaves
+    is known to refresh a tired body.
+  url_name: petilil
+Lilligant:
+  number: '549'
+  description: Even veteran Trainers face a challenge in getting its beautiful flower
+    to bloom. This Pokémon is popular with celebrities.
+  url_name: lilligant
+Basculin:
+  number: '550'
+  description: Red and blue Basculin get along so poorly, they’ll start fighting instantly.
+    These Pokémon are very hostile.
+  url_name: basculin
+Sandile:
+  number: '551'
+  description: They live buried in the sands of the desert. The sun-warmed sands prevent
+    their body temperature from dropping.
+  url_name: sandile
+Krokorok:
+  number: '552'
+  description: They live in groups of a few individuals. Protective membranes shield
+    their eyes from sandstorms.
+  url_name: krokorok
+Krookodile:
+  number: '553'
+  description: They never allow prey to escape. Their jaws are so powerful, they can
+    crush the body of an automobile.
+  url_name: krookodile
+Darumaka:
+  number: '554'
+  description: When its internal fire is burning, it cannot calm down and it runs
+    around. When the fire diminishes, it falls asleep.
+  url_name: darumaka
+Darmanitan:
+  number: '555'
+  description: Its internal fire burns at 2,500° F, making enough power that it can
+    destroy a dump truck with one punch.
+  url_name: darmanitan
+Maractus:
+  number: '556'
+  description: It uses an up-tempo song and dance to drive away the bird Pokémon that
+    prey on its flower seeds.
+  url_name: maractus
+Dwebble:
+  number: '557'
+  description: This Pokémon can easily melt holes in hard rocks with a liquid secreted
+    from its mouth.
+  url_name: dwebble
+Crustle:
+  number: '558'
+  description: Competing for territory, Crustle fight viciously. The one whose boulder
+    is broken is the loser of the battle.
+  url_name: crustle
+Scraggy:
+  number: '559'
+  description: Its skin has a rubbery elasticity, so it can reduce damage by defensively
+    pulling its skin up to its neck.
+  url_name: scraggy
+Scrafty:
+  number: '560'
+  description: Groups of them beat up anything that enters their territory. Each can
+    spit acidic liquid from its mouth.
+  url_name: scrafty
+Sigilyph:
+  number: '561'
+  description: They never vary the route they fly, because their memories of guarding
+    an ancient city remain steadfast.
+  url_name: sigilyph
+Yamask:
+  number: '562'
+  description: Each of them carries a mask that used to be its face when it was human.
+    Sometimes they look at it and cry.
+  url_name: yamask
+Cofagrigus:
+  number: '563'
+  description: It has been said that they swallow those who get too close and turn
+    them into mummies. They like to eat gold nuggets.
+  url_name: cofagrigus
+Tirtouga:
+  number: '564'
+  description: Restored from a fossil, this Pokémon can dive to depths beyond half
+    a mile.
+  url_name: tirtouga
+Carracosta:
+  number: '565'
+  description: They can live both in the ocean and on land. A slap from one of them
+    is enough to open a hole in the bottom of a tanker.
+  url_name: carracosta
+Archen:
+  number: '566'
+  description: Said to be an ancestor of bird Pokémon, they were unable to fly and
+    moved about by hopping from one branch to another.
+  url_name: archen
+Archeops:
+  number: '567'
+  description: They are intelligent and will cooperate to catch prey. From the ground,
+    they use a running start to take flight.
+  url_name: archeops
+Trubbish:
+  number: '568'
+  description: Inhaling the gas they belch will make you sleep for a week. They prefer
+    unsanitary places.
+  url_name: trubbish
+Garbodor:
+  number: '569'
+  description: It clenches opponents with its left arm and finishes them off with
+    foul-smelling poison gas belched from its mouth.
+  url_name: garbodor
+Zorua:
+  number: '570'
+  description: It changes into the forms of others to surprise them. Apparently, it
+    often transforms into a silent child.
+  url_name: zorua
+Zoroark:
+  number: '571'
+  description: Bonds between these Pokémon are very strong. It protects the safety
+    of its pack by tricking its opponents.
+  url_name: zoroark
+Minccino:
+  number: '572'
+  description: They greet one another by rubbing each other with their tails, which
+    are always kept well groomed and clean.
+  url_name: minccino
+Cinccino:
+  number: '573'
+  description: Their white fur is coated in a special oil that makes it easy for them
+    to deflect attacks.
+  url_name: cinccino
+Gothita:
+  number: '574'
+  description: Their ribbonlike feelers increase their psychic power. They are always
+    staring at something.
+  url_name: gothita
+Gothorita:
+  number: '575'
+  description: They use hypnosis to control people and Pokémon. Tales of Gothorita
+    leading people astray are told in every corner.
+  url_name: gothorita
+Gothitelle:
+  number: '576'
+  description: Starry skies thousands of light-years away are visible in the space
+    distorted by their intense psychic power.
+  url_name: gothitelle
+Solosis:
+  number: '577'
+  description: They drive away attackers by unleashing psychic power. They can use
+    telepathy to talk with others.
+  url_name: solosis
+Duosion:
+  number: '578'
+  description: Since they have two divided brains, at times they suddenly try to take
+    two different actions at once.
+  url_name: duosion
+Reuniclus:
+  number: '579'
+  description: When Reuniclus shake hands, a network forms between their brains, increasing
+    their psychic power.
+  url_name: reuniclus
+Ducklett:
+  number: '580'
+  description: These bird Pokémon are excellent divers. They swim around in the water
+    eating their favorite food--peat moss.
+  url_name: ducklett
+Swanna:
+  number: '581'
+  description: Swanna start to dance at dusk. The one dancing in the middle is the
+    leader of the flock.
+  url_name: swanna
+Vanillite:
+  number: '582'
+  description: The temperature of their breath is -58° F. They create snow crystals
+    and make snow fall in the areas around them.
+  url_name: vanillite
+Vanillish:
+  number: '583'
+  description: Snowy mountains are this Pokémon’s habitat. During an ancient ice age,
+    they moved to southern areas.
+  url_name: vanillish
+Vanilluxe:
+  number: '584'
+  description: Swallowing large amounts of water, they make snow clouds inside their
+    bodies and attack their foes with violent blizzards.
+  url_name: vanilluxe
+Deerling:
+  number: '585'
+  description: The color and scent of their fur changes to match the mountain grass.
+    When they sense hostility, they hide in the grass.
+  url_name: deerling
+Sawsbuck:
+  number: '586'
+  description: They migrate according to the seasons. People can tell the season by
+    looking at Sawsbuck’s horns.
+  url_name: sawsbuck
+Emolga:
+  number: '587'
+  description: The energy made in its cheeks’ electric pouches is stored inside its
+    membrane and released while it is gliding.
+  url_name: emolga
+Karrablast:
+  number: '588'
+  description: These mysterious Pokémon evolve when they receive electrical stimulation
+    while they are in the same place as Shelmet.
+  url_name: karrablast
+Escavalier:
+  number: '589'
+  description: They fly around at high speed, striking with their pointed spears.
+    Even when in trouble, they face opponents bravely.
+  url_name: escavalier
+Foongus:
+  number: '590'
+  description: It lures people in with its Poké Ball pattern, then releases poison
+    spores. Why it resembles a Poké Ball is unknown.
+  url_name: foongus
+Amoonguss:
+  number: '591'
+  description: It lures prey close by dancing and waving its arm caps, which resemble
+    Poké Balls, in a swaying motion.
+  url_name: amoonguss
+Frillish:
+  number: '592'
+  description: With its thin, veil-like arms wrapped around the body of its opponent,
+    it sinks to the ocean floor.
+  url_name: frillish
+Jellicent:
+  number: '593'
+  description: ! 'The fate of the ships and crew that wander into Jellicent’s habitat:
+    all sunken, all lost, all vanished.'
+  url_name: jellicent
+Alomomola:
+  number: '594'
+  description: The special membrane enveloping Alomomola has the ability to heal wounds.
+  url_name: alomomola
+Joltik:
+  number: '595'
+  description: Joltik that live in cities have learned a technique for sucking electricity
+    from the outlets in houses.
+  url_name: joltik
+Galvantula:
+  number: '596'
+  description: When attacked, they create an electric barrier by spitting out many
+    electrically charged threads.
+  url_name: galvantula
+Ferroseed:
+  number: '597'
+  description: When threatened, it attacks by shooting a barrage of spikes, which
+    gives it a chance to escape by rolling away.
+  url_name: ferroseed
+Ferrothorn:
+  number: '598'
+  description: It fights by swinging around its three spiky feelers. A hit from these
+    steel spikes can reduce a boulder to rubble.
+  url_name: ferrothorn
+Klink:
+  number: '599'
+  description: The two minigears that mesh together are predetermined. Each will rebound
+    from other minigears without meshing.
+  url_name: klink
+Klang:
+  number: '600'
+  description: By changing the direction in which it rotates, it communicates its
+    feelings to others. When angry, it rotates faster.
+  url_name: klang
+Klinklang:
+  number: '601'
+  description: Its red core functions as an energy tank. It fires the charged energy
+    through its spikes into an area.
+  url_name: klinklang
+Tynamo:
+  number: '602'
+  description: While one alone doesn’t have much power, a chain of many Tynamo can
+    be as powerful as lightning.
+  url_name: tynamo
+Eelektrik:
+  number: '603'
+  description: They coil around foes and shock them with electricity-generating organs
+    that seem simply to be circular patterns.
+  url_name: eelektrik
+Eelektross:
+  number: '604'
+  description: They crawl out of the ocean using their arms. They will attack prey
+    on shore and immediately drag it into the ocean.
+  url_name: eelektross
+Elgyem:
+  number: '605'
+  description: It uses its strong psychic power to squeeze its opponent’s brain, causing
+    unendurable headaches.
+  url_name: elgyem
+Beheeyem:
+  number: '606'
+  description: It can manipulate an opponent’s memory. Apparently, it communicates
+    by flashing its three different-colored fingers.
+  url_name: beheeyem
+Litwick:
+  number: '607'
+  description: Litwick shines a light that absorbs the life energy of people and Pokémon,
+    which becomes the fuel that it burns.
+  url_name: litwick
+Lampent:
+  number: '608'
+  description: This ominous Pokémon is feared. Through cities it wanders, searching
+    for the spirits of the fallen.
+  url_name: lampent
+Chandelure:
+  number: '609'
+  description: It absorbs a spirit, which it then burns. By waving the flames on its
+    arms, it puts its foes into a hypnotic trance.
+  url_name: chandelure
+Axew:
+  number: '610'
+  description: They use their tusks to crush the berries they eat. Repeated regrowth
+    makes their tusks strong and sharp.
+  url_name: axew
+Fraxure:
+  number: '611'
+  description: Since a broken tusk will not grow back, they diligently sharpen their
+    tusks on river rocks after they’ve been fighting.
+  url_name: fraxure
+Haxorus:
+  number: '612'
+  description: They are kind but can be relentless when defending territory. They
+    challenge foes with tusks that can cut steel.
+  url_name: haxorus
+Cubchoo:
+  number: '613'
+  description: When it is not feeling well, its mucus gets watery and the power of
+    its Ice-type moves decreases.
+  url_name: cubchoo
+Beartic:
+  number: '614'
+  description: It can make its breath freeze at will. Very able in the water, it swims
+    around in northern seas and catches prey.
+  url_name: beartic
+Cryogonal:
+  number: '615'
+  description: When its body temperature goes up, it turns into steam and vanishes.
+    When its temperature lowers, it returns to ice.
+  url_name: cryogonal
+Shelmet:
+  number: '616'
+  description: When attacked, it defends itself by closing the lid of its shell. It
+    can spit a sticky, poisonous liquid.
+  url_name: shelmet
+Accelgor:
+  number: '617'
+  description: When its body dries out, it weakens. So, to prevent dehydration, it
+    wraps itself in many layers of thin membrane.
+  url_name: accelgor
+Stunfisk:
+  number: '618'
+  description: Its skin is very hard, so it is unhurt even if stepped on by sumo wrestlers.
+    It smiles when transmitting electricity.
+  url_name: stunfisk
+Mienfoo:
+  number: '619'
+  description: In fights, they dominate with onslaughts of flowing, continuous attacks.
+    With their sharp claws, they cut enemies.
+  url_name: mienfoo
+Mienshao:
+  number: '620'
+  description: It wields the fur on its arms like a whip. Its arm attacks come with
+    such rapidity that they cannot even be seen.
+  url_name: mienshao
+Druddigon:
+  number: '621'
+  description: It warms its body by absorbing sunlight with its wings. When its body
+    temperature falls, it can no longer move.
+  url_name: druddigon
+Golett:
+  number: '622'
+  description: The energy that burns inside it enables it to move, but no one has
+    yet been able to identify this energy.
+  url_name: golett
+Golurk:
+  number: '623'
+  description: It flies across the sky at Mach speeds. Removing the seal on its chest
+    makes its internal energy go out of control.
+  url_name: golurk
+Pawniard:
+  number: '624'
+  description: Blades comprise this Pokémon’s entire body. If battling dulls the blades,
+    it sharpens them on stones by the river.
+  url_name: pawniard
+Bisharp:
+  number: '625'
+  description: It leads a group of Pawniard. It battles to become the boss, but will
+    be driven from the group if it loses.
+  url_name: bisharp
+Bouffalant:
+  number: '626'
+  description: Their fluffy fur absorbs damage, even if they strike foes with a fierce
+    headbutt.
+  url_name: bouffalant
+Rufflet:
+  number: '627'
+  description: They crush berries with their talons. They bravely stand up to any
+    opponent, no matter how strong it is.
+  url_name: rufflet
+Braviary:
+  number: '628'
+  description: They fight for their friends without any thought about danger to themselves.
+    One can carry a car while flying.
+  url_name: braviary
+Vullaby:
+  number: '629'
+  description: Its wings are too tiny to allow it to fly. As the time approaches for
+    it to evolve, it discards the bones it was wearing.
+  url_name: vullaby
+Mandibuzz:
+  number: '630'
+  description: It makes a nest out of bones it finds. It grabs weakened prey in its
+    talons and hauls it to its nest of bones.
+  url_name: mandibuzz
+Heatmor:
+  number: '631'
+  description: It breathes through a hole in its tail while it burns with an internal
+    fire. Durant is its prey.
+  url_name: heatmor
+Durant:
+  number: '632'
+  description: They attack in groups, covering themselves in steel armor to protect
+    themselves from Heatmor.
+  url_name: durant
+Deino:
+  number: '633'
+  description: It tends to bite everything, and it is not a picky eater. Approaching
+    it carelessly is dangerous.
+  url_name: deino
+Zweilous:
+  number: '634'
+  description: After it has eaten up all the food in its territory, it moves to another
+    area. Its two heads do not get along.
+  url_name: zweilous
+Hydreigon:
+  number: '635'
+  description: This brutal Pokémon travels the skies on its six wings. Anything that
+    moves seems like a foe to it, triggering its attack.
+  url_name: hydreigon
+Larvesta:
+  number: '636'
+  description: This Pokémon was believed to have been born from the sun. When it evolves,
+    its entire body is engulfed in flames.
+  url_name: larvesta
+Volcarona:
+  number: '637'
+  description: When volcanic ash darkened the atmosphere, it is said that Volcarona’s
+    fire provided a replacement for the sun.
+  url_name: volcarona
+Cobalion:
+  number: '638'
+  description: This legendary Pokémon battled against humans to protect Pokémon. Its
+    personality is calm and composed.
+  url_name: cobalion
+Terrakion:
+  number: '639'
+  description: This Pokémon came to the defense of Pokémon that had lost their homes
+    in a war among humans.
+  url_name: terrakion
+Virizion:
+  number: '640'
+  description: This Pokémon fought humans in order to protect its friends. Legends
+    about it continue to be passed down.
+  url_name: virizion
+Tornadus:
+  number: '641'
+  description: The lower half of its body is wrapped in a cloud of energy. It zooms
+    through the sky at 200 mph.
+  url_name: tornadus
+Thundurus:
+  number: '642'
+  description: Countless charred remains mar the landscape of places through which
+    Thundurus has passed.
+  url_name: thundurus
+Reshiram:
+  number: '643'
+  description: This Pokémon appears in legends. It sends flames into the air from
+    its tail, burning up everything around it.
+  url_name: reshiram
+Zekrom:
+  number: '644'
+  description: Concealing itself in lightning clouds, it flies throughout the Unova
+    region. It creates electricity in its tail.
+  url_name: zekrom
+Landorus:
+  number: '645'
+  description: Lands visited by Landorus grant such bountiful crops that it has been
+    hailed as “The Guardian of the Fields.”
+  url_name: landorus
+Kyurem:
+  number: '646'
+  description: It generates a powerful, freezing energy inside itself, but its body
+    became frozen when the energy leaked out.
+  url_name: kyurem
+Keldeo:
+  number: '647'
+  description: By blasting water from its hooves, it can glide across water. It excels
+    at using leg moves while battling.
+  url_name: keldeo
+Meloetta:
+  number: '648'
+  description: Its melodies are sung with a special vocalization method that can control
+    the feelings of those who hear it.
+  url_name: meloetta
+Genesect:
+  number: '649'
+  description: Over 300 million years ago, it was feared as the strongest of hunters.
+    It has been modified by Team Plasma.
+  url_name: genesect
+Chespin:
+  number: '650'
+  description: The quills on its head are usually soft. When it flexes them, the points
+    become so hard and sharp that they can pierce rock.
+  url_name: chespin
+Quilladin:
+  number: '651'
+  description: They strengthen their lower bodies by running into one another. They
+    are very kind and won't start fights.
+  url_name: quilladin
+Chesnaught:
+  number: '652'
+  description: When it takes a defensive posture with its fists guarding its face,
+    it could withstand a bomb blast.
+  url_name: chesnaught
+Fennekin:
+  number: '653'
+  description: Eating a twig fills it with energy, and its roomy ears give vent to
+    air hotter than 390 degrees Fahrenheit.
+  url_name: fennekin
+Braixen:
+  number: '654'
+  description: It has a twig stuck in its tail. With friction from its tail fur, it
+    sets the twig on fire and launches into battle.
+  url_name: braixen
+Delphox:
+  number: '655'
+  description: Using psychic power, it generates a fiery vortex of 5,400 degrees Fahrenheit,
+    incinerating foes swept into this whirl of flame.
+  url_name: delphox
+Froakie:
+  number: '656'
+  description: It secretes flexible bubbles from its chest and back. The bubbles reduce
+    the damage it would otherwise take when attacked.
+  url_name: froakie
+Frogadier:
+  number: '657'
+  description: It can throw bubble-covered pebbles with precise control, hitting empty
+    cans up to a hundred feet away.
+  url_name: frogadier
+Greninja:
+  number: '658'
+  description: It creates throwing stars out of compressed water. When it spins them
+    and throws them at high speed, these stars can split metal in two.
+  url_name: greninja
+Bunnelby:
+  number: '659'
+  description: They use their large ears to dig burrows. They will dig the whole night
+    through.
+  url_name: bunnelby
+Diggersby:
+  number: '660'
+  description: As powerful as an excavator, its ears can reduce dense bedrock to rubble.
+    When it's finished digging, it lounges lazily.
+  url_name: diggersby
+Fletchling:
+  number: '661'
+  description: These friendly Pokémon send signals to one another with beautiful chirps
+    and tail-feather movements.
+  url_name: fletchling
+Fletchinder:
+  number: '662'
+  description: From its beak, it expels embers that set the tall grass on fire. Then
+    it pounces on the bewildered prey that pop out of the grass.
+  url_name: fletchinder
+Talonflame:
+  number: '663'
+  description: When attacking prey, it can reach speeds of up to 310 mph. It finishes
+    its prey off with a colossal kick.
+  url_name: talonflame
+Scatterbug:
+  number: '664'
+  description: When under attack from bird Pokémon, it spews a poisonous black powder
+    that causes paralysis on contact.
+  url_name: scatterbug
+Spewpa:
+  number: '665'
+  description: It lives hidden within thicket shadows. When predators attack, it quickly
+    bristles the fur covering its body in an effort to threaten them.
+  url_name: spewpa
+Vivillon:
+  number: '666'
+  description: Vivillon with many different patterns are found all over the world.
+    These patterns are affected by the climate of their habitat.
+  url_name: vivillon
+Litleo:
+  number: '667'
+  description: The stronger the opponent it faces, the more heat surges from its mane
+    and the more power flows through its body.
+  url_name: litleo
+Pyroar:
+  number: '668'
+  description: The male with the largest mane of fire is the leader of the pride.
+  url_name: pyroar
+Flabébé:
+  number: '669'
+  description: It draws out and controls the hidden power of flowers. The flower Flabébé
+    holds is most likely part of its body.
+  url_name: flabebe
+Floette:
+  number: '670'
+  description: When the flowers of a well-tended flower bed bloom, it appears and
+    celebrates with an elegant dance.
+  url_name: floette
+Florges:
+  number: '671'
+  description: ''
+  url_name: florges
+Skiddo:
+  number: '672'
+  description: Thought to be one of the first Pokémon to live in harmony with humans,
+    it has a placid disposition.
+  url_name: skiddo
+Gogoat:
+  number: '673'
+  description: They inhabit mountainous regions. The leader of the herd is decided
+    by a battle of clashing horns.
+  url_name: gogoat
+Pancham:
+  number: '674'
+  description: It does its best to be taken seriously by its enemies, but its glare
+    is not sufficiently intimidating. Chewing on a leaf is its trademark.
+  url_name: pancham
+Pangoro:
+  number: '675'
+  description: It charges ahead and bashes its opponents like a berserker, uncaring
+    about any hits it might take. Its arms are mighty enough to snap a telephone pole.
+  url_name: pangoro
+Furfrou:
+  number: '676'
+  description: Trimming its fluffy fur not only makes it more elegant but also increases
+    the swiftness of its movements.
+  url_name: furfrou
+Espurr:
+  number: '677'
+  description: The organ that emits its intense psychic power is sheltered by its
+    ears to keep power from leaking out.
+  url_name: espurr
+Meowstic:
+  number: '678'
+  description: The eyeball patterns on the interior of its ears emit psychic energy.
+    It keeps the patterns tightly covered because that power is too immense.
+  url_name: meowstic
+Honedge:
+  number: '679'
+  description: Apparently this Pokémon is born when a departed spirit inhabits a sword.
+    It attaches itself to people and drinks their life force.
+  url_name: honedge
+Doublade:
+  number: '680'
+  description: The complex attack patterns of its two swords are unstoppable, even
+    for an opponent greatly accomplished at swordplay.
+  url_name: doublade
+Aegislash:
+  number: '681'
+  description: ''
+  url_name: aegislash
+Spritzee:
+  number: '682'
+  description: In the past, rather than using perfume, royal ladies carried a Spritzee
+    that would waft a fragrance they liked.
+  url_name: spritzee
+Aromatisse:
+  number: '683'
+  description: ''
+  url_name: aromatisse
+Swirlix:
+  number: '684'
+  description: To entangle its opponents in battle, it extrudes white threads as sweet
+    and sticky as cotton candy.
+  url_name: swirlix
+Slurpuff:
+  number: '685'
+  description: ''
+  url_name: slurpuff
+Inkay:
+  number: '686'
+  description: Opponents who stare at the flashing of the light-emitting spots on
+    its body become dazed and lose their will to fight.
+  url_name: inkay
+Malamar:
+  number: '687'
+  description: It lures its prey close with sypnotic motions, then wraps its tentacles
+    around it before finishing it off with digestive fluids.
+  url_name: malamar
+Binacle:
+  number: '688'
+  description: They stretch and then contract, yanking their rocks along with them
+    in bold hops. They eat seaweed that washes up on the shoreline.
+  url_name: binacle
+Barbaracle:
+  number: '689'
+  description: Barbaracle's legs and hands have minds of their own, and they will
+    move independently. But they usually follow the head's orders.
+  url_name: barbaracle
+Skrelp:
+  number: '690'
+  description: ''
+  url_name: skrelp
+Dragalge:
+  number: '691'
+  description: Tales are told of ships that wander into seas where Dragalge live,
+    never to return.
+  url_name: dragalge
+Clauncher:
+  number: '692'
+  description: ''
+  url_name: clauncher
+Clawitzer:
+  number: '693'
+  description: Their enormous claws launch cannonballs of water powerful enough to
+    pierce tanker hulls.
+  url_name: clawitzer
+Helioptile:
+  number: '694'
+  description: ! 'They make their home in deserts. They can generate their energy
+    from basking in the sun, so eating food is not a requirement. '
+  url_name: helioptile
+Heliolisk:
+  number: '695'
+  description: ''
+  url_name: heliolisk
+Tyrunt:
+  number: '696'
+  description: Its immense jaws have enough destructive force that it can chew up
+    an automobile. It lived 100 million years ago.
+  url_name: tyrunt
+Tyrantrum:
+  number: '697'
+  description: ''
+  url_name: tyrantrum
+Amaura:
+  number: '698'
+  description: This ancient Pokémon was restored from part of its body that had been
+    frozen in ice for over 100 million years.
+  url_name: amaura
+Aurorus:
+  number: '699'
+  description: ''
+  url_name: aurorus
+Sylveon:
+  number: '700'
+  description: It sends soothing aurra from its ribbonlike feelers to calm fights.
+  url_name: sylveon
+Hawlucha:
+  number: '701'
+  description: Although its body is small, its proficient fighting skills enable it
+    to keep up with big bruisers like Machamp and Hariyama.
+  url_name: hawlucha
+Dedenne:
+  number: '702'
+  description: ''
+  url_name: dedenne
+Carbink:
+  number: '703'
+  description: Born from the temperatures and pressures deep underground, it fires
+    beams from the stone in its head.
+  url_name: carbink
+Goomy:
+  number: '704'
+  description: The weakest Dragon-Type Pokémon, it lives in damp, shady places, so
+    its body doesn't dry out.
+  url_name: goomy
+Sliggoo:
+  number: '705'
+  description: ! 'It drives away opponents by excreting a sticky liquid that can dissolve
+    anything. Its eyes devolved, so it can''t see anything. '
+  url_name: sliggoo
+Goodra:
+  number: '706'
+  description: This very friendly Dragon-type Pokémon will hug its beloved trainer,
+    leaving that trainer covered in sticky slime
+  url_name: goodra
+Klefki:
+  number: '707'
+  description: These Key collectors threaten any attackers by fiercely jingling their
+    keys at them.
+  url_name: klefki
+Phantump:
+  number: '708'
+  description: ''
+  url_name: phantump
+Trevenant:
+  number: '709'
+  description: Using its roots as a nervous system, it controls the trees in the forest.
+    It's kind to the Pokémon that reside in its body.
+  url_name: trevenant
+Pumpkaboo:
+  number: '710'
+  description: ''
+  url_name: pumpkaboo
+Gourgeist:
+  number: '711'
+  description: ''
+  url_name: gourgeist
+Bergmite:
+  number: '712'
+  description: It blocks opponents' attacks with the ice that shields its body. it
+    uses cold air to repair any cracks with new ice.
+  url_name: bergmite
+Avalugg:
+  number: '713'
+  description: The way several Bergmite huddle on its back makes it look like an aircraft
+    carrier made of ice.
+  url_name: avalugg
+Noibat:
+  number: '714'
+  description: ''
+  url_name: noibat
+Noivern:
+  number: '715'
+  description: ''
+  url_name: noivern
+Xerneas:
+  number: '716'
+  description: ''
+  url_name: xerneas
+Yveltal:
+  number: '717'
+  description: When its life comes to an end, it absorbs the life energy of every
+    living thing and turns into a cacoon once more.
+  url_name: yveltal
+Zygarde:
+  number: '718'
+  description: It's hypothesized that it's monitoring those who destroy the ecosystem
+    from deep in the cave where it lives.
+  url_name: zygarde

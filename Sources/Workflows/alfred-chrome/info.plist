@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>it.cowtech.chrome</string>
+	<key>connections</key>
+	<dict>
+		<key>FB00D234-FF04-426F-94FC-121AE8F207FF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B22059BB-77D1-4D92-A577-FA8C8A98D659</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>ShogunPanda</string>
+	<key>description</key>
+	<string>Open Chrome as a specific User</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Chrome Profiles Management</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>chrome</string>
+				<key>subtext</key>
+				<string>Open URL in Google Chrome, as a specific user and/or in incognito</string>
+				<key>text</key>
+				<string>Open in Google Chrome</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FB00D234-FF04-426F-94FC-121AE8F207FF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>#!/usr/bin/env ruby
+
+require "rubygems"
+require "strscan"
+require "oj"
+
+def parse_request
+  scanner = StringScanner.new("{query}".strip)
+
+  # Get the user
+  user = scanner.scan(/as \S+\s*/i)
+  user = user.gsub(/^as /, "").strip if user
+  incognito = !!scanner.scan(/\s*in incognito\s*/i)
+  url = scanner.rest.strip
+  url = nil if url.empty?
+  profiles = load_profiles
+  profile = profiles[user]
+  user = nil if !profile
+
+  {:user =&gt; user, :incognito =&gt; incognito, :url =&gt; url, :profiles =&gt; profiles, :profile =&gt; profile}
+end
+
+def load_profiles
+  Dir.glob(File.expand_path("~/Library/Application\ Support/Google/Chrome/**/Preferences")).reduce({}) do |accu, profile_data|
+    profile = Oj.load_file(profile_data)
+    folder = File.basename(File.dirname(profile_data))
+    name = profile.fetch("profile", {}).fetch("name", nil)
+    accu[name] = folder if name
+    accu
+  end
+end
+
+def chrome_running?
+  `ps aux` =~ /Google Chrome/
+end
+
+def add_to_chrome(request)
+  new_user = "tell application \"System Events\" to tell process \"Google Chrome\" to click menu item \"#{request[:user]}\" of menu 9 of menu bar 1\ndelay 1.5" 
+  script = &lt;&lt;-EOSCRIPT
+    tell application "Google Chrome"
+      activate
+
+      # Get the window mode and the original frontmost window
+      set original_front to the frontmost
+      set window_mode to "#{request[:incognito] ? "incognito" : "normal"}"
+      set new_user to #{request[:user] ? true : false}
+
+      # Switch the user if needed
+      #{request[:user] ? new_user : nil}
+
+      # Get the new frontmost window
+      set current_front to the frontmost
+
+      if window_mode is "incognito" then
+        make new window with properties {mode: "incognito"}
+        set URL of active tab of window 1 to "#{request[:url]}"
+      else
+        if original_front is not false and current_front is original_front then
+          make new tab at the end of window 1 with properties {URL: "#{request[:url]}"}
+        else
+          set URL of active tab of window 1 to "#{request[:url]}"
+        end if
+      end if
+    end tell
+  EOSCRIPT
+
+  IO.popen("osascript", "w") {|pipe| pipe.write(script) }
+end
+
+def open_chrome(request)
+  args = []
+  args &lt;&lt; " --profile-directory=\"#{request[:profile]}\"" if request[:profile]
+  args &lt;&lt; " --incognito" if request[:incognito]
+  args &lt;&lt; " --new-window " + request[:url]
+  `open -a "Google Chrome" --args#{args}`
+end
+
+if chrome_running? then
+  add_to_chrome(parse_request)
+else
+  open_chrome(parse_request)
+end</string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B22059BB-77D1-4D92-A577-FA8C8A98D659</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>For more information, visit: https://github.com/ShogunPanda/alfred-chrome.</string>
+	<key>uidata</key>
+	<dict>
+		<key>B22059BB-77D1-4D92-A577-FA8C8A98D659</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>FB00D234-FF04-426F-94FC-121AE8F207FF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/ShogunPanda/alfred-chrome</string>
+</dict>
+</plist>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>4303ABE3-17E0-4088-A541-3DE7B75D7BF3</key>
+		<array/>
+		<key>5FA1E7AB-F03C-4A9F-A374-6AEE226EBE20</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4303ABE3-17E0-4088-A541-3DE7B75D7BF3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Charlie Hield</string>
+	<key>description</key>
+	<string>Control Plug app from Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>PowerPlug</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)		# Open Plug / Bring to front 	if (q = "") then		tell application "Plug" to activate	end if		# Filter Query / Set Correct buttonCode	if (q = "open") then		tell application "Plug" to open	else if (q = "quit") then		tell application "Plug" to quit	else if q is in {"min", "minify"} then		set buttonCode to "minimize button"	else if q is in {"max", "expand"} then		set buttonCode to "zoom button"	else if q is in {"prev", "previous"} then		set buttonCode to "Back"	else if q is in {"p", "play", "pause", "toggle"} then		set buttonCode to "Play/Pause"	else if q is in {"next", "skip"} then		set buttonCode to "Forward"	else if q is in {"love", "fav", "favorite"} then		set buttonCode to "Favorite"	else if q is in {"shuffle", "random"} then		set buttonCode to "Shuffle"	else if (q = "share") then		set buttonCode to "Share"	end if		# Interact with the Plug App	tell application "System Events"		tell process "Plug"			click (first button whose description is buttonCode) of window 1		end tell	end tell	end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>4303ABE3-17E0-4088-A541-3DE7B75D7BF3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>pp</string>
+				<key>subtext</key>
+				<string>Control the Plug app with Alfred (see Readme for more info)</string>
+				<key>text</key>
+				<string>PowerPlug</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5FA1E7AB-F03C-4A9F-A374-6AEE226EBE20</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Power Plug let's you quickly control the Plug App.
+
+----------------------------------------------------
+| Keyword 				| Control				|
+----------------------------------------------------
+| quit					| Quit Plug				|
+| min, minify			| Minify Window			|
+| max, expand			| Expand Window			|
+| prev, previous 		| Previous Track			|
+| p, play, pause, toggle	| Play / Pause			|
+| next, skip				| Next Track				|
+| love, fav, favorite		| Favorite / Unfavorite	|
+| shuffle, random		| Shuffle Tracks			|
+| share					| Share Track 			|
+----------------------------------------------------</string>
+	<key>uidata</key>
+	<dict>
+		<key>4303ABE3-17E0-4088-A541-3DE7B75D7BF3</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>5FA1E7AB-F03C-4A9F-A374-6AEE226EBE20</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>charliehield.com</string>
+</dict>
+</plist>

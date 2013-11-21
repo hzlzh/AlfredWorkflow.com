@@ -49,7 +49,7 @@ class YouDaoTranslation
 				echo $response->translation[0]."\n";
 				if (isset($response->basic) AND isset($response->basic->explains) AND count($response->basic->explains) > 0)
 				{
-					foreach ($response->basic->explains as $item) 
+					foreach ($response->basic->explains as $item)
 					{
 						echo $item."\n\r";
 					}
@@ -58,12 +58,18 @@ class YouDaoTranslation
 		}
 	}
 
-	public function listInAlfred()
+	public function listInAlfred($add2wb = False)
 	{
 		$response = $this->_data;
 		if (isset($response->translation) AND isset($response->translation[0]))
 		{
-			$int = 1;
+            $int = 1;
+            if ($add2wb) {
+                // Add to wordbook
+                $hint = "Add \"$this->_query\" to Youdao wordbook";
+                $this->_workflow->result($int.'.'.time(), "$this->_query"."ADD", "$hint", '', 'icon.png');
+                $int++;
+            }
 			if ($this->_query != $response->translation[0])
 			{
 				$translation = str_replace('\\', '', $response->translation[0]);
@@ -77,7 +83,8 @@ class YouDaoTranslation
 			{
 				foreach($response->basic->explains as $item)
 				{
-					$this->_workflow->result($int.'.'.time(), "$item", "$item", '简明释义', 'icon.png');
+                    $this->_workflow->result($int.'.'.time(), "$item", "$item", '简明释义', 'icon.png');
+                    //$this->_workflow->result($int.'.'.time(), "$item", "$item", 'hello', 'icon.png');
 					$int++;
 				}
 			}
@@ -90,7 +97,8 @@ class YouDaoTranslation
 					$this->_workflow->result($int.'.'.time(), "$values", "$values", "网络释义：$item->key", 'icon.png');
 					$int++;
 				}
-			} 
+			}
+
 		}
 
 		$results = $this->_workflow->results();

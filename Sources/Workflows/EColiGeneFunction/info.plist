@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>EcoCyc</string>
+	<key>connections</key>
+	<dict>
+		<key>620F4615-D8B5-4569-84E8-D376C28A5A5D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>ED552DE7-C383-4554-8A55-FEBC487A3F43</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>ED552DE7-C383-4554-8A55-FEBC487A3F43</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B52008F0-BFE3-4E80-A135-2D4B2C723039</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Josh Silverman</string>
+	<key>description</key>
+	<string>Give a name get a function</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>EColiGeneFunctionwww</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>620F4615-D8B5-4569-84E8-D376C28A5A5D</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>gn</string>
+				<key>runningsubtext</key>
+				<string>finding {query}</string>
+				<key>script</key>
+				<string>import commands, os
+
+stringOfResults = commands.getoutput('grep -F {query} gene.txt | cut -f 3,9')
+results = stringOfResults.split('\n')
+pairs = [result.split('\t') for result in results]
+
+pairsDict = [{'gene': pair[0], 'description': pair[1]} for pair in pairs]
+
+text = """
+&lt;item arg="%(gene)s" uid="%(gene)s"&gt;
+	&lt;title&gt;%(gene)s&lt;/title&gt;
+	&lt;subtitle&gt;%(description)s&lt;/subtitle&gt;
+	&lt;icon type="jpg"&gt;geneIcon.jpg&lt;/icon&gt;
+&lt;/item&gt;
+"""
+
+print ("&lt;items&gt;%s&lt;/items&gt;" % "".join(text % thing for thing in pairsDict))</string>
+				<key>subtext</key>
+				<string>Function</string>
+				<key>title</key>
+				<string>Gene</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>ED552DE7-C383-4554-8A55-FEBC487A3F43</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>http://ecocyc.org/ECOLI/substring-search?type=GENE&amp;object={query}&amp;geneSearch=Gene+Search</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>B52008F0-BFE3-4E80-A135-2D4B2C723039</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>620F4615-D8B5-4569-84E8-D376C28A5A5D</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>B52008F0-BFE3-4E80-A135-2D4B2C723039</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>ED552DE7-C383-4554-8A55-FEBC487A3F43</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

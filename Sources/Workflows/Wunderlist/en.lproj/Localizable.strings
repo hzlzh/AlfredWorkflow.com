@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Wunderlist for Alfred
+
+  Created by Ian Paterson on 9/5/13.
+*/
+
+"Messages/Wunderlist is now on all desktops/Title" = "Wunderlist now on all desktops";
+"Messages/Wunderlist is now on all desktops/Message" = "The workflow has made Wunderlist visible on all desktops to improve reliability.";
+
+"Results/Add task to active list/Title" = "Most recently used";
+"Results/Add task to active list/Details" = "Add a task to the most recently used list";

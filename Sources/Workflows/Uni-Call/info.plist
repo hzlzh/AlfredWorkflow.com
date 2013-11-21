@@ -28,6 +28,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>08541403-BBB8-4F64-B149-5A52E3136F88</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>28BBD4A6-F125-4651-A83C-B8BAD8685DF2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>146CA72B-6714-450E-BD75-A6E79A333EB9</key>
 		<array>
 			<dict>
@@ -171,6 +182,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>D47F4C69-2F33-4974-AF4F-3027EF487BCB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>D635F69F-C7A5-49ED-8D7D-900627932693</key>
 		<array>
 			<dict>
@@ -230,6 +252,8 @@ case "$query" in
 		osascript bin/calltrunkcall.scpt ${query#'[CTCallTrunk]'};;
 	"[CTFritzBox]"*)
 		osascript bin/fritz!boxcall.scpt ${query#'[CTFritzBox]'};;
+	"[CTDialogue]"*)
+		open "x-dialogue://${query#'[CTDialogue]'}";;
 esac</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -749,23 +773,101 @@ fi</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>calll</string>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./bin/Uni\ Call\ Basestation -l "{query}"</string>
+				<key>subtext</key>
+				<string>Make a bluetooth phone call to your contact via Dialogue</string>
+				<key>title</key>
+				<string>Dialogue Call</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D47F4C69-2F33-4974-AF4F-3027EF487BCB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open "x-dialogue://{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>28BBD4A6-F125-4651-A83C-B8BAD8685DF2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>name</key>
+				<string>Dialogue Call</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.contact</string>
+			<key>uid</key>
+			<string>08541403-BBB8-4F64-B149-5A52E3136F88</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Uni Call
-v5.2
+v5.3
 
 The missing universal phone call workflow for Alfred
 ----------------------------------------------------
 
-Uni Call is an [Alfred](http://www.alfredapp.com) workflow providing the fastest way to make whatever phone call on your Mac OS X (ambitious :). It will look for information stored in your Apple Contacts (we love the address book :) to help you initiate your phone call as quickly as possible. Right now, with Uni Call, you can make [Skype](#skype-call), [FaceTime](#facetime-call), [bluetooth](#phone-amego-call) (via Phone Amego), [SIP](#sip-call) (via Telephone), [PushDialer](#pushdialer-call), [Google Voice](#growlvoice-call) (via GrowlVoice), [CallTrunk](#calltrunk-call) and [Fritz!Box](#fritzbox-call) phone call. However, more call methods could be added. Please let me know if you are interested!
+Uni Call is an [Alfred](http://www.alfredapp.com) workflow providing the fastest way to make whatever phone call on your Mac OS X (ambitious :). It will look for information stored in your Apple Contacts (we love the address book :) to help you initiate your phone call as quickly as possible. Right now, with Uni Call, you can make [Skype](#skype-call), [FaceTime](#facetime-call), bluetooth (via either [Phone Amego](#phone-amego-call) or [Dialogue](#dialogue-call)), [SIP](#sip-call) (via Telephone), [PushDialer](#pushdialer-call), [Google Voice](#growlvoice-call) (via GrowlVoice), [CallTrunk](#calltrunk-call) and [Fritz!Box](#fritzbox-call) phone call. However, more call methods could be added. Please let me know if you are interested!
 
 ![Uni Call](https://github.com/guiguan/Uni-Call/raw/master/Uni-Call.png)
 
-Uni Call workflow supports [Alleyoop auto-updater](http://www.alfredforum.com/topic/1582-alleyoop-update-alfred-workflows/). It has been tested on Skype 6.4.0.833, FaceTime 2.0 (1080), Phone Amego 1.4_9, Telephone 1.0.4 (104), PushDialer 1.7 (Build 64), GrowlVoice 2.0.3 (30), Call Trunk AU/UK/US 1.0 (1.0), Frizzix 1.6.17 (1347), Alfred 2.0.4 (199) and Mac OS X 10.8.4. Please note that the Mac OS X below 10.8 is not supported.
+Uni Call workflow supports [Alleyoop auto-updater](http://www.alfredforum.com/topic/1582-alleyoop-update-alfred-workflows/). It has been tested on Skype 6.8.0.351, FaceTime 2.0 (1080), Phone Amego 1.4.18.02, Telephone 1.0.4 (104), PushDialer 1.7 (Build 64), GrowlVoice 2.0.3 (30), Call Trunk AU/UK/US 1.0 (1.0), Frizzix 1.6.17 (1347), Dialogue 1.1 (70), Alfred 2.0.4 (199) and Mac OS X 10.8.5. Please note that the Mac OS X below 10.8 is not supported.
 
 If you like Uni Call, please consider making a small donation to [me](http://www.guiguan.net) via PayPal as to show your thanks and support for my work :)
 
 [![Donate](http://www.paypalobjects.com/en_AU/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=2QBXQLYQNF552&amp;lc=AU&amp;item_name=Uni%20Call&amp;item_number=Uni%20Call&amp;currency_code=AUD&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
+
+Installation &amp; Upgrade
+--------------
+
+1. Make sure the [Alfred](http://www.alfredapp.com) (with version 2 and above) and [Powerpack](http://www.alfredapp.com/powerpack) is installed
+2. Download the latest workflow: [Uni-Call.alfredworkflow 5.3](http://www.guiguan.net/downloads/Uni-Call.alfredworkflow)
+3. Double click on the downloaded workflow file to install
+4. Type the following command in your Alfred:
+
+		call --updatealfredpreferences yes
+
+5. (Optional) If you have used previous version of Uni Call, new components introduced in a new version are disabled by default. To enable them please refer to [Enable/disable Call Components](#enabledisable-call-components). 
+
+Support
+----------------
+Please file any issue from [this GitHub issue tracker](https://github.com/guiguan/Uni-Call/issues/new). Alternatively, you can leave comments on [my blog page](http://www.guiguan.net/uni-call). Or, you can post on the [Uni Call topic section of Alfred forum](http://www.guiguan.net/redirections/Alfred-Forum-Uni-Call).
+
+Detailed Usage
+--------------
 
 When you would like to make a call, simply type:
 
@@ -773,7 +875,7 @@ When you would like to make a call, simply type:
 
 where the TARGET could be:
 
-1. a phone number ([Skype](#skype-call), [FaceTime](#facetime-call), [Phone Amego](#phone-amego-call), [SIP](#sip-call), [PushDialer](#pushdialer-call), [GrowlVoice](#growlvoice-call), [CallTrunk](#calltrunk-call), [Fritz!Box](#fritzbox-call))
+1. a phone number ([Skype](#skype-call), [FaceTime](#facetime-call), [Phone Amego](#phone-amego-call), [SIP](#sip-call), [PushDialer](#pushdialer-call), [GrowlVoice](#growlvoice-call), [CallTrunk](#calltrunk-call), [Fritz!Box](#fritzbox-call), [Dialogue](#dialogue-call))
 2. a Skype username ([Skype](#skype-call))
 3. an email address ([FaceTime](#facetime-call))
 4. a SIP address ([SIP](#sip-call))
@@ -810,30 +912,35 @@ When typing the TARGET, the top N closest fuzzy matching results drawn from Appl
 		call -f TARGET
 		callf TARGET
 		
-6. **-p**: make a [bluetooth phone call](#phone-amego-call) to your contact via Phone Amego
+6. **-p**: make a bluetooth phone call to your contact via [Phone Amego](#phone-amego-call)
 
 		call -p TARGET
 		callp TARGET
 		callp TARGET /DEVICE_ALIAS_OR_DEVICE_LABEL  # select a device to use [*].
 
 	[*] Please refer to [Manage Aliases for Device Labels](#manage-aliases-for-device-labels)
+
+7. **-l**: make a bluetooth phone call to your contact via [Dialogue](#dialogue-call)
+
+		call -l TARGET
+		calll TARGET
 		
-7. **-i**: make a [SIP call](#sip-call) to your contact via Telephone
+8. **-i**: make a [SIP call](#sip-call) to your contact via Telephone
 
 		call -i TARGET
 		calli TARGET
 
-8. **-d**: make a [PushDialer call](#pushdialer-call) to your contact
+9. **-d**: make a [PushDialer call](#pushdialer-call) to your contact
 
 		call -d TARGET
 		calld TARGET
 
-9. **-g**: make a [Google Voice call](#growlvoice-call) to your contact via GrowlVoice
+10. **-g**: make a [Google Voice call](#growlvoice-call) to your contact via GrowlVoice
 
 		call -g TARGET
 		callg TARGET
 
-10. **-k**: make a [CallTrunk](#calltrunk-call) to your contact
+11. **-k**: make a [CallTrunk](#calltrunk-call) to your contact
 
 		call -k TARGET
 		callk TARGET
@@ -841,12 +948,12 @@ When typing the TARGET, the top N closest fuzzy matching results drawn from Appl
 
 	[*] Please refer to [Set Call Trunk Country](#set-call-trunk-country)
 
-11. **-z**: make a [Fritz!Box](#fritzbox-call) to your contact via Frizzix
+12. **-z**: make a [Fritz!Box](#fritzbox-call) to your contact via Frizzix
 
 		call -z TARGET
 		callz TARGET
 
-Alternatively, you can make calls using Alfred's Contacts Feature. There will be eight contact actions available for you to choose from in **_Alfred's Contacts Feature_** (under Alfred Preferences &gt; Features &gt; Contacts): [Skype Call](#skype-call), [FaceTime Call](#facetime-call), [Phone Amego Call](#phone-amego-call), [SIP Call](#sip-call), [PushDialer Call](#pushdialer-call), [GrowlVoice Call](#growlvoice-call), [CallTrunk Call](#calltrunk-call) and [Fritz!Box Call](#fritzbox-call).
+Alternatively, you can make calls using Alfred's Contacts Feature. There will be eight contact actions available for you to choose from in **_Alfred's Contacts Feature_** (under Alfred Preferences &gt; Features &gt; Contacts): [Skype Call](#skype-call), [FaceTime Call](#facetime-call), [Phone Amego Call](#phone-amego-call), [SIP Call](#sip-call), [PushDialer Call](#pushdialer-call), [GrowlVoice Call](#growlvoice-call), [CallTrunk Call](#calltrunk-call), [Fritz!Box Call](#fritzbox-call) and [Dialogue](#dialogue-call).
 
 ![Integrate Uni-Call with Alfred's Contacts Feature](https://github.com/guiguan/Uni-Call/raw/master/Alfred-Contacts-Feature.png)
 
@@ -866,6 +973,11 @@ Enjoy calling!</string>
 			<key>ypos</key>
 			<real>800</real>
 		</dict>
+		<key>08541403-BBB8-4F64-B149-5A52E3136F88</key>
+		<dict>
+			<key>ypos</key>
+			<real>1220</real>
+		</dict>
 		<key>146CA72B-6714-450E-BD75-A6E79A333EB9</key>
 		<dict>
 			<key>ypos</key>
@@ -880,6 +992,11 @@ Enjoy calling!</string>
 		<dict>
 			<key>ypos</key>
 			<real>620</real>
+		</dict>
+		<key>28BBD4A6-F125-4651-A83C-B8BAD8685DF2</key>
+		<dict>
+			<key>ypos</key>
+			<real>1220</real>
 		</dict>
 		<key>40A993D6-613C-4D0B-9083-E73ADD85C9B5</key>
 		<dict>
@@ -970,6 +1087,11 @@ Enjoy calling!</string>
 		<dict>
 			<key>ypos</key>
 			<real>980</real>
+		</dict>
+		<key>D47F4C69-2F33-4974-AF4F-3027EF487BCB</key>
+		<dict>
+			<key>ypos</key>
+			<real>1160</real>
 		</dict>
 		<key>D635F69F-C7A5-49ED-8D7D-900627932693</key>
 		<dict>

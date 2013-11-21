@@ -1,0 +1,3 @@
+on run argv
+    tell application "Viscosity" to return state of (connections where name is item 1 of argv)
+end run

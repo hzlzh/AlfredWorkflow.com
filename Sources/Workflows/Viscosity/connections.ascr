@@ -1,0 +1,7 @@
+set output to ""
+tell application "Viscosity" to set ls to name of every connection
+repeat with n in ls
+    set output to output & n & return
+end repeat
+return output
+

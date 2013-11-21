@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>3A9FF04E-FC9F-427C-B9CD-6ED69DDF42B7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5D6ADCB9-8B36-4694-A5ED-ECE83A7777DF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5D6ADCB9-8B36-4694-A5ED-ECE83A7777DF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>692FBC8B-1D68-4DB8-BA9F-24C84D3DDBCE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>PSiCKo</string>
+	<key>description</key>
+	<string>Crea un USB Bootable con Mavericks OS X</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Mavericks USB</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>mavericks usb</string>
+				<key>subtext</key>
+				<string>Crear un USB Bootble con Mavericks OS X</string>
+				<key>text</key>
+				<string>Mavericks USB</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3A9FF04E-FC9F-427C-B9CD-6ED69DDF42B7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstallmedia --volume /Volumes/p8 --applicationpath /Applications/Install\ OS\ X\ Mavericks.app --nointeraction</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>5D6ADCB9-8B36-4694-A5ED-ECE83A7777DF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Introduzca la clave y espere...</string>
+				<key>title</key>
+				<string>USB Preparado</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>692FBC8B-1D68-4DB8-BA9F-24C84D3DDBCE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Change the volume "p8" the name of your pendrive
+
+
+Cambia el nombre del volumen "p8" por el nombre de tu pendrive</string>
+	<key>uidata</key>
+	<dict>
+		<key>3A9FF04E-FC9F-427C-B9CD-6ED69DDF42B7</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>5D6ADCB9-8B36-4694-A5ED-ECE83A7777DF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>692FBC8B-1D68-4DB8-BA9F-24C84D3DDBCE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

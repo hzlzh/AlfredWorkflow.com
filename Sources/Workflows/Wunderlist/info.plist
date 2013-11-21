@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.ipaterson.alfred.wunderlist</string>
+	<key>connections</key>
+	<dict>
+		<key>0F2D229C-18BA-4E40-A81D-D796A6E159BC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3E4DEE0B-5C4C-4A9E-85A7-AC0826AB49F9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>954FB09A-0A22-450E-A5D6-0F58EC3760A0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>85433331-C5AC-4BE2-B602-FAF82DE8DCA4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D14D2445-537F-4FA7-B0E0-1FCAEE7CD292</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4647E456-6DB2-4EAB-807C-F4B3B5AB33E8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Ian Paterson</string>
+	<key>description</key>
+	<string>Create tasks and lists in Wunderlist 2</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Wunderlist</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>set workflowFolder to do shell script "pwd"
+set wunderlistlib to load script POSIX file (workflowFolder &amp; "/wunderlist.scpt")
+
+set task to "{query}" as text
+
+tell wunderlistlib
+	addTaskToInbox(task)
+end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4647E456-6DB2-4EAB-807C-F4B3B5AB33E8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>wlin</string>
+				<key>subtext</key>
+				<string>Drop a new task in your Wunderlist inbox</string>
+				<key>text</key>
+				<string>Inbox</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D14D2445-537F-4FA7-B0E0-1FCAEE7CD292</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>wllist</string>
+				<key>subtext</key>
+				<string>Create a new list with the specified name</string>
+				<key>text</key>
+				<string>New list in Wunderlist</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>954FB09A-0A22-450E-A5D6-0F58EC3760A0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>set workflowFolder to do shell script "pwd"
+set wllib to load script POSIX file (workflowFolder &amp; "/wunderlist.scpt")
+
+set task to "{query}" as text
+
+tell wllib
+	addList(task)
+end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>85433331-C5AC-4BE2-B602-FAF82DE8DCA4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>set workflowFolder to do shell script "pwd"
+set wllib to load script POSIX file (workflowFolder &amp; "/wunderlist.scpt")
+
+### From qWorkflow
+on q_split(s, delim)
+	set oldDelims to AppleScript's text item delimiters
+	set AppleScript's text item delimiters to delim
+	set output to text items of s
+	set AppleScript's text item delimiters to oldDelims
+	return output
+end q_split
+
+set listIndexAndTask to "{query}" as text
+
+set {listIndex, task} to q_split(listIndexAndTask, "::")
+
+tell wllib
+	addTaskToList(listIndex, task)
+end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3E4DEE0B-5C4C-4A9E-85A7-AC0826AB49F9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>wl</string>
+				<key>runningsubtext</key>
+				<string>Loading lists…</string>
+				<key>script</key>
+				<string>/usr/bin/env php "`pwd`/filters.php" filterListsToAddTask "{query}"</string>
+				<key>subtext</key>
+				<string>Drop a new task in the specified list</string>
+				<key>title</key>
+				<string>New task in Wunderlist</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0F2D229C-18BA-4E40-A81D-D796A6E159BC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Readme</string>
+	<key>uidata</key>
+	<dict>
+		<key>0F2D229C-18BA-4E40-A81D-D796A6E159BC</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>3E4DEE0B-5C4C-4A9E-85A7-AC0826AB49F9</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>4647E456-6DB2-4EAB-807C-F4B3B5AB33E8</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>85433331-C5AC-4BE2-B602-FAF82DE8DCA4</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>954FB09A-0A22-450E-A5D6-0F58EC3760A0</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>D14D2445-537F-4FA7-B0E0-1FCAEE7CD292</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/idpaterson</string>
+</dict>
+</plist>

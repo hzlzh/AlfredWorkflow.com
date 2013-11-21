@@ -1,0 +1,2390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>015CD7C5-A61D-43EA-B2C2-B3DD09E3216D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E4270E63-9BE3-46D2-BF8B-FC572AEFCD03</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>01D3BD6B-648F-4534-AEB9-4FAEFB2A371C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>76C1F87F-9912-442B-9ABF-791B9F28E617</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>03DB02FB-B041-4546-A9E0-FFF1F2E79A4B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9721A51C-4E5E-4205-8978-FB3AD9235263</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>0885EFBC-FC71-4FA2-B46E-B48741219EA6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>55FCC6BC-C1B1-4DEE-A3BC-EA08814AB1EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>096E4D4E-8BE3-4985-9BBD-676578F68C1F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>0A4B4725-64AF-4FC9-99BE-03A212A0C4E6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F41C8B50-CAC2-446E-8998-998924E79102</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>0F09B1A4-3F1B-4CFA-B6D8-D19BBDB6C6A8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>11EB2CCB-A2EC-4FC2-BC66-102F08804FD7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0F09B1A4-3F1B-4CFA-B6D8-D19BBDB6C6A8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>1293CEE8-5B69-4066-9664-CDACEAC26748</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>93621DD8-C4BD-4E85-B7F9-259758258D10</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>1915CA01-DE3B-41CF-9DC7-D3D84CF0300D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>84DA6CC6-A029-48CF-A346-E7F8EB47934A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>1F821961-42D9-4B69-97F5-5F5A45DDE135</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>156C4E4C-780C-4FBD-A53B-AE3CC6586C28</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2781B94B-1418-443F-80AA-D3FDCB018B1A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>67DA8F55-8957-49FD-B36F-7C7163AC5025</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>285C4B70-01FA-4188-8D66-CF43981E7603</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F479A139-2FE8-429A-B93F-520C01B125A4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2C0EA888-C6DA-4616-81DF-9AAFEC1399B9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>64F52033-C13E-4122-AAC0-380A2412411B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2D73FC5B-8A4C-47EE-85E6-0323D573C461</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FB7258AD-3E31-423F-B3C7-656923075544</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3623190A-E33D-4970-A7D9-28BA0E161D52</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>58C3DBA1-5D99-4262-8542-868E6304792B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>36F9F132-6208-460F-AE06-7BAB034F6D77</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6537D72C-964F-4998-96B7-CDE2FEE3B880</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3EB052C5-DCFD-45B1-9E5F-A9B8AC77E7C9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3EF2BBC9-0E3A-4285-8038-F69BC10730E4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8834CC1-EA0F-479B-8B1F-45FF1C5D1064</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>40152EE5-E447-41F3-8F5F-F411865CB2AA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D04BAAA3-3069-489E-A762-C70613A3AF01</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5208B487-243B-4B4C-AE92-43077398CF35</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>55A25122-A3C3-4629-85DA-7056318970F8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>999475D0-361D-4996-9397-C334714BF0FC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>55B90AE7-5273-458F-993E-EE9F628D1095</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5E0C8C77-D856-4A36-823E-18F89D5BD793</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>55FCC6BC-C1B1-4DEE-A3BC-EA08814AB1EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6033900D-DD96-47AB-88CA-08684F8F8830</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A52BCC81-5E82-4FBB-BD9D-D8825AA3B1BC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>60BC0385-8879-4C71-B62C-3C24987ECF11</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5E0C8C77-D856-4A36-823E-18F89D5BD793</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6537D72C-964F-4998-96B7-CDE2FEE3B880</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6DDA4482-F4E6-4D2D-878C-50EDE0B5E790</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BC957A78-CDDC-47A9-821E-9A389E34A9F3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>727DAA6D-82E4-4255-B468-E80A3CE7C581</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0885EFBC-FC71-4FA2-B46E-B48741219EA6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>74EAC6DB-6B51-4A23-8280-50CDC64B6A31</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C2292EEB-4255-417C-9D3D-0DD865A0A104</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>76C1F87F-9912-442B-9ABF-791B9F28E617</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9721A51C-4E5E-4205-8978-FB3AD9235263</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7EBAF5CE-2506-4999-8811-09DA33A8D4F3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>096E4D4E-8BE3-4985-9BBD-676578F68C1F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>81042120-46DF-4F8F-B6B9-32E4D3F0D2B3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3EB052C5-DCFD-45B1-9E5F-A9B8AC77E7C9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8365A382-15F8-401C-BDA5-9198D4CE6901</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>55B90AE7-5273-458F-993E-EE9F628D1095</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>84DA6CC6-A029-48CF-A346-E7F8EB47934A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>86AADBC4-096A-45B0-9BE3-DD6DEE4F26F1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5208B487-243B-4B4C-AE92-43077398CF35</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8FF71543-670C-4026-9DBF-D7A3D2085131</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B59F65AD-0F52-480D-A4EC-02BE5DFD23D3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>93621DD8-C4BD-4E85-B7F9-259758258D10</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9721A51C-4E5E-4205-8978-FB3AD9235263</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>988C5AEB-F8D6-4F7A-A148-716E7942B0F9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DC0FBA41-FB4D-4AA3-A1D1-CB5FD0600ECA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9EEBD9AD-76C2-4965-B9A6-407781DE027A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>10295729-67B5-45D4-AF68-059D863EB650</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B59F65AD-0F52-480D-A4EC-02BE5DFD23D3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>BC2EC6DC-6452-4BB1-9DAE-B263A100F137</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>BC957A78-CDDC-47A9-821E-9A389E34A9F3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C2292EEB-4255-417C-9D3D-0DD865A0A104</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D04BAAA3-3069-489E-A762-C70613A3AF01</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D78B8961-C2C1-415F-BC32-CEA47E120369</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DC3546A1-EAF5-4C6A-9D6D-6553C8BFE425</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DC0FBA41-FB4D-4AA3-A1D1-CB5FD0600ECA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>55FCC6BC-C1B1-4DEE-A3BC-EA08814AB1EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DC3546A1-EAF5-4C6A-9D6D-6553C8BFE425</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9721A51C-4E5E-4205-8978-FB3AD9235263</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DE53F44C-A509-464D-AADB-7C4301734992</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>36A5F3CF-9643-4044-A5ED-D4B176F849FF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F76B6B0A-974F-473D-96D9-9637648BDC38</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3A21AA3F-26CD-42B1-882B-E18758ECA9AE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F84BB4C7-94C8-4234-B0E7-85D37789FA99</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BC2EC6DC-6452-4BB1-9DAE-B263A100F137</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FFE45E15-8ECD-4A47-8527-95495062261A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>03DB02FB-B041-4546-A9E0-FFF1F2E79A4B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Sean Korzdorfer</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Due Tools</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>--	Created by: Sean Korzdorfer--	Created on: 10/23/12 08:53:07--	OmniFocus2Due_script v 1.0--	Release Notes:-- - An Applescript implementation. Keyboard Maestro is no longer required-- - The script allows multiple selections.-- VERSION 1.1 - 2013-02-05--  Updated task selection algorithm (Thanks, Rob Trew!)-- If you have selected multiple tasks, the script can ask if you need to make changes.-- AskForChanges is OFF by default.-- If the script behaves as if it's possessed, please adjust the pause commands on line numbers: 55, 63, 71-- This can be toggled to trueproperty askForChanges : false-- OmniFocus task selection algorithm by Rob Trew.
+on alfred_script(q)-- on run	tell application id "OFOC"		tell front document window of default document			repeat with oPanel in {content, sidebar}				tell oPanel to set lstSeln to (value of selected trees of oPanel where its class of its value is not item and class of its value is not folder and class of its value is not project)				if lstSeln ≠ {} then exit repeat			end repeat						if lstSeln ≠ {} then				repeat with oTask in lstSeln										-- First Test: Future Start Date found					if start date of oTask is not missing value and start date of oTask is greater than (current date) then						set theURl to "due:///add?title=" &amp; my urlEncode((name of oTask &amp; " " &amp; start date of oTask as rich text) &amp; "                                                    omnifocus:///task/" &amp; id of oTask as rich text)						-- Second Test: No valid start date, but future due date found					else if due date of oTask is not missing value and the due date of oTask is greater than (current date) then						set theURl to "due:///add?title=" &amp; my urlEncode((name of oTask &amp; " " &amp; due date of oTask as rich text) &amp; "                                                    omnifocus:///task/" &amp; id of oTask as rich text)						-- No valid start date or due date found. I could test for start date &gt; due date, but that's on the user.					else						-- Throw a dialog to get the date information from the user.						-- Seems if I let the use add the date information to the task input after the URL is sent, 						-- Due will not generate the selection used for deletion 						tell application "Due"							activate							display dialog "Enter Date for Task: " &amp; the name of oTask default answer ""							set theDate to (text returned of result) as text						end tell						set theURl to "due:///add?title=" &amp; my urlEncode(((name of oTask as rich text) &amp; " " &amp; theDate as rich text) &amp; "                                                    omnifocus:///task/" &amp; id of oTask as rich text)					end if										tell application "Finder" to open location theURl					tell application "Due" to activate					delay 0.5 -- This delay can be tweaked for your system					tell application "System Events" to key code 51										-- If there are multiple selections. You might want to play with the clipboard delay.					-- if askForChanges is false and iTree is less than lngTrees then					if askForChanges is false then						tell application "Due" to activate						tell application "System Events" to key code 36						delay 1 -- This delay can be tweaked for your system					end if					if askForChanges is true then						-- Throw a simple display to pause the script and allow the user to make any edits to the reminder						tell application "System Events" to (display dialog "If needed, make  edits to the reminder, then complete the task. Only complete the task if you made changes." buttons {"Okay"})						-- Complete Due reminder.						tell application "Due" to activate						tell application "System Events" to key code 36						delay 1 -- This delay can be tweaked for your system											end if				end repeat			end if		end tell	end tell
+-- end run
+end alfred_script(* http://applescript.bratis-lover.net/library/url/-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ----c-                                                                                                URL LIBRARY-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ----d-- Last modification date:                                                             2012-01-14
+Two simple handlers to decode and encode URLs. The urlEncode handler is also 
+very useful for creating AppleScript URLs as found throughout this site.--m-- http://applescript.bratis-lover.net/library/url/-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ----c-                                                                                                   COPYRIGHT-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --COPYRIGHT (c) 2008 ljr (http://applescript.bratis-lover.net)                                [ urlEncode, urlDecode ]Permission is hereby granted, free of charge, to any person obtaining a copy of thissoftware and associated documentation files (the "Software"), to deal in the Softwarewithout restriction, including without limitation the rights to use, copy, modify, merge,publish, distribute, sublicense, and/or sell copies of the Software, and to permit personsto whom the Software is furnished to do so, subject to the following conditions:The above copyright notice and this permission notice shall be included in all copiesor substantial portions of the Software.THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESSOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALLTHE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHERLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS INTHE SOFTWARE.-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ---- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --*)-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ----c-                                                                                                 PROPERTIES-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ----c--   property myName--d--   Name that should be used when loading this library.property myName : "_url"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ----c-                                                                                         ENCODE/DECODE-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ----c--   urlEncode(str)--d--   URL encode the passed string.--a--   str : string--r--   string--x--   urlEncode("Nürnberg $%@") --&gt; "N%C3%BCrnberg%20%24%25%40"--m--  echo (man1/echo.1.html), perl (man1/perl.1.html)--u--   ljr (http://applescript.bratis-lover.net/library/url/)on urlEncode(str)	local str	try		return (do shell script "/bin/echo " &amp; quoted form of str &amp; ¬			" | perl -MURI::Escape -lne 'print uri_escape($_)'")	on error eMsg number eNum		error "Can't urlEncode: " &amp; eMsg number eNum	end tryend urlEncode--c--   urlDecode(str)--d--   URL decode the passed string.--a--   str : string--r--   string--x--   urlDecode("N%C3%BCrnberg%20%24%25%40") --&gt; "Nürnberg $%@"--m--  echo (man1/echo.1.html), perl (man1/perl.1.html)--u--   ljr (http://applescript.bratis-lover.net/library/url/)on urlDecode(str)	local str	try		return (do shell script "/bin/echo " &amp; quoted form of str &amp; ¬			" | perl -MURI::Escape -lne 'print uri_unescape($_)'")	on error eMsg number eNum		error "Can't urlDecode: " &amp; eMsg number eNum	end tryend urlDecode-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- ----                                                                                                                 EOF-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>36A5F3CF-9643-4044-A5ED-D4B176F849FF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;do</string>
+				<key>subtext</key>
+				<string>Create a Due Reminder for the OmniFocus Task</string>
+				<key>text</key>
+				<string>Due: OmniFocus to Due</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>DE53F44C-A509-464D-AADB-7C4301734992</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "{query} 8:00 am"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>93621DD8-C4BD-4E85-B7F9-259758258D10</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>;dam</string>
+				<key>subtext</key>
+				<string>Create a Task at 08:00</string>
+				<key>text</key>
+				<string>Due: Quick Morning Task</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1293CEE8-5B69-4066-9664-CDACEAC26748</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>;dm</string>
+				<key>subtext</key>
+				<string>Create a task at 11:30</string>
+				<key>text</key>
+				<string>Due: Quick Middle Day Task</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FFE45E15-8ECD-4A47-8527-95495062261A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "{query} 11:30 am"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>03DB02FB-B041-4546-A9E0-FFF1F2E79A4B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>/usr/bin/osascript quickReminders.scpt {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>9721A51C-4E5E-4205-8978-FB3AD9235263</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "{query} 4 pm"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DC3546A1-EAF5-4C6A-9D6D-6553C8BFE425</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>;ded</string>
+				<key>subtext</key>
+				<string>Create a Task at 16:00</string>
+				<key>text</key>
+				<string>Due: Quick End of the Day Task</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D78B8961-C2C1-415F-BC32-CEA47E120369</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "{query} 7 pm"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>76C1F87F-9912-442B-9ABF-791B9F28E617</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>;de</string>
+				<key>subtext</key>
+				<string>Create a Task at 19:00</string>
+				<key>text</key>
+				<string>Due: Quick Evening Task</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>01D3BD6B-648F-4534-AEB9-4FAEFB2A371C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dd</string>
+				<key>subtext</key>
+				<string>Postpone Selected Task</string>
+				<key>text</key>
+				<string>Due: Postpone by One Day</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>015CD7C5-A61D-43EA-B2C2-B3DD09E3216D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "System Events" to keystroke "=" using {command down, shift down, option down}	
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>E4270E63-9BE3-46D2-BF8B-FC572AEFCD03</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dh</string>
+				<key>subtext</key>
+				<string>Postpone Selected Task</string>
+				<key>text</key>
+				<string>Due: Postpone by an Hour</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>285C4B70-01FA-4188-8D66-CF43981E7603</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "System Events" to keystroke "=" using {command down, shift down}	
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F479A139-2FE8-429A-B93F-520C01B125A4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;ds</string>
+				<key>subtext</key>
+				<string>Postpone Selected Task</string>
+				<key>text</key>
+				<string>Due: Postpone by 10 Minutes</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2D73FC5B-8A4C-47EE-85E6-0323D573C461</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "System Events" to keystroke "=" using command down	
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>FB7258AD-3E31-423F-B3C7-656923075544</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dpl</string>
+				<key>subtext</key>
+				<string>Start Pomodoro Long Break Timer</string>
+				<key>text</key>
+				<string>Due: Pomodoro Long Break</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>727DAA6D-82E4-4255-B468-E80A3CE7C581</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "15 Minutes Timer"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0885EFBC-FC71-4FA2-B46E-B48741219EA6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>/usr/bin/osascript dueTimer.applescript {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>55FCC6BC-C1B1-4DEE-A3BC-EA08814AB1EF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "5 Minutes Timer"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5E0C8C77-D856-4A36-823E-18F89D5BD793</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dps</string>
+				<key>subtext</key>
+				<string>Start Pomodoro Short Break Timer</string>
+				<key>text</key>
+				<string>Due: Pomodoro Short Break</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>60BC0385-8879-4C71-B62C-3C24987ECF11</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>echo "25 Minutes Timer"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DC0FBA41-FB4D-4AA3-A1D1-CB5FD0600ECA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dpw</string>
+				<key>subtext</key>
+				<string>Start Pomodoro Work Timer</string>
+				<key>text</key>
+				<string>Due: Pomodoro Work</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>988C5AEB-F8D6-4F7A-A148-716E7942B0F9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>/usr/bin/osascript seqReminder.scpt {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>999475D0-361D-4996-9397-C334714BF0FC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>;dq</string>
+				<key>subtext</key>
+				<string>Format: task 1 -- task 2</string>
+				<key>text</key>
+				<string>Due: Sequential Task</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>55A25122-A3C3-4629-85DA-7056318970F8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dce</string>
+				<key>subtext</key>
+				<string>Select the Event, then trigger the action. It takes a few seconds</string>
+				<key>text</key>
+				<string>Due: BusyCal Event to Due</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2781B94B-1418-443F-80AA-D3FDCB018B1A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "BusyCal"	activate	delay 1	tell application "System Events"		keystroke "c" using {command down}	end tellend telldelay 1set eventText to the clipboardset para to paragraphs of eventTextset theEvent to item 1 of paraset theDate to item 2 of paraset theURL to "due:///add?title=" &amp; theEvent &amp; " " &amp; theDate
+tell application "Finder" to open location theURLdelay .5tell application "System Events"	keystroke (ASCII character 8)end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>67DA8F55-8957-49FD-B36F-7C7163AC5025</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)tell application "Calendar"	activate	delay 1	tell application "System Events"		keystroke "c" using {command down}	end tellend telldelay 1set eventText to the clipboardset para to paragraphs of eventTextset theEvent to item 1 of paraset parseDate to item 2 of paraset theMonth to word 2 of parseDateset theDay to word 3 of parseDateset theYear to word 4 of parseDateset theTime to word 6 of parseDate &amp; " " &amp; word 8 of parseDateset theDate to theMonth &amp; " " &amp; theDay &amp; " " &amp; theYearset theURL to "due:///add?title=" &amp; theEvent &amp; " " &amp; theDate &amp; " " &amp; theTimetell application "Finder" to open location theURL
+delay .5tell application "System Events"	keystroke (ASCII character 8)end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>10295729-67B5-45D4-AF68-059D863EB650</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>:dcce</string>
+				<key>subtext</key>
+				<string>Select the date, then trigger the action. It takes a few seconds</string>
+				<key>text</key>
+				<string>Due: Calendar to Due</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9EEBD9AD-76C2-4965-B9A6-407781DE027A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>/usr/bin/osascript searchTimers.scpt {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>3A21AA3F-26CD-42B1-882B-E18758ECA9AE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>;dsm</string>
+				<key>subtext</key>
+				<string>Global Timer Search</string>
+				<key>text</key>
+				<string>Due: Search Timers</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F76B6B0A-974F-473D-96D9-9637648BDC38</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>/usr/bin/osascript searchLogbook.scpt {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>B8834CC1-EA0F-479B-8B1F-45FF1C5D1064</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>dsb</string>
+				<key>subtext</key>
+				<string>Global Logbook Search</string>
+				<key>text</key>
+				<string>;Due: Search Logbook</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3EF2BBC9-0E3A-4285-8038-F69BC10730E4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "{query} "</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C2292EEB-4255-417C-9D3D-0DD865A0A104</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>;dsr</string>
+				<key>subtext</key>
+				<string>Global Reminders Search</string>
+				<key>text</key>
+				<string>Due: Search Reminders</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>74EAC6DB-6B51-4A23-8280-50CDC64B6A31</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>due:///add?title=TODAY%20%E2%98%B3%20{query}</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A52BCC81-5E82-4FBB-BD9D-D8825AA3B1BC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>;dt</string>
+				<key>subtext</key>
+				<string>Create a Reminder For Later Today</string>
+				<key>text</key>
+				<string>Due: Remember to Do Today</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6033900D-DD96-47AB-88CA-08684F8F8830</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>due:///add?title=Journal%20%E2%98%B3%20{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>58C3DBA1-5D99-4262-8542-868E6304792B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>;dj</string>
+				<key>subtext</key>
+				<string>Creates a Journal Reminder</string>
+				<key>text</key>
+				<string>Due: Remember to Journal</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3623190A-E33D-4970-A7D9-28BA0E161D52</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dst</string>
+				<key>subtext</key>
+				<string>Lists Today's Reminders</string>
+				<key>text</key>
+				<string>Due: Today</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>7EBAF5CE-2506-4999-8811-09DA33A8D4F3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "TODAY ☳"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>096E4D4E-8BE3-4985-9BBD-676578F68C1F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "Toot Later ☳"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5208B487-243B-4B4C-AE92-43077398CF35</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dso</string>
+				<key>subtext</key>
+				<string>Lists Reminders For Toots to Submit Later</string>
+				<key>text</key>
+				<string>Due: Defered Toots</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>86AADBC4-096A-45B0-9BE3-DD6DEE4F26F1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>/usr/bin/osascript dueSearch.scpt {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>60292940-72F9-4E7B-8A19-B8CC1500A22B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dss</string>
+				<key>subtext</key>
+				<string>Lists Reminders For SMS Messages to Submit Later</string>
+				<key>text</key>
+				<string>Due: Deferred SMS Messages</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>11EB2CCB-A2EC-4FC2-BC66-102F08804FD7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "SMS Later ☳"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0F09B1A4-3F1B-4CFA-B6D8-D19BBDB6C6A8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dsd</string>
+				<key>subtext</key>
+				<string>Lists Reading Reminders</string>
+				<key>text</key>
+				<string>Due: To Read</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8FF71543-670C-4026-9DBF-D7A3D2085131</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "Read ☳"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B59F65AD-0F52-480D-A4EC-02BE5DFD23D3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dsc</string>
+				<key>subtext</key>
+				<string>Lists Look Into Reminders</string>
+				<key>text</key>
+				<string>Due: Look Into</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6DDA4482-F4E6-4D2D-878C-50EDE0B5E790</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "LOOK INTO ※ "</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BC957A78-CDDC-47A9-821E-9A389E34A9F3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dsl</string>
+				<key>subtext</key>
+				<string>Lists Listen To Reminders</string>
+				<key>text</key>
+				<string>Due: Listen To</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>81042120-46DF-4F8F-B6B9-32E4D3F0D2B3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "Listen ☳"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3EB052C5-DCFD-45B1-9E5F-A9B8AC77E7C9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dsw</string>
+				<key>subtext</key>
+				<string>Lists Items to Watch</string>
+				<key>text</key>
+				<string>Due: Watch</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8365A382-15F8-401C-BDA5-9198D4CE6901</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "Watch ☳"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>55B90AE7-5273-458F-993E-EE9F628D1095</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>echo "Journal ☳"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BC2EC6DC-6452-4BB1-9DAE-B263A100F137</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dsj</string>
+				<key>subtext</key>
+				<string>Lists Items to Journal</string>
+				<key>text</key>
+				<string>Due: Journal</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F84BB4C7-94C8-4234-B0E7-85D37789FA99</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "☳"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6537D72C-964F-4998-96B7-CDE2FEE3B880</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dsi</string>
+				<key>subtext</key>
+				<string>List all In Scope Reminders</string>
+				<key>text</key>
+				<string>Due: In Scope Reminders</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>36F9F132-6208-460F-AE06-7BAB034F6D77</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dos</string>
+				<key>subtext</key>
+				<string>List all Out of Scope Reminders</string>
+				<key>text</key>
+				<string>Due: Out of Scope</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1915CA01-DE3B-41CF-9DC7-D3D84CF0300D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "※"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>84DA6CC6-A029-48CF-A346-E7F8EB47934A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dsu</string>
+				<key>subtext</key>
+				<string>Lists All Reminders That Contain URLs</string>
+				<key>text</key>
+				<string>Due: URLS</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>40152EE5-E447-41F3-8F5F-F411865CB2AA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo "http"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D04BAAA3-3069-489E-A762-C70613A3AF01</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>----	Created by: Sean Korzdorfer--	Created on: 05/22/13 15:26:18----	Copyright (c) 2013 MyCompanyName--	All Rights Reserved--on alfred_script(q)
+tell application "System Events"	tell process "Due"		activate		click menu item "None" of menu 1 of menu item "Alert sound" of menu 1 of menu bar item "Reminder" of menu bar 1	end tellend tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F41C8B50-CAC2-446E-8998-998924E79102</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dan</string>
+				<key>text</key>
+				<string>Due: Strip Alarm From Reminder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0A4B4725-64AF-4FC9-99BE-03A212A0C4E6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dah</string>
+				<key>subtext</key>
+				<string>Sonar (1s)</string>
+				<key>text</key>
+				<string>Due: Set Alarm to Must Do</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1F821961-42D9-4B69-97F5-5F5A45DDE135</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "System Events"	tell process "Due"		activate		click menu item "Sonar (1s)" of menu 1 of menu item "Alert sound" of menu 1 of menu bar item "Reminder" of menu bar 1	end tellend tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>156C4E4C-780C-4FBD-A53B-AE3CC6586C28</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "System Events"	tell process "Due"		activate		click menu item "Coin (1s)" of menu 1 of menu item "Alert sound" of menu 1 of menu bar item "Reminder" of menu bar 1	end tellend tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>64F52033-C13E-4122-AAC0-380A2412411B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>;dan</string>
+				<key>subtext</key>
+				<string>Coin (1s)</string>
+				<key>text</key>
+				<string>Due: Set Alarm to Default</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2C0EA888-C6DA-4616-81DF-9AAFEC1399B9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>### Version 2 Release Notes
+
+* Rewritten with UI scripting 
+  * Search bar actions are far more reliable
+  * Grouped simalar actions into contained compiled scripts
+Send calendar events to Due
+    * BusyCal
+    * OS X Calendars
+* Search Panes
+  * Reminders
+  * Timers
+  * Logbook
+* Examples of how I slice my Due reminders lists
+
+### OmniFocus
+
+**do**
+:   Send Selected OmniFocus tasks to Due.app
+
+### Quick Task Entry (Imitates the the iOS presets)
+
+**dam**
+:   Quick Task – Morning (6 AM)
+
+**dm**
+:   Quick Task – Middle Day (11:30 PM)
+
+**ded**
+:   Quick Task – End of the Day (4 PM)
+
+**de**
+:   Quick Task – Evening (6 PM)
+
+
+NB: The times can be adjusted in the 'Run Scripts' Actions (middle column) echo statement.
+
+### Defer Reminders
+
+**dd**
+:   Postpone by One Day
+
+**dh**
+:   Postpone by One Hour
+
+**ds**
+:   Postpone by 10 Minutes
+
+
+NB: These trigger the defined keyboard shortcuts (I can never remember them).
+
+### Pomodoro Timers
+
+**dpl**
+:   Pomodoro Long Break Timer (15 Min)
+
+**dps**
+:   Pomodoro Short Break Timer (5 Min)
+    
+**dpw**
+:   Pomodoro Work Timer (25 Min)
+ 
+#### Pomodoro Timers Notes
+
+* These actions work by searching for the names of Specific timers
+* You must create timers on the Timer Panel 
+    * 5 Minutes Timer
+    * 15 Minutes Timer
+    * 25 Minutes Timer
+* If you use different Timer names, adjust the 'Run Scripts' Actions (middle column) echo statement.
+
+**dq**
+:   Create a Sequential Task
+
+#### Sequential Tasks Notes
+
+* Formatting: `This is task one 6 am -- This is task two 5 pm`
+* NB: The first task NEEDS TO BE COMPLETED ON AN iOS DEVICE.
+
+### Create a Reminder for Calendar Events
+
+**dce**
+:   BusyCal Event to Due (Create a Due reminder from a selected BusyCal event)
+
+**dcce**
+:   OS X Calendar to Due (Create a Due reminder from a selected calendar event)
+
+### Search Reminders, Timers and Logbook
+
+**dsr**
+:   Search Reminders Panel
+
+**dsm**
+:   Search Timers Panel
+
+**dsb**
+:   Search Logbook Panel
+
+**dsu**
+:   Search Reminders for URLs
+
+### Examples of How I Slice My Due Reminders
+
+* I shove a lot of stuff in Due–I use a defined naming convention to list the differnt reminder types
+    * Any task that pops up and needs to be completed the same day
+    * Deferred Toots
+    * Deferred SMS
+    * Consumables (Usually Triggered by Bookmarklets which I've included)
+* I use a unicode Trigram as a delimiter for these types of reminders
+    * Thunder - "inciting movement"
+* These actions should be deleted / modified to fit your needs
+* Any actions which are not triggered by bookmarklets have matching Drafts actions.
+
+**dt**
+:   Create a Today Reminder
+
+**dj**
+:   Create s Journal Reminder
+
+**dst*
+:   List Today Reminders
+
+**dso**
+:   List Deferred Toot Reminders
+
+**dss**
+:   List Deferred SMS Reminders
+
+**dsr**
+: List Items to Read
+
+**dsc**
+: List Items to Check Out (Apps, Websites, Etc.)
+
+**dsl**
+: List Items to Listen to (Random Podcasts)
+
+**dsw**
+: List Items to Watch
+
+**dsj**
+: List Items to Journal</string>
+	<key>uidata</key>
+	<dict>
+		<key>015CD7C5-A61D-43EA-B2C2-B3DD09E3216D</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>01D3BD6B-648F-4534-AEB9-4FAEFB2A371C</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>03DB02FB-B041-4546-A9E0-FFF1F2E79A4B</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>0885EFBC-FC71-4FA2-B46E-B48741219EA6</key>
+		<dict>
+			<key>ypos</key>
+			<real>970</real>
+		</dict>
+		<key>096E4D4E-8BE3-4985-9BBD-676578F68C1F</key>
+		<dict>
+			<key>ypos</key>
+			<real>2290</real>
+		</dict>
+		<key>0A4B4725-64AF-4FC9-99BE-03A212A0C4E6</key>
+		<dict>
+			<key>ypos</key>
+			<real>3620</real>
+		</dict>
+		<key>0F09B1A4-3F1B-4CFA-B6D8-D19BBDB6C6A8</key>
+		<dict>
+			<key>ypos</key>
+			<real>2530</real>
+		</dict>
+		<key>10295729-67B5-45D4-AF68-059D863EB650</key>
+		<dict>
+			<key>ypos</key>
+			<real>1570</real>
+		</dict>
+		<key>11EB2CCB-A2EC-4FC2-BC66-102F08804FD7</key>
+		<dict>
+			<key>ypos</key>
+			<real>2530</real>
+		</dict>
+		<key>1293CEE8-5B69-4066-9664-CDACEAC26748</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>156C4E4C-780C-4FBD-A53B-AE3CC6586C28</key>
+		<dict>
+			<key>ypos</key>
+			<real>3730</real>
+		</dict>
+		<key>1915CA01-DE3B-41CF-9DC7-D3D84CF0300D</key>
+		<dict>
+			<key>ypos</key>
+			<real>3380</real>
+		</dict>
+		<key>1F821961-42D9-4B69-97F5-5F5A45DDE135</key>
+		<dict>
+			<key>ypos</key>
+			<real>3730</real>
+		</dict>
+		<key>2781B94B-1418-443F-80AA-D3FDCB018B1A</key>
+		<dict>
+			<key>ypos</key>
+			<real>1450</real>
+		</dict>
+		<key>285C4B70-01FA-4188-8D66-CF43981E7603</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>2C0EA888-C6DA-4616-81DF-9AAFEC1399B9</key>
+		<dict>
+			<key>ypos</key>
+			<real>3840</real>
+		</dict>
+		<key>2D73FC5B-8A4C-47EE-85E6-0323D573C461</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>3623190A-E33D-4970-A7D9-28BA0E161D52</key>
+		<dict>
+			<key>ypos</key>
+			<real>2170</real>
+		</dict>
+		<key>36A5F3CF-9643-4044-A5ED-D4B176F849FF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>36F9F132-6208-460F-AE06-7BAB034F6D77</key>
+		<dict>
+			<key>ypos</key>
+			<real>3250</real>
+		</dict>
+		<key>3A21AA3F-26CD-42B1-882B-E18758ECA9AE</key>
+		<dict>
+			<key>ypos</key>
+			<real>1690</real>
+		</dict>
+		<key>3EB052C5-DCFD-45B1-9E5F-A9B8AC77E7C9</key>
+		<dict>
+			<key>ypos</key>
+			<real>2890</real>
+		</dict>
+		<key>3EF2BBC9-0E3A-4285-8038-F69BC10730E4</key>
+		<dict>
+			<key>ypos</key>
+			<real>1810</real>
+		</dict>
+		<key>40152EE5-E447-41F3-8F5F-F411865CB2AA</key>
+		<dict>
+			<key>ypos</key>
+			<real>3510</real>
+		</dict>
+		<key>5208B487-243B-4B4C-AE92-43077398CF35</key>
+		<dict>
+			<key>ypos</key>
+			<real>2410</real>
+		</dict>
+		<key>55A25122-A3C3-4629-85DA-7056318970F8</key>
+		<dict>
+			<key>ypos</key>
+			<real>1330</real>
+		</dict>
+		<key>55B90AE7-5273-458F-993E-EE9F628D1095</key>
+		<dict>
+			<key>ypos</key>
+			<real>3010</real>
+		</dict>
+		<key>55FCC6BC-C1B1-4DEE-A3BC-EA08814AB1EF</key>
+		<dict>
+			<key>ypos</key>
+			<real>1090</real>
+		</dict>
+		<key>58C3DBA1-5D99-4262-8542-868E6304792B</key>
+		<dict>
+			<key>ypos</key>
+			<real>2170</real>
+		</dict>
+		<key>5E0C8C77-D856-4A36-823E-18F89D5BD793</key>
+		<dict>
+			<key>ypos</key>
+			<real>1090</real>
+		</dict>
+		<key>60292940-72F9-4E7B-8A19-B8CC1500A22B</key>
+		<dict>
+			<key>ypos</key>
+			<real>2470</real>
+		</dict>
+		<key>6033900D-DD96-47AB-88CA-08684F8F8830</key>
+		<dict>
+			<key>ypos</key>
+			<real>2050</real>
+		</dict>
+		<key>60BC0385-8879-4C71-B62C-3C24987ECF11</key>
+		<dict>
+			<key>ypos</key>
+			<real>1090</real>
+		</dict>
+		<key>64F52033-C13E-4122-AAC0-380A2412411B</key>
+		<dict>
+			<key>ypos</key>
+			<real>3840</real>
+		</dict>
+		<key>6537D72C-964F-4998-96B7-CDE2FEE3B880</key>
+		<dict>
+			<key>ypos</key>
+			<real>3250</real>
+		</dict>
+		<key>67DA8F55-8957-49FD-B36F-7C7163AC5025</key>
+		<dict>
+			<key>ypos</key>
+			<real>1450</real>
+		</dict>
+		<key>6DDA4482-F4E6-4D2D-878C-50EDE0B5E790</key>
+		<dict>
+			<key>ypos</key>
+			<real>2770</real>
+		</dict>
+		<key>727DAA6D-82E4-4255-B468-E80A3CE7C581</key>
+		<dict>
+			<key>ypos</key>
+			<real>970</real>
+		</dict>
+		<key>74EAC6DB-6B51-4A23-8280-50CDC64B6A31</key>
+		<dict>
+			<key>ypos</key>
+			<real>1930</real>
+		</dict>
+		<key>76C1F87F-9912-442B-9ABF-791B9F28E617</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>7EBAF5CE-2506-4999-8811-09DA33A8D4F3</key>
+		<dict>
+			<key>ypos</key>
+			<real>2290</real>
+		</dict>
+		<key>81042120-46DF-4F8F-B6B9-32E4D3F0D2B3</key>
+		<dict>
+			<key>ypos</key>
+			<real>2890</real>
+		</dict>
+		<key>8365A382-15F8-401C-BDA5-9198D4CE6901</key>
+		<dict>
+			<key>ypos</key>
+			<real>3010</real>
+		</dict>
+		<key>84DA6CC6-A029-48CF-A346-E7F8EB47934A</key>
+		<dict>
+			<key>ypos</key>
+			<real>3380</real>
+		</dict>
+		<key>86AADBC4-096A-45B0-9BE3-DD6DEE4F26F1</key>
+		<dict>
+			<key>ypos</key>
+			<real>2410</real>
+		</dict>
+		<key>8FF71543-670C-4026-9DBF-D7A3D2085131</key>
+		<dict>
+			<key>ypos</key>
+			<real>2650</real>
+		</dict>
+		<key>93621DD8-C4BD-4E85-B7F9-259758258D10</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>9721A51C-4E5E-4205-8978-FB3AD9235263</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>988C5AEB-F8D6-4F7A-A148-716E7942B0F9</key>
+		<dict>
+			<key>ypos</key>
+			<real>1210</real>
+		</dict>
+		<key>999475D0-361D-4996-9397-C334714BF0FC</key>
+		<dict>
+			<key>ypos</key>
+			<real>1330</real>
+		</dict>
+		<key>9EEBD9AD-76C2-4965-B9A6-407781DE027A</key>
+		<dict>
+			<key>ypos</key>
+			<real>1570</real>
+		</dict>
+		<key>A52BCC81-5E82-4FBB-BD9D-D8825AA3B1BC</key>
+		<dict>
+			<key>ypos</key>
+			<real>2050</real>
+		</dict>
+		<key>B59F65AD-0F52-480D-A4EC-02BE5DFD23D3</key>
+		<dict>
+			<key>ypos</key>
+			<real>2650</real>
+		</dict>
+		<key>B8834CC1-EA0F-479B-8B1F-45FF1C5D1064</key>
+		<dict>
+			<key>ypos</key>
+			<real>1810</real>
+		</dict>
+		<key>BC2EC6DC-6452-4BB1-9DAE-B263A100F137</key>
+		<dict>
+			<key>ypos</key>
+			<real>3130</real>
+		</dict>
+		<key>BC957A78-CDDC-47A9-821E-9A389E34A9F3</key>
+		<dict>
+			<key>ypos</key>
+			<real>2770</real>
+		</dict>
+		<key>C2292EEB-4255-417C-9D3D-0DD865A0A104</key>
+		<dict>
+			<key>ypos</key>
+			<real>1930</real>
+		</dict>
+		<key>D04BAAA3-3069-489E-A762-C70613A3AF01</key>
+		<dict>
+			<key>ypos</key>
+			<real>3510</real>
+		</dict>
+		<key>D78B8961-C2C1-415F-BC32-CEA47E120369</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>DC0FBA41-FB4D-4AA3-A1D1-CB5FD0600ECA</key>
+		<dict>
+			<key>ypos</key>
+			<real>1210</real>
+		</dict>
+		<key>DC3546A1-EAF5-4C6A-9D6D-6553C8BFE425</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>DE53F44C-A509-464D-AADB-7C4301734992</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E4270E63-9BE3-46D2-BF8B-FC572AEFCD03</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>F41C8B50-CAC2-446E-8998-998924E79102</key>
+		<dict>
+			<key>ypos</key>
+			<real>3620</real>
+		</dict>
+		<key>F479A139-2FE8-429A-B93F-520C01B125A4</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>F76B6B0A-974F-473D-96D9-9637648BDC38</key>
+		<dict>
+			<key>ypos</key>
+			<real>1690</real>
+		</dict>
+		<key>F84BB4C7-94C8-4234-B0E7-85D37789FA99</key>
+		<dict>
+			<key>ypos</key>
+			<real>3130</real>
+		</dict>
+		<key>FB7258AD-3E31-423F-B3C7-656923075544</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>FFE45E15-8ECD-4A47-8527-95495062261A</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

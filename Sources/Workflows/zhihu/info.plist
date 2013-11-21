@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.zhihu</string>
+	<key>connections</key>
+	<dict>
+		<key>0A07374E-5D22-4C13-8D76-C750AAEBEE99</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F76DF33A-3F72-4BFF-9FFC-0043B8AFE4DD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F76DF33A-3F72-4BFF-9FFC-0043B8AFE4DD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>知乎</string>
+	<key>description</key>
+	<string>在知乎里搜索</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>知乎</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>zh</string>
+				<key>runningsubtext</key>
+				<string>正在努力搜索 {query} ...</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$zh_url = "http://www.zhihu.com";
+$wf = new Workflows();
+
+$orig = "{query}";
+
+$data = $wf-&gt;request( "http://www.zhihu.com/autocomplete?max_matches=10&amp;use_similar=0&amp;token=".urlencode( $orig ) );
+$data = json_decode( $data );
+$data = $data[0];
+
+for( $i=1; $i&lt;count($data); $i++) {
+  $item = $data[$i];
+
+
+  if( $item[0] == "question" ) { 
+    $link = "$zh_url/$item[0]/$item[3]";
+  } else {
+    $link = "$zh_url/$item[0]/$item[2]";
+  }
+  
+  $icon = "appicons/$item[0].png";
+
+  $wf-&gt;result( $int++.'.'.time(), $link , $item[1], "[$item[0]] $item[1]", $icon );
+}
+
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Search keywords in Zhihu</string>
+				<key>title</key>
+				<string>搜索话题、问题或人</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>63F60794-BB56-4415-9372-BAF974C3A7E1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>F76DF33A-3F72-4BFF-9FFC-0043B8AFE4DD</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>zhdaily</string>
+				<key>runningsubtext</key>
+				<string>正在努力获取数据中</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+$wf = new Workflows();
+$int = 1;
+$data = $wf-&gt;request( "http://news.at.zhihu.com/api/1.2/news/latest" );
+$data = json_decode( $data );
+
+$date =  $data-&gt;date;
+$news = $data-&gt;news;
+
+for( $i=0; $i&lt;count($news); $i++) {
+  $item = $news[$i];
+  $icon = "icon.png";
+  $wf-&gt;result( $int++.'.'.time(), $item-&gt;share_url , $item-&gt;title, "", $icon );
+}
+
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>知乎日报</string>
+				<key>title</key>
+				<string>知乎日报</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0A07374E-5D22-4C13-8D76-C750AAEBEE99</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0A07374E-5D22-4C13-8D76-C750AAEBEE99</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>F76DF33A-3F72-4BFF-9FFC-0043B8AFE4DD</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.zhihu.com</string>
+</dict>
+</plist>

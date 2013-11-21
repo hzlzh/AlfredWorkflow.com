@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>florian.piratebay</string>
+	<key>connections</key>
+	<dict>
+		<key>0CCD5FB8-EC67-4002-B6B4-5E89B23C0592</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F85E2CA-8A11-4667-87D8-CDFE7A92D7E3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>0D56D384-A9A9-4DE4-AE87-99BDCF62A738</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A5E35C56-1E62-4A53-83AA-D73CBB201C8B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>65F43855-7B3C-4BE6-A8A2-A40FCC0C8430</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EE8463C4-1D81-4887-8756-D2FD8385F835</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A5E35C56-1E62-4A53-83AA-D73CBB201C8B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0CCD5FB8-EC67-4002-B6B4-5E89B23C0592</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B1525DDE-3C1D-4DA1-B966-EB99915724CA</string>
+				<key>modifiers</key>
+				<integer>8388608</integer>
+				<key>modifiersubtext</key>
+				<string>Open torrent page on piratebay</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A86AEE2A-1468-4468-B35C-18F252E1BD2E</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Run search on website</string>
+			</dict>
+		</array>
+		<key>C4D71EE2-BA83-4026-BCFD-8A73CFAD5873</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EE8463C4-1D81-4887-8756-D2FD8385F835</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Florian Pellet</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Piratebay</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pirate</string>
+				<key>runningsubtext</key>
+				<string>Search in progress...</string>
+				<key>script</key>
+				<string>
+
+$key = "a8bfea09b06543c7b4a67b599b54cee3";
+$key = "7c4ce701352e49c1b394c66c14e4bed3";
+
+function seed_sort($a, $b)
+{
+    if ($a-&gt;seeders &gt; $b-&gt;seeders) {
+        return -1;
+    } else if ($a-&gt;seeders &lt; $b-&gt;seeders) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+function curl($url){
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+	$data = curl_exec($ch);
+	curl_close($ch);
+	return $data;
+}
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;';
+
+$query = str_replace(" ", "%20", "{query}");
+
+$url = 'http://apify.ifc0nfig.com/tpb/search/' . $query . '?key=' . $key;
+$json = json_decode(curl($url));
+
+
+//no item found
+if (count($json)==0){
+
+	$url = 'http://apify.ifc0nfig.com/tpb/recent/?key='.$key;
+	$str = curl($url);
+	if (!$str) {
+		echo '
+			&lt;item arg="" valid="no"&gt;
+				&lt;title&gt;PirateBay isn\'t accessible at the moment...&lt;/title&gt;
+				&lt;subtitle&gt;1.Check your internet connectivity  2.Check thepiratebay  3.APIfy might be temporarily down&lt;/subtitle&gt;';
+	}
+	else{
+		echo '
+			&lt;item arg="" valid="no"&gt;
+				&lt;title&gt;No result has been found for your query.&lt;/title&gt;
+				&lt;subtitle&gt;Sorry, try something else...&lt;/subtitle&gt;';
+	}
+	echo '
+				&lt;icon&gt;icon.png&lt;/icon&gt;
+			&lt;/item&gt;';
+}
+
+
+//error case
+elseif ($json-&gt;message==="An error has occurred.") {
+	echo '
+		&lt;item arg="" valid="no"&gt;
+			&lt;title&gt;'.$json-&gt;message.'&lt;/title&gt;
+			&lt;subtitle&gt;'.$json-&gt;exceptiontype.' ('.$json-&gt;exceptionmessage.')&lt;/subtitle&gt;
+			&lt;icon&gt;icon.png&lt;/icon&gt;
+		&lt;/item&gt;';
+}
+else{
+
+
+//results
+//usort($json, 'seed_sort');
+foreach ($json as $item) {
+	//infos
+	$magnet 	= $item-&gt;magnet;
+	$name		= $item-&gt;name;
+	$category 	= $item-&gt;category;
+	$size 		= $item-&gt;size;
+	$seeders 	= $item-&gt;seeders;
+	$leechers 	= $item-&gt;leechers;
+	$address	= $item-&gt;id;
+
+	$magnet = str_replace("magnet:?xt=urn:btih:", "", $magnet);
+	$magnet = str_replace("&amp;", "&amp;amp;", $magnet);
+
+	$size = str_replace("&amp;nbsp;", " ", $size);
+	$size = str_replace("i", "", $size);
+	$size = str_replace("B", "b", $size);
+
+	//concatenate variables to pass multiple arguments
+	$case_id='0';
+	$arg = $case_id . ' ' . $magnet . ' ' . $address . ' ' . $query;
+
+	//output
+	if ($seeders &gt; 0){
+		echo '
+			&lt;item arg="'.$arg.'"&gt;
+				&lt;title&gt;'.$name.'&lt;/title&gt;
+				&lt;icon&gt;icon.png&lt;/icon&gt;
+				&lt;subtitle&gt;'.$category.', Size: '.$size.', Seeders: '.$seeders.', Leechers: '.$leechers.'&lt;/subtitle&gt;
+			&lt;/item&gt;';
+	}
+}
+
+
+}//close "no item found" case
+
+echo '&lt;/items&gt;
+';</string>
+				<key>subtext</key>
+				<string>Search PirateBay for '{query}'</string>
+				<key>title</key>
+				<string>Search PirateBay</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A5E35C56-1E62-4A53-83AA-D73CBB201C8B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>var='{query}'
+var=( $var )
+case=${var[0]}
+if [ "$case" -eq 0 ]; then
+	var=${var[1]}
+	open -g "magnet:?xt=urn:btih:$var"
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0CCD5FB8-EC67-4002-B6B4-5E89B23C0592</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>0D56D384-A9A9-4DE4-AE87-99BDCF62A738</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6F85E2CA-8A11-4667-87D8-CDFE7A92D7E3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>var='{query}'
+var=( $var )
+var=${var[2]}
+open "http://thepiratebay.se/torrent/$var"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B1525DDE-3C1D-4DA1-B966-EB99915724CA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pirate</string>
+				<key>subtext</key>
+				<string>Search directly with thepiratebay in the browser.</string>
+				<key>text</key>
+				<string>Search PirateBay for '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C4D71EE2-BA83-4026-BCFD-8A73CFAD5873</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>var='{query}'
+var=( $var )
+var=${var[3]}
+open "http://thepiratebay.se/search/$var/0/7/0"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A86AEE2A-1468-4468-B35C-18F252E1BD2E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>http://thepiratebay.se/search/{query}/0/7/0</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>EE8463C4-1D81-4887-8756-D2FD8385F835</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>text</key>
+				<string>Search PirateBay for '{query}'</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.fallback</string>
+			<key>uid</key>
+			<string>65F43855-7B3C-4BE6-A8A2-A40FCC0C8430</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0CCD5FB8-EC67-4002-B6B4-5E89B23C0592</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>0D56D384-A9A9-4DE4-AE87-99BDCF62A738</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>65F43855-7B3C-4BE6-A8A2-A40FCC0C8430</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>6F85E2CA-8A11-4667-87D8-CDFE7A92D7E3</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A5E35C56-1E62-4A53-83AA-D73CBB201C8B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>A86AEE2A-1468-4468-B35C-18F252E1BD2E</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>B1525DDE-3C1D-4DA1-B966-EB99915724CA</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>C4D71EE2-BA83-4026-BCFD-8A73CFAD5873</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>EE8463C4-1D81-4887-8756-D2FD8385F835</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>florianpellet.com</string>
+</dict>
+</plist>

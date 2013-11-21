@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.rhydlewis.alfred.sortclipboard</string>
+	<key>connections</key>
+	<dict>
+		<key>908EA984-D5AF-4078-9731-5E8E5F97BAA6</key>
+		<array/>
+		<key>E23911D8-5858-4CA3-B8B6-1325EF10B380</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>908EA984-D5AF-4078-9731-5E8E5F97BAA6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9CF9C222-1D68-48A3-8ED6-69608F19B9E2</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Sort and remove duplicates</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Rhyd Lewis</string>
+	<key>description</key>
+	<string>Runs a unix sort on the contents of the clipboard</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Sort the Clipboard</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>pbpaste | sort {query} | pbcopy</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>908EA984-D5AF-4078-9731-5E8E5F97BAA6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>scb</string>
+				<key>subtext</key>
+				<string>Include sort options as the query</string>
+				<key>text</key>
+				<string>Sort the Clipboard</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E23911D8-5858-4CA3-B8B6-1325EF10B380</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>pbpaste | sort -u | pbcopy</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9CF9C222-1D68-48A3-8ED6-69608F19B9E2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>908EA984-D5AF-4078-9731-5E8E5F97BAA6</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9CF9C222-1D68-48A3-8ED6-69608F19B9E2</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>E23911D8-5858-4CA3-B8B6-1325EF10B380</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://rhydlewis.net</string>
+</dict>
+</plist>

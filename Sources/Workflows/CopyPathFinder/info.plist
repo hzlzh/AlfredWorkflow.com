@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>3461B201-4229-48E1-B960-8A064A1BB414</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2C01C481-2EE3-46C3-84B6-67E202CCDFC4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jedy Wu</string>
+	<key>description</key>
+	<string>Copies the path(s) of the Path Finder selection to the clipboard</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>CopyPathFinder</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>path</string>
+				<key>subtext</key>
+				<string>Copy path(s) of Path Finder Selection to the clipboard</string>
+				<key>text</key>
+				<string>Copy Path</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3461B201-4229-48E1-B960-8A064A1BB414</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "Path Finder"
+    set pathfinderselection to selection
+    if pathfinderselection is missing value then
+        set filePath to POSIX path of the target of the front finder window
+    else
+        set filePath to ""
+        repeat with i from 1 to count of pathfinderselection
+          set pfItem to item i of pathfinderselection
+          -- Corrects for error when hidden files are showing
+          try
+            set currentpathfinderpath to (POSIX path of pfItem)
+            set filePath to filePath &amp; space ¬ 
+              &amp; currentpathfinderpath
+          end try
+        end repeat
+    end if
+  end tell
+  set the clipboard to filePath
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>2C01C481-2EE3-46C3-84B6-67E202CCDFC4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2C01C481-2EE3-46C3-84B6-67E202CCDFC4</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>3461B201-4229-48E1-B960-8A064A1BB414</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/jedy/alfred-copyPath</string>
+</dict>
+</plist>

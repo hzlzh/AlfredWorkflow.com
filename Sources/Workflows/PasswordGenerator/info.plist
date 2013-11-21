@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>me.knut.pwd</string>
+	<key>connections</key>
+	<dict>
+		<key>F8CBCF9B-3B33-400E-B6AD-6B8500938BA4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F417810A-4CC7-4844-9B6E-DA2D6B40543C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Knut Ahlers</string>
+	<key>description</key>
+	<string>Access password generation service http://pwd.knut.me/ which will generate secure passwords for you</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Password Generator</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>F417810A-4CC7-4844-9B6E-DA2D6B40543C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pwd</string>
+				<key>runningsubtext</key>
+				<string>Generating password...</string>
+				<key>script</key>
+				<string>import urllib, json, sys
+from feedback import Feedback
+
+password_length = 20
+use_special = False
+
+for arg in '{query}'.split():
+  if arg.isdigit():
+	password_length = int(arg)
+  elif arg == 's':
+	use_special = True
+
+url = 'http://pwd.knut.me/api/getSecurePassword?chars=%d&amp;special=%s' % (password_length, str(use_special).lower())
+result = json.loads(urllib.urlopen(url).read())
+
+fb = Feedback()
+fb.add_item(title=result['password'], arg=result['password'])
+print fb</string>
+				<key>subtext</key>
+				<string>Generates a secure password with &lt;n&gt; length</string>
+				<key>title</key>
+				<string>Password Generator</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F8CBCF9B-3B33-400E-B6AD-6B8500938BA4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>F417810A-4CC7-4844-9B6E-DA2D6B40543C</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>F8CBCF9B-3B33-400E-B6AD-6B8500938BA4</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://blog.knut.me/</string>
+</dict>
+</plist>

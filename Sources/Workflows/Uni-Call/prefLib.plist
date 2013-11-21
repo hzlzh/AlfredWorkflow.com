@@ -110,6 +110,114 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>Dialogue Call</key>
+	<dict>
+		<key>connections</key>
+		<dict>
+			<key>08541403-BBB8-4F64-B149-5A52E3136F88</key>
+			<array>
+				<dict>
+					<key>destinationuid</key>
+					<string>28BBD4A6-F125-4651-A83C-B8BAD8685DF2</string>
+					<key>modifiers</key>
+					<integer>0</integer>
+					<key>modifiersubtext</key>
+					<string></string>
+				</dict>
+			</array>
+			<key>D47F4C69-2F33-4974-AF4F-3027EF487BCB</key>
+			<array>
+				<dict>
+					<key>destinationuid</key>
+					<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+					<key>modifiers</key>
+					<integer>0</integer>
+					<key>modifiersubtext</key>
+					<string></string>
+				</dict>
+			</array>
+		</dict>
+		<key>objects</key>
+		<array>
+			<dict>
+				<key>config</key>
+				<dict>
+					<key>name</key>
+					<string>Dialogue Call</string>
+				</dict>
+				<key>type</key>
+				<string>alfred.workflow.trigger.contact</string>
+				<key>uid</key>
+				<string>08541403-BBB8-4F64-B149-5A52E3136F88</string>
+				<key>version</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>config</key>
+				<dict>
+					<key>escaping</key>
+					<integer>127</integer>
+					<key>script</key>
+					<string>open "x-dialogue://{query}"</string>
+					<key>type</key>
+					<integer>0</integer>
+				</dict>
+				<key>type</key>
+				<string>alfred.workflow.action.script</string>
+				<key>uid</key>
+				<string>28BBD4A6-F125-4651-A83C-B8BAD8685DF2</string>
+				<key>version</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>config</key>
+				<dict>
+					<key>argumenttype</key>
+					<integer>0</integer>
+					<key>escaping</key>
+					<integer>102</integer>
+					<key>keyword</key>
+					<string>calll</string>
+					<key>runningsubtext</key>
+					<string>Searching...</string>
+					<key>script</key>
+					<string>./bin/Uni\ Call\ Basestation -l "{query}"</string>
+					<key>subtext</key>
+					<string>Make a bluetooth phone call to your contact via Dialogue</string>
+					<key>title</key>
+					<string>Dialogue Call</string>
+					<key>type</key>
+					<integer>0</integer>
+					<key>withspace</key>
+					<true/>
+				</dict>
+				<key>type</key>
+				<string>alfred.workflow.input.scriptfilter</string>
+				<key>uid</key>
+				<string>D47F4C69-2F33-4974-AF4F-3027EF487BCB</string>
+				<key>version</key>
+				<integer>0</integer>
+			</dict>
+		</array>
+		<key>uidata</key>
+		<dict>
+			<key>08541403-BBB8-4F64-B149-5A52E3136F88</key>
+			<dict>
+				<key>ypos</key>
+				<real>1220</real>
+			</dict>
+			<key>28BBD4A6-F125-4651-A83C-B8BAD8685DF2</key>
+			<dict>
+				<key>ypos</key>
+				<real>1220</real>
+			</dict>
+			<key>D47F4C69-2F33-4974-AF4F-3027EF487BCB</key>
+			<dict>
+				<key>ypos</key>
+				<real>1160</real>
+			</dict>
+		</dict>
+	</dict>
 	<key>FaceTime Call</key>
 	<dict>
 		<key>connections</key>

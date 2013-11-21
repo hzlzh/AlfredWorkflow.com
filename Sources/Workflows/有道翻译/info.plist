@@ -17,7 +17,37 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>506F8893-E009-4F0F-92F3-4656785B9875</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EF04F569-D9CF-4145-ACE0-4BD0B3DEF672</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>50ACFBA3-8F38-4842-B93A-3B021E6F7E2A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C8EEBA5-D292-4BFE-8B3A-C8F5BC22BE65</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>506F8893-E009-4F0F-92F3-4656785B9875</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7C8EEBA5-D292-4BFE-8B3A-C8F5BC22BE65</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -56,7 +86,7 @@
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<false/>
+				<true/>
 				<key>output</key>
 				<integer>0</integer>
 				<key>removeextension</key>
@@ -72,6 +102,8 @@
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>6D2F020C-4B37-4402-AE34-3C7CA86B08DB</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -89,6 +121,39 @@
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>C894F8ED-2CC8-46DD-A1FC-683628CCF296</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>require_once('youdao.php');
+
+$keyfrom = 'Alfred';
+$key = 1963786550;
+
+
+$yd = YouDaoTranslation::factory($keyfrom, $key, '{query}');
+
+echo $yd-&gt;postToNotification();
+
+//KEYFROM="Alfred"
+//KEY=1963786550
+
+//执行翻译工作(勿动)
+//php -f youdao.php -- "{query}" "$KEYFROM" "$KEY"</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>200D6FF7-2B7F-42FF-8B27-331B37ABC36C</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -102,6 +167,8 @@
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
 			<string>ED513634-4FBC-4258-AF29-9F6214C05D28</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -117,17 +184,20 @@
 				<key>script</key>
 				<string>require_once('youdao.php');
 
-
-// API 每小时 10000 次请求限制
-// 假如发现结果无法显示，请到这里申请自己的 API
-// http://fanyi.youdao.com/openapi
-
 $keyfrom = 'Alfred';
 $key = 1963786550;
 
+$input = '{query}';
+$inputs = explode("\\ ", $input);
 
-$yd = YouDaoTranslation::factory($keyfrom, $key, '{query}');
-echo $yd-&gt;listInAlfred();</string>
+if (count($inputs) &gt; 1 &amp;&amp; $inputs[count($inputs) - 1] == 'add') {
+	array_pop($inputs);
+    $yd = YouDaoTranslation::factory($keyfrom, $key, implode(" ", $inputs));
+    echo $yd-&gt;listInAlfred(True);
+} else {
+    $yd = YouDaoTranslation::factory($keyfrom, $key, implode(" ", $inputs));
+    echo $yd-&gt;listInAlfred();
+}</string>
 				<key>subtext</key>
 				<string>使用有道翻译你想知道的单词和语句 {query}</string>
 				<key>title</key>
@@ -141,48 +211,164 @@ echo $yd-&gt;listInAlfred();</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>50ACFBA3-8F38-4842-B93A-3B021E6F7E2A</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>63</integer>
+				<integer>127</integer>
 				<key>script</key>
-				<string>require_once('youdao.php');
-
-// API 每小时 10000 次请求限制
-// 假如发现结果无法显示，请到这里申请自己的 API
-// http://fanyi.youdao.com/openapi
-  
-$keyfrom = 'Alfred';
-$key = 1963786550;
-
-
-$yd = YouDaoTranslation::factory($keyfrom, $key, '{query}');
-
-echo $yd-&gt;postToNotification();</string>
+				<string>$input = "{query}";
+$input = preg_replace("/ADD$/", "", $input);
+echo $input;</string>
 				<key>type</key>
 				<integer>1</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>200D6FF7-2B7F-42FF-8B27-331B37ABC36C</string>
+			<string>7C8EEBA5-D292-4BFE-8B3A-C8F5BC22BE65</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>有道词典生词本</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EF04F569-D9CF-4145-ACE0-4BD0B3DEF672</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>try {
+    // Do NOT use '{query}'
+    // may be value of {query} has ' when indicate word's pronunciation
+    $input = "{query}";
+    $inputs = explode("\\ ", $input);
+    $input = implode(" ", $inputs);
+
+    if (strlen($input) &gt; 3 &amp;&amp; substr($input, -3) == "ADD") {
+        $word = substr($input, 0, -3);
+        $username = "dalang@dalang.im"; //替换成自己的网易帐号
+        $password = "*****"; //替换成自己的网易密码
+        $contentType = "application/x-www-form-urlencoded";
+        $userAgent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4";
+        $body = array(
+                'url'=&gt;"http://account.youdao.com/login?service=dict&amp;back_url=http%3A%2F%2Fdict.youdao.com&amp;success=1",
+                'product'=&gt;"search",
+                'type'=&gt;1,
+                'username'=&gt;$username,
+                'password'=&gt;$password,
+                'savelogin'=&gt;1
+                );
+        $fields_string = http_build_query($body);
+
+        $url = "https://reg.163.com/logins.jsp";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POSTFIELDS,$fields_string);
+        curl_setopt($ch, CURLOPT_HEADER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLINFO_HEADER_OUT, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, Array('Content-type: '.$contentType . '; User-Agent=' . $userAgent));
+        curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 6);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $result = curl_exec($ch);
+        $cookies = array();
+        preg_match_all('/Set-Cookie:(?&lt;cookie&gt;.*)\b/m', $result, $cookies);
+        $cookie_string = trim(implode(",", $cookies['cookie']));
+        curl_close($ch);
+
+        // 添加单词到单词本
+        $add_word_url = 'http://dict.youdao.com/wordbook/ajax?action=addword&amp;q='.$word;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $add_word_url);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_POST, 0);
+        curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_NOBODY, 0);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_COOKIE, $cookie_string);
+        // curl_setopt($ch, CURLOPT_POSTFIELDS,$fields_string);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $result2 = curl_exec($ch);
+        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        if ($code==200) {
+            // 202 is accepted, 409 is already exists
+            if($result2=='{"message":"adddone"}') {
+                //exit(0); // success
+                echo "add \"$word\" Success";
+            }else{
+                //exit(1); // other error
+                echo "add \"$word\" Failed";
+            }
+        }
+        else if ($code==401) {
+            //exit(2); // bad auth
+            echo "Bad Auth when connect to YouDao Wordbook";
+        }
+        else {
+            //exit(1); // other error
+            echo "Encounter Other Error when connect to YouDao Wordboook";
+        }
+    }
+} catch (Exception $e) {
+    echo "";
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>506F8893-E009-4F0F-92F3-4656785B9875</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>#Desc:	利用有道翻译 API 接口达到翻译的目的
-#Use:	youdao &lt;words&gt;
-
-# API 每小时 10000 次请求限制
-# 假如发现结果无法显示，请到这里申请自己的 API
-# http://fanyi.youdao.com/openapi</string>
+	<string></string>
 	<key>uidata</key>
 	<dict>
 		<key>200D6FF7-2B7F-42FF-8B27-331B37ABC36C</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
+		</dict>
+		<key>506F8893-E009-4F0F-92F3-4656785B9875</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
 		</dict>
 		<key>50ACFBA3-8F38-4842-B93A-3B021E6F7E2A</key>
 		<dict>
@@ -194,6 +380,11 @@ echo $yd-&gt;postToNotification();</string>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
+		<key>7C8EEBA5-D292-4BFE-8B3A-C8F5BC22BE65</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
 		<key>C894F8ED-2CC8-46DD-A1FC-683628CCF296</key>
 		<dict>
 			<key>ypos</key>
@@ -203,6 +394,11 @@ echo $yd-&gt;postToNotification();</string>
 		<dict>
 			<key>ypos</key>
 			<real>130</real>
+		</dict>
+		<key>EF04F569-D9CF-4145-ACE0-4BD0B3DEF672</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>vevoquicksearch</string>
+	<key>connections</key>
+	<dict>
+		<key>710EE523-2AE0-47A8-BCEA-790E5CCDBACE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EFACB657-9F1F-4640-9837-C75F4A32F2D5</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Copy URL to clipboard</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9141F4B5-9781-41D0-A8C7-9F0DF7B35115</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Carsten Draeger</string>
+	<key>description</key>
+	<string>Search vevo.com for videos and watch them in your browser.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>VEVO.com</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>vevo</string>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>require_once('php/vevo.php');
+$vevo = new Vevo("{query}");
+
+$obj = $vevo-&gt;getJsonObject();
+$vevo-&gt;parseJsonVideoSearchResults($obj);
+
+echo $vevo-&gt;getXml();</string>
+				<key>subtext</key>
+				<string>Find music videos on vevo.com (no arguments will result in a list of current video premieres).</string>
+				<key>title</key>
+				<string>Search VEVO.com</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>710EE523-2AE0-47A8-BCEA-790E5CCDBACE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>EFACB657-9F1F-4640-9837-C75F4A32F2D5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>9141F4B5-9781-41D0-A8C7-9F0DF7B35115</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow utilizes the Workflows.php utility-class by David Ferguson: http://dferg.us/workflows-class/
+
+VEVO name, brand and logo copyright belongs to VEVO LLC. Only the publicly available API is accessed by this workflow. Videos can neither be downloaded nor embedded, only a redirect to the official website takes place. In case the unauthorized use of the VEVO API is prohibited nonetheless please contact me.
+
+@blacklight24 (Twitter)</string>
+	<key>uidata</key>
+	<dict>
+		<key>710EE523-2AE0-47A8-BCEA-790E5CCDBACE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9141F4B5-9781-41D0-A8C7-9F0DF7B35115</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>EFACB657-9F1F-4640-9837-C75F4A32F2D5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/cdraeger/alfred2-vevo-workflow</string>
+</dict>
+</plist>

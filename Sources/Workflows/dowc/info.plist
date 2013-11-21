@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>1</string>
+	<key>connections</key>
+	<dict>
+		<key>7E7CC230-C750-4390-9DB4-CD1505CAF709</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A66CAF47-CC37-44BE-8246-024A11B1CD5C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Kevin Marchand</string>
+	<key>description</key>
+	<string>Searches Day One entries for specified words</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Day One Word Count</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>dowc</string>
+				<key>runningsubtext</key>
+				<string>parsing journal...</string>
+				<key>script</key>
+				<string>#!/usr/bin/python
+#
+#   Alfred 2 Workflow
+#   Day One word search parsing
+#   Kevin Marchand - 2013-11-01
+#
+
+import os
+import plistlib
+from datetime import datetime, timedelta
+from sys import argv
+import xml.etree.ElementTree as ET
+
+keywords = []
+
+if len('{query}') &lt; 2:
+    keywords.append('All words')
+else:
+    for kw in '{query}'.split():
+        keywords.append(kw)
+
+keywords = [kw for kw in keywords if argv[0] not in kw]
+
+
+def find(name, path):
+    for root, dirs, files in os.walk(path):
+        if name in files:
+            return os.path.join(root, name)
+
+
+# find day one's dayone.plist config file
+
+do_config = find('dayone.plist', os.environ['HOME'] + '/Library')
+
+
+# parse dayone.plist to find location of active journal and list entries
+
+config_dict = plistlib.readPlist(do_config)
+journal_path = config_dict['JournalPackageURL'] + '/entries/'
+entries_list = os.listdir(journal_path)
+
+date_content = {}
+
+for entry in entries_list:
+    try:
+        entry_dict = plistlib.readPlist(journal_path + entry)
+        timestamp = entry_dict['Creation Date']
+        date_content[timestamp] = entry_dict['Entry Text']
+    except:
+        pass
+
+keyword_count = {}
+
+for kw in keywords:
+
+    keyword_count[kw + ' - past week'] = 0
+    keyword_count[kw + ' - past month'] = 0
+    keyword_count[kw + ' - past year'] = 0
+    keyword_count[kw + ' - all time'] = 0
+
+    for timestamp in date_content.keys():
+        if timestamp &gt; datetime.now() - timedelta(weeks=1):
+            for word in date_content[timestamp].replace("'s", '').split():
+                if kw.lower() in [word.lower().strip(",."), 'all words']:
+                    keyword_count[kw + ' - past week'] += 1
+                else:
+                    pass
+        else:
+            pass
+        if timestamp &gt; datetime.now() - timedelta(weeks=4):
+            for word in date_content[timestamp].replace("'s", '').split():
+                if kw.lower() in [word.lower().strip(",."), 'all words']:
+                    keyword_count[kw + ' - past month'] += 1
+                else:
+                    pass
+        else:
+            pass
+        if timestamp &gt; datetime.now() - timedelta(weeks=52):
+            for word in date_content[timestamp].replace("'s", '').split():
+                if kw.lower() in [word.lower().strip(",."), 'all words']:
+                    keyword_count[kw + ' - past year'] += 1
+                else:
+                    pass
+        else:
+            pass
+        for word in date_content[timestamp].replace("'s", '').split():
+            if kw.lower() in [word.lower().strip(",."), 'all words']:
+                keyword_count[kw + ' - all time'] += 1
+            else:
+                pass
+
+
+# Generate Alfred's XML
+
+root = ET.Element('items')
+
+for kw in keywords:
+
+    item = ET.SubElement(root, 'item')
+    item.set('uid', kw)
+    item.set('arg', '/Applications/Day One.app')
+
+    title = ET.SubElement(item, 'title')
+    title.text = "'%s' in past week: %s, month: %s, year: %s, all: %s" % (
+        kw,
+        keyword_count[kw + ' - past week'],
+        keyword_count[kw + ' - past month'],
+        keyword_count[kw + ' - past year'],
+        keyword_count[kw + ' - all time'])
+
+    icon = ET.SubElement(item, 'icon')
+    icon.set('type', 'fileicon')
+    icon.text = '/Applications/Day One.app'
+
+print ET.tostring(root)
+</string>
+				<key>subtext</key>
+				<string>specify word(s) to search for in journal...</string>
+				<key>title</key>
+				<string>Day One Word Count</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7E7CC230-C750-4390-9DB4-CD1505CAF709</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open -a {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>A66CAF47-CC37-44BE-8246-024A11B1CD5C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>7E7CC230-C750-4390-9DB4-CD1505CAF709</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>A66CAF47-CC37-44BE-8246-024A11B1CD5C</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/kmarchand/dowcAlfredWorkflow</string>
+</dict>
+</plist>

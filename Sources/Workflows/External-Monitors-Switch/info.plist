@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>435A7056-DDB5-4582-A091-3DB202AECDFB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA62A928-4DFF-4EEF-87E8-9C352AA84066</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CD69778A-A49B-44D1-9F54-B24359DEF8B8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E462BE2A-A58A-45E2-BEEC-B6385B43E123</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>DA62A928-4DFF-4EEF-87E8-9C352AA84066</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>06DDD083-7A5C-4B94-A3DC-A24D29367ADE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E462BE2A-A58A-45E2-BEEC-B6385B43E123</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BE0AC586-B6A7-48EC-B22F-533966723232</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Quốc Hưng Lê</string>
+	<key>description</key>
+	<string>Quickly turn on/off external monitor</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>External Monitor Switch</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>1</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Your external monitor has been turned on!</string>
+				<key>title</key>
+				<string>Dell P2312H Is On!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>BE0AC586-B6A7-48EC-B22F-533966723232</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>dell</string>
+				<key>subtext</key>
+				<string>Turn On</string>
+				<key>text</key>
+				<string>Dell P2312H</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CD69778A-A49B-44D1-9F54-B24359DEF8B8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>tell application "SwitchResX Daemon"	set enabled of display 2 to trueend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E462BE2A-A58A-45E2-BEEC-B6385B43E123</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>tell application "SwitchResX Daemon"	set enabled of display 2 to falseend tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DA62A928-4DFF-4EEF-87E8-9C352AA84066</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>-dell</string>
+				<key>subtext</key>
+				<string>Turn Off</string>
+				<key>text</key>
+				<string>Dell P2312H</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>435A7056-DDB5-4582-A091-3DB202AECDFB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>1</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Your external monitor has been turned off!</string>
+				<key>title</key>
+				<string>Dell P2312H Is Off!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>06DDD083-7A5C-4B94-A3DC-A24D29367ADE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This Alfred workflow helps you quickly turn on or off your external monitor via Apple Script.
+
+Requirement: SwitchResX installed
+
+Usage:
+
+dell 
+	Turn on the external display
+-dell
+	Turn off the external display
+
+I use the monitor name as the keyword but you can change it to whatever you like.
+
+If you have more than 1 external monitor then you need to add more action set (keyword+action+notification) and change the value accordingly. For example, I have only 1 external monitor being the Dell P2312H as the second monitor in the SwitchResX Preferences:
+
+http://f.cl.ly/items/2X41233n402X1h0R0N0i/Screen%20Shot%202013-10-03%20at%201.48.44%20PM.png
+
+that's why in the apple script I use
+	set enabled of display 2 to true
+
+So in case you have more than 1 external monitor, find out what its number is in the SwitchResX Preferences and then replace that value with the value of the display in the line above (make sure to use a new keyword for that specific monitor as well), then everything should work as expected.
+
+If you have any requests or suggestions, feel free to poke me on GitHub: https://github.com/hungle88</string>
+	<key>uidata</key>
+	<dict>
+		<key>06DDD083-7A5C-4B94-A3DC-A24D29367ADE</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>435A7056-DDB5-4582-A091-3DB202AECDFB</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>BE0AC586-B6A7-48EC-B22F-533966723232</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>CD69778A-A49B-44D1-9F54-B24359DEF8B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>DA62A928-4DFF-4EEF-87E8-9C352AA84066</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>E462BE2A-A58A-45E2-BEEC-B6385B43E123</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://lequochung.me/</string>
+</dict>
+</plist>

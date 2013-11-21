@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>14D5E084-1B24-4FEC-B287-ADE8530320F2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>58FEBA95-060B-4B7C-9516-2B60011E5A3C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Various Artists</string>
+	<key>description</key>
+	<string>Control OpenVPN connections</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Viscosity</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>vpn</string>
+				<key>script</key>
+				<string>STAMP=$(date +%s)
+FILTER="{query}"
+if [ -z "$FILTER" ]; then FILTER=.;fi
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;'
+
+osascript -sh connections.ascr | tr "\r" "\n" | grep -i $FILTER | while read LINE; do
+    echo "&lt;item uid=\"${STAMP}\" arg=\"${LINE}\"&gt;&lt;title&gt;${LINE}&lt;/title&gt;"
+    if [[ $(osascript -sh state.ascr "${LINE}" | tr "\r" "\n" | grep -i .) == "Connected" ]]; then
+        echo "&lt;subtitle&gt;Disconnect from this network&lt;/subtitle&gt;"
+    else
+        echo "&lt;subtitle&gt;Connect to this network&lt;/subtitle&gt;"
+    fi
+    echo "&lt;icon&gt;icon.png&lt;/icon&gt;&lt;valid&gt;yes&lt;/valid&gt;&lt;/item&gt;"
+done
+
+echo '&lt;item uid="'${STAMP}'" arg="connectall"&gt;&lt;title&gt;Connect All&lt;/title&gt;&lt;subtitle&gt;Connect to all defined networks&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;valid&gt;yes&lt;/valid&gt;&lt;/item&gt;'
+
+echo '&lt;item uid="'${STAMP}'" arg="disconnectall"&gt;&lt;title&gt;Disconnect All&lt;/title&gt;&lt;subtitle&gt;Disconnect from all connected networks&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;valid&gt;yes&lt;/valid&gt;&lt;/item&gt;'
+
+echo '&lt;/items&gt;'
+</string>
+				<key>subtext</key>
+				<string>Control OpenVPN connections</string>
+				<key>title</key>
+				<string>Viscosity</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>14D5E084-1B24-4FEC-B287-ADE8530320F2</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(query)
+	tell application "Viscosity"
+			if query = "connectall" then
+				connectall
+			else if query = "disconnectall" then
+				disconnectall
+			else
+				set s to state of first connection where name = query
+				if s is equal to "Connected" then
+					disconnect query
+				else
+					connect query
+				end if
+			end if
+	end tell
+end alfred_script
+</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>58FEBA95-060B-4B7C-9516-2B60011E5A3C</string>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>14D5E084-1B24-4FEC-B287-ADE8530320F2</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>58FEBA95-060B-4B7C-9516-2B60011E5A3C</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>github.com/andrewschleifer/viscosity-alfredworkflow</string>
+</dict>
+</plist>

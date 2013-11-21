@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.lowther.knock</string>
+	<key>connections</key>
+	<dict>
+		<key>D9797A19-CFD4-431A-9F08-952CC1FD44DE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3E9F9301-A858-4997-B7C4-9FEADF03F81D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Adam Lowther</string>
+	<key>description</key>
+	<string>Alfred Command to Lock OS X</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Knock Lock</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>knock</string>
+				<key>subtext</key>
+				<string>Knock To Unlock App</string>
+				<key>text</key>
+				<string>Knock</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D9797A19-CFD4-431A-9F08-952CC1FD44DE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open knock://{query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3E9F9301-A858-4997-B7C4-9FEADF03F81D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Keyword: knock
+	opens Knock app
+
+optional argument(s)
+lock: locks OS X via Knock (allowing knock to unlock)</string>
+	<key>uidata</key>
+	<dict>
+		<key>3E9F9301-A858-4997-B7C4-9FEADF03F81D</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>D9797A19-CFD4-431A-9F08-952CC1FD44DE</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
