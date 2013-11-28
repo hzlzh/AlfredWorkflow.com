@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>pi1ot.google-translate-cli</string>
+	<key>connections</key>
+	<dict>
+		<key>091E1A7B-0F12-457D-A965-4783A391A28F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>76B19475-9544-4D97-A8B3-E9ED7E500459</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E8647E8F-3527-486E-887A-2EA92B5D6663</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>76B19475-9544-4D97-A8B3-E9ED7E500459</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>pi1ot</string>
+	<key>description</key>
+	<string>Workflow for google-translate-cli</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>google-translate-cli</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>76B19475-9544-4D97-A8B3-E9ED7E500459</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>zh</string>
+				<key>runningsubtext</key>
+				<string>translating...</string>
+				<key>script</key>
+				<string>. workflowHandler.sh
+result=$( /usr/local/bin/gawk -f ./translate.awk {=zh} "{query}" )
+
+# create feedback entries
+# addResult "uid" "arg" "title" "subtitle" "icon" "valid" "autocomplete"
+addResult "0" "http://translate.google.com/#auto/zh-CN/{query}" "$result" "powered by google translate" "icon.png" "yes" "autocomplete"
+
+# get feedback xml
+getXMLResults</string>
+				<key>title</key>
+				<string>Translate {query} into chinese</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>091E1A7B-0F12-457D-A965-4783A391A28F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>en</string>
+				<key>runningsubtext</key>
+				<string>translating...</string>
+				<key>script</key>
+				<string>. workflowHandler.sh
+result=$( /usr/local/bin/gawk -f ./translate.awk {=en} "{query}" )
+
+# create feedback entries
+# addResult "uid" "arg" "title" "subtitle" "icon" "valid" "autocomplete"
+addResult "0" "http://translate.google.com/#auto/en/{query}" "$result" "powered by google translate" "icon.png" "yes" "autocomplete"
+
+# get feedback xml
+getXMLResults</string>
+				<key>title</key>
+				<string>Translate {query} into english</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E8647E8F-3527-486E-887A-2EA92B5D6663</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>v0.1
+
+input window:
+	zh {words}:		translate words into chinese
+	en {words}:		translate words into english
+
+depends on google-translate-cli
+	https://github.com/soimort/google-translate-cli</string>
+	<key>uidata</key>
+	<dict>
+		<key>091E1A7B-0F12-457D-A965-4783A391A28F</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>76B19475-9544-4D97-A8B3-E9ED7E500459</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>E8647E8F-3527-486E-887A-2EA92B5D6663</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>weibo.com/pi1ot</string>
+</dict>
+</plist>
