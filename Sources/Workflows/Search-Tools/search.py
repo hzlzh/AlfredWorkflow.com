@@ -16,6 +16,15 @@ def strip_html( html ):
 def unescape_html( html ):
 	html_parser = HTMLParser.HTMLParser()
 	return html_parser.unescape( html )
+	
+def parse_href( html ):
+	link_begin = html.find( "<a href=\"http" )
+	if link_begin == -1:
+		return ""
+	link_end = html.find( "\"" , link_begin+12 )
+	if link_end == -1:
+		return ""
+	return html[link_begin+9:link_end]	
 
 def set_proxy():
 	proxy = "http://127.0.0.1:8087" # goagent proxy
@@ -116,7 +125,8 @@ def search_google( query ):
 		if title_begin==-1 or title_end==-1:
 			continue
 		title = strip_html( line[title_begin+9:title_end] )
-		
+
+		#link = parse_href( prev_line )
 		link_begin = prev_line.rfind("<a href=\"http")
 		link_end = prev_line.find("\" ",link_begin)
 		if link_begin==-1 or link_end==-1:
@@ -212,6 +222,75 @@ def search_zhihu( query ):
 
 ################################################################################
 def search_weibo( query ):
+	weibo_gsid = ""
+	params = { "filter":"all", "sort":"time", "vt":"4", "keyword":query, "gsid":weibo_gsid }	
+	request=urllib2.Request( "http://weibo.cn/search/mblog/?"+urllib.urlencode(params), None, 
+		{'User-Agent':"Mozilla/5.0 (iPhone; CPU iPhone OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B179 Safari/7534.48.3",} )
+	response = urllib2.urlopen( request ).read().replace("<div","\n<div").split("\n")
+	
+	result = []
+	default_link = u"http://s.weibo.com/weibo/" + urllib.quote_plus(query) + "&" + urllib.urlencode(params)
+	result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, u"更多详细结果……", default_link, ("weibo.png") ) )
+	
+	name = ""
+	weibo = ""
+	link = ""
+	repost = ""
+	comment = ""
+	for line in response:
+		if "<div class=\"c\"> id=\"" in line:
+			name = weibo = link = repost = comment = ""
+			continue
+			
+		if "<a class=\"nk\"" in line:
+			# <a class="nk" href="...">name</a>
+			fields = line.replace("><",">\n<").split("\n")
+			for field in fields:
+				if "<a class=\"nk\"" in field:
+					name = strip_html( field )
+					break
+
+		if "<span class=\"ctt\"" in line:
+			# <span class="ctt">:weibo</span>
+			fields = line.replace("><",">\n<").split("\n")
+			for field in fields:
+				if "<span class=\"ctt\"" in field:
+					weibo = strip_html( field )
+					if weibo[0:1] == ":":
+						weibo = weibo[1:]
+					break
+
+		if "class=\"cc\">评论[" in line:
+			# <a href="http://weibo.cn/repost/...">转发[n]></a>
+			# <a href="http://weibo.cn/comment/..." class="cc">评论[n]></a>
+			fields = line.replace("<",">\n<").split("\n")
+			for field in fields:
+				if ">转发[" in field:
+					repost = strip_html( field ).replace( ">", "" )
+				if ">评论[" in field:
+					comment = strip_html( field ).replace( ">", "" )
+					link = parse_href( field )
+					href_pos = link.find( "#" )
+					if href_pos != -1:
+						link = link[0:href_pos]
+					link += "&amp;gsid=" + weibo_gsid
+					link = link.replace( "&amp;", "&" )
+			
+		if "<div class=\"s\"></div>" in line:
+			# append
+			if name!="" and weibo!="" and link!="":
+				name 	= unicode( name, "utf-8" )
+				weibo 	= unicode( weibo, "utf-8" )
+				link 	= unicode( link, "utf-8" )
+				repost 	= unicode( repost, "utf-8" )
+				comment = unicode( comment, "utf-8" )
+				result.append( alfred.Item( {"uid":link, "arg":link}, "@"+name+": "+weibo, repost+", "+comment, ("weibo.png")) )
+			# next
+			name = weibo = link = repost = comment = ""
+
+	return result
+	
+	"""
 	set_proxy()
 	params = { "xsort":"time" }
 	response = urllib2.urlopen( "http://s.weibo.com/weibo/"+urllib.quote_plus(query)
@@ -267,6 +346,7 @@ def search_weibo( query ):
 		result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, u"找不到结果，请使用网页查询……", default_link, ("weibo.png") ) )
 	
 	return result
+	"""
 
 ################################################################################
 def main():
