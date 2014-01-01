@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>1</string>
+	<key>connections</key>
+	<dict>
+		<key>21A1567F-DC09-4792-AC5F-B986A5DA47FD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E0AE7F33-FA2E-45AD-B1DE-6B85C4B790BB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Richieliu</string>
+	<key>description</key>
+	<string>Open in app in chinese</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Open in app in chinese</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>languagesetting=$(defaults read NSGlobalDomain AppleLanguages)
+defaults write NSGlobalDomain AppleLanguages "(zh-Hans, en, de, ja, fr, es, it, nl, sv, nb, da, fi, pt, zh-Hant, ko)"
+open {query}
+defaults write NSGlobalDomain AppleLanguages "$languagesetting"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E0AE7F33-FA2E-45AD-B1DE-6B85C4B790BB</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array/>
+				<key>name</key>
+				<string>open in chinese</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>21A1567F-DC09-4792-AC5F-B986A5DA47FD</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>21A1567F-DC09-4792-AC5F-B986A5DA47FD</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>E0AE7F33-FA2E-45AD-B1DE-6B85C4B790BB</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.iamued.com</string>
+</dict>
+</plist>

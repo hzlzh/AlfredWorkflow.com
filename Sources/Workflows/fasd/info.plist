@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>4F9512EA-A6FE-4F49-81F2-8CB66C245EA8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5B979AF6-F065-498E-933D-81C32745D0DC</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy "{query}" to Clipboard</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7E1B3AD2-80AA-41F8-ABAC-3139111F06BE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7E1B3AD2-80AA-41F8-ABAC-3139111F06BE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5B979AF6-F065-498E-933D-81C32745D0DC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>perfectworks &lt;perfectworks@gmail.com&gt;</string>
+	<key>description</key>
+	<string>Retrieve files and directories by fasd</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>fasd</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>4F9512EA-A6FE-4F49-81F2-8CB66C245EA8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>5B979AF6-F065-498E-933D-81C32745D0DC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>fasd</string>
+				<key>runningsubtext</key>
+				<string>Please Wait</string>
+				<key>script</key>
+				<string>#!/usr/bin/env bash
+
+cat &lt;&lt;EOF
+&lt;?xml version="1.0"?&gt;
+&lt;items&gt;
+EOF
+
+for directory in `/usr/local/bin/fasd -l {query} | head`
+do
+cat &lt;&lt;EOF
+      &lt;item arg="$directory" autocomplete="$directory" type="file"&gt;
+        &lt;title&gt;`basename $directory`&lt;/title&gt;
+        &lt;subtitle&gt;$directory&lt;/subtitle&gt;
+        &lt;icon type="fileicon"&gt;$directory&lt;/icon&gt;
+      &lt;/item&gt;
+EOF
+done
+
+echo "&lt;/items&gt;"
+</string>
+				<key>subtext</key>
+				<string>Search {query} or directory by fasd.</string>
+				<key>title</key>
+				<string>Search file or directory by fasd.</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>7E1B3AD2-80AA-41F8-ABAC-3139111F06BE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>4F9512EA-A6FE-4F49-81F2-8CB66C245EA8</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>5B979AF6-F065-498E-933D-81C32745D0DC</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>7E1B3AD2-80AA-41F8-ABAC-3139111F06BE</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

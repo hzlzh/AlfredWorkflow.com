@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.toozhao.pm2.5</string>
+	<key>connections</key>
+	<dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Junv Zhao</string>
+	<key>description</key>
+	<string>一个用于查看中国部分城市的PM2.5值的workflow.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>pm2.5查看</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>pm2.5</string>
+				<key>runningsubtext</key>
+				<string>加载中......</string>
+				<key>script</key>
+				<string># author: Junv Zhao &lt;wahyd4@gmail.com&gt;
+# -*- coding: utf-8 -*-
+
+from Feedback import Feedback
+import sys
+import json
+import urllib2
+
+reload(sys)
+sys.setdefaultencoding('utf8')
+
+query = '{query}'
+url = 'http://www.pm25.in/api/querys/pm2_5.json?city=' + query + '&amp;token=5j1znBVAsnSf5xQyNQyq';
+
+req = urllib2.Request(url)
+f = urllib2.urlopen(req);
+
+content = f.read();
+
+response = json.loads(content)
+fb = Feedback()
+try:
+    for item in response:
+        if item['position_name'] is not None:
+            fb.add_item(item['area'] + ':' + item['position_name'],
+                        subtitle="PM2.5值：" + str(item['pm2_5']) + " 等级：" + item['quality'],
+                        arg=str(item['pm2_5']),
+                        icon='birds-green.png')
+except TypeError as te:
+    fb.add_item(response['error'],icon='birds-green.png')
+except Exception as e:
+    fb.add_item('出错了,请重试！' + e.message)
+print fb
+</string>
+				<key>subtext</key>
+				<string>请输入城市名称以查看该城市的pm 2.5值</string>
+				<key>title</key>
+				<string>PM 2.5</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>7DD3BDE5-A157-42E5-9376-F681FB50A4EE</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>toozhao.com</string>
+</dict>
+</plist>

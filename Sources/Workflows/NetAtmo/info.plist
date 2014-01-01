@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>1652309F-72C4-413A-9E9F-A206FF6DEC02</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>pj3s</string>
+	<key>description</key>
+	<string>NetAtmo information using the REST api.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>NetAtmo</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>atmo</string>
+				<key>runningsubtext</key>
+				<string>Loading data</string>
+				<key>script</key>
+				<string>#!/usr/bin/python3
+# encoding=utf-8
+
+# Published Jan 2013
+# Author : philippelt@users.sourceforge.net
+# Public domain source code
+
+# This API provides access to the Netatmo (Internet weather station) devices
+# This package can by run with Python2 or Python3 applications and do not
+# require anything else than standard libraries
+
+# PythonAPI Netatmo REST data access
+# coding=utf-8
+
+from sys import version_info
+import json, time, properties
+
+# HTTP libraries depends upon Python 2 or 3
+if version_info.major == 3 :
+    import urllib.parse, urllib.request
+else:
+    from urllib import urlencode
+    import urllib2
+
+# Common definitions
+
+_BASE_URL       = "http://api.netatmo.net/"
+_AUTH_REQ       = _BASE_URL + "oauth2/token"
+_GETUSER_REQ    = _BASE_URL + "api/getuser"
+_DEVICELIST_REQ = _BASE_URL + "api/devicelist"
+_GETMEASURE_REQ = _BASE_URL + "api/getmeasure"
+
+class ClientAuth:
+    "Request authentication and keep access token available through token method. Renew it automatically if necessary"
+    
+    def __init__(self, clientId=properties._CLIENT_ID,
+                 clientSecret=properties._CLIENT_SECRET,
+                 username=properties._USERNAME,
+                 password=properties._PASSWORD):
+        
+        postParams = {
+            "grant_type" : "password",
+            "client_id" : clientId,
+            "client_secret" : clientSecret,
+            "username" : username,
+            "password" : password
+        }
+        resp = postRequest(_AUTH_REQ, postParams)
+        
+        self._clientId = clientId
+        self._clientSecret = clientSecret
+        self._accessToken = resp['access_token']
+        self.refreshToken = resp['refresh_token']
+        self._scope = resp['scope']
+        self.expiration = int(resp['expire_in'] + time.time())
+    
+    @property
+    def accessToken(self):
+        "Provide the current or renewed access token"
+        
+        if self.expiration &lt; time.time(): # Token should be renewed
+            
+            postParams = {
+                "grant_type" : "refresh_token",
+                "refresh_token" : self.refreshToken,
+                "client_id" : self._clientId,
+                "client_secret" : self._clientSecret
+            }
+            resp = postRequest(_AUTH_REQ, postParams)
+            
+            self._accessToken = resp['access_token']
+            self.refreshToken = resp['refresh_token']
+            self.expiration = int(resp['expire_in'] + time.time())
+        
+        return self._accessToken
+
+class User:
+    "Access to user account information"
+    
+    def __init__(self, authData):
+        
+        postParams = {
+            "access_token" : authData.accessToken
+        }
+        resp = postRequest(_GETUSER_REQ, postParams)
+        self.rawData = resp['body']
+        self.id = self.rawData['_id']
+        self.devList = self.rawData['devices']
+        self.ownerMail = self.rawData['mail']
+
+class DeviceList:
+    "Set of stations and modules attached to the user account"
+    
+    def __init__(self, authData):
+        
+        self.getAuthToken = authData.accessToken
+        postParams = {
+            "access_token" : self.getAuthToken
+        }
+        resp = postRequest(_DEVICELIST_REQ, postParams)
+        self.rawData = resp['body']
+        self.stations = {}
+        for d in self.rawData['devices'] : self.stations[d['_id']] = d
+        self.modules = {}
+        for m in self.rawData['modules'] : self.modules[m['_id']] = m
+        self.default_station = list(self.stations.values())[0]['station_name']
+    
+    def stationByName(self, station=None):
+        if not station : station = self.default_station
+        for i,s in self.stations.items():
+            if s['station_name'] == station : return self.stations[i]
+        return None
+    
+    def stationById(self, sid):
+        return None if sid not in self.stations else self.stations[sid]
+    
+    def moduleByName(self, module, station=None):
+        s = None
+        if station :
+            s = self.stationByName(station)
+            if not s : return None
+        for m in self.modules:
+            mod = self.modules[m]
+            if mod['module_name'] == module :
+                if not s or mod['main_device'] == s['_id'] : return mod
+        return None
+    
+    def moduleById(self, mid, sid=None):
+        s = self.stationById(sid) if sid else None
+        if mid in self.modules :
+            return self.modules[mid] if not s or self.modules[mid]['main_device'] == s['_id'] else None
+    
+    def lastData(self, station=None):
+        if not station : station = self.default_station
+        s = self.stationByName(station)
+        lastD = {}
+        if s :
+            ds = s['last_data_store'][s['_id']]
+            lastD[s['module_name']] = {"Temperature":ds['a'],"Pressure":ds['e'],"Noise":ds['S'],"Co2":ds['h'],"Humidity":ds['b'],"When":ds['K']}
+            for m in s['modules']:
+                ds = s['last_data_store'][m]
+                lastD[self.modules[m]['module_name']] = {"Temperature":ds['a'],"Humidity":ds['b'],"When":ds['K']}
+        return lastD if len(lastD) else None
+    
+    def checkNotUpdated(self, station=None, delay=3600):
+        res = self.lastData(station)
+        ret = []
+        for mn,v in res.items():
+            if time.time()-v['When'] &gt; delay : ret.append(mn)
+        return ret if ret else None
+    
+    def checkUpdated(self, station=None, delay=3600):
+        res = self.lastData(station)
+        ret = []
+        for mn,v in res.items():
+            if time.time()-v['When'] &lt; delay : ret.append(mn)
+        return ret if ret else None
+    
+    def getMeasure(self, device_id, scale, mtype, module_id=None, date_begin=None, date_end=None, limit=None, optimize=False):
+        postParams = { "access_token" : self.getAuthToken }
+        postParams['device_id']  = device_id
+        if module_id : postParams['module_id'] = module_id
+        postParams['scale']      = scale
+        postParams['type']       = mtype
+        if date_begin : postParams['date_begin'] = date_begin
+        if date_end : postParams['date_end'] = date_end
+        if limit : postParams['limit'] = limit
+        postParams['optimize'] = "true" if optimize else "false"
+        return postRequest(_GETMEASURE_REQ, postParams)
+    
+    def MinMaxTH(self, station=None, module=None, frame="last24"):
+        if not station : station = self.default_station
+        s = self.stationByName(station)
+        if not s :
+            s = self.stationById(station)
+            if not s : return None
+        if frame == "last24":
+            end = time.time()
+            start = end - 24*3600 # 24 hours ago
+        elif frame == "day":
+            start, end = todayStamps()
+        if module:
+            m = self.moduleByName(module, s['station_name'])
+            if not m :
+                m = self.moduleById(s['_id'], module)
+                if not m : return None
+            # retrieve module's data
+            resp = self.getMeasure(
+                                   device_id  = s['_id'],
+                                   module_id  = m['_id'],
+                                   scale      = "max",
+                                   mtype      = "Temperature,Humidity",
+                                   date_begin = start,
+                                   date_end   = end)
+        else : # retrieve station's data
+            resp = self.getMeasure(
+                                   device_id  = s['_id'],
+                                   scale      = "max",
+                                   mtype      = "Temperature,Humidity",
+                                   date_begin = start,
+                                   date_end   = end)
+        if resp:
+            T = [v[0] for v in resp['body'].values()]
+            H = [v[1] for v in resp['body'].values()]
+            return min(T), max(T), min(H), max(H)
+        else:
+            return None
+
+# Utilities routines
+
+def postRequest(url, params):
+    if version_info.major == 3:
+        req = urllib.request.Request(url)
+        req.add_header("Content-Type","application/x-www-form-urlencoded;charset=utf-8")
+        params = urllib.parse.urlencode(params).encode('utf-8')
+        resp = urllib.request.urlopen(req, params).readall().decode("utf-8")
+    else:
+        params = urlencode(params)
+        headers = {"Content-Type" : "application/x-www-form-urlencoded;charset=utf-8"}
+        req = urllib2.Request(url=url, data=params, headers=headers)
+        resp = urllib2.urlopen(req).read()
+    return json.loads(resp)
+
+def toTimeString(value):
+    return time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime(int(value)))
+
+def toEpoch(value):
+    return int(time.mktime(time.strptime(value,"%Y-%m-%d_%H:%M:%S")))
+
+def todayStamps():
+    today = time.strftime("%Y-%m-%d")
+    today = int(time.mktime(time.strptime(today,"%Y-%m-%d")))
+    return today, today+3600*24
+
+# Global shortcut
+
+def getStationMinMaxTH(station=None, module=None):
+    authorization = ClientAuth()
+    devList = DeviceList(authorization)
+    if not station : station = devList.default_station
+    lastD = devList.lastData(station)
+    if module :
+        mname = module
+    else :
+        mname = devList.stationByName(station)['module_name']
+    if time.time()-lastD[mname]['When'] &gt; 3600 : result = ["-", "-"]
+    else : result = [lastD[mname]['Temperature'], lastD[mname]['Humidity']]
+    result.extend(devList.MinMaxTH(station, module))
+    return result
+
+# auto-test when executed directly
+
+if __name__ == "__main__":
+
+    from sys import exit, stderr
+    
+    if not properties._CLIENT_ID or not properties._CLIENT_SECRET or not properties._USERNAME or not properties._PASSWORD :
+           stderr.write("Missing arguments to check lnetatmo.py")
+           exit(1)
+    
+    authorization = ClientAuth()                # Test authentication method
+    devList = DeviceList(authorization)         # Test DEVICELIST
+    print("&lt;?xml version=\"1.0\"?&gt;&lt;items&gt;&lt;item uid=\"1\" arg=\"1\" valid=\"Yes\"&gt;&lt;title&gt;Indoor: %s &amp;#0176;C / Outdoor: %s &amp;#0176;C&lt;/title&gt;&lt;subtitle&gt;Temperature&lt;/subtitle&gt;&lt;icon&gt;temperature.png&lt;/icon&gt;&lt;/item&gt;&lt;item uid=\"2\" arg=\"2\" valid=\"Yes\"&gt;&lt;title&gt;Indoor: %s %% / Outdoor: %s %%&lt;/title&gt;&lt;subtitle&gt;Humidity&lt;/subtitle&gt;&lt;icon&gt;humidity.png&lt;/icon&gt;&lt;/item&gt;&lt;item uid=\"3\" arg=\"3\" valid=\"Yes\"&gt;&lt;title&gt;%s mbar&lt;/title&gt;&lt;subtitle&gt;Pressure (indoor)&lt;/subtitle&gt;&lt;icon&gt;pressure.png&lt;/icon&gt;&lt;/item&gt;&lt;item uid=\"4\" arg=\"4\" valid=\"Yes\"&gt;&lt;title&gt;%s dB&lt;/title&gt;&lt;subtitle&gt;Noise (indoor)&lt;/subtitle&gt;&lt;icon&gt;noise.png&lt;/icon&gt;&lt;/item&gt;&lt;item uid=\"5\" arg=\"5\" valid=\"Yes\"&gt;&lt;title&gt;%s ppm&lt;/title&gt;&lt;subtitle&gt;Co2 (indoor)&lt;/subtitle&gt;&lt;icon&gt;co2.png&lt;/icon&gt;&lt;/item&gt;&lt;/items&gt;" % ( devList.lastData()[properties._INDOOR_UNIT]['Temperature'], devList.lastData()[properties._OUTDOOR_UNIT]['Temperature'], devList.lastData()[properties._INDOOR_UNIT]['Humidity'], devList.lastData()[properties._OUTDOOR_UNIT]['Humidity'], devList.lastData()[properties._INDOOR_UNIT]['Pressure'], devList.lastData()[properties._INDOOR_UNIT]['Noise'], devList.lastData()[properties._INDOOR_UNIT]['Co2']))
+    
+    # If we reach this line, all is OK
+    exit(0)</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1652309F-72C4-413A-9E9F-A206FF6DEC02</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Go to the NetAtmo website and create your netatmo account.
+
+Go to http://dev.netatmo.com/ and click on 'Create an app'.
+Fill in the necessary fields and click create.
+
+Note down the Client id and Client secret. You will need to enter this information in properties.py (to locate this file, right click on the NetAtmo workflow and click on 'Show in Finder').
+
+Also enter you NetAtmo username and password and change the module id's if yours are not equal to 'Indoor' and 'Outdoor' (check your devices on the NetAtmo site).
+
+Special thanks goes out to PhilippeLt (philippelt@users.sourceforge.net) who wrote the initial python script to communicate with NetAtmo. His work was of great value for this workflow.</string>
+	<key>uidata</key>
+	<dict>
+		<key>1652309F-72C4-413A-9E9F-A206FF6DEC02</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

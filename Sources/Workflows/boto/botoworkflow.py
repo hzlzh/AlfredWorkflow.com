@@ -26,7 +26,7 @@ def list_instances(name):
 					if not name.lower() in instance_name.lower():
 						continue
 					if instance.public_dns_name:
-						arg = 'ssh ~/.ssh/%s.pem %s\n' % (instance.key_name, instance.public_dns_name)
+						arg = 'ssh -i ~/.ssh/%s.pem %s\n' % (instance.key_name, instance.public_dns_name)
 					else:
 						arg = 'ssh vpc\nssh %s\n' % instance.private_ip_address
 						

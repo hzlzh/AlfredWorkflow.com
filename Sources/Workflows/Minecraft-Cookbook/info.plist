@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.crinklebutt.cookbook</string>
+	<key>connections</key>
+	<dict>
+		<key>4DFF3A33-D637-45D2-B48B-F4409AC1156A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DDA989BA-514D-4EA0-8B25-4D927FDF29F1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Kobi Tate</string>
+	<key>description</key>
+	<string>Searchable Minecraft recipes</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Minecraft Cookbook</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>cd "recipes"
+qlmanage -p '{query}'</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DDA989BA-514D-4EA0-8B25-4D927FDF29F1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>craft</string>
+				<key>runningsubtext</key>
+				<string>Digging...</string>
+				<key>script</key>
+				<string>$query = {query};
+$blocks = scandir("recipes");
+
+echo '&lt;?xml version="1.0"?&gt;';
+echo '&lt;items&gt;';
+
+foreach($blocks as $key=&gt;$value){
+
+	if ((strpos($value, strToLower($query)) !== false) &amp;&amp; $value != ".DS_Store") {
+		
+		$blocktitle = str_replace("-", " ", $value);
+		$blocktitle = ucwords($blocktitle);
+		$blocktitle = preg_replace("/\\.[^.\\s]{3,4}$/", "", $blocktitle);
+
+		$icon = str_replace(" ", "-", $blocktitle);
+		$icon = $icon . ".png";
+
+		echo '&lt;item uid="minecraft_'.$value.'" arg="'.$value.'" valid="yes"&gt;';
+		echo '&lt;title&gt;'.$blocktitle.'&lt;/title&gt;';
+		echo '&lt;subtitle&gt;Press Enter to view recipe&lt;/subtitle&gt;';
+		echo '&lt;icon&gt;icons/'. $icon .'&lt;/icon&gt;';
+		echo '&lt;/item&gt;';
+	}	
+
+}
+
+echo '&lt;/items&gt;';</string>
+				<key>subtext</key>
+				<string>Look up Minecraft recipes</string>
+				<key>title</key>
+				<string>Minecraft Cookbook</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>4DFF3A33-D637-45D2-B48B-F4409AC1156A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Minecraft Cookbook for Alfred
+version 1.0
+
+Created by Kobi Tate &lt;http://kobitate.com&gt;
+&lt;http://github.com/kobitate94/alfred-minecraft-cookbook&gt;</string>
+	<key>uidata</key>
+	<dict>
+		<key>4DFF3A33-D637-45D2-B48B-F4409AC1156A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>DDA989BA-514D-4EA0-8B25-4D927FDF29F1</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>kobitate.com</string>
+</dict>
+</plist>

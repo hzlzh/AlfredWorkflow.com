@@ -46,10 +46,6 @@
 				<integer>0</integer>
 				<key>argument</key>
 				<integer>0</integer>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>

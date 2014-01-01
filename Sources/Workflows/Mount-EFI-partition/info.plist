@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.sdaitzman.efiMounter</string>
+	<key>connections</key>
+	<dict>
+		<key>74D6B0EE-93AB-4ACE-BEC7-1E32EE75C4C6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BE511F6D-FBE3-4DBE-8297-64A443ED803E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>7C097147-462B-40BD-8727-5E0DCD3A8DAD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>79A77AF0-B7B8-4168-A3E4-1FBD6F7F5E07</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>@sdaitzman</string>
+	<key>description</key>
+	<string>Mounts the EFI partition to /Volumes/efi. Will open a terminal, ask for admin password, and then close automagically.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Mount EFI partition for editing</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>mkdir /Volumes/efi
+sudo mount -t msdos /dev/disk0s1 /Volumes/efi
+exit</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>8A8891A3-7F82-46C0-A901-77F0C0C7D161</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>efi</string>
+				<key>subtext</key>
+				<string>Mounts the UEFI Partition to /Volumes/efi</string>
+				<key>text</key>
+				<string>Mount EFI Partition</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>7C097147-462B-40BD-8727-5E0DCD3A8DAD</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>mkdir /Volumes/efi
+sudo mount -t msdos /dev/disk0s1 /Volumes/efi
+exit</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>79A77AF0-B7B8-4168-A3E4-1FBD6F7F5E07</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>efi unmount</string>
+				<key>subtext</key>
+				<string>Unmounts the UEFI Partition from /Volumes/efi</string>
+				<key>text</key>
+				<string>Unmount EFI partition</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>74D6B0EE-93AB-4ACE-BEC7-1E32EE75C4C6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>diskutil unmountdisk /Volumes/efi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BE511F6D-FBE3-4DBE-8297-64A443ED803E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>74D6B0EE-93AB-4ACE-BEC7-1E32EE75C4C6</key>
+		<dict>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>79A77AF0-B7B8-4168-A3E4-1FBD6F7F5E07</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>7C097147-462B-40BD-8727-5E0DCD3A8DAD</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8A8891A3-7F82-46C0-A901-77F0C0C7D161</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>BE511F6D-FBE3-4DBE-8297-64A443ED803E</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://twitter.com/sdaitzman</string>
+</dict>
+</plist>

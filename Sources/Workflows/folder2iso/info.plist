@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.jouschcom.folder2iso</string>
+	<key>connections</key>
+	<dict>
+		<key>40F4390A-6DDD-41CE-85EE-81E891D666D4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9D19C1A1-2A1D-4E99-B876-6C0F943F4A2D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>667F7B34-834B-4415-8A05-9B31CFE99B50</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>40F4390A-6DDD-41CE-85EE-81E891D666D4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Josef Florian Glatz</string>
+	<key>description</key>
+	<string>Makes an image file for each selected folder.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Folder2ISO</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>ISO file(s) from folder(s)</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>667F7B34-834B-4415-8A05-9B31CFE99B50</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Image file(s) created</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9D19C1A1-2A1D-4E99-B876-6C0F943F4A2D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>OIFS=$IFS
+IFS="	"
+
+foldersArray=({query})
+
+for ((i=0; i&lt;${#foldersArray[@]}; ++i))
+do
+	ir=$(expr $i + 1)
+	folder=$(basename ${foldersArray[$i]})
+	folderMin=${folder//[[:blank:]]/}
+	parentFolder=$(dirname ${foldersArray[$i]})
+	folderFinal=~/Desktop/$folderMin.iso
+	folderFinal=$parentFolder/$folderMin.iso
+
+	hdiutil makehybrid -hfs -iso -joliet -o $folderFinal ${foldersArray[$i]} &gt; /dev/null
+
+	if [ -f $folderFinal ]
+	then
+		echo "$ir: $folderMin.iso created"
+	else
+		echo "$ir: Creation of $folderMin.iso went wrong!"
+	fi
+done
+
+IFS=$OIFS</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>40F4390A-6DDD-41CE-85EE-81E891D666D4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Alfred "file action" workflow for use with Alfred v2 and powerpack.
+
+Usage
+-----
+
+- Select one or more folders in active finder window
+- Open your Alfred's File Actions Popup
+- Select "ISO file(s) from folder(s)"
+
+Once you do that, every folder should be saved in an hybrid ISO file which should work within Apple's OS, Linux and hopefully also on the other side named Windows.
+Spaces in the generated image name are removed.
+The new image is created beside the source folder (parent folder of source folder).
+
+Questions/Feedback/Bugs
+-----------------------
+
+Please drop an issue for question/bugreporting/... at https://github.com/jousch/folder2iso-alfredworkflow/issues
+
+License
+-------
+ 
+folder2iso-alfredworkflow is licensed under the MIT (Expat) license.
+
+
+Cheers
+Jousch
+
+
+KUDOS
+-----
+
+- Special Thanks goes to David Ferguson who helped me to get my script working within Fredl (aka Alfredapp) at the beginning.
+- the great workflow icon is created by https://www.iconfinder.com/Lexter</string>
+	<key>uidata</key>
+	<dict>
+		<key>40F4390A-6DDD-41CE-85EE-81E891D666D4</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>667F7B34-834B-4415-8A05-9B31CFE99B50</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9D19C1A1-2A1D-4E99-B876-6C0F943F4A2D</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://jousch.com</string>
+</dict>
+</plist>

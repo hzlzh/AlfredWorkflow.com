@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>thijsdejong.alfred.units.1.1</string>
+	<string>designandsuch.alfred.units.0.5</string>
 	<key>connections</key>
 	<dict>
-		<key>E819E629-E614-405F-9B9B-4AD9DD9265D7</key>
+		<key>A98AC766-44B3-4203-8268-4045449D6522</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>75124D41-9359-4EC8-98B4-111AEC64ACDC</string>
+				<string>C8B4B420-6A2B-4978-9BFA-F52C9425C82A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -18,47 +18,67 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>9503009D-49FD-480E-8082-46461A62F6AC</string>
+				<string>E64B228E-6FC2-4981-BBAB-204427E4D79E</string>
 				<key>modifiers</key>
-				<integer>0</integer>
+				<integer>131072</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>{query}</string>
 			</dict>
 		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Thijs de Jong</string>
 	<key>description</key>
-	<string>a better version than 1.0</string>
+	<string>convert units</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Units</string>
+	<string>Units (beta)</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
 				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C8B4B420-6A2B-4978-9BFA-F52C9425C82A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
 				<key>escaping</key>
-				<integer>126</integer>
+				<integer>4</integer>
 				<key>keyword</key>
 				<string>units</string>
 				<key>runningsubtext</key>
-				<string>wait for it...</string>
+				<string>pleasewait</string>
 				<key>script</key>
-				<string>/*
- units v.1.0.1
- by : thijs de jong
- www.designandsuch.com
- thijsdjong@gmail.com
-*/
-require_once 'units_v2.php';
-$x = new Units();
-$x-&gt;convert("{query}");</string>
+				<string>require_once 'units.php';
+units("{query}");</string>
+				<key>subtext</key>
+				<string>by Design and Such</string>
 				<key>title</key>
-				<string>Convert units</string>
+				<string>Units</string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>
@@ -67,66 +87,49 @@ $x-&gt;convert("{query}");</string>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>E819E629-E614-405F-9B9B-4AD9DD9265D7</string>
+			<string>A98AC766-44B3-4203-8268-4045449D6522</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
+				<key>plusspaces</key>
 				<false/>
-				<key>clipboardtext</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>75124D41-9359-4EC8-98B4-111AEC64ACDC</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>copied to clipboard</string>
-				<key>title</key>
+				<key>url</key>
 				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>9503009D-49FD-480E-8082-46461A62F6AC</string>
+			<string>E64B228E-6FC2-4981-BBAB-204427E4D79E</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>75124D41-9359-4EC8-98B4-111AEC64ACDC</key>
+		<key>A98AC766-44B3-4203-8268-4045449D6522</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
-		<key>9503009D-49FD-480E-8082-46461A62F6AC</key>
-		<dict>
-			<key>ypos</key>
-			<real>130</real>
-		</dict>
-		<key>E819E629-E614-405F-9B9B-4AD9DD9265D7</key>
+		<key>C8B4B420-6A2B-4978-9BFA-F52C9425C82A</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
+		</dict>
+		<key>E64B228E-6FC2-4981-BBAB-204427E4D79E</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string>designandsuch.com</string>
+	<string>www.designandsuch.com</string>
 </dict>
 </plist>
