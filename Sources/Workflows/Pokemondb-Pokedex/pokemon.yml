@@ -1,0 +1,6283 @@
+---
+Bulbasaur:
+  number: '001'
+  description: A strange seed was planted on its back at birth. The plant sprouts
+    and grows with this POKéMON.
+  url_name: bulbasaur
+  firstType: Grass
+  secondType: Poison
+  Romaji: Fushigidane
+  Kana: フシギダネ
+Ivysaur:
+  number: '002'
+  description: When the bulb on its back grows large, it appears to lose the ability
+    to stand on its hind legs.
+  url_name: ivysaur
+  firstType: Grass
+  secondType: Poison
+  Romaji: Fushigisou
+  Kana: フシギソウ
+Venusaur:
+  number: '003'
+  description: The plant blooms when it is absorbing solar energy. It stays on the
+    move to seek sunlight.
+  url_name: venusaur
+  firstType: Grass
+  secondType: Poison
+  firstMegaType: Grass
+  secondMegaType: Poison
+  Romaji: Fushigibana
+  Kana: フシギバナ
+Charmander:
+  number: '004'
+  description: Obviously prefers hot places. When it rains, steam is said to spout
+    from the tip of its tail.
+  url_name: charmander
+  firstType: Fire
+  Romaji: Hitokage
+  Kana: ヒトカゲ
+Charmeleon:
+  number: '005'
+  description: When it swings its burning tail, it elevates the temperature to unbearably
+    high levels.
+  url_name: charmeleon
+  firstType: Fire
+  Romaji: Rizard
+  Kana: リザード
+Charizard:
+  number: '006'
+  description: Spits fire that is hot enough to melt boulders. Known to cause forest
+    fires unintentionally.
+  url_name: charizard
+  firstType: Fire
+  secondType: Flying
+  firstMegaType: Fire
+  secondMegaType: Dragon
+  firstMegaTypeY: Fire
+  secondMegaTypeY: Flying
+  Romaji: Rizardon
+  Kana: リザードン
+Squirtle:
+  number: '007'
+  description: After birth, its back swells and hardens into a shell. Powerfully sprays
+    foam from its mouth.
+  url_name: squirtle
+  firstType: Water
+  Romaji: Zenigame
+  Kana: ゼニガメ
+Wartortle:
+  number: 008
+  description: Often hides in water to stalk unwary prey. For swimming fast, it moves
+    its ears to maintain balance.
+  url_name: wartortle
+  firstType: Water
+  Romaji: Kamer
+  Kana: カメール
+Blastoise:
+  number: 009
+  description: A brutal POKéMON with pressurized water jets on its shell. They are
+    used for high speed tackles.
+  url_name: blastoise
+  firstType: Water
+  firstMegaType: Water
+  Romaji: Kamex
+  Kana: カメックス
+Caterpie:
+  number: '010'
+  description: Its short feet are tipped with suction pads that enable it to tirelessly
+    climb slopes and walls.
+  url_name: caterpie
+  firstType: Bug
+  Romaji: Catapie
+  Kana: キャタピー
+Metapod:
+  number: '011'
+  description: This POKéMON is vulnerable to attack while its shell is soft, exposing
+    its weak and tender body.
+  url_name: metapod
+  firstType: Bug
+  Romaji: Trancel
+  Kana: トランセル
+Butterfree:
+  number: '012'
+  description: In battle, it flaps its wings at high speed to release highly toxic
+    dust into the air.
+  url_name: butterfree
+  firstType: Bug
+  secondType: Flying
+  Romaji: Batterfree
+  Kana: バタフリー
+Weedle:
+  number: '013'
+  description: Often found in forests, eating leaves. It has a sharp venomous stinger
+    on its head.
+  url_name: weedle
+  firstType: Bug
+  secondType: Poison
+  Romaji: Beedle
+  Kana: ビードル
+Kakuna:
+  number: '014'
+  description: Almost incapable of moving, this POKéMON can only harden its shell
+    to protect itself from predators.
+  url_name: kakuna
+  firstType: Bug
+  secondType: Poison
+  Romaji: Kokoon
+  Kana: コクーン
+Beedrill:
+  number: '015'
+  description: Flies at high speed and attacks using its large venomous stingers on
+    its forelegs and tail.
+  url_name: beedrill
+  firstType: Bug
+  secondType: Poison
+  Romaji: Spear
+  Kana: スピアー
+Pidgey:
+  number: '016'
+  description: A common sight in forests and woods. It flaps its wings at ground level
+    to kick up blinding sand.
+  url_name: pidgey
+  firstType: Normal
+  secondType: Flying
+  Romaji: Poppo
+  Kana: ポッポ
+Pidgeotto:
+  number: '017'
+  description: Very protective of its sprawling territorial area, this POKéMON will
+    fiercely peck at any intruder.
+  url_name: pidgeotto
+  firstType: Normal
+  secondType: Flying
+  Romaji: Pidgeon
+  Kana: ピジョン
+Pidgeot:
+  number: 018
+  description: When hunting, it skims the surface of water at high speed to pick off
+    unwary prey such as MAGIKARP.
+  url_name: pidgeot
+  firstType: Normal
+  secondType: Flying
+  Romaji: Pidgeott
+  Kana: ピジョット
+Rattata:
+  number: 019
+  description: Bites anything when it attacks. Small and very quick, it is a common
+    sight in many places.
+  url_name: rattata
+  firstType: Normal
+  Romaji: Koratta
+  Kana: コラッタ
+Raticate:
+  number: '020'
+  description: It uses its whiskers to maintain its balance. It apparently slows down
+    if they are cut off.
+  url_name: raticate
+  firstType: Normal
+  Romaji: Ratta
+  Kana: ラッタ
+Spearow:
+  number: '021'
+  description: Eats bugs in grassy areas. It has to flap its short wings at high speed
+    to stay airborne.
+  url_name: spearow
+  firstType: Normal
+  secondType: Flying
+  Romaji: Onisuzume
+  Kana: オニスズメ
+Fearow:
+  number: '022'
+  description: With its huge and magnificent wings, it can keep aloft without ever
+    having to land for rest.
+  url_name: fearow
+  firstType: Normal
+  secondType: Flying
+  Romaji: Onidrill
+  Kana: オニドリル
+Ekans:
+  number: '023'
+  description: Moves silently and stealthily. Eats the eggs of birds, such as PIDGEY
+    and SPEAROW, whole.
+  url_name: ekans
+  firstType: Poison
+  Romaji: Arbo
+  Kana: アーボ
+Arbok:
+  number: '024'
+  description: It is rumored that the ferocious warning markings on its belly differ
+    from area to area.
+  url_name: arbok
+  firstType: Poison
+  Romaji: Arbok
+  Kana: アーボック
+Pikachu:
+  number: '025'
+  description: When several of these POKéMON gather, their electricity could build
+    and cause lightning storms.
+  url_name: pikachu
+  firstType: Electric
+  Romaji: Pikachuu
+  Kana: ピカチュウ
+Raichu:
+  number: '026'
+  description: Its long tail serves as a ground to protect itself from its own high
+    voltage power.
+  url_name: raichu
+  firstType: Electric
+  Romaji: Raichu
+  Kana: ライチュウ
+Sandshrew:
+  number: '027'
+  description: Burrows deep underground in arid locations far from water. It only
+    emerges to hunt for food.
+  url_name: sandshrew
+  firstType: Ground
+  Romaji: Sand
+  Kana: サンド
+Sandslash:
+  number: 028
+  description: Curls up into a spiny ball when threatened. It can roll while curled
+    up to attack or escape.
+  url_name: sandslash
+  firstType: Ground
+  Romaji: Sandpan
+  Kana: サンドパン
+Nidoran♀:
+  number: 029
+  description: Although small, its venomous barbs render this POKéMON dangerous. The
+    female has smaller horns.
+  url_name: nidoran-f
+  firstType: Poison
+  Romaji: Nidoran♀
+  Kana: ニドラン♀
+Nidorina:
+  number: '030'
+  description: The female’s horn develops slowly. Prefers physical attacks such as
+    clawing and biting.
+  url_name: nidorina
+  firstType: Poison
+  Romaji: Nidorina
+  Kana: ニドリーナ
+Nidoqueen:
+  number: '031'
+  description: Its hard scales provide strong protection. It uses its hefty bulk to
+    execute powerful moves.
+  url_name: nidoqueen
+  firstType: Poison
+  secondType: Ground
+  Romaji: Nidoqueen
+  Kana: ニドクイン
+Nidoran♂:
+  number: '032'
+  description: Stiffens its ears to sense danger. The larger its horns, the more powerful
+    its secreted venom.
+  url_name: nidoran-m
+  firstType: Poison
+  Romaji: Nidoran♂
+  Kana: ニドラン♂
+Nidorino:
+  number: '033'
+  description: An aggressive POKéMON that is quick to attack. The horn on its head
+    secretes a powerful venom.
+  url_name: nidorino
+  firstType: Poison
+  Romaji: Nidorino
+  Kana: ニドリーノ
+Nidoking:
+  number: '034'
+  description: It uses its powerful tail in battle to smash, constrict, then break
+    the prey’s bones.
+  url_name: nidoking
+  firstType: Poison
+  secondType: Ground
+  Romaji: Nidoking
+  Kana: ニドキング
+Clefairy:
+  number: '035'
+  description: Its magical and cute appeal has many admirers. It is rare and found
+    only in certain areas.
+  url_name: clefairy
+  firstType: Fairy
+  Romaji: Pippi
+  Kana: ピッピ
+Clefable:
+  number: '036'
+  description: A timid fairy POKéMON that is rarely seen. It will run and hide the
+    moment it senses people.
+  url_name: clefable
+  firstType: Fairy
+  Romaji: Pixy
+  Kana: ピクシー
+Vulpix:
+  number: '037'
+  description: At the time of birth, it has just one tail. The tail splits from its
+    tip as it grows older.
+  url_name: vulpix
+  firstType: Fire
+  Romaji: Rokon
+  Kana: ロコン
+Ninetales:
+  number: 038
+  description: Very smart and very vengeful. Grabbing one of its many tails could
+    result in a 1000-year curse.
+  url_name: ninetales
+  firstType: Fire
+  Romaji: Kyukon
+  Kana: キュウコン
+Jigglypuff:
+  number: 039
+  description: When its huge eyes light up, it sings a mysteriously soothing melody
+    that lulls its enemies to sleep.
+  url_name: jigglypuff
+  firstType: Normal
+  secondType: Fairy
+  Romaji: Purin
+  Kana: プリン
+Wigglytuff:
+  number: '040'
+  description: The body is soft and rubbery. When angered, it will suck in air and
+    inflate itself to an enormous size.
+  url_name: wigglytuff
+  firstType: Normal
+  secondType: Fairy
+  Romaji: Pukurin
+  Kana: プクリン
+Zubat:
+  number: '041'
+  description: Forms colonies in perpetually dark places. Uses ultrasonic waves to
+    identify and approach targets.
+  url_name: zubat
+  firstType: Poison
+  secondType: Flying
+  Romaji: Zubat
+  Kana: ズバット
+Golbat:
+  number: '042'
+  description: Once it strikes, it will not stop draining energy from the victim even
+    if it gets too heavy to fly.
+  url_name: golbat
+  firstType: Poison
+  secondType: Flying
+  Romaji: Golbat
+  Kana: ゴルバット
+Oddish:
+  number: '043'
+  description: During the day, it keeps its face buried in the ground. At night, it
+    wanders around sowing its seeds.
+  url_name: oddish
+  firstType: Grass
+  secondType: Poison
+  Romaji: Nazonokusa
+  Kana: ナゾノクサ
+Gloom:
+  number: '044'
+  description: The fluid that oozes from its mouth isn’t drool. It is a nectar that
+    is used to attract prey.
+  url_name: gloom
+  firstType: Grass
+  secondType: Poison
+  Romaji: Kusaihana
+  Kana: クサイハナ
+Vileplume:
+  number: '045'
+  description: The larger its petals, the more toxic pollen it contains. Its big head
+    is heavy and hard to hold up.
+  url_name: vileplume
+  firstType: Grass
+  secondType: Poison
+  Romaji: Rafureissa
+  Kana: ラフレシア
+Paras:
+  number: '046'
+  description: Burrows to suck tree roots. The mushrooms on its back grow by drawing
+    nutrients from the bug host.
+  url_name: paras
+  firstType: Bug
+  secondType: Grass
+  Romaji: Paras
+  Kana: パラス
+Parasect:
+  number: '047'
+  description: A host-parasite pair in which the parasite mushroom has taken over
+    the host bug. Prefers damp places.
+  url_name: parasect
+  firstType: Bug
+  secondType: Grass
+  Romaji: Parasect
+  Kana: パラセクト
+Venonat:
+  number: 048
+  description: Lives in the shadows of tall trees where it eats insects. It is attracted
+    by light at night.
+  url_name: venonat
+  firstType: Bug
+  secondType: Poison
+  Romaji: Kongpang
+  Kana: コンパン
+Venomoth:
+  number: 049
+  description: The dust-like scales covering its wings are color coded to indicate
+    the kinds of poison it has.
+  url_name: venomoth
+  firstType: Bug
+  secondType: Poison
+  Romaji: Morphon
+  Kana: モルフォン
+Diglett:
+  number: '050'
+  description: Lives about one yard underground where it feeds on plant roots. It
+    sometimes appears above ground.
+  url_name: diglett
+  firstType: Ground
+  Romaji: Digda
+  Kana: ディグダ
+Dugtrio:
+  number: '051'
+  description: A team of DIGLETT triplets. It triggers huge earthquakes by burrowing
+    60 miles underground.
+  url_name: dugtrio
+  firstType: Ground
+  Romaji: Dugtrio
+  Kana: ダグトリオ
+Meowth:
+  number: '052'
+  description: Adores circular objects. Wanders the streets on a nightly basis to
+    look for dropped loose change.
+  url_name: meowth
+  firstType: Normal
+  Romaji: Nyasu
+  Kana: ニャース
+Persian:
+  number: '053'
+  description: Although its fur has many admirers, it is tough to raise as a pet because
+    of its fickle meanness.
+  url_name: persian
+  firstType: Normal
+  Romaji: Persian
+  Kana: ペルシアン
+Psyduck:
+  number: '054'
+  description: While lulling its enemies with its vacant look, this wily POKéMON will
+    use psychokinetic powers.
+  url_name: psyduck
+  firstType: Water
+  Romaji: Koduck
+  Kana: コダック
+Golduck:
+  number: '055'
+  description: Often seen swimming elegantly by lake shores. It is often mistaken
+    for the Japanese monster, Kappa.
+  url_name: golduck
+  firstType: Water
+  Romaji: Golduck
+  Kana: ゴルダック
+Mankey:
+  number: '056'
+  description: Extremely quick to anger. It could be docile one moment then thrashing
+    away the next instant.
+  url_name: mankey
+  firstType: Fighting
+  Romaji: Mankey
+  Kana: マンキー
+Primeape:
+  number: '057'
+  description: Always furious and tenacious to boot. It will not abandon chasing its
+    quarry until it is caught.
+  url_name: primeape
+  firstType: Fighting
+  Romaji: Okorizaru
+  Kana: オコリザル
+Growlithe:
+  number: 058
+  description: Very protective of its territory. It will bark and bite to repel intruders
+    from its space.
+  url_name: growlithe
+  firstType: Fire
+  Romaji: Gardie
+  Kana: ガーディ
+Arcanine:
+  number: 059
+  description: A POKéMON that has been admired since the past for its beauty. It runs
+    agilely as if on wings.
+  url_name: arcanine
+  firstType: Fire
+  Romaji: Windie
+  Kana: ウインディ
+Poliwag:
+  number: '060'
+  description: Its newly grown legs prevent it from running. It appears to prefer
+    swimming than trying to stand.
+  url_name: poliwag
+  firstType: Water
+  Romaji: Nyoromo
+  Kana: ニョロモ
+Poliwhirl:
+  number: '061'
+  description: Capable of living in or out of water. When out of water, it sweats
+    to keep its body slimy.
+  url_name: poliwhirl
+  firstType: Water
+  Romaji: Nyorozo
+  Kana: ニョロゾ
+Poliwrath:
+  number: '062'
+  description: An adept swimmer at both the front crawl and breast stroke. Easily
+    overtakes the best human swimmers.
+  url_name: poliwrath
+  firstType: Water
+  secondType: Fighting
+  Romaji: Nyorobon
+  Kana: ニョロボン
+Abra:
+  number: '063'
+  description: Using its ability to read minds, it will identify impending danger
+    and TELEPORT to safety.
+  url_name: abra
+  firstType: Psychic
+  Romaji: Casey
+  Kana: ケーシィ
+Kadabra:
+  number: '064'
+  description: It emits special alpha waves from its body that induce headaches just
+    by being close by.
+  url_name: kadabra
+  firstType: Psychic
+  Romaji: Yunghelor
+  Kana: ユンゲラー
+Alakazam:
+  number: '065'
+  description: Its brain can outperform a supercomputer. Its intelligence quotient
+    is said to be 5,000.
+  url_name: alakazam
+  firstType: Psychic
+  firstMegaType: Psychic
+  Romaji: Fudin
+  Kana: フーディン
+Machop:
+  number: '066'
+  description: Loves to build its muscles. It trains in all styles of martial arts
+    to become even stronger.
+  url_name: machop
+  firstType: Fighting
+  Romaji: Wanrikie
+  Kana: ワンリキー
+Machoke:
+  number: '067'
+  description: Its muscular body is so powerful, it must wear a power save belt to
+    be able to regulate its motions.
+  url_name: machoke
+  firstType: Fighting
+  Romaji: Gorikie
+  Kana: ゴーリキー
+Machamp:
+  number: 068
+  description: Using its heavy muscles, it throws powerful punches that can send the
+    victim clear over the horizon.
+  url_name: machamp
+  firstType: Fighting
+  Romaji: Kairikie
+  Kana: カイリキー
+Bellsprout:
+  number: 069
+  description: A carnivorous POKéMON that traps and eats bugs. It uses its root feet
+    to soak up needed moisture.
+  url_name: bellsprout
+  firstType: Grass
+  secondType: Poison
+  Romaji: Madatsubomi
+  Kana: マダツボミ
+Weepinbell:
+  number: '070'
+  description: It spits out POISONPOWDER to immobilize the enemy and then finishes
+    it with a spray of ACID.
+  url_name: weepinbell
+  firstType: Grass
+  secondType: Poison
+  Romaji: Utsodon
+  Kana: ウツドン
+Victreebel:
+  number: '071'
+  description: Said to live in huge colonies deep in jungles, although no one has
+    ever returned from there.
+  url_name: victreebel
+  firstType: Grass
+  secondType: Poison
+  Romaji: Utsoboto
+  Kana: ウツボット
+Tentacool:
+  number: '072'
+  description: Drifts in shallow seas. Anglers who hook them by accident are often
+    punished by its stinging acid.
+  url_name: tentacool
+  firstType: Water
+  secondType: Poison
+  Romaji: Menokurage
+  Kana: メノクラゲ
+Tentacruel:
+  number: '073'
+  description: The tentacles are normally kept short. On hunts, they are extended
+    to ensnare and immobilize prey.
+  url_name: tentacruel
+  firstType: Water
+  secondType: Poison
+  Romaji: Dokukurage
+  Kana: ドククラゲ
+Geodude:
+  number: '074'
+  description: Found in fields and mountains. Mistaking them for boulders, people
+    often step or trip on them.
+  url_name: geodude
+  firstType: Rock
+  secondType: Ground
+  Romaji: Ishitsubute
+  Kana: イシツブテ
+Graveler:
+  number: '075'
+  description: Rolls down slopes to move. It rolls over any obstacle without slowing
+    or changing its direction.
+  url_name: graveler
+  firstType: Rock
+  secondType: Ground
+  Romaji: Goroun
+  Kana: ゴローン
+Golem:
+  number: '076'
+  description: Its boulder-like body is extremely hard. It can easily withstand dynamite
+    blasts without damage.
+  url_name: golem
+  firstType: Rock
+  secondType: Ground
+  Romaji: Gorounya
+  Kana: ゴローニャ
+Ponyta:
+  number: '077'
+  description: Its hooves are 10 times harder than diamonds. It can trample anything
+    completely flat in little time.
+  url_name: ponyta
+  firstType: Fire
+  Romaji: Ponyta
+  Kana: ポニータ
+Rapidash:
+  number: 078
+  description: Very competitive, this POKéMON will chase anything that moves fast
+    in the hopes of racing it.
+  url_name: rapidash
+  firstType: Fire
+  Romaji: Gyaroppu
+  Kana: ギャロップ
+Slowpoke:
+  number: 079
+  description: Incredibly slow and dopey. It takes 5 seconds for it to feel pain when
+    under attack.
+  url_name: slowpoke
+  firstType: Water
+  secondType: Psychic
+  Romaji: Yadon
+  Kana: ヤドン
+Slowbro:
+  number: 080
+  description: The SHELLDER that is latched onto SLOWPOKE’s tail is said to feed on
+    the host’s left over scraps.
+  url_name: slowbro
+  firstType: Water
+  secondType: Psychic
+  Romaji: Yadoran
+  Kana: ヤドラン
+Magnemite:
+  number: 081
+  description: Uses anti-gravity to stay suspended. Appears without warning and uses
+    THUNDER WAVE and similar moves.
+  url_name: magnemite
+  firstType: Electric
+  secondType: Steel
+  Romaji: Coil
+  Kana: コイル
+Magneton:
+  number: 082
+  description: Formed by several MAGNEMITEs linked together. They frequently appear
+    when sunspots flare up.
+  url_name: magneton
+  firstType: Electric
+  secondType: Steel
+  Romaji: Rarecoil
+  Kana: レアコイル
+Farfetch'd:
+  number: 083
+  description: The sprig of green onions it holds is its weapon. It is used much like
+    a metal sword.
+  url_name: farfetchd
+  firstType: Normal
+  secondType: Flying
+  Romaji: Kamonegi
+  Kana: カモネギ
+Doduo:
+  number: 084
+  description: A bird that makes up for its poor flying with its fast foot speed.
+    Leaves giant footprints.
+  url_name: doduo
+  firstType: Normal
+  secondType: Flying
+  Romaji: Dodo
+  Kana: ドードー
+Dodrio:
+  number: 085
+  description: Uses its three brains to execute complex plans. While two heads sleep,
+    one head stays awake.
+  url_name: dodrio
+  firstType: Normal
+  secondType: Flying
+  Romaji: Dodorio
+  Kana: ドードリオ
+Seel:
+  number: 086
+  description: The protruding horn on its head is very hard. It is used for bashing
+    through thick ice.
+  url_name: seel
+  firstType: Water
+  Romaji: Pauwau
+  Kana: パウワウ
+Dewgong:
+  number: 087
+  description: Stores thermal energy in its body. Swims at a steady 8 knots even in
+    intensely cold waters.
+  url_name: dewgong
+  firstType: Water
+  secondType: Ice
+  Romaji: Jugong
+  Kana: ジュゴン
+Grimer:
+  number: 088
+  description: Appears in filthy areas. Thrives by sucking up polluted sludge that
+    is pumped out of factories.
+  url_name: grimer
+  firstType: Poison
+  Romaji: Betbeter
+  Kana: ベトベター
+Muk:
+  number: 089
+  description: Thickly covered with a filthy, vile sludge. It is so toxic, even its
+    footprints contain poison.
+  url_name: muk
+  firstType: Poison
+  Romaji: Betbeton
+  Kana: ベトベトン
+Shellder:
+  number: 090
+  description: Its hard shell repels any kind of attack. It is vulnerable only when
+    its shell is open.
+  url_name: shellder
+  firstType: Water
+  Romaji: Shellder
+  Kana: シェルダー
+Cloyster:
+  number: 091
+  description: When attacked, it launches its horns in quick volleys. Its innards
+    have never been seen.
+  url_name: cloyster
+  firstType: Water
+  secondType: Ice
+  Romaji: Parshen
+  Kana: パルシェン
+Gastly:
+  number: 092
+  description: Almost invisible, this gaseous POKéMON cloaks the target and puts it
+    to sleep without notice.
+  url_name: gastly
+  firstType: Ghost
+  secondType: Poison
+  Romaji: Ghos
+  Kana: ゴース
+Haunter:
+  number: 093
+  description: Because of its ability to slip through block walls, it is said to be
+    from another dimension.
+  url_name: haunter
+  firstType: Ghost
+  secondType: Poison
+  Romaji: Ghost
+  Kana: ゴースト
+Gengar:
+  number: 094
+  description: Under a full moon, this POKéMON likes to mimic the shadows of people
+    and laugh at their fright.
+  url_name: gengar
+  firstType: Ghost
+  secondType: Poison
+  firstMegaType: Ghost
+  secondMegaType: Poison
+  Romaji: Gengar
+  Kana: ゲンガー
+Onix:
+  number: 095
+  description: As it grows, the stone portions of its body harden to become similar
+    to a diamond, but colored black.
+  url_name: onix
+  firstType: Rock
+  secondType: Ground
+  Romaji: Iwark
+  Kana: イワーク
+Drowzee:
+  number: 096
+  description: Puts enemies to sleep then eats their dreams. Occasionally gets sick
+    from eating bad dreams.
+  url_name: drowzee
+  firstType: Psychic
+  Romaji: Sleepe
+  Kana: スリープ
+Hypno:
+  number: 097
+  description: When it locks eyes with an enemy, it will use a mix of PSI moves such
+    as HYPNOSIS and CONFUSION.
+  url_name: hypno
+  firstType: Psychic
+  Romaji: Sleeper
+  Kana: スリーパー
+Krabby:
+  number: 098
+  description: Its pincers are not only powerful weapons, they are used for balance
+    when walking sideways.
+  url_name: krabby
+  firstType: Water
+  Romaji: Crab
+  Kana: クラブ
+Kingler:
+  number: 099
+  description: The large pincer has 10000 hp of crushing power. However, its huge
+    size makes it unwieldy to use.
+  url_name: kingler
+  firstType: Water
+  Romaji: Kingler
+  Kana: キングラー
+Voltorb:
+  number: '100'
+  description: Usually found in power plants. Easily mistaken for a POKé BALL, they
+    have zapped many people.
+  url_name: voltorb
+  firstType: Electric
+  Romaji: Biriridama
+  Kana: ビリリダマ
+Electrode:
+  number: '101'
+  description: It stores electric energy under very high pressure. It often explodes
+    with little or no provocation.
+  url_name: electrode
+  firstType: Electric
+  Romaji: Marumain
+  Kana: マルマイン
+Exeggcute:
+  number: '102'
+  description: Often mistaken for eggs. When disturbed, they quickly gather and attack
+    in swarms.
+  url_name: exeggcute
+  firstType: Grass
+  secondType: Psychic
+  Romaji: Tamatama
+  Kana: タマタマ
+Exeggutor:
+  number: '103'
+  description: Legend has it that on rare occasions, one of its heads will drop off
+    and continue on as an EXEGGCUTE.
+  url_name: exeggutor
+  firstType: Grass
+  secondType: Psychic
+  Romaji: Nassy
+  Kana: ナッシー
+Cubone:
+  number: '104'
+  description: Because it never removes its skull helmet, no one has ever seen this
+    POKéMON’s real face.
+  url_name: cubone
+  firstType: Ground
+  Romaji: Karakara
+  Kana: カラカラ
+Marowak:
+  number: '105'
+  description: The bone it holds is its key weapon. It throws the bone skillfully
+    like a boomerang to KO targets.
+  url_name: marowak
+  firstType: Ground
+  Romaji: GaraGara
+  Kana: ガラガラ
+Hitmonlee:
+  number: '106'
+  description: When in a hurry, its legs lengthen progressively. It runs smoothly
+    with extra long, loping strides.
+  url_name: hitmonlee
+  firstType: Fighting
+  Romaji: Sawamular
+  Kana: サワムラー
+Hitmonchan:
+  number: '107'
+  description: While apparently doing nothing, it fires punches in lightning fast
+    volleys that are impossible to see.
+  url_name: hitmonchan
+  firstType: Fighting
+  Romaji: Ebiwalar
+  Kana: エビワラー
+Lickitung:
+  number: '108'
+  description: Its tongue can be extended like a chameleon’s. It leaves a tingling
+    sensation when it licks enemies.
+  url_name: lickitung
+  firstType: Normal
+  Romaji: Beroringa
+  Kana: ベロリンガ
+Koffing:
+  number: '109'
+  description: Because it stores several kinds of toxic gases in its body, it is prone
+    to exploding without warning.
+  url_name: koffing
+  firstType: Poison
+  Romaji: Dogars
+  Kana: ドガース
+Weezing:
+  number: '110'
+  description: Where two kinds of poison gases meet, 2 KOFFINGs can fuse into a WEEZING
+    over many years.
+  url_name: weezing
+  firstType: Poison
+  Romaji: Matadogas
+  Kana: マタドガス
+Rhyhorn:
+  number: '111'
+  description: Its massive bones are 1000 times harder than human bones. It can easily
+    knock a trailer flying.
+  url_name: rhyhorn
+  firstType: Ground
+  secondType: Rock
+  Romaji: Sihorn
+  Kana: サイホーン
+Rhydon:
+  number: '112'
+  description: Protected by an armor-like hide, it is capable of living in molten
+    lava of 3,600 degrees.
+  url_name: rhydon
+  firstType: Ground
+  secondType: Rock
+  Romaji: Sidon
+  Kana: サイドン
+Chansey:
+  number: '113'
+  description: A rare and elusive POKéMON that is said to bring happiness to those
+    who manage to get it.
+  url_name: chansey
+  firstType: Normal
+  Romaji: Lucky
+  Kana: ラッキー
+Tangela:
+  number: '114'
+  description: The whole body is swathed with wide vines that are similar to seaweed.
+    Its vines shake as it walks.
+  url_name: tangela
+  firstType: Grass
+  Romaji: Monjara
+  Kana: モンジャラ
+Kangaskhan:
+  number: '115'
+  description: The infant rarely ventures out of its mother’s protective pouch until
+    it is 3 years old.
+  url_name: kangaskhan
+  firstType: Normal
+  firstMegaType: Normal
+  Romaji: Garura
+  Kana: ガルーラ
+Horsea:
+  number: '116'
+  description: Known to shoot down flying bugs with precision blasts of ink from the
+    surface of the water.
+  url_name: horsea
+  firstType: Water
+  Romaji: Tattsu
+  Kana: タッツー
+Seadra:
+  number: '117'
+  description: Capable of swimming backwards by rapidly flapping its wing-like pectoral
+    fins and stout tail.
+  url_name: seadra
+  firstType: Water
+  Romaji: Seadra
+  Kana: シードラ
+Goldeen:
+  number: '118'
+  description: Its tail fin billows like an elegant ballroom dress, giving it the
+    nickname of the Water Queen.
+  url_name: goldeen
+  firstType: Water
+  Romaji: Tosakinto
+  Kana: トサキント
+Seaking:
+  number: '119'
+  description: In the autumn spawning season, they can be seen swimming powerfully
+    up rivers and creeks.
+  url_name: seaking
+  firstType: Water
+  Romaji: Azumao
+  Kana: アズマオウ
+Staryu:
+  number: '120'
+  description: An enigmatic POKéMON that can effortlessly regenerate any appendage
+    it loses in battle.
+  url_name: staryu
+  firstType: Water
+  Romaji: Hitodeman
+  Kana: ヒトデマン
+Starmie:
+  number: '121'
+  description: Its central core glows with the seven colors of the rainbow. Some people
+    value the core as a gem.
+  url_name: starmie
+  firstType: Water
+  secondType: Psychic
+  Romaji: Starmie
+  Kana: スターミー
+Mr. Mime:
+  number: '122'
+  description: If interrupted while it is miming, it will slap around the offender
+    with its broad hands.
+  url_name: mr-mime
+  firstType: Psychic
+  secondType: Fairy
+  Romaji: Barrierd
+  Kana: バリヤード
+Scyther:
+  number: '123'
+  description: With ninja-like agility and speed, it can create the illusion that
+    there is more than one.
+  url_name: scyther
+  firstType: Bug
+  secondType: Flying
+  Romaji: Strike
+  Kana: ストライク
+Jynx:
+  number: '124'
+  description: It seductively wiggles its hips as it walks. It can cause people to
+    dance in unison with it.
+  url_name: jynx
+  firstType: Ice
+  secondType: Psychic
+  Romaji: Rougela
+  Kana: ルージュラ
+Electabuzz:
+  number: '125'
+  description: Normally found near power plants, they can wander away and cause major
+    blackouts in cities.
+  url_name: electabuzz
+  firstType: Electric
+  Romaji: Eleboo
+  Kana: エレブー
+Magmar:
+  number: '126'
+  description: Its body always burns with an orange glow that enables it to hide perfectly
+    among flames.
+  url_name: magmar
+  firstType: Fire
+  Romaji: Boober
+  Kana: ブーバー
+Pinsir:
+  number: '127'
+  description: If it fails to crush the victim in its pincers, it will swing it around
+    and toss it hard.
+  url_name: pinsir
+  firstType: Bug
+  firstMegaType: Bug
+  secondMegaType: Flying
+  Romaji: Kairos
+  Kana: カイロス
+Tauros:
+  number: '128'
+  description: When it targets an enemy, it charges furiously while whipping its body
+    with its long tails.
+  url_name: tauros
+  firstType: Normal
+  Romaji: Kentauros
+  Kana: ケンタロス
+Magikarp:
+  number: '129'
+  description: In the distant past, it was somewhat stronger than the horribly weak
+    descendants that exist today.
+  url_name: magikarp
+  firstType: Water
+  Romaji: Koiking
+  Kana: コイキング
+Gyarados:
+  number: '130'
+  description: Rarely seen in the wild. Huge and vicious, it is capable of destroying
+    entire cities in a rage.
+  url_name: gyarados
+  firstType: Water
+  secondType: Flying
+  firstMegaType: Water
+  secondMegaType: Dark
+  Romaji: Gyarados
+  Kana: ギャラドス
+Lapras:
+  number: '131'
+  description: A POKéMON that has been overhunted almost to extinction. It can ferry
+    people across the water.
+  url_name: lapras
+  firstType: Water
+  secondType: Ice
+  Romaji: Laplace
+  Kana: ラプラス
+Ditto:
+  number: '132'
+  description: Capable of copying an enemy’s genetic code to instantly transform itself
+    into a duplicate of the enemy.
+  url_name: ditto
+  firstType: Normal
+  Romaji: Metamon
+  Kana: メタモン
+Eevee:
+  number: '133'
+  description: Its genetic code is irregular. It may mutate if it is exposed to radiation
+    from element STONEs.
+  url_name: eevee
+  firstType: Normal
+  Romaji: Eievui
+  Kana: イーブイ
+Vaporeon:
+  number: '134'
+  description: Lives close to water. Its long tail is ridged with a fin which is often
+    mistaken for a mermaid’s.
+  url_name: vaporeon
+  firstType: Water
+  Romaji: Showers
+  Kana: シャワーズ
+Jolteon:
+  number: '135'
+  description: It accumulates negative ions in the atmosphere to blast out 10000volt
+    lightning bolts.
+  url_name: jolteon
+  firstType: Electric
+  Romaji: Thunders
+  Kana: サンダース
+Flareon:
+  number: '136'
+  description: When storing thermal energy in its body, its temperature could soar
+    to over 1600 degrees.
+  url_name: flareon
+  firstType: Fire
+  Romaji: Booster
+  Kana: ブースター
+Porygon:
+  number: '137'
+  description: A POKéMON that consists entirely of programming code. Capable of moving
+    freely in cyberspace.
+  url_name: porygon
+  firstType: Normal
+  Romaji: Porygon
+  Kana: ポリゴン
+Omanyte:
+  number: '138'
+  description: Although long extinct, in rare cases, it can be genetically resurrected
+    from fossils.
+  url_name: omanyte
+  firstType: Rock
+  secondType: Water
+  Romaji: Omnite
+  Kana: オムナイト
+Omastar:
+  number: '139'
+  description: A prehistoric POKéMON that died out when its heavy shell made it impossible
+    to catch prey.
+  url_name: omastar
+  firstType: Rock
+  secondType: Water
+  Romaji: Omstar
+  Kana: オムスター
+Kabuto:
+  number: '140'
+  description: A POKéMON that was resurrected from a fossil found in what was once
+    the ocean floor eons ago.
+  url_name: kabuto
+  firstType: Rock
+  secondType: Water
+  Romaji: Kabuto
+  Kana: カブト
+Kabutops:
+  number: '141'
+  description: Its sleek shape is perfect for swimming. It slashes prey with its claws
+    and drains the body fluids.
+  url_name: kabutops
+  firstType: Rock
+  secondType: Water
+  Romaji: Kabutops
+  Kana: カブトプス
+Aerodactyl:
+  number: '142'
+  description: A ferocious, prehistoric POKéMON that goes for the enemy’s throat with
+    its serrated saw-like fangs.
+  url_name: aerodactyl
+  firstType: Rock
+  secondType: Flying
+  firstMegaType: Rock
+  secondMegaType: Flying
+  Romaji: Putera
+  Kana: プテラ
+Snorlax:
+  number: '143'
+  description: Very lazy. Just eats and sleeps. As its rotund bulk builds, it becomes
+    steadily more slothful.
+  url_name: snorlax
+  firstType: Normal
+  Romaji: Kabigon
+  Kana: カビゴン
+Articuno:
+  number: '144'
+  description: A legendary bird POKéMON that is said to appear to doomed people who
+    are lost in icy mountains.
+  url_name: articuno
+  firstType: Ice
+  secondType: Flying
+  Romaji: Freezer
+  Kana: フリーザー
+Zapdos:
+  number: '145'
+  description: A legendary bird POKéMON that is said to appear from clouds while dropping
+    enormous lightning bolts.
+  url_name: zapdos
+  firstType: Electric
+  secondType: Flying
+  Romaji: Thunder
+  Kana: サンダー
+Moltres:
+  number: '146'
+  description: Known as the legendary bird of fire. Every flap of its wings creates
+    a dazzling flash of flames.
+  url_name: moltres
+  firstType: Fire
+  secondType: Flying
+  Romaji: Fire
+  Kana: ファイヤー
+Dratini:
+  number: '147'
+  description: Long considered a mythical POKéMON until recently when a small colony
+    was found living underwater.
+  url_name: dratini
+  firstType: Dragon
+  Romaji: Miniryu
+  Kana: ミニリュウ
+Dragonair:
+  number: '148'
+  description: A mystical POKéMON that exudes a gentle aura. Has the ability to change
+    climate conditions.
+  url_name: dragonair
+  firstType: Dragon
+  Romaji: Hakuryu
+  Kana: ハクリュー
+Dragonite:
+  number: '149'
+  description: An extremely rarely seen marine POKéMON. Its intelligence is said to
+    match that of humans.
+  url_name: dragonite
+  firstType: Dragon
+  secondType: Flying
+  Romaji: Kairyu
+  Kana: カイリュー
+Mewtwo:
+  number: '150'
+  description: It was created by a scientist after years of horrific gene splicing
+    and DNA engineering experiments.
+  url_name: mewtwo
+  firstType: Psychic
+  firstMegaType: Psychic
+  secondMegaType: Fighting
+  firstMegaTypeY: Psychic
+  Romaji: Myuutsu
+  Kana: ミュウツー
+Mew:
+  number: '151'
+  description: So rare that it is still said to be a mirage by many experts. Only
+    a few people have seen it worldwide.
+  url_name: mew
+  firstType: Psychic
+  Romaji: Myuu
+  Kana: ミュウ
+Chikorita:
+  number: '152'
+  description: A sweet aroma gently wafts from the leaf on its head. It is docile
+    and loves to soak up the sun’s rays.
+  url_name: chikorita
+  firstType: Grass
+  Romaji: Chikorita
+  Kana: チコリータ
+Bayleef:
+  number: '153'
+  description: The scent of spices comes from around its neck. Somehow, sniffing it
+    makes you want to fight.
+  url_name: bayleef
+  firstType: Grass
+  Romaji: Bayleef
+  Kana: ベイリーフ
+Meganium:
+  number: '154'
+  description: The aroma that rises from its petals contains a substance that calms
+    aggressive feelings.
+  url_name: meganium
+  firstType: Grass
+  Romaji: Meganium
+  Kana: メガニウム
+Cyndaquil:
+  number: '155'
+  description: It is timid, and always curls itself up in a ball. If attacked, it
+    flares up its back for protection.
+  url_name: cyndaquil
+  firstType: Fire
+  Romaji: Hinoarashi
+  Kana: ヒノアラシ
+Quilava:
+  number: '156'
+  description: Be careful if it turns its back during battle. It means that it will
+    attack with the fire on its back.
+  url_name: quilava
+  firstType: Fire
+  Romaji: Magumarashi
+  Kana: マグマラシ
+Typhlosion:
+  number: '157'
+  description: If its rage peaks, it becomes so hot that anything that touches it
+    will instantly go up in flames.
+  url_name: typhlosion
+  firstType: Fire
+  Romaji: Bakufun
+  Kana: バクフーン
+Totodile:
+  number: '158'
+  description: Its well-developed jaws are powerful and capable of crushing anything.
+    Even its trainer must be careful.
+  url_name: totodile
+  firstType: Water
+  Romaji: Waninoko
+  Kana: ワニノコ
+Croconaw:
+  number: '159'
+  description: If it loses a fang, a new one grows back in its place. There are always
+    48 fangs lining its mouth.
+  url_name: croconaw
+  firstType: Water
+  Romaji: Alligates
+  Kana: アリゲイツ
+Feraligatr:
+  number: '160'
+  description: When it bites with its massive and powerful jaws, it shakes its head
+    and savagely tears its victim up.
+  url_name: feraligatr
+  firstType: Water
+  Romaji: Ordairu
+  Kana: オーダイル
+Sentret:
+  number: '161'
+  description: A very cautious POKéMON, it raises itself up using its tail to get
+    a better view of its surroundings.
+  url_name: sentret
+  firstType: Normal
+  Romaji: Otachi
+  Kana: オタチ
+Furret:
+  number: '162'
+  description: It makes a nest to suit its long and skinny body. The nest is impossible
+    for other POKéMON to enter.
+  url_name: furret
+  firstType: Normal
+  Romaji: Ootachi
+  Kana: オオタチ
+Hoothoot:
+  number: '163'
+  description: It always stands on one foot. It changes feet so fast, the movement
+    can rarely be seen.
+  url_name: hoothoot
+  firstType: Normal
+  secondType: Flying
+  Romaji: Hoho
+  Kana: ホーホー
+Noctowl:
+  number: '164'
+  description: Its eyes are specially adapted. They concentrate even faint light and
+    enable it to see in the dark.
+  url_name: noctowl
+  firstType: Normal
+  secondType: Flying
+  Romaji: Yorunozuku
+  Kana: ヨルノズク
+Ledyba:
+  number: '165'
+  description: It is very timid. It will be afraid to move if it is alone. But it
+    will be active if it is in a group.
+  url_name: ledyba
+  firstType: Bug
+  secondType: Flying
+  Romaji: Rediba
+  Kana: レディバ
+Ledian:
+  number: '166'
+  description: When the stars flicker in the night sky, it flutters about, scattering
+    a glowing powder.
+  url_name: ledian
+  firstType: Bug
+  secondType: Flying
+  Romaji: Redian
+  Kana: レディアン
+Spinarak:
+  number: '167'
+  description: It lies still in the same pose for days in its web, waiting for its
+    unsuspecting prey to wander close.
+  url_name: spinarak
+  firstType: Bug
+  secondType: Poison
+  Romaji: Itomaru
+  Kana: イトマル
+Ariados:
+  number: '168'
+  description: It spins string not only from its rear but also from its mouth. It
+    is hard to tell which end is which.
+  url_name: ariados
+  firstType: Bug
+  secondType: Poison
+  Romaji: Ariados
+  Kana: アリアドス
+Crobat:
+  number: '169'
+  description: It flies so silently through the dark on its four wings that it may
+    not be noticed even when nearby.
+  url_name: crobat
+  firstType: Poison
+  secondType: Flying
+  Romaji: Kurobatto
+  Kana: クロバット
+Chinchou:
+  number: '170'
+  description: It shoots positive and negative electricity between the tips of its
+    two antennae and zaps its enemies.
+  url_name: chinchou
+  firstType: Water
+  secondType: Electric
+  Romaji: Chonchii
+  Kana: チョンチー
+Lanturn:
+  number: '171'
+  description: The light it emits is so bright that it can illuminate the sea’s surface
+    from a depth of over three miles.
+  url_name: lanturn
+  firstType: Water
+  secondType: Electric
+  Romaji: Rantern
+  Kana: ランターン
+Pichu:
+  number: '172'
+  description: It is not yet skilled at storing electricity. It may send out a jolt
+    if amused or startled.
+  url_name: pichu
+  firstType: Electric
+  Romaji: Pichu
+  Kana: ピチュー
+Cleffa:
+  number: '173'
+  description: Because of its unusual, star-like silhouette, people believe that it
+    came here on a meteor.
+  url_name: cleffa
+  firstType: Fairy
+  Romaji: Piii
+  Kana: ピィ
+Igglybuff:
+  number: '174'
+  description: It has a very soft body. If it starts to roll, it will bounce all over
+    and be impossible to stop.
+  url_name: igglybuff
+  firstType: Normal
+  secondType: Fairy
+  Romaji: Pupurin
+  Kana: ププリン
+Togepi:
+  number: '175'
+  description: The shell seems to be filled with joy. It is said that it will share
+    good luck when treated kindly.
+  url_name: togepi
+  firstType: Fairy
+  Romaji: Togepii
+  Kana: トゲピー
+Togetic:
+  number: '176'
+  description: They say that it will appear before kindhearted, caring people and
+    shower them with happiness.
+  url_name: togetic
+  firstType: Fairy
+  secondType: Flying
+  Romaji: Togechikku
+  Kana: トゲチック
+Natu:
+  number: '177'
+  description: Because its wings aren’t yet fully grown, it has to hop to get around.
+    It is always staring at something.
+  url_name: natu
+  firstType: Psychic
+  secondType: Flying
+  Romaji: Neitei
+  Kana: ネイティ
+Xatu:
+  number: '178'
+  description: They say that it stays still and quiet because it is seeing both the
+    past and future at the same time.
+  url_name: xatu
+  firstType: Psychic
+  secondType: Flying
+  Romaji: Neiteio
+  Kana: ネイティオ
+Mareep:
+  number: '179'
+  description: If static electricity builds in its body, its fleece doubles in volume.
+    Touching it will shock you.
+  url_name: mareep
+  firstType: Electric
+  Romaji: Maripu
+  Kana: メリープ
+Flaaffy:
+  number: '180'
+  description: As a result of storing too much electricity, it developed patches where
+    even downy wool won’t grow.
+  url_name: flaaffy
+  firstType: Electric
+  Romaji: Mokoko
+  Kana: モココ
+Ampharos:
+  number: '181'
+  description: The tail’s tip shines brightly and can be seen from far away. It acts
+    as a beacon for lost people.
+  url_name: ampharos
+  firstType: Electric
+  firstMegaType: Electric
+  secondMegaType: Dragon
+  Romaji: Denryu
+  Kana: デンリュウ
+Bellossom:
+  number: '182'
+  description: BELLOSSOM gather at times and appear to dance. They say that the dance
+    is a ritual to summon the sun.
+  url_name: bellossom
+  firstType: Grass
+  Romaji: Kireihana
+  Kana: キレイハナ
+Marill:
+  number: '183'
+  description: The tip of its tail, which contains oil that is lighter than water,
+    lets it swim without drowning.
+  url_name: marill
+  firstType: Water
+  secondType: Fairy
+  Romaji: Mariru
+  Kana: マリル
+Azumarill:
+  number: '184'
+  description: By keeping still and listening intently, it can tell what is in even
+    wild, fastmoving rivers.
+  url_name: azumarill
+  firstType: Water
+  secondType: Fairy
+  Romaji: Mariruri
+  Kana: マリルリ
+Sudowoodo:
+  number: '185'
+  description: Although it always pretends to be a tree, its composition appears to
+    be closer to a rock than a plant.
+  url_name: sudowoodo
+  firstType: Rock
+  Romaji: Usokki
+  Kana: ウソッキー
+Politoed:
+  number: '186'
+  description: If POLIWAG and POLIWHIRL hear its echoing cry, they respond by gathering
+    from far and wide.
+  url_name: politoed
+  firstType: Water
+  Romaji: Nyorotono
+  Kana: ニョロトノ
+Hoppip:
+  number: '187'
+  description: To keep from being blown away by the wind, they gather in clusters.
+    They do enjoy gentle breezes, though.
+  url_name: hoppip
+  firstType: Grass
+  secondType: Flying
+  Romaji: Hanekko
+  Kana: ハネッコ
+Skiploom:
+  number: '188'
+  description: The bloom on top of its head opens and closes as the temperature fluctuates
+    up and down.
+  url_name: skiploom
+  firstType: Grass
+  secondType: Flying
+  Romaji: Popokko
+  Kana: ポポッコ
+Jumpluff:
+  number: '189'
+  description: Once it catches the wind, it deftly controls its cotton-puff spores
+    to float, even around the world.
+  url_name: jumpluff
+  firstType: Grass
+  secondType: Flying
+  Romaji: Watakko
+  Kana: ワタッコ
+Aipom:
+  number: '190'
+  description: Its tail is so powerful that it can use it to grab a tree branch and
+    hold itself up in the air.
+  url_name: aipom
+  firstType: Normal
+  Romaji: Eipam
+  Kana: エイパム
+Sunkern:
+  number: '191'
+  description: It may drop out of the sky suddenly. If attacked by a SPEAROW, it will
+    violently shake its leaves.
+  url_name: sunkern
+  firstType: Grass
+  Romaji: Himanattsu
+  Kana: ヒマナッツ
+Sunflora:
+  number: '192'
+  description: It converts sunlight into energy. In the darkness after sunset, it
+    closes its petals and becomes still.
+  url_name: sunflora
+  firstType: Grass
+  Romaji: Kimawari
+  Kana: キマワリ
+Yanma:
+  number: '193'
+  description: If it flaps its wings really fast, it can generate shock waves that
+    will shatter windows in the area.
+  url_name: yanma
+  firstType: Bug
+  secondType: Flying
+  Romaji: Yanyanma
+  Kana: ヤンヤンマ
+Wooper:
+  number: '194'
+  description: This POKéMON lives in cold water. It will leave the water to search
+    for food when it gets cold outside.
+  url_name: wooper
+  firstType: Water
+  secondType: Ground
+  Romaji: Upaa
+  Kana: ウパー
+Quagsire:
+  number: '195'
+  description: This carefree POKéMON has an easy-going nature. While swimming, it
+    always bumps into boat hulls.
+  url_name: quagsire
+  firstType: Water
+  secondType: Ground
+  Romaji: Nuoo
+  Kana: ヌオー
+Espeon:
+  number: '196'
+  description: It uses the fine hair that covers its body to sense air currents and
+    predict its enemy’s actions.
+  url_name: espeon
+  firstType: Psychic
+  Romaji: Eifi
+  Kana: エーフィ
+Umbreon:
+  number: '197'
+  description: When agitated, this POKéMON protects itself by spraying poisonous sweat
+    from its pores.
+  url_name: umbreon
+  firstType: Dark
+  Romaji: Burakki
+  Kana: ブラッキー
+Murkrow:
+  number: '198'
+  description: Feared and loathed by many, it is believed to bring misfortune to all
+    those who see it at night.
+  url_name: murkrow
+  firstType: Dark
+  secondType: Flying
+  Romaji: Yamikarasu
+  Kana: ヤミカラス
+Slowking:
+  number: '199'
+  description: It has incredible intellect and intuition. Whatever the situation,
+    it remains calm and collected.
+  url_name: slowking
+  firstType: Water
+  secondType: Psychic
+  Romaji: Yadoking
+  Kana: ヤドキング
+Misdreavus:
+  number: '200'
+  description: It likes playing mischievous tricks such as screaming and wailing to
+    startle people at night.
+  url_name: misdreavus
+  firstType: Ghost
+  Romaji: Muuma
+  Kana: ムウマ
+Unown:
+  number: '201'
+  description: Their shapes look like hieroglyphs on ancient tablets. It is said that
+    the two are somehow related.
+  url_name: unown
+  firstType: Psychic
+  Romaji: Annon
+  Kana: アンノーン
+Wobbuffet:
+  number: '202'
+  description: It hates light and shock. If attacked, it inflates its body to pump
+    up its counterstrike.
+  url_name: wobbuffet
+  firstType: Psychic
+  Romaji: Sonansu
+  Kana: ソーナンス
+Girafarig:
+  number: '203'
+  description: Its tail has a small brain of its own. Beware! If you get close, it
+    may react to your scent and bite.
+  url_name: girafarig
+  firstType: Normal
+  secondType: Psychic
+  Romaji: Kiriniki
+  Kana: キリンリキ
+Pineco:
+  number: '204'
+  description: It likes to make its shell thicker by adding layers of tree bark. The
+    additional weight doesn’t bother it.
+  url_name: pineco
+  firstType: Bug
+  Romaji: Kunugidama
+  Kana: クヌギダマ
+Forretress:
+  number: '205'
+  description: Its entire body is shielded by a steel-hard shell. What lurks inside
+    the armor is a total mystery.
+  url_name: forretress
+  firstType: Bug
+  secondType: Steel
+  Romaji: Foretosu
+  Kana: フォレトス
+Dunsparce:
+  number: '206'
+  description: When spotted, this POKéMON escapes backward by furiously boring into
+    the ground with its tail.
+  url_name: dunsparce
+  firstType: Normal
+  Romaji: Nokocchi
+  Kana: ノコッチ
+Gligar:
+  number: '207'
+  description: It flies straight at its target’s face then clamps down on the startled
+    victim to inject poison.
+  url_name: gligar
+  firstType: Ground
+  secondType: Flying
+  Romaji: Guraiga
+  Kana: グライガー
+Steelix:
+  number: '208'
+  description: Its body has been compressed deep under the ground. As a result, it
+    is even harder than a diamond.
+  url_name: steelix
+  firstType: Steel
+  secondType: Ground
+  Romaji: Haganeiru
+  Kana: ハガネール
+Snubbull:
+  number: '209'
+  description: Although it looks frightening, it is actually kind and affectionate.
+    It is very popular among women.
+  url_name: snubbull
+  firstType: Fairy
+  Romaji: Buru
+  Kana: ブルー
+Granbull:
+  number: '210'
+  description: It is actually timid and easily spooked. If attacked, it flails about
+    to fend off its attacker.
+  url_name: granbull
+  firstType: Fairy
+  Romaji: Granburu
+  Kana: グランブル
+Qwilfish:
+  number: '211'
+  description: To fire its poison spikes, it must inflate its body by drinking over
+    2.6 gallons of water all at once.
+  url_name: qwilfish
+  firstType: Water
+  secondType: Poison
+  Romaji: Harisen
+  Kana: ハリーセン
+Scizor:
+  number: '212'
+  description: It swings its eyepatterned pincers up to scare its foes. This makes
+    it look like it has three heads.
+  url_name: scizor
+  firstType: Bug
+  secondType: Steel
+  firstMegaType: Bug
+  secondMegaType: Steel
+  Romaji: Hassamu
+  Kana: ハッサム
+Shuckle:
+  number: '213'
+  description: The BERRIES it stores in its vase-like shell decompose and become a
+    gooey liquid.
+  url_name: shuckle
+  firstType: Bug
+  secondType: Rock
+  Romaji: Tsubotsubo
+  Kana: ツボツボ
+Heracross:
+  number: '214'
+  description: This powerful POKéMON thrusts its prized horn under its enemies’ bellies
+    then lifts and throws them.
+  url_name: heracross
+  firstType: Bug
+  secondType: Fighting
+  firstMegaType: Bug
+  secondMegaType: Fighting
+  Romaji: Herakrosu
+  Kana: ヘラクロス
+Sneasel:
+  number: '215'
+  description: Its paws conceal sharp claws. If attacked, it suddenly extends the
+    claws and startles its enemy.
+  url_name: sneasel
+  firstType: Dark
+  secondType: Ice
+  Romaji: Nyura
+  Kana: ニューラ
+Teddiursa:
+  number: '216'
+  description: If it finds honey, its crescent mark glows. It always licks its paws
+    because they are soaked with honey.
+  url_name: teddiursa
+  firstType: Normal
+  Romaji: Himeguma
+  Kana: ヒメグマ
+Ursaring:
+  number: '217'
+  description: Although it is a good climber, it prefers to snap trees with its forelegs
+    and eat fallen BERRIES.
+  url_name: ursaring
+  firstType: Normal
+  Romaji: Ringuma
+  Kana: リングマ
+Slugma:
+  number: '218'
+  description: It never sleeps. It has to keep moving because if it stopped, its magma
+    body would cool and harden.
+  url_name: slugma
+  firstType: Fire
+  Romaji: Magumagu
+  Kana: マグマッグ
+Magcargo:
+  number: '219'
+  description: The shell on its back is just skin that has cooled and hardened. It
+    breaks easily with a slight touch.
+  url_name: magcargo
+  firstType: Fire
+  secondType: Rock
+  Romaji: Magukargo
+  Kana: マグカルゴ
+Swinub:
+  number: '220'
+  description: It rubs its snout on the ground to find and dig up food. It sometimes
+    discovers hot springs.
+  url_name: swinub
+  firstType: Ice
+  secondType: Ground
+  Romaji: Urimu
+  Kana: ウリムー
+Piloswine:
+  number: '221'
+  description: Because the long hair all over its body obscures its sight, it just
+    keeps charging repeatedly.
+  url_name: piloswine
+  firstType: Ice
+  secondType: Ground
+  Romaji: Inomu
+  Kana: イノムー
+Corsola:
+  number: '222'
+  description: It continuously sheds and grows. The tip of its head is prized as a
+    treasure for its beauty.
+  url_name: corsola
+  firstType: Water
+  secondType: Rock
+  Romaji: Saniigo
+  Kana: サニーゴ
+Remoraid:
+  number: '223'
+  description: It has superb accuracy. The water it shoots out can strike even moving
+    prey from more than 300 feet.
+  url_name: remoraid
+  firstType: Water
+  Romaji: Teppouo
+  Kana: テッポウオ
+Octillery:
+  number: '224'
+  description: It traps enemies with its suctioncupped tentacles then smashes them
+    with its rock-hard head.
+  url_name: octillery
+  firstType: Water
+  Romaji: Okutan
+  Kana: オクタン
+Delibird:
+  number: '225'
+  description: It carries food all day long. There are tales about lost people who
+    were saved by the food it had.
+  url_name: delibird
+  firstType: Ice
+  secondType: Flying
+  Romaji: Deribado
+  Kana: デリバード
+Mantine:
+  number: '226'
+  description: As it majestically swims, it doesn’t care if REMORAID attach to it
+    for scavenging its leftovers.
+  url_name: mantine
+  firstType: Water
+  secondType: Flying
+  Romaji: Mantain
+  Kana: マンタイン
+Skarmory:
+  number: '227'
+  description: Its sturdy wings look heavy, but they are actually hollow and light,
+    allowing it to fly freely in the sky.
+  url_name: skarmory
+  firstType: Steel
+  secondType: Flying
+  Romaji: Eamudo
+  Kana: エアームド
+Houndour:
+  number: '228'
+  description: It uses different kinds of cries for communicating with others of its
+    kind and for pursuing its prey.
+  url_name: houndour
+  firstType: Dark
+  secondType: Fire
+  Romaji: Deribiru
+  Kana: デルビル
+Houndoom:
+  number: '229'
+  description: If you are burned by the flames it shoots from its mouth, the pain
+    will never go away.
+  url_name: houndoom
+  firstType: Dark
+  secondType: Fire
+  firstMegaType: Dark
+  secondMegaType: Fire
+  Romaji: Herugaa
+  Kana: ヘルガー
+Kingdra:
+  number: '230'
+  description: It is said that it usually hides in underwater caves. It can create
+    whirlpools by yawning.
+  url_name: kingdra
+  firstType: Water
+  secondType: Dragon
+  Romaji: Kingdra
+  Kana: キングドラ
+Phanpy:
+  number: '231'
+  description: It swings its long snout around playfully, but because it is so strong,
+    that can be dangerous.
+  url_name: phanpy
+  firstType: Ground
+  Romaji: Gomazou
+  Kana: ゴマゾウ
+Donphan:
+  number: '232'
+  description: It has sharp, hard tusks and a rugged hide. Its TACKLE is strong enough
+    to knock down a house.
+  url_name: donphan
+  firstType: Ground
+  Romaji: Donfan
+  Kana: ドンファン
+Porygon2:
+  number: '233'
+  description: This upgraded version of PORYGON is designed for space exploration.
+    It can’t fly, though.
+  url_name: porygon2
+  firstType: Normal
+  Romaji: Porygon2
+  Kana: ポリゴン２
+Stantler:
+  number: '234'
+  description: The curved antlers subtly change the flow of air to create a strange
+    space where reality is distorted.
+  url_name: stantler
+  firstType: Normal
+  Romaji: Odoshishi
+  Kana: オドシシ
+Smeargle:
+  number: '235'
+  description: A special fluid oozes from the tip of its tail. It paints the fluid
+    everywhere to mark its territory.
+  url_name: smeargle
+  firstType: Normal
+  Romaji: Doburu
+  Kana: ドーブル
+Tyrogue:
+  number: '236'
+  description: It is always bursting with energy. To make itself stronger, it keeps
+    on fighting even if it loses.
+  url_name: tyrogue
+  firstType: Fighting
+  Romaji: Baruki
+  Kana: バルキー
+Hitmontop:
+  number: '237'
+  description: If you become enchanted by its smooth, elegant, dance-like kicks, you
+    may get drilled hard.
+  url_name: hitmontop
+  firstType: Fighting
+  Romaji: Kaporea
+  Kana: カポエラー
+Smoochum:
+  number: '238'
+  description: Its lips are the most sensitive parts on its body. It always uses its
+    lips first to examine things.
+  url_name: smoochum
+  firstType: Ice
+  secondType: Psychic
+  Romaji: Muchuru
+  Kana: ムチュール
+Elekid:
+  number: '239'
+  description: It rotates its arms to generate electricity, but it tires easily, so
+    it charges up only a little bit.
+  url_name: elekid
+  firstType: Electric
+  Romaji: Elekid
+  Kana: エレキッド
+Magby:
+  number: '240'
+  description: Each and every time it inhales and exhales, hot embers dribble out
+    of its mouth and nostrils.
+  url_name: magby
+  firstType: Fire
+  Romaji: Bubii
+  Kana: ブビィ
+Miltank:
+  number: '241'
+  description: Its milk is packed with nutrition, making it the ultimate beverage
+    for the sick or weary.
+  url_name: miltank
+  firstType: Normal
+  Romaji: Miltank
+  Kana: ミルタンク
+Blissey:
+  number: '242'
+  description: Anyone who takes even one bite of BLISSEY’s egg becomes unfailingly
+    caring and pleasant to everyone.
+  url_name: blissey
+  firstType: Normal
+  Romaji: Hapinasu
+  Kana: ハピナス
+Raikou:
+  number: '243'
+  description: The rain clouds it carries let it fire thunderbolts at will. They say
+    that it descended with lightning.
+  url_name: raikou
+  firstType: Electric
+  Romaji: Raikou
+  Kana: ライコウ
+Entei:
+  number: '244'
+  description: Volcanoes erupt when it barks. Unable to restrain its extreme power,
+    it races headlong around the land.
+  url_name: entei
+  firstType: Fire
+  Romaji: Entei
+  Kana: エンテイ
+Suicune:
+  number: '245'
+  description: Said to be the reincarnation of north winds, it can instantly purify
+    filthy, murky water.
+  url_name: suicune
+  firstType: Water
+  Romaji: Suikun
+  Kana: スイクン
+Larvitar:
+  number: '246'
+  description: It feeds on soil. After it has eaten a large mountain, it will fall
+    asleep so it can grow.
+  url_name: larvitar
+  firstType: Rock
+  secondType: Ground
+  Romaji: Yogirasu
+  Kana: ヨーギラス
+Pupitar:
+  number: '247'
+  description: Its shell is as hard as sheet rock, and it is also very strong. Its
+    THRASHING can topple a mountain.
+  url_name: pupitar
+  firstType: Rock
+  secondType: Ground
+  Romaji: Sanagirasu
+  Kana: サナギラス
+Tyranitar:
+  number: '248'
+  description: Its body can’t be harmed by any sort of attack, so it is very eager
+    to make challenges against enemies.
+  url_name: tyranitar
+  firstType: Rock
+  secondType: Dark
+  firstMegaType: Rock
+  secondMegaType: Dark
+  Romaji: Bangirasu
+  Kana: バンギラス
+Lugia:
+  number: '249'
+  description: It is said that it quietly spends its time deep at the bottom of the
+    sea because its powers are too strong.
+  url_name: lugia
+  firstType: Psychic
+  secondType: Flying
+  Romaji: Lugia
+  Kana: ルギア
+Ho-oh:
+  number: '250'
+  description: Legends claim this POKéMON flies the world’s skies continuously on
+    its magnificent sevencolored wings.
+  url_name: ho-oh
+  firstType: Fire
+  secondType: Flying
+  Romaji: Houou
+  Kana: ホウオウ
+Celebi:
+  number: '251'
+  description: This POKéMON wanders across time. Grass and trees flourish in the forests
+    in which it has appeared.
+  url_name: celebi
+  firstType: Psychic
+  secondType: Grass
+  Romaji: Serebii
+  Kana: セレビィ
+Treecko:
+  number: '252'
+  description: TREECKO has small hooks on the bottom of its feet that enable it to
+    scale vertical walls. This POKéMON attacks by slamming foes with its thick tail.
+  url_name: treecko
+  firstType: Grass
+  Romaji: Kimori
+  Kana: キモリ
+Grovyle:
+  number: '253'
+  description: The leaves growing out of GROVYLE’s body are convenient for camouflaging
+    it from enemies in the forest. This POKéMON is a master at climbing trees in jungles.
+  url_name: grovyle
+  firstType: Grass
+  Romaji: Jupitol
+  Kana: ジュプトル
+Sceptile:
+  number: '254'
+  description: The leaves growing on SCEPTILE’s body are very sharp edged. This POKéMON
+    is very agile - it leaps all over the branches of trees and jumps on its foe from
+    above or behind.
+  url_name: sceptile
+  firstType: Grass
+  Romaji: Jukain
+  Kana: ジュカイン
+Torchic:
+  number: '255'
+  description: TORCHIC sticks with its TRAINER, following behind with unsteady steps.
+    This POKéMON breathes fire of over 1,800 degrees F, including fireballs that leave
+    the foe scorched black.
+  url_name: torchic
+  firstType: Fire
+  Romaji: Achamo
+  Kana: アチャモ
+Combusken:
+  number: '256'
+  description: COMBUSKEN toughens up its legs and thighs by running through fields
+    and mountains. This POKéMON’s legs possess both speed and power, enabling it to
+    dole out ten kicks in one second.
+  url_name: combusken
+  firstType: Fire
+  secondType: Fighting
+  Romaji: Wakashamo
+  Kana: ワカシャモ
+Blaziken:
+  number: '257'
+  description: In battle, BLAZIKEN blows out intense flames from its wrists and attacks
+    foes courageously. The stronger the foe, the more intensely this POKéMON’s wrists
+    burn.
+  url_name: blaziken
+  firstType: Fire
+  secondType: Fighting
+  firstMegaType: Fire
+  secondMegaType: Fighting
+  Romaji: Bashamo
+  Kana: バシャーモ
+Mudkip:
+  number: '258'
+  description: The fin on MUDKIP’s head acts as highly sensitive radar. Using this
+    fin to sense movements of water and air, this POKéMON can determine what is taking
+    place around it without using its eyes.
+  url_name: mudkip
+  firstType: Water
+  Romaji: Mizugorou
+  Kana: ミズゴロウ
+Marshtomp:
+  number: '259'
+  description: The surface of MARSHTOMP’s body is enveloped by a thin, sticky film
+    that enables it to live on land. This POKéMON plays in mud on beaches when the
+    ocean tide is low.
+  url_name: marshtomp
+  firstType: Water
+  secondType: Ground
+  Romaji: Numakorou
+  Kana: ヌマクロー
+Swampert:
+  number: '260'
+  description: SWAMPERT is very strong. It has enough power to easily drag a boulder
+    weighing more than a ton. This POKéMON also has powerful vision that lets it see
+    even in murky water.
+  url_name: swampert
+  firstType: Water
+  secondType: Ground
+  Romaji: Rugaji
+  Kana: ラグラージ
+Poochyena:
+  number: '261'
+  description: At first sight, POOCHYENA takes a bite at anything that moves. This
+    POKéMON chases after prey until the victim becomes exhausted. However, it may
+    turn tail if the prey strikes back.
+  url_name: poochyena
+  firstType: Dark
+  Romaji: Pochiena
+  Kana: ポチエナ
+Mightyena:
+  number: '262'
+  description: MIGHTYENA gives obvious signals when it is preparing to attack. It
+    starts to growl deeply and then flattens its body. This POKéMON will bite savagely
+    with its sharply pointed fangs.
+  url_name: mightyena
+  firstType: Dark
+  Romaji: Guraena
+  Kana: グラエナ
+Zigzagoon:
+  number: '263'
+  description: ZIGZAGOON restlessly wanders everywhere at all times. This POKéMON
+    does so because it is very curious. It becomes interested in anything that it
+    happens to see.
+  url_name: zigzagoon
+  firstType: Normal
+  Romaji: Zigzaguma
+  Kana: ジグザグマ
+Linoone:
+  number: '264'
+  description: LINOONE always runs full speed and only in straight lines. If facing
+    an obstacle, it makes a right-angle turn to evade it. This POKéMON is very challenged
+    by gently curving roads.
+  url_name: linoone
+  firstType: Normal
+  Romaji: Massaguma
+  Kana: マッスグマ
+Wurmple:
+  number: '265'
+  description: Using the spikes on its rear end,   WURMPLE peels the bark off trees
+    and feeds on the sap that oozes out. This POKéMON’s feet are tipped with suction
+    pads that allow it to cling to glass without slipping.
+  url_name: wurmple
+  firstType: Bug
+  Romaji: Kemusso
+  Kana: ケムッソ
+Silcoon:
+  number: '266'
+  description: SILCOON tethers itself to a tree branch using silk to keep from falling.
+    There,  this POKéMON hangs quietly while it awaits evolution. It peers out of
+    the silk cocoon through a small hole.
+  url_name: silcoon
+  firstType: Bug
+  Romaji: Karasairu
+  Kana: カラサリス
+Beautifly:
+  number: '267'
+  description: BEAUTIFLY’s favorite food is the sweet pollen of flowers. If you want
+    to see this POKéMON, just leave a potted flower by an open window. BEAUTIFLY is
+    sure to come looking for pollen.
+  url_name: beautifly
+  firstType: Bug
+  secondType: Flying
+  Romaji: Agehanto
+  Kana: アゲハント
+Cascoon:
+  number: '268'
+  description: CASCOON makes its protective cocoon by wrapping its body entirely with
+    a fine silk from its mouth. Once the silk goes around its body, it hardens. This
+    POKéMON prepares for its evolution inside the cocoon.
+  url_name: cascoon
+  firstType: Bug
+  Romaji: Mayurudo
+  Kana: マユルド
+Dustox:
+  number: '269'
+  description: DUSTOX is instinctively drawn to light. Swarms of this POKéMON are
+    attracted by the bright lights of cities, where they wreak havoc by stripping
+    the leaves off roadside trees for food.
+  url_name: dustox
+  firstType: Bug
+  secondType: Poison
+  Romaji: Dokukeiru
+  Kana: ドクケイル
+Lotad:
+  number: '270'
+  description: LOTAD live in ponds and lakes, where they float on the surface. It
+    grows weak if its broad leaf dies. On rare occasions, this POKéMON travels on
+    land in search of clean water.
+  url_name: lotad
+  firstType: Water
+  secondType: Grass
+  Romaji: Hassuboo
+  Kana: ハスボー
+Lombre:
+  number: '271'
+  description: LOMBRE is nocturnal - it will get active after dusk. It is also a mischief-maker.
+    When this POKéMON spots anglers, it tugs on their fishing lines from beneath the
+    surface and enjoys their consternation.
+  url_name: lombre
+  firstType: Water
+  secondType: Grass
+  Romaji: Hassubero
+  Kana: ハスブレロ
+Ludicolo:
+  number: '272'
+  description: LUDICOLO begins dancing as soon as it hears cheerful, festive music.
+    This POKéMON is said to appear when it hears the singing of children on hiking
+    outings.
+  url_name: ludicolo
+  firstType: Water
+  secondType: Grass
+  Romaji: Runpapa
+  Kana: ルンパッパ
+Seedot:
+  number: '273'
+  description: SEEDOT attaches itself to a tree branch using the top of its head.
+    It sucks moisture from the tree while hanging off the branch. The more water it
+    drinks, the glossier this POKéMON’s body becomes.
+  url_name: seedot
+  firstType: Grass
+  Romaji: Taneboo
+  Kana: タネボー
+Nuzleaf:
+  number: '274'
+  description: NUZLEAF live in densely overgrown forests. They occasionally venture
+    out of the forest to startle people. This POKéMON dislikes having its long nose
+    pinched.
+  url_name: nuzleaf
+  firstType: Grass
+  secondType: Dark
+  Romaji: Konohana
+  Kana: コノハナ
+Shiftry:
+  number: '275'
+  description: SHIFTRY is a mysterious POKéMON that is said to live atop towering
+    trees  dating back over a thousand years. It creates terrific windstorms with
+    the fans it holds.
+  url_name: shiftry
+  firstType: Grass
+  secondType: Dark
+  Romaji: Daatingu
+  Kana: ダーテング
+Taillow:
+  number: '276'
+  description: TAILLOW courageously stands its ground against foes, however strong
+    they may be. This gutsy POKéMON will remain defiant even after a loss. On the
+    other hand, it cries loudly if it becomes hungry.
+  url_name: taillow
+  firstType: Normal
+  secondType: Flying
+  Romaji: Subame
+  Kana: スバメ
+Swellow:
+  number: '277'
+  description: SWELLOW flies high above our heads, making graceful arcs in the sky.
+    This POKéMON dives at a steep angle as soon as it spots its prey. The hapless
+    prey is tightly grasped by SWELLOW’s clawed feet, preventing escape.
+  url_name: swellow
+  firstType: Normal
+  secondType: Flying
+  Romaji: Oosubame
+  Kana: オオスバメ
+Wingull:
+  number: '278'
+  description: WINGULL has the habit of carrying prey and valuables in its beak and
+    hiding them in all sorts of locations. This POKéMON rides the winds and flies
+    as if it were skating across the sky.
+  url_name: wingull
+  firstType: Water
+  secondType: Flying
+  Romaji: Kyamome
+  Kana: キャモメ
+Pelipper:
+  number: '279'
+  description: PELIPPER is a flying transporter that carries small POKéMON and eggs
+    inside its massive bill. This POKéMON builds its nest on steep cliffs facing the
+    sea.
+  url_name: pelipper
+  firstType: Water
+  secondType: Flying
+  Romaji: Pelipper
+  Kana: ペリッパー
+Ralts:
+  number: '280'
+  description: RALTS senses the emotions of people using the horns on its head. This
+    POKéMON rarely appears before people. But when it does, it draws closer if it
+    senses that the person has a positive disposition.
+  url_name: ralts
+  firstType: Psychic
+  secondType: Fairy
+  Romaji: Rarutos
+  Kana: ラルトス
+Kirlia:
+  number: '281'
+  description: It is said that a KIRLIA that is exposed to the positive emotions of
+    its TRAINER grows beautiful. This POKéMON controls psychokinetic powers with its
+    highly developed brain.
+  url_name: kirlia
+  firstType: Psychic
+  secondType: Fairy
+  Romaji: Kirlia
+  Kana: キルリア
+Gardevoir:
+  number: '282'
+  description: GARDEVOIR has the ability to read the future. If it senses impending
+    danger to its TRAINER, this POKéMON is said to unleash its psychokinetic energy
+    at full power.
+  url_name: gardevoir
+  firstType: Psychic
+  secondType: Fairy
+  firstMegaType: Psychic
+  secondMegaType: Fairy
+  Romaji: Saanaito
+  Kana: サーナイト
+Surskit:
+  number: '283'
+  description: From the tips of its feet, SURSKIT secretes an oil that enables it
+    to walk on water as if it were skating. This POKéMON feeds on microscopic organisms
+    in ponds and lakes.
+  url_name: surskit
+  firstType: Bug
+  secondType: Water
+  Romaji: Ametama
+  Kana: アメタマ
+Masquerain:
+  number: '284'
+  description: MASQUERAIN intimidates enemies with the eyelike patterns on its antennas.
+    This POKéMON flaps its four wings to freely fly in any direction - even sideways
+    and backwards - as if it were a helicopter.
+  url_name: masquerain
+  firstType: Bug
+  secondType: Flying
+  Romaji: Amemoth
+  Kana: アメモース
+Shroomish:
+  number: '285'
+  description: SHROOMISH live in damp soil in the dark depths of forests. They are
+    often found keeping still under fallen leaves. This POKéMON feeds on compost that
+    is made up of fallen, rotted leaves.
+  url_name: shroomish
+  firstType: Grass
+  Romaji: Kinokoko
+  Kana: キノココ
+Breloom:
+  number: '286'
+  description: BRELOOM closes in on its foe with light and sprightly footwork, then
+    throws punches with its stretchy arms. This POKéMON’s fighting technique puts
+    boxers to shame.
+  url_name: breloom
+  firstType: Grass
+  secondType: Fighting
+  Romaji: Kinogassa
+  Kana: キノガッサ
+Slakoth:
+  number: '287'
+  description: SLAKOTH lolls around for over twenty hours every day. Because it moves
+    so little, it does not need much food. This POKéMON’s sole daily meal consists
+    of just three leaves.
+  url_name: slakoth
+  firstType: Normal
+  Romaji: Namakero
+  Kana: ナマケロ
+Vigoroth:
+  number: '288'
+  description: VIGOROTH is always itching and agitated to go on a wild rampage. It
+    simply can’t tolerate sitting still for even a minute. This POKéMON’s stress level
+    rises if it can’t be moving constantly.
+  url_name: vigoroth
+  firstType: Normal
+  Romaji: Yarukimono
+  Kana: ヤルキモノ
+Slaking:
+  number: '289'
+  description: SLAKING spends all day lying down and lolling about. It eats grass
+    growing within its reach. If it eats all the grass it can reach, this POKéMON
+    reluctantly moves to another spot.
+  url_name: slaking
+  firstType: Normal
+  Romaji: Kekking
+  Kana: ケッキング
+Nincada:
+  number: '290'
+  description: NINCADA lives underground for many years in complete darkness. This
+    POKéMON absorbs nutrients from the roots of trees. It stays motionless as it waits
+    for evolution.
+  url_name: nincada
+  firstType: Bug
+  secondType: Ground
+  Romaji: Tsuchinin
+  Kana: ツチニン
+Ninjask:
+  number: '291'
+  description: NINJASK moves around at such a high speed that it cannot be seen, even
+    while its crying can be clearly heard. For that reason, this POKéMON was long
+    believed to be invisible.
+  url_name: ninjask
+  firstType: Bug
+  secondType: Flying
+  Romaji: Tekkanin
+  Kana: テッカニン
+Shedinja:
+  number: '292'
+  description: SHEDINJA’s hard body doesn’t move - not even a twitch. In fact, its
+    body appears to be merely a hollow shell. It is believed that this POKéMON will
+    steal the spirit of anyone peering into its hollow body from its back.
+  url_name: shedinja
+  firstType: Bug
+  secondType: Ghost
+  Romaji: Nukenin
+  Kana: ヌケニン
+Whismur:
+  number: '293'
+  description: Normally, WHISMUR’s voice is very quiet - it is barely audible even
+    if one is paying close attention. However, if this POKéMON senses danger, it starts
+    crying at an earsplitting volume.
+  url_name: whismur
+  firstType: Normal
+  Romaji: Gonyonyo
+  Kana: ゴニョニョ
+Loudred:
+  number: '294'
+  description: LOUDRED’s bellowing can completely decimate a wood-frame house. It
+    uses its voice to punish its foes. This POKéMON’s round ears serve as loudspeakers.
+  url_name: loudred
+  firstType: Normal
+  Romaji: Dogoomu
+  Kana: ドゴーム
+Exploud:
+  number: '295'
+  description: EXPLOUD triggers earthquakes with the tremors it creates by bellowing.
+    If this POKéMON violently inhales from the ports on its body, it’s a sign that
+    it is preparing to let loose a huge bellow.
+  url_name: exploud
+  firstType: Normal
+  Romaji: Bakuong
+  Kana: バクオング
+Makuhita:
+  number: '296'
+  description: MAKUHITA is tenacious - it will keep getting up and attacking its foe
+    however many times it is knocked down. Every time it gets back up, this POKéMON
+    stores more energy in its body for evolving.
+  url_name: makuhita
+  firstType: Fighting
+  Romaji: Makunoshita
+  Kana: マクノシタ
+Hariyama:
+  number: '297'
+  description: HARIYAMA practices its straight-arm slaps in any number of locations.
+    One hit of this POKéMON’s powerful, openhanded, straight-arm punches could snap
+    a telephone pole in two.
+  url_name: hariyama
+  firstType: Fighting
+  Romaji: Hariteyama
+  Kana: ハリテヤマ
+Azurill:
+  number: '298'
+  description: AZURILL spins its tail as if it were a lasso, then hurls it far. The
+    momentum of the throw sends its body flying, too. Using this unique action, one
+    of these POKéMON managed to hurl itself a record 33 feet.
+  url_name: azurill
+  firstType: Normal
+  secondType: Fairy
+  Romaji: Luriri
+  Kana: ルリリ
+Nosepass:
+  number: '299'
+  description: NOSEPASS’s magnetic nose is always pointed to the north. If two of
+    these POKéMON meet, they cannot turn their faces to each other when they are close
+    because their magnetic noses repel one another.
+  url_name: nosepass
+  firstType: Rock
+  Romaji: Nosepass
+  Kana: ノズパス
+Skitty:
+  number: '300'
+  description: SKITTY has the habit of becoming fascinated by moving objects and chasing
+    them around. This POKéMON is known to chase after its own tail and become dizzy.
+  url_name: skitty
+  firstType: Normal
+  Romaji: Eneko
+  Kana: エネコ
+Delcatty:
+  number: '301'
+  description: DELCATTY prefers to live an unfettered existence in which it can do
+    as it pleases at its own pace. Because this POKéMON eats and sleeps whenever it
+    decides, its daily routines are completely random.
+  url_name: delcatty
+  firstType: Normal
+  Romaji: Enekoro
+  Kana: エネコロロ
+Sableye:
+  number: '302'
+  description: SABLEYE lead quiet lives deep inside caverns. They are feared, however,
+    because these POKéMON are thought to steal the spirits of people when their eyes
+    burn with a sinister glow in the darkness.
+  url_name: sableye
+  firstType: Dark
+  secondType: Ghost
+  Romaji: Yamirami
+  Kana: ヤミラミ
+Mawile:
+  number: '303'
+  description: MAWHILE’s huge jaws are actually steel horns that have been transformed.
+    Its docile-looking face serves to lull its foe into letting down its guard. When
+    the foe least expects it, MAWHILE chomps it with its gaping jaws.
+  url_name: mawile
+  firstType: Steel
+  secondType: Fairy
+  firstMegaType: Steel
+  secondMegaType: Fairy
+  Romaji: Kuchiito
+  Kana: クチート
+Aron:
+  number: '304'
+  description: This POKéMON has a body of steel. To make its body, ARON feeds on iron
+    ore that it digs from mountains. Occasionally, it causes major trouble by eating
+    bridges and rails.
+  url_name: aron
+  firstType: Steel
+  secondType: Rock
+  Romaji: Kokodora
+  Kana: ココドラ
+Lairon:
+  number: '305'
+  description: LAIRON tempers its steel body by drinking highly nutritious mineral
+    springwater until it is bloated. This POKéMON makes its nest close to springs
+    of delicious water.
+  url_name: lairon
+  firstType: Steel
+  secondType: Rock
+  Romaji: Kodora
+  Kana: コドラ
+Aggron:
+  number: '306'
+  description: AGGRON claims an entire mountain as its own territory. It mercilessly
+    beats up anything that violates its environment. This POKéMON vigilantly patrols
+    its territory at all times.
+  url_name: aggron
+  firstType: Steel
+  secondType: Rock
+  firstMegaType: Steel
+  Romaji: Bossgodora
+  Kana: ボスゴドラ
+Meditite:
+  number: '307'
+  description: MEDITITE undertakes rigorous mental training deep in the mountains.
+    However, whenever it meditates, this POKéMON always loses its concentration and
+    focus. As a result, its training never ends.
+  url_name: meditite
+  firstType: Fighting
+  secondType: Psychic
+  Romaji: Asanan
+  Kana: アサナン
+Medicham:
+  number: '308'
+  description: It is said that through meditation, MEDICHAM heightens energy inside
+    its body and sharpens its sixth sense. This POKéMON hides its presence by merging
+    itself with fields and mountains.
+  url_name: medicham
+  firstType: Fighting
+  secondType: Psychic
+  firstMegaType: Fighting
+  secondMegaType: Psychic
+  Romaji: Charem
+  Kana: チャーレム
+Electrike:
+  number: '309'
+  description: ELECTRIKE stores electricity in its long body hair. This POKéMON stimulates
+    its leg muscles with electric charges. These jolts of power give its legs explosive
+    acceleration performance.
+  url_name: electrike
+  firstType: Electric
+  Romaji: Rakurai
+  Kana: ラクライ
+Manectric:
+  number: '310'
+  description: MANECTRIC is constantly discharging electricity from its mane. The
+    sparks sometimes ignite forest fires. When it enters a battle, this POKéMON creates
+    thunderclouds.
+  url_name: manectric
+  firstType: Electric
+  firstMegaType: Electric
+  Romaji: Raiboruto
+  Kana: ライボルト
+Plusle:
+  number: '311'
+  description: PLUSLE always acts as a cheerleader for its partners. Whenever a teammate
+    puts out a good effort in battle, this POKéMON shorts out its body to create the
+    crackling noises of sparks to show its joy.
+  url_name: plusle
+  firstType: Electric
+  Romaji: Purasle
+  Kana: プラスル
+Minun:
+  number: '312'
+  description: MINUN is more concerned about cheering on its partners than its own
+    safety. It shorts out the electricity in its body to create brilliant showers
+    of sparks to cheer on its teammates.
+  url_name: minun
+  firstType: Electric
+  Romaji: Minun
+  Kana: マイナン
+Volbeat:
+  number: '313'
+  description: With the arrival of night, VOLBEAT emits light from its tail. It communicates
+    with others by adjusting the intensity and flashing of its light. This POKéMON
+    is attracted by the sweet aroma of ILLUMISE.
+  url_name: volbeat
+  firstType: Bug
+  Romaji: Barubito
+  Kana: バルビート
+Illumise:
+  number: '314'
+  description: ILLUMISE attracts a swarm of VOLBEAT using a sweet fragrance. Once
+    the VOLBEAT have gathered, this POKéMON leads the lit-up swarm in drawing geometric
+    designs on the canvas of the night sky.
+  url_name: illumise
+  firstType: Bug
+  Romaji: Illumise
+  Kana: イルミーゼ
+Roselia:
+  number: '315'
+  description: ROSELIA shoots sharp thorns as projectiles at any opponent that tries
+    to steal the flowers on its arms. The aroma of this POKéMON brings serenity to
+    living things.
+  url_name: roselia
+  firstType: Grass
+  secondType: Poison
+  Romaji: Rozelia
+  Kana: ロゼリア
+Gulpin:
+  number: '316'
+  description: Virtually all of GULPIN’s body is its stomach. As a result, it can
+    swallow something its own size. This POKéMON’s stomach contains a special fluid
+    that digests anything.
+  url_name: gulpin
+  firstType: Poison
+  Romaji: Gokurin
+  Kana: ゴクリン
+Swalot:
+  number: '317'
+  description: When SWALOT spots prey, it spurts out a hideously toxic fluid from
+    its pores and sprays the target. Once the prey has weakened, this POKéMON gulps
+    it down whole with its cavernous mouth.
+  url_name: swalot
+  firstType: Poison
+  Romaji: Marunoomu
+  Kana: マルノーム
+Carvanha:
+  number: '318'
+  description: CARVANHA’s strongly developed jaws and its sharply pointed fangs pack
+    the destructive power to rip out boat hulls. Many boats have been attacked and
+    sunk by this POKéMON.
+  url_name: carvanha
+  firstType: Water
+  secondType: Dark
+  Romaji: Kibanha
+  Kana: キバニア
+Sharpedo:
+  number: '319'
+  description: Nicknamed “the bully of the sea,” SHARPEDO is widely feared. Its cruel
+    fangs grow back immediately if they snap off. Just one of these POKéMON can thoroughly
+    tear apart a supertanker.
+  url_name: sharpedo
+  firstType: Water
+  secondType: Dark
+  Romaji: Samehada
+  Kana: サメハダー
+Wailmer:
+  number: '320'
+  description: WAILMER’s nostrils are located above its eyes. This playful POKéMON
+    loves to startle people by forcefully snorting out seawater it stores inside its
+    body out of its nostrils.
+  url_name: wailmer
+  firstType: Water
+  Romaji: Hoeruko
+  Kana: ホエルコ
+Wailord:
+  number: '321'
+  description: WAILORD is the largest of all identified POKéMON up to now. This giant
+    POKéMON swims languorously in the vast open sea, eating massive amounts of food
+    at once with its enormous mouth.
+  url_name: wailord
+  firstType: Water
+  Romaji: Hoeruo
+  Kana: ホエルオー
+Numel:
+  number: '322'
+  description: NUMEL is extremely dull witted - it doesn’t notice being hit. However,
+    it can’t stand hunger for even a second. This POKéMON’s body is a seething cauldron
+    of boiling magma.
+  url_name: numel
+  firstType: Fire
+  secondType: Ground
+  Romaji: Donmel
+  Kana: ドンメル
+Camerupt:
+  number: '323'
+  description: CAMERUPT has a volcano inside its body. Magma of 18,000 degrees F courses
+    through its body. Occasionally, the humps on this POKéMON’s back erupt, spewing
+    the superheated magma.
+  url_name: camerupt
+  firstType: Fire
+  secondType: Ground
+  Romaji: Bakuuda
+  Kana: バクーダ
+Torkoal:
+  number: '324'
+  description: TORKOAL digs through mountains in search of coal. If it finds some,
+    it fills hollow spaces on its shell with the coal and burns it. If it is attacked,
+    this POKéMON spouts thick black smoke to beat a retreat.
+  url_name: torkoal
+  firstType: Fire
+  Romaji: Kootasu
+  Kana: コータス
+Spoink:
+  number: '325'
+  description: SPOINK bounces around on its tail. The shock of its bouncing makes
+    its heart pump. As a result, this POKéMON cannot afford to stop bouncing - if
+    it stops, its heart will stop.
+  url_name: spoink
+  firstType: Psychic
+  Romaji: Banebu
+  Kana: バネブー
+Grumpig:
+  number: '326'
+  description: GRUMPIG uses the black pearls on its body to amplify its psychic power
+    waves for gaining total control over its foe. When this POKéMON uses its special
+    power, its snorting breath grows labored.
+  url_name: grumpig
+  firstType: Psychic
+  Romaji: Bupiggu
+  Kana: ブーピッグ
+Spinda:
+  number: '327'
+  description: All the SPINDA that exist in the world are said to have utterly unique
+    spot patterns. The shaky, tottering steps of this POKéMON give it the appearance
+    of dancing.
+  url_name: spinda
+  firstType: Normal
+  Romaji: Patchiiru
+  Kana: パッチール
+Trapinch:
+  number: '328'
+  description: TRAPINCH’s nest is a sloped, bowl-like pit dug in sand. This POKéMON
+    patiently waits for prey to tumble down the pit. Its giant jaws have enough strength
+    to crush even boulders.
+  url_name: trapinch
+  firstType: Ground
+  Romaji: Nakuraa
+  Kana: ナックラー
+Vibrava:
+  number: '329'
+  description: To make prey faint, VIBRAVA generates ultrasonic waves by vigorously
+    making its two wings vibrate. This POKéMON’s ultrasonic waves are so powerful,
+    they can bring on headaches in people.
+  url_name: vibrava
+  firstType: Ground
+  secondType: Dragon
+  Romaji: Birubara
+  Kana: ビブラーバ
+Flygon:
+  number: '330'
+  description: FLYGON is nicknamed “the elemental  spirit of the desert.” Because
+    its flapping wings whip up a cloud of sand, this POKéMON is always enveloped in
+    a sandstorm while flying.
+  url_name: flygon
+  firstType: Ground
+  secondType: Dragon
+  Romaji: Furaigon
+  Kana: フライゴン
+Cacnea:
+  number: '331'
+  description: CACNEA lives in arid locations such as deserts. It releases a strong
+    aroma from its flower to attract prey. When prey comes near, this POKéMON shoots
+    sharp thorns from its body to bring the victim down.
+  url_name: cacnea
+  firstType: Grass
+  Romaji: Sabonea
+  Kana: サボネア
+Cacturne:
+  number: '332'
+  description: During the daytime, CACTURNE remains unmoving so that it does not lose
+    any moisture to the harsh desert sun. This POKéMON becomes active at night when
+    the temperature drops.
+  url_name: cacturne
+  firstType: Grass
+  secondType: Dark
+  Romaji: Nokutasu
+  Kana: ノクタス
+Swablu:
+  number: '333'
+  description: SWABLU has light and fluffy wings that are like cottony clouds. This
+    POKéMON is not frightened of people. It lands on the heads of people and sits
+    there like a cotton-fluff hat.
+  url_name: swablu
+  firstType: Normal
+  secondType: Flying
+  Romaji: Chiruyto
+  Kana: チルット
+Altaria:
+  number: '334'
+  description: ALTARIA dances and wheels through the sky among billowing, cotton-like
+    clouds. By singing melodies in its crystal-clear voice, this POKéMON makes its
+    listeners experience dreamy wonderment.
+  url_name: altaria
+  firstType: Dragon
+  secondType: Flying
+  Romaji: Chiruttasu
+  Kana: チルタリス
+Zangoose:
+  number: '335'
+  description: Memories of battling its arch-rival SEVIPER are etched into every cell
+    of ZANGOOSE’s body. This POKéMON adroitly dodges attacks with incredible agility.
+  url_name: zangoose
+  firstType: Normal
+  Romaji: Zanguusu
+  Kana: ザングース
+Seviper:
+  number: '336'
+  description: SEVIPER shares a generations-long feud with ZANGOOSE. The scars on
+    its body are evidence of vicious battles. This POKéMON attacks using its sword-edged
+    tail.
+  url_name: seviper
+  firstType: Poison
+  Romaji: Habunake
+  Kana: ハブネーク
+Lunatone:
+  number: '337'
+  description: LUNATONE was discovered at a location where a meteorite fell. As a
+    result, some people theorize that this POKéMON came from space. However, no one
+    has been able to prove this theory so far.
+  url_name: lunatone
+  firstType: Rock
+  secondType: Psychic
+  Romaji: Runatoon
+  Kana: ルナトーン
+Solrock:
+  number: '338'
+  description: SOLROCK is a new species of POKéMON that is said to have fallen from
+    space. It floats in air and moves silently. In battle, this POKéMON releases intensely
+    bright light.
+  url_name: solrock
+  firstType: Rock
+  secondType: Psychic
+  Romaji: Sorurock
+  Kana: ソルロック
+Barboach:
+  number: '339'
+  description: BARBOACH’s sensitive whiskers serve as a superb radar system. This
+    POKéMON hides in mud, leaving only its two whiskers exposed while it waits for
+    prey to come along.
+  url_name: barboach
+  firstType: Water
+  secondType: Ground
+  Romaji: Dojotchi
+  Kana: ドジョッチ
+Whiscash:
+  number: '340'
+  description: WHISCASH is extremely territorial. Just one of these POKéMON will claim
+    a large pond as its exclusive territory. If a foe approaches it, it thrashes about
+    and triggers a massive earthquake.
+  url_name: whiscash
+  firstType: Water
+  secondType: Ground
+  Romaji: Namazun
+  Kana: ナマズン
+Corphish:
+  number: '341'
+  description: CORPHISH were originally foreign POKéMON that were imported as pets.
+    They eventually turned up in the wild. This POKéMON is very hardy and has greatly
+    increased its population.
+  url_name: corphish
+  firstType: Water
+  Romaji: Heigani
+  Kana: ヘイガニ
+Crawdaunt:
+  number: '342'
+  description: CRAWDAUNT has an extremely violent nature that compels it to challenge
+    other living things to battle. Other life-forms refuse to live in ponds inhabited
+    by this POKéMON, making them desolate places.
+  url_name: crawdaunt
+  firstType: Water
+  secondType: Dark
+  Romaji: Shizarigar
+  Kana: シザリガー
+Baltoy:
+  number: '343'
+  description: BALTOY moves while spinning around on its one foot. Primitive wall
+    paintings depicting this POKéMON living among people were discovered in some ancient
+    ruins.
+  url_name: baltoy
+  firstType: Ground
+  secondType: Psychic
+  Romaji: Yajiron
+  Kana: ヤジロン
+Claydol:
+  number: '344'
+  description: CLAYDOL are said to be dolls of mud made by primitive humans and brought
+    to life by exposure to a mysterious ray. This POKéMON moves about while levitating.
+  url_name: claydol
+  firstType: Ground
+  secondType: Psychic
+  Romaji: Nenedoru
+  Kana: ネンドール
+Lileep:
+  number: '345'
+  description: LILEEP became extinct approximately a hundred million years ago. This
+    ancient POKéMON attaches itself to a rock on the seafloor and catches approaching
+    prey using tentacles  shaped like flower petals.
+  url_name: lileep
+  firstType: Rock
+  secondType: Grass
+  Romaji: Ririira
+  Kana: リリーラ
+Cradily:
+  number: '346'
+  description: CRADILY roams around the ocean floor in search of food. This POKéMON
+    freely extends its tree trunk-like neck and captures unwary prey using its eight
+    tentacles.
+  url_name: cradily
+  firstType: Rock
+  secondType: Grass
+  Romaji: Yureidoru
+  Kana: ユレイドル
+Anorith:
+  number: '347'
+  description: ANORITH was regenerated from a prehistoric fossil. This primitive POKéMON
+    once lived in warm seas. It grips its prey firmly between its two large claws.
+  url_name: anorith
+  firstType: Rock
+  secondType: Bug
+  Romaji: Anopusu
+  Kana: アノプス
+Armaldo:
+  number: '348'
+  description: ARMALDO’s tough armor makes all attacks bounce off. This POKéMON’s
+    two enormous claws can be freely extended or contracted. They have the power to
+    punch right through a steel slab.
+  url_name: armaldo
+  firstType: Rock
+  secondType: Bug
+  Romaji: Aamarudo
+  Kana: アーマルド
+Feebas:
+  number: '349'
+  description: FEEBAS’s fins are ragged and tattered from the start of its life. Because
+    of its shoddy appearance, this POKéMON is largely ignored. It is capable of living
+    in both the sea and in rivers.
+  url_name: feebas
+  firstType: Water
+  Romaji: Hinbass
+  Kana: ヒンバス
+Milotic:
+  number: '350'
+  description: MILOTIC is said to be the most beautiful of all the POKéMON. It has
+    the power to becalm such emotions as anger and hostility to quell bitter feuding.
+  url_name: milotic
+  firstType: Water
+  Romaji: Mirokarosu
+  Kana: ミロカロス
+Castform:
+  number: '351'
+  description: CASTFORM’s appearance changes with the weather. This POKéMON gained
+    the ability to use the vast power of nature to protect its tiny body.
+  url_name: castform
+  firstType: Normal
+  Romaji: Powarun
+  Kana: ポワルン
+Kecleon:
+  number: '352'
+  description: KECLEON is capable of changing its body colors at will to blend in
+    with its surroundings. There is one exception - this POKéMON can’t change the
+    zigzag pattern on its belly.
+  url_name: kecleon
+  firstType: Normal
+  Romaji: Kakureon
+  Kana: カクレオン
+Shuppet:
+  number: '353'
+  description: SHUPPET is attracted by feelings of jealousy and vindictiveness. If
+    someone develops strong feelings of vengeance, this POKéMON will appear in a swarm
+    and line up beneath the eaves of that person’s home.
+  url_name: shuppet
+  firstType: Ghost
+  Romaji: Kagebozou
+  Kana: カゲボウズ
+Banette:
+  number: '354'
+  description: BANETTE generates energy for laying strong curses by sticking pins
+    into its own body. This POKéMON was originally a pitiful plush doll that was thrown
+    away.
+  url_name: banette
+  firstType: Ghost
+  firstMegaType: Ghost
+  Romaji: Jupetta
+  Kana: ジュペッタ
+Duskull:
+  number: '355'
+  description: DUSKULL can pass through any wall no matter how thick it may be. Once
+    this POKéMON chooses a target, it will doggedly pursue the intended victim until
+    the break of dawn.
+  url_name: duskull
+  firstType: Ghost
+  Romaji: Yomawaru
+  Kana: ヨマワル
+Dusclops:
+  number: '356'
+  description: DUSCLOPS’s body is completely hollow - there is nothing at all inside.
+    It is said that its body is like a black hole. This POKéMON will absorb anything
+    into its body, but nothing will ever come back out.
+  url_name: dusclops
+  firstType: Ghost
+  Romaji: Samayorou
+  Kana: サマヨール
+Tropius:
+  number: '357'
+  description: The bunches of fruit around TROPIUS’s neck are very popular with children.
+    This POKéMON loves fruit, and eats it continuously. Apparently, its love for fruit
+    resulted in its own outgrowth of fruit.
+  url_name: tropius
+  firstType: Grass
+  secondType: Flying
+  Romaji: Tropius
+  Kana: トロピウス
+Chimecho:
+  number: '358'
+  description: CHIMECHO makes its cries echo inside its hollow body. When this POKéMON
+    becomes enraged, its cries result in ultrasonic waves that have the power to knock
+    foes flying.
+  url_name: chimecho
+  firstType: Psychic
+  Romaji: Chiriin
+  Kana: チリーン
+Absol:
+  number: '359'
+  description: Every time ABSOL appears before people, it is followed by a disaster
+    such as an earthquake or a tidal wave. As a result, it came to be known as the
+    disaster POKéMON.
+  url_name: absol
+  firstType: Dark
+  firstMegaType: Dark
+  Romaji: Abusoru
+  Kana: アブソル
+Wynaut:
+  number: '360'
+  description: WYNAUT can always be seen with a big, happy smile on its face. Look
+    at its tail to determine if it is angry. When angered, this POKéMON will be slapping
+    the ground with its tail.
+  url_name: wynaut
+  firstType: Psychic
+  Romaji: Sonano
+  Kana: ソーナノ
+Snorunt:
+  number: '361'
+  description: SNORUNT live in regions with heavy snowfall. In seasons without snow,
+    such as spring and summer, this POKéMON steals away to live quietly among stalactites
+    and stalagmites deep in caverns.
+  url_name: snorunt
+  firstType: Ice
+  Romaji: Yukiwarashi
+  Kana: ユキワラシ
+Glalie:
+  number: '362'
+  description: GLALIE has a body made of rock, which it hardens with an armor of ice.
+    This POKéMON has the ability to freeze moisture in the atmosphere into any shape
+    it desires.
+  url_name: glalie
+  firstType: Ice
+  Romaji: Onigoori
+  Kana: オニゴーリ
+Spheal:
+  number: '363'
+  description: SPHEAL is much faster rolling than  walking to get around. When groups
+    of this POKéMON eat, they all clap at once to show their pleasure. Because of
+    this, their mealtimes are noisy.
+  url_name: spheal
+  firstType: Ice
+  secondType: Water
+  Romaji: Tamazarashi
+  Kana: タマザラシ
+Sealeo:
+  number: '364'
+  description: SEALEO has the habit of always juggling on the tip of its nose anything
+    it sees for the first time. This POKéMON occasionally entertains itself by balancing
+    and rolling a SPHEAL on its nose.
+  url_name: sealeo
+  firstType: Ice
+  secondType: Water
+  Romaji: Todogura
+  Kana: トドグラー
+Walrein:
+  number: '365'
+  description: WALREIN’s two massively developed tusks can totally shatter blocks
+    of ice weighing ten tons with one blow. This POKéMON’s thick coat of blubber insulates
+    it from subzero temperatures.
+  url_name: walrein
+  firstType: Ice
+  secondType: Water
+  Romaji: Todozeruga
+  Kana: トドゼルガ
+Clamperl:
+  number: '366'
+  description: CLAMPERL’s sturdy shell is not only good for protection - it is also
+    used for clamping and catching prey. A fully grown CLAMPERL’s shell will be scored
+    with nicks and scratches all over.
+  url_name: clamperl
+  firstType: Water
+  Romaji: Paaruru
+  Kana: パールル
+Huntail:
+  number: '367'
+  description: HUNTAIL’s presence went unnoticed by people for a long time because
+    it lives at extreme depths in the sea. This POKéMON’s eyes can see clearly even
+    in the murky dark depths of the ocean.
+  url_name: huntail
+  firstType: Water
+  Romaji: Hanteeru
+  Kana: ハンテール
+Gorebyss:
+  number: '368'
+  description: GOREBYSS lives in the southern seas at extreme depths. Its body is
+    built to withstand the enormous pressure of water at incredible depths. Because
+    of this, this POKéMON’s body is unharmed by ordinary attacks.
+  url_name: gorebyss
+  firstType: Water
+  Romaji: Sakurabisu
+  Kana: サクラビス
+Relicanth:
+  number: '369'
+  description: RELICANTH is a POKéMON species that existed for a hundred million years
+    without ever changing its form. This ancient POKéMON feeds on microscopic organisms
+    with its toothless mouth.
+  url_name: relicanth
+  firstType: Water
+  secondType: Rock
+  Romaji: Jiransu
+  Kana: ジーランス
+Luvdisc:
+  number: '370'
+  description: LUVDISC live in shallow seas in the tropics. This heart-shaped POKéMON
+    earned its name by swimming after loving couples it spotted in the ocean’s waves.
+  url_name: luvdisc
+  firstType: Water
+  Romaji: Rabukusu
+  Kana: ラブカス
+Bagon:
+  number: '371'
+  description: BAGON has a dream of one day soaring in the sky. In doomed efforts
+    to fly, this POKéMON hurls itself off cliffs. As a result of its dives, its head
+    has  grown tough and as hard as tempered steel.
+  url_name: bagon
+  firstType: Dragon
+  Romaji: Tatsubi
+  Kana: タツベイ
+Shelgon:
+  number: '372'
+  description: Inside SHELGON’s armor-like shell, cells are in the midst of transformation
+    to create an entirely new body. This POKéMON’s shell is extremely heavy, making
+    its movements sluggish.
+  url_name: shelgon
+  firstType: Dragon
+  Romaji: Komoru
+  Kana: コモルー
+Salamence:
+  number: '373'
+  description: SALAMENCE came about as a result of a strong, long-held dream of growing
+    wings. It is said that this powerful desire triggered a sudden mutation in this
+    POKéMON’s cells, causing it to sprout its magnificent wings.
+  url_name: salamence
+  firstType: Dragon
+  secondType: Flying
+  Romaji: Boomanda
+  Kana: ボーマンダ
+Beldum:
+  number: '374'
+  description: Instead of blood, a powerful magnetic force courses throughout BELDUM’s
+    body. This POKéMON communicates with others by sending controlled pulses of magnetism.
+  url_name: beldum
+  firstType: Steel
+  secondType: Psychic
+  Romaji: Danbaru
+  Kana: ダンバル
+Metang:
+  number: '375'
+  description: When two BELDUM fuse together, METANG is formed. The brains of the
+    BELDUM are joined by a magnetic nervous system. By linking its brains magnetically,
+    this POKéMON generates strong psychokinetic power.
+  url_name: metang
+  firstType: Steel
+  secondType: Psychic
+  Romaji: Metang
+  Kana: メタング
+Metagross:
+  number: '376'
+  description: METAGROSS has four brains in total. Combined, the four brains can breeze
+    through difficult calculations faster than a supercomputer. This POKéMON can float
+    in the air by tucking in its four legs.
+  url_name: metagross
+  firstType: Steel
+  secondType: Psychic
+  Romaji: Metagoros
+  Kana: メタグロス
+Regirock:
+  number: '377'
+  description: REGIROCK was sealed away by people long ago. If this POKéMON’s body
+    is damaged in battle, it is said to seek out suitable rocks on its own to repair
+    itself.
+  url_name: regirock
+  firstType: Rock
+  Romaji: Rejirock
+  Kana: レジロック
+Regice:
+  number: '378'
+  description: REGICE’s body was made during an ice age. The deep-frozen body can’t
+    be melted, even by fire. This POKéMON controls frigid air of minus 328 degrees
+    F.
+  url_name: regice
+  firstType: Ice
+  Romaji: Rejice
+  Kana: レジアイス
+Registeel:
+  number: '379'
+  description: REGISTEEL has a body that is harder than any kind of metal. Its body
+    is apparently hollow. No one has any idea what this POKéMON eats.
+  url_name: registeel
+  firstType: Steel
+  Romaji: Rejisteel
+  Kana: レジスチル
+Latias:
+  number: '380'
+  description: LATIAS is highly sensitive to the emotions of people. If it senses
+    any hostility, this POKéMON ruffles the feathers all over its body and cries shrilly
+    to intimidate the foe.
+  url_name: latias
+  firstType: Dragon
+  secondType: Psychic
+  Romaji: Ratiasu
+  Kana: ラティアス
+Latios:
+  number: '381'
+  description: LATIOS has the ability to make its foe see an image of what it has
+    seen or imagines in its head. This POKéMON is intelligent and understands human
+    speech.
+  url_name: latios
+  firstType: Dragon
+  secondType: Psychic
+  Romaji: Ratiosu
+  Kana: ラティオス
+Kyogre:
+  number: '382'
+  description: KYOGRE has the power to create massive rain clouds that cover the entire
+    sky and bring about torrential downpours. This POKéMON saved people who were suffering
+    from droughts.
+  url_name: kyogre
+  firstType: Water
+  Romaji: Kaiorga
+  Kana: カイオーガ
+Groudon:
+  number: '383'
+  description: GROUDON has long been described in  mythology as the POKéMON that raised
+    lands and expanded continents. This POKéMON took to sleep after a cataclysmic
+    battle with KYOGRE.
+  url_name: groudon
+  firstType: Ground
+  Romaji: Groudon
+  Kana: グラードン
+Rayquaza:
+  number: '384'
+  description: RAYQUAZA lived for hundreds of millions of years in the earth’s ozone
+    layer,  never descending to the ground. This POKéMON appears to feed on water
+    and particles in the atmosphere.
+  url_name: rayquaza
+  firstType: Dragon
+  secondType: Flying
+  Romaji: Rekkuza
+  Kana: レックウザ
+Jirachi:
+  number: '385'
+  description: A legend states that JIRACHI will make true any wish that is written
+    on notes attached to its head when it awakens. If this POKéMON senses danger,
+    it will fight without awakening.
+  url_name: jirachi
+  firstType: Steel
+  secondType: Psychic
+  Romaji: Jirachi
+  Kana: ジラーチ
+Deoxys:
+  number: '386'
+  description: The DNA of a space virus underwent a sudden mutation upon exposure
+    to a laser beam and resulted in DEOXYS. The crystalline organ on this POKéMON’s
+    chest appears to be its brain.
+  url_name: deoxys
+  firstType: Psychic
+  firstMegaType: Psychic
+  secondMegaType: Psychic
+  firstMegaTypeY: Psychic
+  Romaji: Deokishisu
+  Kana: デオキシス
+Turtwig:
+  number: '387'
+  description: Made from soil, the shell on its back hardens when it drinks water.
+    It lives along lakes.
+  url_name: turtwig
+  firstType: Grass
+  Romaji: Naetoru
+  Kana: ナエトル
+Grotle:
+  number: '388'
+  description: It lives along water in forests. In the daytime, it leaves the forest
+    to sunbathe its treed shell.
+  url_name: grotle
+  firstType: Grass
+  Romaji: Hayashigame
+  Kana: ハヤシガメ
+Torterra:
+  number: '389'
+  description: Small Pokémon occasionally gather on its unmoving back to begin building
+    their nests.
+  url_name: torterra
+  firstType: Grass
+  secondType: Ground
+  Romaji: Dotaitos
+  Kana: ドダイトス
+Chimchar:
+  number: '390'
+  description: It agilely scales sheer cliffs to live atop craggy mountains. Its fire
+    is put out when it sleeps.
+  url_name: chimchar
+  firstType: Fire
+  Romaji: Hikozaru
+  Kana: ヒコザル
+Monferno:
+  number: '391'
+  description: To intimidate attackers, it stretches the fire on its tail to make
+    itself appear bigger.
+  url_name: monferno
+  firstType: Fire
+  secondType: Fighting
+  Romaji: Moukazaru
+  Kana: モウカザル
+Infernape:
+  number: '392'
+  description: It uses a special kind of martial arts involving all its limbs. Its
+    fire never goes out.
+  url_name: infernape
+  firstType: Fire
+  secondType: Fighting
+  Romaji: Goukazaru
+  Kana: ゴウカザル
+Piplup:
+  number: '393'
+  description: Because it is very proud, it hates accepting food from people. Its
+    thick down guards it from cold.
+  url_name: piplup
+  firstType: Water
+  Romaji: Pochama
+  Kana: ポッチャマ
+Prinplup:
+  number: '394'
+  description: It lives alone, away from others. Apparently, every one of them believes
+    it is the most important.
+  url_name: prinplup
+  firstType: Water
+  Romaji: Pottaishi
+  Kana: ポッタイシ
+Empoleon:
+  number: '395'
+  description: The three horns that extend from its beak attest to its power. The
+    leader has the biggest horns.
+  url_name: empoleon
+  firstType: Water
+  secondType: Steel
+  Romaji: Enperuto
+  Kana: エンペルト
+Starly:
+  number: '396'
+  description: They flock in great numbers. Though small, they flap their wings with
+    great power.
+  url_name: starly
+  firstType: Normal
+  secondType: Flying
+  Romaji: Mukkuru
+  Kana: ムックル
+Staravia:
+  number: '397'
+  description: It flies around forests and fields in search of bug Pokémon. It stays
+    within a huge flock.
+  url_name: staravia
+  firstType: Normal
+  secondType: Flying
+  Romaji: Mukkubird
+  Kana: ムクバード
+Staraptor:
+  number: '398'
+  description: It has a savage nature. It will courageously challenge foes that are
+    much larger.
+  url_name: staraptor
+  firstType: Normal
+  secondType: Flying
+  Romaji: Mukuhawk
+  Kana: ムクホーク
+Bidoof:
+  number: '399'
+  description: With nerves of steel, nothing can perturb it. It is more agile and
+    active than it appears.
+  url_name: bidoof
+  firstType: Normal
+  Romaji: Bippa
+  Kana: ビッパ
+Bibarel:
+  number: '400'
+  description: It makes its nest by damming streams with bark and mud. It is known
+    as an industrious worker.
+  url_name: bibarel
+  firstType: Normal
+  secondType: Water
+  Romaji: Biidaru
+  Kana: ビーダル
+Kricketot:
+  number: '401'
+  description: It shakes its head back to front, causing its antennae to hit each
+    other and sound like a xylophone.
+  url_name: kricketot
+  firstType: Bug
+  Romaji: Korobooshi
+  Kana: コロボーシ
+Kricketune:
+  number: '402'
+  description: It crosses its knifelike arms in front of its chest when it cries.
+    It can compose melodies ad lib.
+  url_name: kricketune
+  firstType: Bug
+  Romaji: Korotokku
+  Kana: コロトック
+Shinx:
+  number: '403'
+  description: All of its fur dazzles if danger is sensed. It flees while the foe
+    is momentarily blinded.
+  url_name: shinx
+  firstType: Electric
+  Romaji: Korinku
+  Kana: コリンク
+Luxio:
+  number: '404'
+  description: Its claws loose electricity with enough amperage to cause fainting.
+    They live in small groups.
+  url_name: luxio
+  firstType: Electric
+  Romaji: Rukushio
+  Kana: ルクシオ
+Luxray:
+  number: '405'
+  description: It has eyes that can see through anything. It spots and captures prey
+    hiding behind objects.
+  url_name: luxray
+  firstType: Electric
+  Romaji: Rentoraa
+  Kana: レントラー
+Budew:
+  number: '406'
+  description: Over the winter, it closes its bud and endures the cold. In spring,
+    the bud opens and releases pollen.
+  url_name: budew
+  firstType: Grass
+  secondType: Poison
+  Romaji: Subomi
+  Kana: スボミー
+Roserade:
+  number: '407'
+  description: It attracts prey with a sweet aroma, then downs it with thorny whips
+    hidden in its arms.
+  url_name: roserade
+  firstType: Grass
+  secondType: Poison
+  Romaji: Rozureido
+  Kana: ロズレイド
+Cranidos:
+  number: '408'
+  description: It lived in jungles around 100 million years ago. Its skull is as hard
+    as iron.
+  url_name: cranidos
+  firstType: Rock
+  Romaji: Zugaidosu
+  Kana: ズガイドス
+Rampardos:
+  number: '409'
+  description: Its powerful head butt has enough power to shatter even the most durable
+    things upon impact.
+  url_name: rampardos
+  firstType: Rock
+  Romaji: Ramuparudo
+  Kana: ラムパルド
+Shieldon:
+  number: '410'
+  description: A Pokémon that lived in jungles around 100 million years ago. Its facial
+    hide is extremely hard.
+  url_name: shieldon
+  firstType: Rock
+  secondType: Steel
+  Romaji: Tatetopusu
+  Kana: タテトプス
+Bastiodon:
+  number: '411'
+  description: Any frontal attack is repulsed. It is a docile Pokémon that feeds on
+    grass and berries.
+  url_name: bastiodon
+  firstType: Rock
+  secondType: Steel
+  Romaji: Toridepusu
+  Kana: トリテプス
+Burmy:
+  number: '412'
+  description: To shelter itself from cold, wintry winds, it covers itself with a
+    cloak made of twigs and leaves.
+  url_name: burmy
+  firstType: Bug
+  Romaji: Minomucchi
+  Kana: ミノムッチ
+Wormadam:
+  number: '413'
+  description: When BURMY evolved, its cloak became a part of this Pokémon’s body.
+    The cloak is never shed.
+  url_name: wormadam
+  firstType: Bug
+  secondType: Grass
+  firstMegaType: Bug
+  secondMegaType: Ground
+  firstMegaTypeY: Bug
+  secondMegaTypeY: Steel
+  Romaji: Minomadamu
+  Kana: ミノマダム
+Mothim:
+  number: '414'
+  description: It loves the honey of flowers and steals honey collected by COMBEE.
+  url_name: mothim
+  firstType: Bug
+  secondType: Flying
+  Romaji: Garmeil
+  Kana: ガーメイル
+Combee:
+  number: '415'
+  description: A Pokémon formed by three others. It busily carries sweet floral honey
+    to VESPIQUEN.
+  url_name: combee
+  firstType: Bug
+  secondType: Flying
+  Romaji: Mitsuhoney
+  Kana: ミツハニー
+Vespiquen:
+  number: '416'
+  description: Its abdomen is a honeycomb for grubs. It raises its grubs on honey
+    collected by COMBEE.
+  url_name: vespiquen
+  firstType: Bug
+  secondType: Flying
+  Romaji: Beequeen
+  Kana: ビークイン
+Pachirisu:
+  number: '417'
+  description: It makes fur balls that crackle with static electricity. It stores
+    them with berries in tree holes.
+  url_name: pachirisu
+  firstType: Electric
+  Romaji: Pachirisu
+  Kana: パチリス
+Buizel:
+  number: '418'
+  description: It has a flotation sac that is like an inflatable collar. It floats
+    on water with its head out.
+  url_name: buizel
+  firstType: Water
+  Romaji: Buoysel
+  Kana: ブイゼル
+Floatzel:
+  number: '419'
+  description: It floats using its well-developed flotation sac. It assists in the
+    rescues of drowning people.
+  url_name: floatzel
+  firstType: Water
+  Romaji: Floatsel
+  Kana: フローゼル
+Cherubi:
+  number: '420'
+  description: The small ball holds the nutrients needed for evolution. Apparently,
+    it is very sweet and tasty.
+  url_name: cherubi
+  firstType: Grass
+  Romaji: Cherinbo
+  Kana: チェリンボ
+Cherrim:
+  number: '421'
+  description: It blooms during times of strong sunlight. It tries to make up for
+    everything it endured as a bud.
+  url_name: cherrim
+  firstType: Grass
+  Romaji: Cherimu
+  Kana: チェリム
+Shellos:
+  number: '422'
+  description: Its colors and shapes differ from region to region. In the Sinnoh region,
+    two types are confirmed.
+  url_name: shellos
+  firstType: Water
+  Romaji: Karanakushi
+  Kana: カラナクシ
+Gastrodon:
+  number: '423'
+  description: It has a pliable body without any bones. If any part of its body is
+    torn off, it grows right back.
+  url_name: gastrodon
+  firstType: Water
+  secondType: Ground
+  Romaji: Toritoidon
+  Kana: トリトドン
+Ambipom:
+  number: '424'
+  description: To eat, it deftly shucks nuts with its two tails. It rarely uses its
+    arms now.
+  url_name: ambipom
+  firstType: Normal
+  Romaji: Etebossu
+  Kana: エテボース
+Drifloon:
+  number: '425'
+  description: A Pokémon formed by the spirits of people and Pokémon. It loves damp,
+    humid seasons.
+  url_name: drifloon
+  firstType: Ghost
+  secondType: Flying
+  Romaji: Fuwante
+  Kana: フワンテ
+Drifblim:
+  number: '426'
+  description: It’s drowzy in daytime, but flies off in the evening in big groups.
+    No one knows where they go.
+  url_name: drifblim
+  firstType: Ghost
+  secondType: Flying
+  Romaji: Fuwaraido
+  Kana: フワライド
+Buneary:
+  number: '427'
+  description: It slams foes by sharply uncoiling its rolled ears. It stings enough
+    to make a grown-up cry in pain.
+  url_name: buneary
+  firstType: Normal
+  Romaji: Mimiroru
+  Kana: ミミロル
+Lopunny:
+  number: '428'
+  description: An extremely cautious Pokémon. It cloaks its body with its fluffy ear
+    fur when it senses danger.
+  url_name: lopunny
+  firstType: Normal
+  Romaji: Mimiroppu
+  Kana: ミミロップ
+Mismagius:
+  number: '429'
+  description: Its cries sound like incantations. Those hearing it are tormented by
+    headaches and hallucinations.
+  url_name: mismagius
+  firstType: Ghost
+  Romaji: Muumajii
+  Kana: ムウマージ
+Honchkrow:
+  number: '430'
+  description: Becoming active at night, it is known to swarm with numerous MURKROW
+    in tow.
+  url_name: honchkrow
+  firstType: Dark
+  secondType: Flying
+  Romaji: Donkarasu
+  Kana: ドンカラス
+Glameow:
+  number: '431'
+  description: It claws if displeased and purrs when affectionate. Its fickleness
+    is very popular among some.
+  url_name: glameow
+  firstType: Normal
+  Romaji: Nyaruma
+  Kana: ニャルマー
+Purugly:
+  number: '432'
+  description: It is a brazen brute that barges its way into another Pokémon’s nest
+    and claims it as its own.
+  url_name: purugly
+  firstType: Normal
+  Romaji: Bunyatto
+  Kana: ブニャット
+Chingling:
+  number: '433'
+  description: It emits cries by agitating an orb at the back of its throat. It moves
+    with flouncing hops.
+  url_name: chingling
+  firstType: Psychic
+  Romaji: Riishan
+  Kana: リーシャン
+Stunky:
+  number: '434'
+  description: It protects itself by spraying a noxious fluid from its rear. The stench
+    lingers for 24 hours.
+  url_name: stunky
+  firstType: Poison
+  secondType: Dark
+  Romaji: Sukapuu
+  Kana: スカンプー
+Skuntank:
+  number: '435'
+  description: It sprays a vile-smelling fluid from the tip of its tail to attack.
+    Its range is over 160 feet.
+  url_name: skuntank
+  firstType: Poison
+  secondType: Dark
+  Romaji: Sukatanku
+  Kana: スカタンク
+Bronzor:
+  number: '436'
+  description: Implements shaped like it were discovered in ancient tombs. It is unknown
+    if they are related.
+  url_name: bronzor
+  firstType: Steel
+  secondType: Psychic
+  Romaji: Doomiraa
+  Kana: ドーミラー
+Bronzong:
+  number: '437'
+  description: One caused a news sensation when it was dug up at a construction site
+    after a 2,000-year sleep.
+  url_name: bronzong
+  firstType: Steel
+  secondType: Psychic
+  Romaji: Dootakun
+  Kana: ドータクン
+Bonsly:
+  number: '438'
+  description: It looks as if it is always crying. It is actually adjusting its body’s
+    fluid levels by eliminating excess.
+  url_name: bonsly
+  firstType: Rock
+  Romaji: Usohachii
+  Kana: ウソハチ
+Mime Jr.:
+  number: '439'
+  description: It habitually mimics foes. Once mimicked, the foe cannot take its eyes
+    off this Pokémon.
+  url_name: mime-jr
+  firstType: Psychic
+  secondType: Fairy
+  Romaji: Manene
+  Kana: マネネ
+Happiny:
+  number: '440'
+  description: It loves round white things. It carries an egg-shaped rock in imitation
+    of CHANSEY.
+  url_name: happiny
+  firstType: Normal
+  Romaji: Pinpuku
+  Kana: ピンプク
+Chatot:
+  number: '441'
+  description: It can learn and speak human words. If they gather, they all learn
+    the same saying.
+  url_name: chatot
+  firstType: Normal
+  secondType: Flying
+  Romaji: Perap
+  Kana: ペラップ
+Spiritomb:
+  number: '442'
+  description: A Pokémon that was formed by 108 spirits. It is bound to a fissure
+    in an odd keystone.
+  url_name: spiritomb
+  firstType: Ghost
+  secondType: Dark
+  Romaji: Mikaruge
+  Kana: ミカルゲ
+Gible:
+  number: '443'
+  description: It nests in small, horizontal holes in cave walls. It pounces to catch
+    prey that stray too close.
+  url_name: gible
+  firstType: Dragon
+  secondType: Ground
+  Romaji: Fukamaru
+  Kana: フカマル
+Gabite:
+  number: '444'
+  description: There is a long-held belief that medicine made from its scales will
+    heal even incurable illnesses.
+  url_name: gabite
+  firstType: Dragon
+  secondType: Ground
+  Romaji: Gabaito
+  Kana: ガバイト
+Garchomp:
+  number: '445'
+  description: When it folds up its body and extends its wings, it looks like a jet
+    plane. It flies at sonic speed.
+  url_name: garchomp
+  firstType: Dragon
+  secondType: Ground
+  firstMegaType: Dragon
+  secondMegaType: Ground
+  Romaji: Gaburaisu
+  Kana: ガブリアス
+Munchlax:
+  number: '446'
+  description: It wolfs down its weight in food once a day, swallowing food whole
+    with almost no chewing.
+  url_name: munchlax
+  firstType: Normal
+  Romaji: Gonbe
+  Kana: ゴンベ
+Riolu:
+  number: '447'
+  description: The aura that emanates from its body intensifies to alert others if
+    it is afraid or sad.
+  url_name: riolu
+  firstType: Fighting
+  Romaji: Rioru
+  Kana: リオル
+Lucario:
+  number: '448'
+  description: It has the ability to sense the auras of all things. It understands
+    human speech.
+  url_name: lucario
+  firstType: Fighting
+  secondType: Steel
+  firstMegaType: Fighting
+  secondMegaType: Steel
+  Romaji: Rukario
+  Kana: ルカリオ
+Hippopotas:
+  number: '449'
+  description: It lives in arid places. Instead of perspiration, it expels grainy
+    sand from its body.
+  url_name: hippopotas
+  firstType: Ground
+  Romaji: Hippopotasu
+  Kana: ヒポポタス
+Hippowdon:
+  number: '450'
+  description: It blasts internally stored sand from ports on its body to create a
+    towering twister for attack.
+  url_name: hippowdon
+  firstType: Ground
+  Romaji: Kabarudon
+  Kana: カバルドン
+Skorupi:
+  number: '451'
+  description: It grips prey with its tail claws and injects poison. It tenaciously
+    hangs on until the poison takes.
+  url_name: skorupi
+  firstType: Poison
+  secondType: Bug
+  Romaji: Scorpi
+  Kana: スコルピ
+Drapion:
+  number: '452'
+  description: It has the power in its clawed arms to make scrap of a car. The tips
+    of its claws release poison.
+  url_name: drapion
+  firstType: Poison
+  secondType: Dark
+  Romaji: Dorapion
+  Kana: ドラピオン
+Croagunk:
+  number: '453'
+  description: Its cheeks hold poison sacs. It tries to catch foes off guard to jab
+    them with toxic fingers.
+  url_name: croagunk
+  firstType: Poison
+  secondType: Fighting
+  Romaji: Gregguru
+  Kana: グレッグル
+Toxicroak:
+  number: '454'
+  description: Its knuckle claws secrete a toxin so vile that even a scratch could
+    prove fatal.
+  url_name: toxicroak
+  firstType: Poison
+  secondType: Fighting
+  Romaji: Dokurogu
+  Kana: ドクロッグ
+Carnivine:
+  number: '455'
+  description: It attracts prey with its sweet-smelling saliva, then chomps down.
+    It takes a whole day to eat prey.
+  url_name: carnivine
+  firstType: Grass
+  Romaji: Masukippa
+  Kana: マスキッパ
+Finneon:
+  number: '456'
+  description: After long exposure to sunlight, the patterns on its tail fins shine
+    vividly when darkness arrives.
+  url_name: finneon
+  firstType: Water
+  Romaji: Keikouo
+  Kana: ケイコウオ
+Lumineon:
+  number: '457'
+  description: It lives on the deep-sea floor. It attracts prey by flashing the patterns
+    on its four tail fins.
+  url_name: lumineon
+  firstType: Water
+  Romaji: Neorantu
+  Kana: ネオラント
+Mantyke:
+  number: '458'
+  description: A friendly Pokémon that captures the subtle flows of seawater using
+    its two antennae.
+  url_name: mantyke
+  firstType: Water
+  secondType: Flying
+  Romaji: Tamanta
+  Kana: タマンタ
+Snover:
+  number: '459'
+  description: It lives on snowy mountains. Having had little contact with humans,
+    it is boldly inquisitive.
+  url_name: snover
+  firstType: Grass
+  secondType: Ice
+  Romaji: Yukikaburi
+  Kana: ユキカブリ
+Abomasnow:
+  number: '460'
+  description: It whips up blizzards in mountains that are always buried in snow.
+    It is the abominable snowman.
+  url_name: abomasnow
+  firstType: Grass
+  secondType: Ice
+  firstMegaType: Grass
+  secondMegaType: Ice
+  Romaji: Yukinooh
+  Kana: ユキノオー
+Weavile:
+  number: '461'
+  description: They live in cold regions, forming groups of four or five that hunt
+    prey with impressive coordination.
+  url_name: weavile
+  firstType: Dark
+  secondType: Ice
+  Romaji: Manyula
+  Kana: マニューラ
+Magnezone:
+  number: '462'
+  description: It evolved from exposure to a special magnetic field. Three units generate
+    magnetism.
+  url_name: magnezone
+  firstType: Electric
+  secondType: Steel
+  Romaji: Jibacoil
+  Kana: ジバコイル
+Lickilicky:
+  number: '463'
+  description: It wraps things with its extensible tongue. Getting too close to it
+    will leave you soaked with drool.
+  url_name: lickilicky
+  firstType: Normal
+  Romaji: Beruberuto
+  Kana: ベロベルト
+Rhyperior:
+  number: '464'
+  description: It puts rocks in holes in its palms and uses its muscles to shoot them.
+    GEODUDE are shot at rare times.
+  url_name: rhyperior
+  firstType: Ground
+  secondType: Rock
+  Romaji: Dosaidon
+  Kana: ドサイドン
+Tangrowth:
+  number: '465'
+  description: It ensnares prey by extending arms made of vines. Losing arms to predators
+    does not trouble it.
+  url_name: tangrowth
+  firstType: Grass
+  Romaji: Mojanbo
+  Kana: モジャンボ
+Electivire:
+  number: '466'
+  description: It pushes the tips of its two tails against the foe, then lets loose
+    with over 20,000 volts of power.
+  url_name: electivire
+  firstType: Electric
+  Romaji: Elekible
+  Kana: エレキブル
+Magmortar:
+  number: '467'
+  description: It blasts fireballs of over 3,600 degrees F from the ends of its arms.
+    It lives in volcanic craters.
+  url_name: magmortar
+  firstType: Fire
+  Romaji: Buuburn
+  Kana: ブーバーン
+Togekiss:
+  number: '468'
+  description: It will never appear where there is strife. Its sightings have become
+    rare recently.
+  url_name: togekiss
+  firstType: Fairy
+  secondType: Flying
+  Romaji: Togekiss
+  Kana: トゲキッス
+Yanmega:
+  number: '469'
+  description: By churning its wings, it creates shock waves that inflict critical
+    internal injuries to foes.
+  url_name: yanmega
+  firstType: Bug
+  secondType: Flying
+  Romaji: Megayanma
+  Kana: メガヤンマ
+Leafeon:
+  number: '470'
+  description: Just like a plant, it uses photosynthesis. As a result, it is always
+    enveloped in clear air.
+  url_name: leafeon
+  firstType: Grass
+  Romaji: Leafia
+  Kana: リーフィア
+Glaceon:
+  number: '471'
+  description: As a protective technique, it can completely freeze its fur to make
+    its hairs stand like needles.
+  url_name: glaceon
+  firstType: Ice
+  Romaji: Glacia
+  Kana: グレイシア
+Gliscor:
+  number: '472'
+  description: It observes prey while hanging inverted from branches. When the chance
+    presents itself, it swoops!
+  url_name: gliscor
+  firstType: Ground
+  secondType: Flying
+  Romaji: Glion
+  Kana: グライオン
+Mamoswine:
+  number: '473'
+  description: Its impressive tusks are made of ice. The population thinned when it
+    turned warm after the ice age.
+  url_name: mamoswine
+  firstType: Ice
+  secondType: Ground
+  Romaji: Manmuu
+  Kana: マンムー
+Porygon-Z:
+  number: '474'
+  description: Additional software was installed to make it a better Pokémon. It began
+    acting oddly, however.
+  url_name: porygon-z
+  firstType: Normal
+  Romaji: PorygonZ
+  Kana: ポリゴンZ
+Gallade:
+  number: '475'
+  description: A master of courtesy and swordsmanship, it fights using extending swords
+    on its elbows.
+  url_name: gallade
+  firstType: Psychic
+  secondType: Fighting
+  Romaji: Erureido
+  Kana: エルレイド
+Probopass:
+  number: '476'
+  description: It exudes strong magnetism from all over. It controls three small units
+    called Mini-Noses.
+  url_name: probopass
+  firstType: Rock
+  secondType: Steel
+  Romaji: Dainoosu
+  Kana: ダイノーズ
+Dusknoir:
+  number: '477'
+  description: The antenna on its head captures radio waves from the world of spirits
+    that command it to take people there.
+  url_name: dusknoir
+  firstType: Ghost
+  Romaji: Yonowaaru
+  Kana: ヨノワール
+Froslass:
+  number: '478'
+  description: It freezes foes with an icy breath nearly -60 degrees F. What seems
+    to be its body is actually hollow.
+  url_name: froslass
+  firstType: Ice
+  secondType: Ghost
+  Romaji: Yukimenoko
+  Kana: ユキメノコ
+Rotom:
+  number: '479'
+  description: Its body is composed of plasma. It is known to infiltrate electronic
+    devices and wreak havoc.
+  url_name: rotom
+  firstType: Electric
+  secondType: Ghost
+  firstMegaType: Electric
+  secondMegaType: Fire
+  firstMegaTypeY: Electric
+  secondMegaTypeY: Water
+  Romaji: Rotomu
+  Kana: ロトム
+Uxie:
+  number: '480'
+  description: Known as “The Being of Knowledge.” It is said that it can wipe out
+    the memory of those who see its eyes.
+  url_name: uxie
+  firstType: Psychic
+  Romaji: Yukishii
+  Kana: ユクシー
+Mesprit:
+  number: '481'
+  description: Known as “The Being of Emotion.” It taught humans the nobility of sorrow,
+    pain, and joy.
+  url_name: mesprit
+  firstType: Psychic
+  Romaji: Emuritto
+  Kana: エムリット
+Azelf:
+  number: '482'
+  description: Known as “The Being of Willpower.” It sleeps at the bottom of a lake
+    to keep the world in balance.
+  url_name: azelf
+  firstType: Psychic
+  Romaji: Agunomuu
+  Kana: アグノム
+Dialga:
+  number: '483'
+  description: It has the power to control time. It appears in Sinnoh-region myths
+    as an ancient deity.
+  url_name: dialga
+  firstType: Steel
+  secondType: Dragon
+  Romaji: Diaruga
+  Kana: ディアルガ
+Palkia:
+  number: '484'
+  description: It has the ability to distort space. It is described as a deity in
+    Sinnoh-region mythology.
+  url_name: palkia
+  firstType: Water
+  secondType: Dragon
+  Romaji: Parukia
+  Kana: パルキア
+Heatran:
+  number: '485'
+  description: It dwells in volcanic caves. It digs in with its cross-shaped feet
+    to crawl on ceilings and walls.
+  url_name: heatran
+  firstType: Fire
+  secondType: Steel
+  Romaji: Hiidoran
+  Kana: ヒードラン
+Regigigas:
+  number: '486'
+  description: There is an enduring legend that states this Pokémon towed continents
+    with ropes.
+  url_name: regigigas
+  firstType: Normal
+  Romaji: Regigigas
+  Kana: レジギガス
+Giratina:
+  number: '487'
+  description: A Pokémon that is said to live in a world on the reverse side of ours.
+    It appears in an ancient cemetery.
+  url_name: giratina
+  firstType: Ghost
+  secondType: Dragon
+  firstMegaType: Ghost
+  secondMegaType: Dragon
+  Romaji: Giratina
+  Kana: ギラティナ
+Cresselia:
+  number: '488'
+  description: Shiny particles are released from its wings like a veil. It is said
+    to represent the crescent moon.
+  url_name: cresselia
+  firstType: Psychic
+  Romaji: Kureseria
+  Kana: クレセリア
+Phione:
+  number: '489'
+  description: A Pokémon that lives in warm seas. It inflates the flotation sac on
+    its head to drift and search for food.
+  url_name: phione
+  firstType: Water
+  Romaji: Fione
+  Kana: フィオネ
+Manaphy:
+  number: '490'
+  description: Born on a cold seafloor, it will swim great distances to return to
+    its birthplace.
+  url_name: manaphy
+  firstType: Water
+  Romaji: Manaphy
+  Kana: マナフィ
+Darkrai:
+  number: '491'
+  description: It can lull people to sleep and make them dream. It is active during
+    nights of the new moon.
+  url_name: darkrai
+  firstType: Dark
+  Romaji: Darkrai
+  Kana: ダークライ
+Shaymin:
+  number: '492'
+  description: It lives in flower patches and avoids detection by curling up to look
+    like a flowering plant.
+  url_name: shaymin
+  firstType: Grass
+  firstMegaType: Grass
+  secondMegaType: Flying
+  Romaji: Sheimi
+  Kana: シェイミ
+Arceus:
+  number: '493'
+  description: It is described in mythology as the Pokémon that shaped the universe
+    with its 1,000 arms.
+  url_name: arceus
+  firstType: Normal
+  Romaji: Aruseus
+  Kana: アルセウス
+Victini:
+  number: '494'
+  description: This Pokémon brings victory. It is said that Trainers with Victini
+    always win, regardless of the type of encounter.
+  url_name: victini
+  firstType: Psychic
+  secondType: Fire
+  Romaji: Victini
+  Kana: ビクティニ
+Snivy:
+  number: '495'
+  description: It is very intelligent and calm. Being exposed to lots of sunlight
+    makes its movements swifter.
+  url_name: snivy
+  firstType: Grass
+  Romaji: Tsutarja
+  Kana: ツタージャ
+Servine:
+  number: '496'
+  description: It moves along the ground as if sliding. Its swift movements befuddle
+    its foes, and it then attacks with a vine whip.
+  url_name: servine
+  firstType: Grass
+  Romaji: Janovy
+  Kana: ジャノビー
+Serperior:
+  number: '497'
+  description: It can stop its opponents’ movements with just a glare. It takes in
+    solar energy and boosts it internally.
+  url_name: serperior
+  firstType: Grass
+  Romaji: Jalorda
+  Kana: ジャローダ
+Tepig:
+  number: '498'
+  description: It can deftly dodge its foe’s attacks while shooting fireballs from
+    its nose. It roasts berries before it eats them.
+  url_name: tepig
+  firstType: Fire
+  Romaji: Pokabu
+  Kana: ポカブ
+Pignite:
+  number: '499'
+  description: When its internal fire flares up, its movements grow sharper and faster.
+    When in trouble, it emits smoke.
+  url_name: pignite
+  firstType: Fire
+  secondType: Fighting
+  Romaji: Chaoboo
+  Kana: チャオブー
+Emboar:
+  number: '500'
+  description: It can throw a fire punch by setting its fists on fire with its fiery
+    chin. It cares deeply about its friends.
+  url_name: emboar
+  firstType: Fire
+  secondType: Fighting
+  Romaji: Enbuoh
+  Kana: エンブオー
+Oshawott:
+  number: '501'
+  description: It fights using the scalchop on its stomach. In response to an attack,
+    it retaliates immediately by slashing.
+  url_name: oshawott
+  firstType: Water
+  Romaji: Mijumaru
+  Kana: ミジュマル
+Dewott:
+  number: '502'
+  description: Strict training is how it learns its flowing double-scalchop technique.
+  url_name: dewott
+  firstType: Water
+  Romaji: Futachimaru
+  Kana: フタチマル
+Samurott:
+  number: '503'
+  description: One swing of the sword incorporated in its armor can fell an opponent.
+    A simple glare from one of them quiets everybody.
+  url_name: samurott
+  firstType: Water
+  Romaji: Daikenki
+  Kana: ダイケンキ
+Patrat:
+  number: '504'
+  description: Using food stored in cheek pouches, they can keep watch for days. They
+    use their tails to communicate with others.
+  url_name: patrat
+  firstType: Normal
+  Romaji: Minezumi
+  Kana: ミネズミ
+Watchog:
+  number: '505'
+  description: When they see an enemy, their tails stand high, and they spit the seeds
+    of berries stored in their cheek pouches.
+  url_name: watchog
+  firstType: Normal
+  Romaji: Miruhog
+  Kana: ミルホッグ
+Lillipup:
+  number: '506'
+  description: It faces strong opponents with great courage. But, when at a disadvantage
+    in a fight, this intelligent Pokémon flees.
+  url_name: lillipup
+  firstType: Normal
+  Romaji: Yooterii
+  Kana: ヨーテリー
+Herdier:
+  number: '507'
+  description: It has black, cape-like fur that is very hard and decreases the amount
+    of damage it receives.
+  url_name: herdier
+  firstType: Normal
+  Romaji: Haderia
+  Kana: ハーデリア
+Stoutland:
+  number: '508'
+  description: It rescues people stranded by blizzards in the mountains. Its shaggy
+    fur shields it from the cold.
+  url_name: stoutland
+  firstType: Normal
+  Romaji: Muurando
+  Kana: ムーランド
+Purrloin:
+  number: '509'
+  description: They steal from people for fun, but their victims can’t help but forgive
+    them. Their deceptively cute act is perfect.
+  url_name: purrloin
+  firstType: Dark
+  Romaji: Choroneko
+  Kana: チョロネコ
+Liepard:
+  number: '510'
+  description: These Pokémon vanish and appear unexpectedly. Many Trainers are drawn
+    to their beautiful form and fur.
+  url_name: liepard
+  firstType: Dark
+  Romaji: Lepardas
+  Kana: レパルダス
+Pansage:
+  number: '511'
+  description: This Pokémon dwells deep in the forest. Eating a leaf from its head
+    whisks weariness away as if by magic.
+  url_name: pansage
+  firstType: Grass
+  Romaji: Yanappu
+  Kana: ヤナップ
+Simisage:
+  number: '512'
+  description: Ill tempered, it fights by swinging its barbed tail around wildly.
+    The leaf growing on its head is very bitter.
+  url_name: simisage
+  firstType: Grass
+  Romaji: Yanakkie
+  Kana: ヤナッキー
+Pansear:
+  number: '513'
+  description: When it is angered, the temperature of its head tuft reaches 600° F.
+    It uses its tuft to roast berries.
+  url_name: pansear
+  firstType: Fire
+  Romaji: Baoppu
+  Kana: バオップ
+Simisear:
+  number: '514'
+  description: It loves sweets because they become energy for the fire burning inside
+    its body.
+  url_name: simisear
+  firstType: Fire
+  Romaji: Baokkie
+  Kana: バオッキー
+Panpour:
+  number: '515'
+  description: The water stored inside the tuft on its head is full of nutrients.
+    Plants that receive its water grow large.
+  url_name: panpour
+  firstType: Water
+  Romaji: Hiyappu
+  Kana: ヒヤップ
+Simipour:
+  number: '516'
+  description: The tuft on its head holds water. When the level runs low, it replenishes
+    the tuft by siphoning up water with its tail.
+  url_name: simipour
+  firstType: Water
+  Romaji: Hiyakkie
+  Kana: ヒヤッキー
+Munna:
+  number: '517'
+  description: Munna always float in the air. People whose dreams are eaten by them
+    forget what the dreams had been about.
+  url_name: munna
+  firstType: Psychic
+  Romaji: Munna
+  Kana: ムンナ
+Musharna:
+  number: '518'
+  description: The mist emanating from their foreheads is packed with the dreams of
+    people and Pokémon.
+  url_name: musharna
+  firstType: Psychic
+  Romaji: Musharna
+  Kana: ムシャーナ
+Pidove:
+  number: '519'
+  description: Each follows its Trainer’s orders as best it can, but they sometimes
+    fail to understand complicated commands.
+  url_name: pidove
+  firstType: Normal
+  secondType: Flying
+  Romaji: Mamepato
+  Kana: マメパト
+Tranquill:
+  number: '520'
+  description: It can return to its Trainer’s location regardless of the distance
+    separating them.
+  url_name: tranquill
+  firstType: Normal
+  secondType: Flying
+  Romaji: Hatooboo
+  Kana: ハトーボー
+Unfezant:
+  number: '521'
+  description: Males swing their head plumage to threaten opponents. The females’
+    flying abilities surpass those of the males.
+  url_name: unfezant
+  firstType: Normal
+  secondType: Flying
+  Romaji: Kenhorou
+  Kana: ケンホロウ
+Blitzle:
+  number: '522'
+  description: Its mane shines when it discharges electricity. They use their flashing
+    manes to communicate with one another.
+  url_name: blitzle
+  firstType: Electric
+  Romaji: Shimama
+  Kana: シママ
+Zebstrika:
+  number: '523'
+  description: They have lightning-like movements. When Zebstrika run at full speed,
+    the sound of thunder reverberates.
+  url_name: zebstrika
+  firstType: Electric
+  Romaji: Zeburaika
+  Kana: ゼブライカ
+Roggenrola:
+  number: '524'
+  description: Its ear is hexagonal in shape. Compressed underground, its body is
+    as hard as steel.
+  url_name: roggenrola
+  firstType: Rock
+  Romaji: Dangoro
+  Kana: ダンゴロ
+Boldore:
+  number: '525'
+  description: When it overflows with power, the orange crystal on its body glows.
+    It looks for underground water in caves.
+  url_name: boldore
+  firstType: Rock
+  Romaji: Gantoru
+  Kana: ガントル
+Gigalith:
+  number: '526'
+  description: Compressing the energy from its internal core lets it fire off an attack
+    capable of blowing away a mountain.
+  url_name: gigalith
+  firstType: Rock
+  Romaji: Gigaiath
+  Kana: ギガイアス
+Woobat:
+  number: '527'
+  description: Its habitat is dark forests and caves. It emits ultrasonic waves from
+    its nose to learn about its surroundings.
+  url_name: woobat
+  firstType: Psychic
+  secondType: Flying
+  Romaji: Koromori
+  Kana: コロモリ
+Swoobat:
+  number: '528'
+  description: It emits sound waves of various frequencies from its nose, including
+    some powerful enough to destroy rocks.
+  url_name: swoobat
+  firstType: Psychic
+  secondType: Flying
+  Romaji: Kokoromori
+  Kana: ココロモリ
+Drilbur:
+  number: '529'
+  description: It can dig through the ground at a speed of 30 mph. It could give a
+    car running aboveground a good race.
+  url_name: drilbur
+  firstType: Ground
+  Romaji: Mogurew
+  Kana: モグリュー
+Excadrill:
+  number: '530'
+  description: It can help in tunnel construction. Its drill has evolved into steel
+    strong enough to bore through iron plates.
+  url_name: excadrill
+  firstType: Ground
+  secondType: Steel
+  Romaji: Doryuuzu
+  Kana: ドリュウズ
+Audino:
+  number: '531'
+  description: It touches others with the feelers on its ears, using the sound of
+    their heartbeats to tell how they are feeling.
+  url_name: audino
+  firstType: Normal
+  Romaji: Tabunne
+  Kana: タブンネ
+Timburr:
+  number: '532'
+  description: It fights by swinging a piece of lumber around. It is close to evolving
+    when it can handle the lumber without difficulty.
+  url_name: timburr
+  firstType: Fighting
+  Romaji: Dokkora
+  Kana: ドッコラー
+Gurdurr:
+  number: '533'
+  description: This Pokémon is so muscular and strongly built that even a group of
+    wrestlers could not make it budge an inch.
+  url_name: gurdurr
+  firstType: Fighting
+  Romaji: Dotekkotsu
+  Kana: ドテッコツ
+Conkeldurr:
+  number: '534'
+  description: It is thought that Conkeldurr taught humans how to make concrete more
+    than 2,000 years ago.
+  url_name: conkeldurr
+  firstType: Fighting
+  Romaji: Roobushin
+  Kana: ローブシン
+Tympole:
+  number: '535'
+  description: They warn others of danger by vibrating their cheeks to create a high-pitched
+    sound.
+  url_name: tympole
+  firstType: Water
+  Romaji: Otamaro
+  Kana: オタマロ
+Palpitoad:
+  number: '536'
+  description: When they vibrate the bumps on their heads, they can make waves in
+    water or earthquake-like vibrations on land.
+  url_name: palpitoad
+  firstType: Water
+  secondType: Ground
+  Romaji: Gamagaru
+  Kana: ガマガル
+Seismitoad:
+  number: '537'
+  description: They shoot paralyzing liquid from their head bumps. They use vibration
+    to hurt their opponents.
+  url_name: seismitoad
+  firstType: Water
+  secondType: Ground
+  Romaji: Gamageroge
+  Kana: ガマゲロゲ
+Throh:
+  number: '538'
+  description: When it tightens its belt, it becomes stronger. Wild Throh use vines
+    to weave their own belts.
+  url_name: throh
+  firstType: Fighting
+  Romaji: Nageki
+  Kana: ナゲキ
+Sawk:
+  number: '539'
+  description: The sound of Sawk punching boulders and trees can be heard all the
+    way from the mountains where they train.
+  url_name: sawk
+  firstType: Fighting
+  Romaji: Dageki
+  Kana: ダゲキ
+Sewaddle:
+  number: '540'
+  description: Leavanny dress it in clothes they made for it when it hatched. It hides
+    its head in its hood while it is sleeping.
+  url_name: sewaddle
+  firstType: Bug
+  secondType: Grass
+  Romaji: Kurumiru
+  Kana: クルミル
+Swadloon:
+  number: '541'
+  description: Forests where Swadloon live have superb foliage because the nutrients
+    they make from fallen leaves nourish the plant life.
+  url_name: swadloon
+  firstType: Bug
+  secondType: Grass
+  Romaji: Kurumayu
+  Kana: クルマユ
+Leavanny:
+  number: '542'
+  description: Upon finding a small Pokémon, it weaves clothing for it from leaves,
+    using the cutters on its arms and sticky silk.
+  url_name: leavanny
+  firstType: Bug
+  secondType: Grass
+  Romaji: Hahakomori
+  Kana: ハハコモリ
+Venipede:
+  number: '543'
+  description: Its bite injects a potent poison, enough to paralyze large bird Pokémon
+    that try to prey on it.
+  url_name: venipede
+  firstType: Bug
+  secondType: Poison
+  Romaji: Fushide
+  Kana: フシデ
+Whirlipede:
+  number: '544'
+  description: Protected by a hard shell, it spins its body like a wheel and crashes
+    furiously into its enemies.
+  url_name: whirlipede
+  firstType: Bug
+  secondType: Poison
+  Romaji: Hoiiga
+  Kana: ホイーガ
+Scolipede:
+  number: '545'
+  description: With quick movements, it chases down its foes, attacking relentlessly
+    with its horns until it prevails.
+  url_name: scolipede
+  firstType: Bug
+  secondType: Poison
+  Romaji: Pendoraa
+  Kana: ペンドラー
+Cottonee:
+  number: '546'
+  description: When attacked, it escapes by shooting cotton from its body. The cotton
+    serves as a decoy to distract the attacker.
+  url_name: cottonee
+  firstType: Grass
+  secondType: Fairy
+  Romaji: Monmen
+  Kana: モンメン
+Whimsicott:
+  number: '547'
+  description: Like the wind, it can slip through any gap, no matter how small. It
+    leaves balls of white fluff behind.
+  url_name: whimsicott
+  firstType: Grass
+  secondType: Fairy
+  Romaji: Erufuun
+  Kana: エルフーン
+Petilil:
+  number: '548'
+  description: The leaves on its head are very bitter. Eating one of these leaves
+    is known to refresh a tired body.
+  url_name: petilil
+  firstType: Grass
+  Romaji: Churine
+  Kana: チュリネ
+Lilligant:
+  number: '549'
+  description: Even veteran Trainers face a challenge in getting its beautiful flower
+    to bloom. This Pokémon is popular with celebrities.
+  url_name: lilligant
+  firstType: Grass
+  Romaji: Doredia
+  Kana: ドレディア
+Basculin:
+  number: '550'
+  description: Red and blue Basculin get along so poorly, they’ll start fighting instantly.
+    These Pokémon are very hostile.
+  url_name: basculin
+  firstType: Water
+  Romaji: Basurao
+  Kana: バスラオ
+Sandile:
+  number: '551'
+  description: They live buried in the sands of the desert. The sun-warmed sands prevent
+    their body temperature from dropping.
+  url_name: sandile
+  firstType: Ground
+  secondType: Dark
+  Romaji: Meguroco
+  Kana: メグロコ
+Krokorok:
+  number: '552'
+  description: They live in groups of a few individuals. Protective membranes shield
+    their eyes from sandstorms.
+  url_name: krokorok
+  firstType: Ground
+  secondType: Dark
+  Romaji: Waruvile
+  Kana: ワルビル
+Krookodile:
+  number: '553'
+  description: They never allow prey to escape. Their jaws are so powerful, they can
+    crush the body of an automobile.
+  url_name: krookodile
+  firstType: Ground
+  secondType: Dark
+  Romaji: Waruvial
+  Kana: ワルビアル
+Darumaka:
+  number: '554'
+  description: When its internal fire is burning, it cannot calm down and it runs
+    around. When the fire diminishes, it falls asleep.
+  url_name: darumaka
+  firstType: Fire
+  Romaji: Darumakka
+  Kana: ダルマッカ
+Darmanitan:
+  number: '555'
+  description: Its internal fire burns at 2,500° F, making enough power that it can
+    destroy a dump truck with one punch.
+  url_name: darmanitan
+  firstType: Fire
+  firstMegaType: Fire
+  secondMegaType: Psychic
+  Romaji: Hihidaruma
+  Kana: ヒヒダルマ
+Maractus:
+  number: '556'
+  description: It uses an up-tempo song and dance to drive away the bird Pokémon that
+    prey on its flower seeds.
+  url_name: maractus
+  firstType: Grass
+  Romaji: Marakacchi
+  Kana: マラカッチ
+Dwebble:
+  number: '557'
+  description: This Pokémon can easily melt holes in hard rocks with a liquid secreted
+    from its mouth.
+  url_name: dwebble
+  firstType: Bug
+  secondType: Rock
+  Romaji: Ishizumai
+  Kana: イシズマイ
+Crustle:
+  number: '558'
+  description: Competing for territory, Crustle fight viciously. The one whose boulder
+    is broken is the loser of the battle.
+  url_name: crustle
+  firstType: Bug
+  secondType: Rock
+  Romaji: Iwaparesu
+  Kana: イワパレス
+Scraggy:
+  number: '559'
+  description: Its skin has a rubbery elasticity, so it can reduce damage by defensively
+    pulling its skin up to its neck.
+  url_name: scraggy
+  firstType: Dark
+  secondType: Fighting
+  Romaji: Zuruggu
+  Kana: ズルッグ
+Scrafty:
+  number: '560'
+  description: Groups of them beat up anything that enters their territory. Each can
+    spit acidic liquid from its mouth.
+  url_name: scrafty
+  firstType: Dark
+  secondType: Fighting
+  Romaji: Zuruzukin
+  Kana: ズルズキン
+Sigilyph:
+  number: '561'
+  description: They never vary the route they fly, because their memories of guarding
+    an ancient city remain steadfast.
+  url_name: sigilyph
+  firstType: Psychic
+  secondType: Flying
+  Romaji: Shinbora
+  Kana: シンボラー
+Yamask:
+  number: '562'
+  description: Each of them carries a mask that used to be its face when it was human.
+    Sometimes they look at it and cry.
+  url_name: yamask
+  firstType: Ghost
+  Romaji: Desumasu
+  Kana: デスマス
+Cofagrigus:
+  number: '563'
+  description: It has been said that they swallow those who get too close and turn
+    them into mummies. They like to eat gold nuggets.
+  url_name: cofagrigus
+  firstType: Ghost
+  Romaji: Desukan
+  Kana: デスカーン
+Tirtouga:
+  number: '564'
+  description: Restored from a fossil, this Pokémon can dive to depths beyond half
+    a mile.
+  url_name: tirtouga
+  firstType: Water
+  secondType: Rock
+  Romaji: Purotooga
+  Kana: プロトーガ
+Carracosta:
+  number: '565'
+  description: They can live both in the ocean and on land. A slap from one of them
+    is enough to open a hole in the bottom of a tanker.
+  url_name: carracosta
+  firstType: Water
+  secondType: Rock
+  Romaji: Abagoura
+  Kana: アバゴーラ
+Archen:
+  number: '566'
+  description: Said to be an ancestor of bird Pokémon, they were unable to fly and
+    moved about by hopping from one branch to another.
+  url_name: archen
+  firstType: Rock
+  secondType: Flying
+  Romaji: Aaken
+  Kana: アーケン
+Archeops:
+  number: '567'
+  description: They are intelligent and will cooperate to catch prey. From the ground,
+    they use a running start to take flight.
+  url_name: archeops
+  firstType: Rock
+  secondType: Flying
+  Romaji: Archeos
+  Kana: アーケオス
+Trubbish:
+  number: '568'
+  description: Inhaling the gas they belch will make you sleep for a week. They prefer
+    unsanitary places.
+  url_name: trubbish
+  firstType: Poison
+  Romaji: Yabukuron
+  Kana: ヤブクロン
+Garbodor:
+  number: '569'
+  description: It clenches opponents with its left arm and finishes them off with
+    foul-smelling poison gas belched from its mouth.
+  url_name: garbodor
+  firstType: Poison
+  Romaji: Dasutodasu
+  Kana: ダストダス
+Zorua:
+  number: '570'
+  description: It changes into the forms of others to surprise them. Apparently, it
+    often transforms into a silent child.
+  url_name: zorua
+  firstType: Dark
+  Romaji: Zorua
+  Kana: ゾロア
+Zoroark:
+  number: '571'
+  description: Bonds between these Pokémon are very strong. It protects the safety
+    of its pack by tricking its opponents.
+  url_name: zoroark
+  firstType: Dark
+  Romaji: Zoroark
+  Kana: ゾロアーク
+Minccino:
+  number: '572'
+  description: They greet one another by rubbing each other with their tails, which
+    are always kept well groomed and clean.
+  url_name: minccino
+  firstType: Normal
+  Romaji: Chillarmy
+  Kana: チラーミィ
+Cinccino:
+  number: '573'
+  description: Their white fur is coated in a special oil that makes it easy for them
+    to deflect attacks.
+  url_name: cinccino
+  firstType: Normal
+  Romaji: Chillaccino
+  Kana: チラチーノ
+Gothita:
+  number: '574'
+  description: Their ribbonlike feelers increase their psychic power. They are always
+    staring at something.
+  url_name: gothita
+  firstType: Psychic
+  Romaji: Gothimu
+  Kana: ゴチム
+Gothorita:
+  number: '575'
+  description: They use hypnosis to control people and Pokémon. Tales of Gothorita
+    leading people astray are told in every corner.
+  url_name: gothorita
+  firstType: Psychic
+  Romaji: Gochimiru
+  Kana: ゴチミル
+Gothitelle:
+  number: '576'
+  description: Starry skies thousands of light-years away are visible in the space
+    distorted by their intense psychic power.
+  url_name: gothitelle
+  firstType: Psychic
+  Romaji: Gochiruzeru
+  Kana: ゴチルゼル
+Solosis:
+  number: '577'
+  description: They drive away attackers by unleashing psychic power. They can use
+    telepathy to talk with others.
+  url_name: solosis
+  firstType: Psychic
+  Romaji: Yuniran
+  Kana: ユニラン
+Duosion:
+  number: '578'
+  description: Since they have two divided brains, at times they suddenly try to take
+    two different actions at once.
+  url_name: duosion
+  firstType: Psychic
+  Romaji: Daburan
+  Kana: ダブラン
+Reuniclus:
+  number: '579'
+  description: When Reuniclus shake hands, a network forms between their brains, increasing
+    their psychic power.
+  url_name: reuniclus
+  firstType: Psychic
+  Romaji: Rankurusu
+  Kana: ランクルス
+Ducklett:
+  number: '580'
+  description: These bird Pokémon are excellent divers. They swim around in the water
+    eating their favorite food--peat moss.
+  url_name: ducklett
+  firstType: Water
+  secondType: Flying
+  Romaji: Koaruhie
+  Kana: コアルヒー
+Swanna:
+  number: '581'
+  description: Swanna start to dance at dusk. The one dancing in the middle is the
+    leader of the flock.
+  url_name: swanna
+  firstType: Water
+  secondType: Flying
+  Romaji: Swanna
+  Kana: スワンナ
+Vanillite:
+  number: '582'
+  description: The temperature of their breath is -58° F. They create snow crystals
+    and make snow fall in the areas around them.
+  url_name: vanillite
+  firstType: Ice
+  Romaji: Vanipeti
+  Kana: バニプッチ
+Vanillish:
+  number: '583'
+  description: Snowy mountains are this Pokémon’s habitat. During an ancient ice age,
+    they moved to southern areas.
+  url_name: vanillish
+  firstType: Ice
+  Romaji: Baniricchi
+  Kana: バニリッチ
+Vanilluxe:
+  number: '584'
+  description: Swallowing large amounts of water, they make snow clouds inside their
+    bodies and attack their foes with violent blizzards.
+  url_name: vanilluxe
+  firstType: Ice
+  Romaji: Baibanira
+  Kana: バイバニラ
+Deerling:
+  number: '585'
+  description: The color and scent of their fur changes to match the mountain grass.
+    When they sense hostility, they hide in the grass.
+  url_name: deerling
+  firstType: Normal
+  secondType: Grass
+  Romaji: Shikijika
+  Kana: シキジカ
+Sawsbuck:
+  number: '586'
+  description: They migrate according to the seasons. People can tell the season by
+    looking at Sawsbuck’s horns.
+  url_name: sawsbuck
+  firstType: Normal
+  secondType: Grass
+  Romaji: Mebukijika
+  Kana: メブキジカ
+Emolga:
+  number: '587'
+  description: The energy made in its cheeks’ electric pouches is stored inside its
+    membrane and released while it is gliding.
+  url_name: emolga
+  firstType: Electric
+  secondType: Flying
+  Romaji: Emonga
+  Kana: エモンガ
+Karrablast:
+  number: '588'
+  description: These mysterious Pokémon evolve when they receive electrical stimulation
+    while they are in the same place as Shelmet.
+  url_name: karrablast
+  firstType: Bug
+  Romaji: Kaburumo
+  Kana: カブルモ
+Escavalier:
+  number: '589'
+  description: They fly around at high speed, striking with their pointed spears.
+    Even when in trouble, they face opponents bravely.
+  url_name: escavalier
+  firstType: Bug
+  secondType: Steel
+  Romaji: Shubarugo
+  Kana: シュバルゴ
+Foongus:
+  number: '590'
+  description: It lures people in with its Poké Ball pattern, then releases poison
+    spores. Why it resembles a Poké Ball is unknown.
+  url_name: foongus
+  firstType: Grass
+  secondType: Poison
+  Romaji: Tamagetake
+  Kana: タマゲタケ
+Amoonguss:
+  number: '591'
+  description: It lures prey close by dancing and waving its arm caps, which resemble
+    Poké Balls, in a swaying motion.
+  url_name: amoonguss
+  firstType: Grass
+  secondType: Poison
+  Romaji: Morobareru
+  Kana: モロバレル
+Frillish:
+  number: '592'
+  description: With its thin, veil-like arms wrapped around the body of its opponent,
+    it sinks to the ocean floor.
+  url_name: frillish
+  firstType: Water
+  secondType: Ghost
+  Romaji: Pururiru
+  Kana: プルリル
+Jellicent:
+  number: '593'
+  description: 'The fate of the ships and crew that wander into Jellicent’s habitat:
+    all sunken, all lost, all vanished.'
+  url_name: jellicent
+  firstType: Water
+  secondType: Ghost
+  Romaji: Burungeru
+  Kana: ブルンゲル
+Alomomola:
+  number: '594'
+  description: The special membrane enveloping Alomomola has the ability to heal wounds.
+  url_name: alomomola
+  firstType: Water
+  Romaji: Mamanbou
+  Kana: ママンボウ
+Joltik:
+  number: '595'
+  description: Joltik that live in cities have learned a technique for sucking electricity
+    from the outlets in houses.
+  url_name: joltik
+  firstType: Bug
+  secondType: Electric
+  Romaji: Bachuru
+  Kana: バチュル
+Galvantula:
+  number: '596'
+  description: When attacked, they create an electric barrier by spitting out many
+    electrically charged threads.
+  url_name: galvantula
+  firstType: Bug
+  secondType: Electric
+  Romaji: Denchura
+  Kana: デンチュラ
+Ferroseed:
+  number: '597'
+  description: When threatened, it attacks by shooting a barrage of spikes, which
+    gives it a chance to escape by rolling away.
+  url_name: ferroseed
+  firstType: Grass
+  secondType: Steel
+  Romaji: Tesshiido
+  Kana: テッシード
+Ferrothorn:
+  number: '598'
+  description: It fights by swinging around its three spiky feelers. A hit from these
+    steel spikes can reduce a boulder to rubble.
+  url_name: ferrothorn
+  firstType: Grass
+  secondType: Steel
+  Romaji: Nattorei
+  Kana: ナットレイ
+Klink:
+  number: '599'
+  description: The two minigears that mesh together are predetermined. Each will rebound
+    from other minigears without meshing.
+  url_name: klink
+  firstType: Steel
+  Romaji: Gear
+  Kana: ギアル
+Klang:
+  number: '600'
+  description: By changing the direction in which it rotates, it communicates its
+    feelings to others. When angry, it rotates faster.
+  url_name: klang
+  firstType: Steel
+  Romaji: Gigear
+  Kana: ギギアル
+Klinklang:
+  number: '601'
+  description: Its red core functions as an energy tank. It fires the charged energy
+    through its spikes into an area.
+  url_name: klinklang
+  firstType: Steel
+  Romaji: Gigigear
+  Kana: ギギギアル
+Tynamo:
+  number: '602'
+  description: While one alone doesn’t have much power, a chain of many Tynamo can
+    be as powerful as lightning.
+  url_name: tynamo
+  firstType: Electric
+  Romaji: Shibishirasu
+  Kana: シビシラス
+Eelektrik:
+  number: '603'
+  description: They coil around foes and shock them with electricity-generating organs
+    that seem simply to be circular patterns.
+  url_name: eelektrik
+  firstType: Electric
+  Romaji: Shibibiiru
+  Kana: シビビール
+Eelektross:
+  number: '604'
+  description: They crawl out of the ocean using their arms. They will attack prey
+    on shore and immediately drag it into the ocean.
+  url_name: eelektross
+  firstType: Electric
+  Romaji: Shibirudon
+  Kana: シビルドン
+Elgyem:
+  number: '605'
+  description: It uses its strong psychic power to squeeze its opponent’s brain, causing
+    unendurable headaches.
+  url_name: elgyem
+  firstType: Psychic
+  Romaji: Riguree
+  Kana: リグレー
+Beheeyem:
+  number: '606'
+  description: It can manipulate an opponent’s memory. Apparently, it communicates
+    by flashing its three different-colored fingers.
+  url_name: beheeyem
+  firstType: Psychic
+  Romaji: Oobemu
+  Kana: オーベム
+Litwick:
+  number: '607'
+  description: Litwick shines a light that absorbs the life energy of people and Pokémon,
+    which becomes the fuel that it burns.
+  url_name: litwick
+  firstType: Ghost
+  secondType: Fire
+  Romaji: Hitomoshi
+  Kana: ヒトモシ
+Lampent:
+  number: '608'
+  description: This ominous Pokémon is feared. Through cities it wanders, searching
+    for the spirits of the fallen.
+  url_name: lampent
+  firstType: Ghost
+  secondType: Fire
+  Romaji: Ranpuraa
+  Kana: ランプラー
+Chandelure:
+  number: '609'
+  description: It absorbs a spirit, which it then burns. By waving the flames on its
+    arms, it puts its foes into a hypnotic trance.
+  url_name: chandelure
+  firstType: Ghost
+  secondType: Fire
+  Romaji: Shandera
+  Kana: シャンデラ
+Axew:
+  number: '610'
+  description: They use their tusks to crush the berries they eat. Repeated regrowth
+    makes their tusks strong and sharp.
+  url_name: axew
+  firstType: Dragon
+  Romaji: Kibago
+  Kana: キバゴ
+Fraxure:
+  number: '611'
+  description: Since a broken tusk will not grow back, they diligently sharpen their
+    tusks on river rocks after they’ve been fighting.
+  url_name: fraxure
+  firstType: Dragon
+  Romaji: Onondo
+  Kana: オノンド
+Haxorus:
+  number: '612'
+  description: They are kind but can be relentless when defending territory. They
+    challenge foes with tusks that can cut steel.
+  url_name: haxorus
+  firstType: Dragon
+  Romaji: Ononokusu
+  Kana: オノノクス
+Cubchoo:
+  number: '613'
+  description: When it is not feeling well, its mucus gets watery and the power of
+    its Ice-type moves decreases.
+  url_name: cubchoo
+  firstType: Ice
+  Romaji: Kumasyun
+  Kana: クマシュン
+Beartic:
+  number: '614'
+  description: It can make its breath freeze at will. Very able in the water, it swims
+    around in northern seas and catches prey.
+  url_name: beartic
+  firstType: Ice
+  Romaji: Tsunbeaa
+  Kana: ツンベアー
+Cryogonal:
+  number: '615'
+  description: When its body temperature goes up, it turns into steam and vanishes.
+    When its temperature lowers, it returns to ice.
+  url_name: cryogonal
+  firstType: Ice
+  Romaji: Furiijio
+  Kana: フリージオ
+Shelmet:
+  number: '616'
+  description: When attacked, it defends itself by closing the lid of its shell. It
+    can spit a sticky, poisonous liquid.
+  url_name: shelmet
+  firstType: Bug
+  Romaji: Chobomaki
+  Kana: チョボマキ
+Accelgor:
+  number: '617'
+  description: When its body dries out, it weakens. So, to prevent dehydration, it
+    wraps itself in many layers of thin membrane.
+  url_name: accelgor
+  firstType: Bug
+  Romaji: Agirudaa
+  Kana: アギルダー
+Stunfisk:
+  number: '618'
+  description: Its skin is very hard, so it is unhurt even if stepped on by sumo wrestlers.
+    It smiles when transmitting electricity.
+  url_name: stunfisk
+  firstType: Electric
+  secondType: Ground
+  Romaji: Maggyo
+  Kana: マッギョ
+Mienfoo:
+  number: '619'
+  description: In fights, they dominate with onslaughts of flowing, continuous attacks.
+    With their sharp claws, they cut enemies.
+  url_name: mienfoo
+  firstType: Fighting
+  Romaji: Kojofu
+  Kana: コジョフー
+Mienshao:
+  number: '620'
+  description: It wields the fur on its arms like a whip. Its arm attacks come with
+    such rapidity that they cannot even be seen.
+  url_name: mienshao
+  firstType: Fighting
+  Romaji: Kojondo
+  Kana: コジョンド
+Druddigon:
+  number: '621'
+  description: It warms its body by absorbing sunlight with its wings. When its body
+    temperature falls, it can no longer move.
+  url_name: druddigon
+  firstType: Dragon
+  Romaji: Crimgan
+  Kana: クリムガン
+Golett:
+  number: '622'
+  description: The energy that burns inside it enables it to move, but no one has
+    yet been able to identify this energy.
+  url_name: golett
+  firstType: Ground
+  secondType: Ghost
+  Romaji: Gobitto
+  Kana: ゴビット
+Golurk:
+  number: '623'
+  description: It flies across the sky at Mach speeds. Removing the seal on its chest
+    makes its internal energy go out of control.
+  url_name: golurk
+  firstType: Ground
+  secondType: Ghost
+  Romaji: Goruugu
+  Kana: ゴルーグ
+Pawniard:
+  number: '624'
+  description: Blades comprise this Pokémon’s entire body. If battling dulls the blades,
+    it sharpens them on stones by the river.
+  url_name: pawniard
+  firstType: Dark
+  secondType: Steel
+  Romaji: Komatana
+  Kana: コマタナ
+Bisharp:
+  number: '625'
+  description: It leads a group of Pawniard. It battles to become the boss, but will
+    be driven from the group if it loses.
+  url_name: bisharp
+  firstType: Dark
+  secondType: Steel
+  Romaji: Kirikizan
+  Kana: キリキザン
+Bouffalant:
+  number: '626'
+  description: Their fluffy fur absorbs damage, even if they strike foes with a fierce
+    headbutt.
+  url_name: bouffalant
+  firstType: Normal
+  Romaji: Baffuron
+  Kana: バッフロン
+Rufflet:
+  number: '627'
+  description: They crush berries with their talons. They bravely stand up to any
+    opponent, no matter how strong it is.
+  url_name: rufflet
+  firstType: Normal
+  secondType: Flying
+  Romaji: Washibon
+  Kana: ワシボン
+Braviary:
+  number: '628'
+  description: They fight for their friends without any thought about danger to themselves.
+    One can carry a car while flying.
+  url_name: braviary
+  firstType: Normal
+  secondType: Flying
+  Romaji: Wargle
+  Kana: ウォーグル
+Vullaby:
+  number: '629'
+  description: Its wings are too tiny to allow it to fly. As the time approaches for
+    it to evolve, it discards the bones it was wearing.
+  url_name: vullaby
+  firstType: Dark
+  secondType: Flying
+  Romaji: Baruchai
+  Kana: バルチャイ
+Mandibuzz:
+  number: '630'
+  description: It makes a nest out of bones it finds. It grabs weakened prey in its
+    talons and hauls it to its nest of bones.
+  url_name: mandibuzz
+  firstType: Dark
+  secondType: Flying
+  Romaji: Barujiina
+  Kana: バルジーナ
+Heatmor:
+  number: '631'
+  description: It breathes through a hole in its tail while it burns with an internal
+    fire. Durant is its prey.
+  url_name: heatmor
+  firstType: Fire
+  Romaji: Kuitaran
+  Kana: クイタラン
+Durant:
+  number: '632'
+  description: They attack in groups, covering themselves in steel armor to protect
+    themselves from Heatmor.
+  url_name: durant
+  firstType: Bug
+  secondType: Steel
+  Romaji: Aianto
+  Kana: アイアント
+Deino:
+  number: '633'
+  description: It tends to bite everything, and it is not a picky eater. Approaching
+    it carelessly is dangerous.
+  url_name: deino
+  firstType: Dark
+  secondType: Dragon
+  Romaji: Monozu
+  Kana: モノズ
+Zweilous:
+  number: '634'
+  description: After it has eaten up all the food in its territory, it moves to another
+    area. Its two heads do not get along.
+  url_name: zweilous
+  firstType: Dark
+  secondType: Dragon
+  Romaji: Jiheddo
+  Kana: ジヘッド
+Hydreigon:
+  number: '635'
+  description: This brutal Pokémon travels the skies on its six wings. Anything that
+    moves seems like a foe to it, triggering its attack.
+  url_name: hydreigon
+  firstType: Dark
+  secondType: Dragon
+  Romaji: Sazandora
+  Kana: サザンドラ
+Larvesta:
+  number: '636'
+  description: This Pokémon was believed to have been born from the sun. When it evolves,
+    its entire body is engulfed in flames.
+  url_name: larvesta
+  firstType: Bug
+  secondType: Fire
+  Romaji: Meraruba
+  Kana: メラルバ
+Volcarona:
+  number: '637'
+  description: When volcanic ash darkened the atmosphere, it is said that Volcarona’s
+    fire provided a replacement for the sun.
+  url_name: volcarona
+  firstType: Bug
+  secondType: Fire
+  Romaji: Ulgamoth
+  Kana: ウルガモス
+Cobalion:
+  number: '638'
+  description: This legendary Pokémon battled against humans to protect Pokémon. Its
+    personality is calm and composed.
+  url_name: cobalion
+  firstType: Steel
+  secondType: Fighting
+  Romaji: Cobalon
+  Kana: コバルオン
+Terrakion:
+  number: '639'
+  description: This Pokémon came to the defense of Pokémon that had lost their homes
+    in a war among humans.
+  url_name: terrakion
+  firstType: Rock
+  secondType: Fighting
+  Romaji: Terrakion
+  Kana: テラキオン
+Virizion:
+  number: '640'
+  description: This Pokémon fought humans in order to protect its friends. Legends
+    about it continue to be passed down.
+  url_name: virizion
+  firstType: Grass
+  secondType: Fighting
+  Romaji: Virizion
+  Kana: ビリジオン
+Tornadus:
+  number: '641'
+  description: The lower half of its body is wrapped in a cloud of energy. It zooms
+    through the sky at 200 mph.
+  url_name: tornadus
+  firstType: Flying
+  firstMegaType: Flying
+  Romaji: Tornelos
+  Kana: トルネロス
+Thundurus:
+  number: '642'
+  description: Countless charred remains mar the landscape of places through which
+    Thundurus has passed.
+  url_name: thundurus
+  firstType: Electric
+  secondType: Flying
+  firstMegaType: Electric
+  secondMegaType: Flying
+  Romaji: Voltolos
+  Kana: ボルトロス
+Reshiram:
+  number: '643'
+  description: This Pokémon appears in legends. It sends flames into the air from
+    its tail, burning up everything around it.
+  url_name: reshiram
+  firstType: Dragon
+  secondType: Fire
+  Romaji: Reshiram
+  Kana: レシラム
+Zekrom:
+  number: '644'
+  description: Concealing itself in lightning clouds, it flies throughout the Unova
+    region. It creates electricity in its tail.
+  url_name: zekrom
+  firstType: Dragon
+  secondType: Electric
+  Romaji: Zekrom
+  Kana: ゼクロム
+Landorus:
+  number: '645'
+  description: Lands visited by Landorus grant such bountiful crops that it has been
+    hailed as “The Guardian of the Fields.”
+  url_name: landorus
+  firstType: Ground
+  secondType: Flying
+  firstMegaType: Ground
+  secondMegaType: Flying
+  Romaji: Landlos
+  Kana: ランドロス
+Kyurem:
+  number: '646'
+  description: It generates a powerful, freezing energy inside itself, but its body
+    became frozen when the energy leaked out.
+  url_name: kyurem
+  firstType: Dragon
+  secondType: Ice
+  firstMegaType: Dragon
+  secondMegaType: Ice
+  firstMegaTypeY: Dragon
+  secondMegaTypeY: Ice
+  Romaji: Kyurem
+  Kana: キュレム
+Keldeo:
+  number: '647'
+  description: By blasting water from its hooves, it can glide across water. It excels
+    at using leg moves while battling.
+  url_name: keldeo
+  firstType: Water
+  secondType: Fighting
+  firstMegaType: Water
+  secondMegaType: Fighting
+  Romaji: Kerudio
+  Kana: ケルディオ
+Meloetta:
+  number: '648'
+  description: Its melodies are sung with a special vocalization method that can control
+    the feelings of those who hear it.
+  url_name: meloetta
+  firstType: Normal
+  secondType: Psychic
+  firstMegaType: Normal
+  secondMegaType: Fighting
+  Romaji: Meloetta
+  Kana: メロエッタ
+Genesect:
+  number: '649'
+  description: Over 300 million years ago, it was feared as the strongest of hunters.
+    It has been modified by Team Plasma.
+  url_name: genesect
+  firstType: Bug
+  secondType: Steel
+  Romaji: Genosect
+  Kana: ゲノセクト
+Chespin:
+  number: '650'
+  description: The quills on its head are usually soft. When it flexes them, the points
+    become so hard and sharp that they can pierce rock.
+  url_name: chespin
+  firstType: Grass
+  Romaji: 'Harimaron '
+  Kana: ハリマロン
+Quilladin:
+  number: '651'
+  description: They strengthen their lower bodies by running into one another. They
+    are very kind and won't start fights.
+  url_name: quilladin
+  firstType: Grass
+  Romaji: 'Hariboogu '
+  Kana: バリボーグ
+Chesnaught:
+  number: '652'
+  description: When it takes a defensive posture with its fists guarding its face,
+    it could withstand a bomb blast.
+  url_name: chesnaught
+  firstType: Grass
+  secondType: Fighting
+  Romaji: Burigaron
+  Kana: ブリガロン
+Fennekin:
+  number: '653'
+  description: Eating a twig fills it with energy, and its roomy ears give vent to
+    air hotter than 390 degrees Fahrenheit.
+  url_name: fennekin
+  firstType: Fire
+  Romaji: 'Fokko '
+  Kana: フォッコ
+Braixen:
+  number: '654'
+  description: It has a twig stuck in its tail. With friction from its tail fur, it
+    sets the twig on fire and launches into battle.
+  url_name: braixen
+  firstType: Fire
+  Romaji: 'Teerunaa '
+  Kana: テールナー
+Delphox:
+  number: '655'
+  description: Using psychic power, it generates a fiery vortex of 5,400 degrees Fahrenheit,
+    incinerating foes swept into this whirl of flame.
+  url_name: delphox
+  firstType: Fire
+  secondType: Psychic
+  Romaji: Mafoxy
+  Kana: マフォクシー
+Froakie:
+  number: '656'
+  description: It secretes flexible bubbles from its chest and back. The bubbles reduce
+    the damage it would otherwise take when attacked.
+  url_name: froakie
+  firstType: Water
+  Romaji: 'Keromatsu '
+  Kana: ケロマツ
+Frogadier:
+  number: '657'
+  description: It can throw bubble-covered pebbles with precise control, hitting empty
+    cans up to a hundred feet away.
+  url_name: frogadier
+  firstType: Water
+  Romaji: 'Gekogashira '
+  Kana: ゲコガシラ
+Greninja:
+  number: '658'
+  description: It creates throwing stars out of compressed water. When it spins them
+    and throws them at high speed, these stars can split metal in two.
+  url_name: greninja
+  firstType: Water
+  secondType: Dark
+  Romaji: Gekkouga
+  Kana: ゲッコウガ
+Bunnelby:
+  number: '659'
+  description: They use their large ears to dig burrows. They will dig the whole night
+    through.
+  url_name: bunnelby
+  firstType: Normal
+  Romaji: 'Horubii '
+  Kana: ホルビー
+Diggersby:
+  number: '660'
+  description: As powerful as an excavator, its ears can reduce dense bedrock to rubble.
+    When it's finished digging, it lounges lazily.
+  url_name: diggersby
+  firstType: Normal
+  secondType: Ground
+  Romaji: Horudo
+  Kana: ホルード
+Fletchling:
+  number: '661'
+  description: These friendly Pokémon send signals to one another with beautiful chirps
+    and tail-feather movements.
+  url_name: fletchling
+  firstType: Normal
+  secondType: Flying
+  Romaji: 'Yayakoma '
+  Kana: ヤヤコマ
+Fletchinder:
+  number: '662'
+  description: From its beak, it expels embers that set the tall grass on fire. Then
+    it pounces on the bewildered prey that pop out of the grass.
+  url_name: fletchinder
+  firstType: Fire
+  secondType: Flying
+  Romaji: Hinoyakoma
+  Kana: ヒノヤコマ
+Talonflame:
+  number: '663'
+  description: When attacking prey, it can reach speeds of up to 310 mph. It finishes
+    its prey off with a colossal kick.
+  url_name: talonflame
+  firstType: Fire
+  secondType: Flying
+  Romaji: 'Fiarrow '
+  Kana: ファイアロー
+Scatterbug:
+  number: '664'
+  description: When under attack from bird Pokémon, it spews a poisonous black powder
+    that causes paralysis on contact.
+  url_name: scatterbug
+  firstType: Bug
+  Romaji: 'Kofukimushi '
+  Kana: コフキムシ
+Spewpa:
+  number: '665'
+  description: It lives hidden within thicket shadows. When predators attack, it quickly
+    bristles the fur covering its body in an effort to threaten them.
+  url_name: spewpa
+  firstType: Bug
+  Romaji: 'Kofuurai '
+  Kana: コフーライ
+Vivillon:
+  number: '666'
+  description: Vivillon with many different patterns are found all over the world.
+    These patterns are affected by the climate of their habitat.
+  url_name: vivillon
+  firstType: Bug
+  secondType: Flying
+  Romaji: 'Vivillon '
+  Kana: ビビヨン
+Litleo:
+  number: '667'
+  description: The stronger the opponent it faces, the more heat surges from its mane
+    and the more power flows through its body.
+  url_name: litleo
+  firstType: Fire
+  secondType: Normal
+  Romaji: 'Shishiko '
+  Kana: シシコ
+Pyroar:
+  number: '668'
+  description: The male with the largest mane of fire is the leader of the pride.
+  url_name: pyroar
+  firstType: Fire
+  secondType: Normal
+  Romaji: 'Kaenjishi '
+  Kana: カエンジシ
+Flabébé:
+  number: '669'
+  description: It draws out and controls the hidden power of flowers. The flower Flabébé
+    holds is most likely part of its body.
+  url_name: flabebe
+  firstType: Fairy
+  Romaji: Flabebe
+  Kana: フラべべ
+Floette:
+  number: '670'
+  description: When the flowers of a well-tended flower bed bloom, it appears and
+    celebrates with an elegant dance.
+  url_name: floette
+  firstType: Fairy
+  Romaji: Floette
+  Kana: フラエッテ
+Florges:
+  number: '671'
+  description: ''
+  url_name: florges
+  firstType: Fairy
+  Romaji: Florges
+  Kana: フラージェス
+Skiddo:
+  number: '672'
+  description: Thought to be one of the first Pokémon to live in harmony with humans,
+    it has a placid disposition.
+  url_name: skiddo
+  firstType: Grass
+  Romaji: 'Meekuru '
+  Kana: メェークル
+Gogoat:
+  number: '673'
+  description: They inhabit mountainous regions. The leader of the herd is decided
+    by a battle of clashing horns.
+  url_name: gogoat
+  firstType: Grass
+  Romaji: 'Gogoat '
+  Kana: ゴーゴート
+Pancham:
+  number: '674'
+  description: It does its best to be taken seriously by its enemies, but its glare
+    is not sufficiently intimidating. Chewing on a leaf is its trademark.
+  url_name: pancham
+  firstType: Fighting
+  Romaji: Yancham
+  Kana: ヤンチャム
+Pangoro:
+  number: '675'
+  description: It charges ahead and bashes its opponents like a berserker, uncaring
+    about any hits it might take. Its arms are mighty enough to snap a telephone pole.
+  url_name: pangoro
+  firstType: Fighting
+  secondType: Dark
+  Romaji: 'Goronda '
+  Kana: ゴロンダ
+Furfrou:
+  number: '676'
+  description: Trimming its fluffy fur not only makes it more elegant but also increases
+    the swiftness of its movements.
+  url_name: furfrou
+  firstType: Normal
+  Romaji: 'Torimian '
+  Kana: トリミアン
+Espurr:
+  number: '677'
+  description: The organ that emits its intense psychic power is sheltered by its
+    ears to keep power from leaking out.
+  url_name: espurr
+  firstType: Psychic
+  Romaji: Nyasupa
+  Kana: ニャスパー
+Meowstic:
+  number: '678'
+  description: The eyeball patterns on the interior of its ears emit psychic energy.
+    It keeps the patterns tightly covered because that power is too immense.
+  url_name: meowstic
+  firstType: Psychic
+  firstMegaType: Psychic
+  Romaji: 'Nyaonikusu '
+  Kana: ニャオニクス
+Honedge:
+  number: '679'
+  description: Apparently this Pokémon is born when a departed spirit inhabits a sword.
+    It attaches itself to people and drinks their life force.
+  url_name: honedge
+  firstType: Steel
+  secondType: Ghost
+  Romaji: 'Hitotsuki '
+  Kana: ヒトツキ
+Doublade:
+  number: '680'
+  description: The complex attack patterns of its two swords are unstoppable, even
+    for an opponent greatly accomplished at swordplay.
+  url_name: doublade
+  firstType: Steel
+  secondType: Ghost
+  Romaji: 'Nindangiru '
+  Kana: ニダンギル
+Aegislash:
+  number: '681'
+  description: ''
+  url_name: aegislash
+  firstType: Steel
+  secondType: Ghost
+  firstMegaType: Steel
+  secondMegaType: Ghost
+  Romaji: Girugarudo
+  Kana: ギルガルド
+Spritzee:
+  number: '682'
+  description: In the past, rather than using perfume, royal ladies carried a Spritzee
+    that would waft a fragrance they liked.
+  url_name: spritzee
+  firstType: Fairy
+  Romaji: 'Shushup '
+  Kana: シュシュプ
+Aromatisse:
+  number: '683'
+  description: ''
+  url_name: aromatisse
+  firstType: Fairy
+  Romaji: 'Furefuwan '
+  Kana: フレフワン
+Swirlix:
+  number: '684'
+  description: To entangle its opponents in battle, it extrudes white threads as sweet
+    and sticky as cotton candy.
+  url_name: swirlix
+  firstType: Fairy
+  Romaji: 'Peroppafu '
+  Kana: ペロッパフ
+Slurpuff:
+  number: '685'
+  description: ''
+  url_name: slurpuff
+  firstType: Fairy
+  Romaji: 'Peroriimu '
+  Kana: ペロリーム
+Inkay:
+  number: '686'
+  description: Opponents who stare at the flashing of the light-emitting spots on
+    its body become dazed and lose their will to fight.
+  url_name: inkay
+  firstType: Dark
+  secondType: Psychic
+  Romaji: 'Maika '
+  Kana: マーイーカ
+Malamar:
+  number: '687'
+  description: It lures its prey close with sypnotic motions, then wraps its tentacles
+    around it before finishing it off with digestive fluids.
+  url_name: malamar
+  firstType: Dark
+  secondType: Psychic
+  Romaji: 'Karamanero '
+  Kana: カラマネロ
+Binacle:
+  number: '688'
+  description: They stretch and then contract, yanking their rocks along with them
+    in bold hops. They eat seaweed that washes up on the shoreline.
+  url_name: binacle
+  firstType: Rock
+  secondType: Water
+  Romaji: Kametete
+  Kana: カメテテ
+Barbaracle:
+  number: '689'
+  description: Barbaracle's legs and hands have minds of their own, and they will
+    move independently. But they usually follow the head's orders.
+  url_name: barbaracle
+  firstType: Rock
+  secondType: Water
+  Romaji: Kamenodesu
+  Kana: ガメノデス
+Skrelp:
+  number: '690'
+  description: ''
+  url_name: skrelp
+  firstType: Poison
+  secondType: Water
+  Romaji: 'Kuzumou '
+  Kana: クズモー
+Dragalge:
+  number: '691'
+  description: Tales are told of ships that wander into seas where Dragalge live,
+    never to return.
+  url_name: dragalge
+  firstType: Poison
+  secondType: Dragon
+  Romaji: Doramidoro
+  Kana: ドラミドロ
+Clauncher:
+  number: '692'
+  description: ''
+  url_name: clauncher
+  firstType: Water
+  Romaji: 'Udebbou '
+  Kana: ウデッポウ
+Clawitzer:
+  number: '693'
+  description: Their enormous claws launch cannonballs of water powerful enough to
+    pierce tanker hulls.
+  url_name: clawitzer
+  firstType: Water
+  Romaji: Burosuta
+  Kana: ブロスター
+Helioptile:
+  number: '694'
+  description: 'They make their home in deserts. They can generate their energy from
+    basking in the sun, so eating food is not a requirement. '
+  url_name: helioptile
+  firstType: Electric
+  secondType: Normal
+  Romaji: 'Elikiteru '
+  Kana: エリキテル
+Heliolisk:
+  number: '695'
+  description: ''
+  url_name: heliolisk
+  firstType: Electric
+  secondType: Normal
+  Romaji: Elezard
+  Kana: エレザード
+Tyrunt:
+  number: '696'
+  description: Its immense jaws have enough destructive force that it can chew up
+    an automobile. It lived 100 million years ago.
+  url_name: tyrunt
+  firstType: Rock
+  secondType: Dragon
+  Romaji: 'Chigorasu '
+  Kana: チゴラス
+Tyrantrum:
+  number: '697'
+  description: ''
+  url_name: tyrantrum
+  firstType: Rock
+  secondType: Dragon
+  Romaji: 'Gachigorasu '
+  Kana: ガチゴラス
+Amaura:
+  number: '698'
+  description: This ancient Pokémon was restored from part of its body that had been
+    frozen in ice for over 100 million years.
+  url_name: amaura
+  firstType: Rock
+  secondType: Ice
+  Romaji: 'Amarusu '
+  Kana: アマルス
+Aurorus:
+  number: '699'
+  description: ''
+  url_name: aurorus
+  firstType: Rock
+  secondType: Ice
+  Romaji: 'Amaruruga '
+  Kana: アマルルガ
+Sylveon:
+  number: '700'
+  description: It sends soothing aurra from its ribbonlike feelers to calm fights.
+  url_name: sylveon
+  firstType: Fairy
+  Romaji: 'Nymphia '
+  Kana: ニンフィア
+Hawlucha:
+  number: '701'
+  description: Although its body is small, its proficient fighting skills enable it
+    to keep up with big bruisers like Machamp and Hariyama.
+  url_name: hawlucha
+  firstType: Fighting
+  secondType: Flying
+  Romaji: Ruchaburu
+  Kana: ルチャブル
+Dedenne:
+  number: '702'
+  description: ''
+  url_name: dedenne
+  firstType: Electric
+  secondType: Fairy
+  Romaji: Dedenne
+  Kana: デデンネ
+Carbink:
+  number: '703'
+  description: Born from the temperatures and pressures deep underground, it fires
+    beams from the stone in its head.
+  url_name: carbink
+  firstType: Rock
+  secondType: Fairy
+  Romaji: Merushi
+  Kana: メレシー
+Goomy:
+  number: '704'
+  description: The weakest Dragon-Type Pokémon, it lives in damp, shady places, so
+    its body doesn't dry out.
+  url_name: goomy
+  firstType: Dragon
+  Romaji: Numera
+  Kana: ヌメラ
+Sliggoo:
+  number: '705'
+  description: 'It drives away opponents by excreting a sticky liquid that can dissolve
+    anything. Its eyes devolved, so it can''t see anything. '
+  url_name: sliggoo
+  firstType: Dragon
+  Romaji: Numeiru
+  Kana: ヌメイル
+Goodra:
+  number: '706'
+  description: This very friendly Dragon-type Pokémon will hug its beloved trainer,
+    leaving that trainer covered in sticky slime
+  url_name: goodra
+  firstType: Dragon
+  Romaji: Numerugon
+  Kana: ヌメルゴン
+Klefki:
+  number: '707'
+  description: These Key collectors threaten any attackers by fiercely jingling their
+    keys at them.
+  url_name: klefki
+  firstType: Steel
+  secondType: Fairy
+  Romaji: Kleffi
+  Kana: クレッフィ
+Phantump:
+  number: '708'
+  description: ''
+  url_name: phantump
+  firstType: Ghost
+  secondType: Grass
+  Romaji: Bokure
+  Kana: ボクレー
+Trevenant:
+  number: '709'
+  description: Using its roots as a nervous system, it controls the trees in the forest.
+    It's kind to the Pokémon that reside in its body.
+  url_name: trevenant
+  firstType: Ghost
+  secondType: Grass
+  Romaji: Oorotto
+  Kana: オーロット
+Pumpkaboo:
+  number: '710'
+  description: ''
+  url_name: pumpkaboo
+  firstType: Ghost
+  secondType: Grass
+  firstMegaType: Ghost
+  secondMegaType: Grass
+  firstMegaTypeY: Ghost
+  secondMegaTypeY: Grass
+  Romaji: Baketcha
+  Kana: バケッチャ
+Gourgeist:
+  number: '711'
+  description: ''
+  url_name: gourgeist
+  firstType: Ghost
+  secondType: Grass
+  firstMegaType: Ghost
+  secondMegaType: Grass
+  firstMegaTypeY: Ghost
+  secondMegaTypeY: Grass
+  Romaji: Panpujin
+  Kana: パンプジン
+Bergmite:
+  number: '712'
+  description: It blocks opponents' attacks with the ice that shields its body. it
+    uses cold air to repair any cracks with new ice.
+  url_name: bergmite
+  firstType: Ice
+  Romaji: Kachikoru
+  Kana: カチコール
+Avalugg:
+  number: '713'
+  description: The way several Bergmite huddle on its back makes it look like an aircraft
+    carrier made of ice.
+  url_name: avalugg
+  firstType: Ice
+  Romaji: Kurebesu
+  Kana: クレベース
+Noibat:
+  number: '714'
+  description: ''
+  url_name: noibat
+  firstType: Flying
+  secondType: Dragon
+  Romaji: Onbato
+  Kana: オンバット
+Noivern:
+  number: '715'
+  description: ''
+  url_name: noivern
+  firstType: Flying
+  secondType: Dragon
+  Romaji: 'Onvern '
+  Kana: オンバーン
+Xerneas:
+  number: '716'
+  description: ''
+  url_name: xerneas
+  firstType: Fairy
+  Romaji: Xerneas
+  Kana: ゼルネアス
+Yveltal:
+  number: '717'
+  description: When its life comes to an end, it absorbs the life energy of every
+    living thing and turns into a cacoon once more.
+  url_name: yveltal
+  firstType: Dark
+  secondType: Flying
+  Romaji: Yveltal
+  Kana: イベルタル
+Zygarde:
+  number: '718'
+  description: It's hypothesized that it's monitoring those who destroy the ecosystem
+    from deep in the cave where it lives.
+  url_name: zygarde
+  firstType: Dragon
+  secondType: Ground
+  Romaji: Zygarde
+  Kana: ジガルデ

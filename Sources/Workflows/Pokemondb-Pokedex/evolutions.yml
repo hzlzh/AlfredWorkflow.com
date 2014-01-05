@@ -1,0 +1,3829 @@
+---
+Bulbasaur:
+- Bulbasaur
+- Level 16
+- Ivysaur
+- Level 32
+- Venusaur
+- ''
+Ivysaur:
+- Bulbasaur
+- Level 16
+- Ivysaur
+- Level 32
+- Venusaur
+- ''
+Venusaur:
+- Bulbasaur
+- Level 16
+- Ivysaur
+- Level 32
+- Venusaur
+- ''
+Charmander:
+- Charmander
+- Level 16
+- Charmeleon
+- Level 36
+- Charizard
+- ''
+Charmeleon:
+- Charmander
+- Level 16
+- Charmeleon
+- Level 36
+- Charizard
+- ''
+Charizard:
+- Charmander
+- Level 16
+- Charmeleon
+- Level 36
+- Charizard
+- ''
+Squirtle:
+- Squirtle
+- Level 16
+- Wartortle
+- Level 36
+- Blastoise
+- ''
+Wartortle:
+- Squirtle
+- Level 16
+- Wartortle
+- Level 36
+- Blastoise
+- ''
+Blastoise:
+- Squirtle
+- Level 16
+- Wartortle
+- Level 36
+- Blastoise
+- ''
+Caterpie:
+- Caterpie
+- Level 7
+- Metapod
+- Level 10
+- Butterfree
+- ''
+Metapod:
+- Caterpie
+- Level 7
+- Metapod
+- Level 10
+- Butterfree
+- ''
+Butterfree:
+- Caterpie
+- Level 7
+- Metapod
+- Level 10
+- Butterfree
+- ''
+Weedle:
+- Weedle
+- Level 7
+- Kakuna
+- Level 10
+- Beedrill
+- ''
+Kakuna:
+- Weedle
+- Level 7
+- Kakuna
+- Level 10
+- Beedrill
+- ''
+Beedrill:
+- Weedle
+- Level 7
+- Kakuna
+- Level 10
+- Beedrill
+- ''
+Pidgey:
+- Pidgey
+- Level 18
+- Pidgeotto
+- Level 36
+- Pidgeot
+- ''
+Pidgeotto:
+- Pidgey
+- Level 18
+- Pidgeotto
+- Level 36
+- Pidgeot
+- ''
+Pidgeot:
+- Pidgey
+- Level 18
+- Pidgeotto
+- Level 36
+- Pidgeot
+- ''
+Rattata:
+- Rattata
+- Level 20
+- Raticate
+- ''
+Raticate:
+- Rattata
+- Level 20
+- Raticate
+- ''
+Spearow:
+- Spearow
+- Level 20
+- Fearow
+- ''
+Fearow:
+- Spearow
+- Level 20
+- Fearow
+- ''
+Ekans:
+- Ekans
+- Level 22
+- Arbok
+- ''
+Arbok:
+- Ekans
+- Level 22
+- Arbok
+- ''
+Pikachu:
+- Pichu
+- Level Up with Happiness Value at 220
+- Pikachu
+- Use Thunder Stone
+- Raichu
+- ''
+Raichu:
+- Pichu
+- Level Up with Happiness Value at 220
+- Pikachu
+- Use Thunder Stone
+- Raichu
+- ''
+Sandshrew:
+- Sandshrew
+- Level 22
+- Sandslash
+- ''
+Sandslash:
+- Sandshrew
+- Level 22
+- Sandslash
+- ''
+Nidoran♀:
+- ''
+- When Female
+- Nidoran♀
+- Level 16
+- Nidorina
+- Use Moonstone
+- Nidoqueen
+- When Male
+- Nidoran♂
+- Level 16
+- Nidorino
+- Use Moonstone
+- Nidoking
+- ''
+Nidorina:
+- ''
+- When Female
+- Nidoran♀
+- Level 16
+- Nidorina
+- Use Moonstone
+- Nidoqueen
+- When Male
+- Nidoran♂
+- Level 16
+- Nidorino
+- Use Moonstone
+- Nidoking
+- ''
+Nidoqueen:
+- ''
+- When Female
+- Nidoran♀
+- Level 16
+- Nidorina
+- Use Moonstone
+- Nidoqueen
+- When Male
+- Nidoran♂
+- Level 16
+- Nidorino
+- Use Moonstone
+- Nidoking
+- ''
+Nidoran♂:
+- ''
+- When Female
+- Nidoran♀
+- Level 16
+- Nidorina
+- Use Moonstone
+- Nidoqueen
+- When Male
+- Nidoran♂
+- Level 16
+- Nidorino
+- Use Moonstone
+- Nidoking
+- ''
+Nidorino:
+- ''
+- When Female
+- Nidoran♀
+- Level 16
+- Nidorina
+- Use Moonstone
+- Nidoqueen
+- When Male
+- Nidoran♂
+- Level 16
+- Nidorino
+- Use Moonstone
+- Nidoking
+- ''
+Nidoking:
+- ''
+- When Female
+- Nidoran♀
+- Level 16
+- Nidorina
+- Use Moonstone
+- Nidoqueen
+- When Male
+- Nidoran♂
+- Level 16
+- Nidorino
+- Use Moonstone
+- Nidoking
+- ''
+Clefairy:
+- Cleffa
+- Level Up with Happiness Value at 220
+- Clefairy
+- Use Moon Stone
+- Clefable
+- ''
+Clefable:
+- Cleffa
+- Level Up with Happiness Value at 220
+- Clefairy
+- Use Moon Stone
+- Clefable
+- ''
+Vulpix:
+- Vulpix
+- Use Fire Stone
+- Ninetales
+- ''
+Ninetales:
+- Vulpix
+- Use Fire Stone
+- Ninetales
+- ''
+Jigglypuff:
+- Igglybuff
+- Level Up with Happiness Value at 220
+- Jigglypuff
+- Use Moon Stone
+- Wigglytuff
+- ''
+Wigglytuff:
+- Igglybuff
+- Level Up with Happiness Value at 220
+- Jigglypuff
+- Use Moon Stone
+- Wigglytuff
+- ''
+Zubat:
+- Zubat
+- Level 22
+- Golbat
+- Level Up with Happiness Value at 220
+- Crobat
+- ''
+Golbat:
+- Zubat
+- Level 22
+- Golbat
+- Level Up with Happiness Value at 220
+- Crobat
+- ''
+Oddish:
+- Oddish
+- Level 21
+- Gloom
+- Use Leaf Stone
+- Vileplume
+- Use Sun Stone
+- Bellossom
+- ''
+Gloom:
+- Oddish
+- Level 21
+- Gloom
+- Use Leaf Stone
+- Vileplume
+- Use Sun Stone
+- Bellossom
+- ''
+Vileplume:
+- Oddish
+- Level 21
+- Gloom
+- Use Leaf Stone
+- Vileplume
+- Use Sun Stone
+- Bellossom
+- ''
+Paras:
+- Paras
+- Level 24
+- Parasect
+- ''
+Parasect:
+- Paras
+- Level 24
+- Parasect
+- ''
+Venonat:
+- Venonat
+- Level 31
+- Venomoth
+- ''
+Venomoth:
+- Venonat
+- Level 31
+- Venomoth
+- ''
+Diglett:
+- Diglett
+- Level 26
+- Dugtrio
+- ''
+Dugtrio:
+- Diglett
+- Level 26
+- Dugtrio
+- ''
+Meowth:
+- Meowth
+- Level 28
+- Persian
+- ''
+Persian:
+- Meowth
+- Level 28
+- Persian
+- ''
+Psyduck:
+- Psyduck
+- Level 33
+- Golduck
+- ''
+Golduck:
+- Psyduck
+- Level 33
+- Golduck
+- ''
+Mankey:
+- Mankey
+- Level 28
+- Primeape
+- ''
+Primeape:
+- Mankey
+- Level 28
+- Primeape
+- ''
+Growlithe:
+- Growlithe
+- Use Fire Stone
+- Arcanine
+- ''
+Arcanine:
+- Growlithe
+- Use Fire Stone
+- Arcanine
+- ''
+Poliwag:
+- Poliwag
+- Level 25
+- Poliwhirl
+- Use Water Stone
+- Poliwrath
+- ''
+- Poliwhirl
+- Trade with King's Rock
+- Politoed
+- ''
+Poliwhirl:
+- Poliwag
+- Level 25
+- Poliwhirl
+- Use Water Stone
+- Poliwrath
+- ''
+- Poliwhirl
+- Trade with King's Rock
+- Politoed
+- ''
+Poliwrath:
+- Poliwag
+- Level 25
+- Poliwhirl
+- Use Water Stone
+- Poliwrath
+- ''
+Abra:
+- Abra
+- Level 16
+- Kadabra
+- Trade
+- Alakazam
+- ''
+Kadabra:
+- Abra
+- Level 16
+- Kadabra
+- Trade
+- Alakazam
+- ''
+Alakazam:
+- Abra
+- Level 16
+- Kadabra
+- Trade
+- Alakazam
+- ''
+Machop:
+- Machop
+- Level 28
+- Machoke
+- Trade
+- Machamp
+- ''
+Machoke:
+- Machop
+- Level 28
+- Machoke
+- Trade
+- Machamp
+- ''
+Machamp:
+- Machop
+- Level 28
+- Machoke
+- Trade
+- Machamp
+- ''
+Bellsprout:
+- Bellsprout
+- Level 21
+- Weepinbell
+- Use Leaf Stone
+- Victreebel
+- ''
+Weepinbell:
+- Bellsprout
+- Level 21
+- Weepinbell
+- Use Leaf Stone
+- Victreebel
+- ''
+Victreebel:
+- Bellsprout
+- Level 21
+- Weepinbell
+- Use Leaf Stone
+- Victreebel
+- ''
+Tentacool:
+- Tentacool
+- Level 30
+- Tentacruel
+- ''
+Tentacruel:
+- Tentacool
+- Level 30
+- Tentacruel
+- ''
+Geodude:
+- Geodude
+- Level 25
+- Graveler
+- Trade
+- Golem
+- ''
+Graveler:
+- Geodude
+- Level 25
+- Graveler
+- Trade
+- Golem
+- ''
+Golem:
+- Geodude
+- Level 25
+- Graveler
+- Trade
+- Golem
+- ''
+Ponyta:
+- Ponyta
+- Level 40
+- Rapidash
+- ''
+Rapidash:
+- Ponyta
+- Level 40
+- Rapidash
+- ''
+Slowpoke:
+- Slowpoke
+- Level 37
+- Slowbro
+- ''
+- Slowpoke
+- Trade with King's Rock
+- Slowking
+- ''
+Slowbro:
+- Slowpoke
+- Level 37
+- Slowbro
+- ''
+Magnemite:
+- Magnemite
+- Level 30
+- Magneton
+- Level up while at Route 13
+- Magnezone
+- ''
+Magneton:
+- Magnemite
+- Level 30
+- Magneton
+- Level up while at Route 13
+- Magnezone
+- ''
+Farfetch'd: []
+Doduo:
+- Doduo
+- Level 31
+- Dodrio
+- ''
+Dodrio:
+- Doduo
+- Level 31
+- Dodrio
+- ''
+Seel:
+- Seel
+- Level 34
+- Dewgong
+- ''
+Dewgong:
+- Seel
+- Level 34
+- Dewgong
+- ''
+Grimer:
+- Grimer
+- Level 38
+- Muk
+- ''
+Muk:
+- Grimer
+- Level 38
+- Muk
+- ''
+Shellder:
+- Shellder
+- Use Water Stone
+- Cloyster
+- ''
+Cloyster:
+- Shellder
+- Use Water Stone
+- Cloyster
+- ''
+Gastly:
+- Gastly
+- Level 25
+- Haunter
+- Trade
+- Gengar
+- ''
+Haunter:
+- Gastly
+- Level 25
+- Haunter
+- Trade
+- Gengar
+- ''
+Gengar:
+- Gastly
+- Level 25
+- Haunter
+- Trade
+- Gengar
+- ''
+Onix:
+- Onix
+- Trade with Metal Coat
+- Steelix
+- ''
+Drowzee:
+- Drowzee
+- Level 26
+- Hypno
+- ''
+Hypno:
+- Drowzee
+- Level 26
+- Hypno
+- ''
+Krabby:
+- Krabby
+- Level 28
+- Kingler
+- ''
+Kingler:
+- Krabby
+- Level 28
+- Kingler
+- ''
+Voltorb:
+- Voltorb
+- Level 30
+- Electrode
+- ''
+Electrode:
+- Voltorb
+- Level 30
+- Electrode
+- ''
+Exeggcute:
+- Exeggcute
+- Use Leaf Stone
+- Exeggutor
+- ''
+Exeggutor:
+- Exeggcute
+- Use Leaf Stone
+- Exeggutor
+- ''
+Cubone:
+- Cubone
+- Level 28
+- Marowak
+- ''
+Marowak:
+- Cubone
+- Level 28
+- Marowak
+- ''
+Hitmonlee:
+- Tyrogue
+- Level 20, Attack > Defense
+- Hitmonlee
+- ''
+Hitmonchan:
+- Tyrogue
+- Level 20, Attack < Defense
+- Hitmonchan
+- ''
+Lickitung:
+- Lickitung
+- Level up while knowing Rollout
+- Lickilicky
+- ''
+Koffing:
+- Koffing
+- Level 35
+- Weezing
+- ''
+Weezing:
+- Koffing
+- Level 35
+- Weezing
+- ''
+Rhyhorn:
+- Rhyhorn
+- Level 42
+- Rhydon
+- Trade with Protector
+- Rhyperior
+- ''
+Rhydon:
+- Rhyhorn
+- Level 42
+- Rhydon
+- Trade with Protector
+- Rhyperior
+- ''
+Chansey:
+- Happiny
+- Level up during day while holding Oval Stone
+- Chansey
+- Level Up with Happiness Value at 220
+- Blissey
+- ''
+Tangela:
+- Tangela
+- Level up while knowing Ancient Power
+- Tangrowth
+- ''
+Kangaskhan: []
+Horsea:
+- Horsea
+- Level 32
+- Seadra
+- Trade with Dragon Scale
+- Kingdra
+- ''
+Seadra:
+- Horsea
+- Level 32
+- Seadra
+- Trade with Dragon Scale
+- Kingdra
+- ''
+Goldeen:
+- Goldeen
+- Level 33
+- Seaking
+- ''
+Seaking:
+- Goldeen
+- Level 33
+- Seaking
+- ''
+Staryu:
+- Staryu
+- Use Water Stone
+- Starmie
+- ''
+Starmie:
+- Staryu
+- Use Water Stone
+- Starmie
+- ''
+Mr. Mime:
+- Mime Jr.
+- Level up while knowing Mimic
+- Mr. Mime
+- ''
+Scyther:
+- Scyther
+- Trade with Metal Coat
+- Scizor
+- ''
+- Scizor
+- ''
+Jynx:
+- Smoochum
+- Level 30
+- Jynx
+- ''
+Electabuzz:
+- Elekid
+- Level 30
+- Electabuzz
+- Trade with Electirizer
+- Electivire
+- ''
+Magmar:
+- Magby
+- Level 30
+- Magmar
+- Trade with Magmarizer
+- Magmortar
+- ''
+Pinsir: []
+Tauros: []
+Magikarp:
+- Magikarp
+- Level 20
+- Gyarados
+- ''
+Gyarados:
+- Magikarp
+- Level 20
+- Gyarados
+- ''
+Lapras: []
+Ditto: []
+Eevee:
+- Eevee
+- Use Water Stone
+- Vaporeon
+- ''
+- Eevee
+- Use Thunderstone
+- Jolteon
+- ''
+- Eevee
+- Use Fire Stone
+- Flareon
+- ''
+- Eevee
+- Maximum Bond on Pokémon Amie + Fairy move
+- Sylveon
+- ''
+- Eevee
+- Happiness, Daytime
+- Espeon
+- ''
+- Eevee
+- Happiness, Nighttime
+- Umbreon
+- ''
+- Eevee
+- Level Up while at Moss Rock in Pinwheel Forest
+- Leafeon
+- ''
+- Eevee
+- Level Up while at Ice Rock in Twist Mountain
+- Glaceon
+- ''
+Vaporeon:
+- Eevee
+- Use Water Stone
+- Vaporeon
+- ''
+Jolteon:
+- Eevee
+- Use Thunderstone
+- Jolteon
+- ''
+Flareon:
+- Eevee
+- Use Fire Stone
+- Flareon
+- ''
+Porygon:
+- Porygon
+- Trade with Up-Grade
+- Porygon2
+- Trade with Dubious Disc
+- Porygon-Z
+- ''
+Omanyte:
+- Omanyte
+- Level 40
+- Omastar
+- ''
+Omastar:
+- Omanyte
+- Level 40
+- Omastar
+- ''
+Kabuto:
+- Kabuto
+- Level 40
+- Kabutops
+- ''
+Kabutops:
+- Kabuto
+- Level 40
+- Kabutops
+- ''
+Aerodactyl: []
+Snorlax:
+- Munchlax
+- Level Up with Happiness Value at 220
+- Snorlax
+- ''
+Articuno: []
+Zapdos: []
+Moltres: []
+Dratini:
+- Dratini
+- Level 30
+- Dragonair
+- Level 55
+- Dragonite
+- ''
+Dragonair:
+- Dratini
+- Level 30
+- Dragonair
+- Level 55
+- Dragonite
+- ''
+Dragonite:
+- Dratini
+- Level 30
+- Dragonair
+- Level 55
+- Dragonite
+- ''
+Mewtwo: []
+Mew: []
+Chikorita:
+- Chikorita
+- Level 16
+- Bayleef
+- Level 32
+- Meganium
+- ''
+Bayleef:
+- Chikorita
+- Level 16
+- Bayleef
+- Level 32
+- Meganium
+- ''
+Meganium:
+- Chikorita
+- Level 16
+- Bayleef
+- Level 32
+- Meganium
+- ''
+Cyndaquil:
+- Cyndaquil
+- Level 14
+- Quilava
+- Level 36
+- Typhlosion
+- ''
+Quilava:
+- Cyndaquil
+- Level 14
+- Quilava
+- Level 36
+- Typhlosion
+- ''
+Typhlosion:
+- Cyndaquil
+- Level 14
+- Quilava
+- Level 36
+- Typhlosion
+- ''
+Totodile:
+- Totodile
+- Level 18
+- Croconaw
+- Level 30
+- Feraligatr
+- ''
+Croconaw:
+- Totodile
+- Level 18
+- Croconaw
+- Level 30
+- Feraligatr
+- ''
+Feraligatr:
+- Totodile
+- Level 18
+- Croconaw
+- Level 30
+- Feraligatr
+- ''
+Sentret:
+- Sentret
+- Level 15
+- Furret
+- ''
+Furret:
+- Sentret
+- Level 15
+- Furret
+- ''
+Hoothoot:
+- Hoothoot
+- Level 20
+- Noctowl
+- ''
+Noctowl:
+- Hoothoot
+- Level 20
+- Noctowl
+- ''
+Ledyba:
+- Ledyba
+- Level 18
+- Ledian
+- ''
+Ledian:
+- Ledyba
+- Level 18
+- Ledian
+- ''
+Spinarak:
+- Spinarak
+- Level 22
+- Ariados
+- ''
+Ariados:
+- Spinarak
+- Level 22
+- Ariados
+- ''
+Crobat:
+- Zubat
+- Level 22
+- Golbat
+- Level Up with Happiness Value at 220
+- Crobat
+- ''
+Chinchou:
+- Chinchou
+- Level 27
+- Lanturn
+- ''
+Lanturn:
+- Chinchou
+- Level 27
+- Lanturn
+- ''
+Pichu:
+- Pichu
+- Level Up with Happiness Value at 220
+- Pikachu
+- Use Thunder Stone
+- Raichu
+- ''
+Cleffa:
+- Cleffa
+- Level Up with Happiness Value at 220
+- Clefairy
+- Use Moon Stone
+- Clefable
+- ''
+Igglybuff:
+- Igglybuff
+- Level Up with Happiness Value at 220
+- Jigglypuff
+- Use Moon Stone
+- Wigglytuff
+- ''
+Togepi:
+- Togepi
+- Level Up with Happiness Value at 220
+- Togetic
+- Use Shiny Stone
+- Togekiss
+- ''
+Togetic:
+- Togepi
+- Level Up with Happiness Value at 220
+- Togetic
+- Use Shiny Stone
+- Togekiss
+- ''
+Natu:
+- Natu
+- Level 25
+- Xatu
+- ''
+Xatu:
+- Natu
+- Level 25
+- Xatu
+- ''
+Mareep:
+- Mareep
+- Level 15
+- Flaaffy
+- Level 30
+- Ampharos
+- ''
+Flaaffy:
+- Mareep
+- Level 15
+- Flaaffy
+- Level 30
+- Ampharos
+- ''
+Ampharos:
+- Mareep
+- Level 15
+- Flaaffy
+- Level 30
+- Ampharos
+- ''
+Bellossom:
+- Oddish
+- Level 21
+- Gloom
+- Use Leaf Stone
+- Vileplume
+- Use Sun Stone
+- Bellossom
+- ''
+Marill:
+- Azurill
+- Level Up with Happiness Value at 220
+- Marill
+- Level 18
+- Azumarill
+- ''
+Azumarill:
+- Azurill
+- Level Up with Happiness Value at 220
+- Marill
+- Level 18
+- Azumarill
+- ''
+Sudowoodo:
+- Bonsly
+- Level up while knowing Mimic
+- Sudowoodo
+- ''
+Politoed:
+- Poliwag
+- Level 25
+- Poliwhirl
+- Trade with King's Rock
+- Politoed
+- ''
+Hoppip:
+- Hoppip
+- Level 18
+- Skiploom
+- Level 27
+- Jumpluff
+- ''
+Skiploom:
+- Hoppip
+- Level 18
+- Skiploom
+- Level 27
+- Jumpluff
+- ''
+Jumpluff:
+- Hoppip
+- Level 18
+- Skiploom
+- Level 27
+- Jumpluff
+- ''
+Aipom:
+- Aipom
+- Level up while knowing Double Hit
+- Ambipom
+- ''
+Sunkern:
+- Sunkern
+- Use Sun Stone
+- Sunflora
+- ''
+Sunflora:
+- Sunkern
+- Use Sun Stone
+- Sunflora
+- ''
+Yanma:
+- Yanma
+- Level up while knowing Ancient Power
+- Yanmega
+- ''
+Wooper:
+- Wooper
+- Level 20
+- Quagsire
+- ''
+Quagsire:
+- Wooper
+- Level 20
+- Quagsire
+- ''
+Espeon:
+- Eevee
+- Happiness, Daytime
+- Espeon
+- ''
+Umbreon:
+- Eevee
+- Happiness, Nighttime
+- Umbreon
+- ''
+Murkrow:
+- Murkrow
+- Use Dusk Stone
+- Honchkrow
+- ''
+Slowking:
+- Slowpoke
+- Trade with King's Rock
+- Slowking
+- ''
+Misdreavus:
+- Misdreavus
+- Use Dusk Stone
+- Mismagius
+- ''
+Unown: []
+Wobbuffet:
+- Wynaut
+- Level 15
+- Wobbuffet
+- ''
+Girafarig: []
+Pineco:
+- Pineco
+- Level 31
+- Forretress
+- ''
+Forretress:
+- Pineco
+- Level 31
+- Forretress
+- ''
+Dunsparce: []
+Gligar:
+- Gligar
+- Nighttime, holding Razor Fang
+- Gliscor
+- ''
+Steelix:
+- Onix
+- Trade with Metal Coat
+- Steelix
+- ''
+Snubbull:
+- Snubbull
+- Level 23
+- Granbull
+- ''
+Granbull:
+- Snubbull
+- Level 23
+- Granbull
+- ''
+Qwilfish: []
+Scizor:
+- Scyther
+- Trade with Metal Coat
+- Scizor
+- ''
+Shuckle: []
+Heracross: []
+Sneasel:
+- Sneasel
+- Nighttime, holding Razor Claw
+- Weavile
+- ''
+Teddiursa:
+- Teddiursa
+- Level 30
+- Ursaring
+- ''
+Ursaring:
+- Teddiursa
+- Level 30
+- Ursaring
+- ''
+Slugma:
+- Slugma
+- Level 38
+- Magcargo
+- ''
+Magcargo:
+- Slugma
+- Level 38
+- Magcargo
+- ''
+Swinub:
+- Swinub
+- Level 33
+- Piloswine
+- Level up while knowing Ancient Power
+- Mamoswine
+- ''
+Piloswine:
+- Swinub
+- Level 33
+- Piloswine
+- Level up while knowing Ancient Power
+- Mamoswine
+- ''
+Corsola: []
+Remoraid:
+- Remoraid
+- Level 25
+- Octillery
+- ''
+Octillery:
+- Remoraid
+- Level 25
+- Octillery
+- ''
+Delibird: []
+Mantine:
+- Mantyke
+- Level up with Remoraid in the party
+- Mantine
+- ''
+Skarmory: []
+Houndour:
+- Houndour
+- Level 24
+- Houndoom
+- ''
+Houndoom:
+- Houndour
+- Level 24
+- Houndoom
+- ''
+Kingdra:
+- Horsea
+- Level 32
+- Seadra
+- Trade with Dragon Scale
+- Kingdra
+- ''
+Phanpy:
+- Phanpy
+- Level 25
+- Donphan
+- ''
+Donphan:
+- Phanpy
+- Level 25
+- Donphan
+- ''
+Porygon2:
+- Porygon
+- Trade with Up-Grade
+- Porygon2
+- Trade with Dubious Disc
+- Porygon-Z
+- ''
+Stantler: []
+Smeargle: []
+Tyrogue:
+- Tyrogue
+- Level 20, Attack > Defense
+- Hitmonlee
+- ''
+- Tyrogue
+- Level 20, Attack < Defense
+- Hitmonchan
+- ''
+- Tyrogue
+- Level 20, Attack = Defense
+- Hitmontop
+- ''
+Hitmontop:
+- Tyrogue
+- Level 20, Attack = Defense
+- Hitmontop
+- ''
+Smoochum:
+- Smoochum
+- Level 30
+- Jynx
+- ''
+Elekid:
+- Elekid
+- Level 30
+- Electabuzz
+- Trade with Electirizer
+- Electivire
+- ''
+Magby:
+- Magby
+- Level 30
+- Magmar
+- Trade with Magmarizer
+- Magmortar
+- ''
+Miltank: []
+Blissey:
+- Happiny
+- Level up during day while holding Oval Stone
+- Chansey
+- Level Up with Happiness Value at 220
+- Blissey
+- ''
+Raikou: []
+Entei: []
+Suicune: []
+Larvitar:
+- Larvitar
+- Level 30
+- Pupitar
+- Level 55
+- Tyranitar
+- ''
+Pupitar:
+- Larvitar
+- Level 30
+- Pupitar
+- Level 55
+- Tyranitar
+- ''
+Tyranitar:
+- Larvitar
+- Level 30
+- Pupitar
+- Level 55
+- Tyranitar
+- ''
+Lugia: []
+Ho-oh: []
+Celebi: []
+Treecko:
+- Treecko
+- Level 16
+- Grovyle
+- Level 36
+- Sceptile
+- ''
+Grovyle:
+- Treecko
+- Level 16
+- Grovyle
+- Level 36
+- Sceptile
+- ''
+Sceptile:
+- Treecko
+- Level 16
+- Grovyle
+- Level 36
+- Sceptile
+- ''
+Torchic:
+- Torchic
+- Level 16
+- Combusken
+- Level 36
+- Blaziken
+- ''
+Combusken:
+- Torchic
+- Level 16
+- Combusken
+- Level 36
+- Blaziken
+- ''
+Blaziken:
+- Torchic
+- Level 16
+- Combusken
+- Level 36
+- Blaziken
+- ''
+Mudkip:
+- Mudkip
+- Level 16
+- Marshtomp
+- Level 36
+- Swampert
+- ''
+Marshtomp:
+- Mudkip
+- Level 16
+- Marshtomp
+- Level 36
+- Swampert
+- ''
+Swampert:
+- Mudkip
+- Level 16
+- Marshtomp
+- Level 36
+- Swampert
+- ''
+Poochyena:
+- Poochyena
+- Level 18
+- Mightyena
+- ''
+Mightyena:
+- Poochyena
+- Level 18
+- Mightyena
+- ''
+Zigzagoon:
+- Zigzagoon
+- Level 20
+- Linoone
+- ''
+Linoone:
+- Zigzagoon
+- Level 20
+- Linoone
+- ''
+Wurmple:
+- Wurmple
+- Level 7, Random based on personality
+- Silcoon
+- Level 10
+- Beautifly
+- ''
+- Wurmple
+- Level 7, Random based on personality
+- Cascoon
+- Level 10
+- Dustox
+- ''
+Silcoon:
+- Wurmple
+- Level 7, Random based on personality
+- Silcoon
+- Level 10
+- Beautifly
+- ''
+Beautifly:
+- Wurmple
+- Level 7, Random based on personality
+- Silcoon
+- Level 10
+- Beautifly
+- ''
+Cascoon:
+- Wurmple
+- Level 7, Random based on personality
+- Cascoon
+- Level 10
+- Dustox
+- ''
+Dustox:
+- Wurmple
+- Level 7, Random based on personality
+- Cascoon
+- Level 10
+- Dustox
+- ''
+Lotad:
+- Lotad
+- Level 14
+- Lombre
+- Use Water Stone
+- Ludicolo
+- ''
+Lombre:
+- Lotad
+- Level 14
+- Lombre
+- Use Water Stone
+- Ludicolo
+- ''
+Ludicolo:
+- Lotad
+- Level 14
+- Lombre
+- Use Water Stone
+- Ludicolo
+- ''
+Seedot:
+- Seedot
+- Level 14
+- Nuzleaf
+- Use Leaf Stone
+- Shiftry
+- ''
+Nuzleaf:
+- Seedot
+- Level 14
+- Nuzleaf
+- Use Leaf Stone
+- Shiftry
+- ''
+Shiftry:
+- Seedot
+- Level 14
+- Nuzleaf
+- Use Leaf Stone
+- Shiftry
+- ''
+Taillow:
+- Taillow
+- Level 22
+- Swellow
+- ''
+Swellow:
+- Taillow
+- Level 22
+- Swellow
+- ''
+Wingull:
+- Wingull
+- Level 25
+- Pelipper
+- ''
+Pelipper:
+- Wingull
+- Level 25
+- Pelipper
+- ''
+Ralts:
+- Ralts
+- Level 20
+- Kirlia
+- Level 30
+- Gardevoir
+- ''
+- Kirlia
+- On Male Pokémon, use Dawn Stone
+- Gallade
+- ''
+Kirlia:
+- Ralts
+- Level 20
+- Kirlia
+- Level 30
+- Gardevoir
+- ''
+- Kirlia
+- On Male Pokémon, use Dawn Stone
+- Gallade
+- ''
+Gardevoir:
+- Ralts
+- Level 20
+- Kirlia
+- Level 30
+- Gardevoir
+- ''
+Surskit:
+- Surskit
+- Level 22
+- Masquerain
+- ''
+Masquerain:
+- Surskit
+- Level 22
+- Masquerain
+- ''
+Shroomish:
+- Shroomish
+- Level 23
+- Breloom
+- ''
+Breloom:
+- Shroomish
+- Level 23
+- Breloom
+- ''
+Slakoth:
+- Slakoth
+- Level 18
+- Vigoroth
+- Level 36
+- Slaking
+- ''
+Vigoroth:
+- Slakoth
+- Level 18
+- Vigoroth
+- Level 36
+- Slaking
+- ''
+Slaking:
+- Slakoth
+- Level 18
+- Vigoroth
+- Level 36
+- Slaking
+- ''
+Nincada:
+- Nincada
+- Level 20
+- Ninjask
+- ''
+- Nincada
+- Level 20 + Slot in Party + Pokéball in Bag
+- Ninjask
+- ''
+- Shedinja
+- ''
+Ninjask:
+- Nincada
+- Level 20
+- Ninjask
+- ''
+- Nincada
+- Level 20 + Slot in Party + Pokéball in Bag
+- Ninjask
+- ''
+- Shedinja
+- ''
+Shedinja:
+- Nincada
+- Level 20 + Slot in Party + Pokéball in Bag
+- Ninjask
+- ''
+- Shedinja
+- ''
+Whismur:
+- Whismur
+- Level 20
+- Loudred
+- Level 40
+- Exploud
+- ''
+Loudred:
+- Whismur
+- Level 20
+- Loudred
+- Level 40
+- Exploud
+- ''
+Exploud:
+- Whismur
+- Level 20
+- Loudred
+- Level 40
+- Exploud
+- ''
+Makuhita:
+- Makuhita
+- Level 24
+- Hariyama
+- ''
+Hariyama:
+- Makuhita
+- Level 24
+- Hariyama
+- ''
+Azurill:
+- Azurill
+- Level Up with Happiness Value at 220
+- Marill
+- Level 18
+- Azumarill
+- ''
+Nosepass:
+- Nosepass
+- Level up while at Route 13
+- Probopass
+- ''
+Skitty:
+- Skitty
+- Use Moon Stone
+- Delcatty
+- ''
+Delcatty:
+- Skitty
+- Use Moon Stone
+- Delcatty
+- ''
+Sableye: []
+Mawile: []
+Aron:
+- Aron
+- Level 32
+- Lairon
+- Level 42
+- Aggron
+- ''
+Lairon:
+- Aron
+- Level 32
+- Lairon
+- Level 42
+- Aggron
+- ''
+Aggron:
+- Aron
+- Level 32
+- Lairon
+- Level 42
+- Aggron
+- ''
+Meditite:
+- Meditite
+- Level 37
+- Medicham
+- ''
+Medicham:
+- Meditite
+- Level 37
+- Medicham
+- ''
+Electrike:
+- Electrike
+- Level 26
+- Manectric
+- ''
+Manectric:
+- Electrike
+- Level 26
+- Manectric
+- ''
+Plusle: []
+Minun: []
+Volbeat:
+- ''
+- When Male
+- Volbeat
+- When Female
+- Illumise
+- ''
+Illumise:
+- ''
+- When Male
+- Volbeat
+- When Female
+- Illumise
+- ''
+Roselia:
+- Budew
+- Happiness, During the Day
+- Roselia
+- Use Shiny Stone
+- Roserade
+- ''
+Gulpin:
+- Gulpin
+- Level 26
+- Swalot
+- ''
+Swalot:
+- Gulpin
+- Level 26
+- Swalot
+- ''
+Carvanha:
+- Carvanha
+- Level 30
+- Sharpedo
+- ''
+Sharpedo:
+- Carvanha
+- Level 30
+- Sharpedo
+- ''
+Wailmer:
+- Wailmer
+- Level 40
+- Wailord
+- ''
+Wailord:
+- Wailmer
+- Level 40
+- Wailord
+- ''
+Numel:
+- Numel
+- Level 33
+- Camerupt
+- ''
+Camerupt:
+- Numel
+- Level 33
+- Camerupt
+- ''
+Torkoal: []
+Spoink:
+- Spoink
+- Level 32
+- Grumpig
+- ''
+Grumpig:
+- Spoink
+- Level 32
+- Grumpig
+- ''
+Spinda: []
+Trapinch:
+- Trapinch
+- Level 35
+- Vibrava
+- Level 45
+- Flygon
+- ''
+Vibrava:
+- Trapinch
+- Level 35
+- Vibrava
+- Level 45
+- Flygon
+- ''
+Flygon:
+- Trapinch
+- Level 35
+- Vibrava
+- Level 45
+- Flygon
+- ''
+Cacnea:
+- Cacnea
+- Level 32
+- Cacturne
+- ''
+Cacturne:
+- Cacnea
+- Level 32
+- Cacturne
+- ''
+Swablu:
+- Swablu
+- Level 35
+- Altaria
+- ''
+Altaria:
+- Swablu
+- Level 35
+- Altaria
+- ''
+Zangoose: []
+Seviper: []
+Lunatone: []
+Solrock: []
+Barboach:
+- Barboach
+- Level 30
+- Whiscash
+- ''
+Whiscash:
+- Barboach
+- Level 30
+- Whiscash
+- ''
+Corphish:
+- Corphish
+- Level 30
+- Crawdaunt
+- ''
+Crawdaunt:
+- Corphish
+- Level 30
+- Crawdaunt
+- ''
+Baltoy:
+- Baltoy
+- Level 36
+- Claydol
+- ''
+Claydol:
+- Baltoy
+- Level 36
+- Claydol
+- ''
+Lileep:
+- Lileep
+- Level 40
+- Cradily
+- ''
+Cradily:
+- Lileep
+- Level 40
+- Cradily
+- ''
+Anorith:
+- Anorith
+- Level 40
+- Armaldo
+- ''
+Armaldo:
+- Anorith
+- Level 40
+- Armaldo
+- ''
+Feebas:
+- Feebas
+- Trade with Prism Scale
+- Milotic
+- ''
+Milotic:
+- Feebas
+- Trade with Prism Scale
+- Milotic
+- ''
+Castform: []
+Kecleon: []
+Shuppet:
+- Shuppet
+- Level 37
+- Banette
+- ''
+Banette:
+- Shuppet
+- Level 37
+- Banette
+- ''
+Duskull:
+- Duskull
+- Level 37
+- Dusclops
+- Trade with Reaper Cloth
+- Dusknoir
+- ''
+Dusclops:
+- Duskull
+- Level 37
+- Dusclops
+- Trade with Reaper Cloth
+- Dusknoir
+- ''
+Tropius: []
+Chimecho:
+- Chingling
+- Happiness, During the Night
+- Chimecho
+- ''
+Absol: []
+Wynaut:
+- Wynaut
+- Level 15
+- Wobbuffet
+- ''
+Snorunt:
+- Snorunt
+- Level 42
+- Glalie
+- ''
+- Snorunt
+- On Female Pokémon, use Dawn Stone
+- Froslass
+- ''
+Glalie:
+- Snorunt
+- Level 42
+- Glalie
+- ''
+Spheal:
+- Spheal
+- Level 32
+- Sealeo
+- Level 44
+- Walrein
+- ''
+Sealeo:
+- Spheal
+- Level 32
+- Sealeo
+- Level 44
+- Walrein
+- ''
+Walrein:
+- Spheal
+- Level 32
+- Sealeo
+- Level 44
+- Walrein
+- ''
+Clamperl:
+- Clamperl
+- Trade with DeepSeaTooth
+- Huntail
+- ''
+- Clamperl
+- Trade with DeepSeaScale
+- Gorebyss
+- ''
+Huntail:
+- Clamperl
+- Trade with DeepSeaTooth
+- Huntail
+- ''
+Gorebyss:
+- Clamperl
+- Trade with DeepSeaScale
+- Gorebyss
+- ''
+Relicanth: []
+Luvdisc: []
+Bagon:
+- Bagon
+- Level 30
+- Shelgon
+- Level 50
+- Salamence
+- ''
+Shelgon:
+- Bagon
+- Level 30
+- Shelgon
+- Level 50
+- Salamence
+- ''
+Salamence:
+- Bagon
+- Level 30
+- Shelgon
+- Level 50
+- Salamence
+- ''
+Beldum:
+- Beldum
+- Level 20
+- Metang
+- Level 45
+- Metagross
+- ''
+Metang:
+- Beldum
+- Level 20
+- Metang
+- Level 45
+- Metagross
+- ''
+Metagross:
+- Beldum
+- Level 20
+- Metang
+- Level 45
+- Metagross
+- ''
+Regirock: []
+Regice: []
+Registeel: []
+Latias: []
+Latios: []
+Kyogre: []
+Groudon: []
+Rayquaza: []
+Jirachi: []
+Deoxys: []
+Turtwig:
+- Turtwig
+- Level 18
+- Grotle
+- Level 32
+- Torterra
+- ''
+Grotle:
+- Turtwig
+- Level 18
+- Grotle
+- Level 32
+- Torterra
+- ''
+Torterra:
+- Turtwig
+- Level 18
+- Grotle
+- Level 32
+- Torterra
+- ''
+Chimchar:
+- Chimchar
+- Level 14
+- Monferno
+- Level 36
+- Infernape
+- ''
+Monferno:
+- Chimchar
+- Level 14
+- Monferno
+- Level 36
+- Infernape
+- ''
+Infernape:
+- Chimchar
+- Level 14
+- Monferno
+- Level 36
+- Infernape
+- ''
+Piplup:
+- Piplup
+- Level 16
+- Prinplup
+- Level 36
+- Empoleon
+- ''
+Prinplup:
+- Piplup
+- Level 16
+- Prinplup
+- Level 36
+- Empoleon
+- ''
+Empoleon:
+- Piplup
+- Level 16
+- Prinplup
+- Level 36
+- Empoleon
+- ''
+Starly:
+- Starly
+- Level 14
+- Staravia
+- Level 34
+- Staraptor
+- ''
+Staravia:
+- Starly
+- Level 14
+- Staravia
+- Level 34
+- Staraptor
+- ''
+Staraptor:
+- Starly
+- Level 14
+- Staravia
+- Level 34
+- Staraptor
+- ''
+Bidoof:
+- Bidoof
+- Level 15
+- Bibarel
+- ''
+Bibarel:
+- Bidoof
+- Level 15
+- Bibarel
+- ''
+Kricketot:
+- Kricketot
+- Level 10
+- Kricketune
+- ''
+Kricketune:
+- Kricketot
+- Level 10
+- Kricketune
+- ''
+Shinx:
+- Shinx
+- Level 15
+- Luxio
+- Level 30
+- Luxray
+- ''
+Luxio:
+- Shinx
+- Level 15
+- Luxio
+- Level 30
+- Luxray
+- ''
+Luxray:
+- Shinx
+- Level 15
+- Luxio
+- Level 30
+- Luxray
+- ''
+Budew:
+- Budew
+- Happiness, During the Day
+- Roselia
+- Use Shiny Stone
+- Roserade
+- ''
+Roserade:
+- Budew
+- Happiness, During the Day
+- Roselia
+- Use Shiny Stone
+- Roserade
+- ''
+Cranidos:
+- Cranidos
+- Level 30
+- Rampardos
+- ''
+Rampardos:
+- Cranidos
+- Level 30
+- Rampardos
+- ''
+Shieldon:
+- Shieldon
+- Level 30
+- Bastiodon
+- ''
+Bastiodon:
+- Shieldon
+- Level 30
+- Bastiodon
+- ''
+Burmy:
+- Burmy
+- 'Female at Level 20'
+- Wormadam
+- ''
+- Burmy
+- 'Male at Level 20'
+- Mothim
+- ''
+Wormadam:
+- Burmy
+- 'Female at Level 20'
+- Wormadam
+- ''
+Mothim:
+- Burmy
+- 'Male at Level 20'
+- Mothim
+- ''
+Combee:
+- Combee
+- 'Female at Level 21'
+- Vespiquen
+- ''
+Vespiquen:
+- Combee
+- 'Female at Level 21'
+- Vespiquen
+- ''
+Pachirisu: []
+Buizel:
+- Buizel
+- Level 26
+- Floatzel
+- ''
+Floatzel:
+- Buizel
+- Level 26
+- Floatzel
+- ''
+Cherubi:
+- Cherubi
+- Level 25
+- Cherrim
+- ''
+Cherrim:
+- Cherubi
+- Level 25
+- Cherrim
+- ''
+Shellos:
+- Shellos
+- Level 30
+- Gastrodon
+- ''
+Gastrodon:
+- Shellos
+- Level 30
+- Gastrodon
+- ''
+Ambipom:
+- Aipom
+- Level up while knowing Double Hit
+- Ambipom
+- ''
+Drifloon:
+- Drifloon
+- Level 28
+- Drifblim
+- ''
+Drifblim:
+- Drifloon
+- Level 28
+- Drifblim
+- ''
+Buneary:
+- Buneary
+- Level Up with Happiness Value at 220
+- Lopunny
+- ''
+Lopunny:
+- Buneary
+- Level Up with Happiness Value at 220
+- Lopunny
+- ''
+Mismagius:
+- Misdreavus
+- Use Dusk Stone
+- Mismagius
+- ''
+Honchkrow:
+- Murkrow
+- Use Dusk Stone
+- Honchkrow
+- ''
+Glameow:
+- Glameow
+- Level 38
+- Purugly
+- ''
+Purugly:
+- Glameow
+- Level 38
+- Purugly
+- ''
+Chingling:
+- Chingling
+- Happiness, During the Night
+- Chimecho
+- ''
+Stunky:
+- Stunky
+- Level 34
+- Skuntank
+- ''
+Skuntank:
+- Stunky
+- Level 34
+- Skuntank
+- ''
+Bronzor:
+- Bronzor
+- Level 33
+- Bronzong
+- ''
+Bronzong:
+- Bronzor
+- Level 33
+- Bronzong
+- ''
+Bonsly:
+- Bonsly
+- Level up while knowing Mimic
+- Sudowoodo
+- ''
+Mime Jr.:
+- Mime Jr.
+- Level up while knowing Mimic
+- Mr. Mime
+- ''
+Happiny:
+- Happiny
+- Level up during day while holding Oval Stone
+- Chansey
+- Level Up with Happiness Value at 220
+- Blissey
+- ''
+Chatot: []
+Spiritomb: []
+Gible:
+- Gible
+- Level 24
+- Gabite
+- Level 48
+- Garchomp
+- ''
+Gabite:
+- Gible
+- Level 24
+- Gabite
+- Level 48
+- Garchomp
+- ''
+Garchomp:
+- Gible
+- Level 24
+- Gabite
+- Level 48
+- Garchomp
+- ''
+Munchlax:
+- Munchlax
+- Level Up with Happiness Value at 220
+- Snorlax
+- ''
+Riolu:
+- Riolu
+- Happiness, During the Day
+- Lucario
+- ''
+Lucario:
+- Riolu
+- Happiness, During the Day
+- Lucario
+- ''
+Hippopotas:
+- Hippopotas
+- Level 34
+- Hippowdon
+- ''
+Hippowdon:
+- Hippopotas
+- Level 34
+- Hippowdon
+- ''
+Skorupi:
+- Skorupi
+- Level 40
+- Drapion
+- ''
+Drapion:
+- Skorupi
+- Level 40
+- Drapion
+- ''
+Croagunk:
+- Croagunk
+- Level 37
+- Toxicroak
+- ''
+Toxicroak:
+- Croagunk
+- Level 37
+- Toxicroak
+- ''
+Carnivine: []
+Finneon:
+- Finneon
+- Level 31
+- Lumineon
+- ''
+Lumineon:
+- Finneon
+- Level 31
+- Lumineon
+- ''
+Mantyke:
+- Mantyke
+- Level up with Remoraid in the party
+- Mantine
+- ''
+Snover:
+- Snover
+- Level 40
+- Abomasnow
+- ''
+Abomasnow:
+- Snover
+- Level 40
+- Abomasnow
+- ''
+Weavile:
+- Sneasel
+- Nighttime, holding Razor Claw
+- Weavile
+- ''
+Magnezone:
+- Magnemite
+- Level 30
+- Magneton
+- Level up while at Route 13
+- Magnezone
+- ''
+Lickilicky:
+- Lickitung
+- Level up while knowing Rollout
+- Lickilicky
+- ''
+Rhyperior:
+- Rhyhorn
+- Level 42
+- Rhydon
+- Trade with Protector
+- Rhyperior
+- ''
+Tangrowth:
+- Tangela
+- Level up while knowing Ancient Power
+- Tangrowth
+- ''
+Electivire:
+- Elekid
+- Level 30
+- Electabuzz
+- Trade with Electirizer
+- Electivire
+- ''
+Magmortar:
+- Magby
+- Level 30
+- Magmar
+- Trade with Magmarizer
+- Magmortar
+- ''
+Togekiss:
+- Togepi
+- Level Up with Happiness Value at 220
+- Togetic
+- Use Shiny Stone
+- Togekiss
+- ''
+Yanmega:
+- Yanma
+- Level up while knowing Ancient Power
+- Yanmega
+- ''
+Leafeon:
+- Eevee
+- Level Up while at Moss Rock in Pinwheel Forest
+- Leafeon
+- ''
+Glaceon:
+- Eevee
+- Level Up while at Ice Rock in Twist Mountain
+- Glaceon
+- ''
+Gliscor:
+- Gligar
+- Nighttime, holding Razor Fang
+- Gliscor
+- ''
+Mamoswine:
+- Swinub
+- Level 33
+- Piloswine
+- Level up while knowing Ancient Power
+- Mamoswine
+- ''
+Porygon-Z:
+- Porygon
+- Trade with Up-Grade
+- Porygon2
+- Trade with Dubious Disc
+- Porygon-Z
+- ''
+Gallade:
+- Ralts
+- Level 20
+- Kirlia
+- On Male Pokémon, use Dawn Stone
+- Gallade
+- ''
+Probopass:
+- Nosepass
+- Level up while at Route 13
+- Probopass
+- ''
+Dusknoir:
+- Duskull
+- Level 37
+- Dusclops
+- Trade with Reaper Cloth
+- Dusknoir
+- ''
+Froslass:
+- Snorunt
+- On Female Pokémon, use Dawn Stone
+- Froslass
+- ''
+Rotom: []
+Uxie: []
+Mesprit: []
+Azelf: []
+Dialga: []
+Palkia: []
+Heatran: []
+Regigigas: []
+Giratina: []
+Cresselia: []
+Phione:
+- Phione
+- Breed with Ditto
+- Manaphy
+- ''
+Manaphy:
+- Phione
+- Breed with Ditto
+- Manaphy
+- ''
+Darkrai: []
+Shaymin: []
+Arceus: []
+Victini: []
+Snivy:
+- Snivy
+- Level 17
+- Servine
+- Level 36
+- Serperior
+- ''
+Servine:
+- Snivy
+- Level 17
+- Servine
+- Level 36
+- Serperior
+- ''
+Serperior:
+- Snivy
+- Level 17
+- Servine
+- Level 36
+- Serperior
+- ''
+Tepig:
+- Tepig
+- Level 17
+- Pignite
+- Level 36
+- Emboar
+- ''
+Pignite:
+- Tepig
+- Level 17
+- Pignite
+- Level 36
+- Emboar
+- ''
+Emboar:
+- Tepig
+- Level 17
+- Pignite
+- Level 36
+- Emboar
+- ''
+Oshawott:
+- Oshawott
+- Level 17
+- Dewott
+- Level 36
+- Samurott
+- ''
+Dewott:
+- Oshawott
+- Level 17
+- Dewott
+- Level 36
+- Samurott
+- ''
+Samurott:
+- Oshawott
+- Level 17
+- Dewott
+- Level 36
+- Samurott
+- ''
+Patrat:
+- Patrat
+- Level 20
+- Watchog
+- ''
+Watchog:
+- Patrat
+- Level 20
+- Watchog
+- ''
+Lillipup:
+- Lillipup
+- Level 16
+- Herdier
+- Level 32
+- Stoutland
+- ''
+Herdier:
+- Lillipup
+- Level 16
+- Herdier
+- Level 32
+- Stoutland
+- ''
+Stoutland:
+- Lillipup
+- Level 16
+- Herdier
+- Level 32
+- Stoutland
+- ''
+Purrloin:
+- Purrloin
+- Level 20
+- Liepard
+- ''
+Liepard:
+- Purrloin
+- Level 20
+- Liepard
+- ''
+Pansage:
+- Pansage
+- Use Leaf Stone
+- Simisage
+- ''
+Simisage:
+- Pansage
+- Use Leaf Stone
+- Simisage
+- ''
+Pansear:
+- Pansear
+- Use Fire Stone
+- Simisear
+- ''
+Simisear:
+- Pansear
+- Use Fire Stone
+- Simisear
+- ''
+Panpour:
+- Panpour
+- Use Water Stone
+- Simipour
+- ''
+Simipour:
+- Panpour
+- Use Water Stone
+- Simipour
+- ''
+Munna:
+- Munna
+- Use Moon Stone
+- Musharna
+- ''
+Musharna:
+- Munna
+- Use Moon Stone
+- Musharna
+- ''
+Pidove:
+- Pidove
+- Level 21
+- Tranquill
+- Level 32
+- Unfezant
+- ''
+Tranquill:
+- Pidove
+- Level 21
+- Tranquill
+- Level 32
+- Unfezant
+- ''
+Unfezant:
+- Pidove
+- Level 21
+- Tranquill
+- Level 32
+- Unfezant
+- ''
+Blitzle:
+- Blitzle
+- Level 27
+- Zebstrika
+- ''
+Zebstrika:
+- Blitzle
+- Level 27
+- Zebstrika
+- ''
+Roggenrola:
+- Roggenrola
+- Level 25
+- Boldore
+- Trade
+- Gigalith
+- ''
+Boldore:
+- Roggenrola
+- Level 25
+- Boldore
+- Trade
+- Gigalith
+- ''
+Gigalith:
+- Roggenrola
+- Level 25
+- Boldore
+- Trade
+- Gigalith
+- ''
+Woobat:
+- Woobat
+- Level Up with Happiness Value at 220
+- Swoobat
+- ''
+Swoobat:
+- Woobat
+- Level Up with Happiness Value at 220
+- Swoobat
+- ''
+Drilbur:
+- Drilbur
+- Level 31
+- Excadrill
+- ''
+Excadrill:
+- Drilbur
+- Level 31
+- Excadrill
+- ''
+Audino: []
+Timburr:
+- Timburr
+- Level 25
+- Gurdurr
+- Trade
+- Conkeldurr
+- ''
+Gurdurr:
+- Timburr
+- Level 25
+- Gurdurr
+- Trade
+- Conkeldurr
+- ''
+Conkeldurr:
+- Timburr
+- Level 25
+- Gurdurr
+- Trade
+- Conkeldurr
+- ''
+Tympole:
+- Tympole
+- Level 25
+- Palpitoad
+- Level 36
+- Seismitoad
+- ''
+Palpitoad:
+- Tympole
+- Level 25
+- Palpitoad
+- Level 36
+- Seismitoad
+- ''
+Seismitoad:
+- Tympole
+- Level 25
+- Palpitoad
+- Level 36
+- Seismitoad
+- ''
+Throh: []
+Sawk: []
+Sewaddle:
+- Sewaddle
+- Level 20
+- Swadloon
+- Level Up with Happiness Value at 220
+- Leavanny
+- ''
+Swadloon:
+- Sewaddle
+- Level 20
+- Swadloon
+- Level Up with Happiness Value at 220
+- Leavanny
+- ''
+Leavanny:
+- Sewaddle
+- Level 20
+- Swadloon
+- Level Up with Happiness Value at 220
+- Leavanny
+- ''
+Venipede:
+- Venipede
+- Level 22
+- Whirlipede
+- Level 30
+- Scolipede
+- ''
+Whirlipede:
+- Venipede
+- Level 22
+- Whirlipede
+- Level 30
+- Scolipede
+- ''
+Scolipede:
+- Venipede
+- Level 22
+- Whirlipede
+- Level 30
+- Scolipede
+- ''
+Cottonee:
+- Cottonee
+- Use Sun Stone
+- Whimsicott
+- ''
+Whimsicott:
+- Cottonee
+- Use Sun Stone
+- Whimsicott
+- ''
+Petilil:
+- Petilil
+- Use Sun Stone
+- Lilligant
+- ''
+Lilligant:
+- Petilil
+- Use Sun Stone
+- Lilligant
+- ''
+Basculin: []
+Sandile:
+- Sandile
+- Level 29
+- Krokorok
+- Level 40
+- Krookodile
+- ''
+Krokorok:
+- Sandile
+- Level 29
+- Krokorok
+- Level 40
+- Krookodile
+- ''
+Krookodile:
+- Sandile
+- Level 29
+- Krokorok
+- Level 40
+- Krookodile
+- ''
+Darumaka:
+- Darumaka
+- Level 35
+- Darmanitan
+- ''
+Darmanitan:
+- Darumaka
+- Level 35
+- Darmanitan
+- ''
+Maractus: []
+Dwebble:
+- Dwebble
+- Level 34
+- Crustle
+- ''
+Crustle:
+- Dwebble
+- Level 34
+- Crustle
+- ''
+Scraggy:
+- Scraggy
+- Level 39
+- Scrafty
+- ''
+Scrafty:
+- Scraggy
+- Level 39
+- Scrafty
+- ''
+Sigilyph: []
+Yamask:
+- Yamask
+- Level 34
+- Cofagrigus
+- ''
+Cofagrigus:
+- Yamask
+- Level 34
+- Cofagrigus
+- ''
+Tirtouga:
+- Tirtouga
+- Level 37
+- Carracosta
+- ''
+Carracosta:
+- Tirtouga
+- Level 37
+- Carracosta
+- ''
+Archen:
+- Archen
+- Level 37
+- Archeops
+- ''
+Archeops:
+- Archen
+- Level 37
+- Archeops
+- ''
+Trubbish:
+- Trubbish
+- Level 36
+- Garbodor
+- ''
+Garbodor:
+- Trubbish
+- Level 36
+- Garbodor
+- ''
+Zorua:
+- Zorua
+- Level 30
+- Zoroark
+- ''
+Zoroark:
+- Zorua
+- Level 30
+- Zoroark
+- ''
+Minccino:
+- Minccino
+- Use Shiny Stone
+- Cinccino
+- ''
+Cinccino:
+- Minccino
+- Use Shiny Stone
+- Cinccino
+- ''
+Gothita:
+- Gothita
+- Level 32
+- Gothorita
+- Level 41
+- Gothitelle
+- ''
+Gothorita:
+- Gothita
+- Level 32
+- Gothorita
+- Level 41
+- Gothitelle
+- ''
+Gothitelle:
+- Gothita
+- Level 32
+- Gothorita
+- Level 41
+- Gothitelle
+- ''
+Solosis:
+- Solosis
+- Level 32
+- Duosion
+- Level 41
+- Reuniclus
+- ''
+Duosion:
+- Solosis
+- Level 32
+- Duosion
+- Level 41
+- Reuniclus
+- ''
+Reuniclus:
+- Solosis
+- Level 32
+- Duosion
+- Level 41
+- Reuniclus
+- ''
+Ducklett:
+- Ducklett
+- Level 35
+- Swanna
+- ''
+Swanna:
+- Ducklett
+- Level 35
+- Swanna
+- ''
+Vanillite:
+- Vanillite
+- Level 35
+- Vanillish
+- Level 47
+- Vanilluxe
+- ''
+Vanillish:
+- Vanillite
+- Level 35
+- Vanillish
+- Level 47
+- Vanilluxe
+- ''
+Vanilluxe:
+- Vanillite
+- Level 35
+- Vanillish
+- Level 47
+- Vanilluxe
+- ''
+Deerling:
+- Deerling
+- Level 34
+- Sawsbuck
+- ''
+Sawsbuck:
+- Deerling
+- Level 34
+- Sawsbuck
+- ''
+Emolga: []
+Karrablast:
+- Karrablast
+- Trade with Shelmet
+- Escavalier
+- ''
+Escavalier:
+- Karrablast
+- Trade with Shelmet
+- Escavalier
+- ''
+Foongus:
+- Foongus
+- Level 39
+- Amoonguss
+- ''
+Amoonguss:
+- Foongus
+- Level 39
+- Amoonguss
+- ''
+Frillish:
+- Frillish
+- Level 40
+- Jellicent
+- ''
+Jellicent:
+- Frillish
+- Level 40
+- Jellicent
+- ''
+Alomomola: []
+Joltik:
+- Joltik
+- Level 36
+- Galvantula
+- ''
+Galvantula:
+- Joltik
+- Level 36
+- Galvantula
+- ''
+Ferroseed:
+- Ferroseed
+- Level 40
+- Ferrothorn
+- ''
+Ferrothorn:
+- Ferroseed
+- Level 40
+- Ferrothorn
+- ''
+Klink:
+- Klink
+- Level 38
+- Klang
+- Level 49
+- Klinklang
+- ''
+Klang:
+- Klink
+- Level 38
+- Klang
+- Level 49
+- Klinklang
+- ''
+Klinklang:
+- Klink
+- Level 38
+- Klang
+- Level 49
+- Klinklang
+- ''
+Tynamo:
+- Tynamo
+- Level 39
+- Eelektrik
+- Use Thunder Stone
+- Eelektross
+- ''
+Eelektrik:
+- Tynamo
+- Level 39
+- Eelektrik
+- Use Thunder Stone
+- Eelektross
+- ''
+Eelektross:
+- Tynamo
+- Level 39
+- Eelektrik
+- Use Thunder Stone
+- Eelektross
+- ''
+Elgyem:
+- Elgyem
+- Level 42
+- Beheeyem
+- ''
+Beheeyem:
+- Elgyem
+- Level 42
+- Beheeyem
+- ''
+Litwick:
+- Litwick
+- Level 41
+- Lampent
+- Use Dusk Stone
+- Chandelure
+- ''
+Lampent:
+- Litwick
+- Level 41
+- Lampent
+- Use Dusk Stone
+- Chandelure
+- ''
+Chandelure:
+- Litwick
+- Level 41
+- Lampent
+- Use Dusk Stone
+- Chandelure
+- ''
+Axew:
+- Axew
+- Level 38
+- Fraxure
+- Level 48
+- Haxorus
+- ''
+Fraxure:
+- Axew
+- Level 38
+- Fraxure
+- Level 48
+- Haxorus
+- ''
+Haxorus:
+- Axew
+- Level 38
+- Fraxure
+- Level 48
+- Haxorus
+- ''
+Cubchoo:
+- Cubchoo
+- Level 37
+- Beartic
+- ''
+Beartic:
+- Cubchoo
+- Level 37
+- Beartic
+- ''
+Cryogonal: []
+Shelmet:
+- Shelmet
+- Trade with Karrablast
+- Accelgor
+- ''
+Accelgor:
+- Shelmet
+- Trade with Karrablast
+- Accelgor
+- ''
+Stunfisk: []
+Mienfoo:
+- Mienfoo
+- Level 50
+- Mienshao
+- ''
+Mienshao:
+- Mienfoo
+- Level 50
+- Mienshao
+- ''
+Druddigon: []
+Golett:
+- Golett
+- Level 43
+- Golurk
+- ''
+Golurk:
+- Golett
+- Level 43
+- Golurk
+- ''
+Pawniard:
+- Pawniard
+- Level 52
+- Bisharp
+- ''
+Bisharp:
+- Pawniard
+- Level 52
+- Bisharp
+- ''
+Bouffalant: []
+Rufflet:
+- Rufflet
+- Level 54
+- Braviary
+- ''
+Braviary:
+- Rufflet
+- Level 54
+- Braviary
+- ''
+Vullaby:
+- Vullaby
+- Level 54
+- Mandibuzz
+- ''
+Mandibuzz:
+- Vullaby
+- Level 54
+- Mandibuzz
+- ''
+Heatmor: []
+Durant: []
+Deino:
+- Deino
+- Level 50
+- Zweilous
+- Level 64
+- Hydreigon
+- ''
+Zweilous:
+- Deino
+- Level 50
+- Zweilous
+- Level 64
+- Hydreigon
+- ''
+Hydreigon:
+- Deino
+- Level 50
+- Zweilous
+- Level 64
+- Hydreigon
+- ''
+Larvesta:
+- Larvesta
+- Level 59
+- Volcarona
+- ''
+Volcarona:
+- Larvesta
+- Level 59
+- Volcarona
+- ''
+Cobalion: []
+Terrakion: []
+Virizion: []
+Tornadus: []
+Thundurus: []
+Reshiram: []
+Zekrom: []
+Landorus: []
+Kyurem: []
+Keldeo: []
+Meloetta: []
+Genesect: []
+Chespin:
+- Chespin
+- Level 16
+- Quilladin
+- Level 36
+- Chesnaught
+- ''
+Quilladin:
+- Chespin
+- Level 16
+- Quilladin
+- Level 36
+- Chesnaught
+- ''
+Chesnaught:
+- Chespin
+- Level 16
+- Quilladin
+- Level 36
+- Chesnaught
+- ''
+Fennekin:
+- Fennekin
+- Level 16
+- Braixen
+- Level 36
+- Delphox
+- ''
+Braixen:
+- Fennekin
+- Level 16
+- Braixen
+- Level 36
+- Delphox
+- ''
+Delphox:
+- Fennekin
+- Level 16
+- Braixen
+- Level 36
+- Delphox
+- ''
+Froakie:
+- Froakie
+- Level 16
+- Frogadier
+- Level 36
+- Greninja
+- ''
+Frogadier:
+- Froakie
+- Level 16
+- Frogadier
+- Level 36
+- Greninja
+- ''
+Greninja:
+- Froakie
+- Level 16
+- Frogadier
+- Level 36
+- Greninja
+- ''
+Bunnelby:
+- Bunnelby
+- Level 20
+- Diggersby
+- ''
+Diggersby:
+- Bunnelby
+- Level 20
+- Diggersby
+- ''
+Fletchling:
+- Fletchling
+- Level 17
+- Fletchinder
+- Level 35
+- Talonflame
+- ''
+Fletchinder:
+- Fletchling
+- Level 17
+- Fletchinder
+- Level 35
+- Talonflame
+- ''
+Talonflame:
+- Fletchling
+- Level 17
+- Fletchinder
+- Level 35
+- Talonflame
+- ''
+Scatterbug:
+- Scatterbug
+- Level 9
+- Spewpa
+- Level 12
+- Vivillon
+- ''
+Spewpa:
+- Scatterbug
+- Level 9
+- Spewpa
+- Level 12
+- Vivillon
+- ''
+Vivillon:
+- Scatterbug
+- Level 9
+- Spewpa
+- Level 12
+- Vivillon
+- ''
+Litleo:
+- Litleo
+- Level 35
+- Pyroar
+- ''
+Pyroar:
+- Litleo
+- Level 35
+- Pyroar
+- ''
+Flabébé:
+- Flabébé
+- Level 19
+- Floette
+- Use Shiny Stone
+- Florges
+- ''
+Floette:
+- Flabébé
+- Level 19
+- Floette
+- Use Shiny Stone
+- Florges
+- ''
+Florges:
+- Flabébé
+- Level 19
+- Floette
+- Use Shiny Stone
+- Florges
+- ''
+Skiddo:
+- Skiddo
+- Level 32
+- Gogoat
+- ''
+Gogoat:
+- Skiddo
+- Level 32
+- Gogoat
+- ''
+Pancham:
+- Pancham
+- Level 32 with a Dark-type in your team
+- Pangoro
+- ''
+Pangoro:
+- Pancham
+- Level 32 with a Dark-type in your team
+- Pangoro
+- ''
+Furfrou: []
+Espurr:
+- Espurr
+- Level 25
+- Meowstic
+- ''
+Meowstic:
+- Espurr
+- Level 25
+- Meowstic
+- ''
+Honedge:
+- Honedge
+- Level 35
+- Doublade
+- Use Dusk Stone
+- Aegislash
+- ''
+Doublade:
+- Honedge
+- Level 35
+- Doublade
+- Use Dusk Stone
+- Aegislash
+- ''
+Aegislash:
+- Honedge
+- Level 35
+- Doublade
+- Use Dusk Stone
+- Aegislash
+- ''
+Spritzee:
+- Spritzee
+- Trade with Sachet
+- Aromatisse
+- ''
+Aromatisse:
+- Spritzee
+- Trade with Sachet
+- Aromatisse
+- ''
+Swirlix:
+- Swirlix
+- Trade with Whipped Dream
+- Slurpuff
+- ''
+Slurpuff:
+- Swirlix
+- Trade with Whipped Dream
+- Slurpuff
+- ''
+Inkay:
+- Inkay
+- Level 30 while holding 3DS upside-down
+- Malamar
+- ''
+Malamar:
+- Inkay
+- Level 30 while holding 3DS upside-down
+- Malamar
+- ''
+Binacle:
+- Binacle
+- Level 39
+- Barbaracle
+- ''
+Barbaracle:
+- Binacle
+- Level 39
+- Barbaracle
+- ''
+Skrelp:
+- Skrelp
+- Level 48
+- Dragalge
+- ''
+Dragalge:
+- Skrelp
+- Level 48
+- Dragalge
+- ''
+Clauncher:
+- Clauncher
+- Level 37
+- Clawitzer
+- ''
+Clawitzer:
+- Clauncher
+- Level 37
+- Clawitzer
+- ''
+Helioptile:
+- Helioptile
+- Use Sun Stone
+- Heliolisk
+- ''
+Heliolisk:
+- Helioptile
+- Use Sun Stone
+- Heliolisk
+- ''
+Tyrunt:
+- Tyrunt
+- Level 39 in Daytime
+- Tyrantrum
+- ''
+Tyrantrum:
+- Tyrunt
+- Level 39 in Daytime
+- Tyrantrum
+- ''
+Amaura:
+- Amaura
+- Level 39 in Night
+- Aurorus
+- ''
+Aurorus:
+- Amaura
+- Level 39 in Night
+- Aurorus
+- ''
+Sylveon:
+- Eevee
+- Maximum Bond on Pokémon Amie + Fairy move
+- Sylveon
+- ''
+Hawlucha: []
+Dedenne: []
+Carbink: []
+Goomy:
+- Goomy
+- Level 40
+- Sliggoo
+- Level 50 in Rain
+- Goodra
+- ''
+Sliggoo:
+- Goomy
+- Level 40
+- Sliggoo
+- Level 50 in Rain
+- Goodra
+- ''
+Goodra:
+- Goomy
+- Level 40
+- Sliggoo
+- Level 50 in Rain
+- Goodra
+- ''
+Klefki: []
+Phantump:
+- Phantump
+- Trade
+- Trevenant
+- ''
+Trevenant:
+- Phantump
+- Trade
+- Trevenant
+- ''
+Pumpkaboo:
+- Pumpkaboo
+- Trade
+- Gourgeist
+- ''
+Gourgeist:
+- Pumpkaboo
+- Trade
+- Gourgeist
+- ''
+Bergmite:
+- Bergmite
+- Level 37
+- Avalugg
+- ''
+Avalugg:
+- Bergmite
+- Level 37
+- Avalugg
+- ''
+Noibat:
+- Noibat
+- Level 48
+- Noivern
+- ''
+Noivern:
+- Noibat
+- Level 48
+- Noivern
+- ''
+Xerneas: []
+Yveltal: []
+Zygarde: []

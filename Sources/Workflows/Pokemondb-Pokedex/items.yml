@@ -1,0 +1,1500 @@
+---
+Ability Urge:
+  category: Battle items
+  description: When used, it activates the Ability of an ally Pokémon.
+Absorb Bulb:
+  category: Hold items
+  description: A consumable bulb. If the holder is hit by a Water-type move, its Sp.
+    Atk will rise.
+Adamant Orb:
+  category: Hold items
+  description: A brightly gleaming orb to be held by DIALGA. It boosts the power of
+    Dragon-​ and Steel-type moves.
+Aguav Berry:
+  category: Berries
+  description: If held by a Pokémon, it restores the user’s HP in a pinch, but will
+    cause confusion if it hates the taste.
+Air Balloon:
+  category: Hold items
+  description: When held by a Pokémon, the Pokémon will float into the air. When the
+    holder is attacked, this item will burst.
+Amulet Coin:
+  category: Hold items
+  description: An item to be held by a Pokémon. It doubles a battle’s prize money
+    if the holding Pokémon joins in.
+Antidote:
+  category: Medicine
+  description: A spray-type medicine. It lifts the effect of poison from one Pokémon.
+Apicot Berry:
+  category: Berries
+  description: If held by a Pokémon, it raises its Sp. Def stat in a pinch.
+Armor Fossil:
+  category: General items
+  description: A fossil from a prehistoric Pokémon that lived on the land. It appears
+    to be part of a collar.
+Aspear Berry:
+  category: Berries
+  description: If held by a Pokémon, it defrosts it.
+Awakening:
+  category: Medicine
+  description: A spray-type medicine. It awakens a Pokémon from the clutches of sleep.
+Babiri Berry:
+  category: Berries
+  description: Weakens a supereffective Steel-type attack against the holding Pokémon.
+BalmMushroom:
+  category: General items
+  description: A rare mushroom which gives off a nice fragrance. A maniac will buy
+    it for a high price.
+Belue Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+Berry Juice:
+  category: Medicine
+  description: A 100% pure juice made of Berries. It restores the HP of one Pokémon
+    by just 20 points.
+Big Mushroom:
+  category: General items
+  description: A large and rare mushroom. It is sought after by collectors.
+Big Nugget:
+  category: General items
+  description: A big nugget of pure gold that gives off a lustrous gleam. A maniac
+    will buy it for a high price.
+Big Pearl:
+  category: General items
+  description: A quite-large pearl that sparkles in a pretty silver color. It can
+    be sold at a high price to shops.
+Big Root:
+  category: Hold items
+  description: A Pokémon held item that boosts the power of HP-stealing moves to let
+    the holder recover more HP.
+Binding Band:
+  category: Hold items
+  description: A band that increases the power of binding moves when held.
+Black Belt:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a belt that boosts determination
+    and Fighting-type moves.
+Black Flute:
+  category: General items
+  description: A toy flute made from black glass. A maniac will buy it for a high
+    price.
+Black Sludge:
+  category: Hold items
+  description: A held item that gradually restores the HP of Poison-type Pokémon.
+    It inflicts damage on all other types.
+BlackGlasses:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a shady-looking pair of glasses
+    that boosts Dark-type moves.
+Blk Apricorn:
+  category: General items
+  description: A black Apricorn It has an indescribable scent.
+Blu Apricorn:
+  category: General items
+  description: A blue Apricorn. It smells a bit like grass.
+Blue Flute:
+  category: General items
+  description: A toy flute made from blue glass. A maniac will buy it for a high price.
+Blue Scarf:
+  category: General items
+  description: An item to be held by a Pokémon. It boosts the Beauty aspect of the
+    holder in a Contest.
+Blue Shard:
+  category: General items
+  description: A small blue shard. It appears to be from some sort of implement made
+    long ago.
+Bluk Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+BrightPowder:
+  category: Hold items
+  description: An item to be held by a POKéMON. It casts a tricky glare that lowers
+    the opponent’s accuracy.
+Bug Gem:
+  category: Hold items
+  description: A gem with an insect-like essence. When held, it strengthens the power
+    of a Bug-type move only once.
+Burn Drive:
+  category: Hold items
+  description: A cassette to be held by Genesect. It changes Techno Blast to a Fire-type
+    move.
+Burn Heal:
+  category: Medicine
+  description: A spray-type medicine. It heals a single Pokémon that is suffering
+    from a burn.
+Calcium:
+  category: Medicine
+  description: A nutritious drink for Pokémon. It raises the base Sp. Atk (Special
+    Attack) stat of a single Pokémon.
+Carbos:
+  category: Medicine
+  description: A nutritious drink for Pokémon. It raises the base Speed stat of a
+    single Pokémon.
+Casteliacone:
+  category: Medicine
+  description: Castelia City’s specialty, soft-serve ice cream. It heals all the status
+    problems of a single Pokémon.
+Cell Battery:
+  category: Hold items
+  description: A consumable battery. If the holder is hit by an Electric-type move,
+    its Attack will rise.
+Charcoal:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a combustible fuel that boosts
+    the power of Fire-type moves.
+Charti Berry:
+  category: Berries
+  description: Weakens a supereffective Rock-type attack against the holding Pokémon.
+Cheri Berry:
+  category: Berries
+  description: If held by a Pokémon,  it recovers from paralysis.
+Cherish Ball:
+  category: Pokeballs
+  description: A quite rare Poké Ball that has been specially crafted to commemorate
+    an occasion of some sort.
+Chesto Berry:
+  category: Berries
+  description: If held by a Pokémon, it recovers from sleep.
+Chilan Berry:
+  category: Berries
+  description: Weakens a Normal-type attack against the Pokémon holding this berry.
+Chill Drive:
+  category: Hold items
+  description: A cassette to be held by Genesect. It changes Techno Blast to an Ice-type
+    move.
+Choice Band:
+  category: Hold items
+  description: An item to be held by a Pokémon. This headband ups Attack, but allows
+    the use of only one of its moves.
+Choice Scarf:
+  category: Hold items
+  description: An item to be held by a Pokémon. This scarf boosts Speed, but allows
+    the use of only one of its moves.
+Choice Specs:
+  category: Hold items
+  description: An item to be held by a Pokémon. These distinctive glasses boost Sp.
+    Atk but allow the use of only one of its moves.
+Chople Berry:
+  category: Berries
+  description: Weakens a supereffective Fighting-type attack against the holding Pokémon.
+Claw Fossil:
+  category: General items
+  description: A fossil of an ancient Pokémon that lived in the sea. It appears to
+    be part of a claw.
+Cleanse Tag:
+  category: Hold items
+  description: An item to be held by a Pokémon. It helps keep wild Pokémon away if
+    the holder is the first one in the party.
+Clever Wing:
+  category: Medicine
+  description: An item for use on a Pokémon. It slightly increases the base Sp. Def
+    stat of a single Pokémon.
+Coba Berry:
+  category: Berries
+  description: Weakens a supereffective Flying-type attack against the holding Pokémon.
+Colbur Berry:
+  category: Berries
+  description: Weakens a supereffective Dark-type attack against the holding Pokémon.
+Comet Shard:
+  category: General items
+  description: A shard which fell to the ground when a comet approached. A maniac
+    will buy it for a high price.
+Cornn Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+Cover Fossil:
+  category: General items
+  description: A fossil of an ancient Pokémon that lived in the sea in ancient times.
+    It appears to be part of its back.
+Custap Berry:
+  category: Berries
+  description: If held by a Pokémon, it gets to move first just once in a pinch.
+Damp Mulch:
+  category: General items
+  description: A fertilizer to be spread on soft soil in regions where Berries are
+    grown. A maniac will buy it for a high price.
+Damp Rock:
+  category: Hold items
+  description: A Pokémon held item that extends the duration of the move Rain Dance
+    used by the holder.
+Dark Gem:
+  category: Hold items
+  description: A gem with an essence of darkness. When held, it strengthens the power
+    of a Dark-type move only once.
+Dawn Stone:
+  category: General items
+  description: A peculiar stone that makes certain species of Pokémon evolve. It sparkles
+    like eyes.
+DeepSeaScale:
+  category: Hold items
+  description: An item to be held by CLAMPERL. A scale that shines a faint pink, it
+    raises the Sp. Def stat.
+DeepSeaTooth:
+  category: Hold items
+  description: An item to be held by CLAMPERL. A fang that gleams a sharp silver,
+    it raises the Sp. Atk stat.
+Destiny Knot:
+  category: Hold items
+  description: A long, thin, bright-red string to be held by a Pokémon. If the holder
+    becomes infatuated, the foe does too.
+Dire Hit:
+  category: Battle items
+  description: It raises the critical-hit ratio greatly. It can be used only once
+    and wears off if the Pokémon is withdrawn.
+Dire Hit 2:
+  category: Battle items
+  description: It can be used many times to raise the critical-hit ratio of one Pokémon.
+    It wears off if the Pokémon is withdrawn.
+Dire Hit 3:
+  category: Battle items
+  description: It can be used many times to greatly raise a Pokémon’s critical-hit
+    ratio. It wears off if the Pokémon is withdrawn.
+Dive Ball:
+  category: Pokeballs
+  description: A somewhat different Poké Ball that works especially well on Pokémon
+    that live underwater.
+Dome Fossil:
+  category: General items
+  description: A fossil of an ancient Pokémon that lived in the sea. It appears to
+    be part of a shell.
+Douse Drive:
+  category: Hold items
+  description: A cassette to be held by Genesect. It changes Techno Blast to a Water-type
+    move.
+Draco Plate:
+  category: Hold items
+  description: Increases power of Dragon-type moves. Changes Arceus' type to Dragon.
+Dragon Fang:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a hard and sharp fang that ups
+    the power of Dragon-type moves.
+Dragon Gem:
+  category: Hold items
+  description: A gem with a draconic essence.  When held, it strengthens the power
+    of a Dragon-type move only once.
+Dragon Scale:
+  category: General items
+  description: A thick and tough scale. Dragon-type Pokémon may be holding this item
+    when caught.
+Dread Plate:
+  category: Hold items
+  description: Increases power of Dark-type moves. Changes Arceus' type to Dark.
+Dream Ball:
+  category: Pokeballs
+  description: A special Poké Ball that appears out of nowhere in a bag at the Entree
+    Forest. It can catch any Pokémon.
+Dubious Disc:
+  category: General items
+  description: A transparent device overflowing with dubious data. Its producer is
+    unknown.
+Durin Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+Dusk Ball:
+  category: Pokeballs
+  description: A somewhat different Poké Ball that makes it easier to catch wild Pokémon
+    at night or in dark places like caves.
+Dusk Stone:
+  category: General items
+  description: A peculiar stone that makes certain species of Pokémon evolve. It is
+    as dark as dark can be.
+Earth Plate:
+  category: Hold items
+  description: Increases power of Ground-type moves. Changes Arceus' type to Ground.
+Eject Button:
+  category: Hold items
+  description: If the holder is hit by an attack, it will switch with another Pokémon
+    in your party.
+Electirizer:
+  category: General items
+  description: A box packed with a tremendous amount of electric energy. It is loved
+    by a certain Pokémon.
+Electric Gem:
+  category: Hold items
+  description: A gem with an essence of electricity. When held, it strengthens the
+    power of an Electric-type move only once.
+Elixir:
+  category: Medicine
+  description: It restores the PP of all the moves learned by the targeted Pokémon
+    by 10 points each.
+Energy Root:
+  category: Medicine
+  description: A very bitter root. It restores the HP of one POKéMON by 200 points.
+EnergyPowder:
+  category: Medicine
+  description: A very bitter medicine powder. It restores the HP of one POKéMON by
+    50 points.
+Enigma Berry:
+  category: Berries
+  description: If held by a Pokémon, it restores its HP if it is hit by any supereffective
+    attack.
+Escape Rope:
+  category: General items
+  description: A long, durable rope. Use it to escape instantly from a cave or a dungeon.
+Ether:
+  category: Medicine
+  description: It restores the PP of a Pokémon’s selected move by a maximum of 10
+    points.
+Everstone:
+  category: Hold items
+  description: An item to be held by a Pokémon. The Pokémon holding this peculiar
+    stone is prevented from evolving.
+Eviolite:
+  category: Hold items
+  description: A mysterious evolutionary lump. When held, it raises the Defense and
+    Sp. Def of a Pokémon that can still evolve.
+Exp. Share:
+  category: Hold items
+  description: An item to be held by a Pokémon. The holder gets a share of a battle’s
+    Exp. Points without battling.
+Expert Belt:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a well-worn belt that slightly
+    boosts the power of supereffective moves.
+Fast Ball:
+  category: Pokeballs
+  description: A Poké Ball that makes it easier to catch Pokémon which are quick to
+    run away.
+Fighting Gem:
+  category: Hold items
+  description: A gem with an essence of combat. When held, it strengthens the power
+    of a Fighting-type move only once.
+Figy Berry:
+  category: Berries
+  description: If held by a Pokémon, it restores the user’s HP in a pinch, but will
+    cause confusion if it hates the taste.
+Fire Gem:
+  category: Hold items
+  description: A gem with an essence of fire. When held, it strengthens the power
+    of a Fire-type move only once.
+Fire Stone:
+  category: General items
+  description: A peculiar stone that makes certain species of POKéMON evolve. It is
+    colored orange.
+Fist Plate:
+  category: Hold items
+  description: Increases power of Fighting-type moves. Changes Arceus' type to Fighting.
+Flame Orb:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a bizarre orb that inflicts
+    a burn on the holder in battle.
+Flame Plate:
+  category: Hold items
+  description: Increases power of Fire-type moves. Changes Arceus' type to Fire.
+Float Stone:
+  category: Hold items
+  description: A very light stone. It reduces the weight of a Pokémon when held.
+Fluffy Tail:
+  category: General items
+  description: An item that attracts Pokémon. Use it to flee from any battle with
+    a wild Pokémon.
+Flying Gem:
+  category: Hold items
+  description: A gem with an essence of air. When held, it strengthens the power of
+    a Flying-type move only once.
+Focus Band:
+  category: Hold items
+  description: An item to be held by a Pokémon. The holder may endure a potential
+    KO attack, leaving it with just 1 HP.
+Focus Sash:
+  category: Hold items
+  description: An item to be held by a Pokémon. If it has full HP, the holder will
+    endure one potential KO attack, leaving 1 HP.
+Fresh Water:
+  category: Medicine
+  description: Water with a high mineral content. It restores the HP of one POKéMON
+    by 50 points.
+Friend Ball:
+  category: Pokeballs
+  description: A Poké Ball that makes caught Pokémon more friendly.
+Full Heal:
+  category: Medicine
+  description: A spray-type medicine. It heals all the status problems of a single
+    Pokémon.
+Full Incense:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is an exotic-smelling incense that
+    makes the holder bloated and slow moving.
+Full Restore:
+  category: Medicine
+  description: A medicine that fully restores the HP and heals any status problems
+    of a single Pokémon.
+Ganlon Berry:
+  category: Berries
+  description: If held by a Pokémon, it raises its Defense stat in a pinch.
+Genius Wing:
+  category: Medicine
+  description: An item for use on a Pokémon. It slightly increases the base Sp. Atk
+    stat of a single Pokémon.
+Ghost Gem:
+  category: Hold items
+  description: A gem with a spectral essence. When held, it strengthens the power
+    of a Ghost-type move only once.
+Gooey Mulch:
+  category: General items
+  description: A fertilizer to be spread on soft soil in regions where Berries are
+    grown. A maniac will buy it for a high price.
+Grass Gem:
+  category: Hold items
+  description: A gem with an essence of nature. When held, it strengthens the power
+    of a Grass-type move only once.
+Great Ball:
+  category: Pokeballs
+  description: A good, high-performance Ball that provides a higher Pokémon catch
+    rate than a standard Poké Ball.
+Green Scarf:
+  category: General items
+  description: An item to be held by a Pokémon. It boosts the Smart aspect of the
+    holder in a Contest.
+Green Shard:
+  category: General items
+  description: A small green shard. It appears to be from some sort of implement made
+    long ago.
+Grepa Berry:
+  category: Berries
+  description: Using it on a Pokémon makes it more friendly, but it also lowers its
+    base Sp. Def stat.
+Grip Claw:
+  category: Hold items
+  description: A Pokémon held item that extends the duration of multiturn attacks
+    like Bind and Wrap.
+Griseous Orb:
+  category: Hold items
+  description: A glowing orb to be held by GIRATINA. It boosts the power of Dragon-
+    and Ghost-type moves.
+Grn Apricorn:
+  category: General items
+  description: A green Apricorn. It has a mysterious, aromatic scent.
+Ground Gem:
+  category: Hold items
+  description: A gem with an essence of land. When held, it strengthens the power
+    of a Ground-type move only once.
+Growth Mulch:
+  category: General items
+  description: A fertilizer to be spread on soft soil in regions where Berries are
+    grown. A maniac will buy it for a high price.
+Guard Spec.:
+  category: Battle items
+  description: An item that prevents stat reduction among the Trainer’s party Pokémon
+    for five turns after use.
+Haban Berry:
+  category: Berries
+  description: Weakens a supereffective Dragon-type attack against the holding Pokémon.
+Hard Stone:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is an unbreakable stone that ups
+    the power of Rock-type moves.
+Heal Ball:
+  category: Pokeballs
+  description: A remedial Poké Ball that restores the caught Pokémon’s HP and eliminates
+    any status problem.
+Heal Powder:
+  category: Medicine
+  description: A very bitter medicine powder. It heals all the status problems of
+    a single Pokémon.
+Health Wing:
+  category: Medicine
+  description: An item for use on a Pokémon. It slightly increases the base HP of
+    a single Pokémon.
+Heart Scale:
+  category: General items
+  description: A pretty, heart-shaped scale that is extremely rare. It glows faintly
+    in the colors of the rainbow.
+Heat Rock:
+  category: Hold items
+  description: A Pokémon held item that extends the duration of the move Sunny Day
+    used by the holder.
+Heavy Ball:
+  category: Pokeballs
+  description: A Poké Ball for catching very heavy Pokémon.
+Helix Fossil:
+  category: General items
+  description: A fossil of an ancient Pokémon that lived in the sea. It appears to
+    be part of a seashell.
+HM01:
+  category: Machines
+  description: Teaches the move Cut.
+HM02:
+  category: Machines
+  description: Teaches the move Fly.
+HM03:
+  category: Machines
+  description: Teaches the move Surf.
+HM04:
+  category: Machines
+  description: Teaches the move Strength.
+HM05:
+  category: Machines
+  description: Teaches the move Flash/Defog/Whirlpool/Waterfall.
+HM06:
+  category: Machines
+  description: Teaches the move Whirlpool/Rock Smash/Dive.
+HM07:
+  category: Machines
+  description: Teaches the move Waterfall.
+HM08:
+  category: Machines
+  description: Teaches the move Dive/Rock Climb.
+Hondew Berry:
+  category: Berries
+  description: Using it on a Pokémon makes it more friendly, but it also lowers its
+    base Sp. Atk stat.
+Honey:
+  category: General items
+  description: A sweet honey with a lush aroma that attracts wild Pokémon when it
+    is used in grass, caves, or on special trees.
+HP Up:
+  category: Medicine
+  description: A nutritious drink for Pokémon. It raises the base HP of a single Pokémon.
+Hyper Potion:
+  category: Medicine
+  description: A spray-type medicine for wounds. It restores the HP of one Pokémon
+    by 200 points.
+Iapapa Berry:
+  category: Berries
+  description: If held by a Pokémon, it restores the user’s HP in a pinch, but will
+    cause confusion if it hates the taste.
+Ice Gem:
+  category: Hold items
+  description: A gem with an essence of ice. When held, it strengthens the power of
+    an Ice-type move only once.
+Ice Heal:
+  category: Medicine
+  description: A spray-type medicine. It defrosts a Pokémon that has been frozen solid.
+Icicle Plate:
+  category: Hold items
+  description: Increases power of Ice-type moves. Changes Arceus' type to Ice.
+Icy Rock:
+  category: Hold items
+  description: A Pokémon held item that extends the duration of the move Hail used
+    by the holder.
+Insect Plate:
+  category: Hold items
+  description: Increases power of Bug-type moves. Changes Arceus' type to Bug.
+Iron:
+  category: Medicine
+  description: A nutritious drink for Pokémon. It raises the base Defense stat of
+    a single Pokémon.
+Iron Ball:
+  category: Hold items
+  description: A Pokémon held item that cuts Speed. It makes Flying-type and levitating
+    holders susceptible to Ground moves.
+Iron Plate:
+  category: Hold items
+  description: Increases power of Steel-type moves. Changes Arceus' type to Steel.
+Item Drop:
+  category: Battle items
+  description: When used, it causes an ally Pokémon to drop a held item.
+Item Urge:
+  category: Battle items
+  description: When used, it causes an ally Pokémon to use its held item.
+Jaboca Berry:
+  category: Berries
+  description: If held by a Pokémon and a physical attack lands, the attacker also
+    takes damage.
+Kasib Berry:
+  category: Berries
+  description: Weakens a supereffective Ghost-type attack against the holding Pokémon.
+Kebia Berry:
+  category: Berries
+  description: Weakens a supereffective Poison-type attack against the holding Pokémon.
+Kelpsy Berry:
+  category: Berries
+  description: Using it on a Pokémon makes it more friendly, but it also lowers its
+    base Attack stat.
+King's Rock:
+  category: Hold items
+  description: An item to be held by a Pokémon. When the holder inflicts damage, the
+    target may flinch.
+Lagging Tail:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is tremendously heavy and makes
+    the holder move slower than usual.
+Lansat Berry:
+  category: Berries
+  description: If held by a Pokémon, it raises its critical-hit ratio in a pinch.
+Lava Cookie:
+  category: Medicine
+  description: LAVARIDGE TOWN’s local specialty. It heals all the status problems
+    of one POKéMON.
+Lax Incense:
+  category: Hold items
+  description: An item to be held by a Pokémon. The tricky aroma of this incense may
+    make attacks miss the holder.
+Leaf Stone:
+  category: General items
+  description: A peculiar stone that makes certain species of POKéMON evolve. It has
+    a leaf pattern.
+Leftovers:
+  category: Hold items
+  description: An item to be held by a Pokémon. The holder’s HP is gradually restored
+    during battle.
+Lemonade:
+  category: Medicine
+  description: A very sweet drink. It restores the HP of one POKéMON by 80 points.
+Leppa Berry:
+  category: Berries
+  description: If held by a Pokémon, it restores a move’s PP by 10.
+Level Ball:
+  category: Pokeballs
+  description: A Poké Ball for catching Pokémon that are a lower level than your own.
+Liechi Berry:
+  category: Berries
+  description: If held by a Pokémon, it raises its Attack stat in a pinch.
+Life Orb:
+  category: Hold items
+  description: An item to be held by a Pokémon. It boosts the power of moves, but
+    at the cost of some HP on each hit.
+Light Ball:
+  category: Hold items
+  description: An item to be held by PIKACHU. It is a puzzling orb that raises the
+    Attack and Sp. Atk stat.
+Light Clay:
+  category: Hold items
+  description: A Pokémon held item that extends the duration of barrier moves like
+    Light Screen and Reflect used by the holder.
+Love Ball:
+  category: Pokeballs
+  description: Poké Ball for catching Pokémon that are the opposite gender of your
+    Pokémon.
+Luck Incense:
+  category: Hold items
+  description: An item to be held by a Pokémon. It doubles a battle’s prize money
+    if the holding Pokémon joins in.
+Lucky Egg:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is an egg filled with happiness
+    that earns extra Exp. Points in battle.
+Lucky Punch:
+  category: Hold items
+  description: An item to be held by CHANSEY. It is a pair of gloves that boosts CHANSEY’s
+    critical-hit ratio.
+Lum Berry:
+  category: Berries
+  description: If held by a Pokémon, it recovers from any status problem.
+Lure Ball:
+  category: Pokeballs
+  description: A Poké Ball for catching Pokémon hooked by a Rod when fishing.
+Lustrous Orb:
+  category: Hold items
+  description: A beautifully glowing orb to be held by PALKIA. It boosts the power
+    of Dragon-​ and Water-type moves.
+Luxury Ball:
+  category: Pokeballs
+  description: A comfortable Poké Ball that makes a caught wild Pokémon quickly grow
+    friendly.
+Macho Brace:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a stiff and heavy brace that
+    promotes strong growth but lowers Speed.
+Magmarizer:
+  category: General items
+  description: A box packed with a tremendous amount of magma energy. It is loved
+    by a certain Pokémon.
+Magnet:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a powerful magnet that boosts
+    the power of Electric-type moves.
+Mago Berry:
+  category: Berries
+  description: If held by a Pokémon, it restores the user’s HP in a pinch, but will
+    cause confusion if it hates the taste.
+Magost Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+Master Ball:
+  category: Pokeballs
+  description: The best Ball with the ultimate level of performance. It will catch
+    any wild Pokémon without fail.
+Max Elixir:
+  category: Medicine
+  description: It fully restores the PP of all the moves learned by the targeted Pokémon.
+Max Ether:
+  category: Medicine
+  description: It fully restores the PP of a single selected move that has been learned
+    by the target Pokémon.
+Max Potion:
+  category: Medicine
+  description: A spray-type medicine for wounds. It completely restores the HP of
+    a single Pokémon.
+Max Repel:
+  category: General items
+  description: An item that prevents weak wild Pokémon from appearing for 250 steps
+    after its use.
+Max Revive:
+  category: Medicine
+  description: A medicine that revives a fainted Pokémon. It fully restores the Pokémon’s
+    HP.
+Meadow Plate:
+  category: Hold items
+  description: Increases power of Grass-type moves. Changes Arceus' type to Grass.
+Mental Herb:
+  category: Hold items
+  description: An item to be held by a Pokémon. It snaps the holder out of infatuation.
+    It can be used only once.
+Metal Coat:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a special metallic film that
+    ups the power of Steel-type moves.
+Metal Powder:
+  category: Hold items
+  description: An item to be held by DITTO. Extremely fine yet hard, this odd powder
+    boosts the Defense stat.
+Metronome:
+  category: Hold items
+  description: A Pokémon held item that boosts a move used consecutively. Its effect
+    is reset if another move is used.
+Micle Berry:
+  category: Berries
+  description: If held by a Pokémon, it raises the accuracy of a move just once in
+    a pinch.
+Mind Plate:
+  category: Hold items
+  description: Increases power of Psychic-type moves. Changes Arceus' type to Psychic.
+Miracle Seed:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a seed imbued with life that
+    ups the power of Grass-type moves.
+Moomoo Milk:
+  category: Medicine
+  description: Milk with a very high nutrition content. It restores the HP of one
+    Pokémon by 100 points.
+Moon Ball:
+  category: Pokeballs
+  description: A Poké Ball for catching Pokémon that evolve using the Moon Stone.
+Moon Stone:
+  category: General items
+  description: A peculiar stone that makes certain species of POKéMON evolve. It is
+    as black as the night sky.
+Muscle Band:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a headband that slightly boosts
+    the power of physical moves.
+Muscle Wing:
+  category: Medicine
+  description: An item for use on a Pokémon. It slightly increases the base Attack
+    stat of a single Pokémon.
+Mystic Water:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a teardrop-shaped gem that ups
+    the power of Water-type moves.
+Nanab Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+Nest Ball:
+  category: Pokeballs
+  description: A somewhat different Poké Ball that works especially well on weaker
+    Pokémon in the wild.
+Net Ball:
+  category: Pokeballs
+  description: A somewhat different Poké Ball that works especially well on Water-
+    and Bug-type Pokémon.
+NeverMeltIce:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a piece of ice that repels heat
+    and boosts Ice-type moves.
+Nomel Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+Normal Gem:
+  category: Hold items
+  description: A gem with an ordinary essence. When held, it strengthens the power
+    of a Normal-type move only once.
+Nugget:
+  category: General items
+  description: A nugget of pure gold that gives off a lustrous gleam. It can be sold
+    at a high price to shops.
+Occa Berry:
+  category: Berries
+  description: Weakens a supereffective Fire-type attack against the holding Pokémon.
+Odd Incense:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is an exotic-smelling incense that
+    boosts the power of Psychic-type moves.
+Odd Keystone:
+  category: General items
+  description: A vital item that is needed to keep a stone tower from collapsing.
+    Voices can be heard from it occasionally.
+Old Amber:
+  category: General items
+  description: A piece of amber that contains the genetic material of an ancient Pokémon.
+    It is clear with a reddish tint.
+Old Gateau:
+  category: Medicine
+  description: Old Chateau’s hidden specialty. It heals all the status problems of
+    a single Pokémon.
+Oran Berry:
+  category: Berries
+  description: If held by a Pokémon,  it heals the user by just 10 HP.
+Oval Stone:
+  category: General items
+  description: A peculiar stone that makes certain species of Pokémon evolve. It is
+    shaped like an egg.
+Pamtre Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+Park Ball:
+  category: Pokeballs
+  description: A special Poké Ball for the Pal Park.
+Parlyz Heal:
+  category: Medicine
+  description: A spray-type medicine. It eliminates paralysis from a single Pokémon.
+Pass Orb:
+  category: Hold items
+  description: A mysterious orb containing the power of the Unova region, to be used
+    when generating Pass Power.
+Passho Berry:
+  category: Berries
+  description: Weakens a supereffective Water-type attack against the holding Pokémon.
+Payapa Berry:
+  category: Berries
+  description: Weakens a supereffective Psychic-type attack against the holding Pokémon.
+Pearl:
+  category: General items
+  description: A somewhat-small pearl that sparkles in a pretty silver color. It can
+    be sold cheaply to shops.
+Pearl String:
+  category: General items
+  description: Very large pearls that sparkle in a pretty silver color.  A maniac
+    will buy them for a high price.
+Pecha Berry:
+  category: Berries
+  description: If held by a Pokémon, it recovers from poison.
+Persim Berry:
+  category: Berries
+  description: If held by a Pokémon, it recovers from confusion.
+Petaya Berry:
+  category: Berries
+  description: If held by a Pokémon, it raises its Sp. Atk stat in a pinch.
+Pinap Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+Pink Scarf:
+  category: General items
+  description: An item to be held by a Pokémon. It boosts the Cute aspect of the holder
+    in a Contest.
+Plume Fossil:
+  category: General items
+  description: A fossil of an ancient Pokémon that flew in the sky in ancient times.
+    It appears to be part of its wing.
+Pnk Apricorn:
+  category: General items
+  description: A pink Apricorn. It has a nice, sweet scent.
+Poison Barb:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a small, poisonous barb that
+    ups the power of Poison-type moves.
+Poison Gem:
+  category: Hold items
+  description: A gem with an essence of poison. When held, it strengthens the power
+    of a Poison-type move only once.
+Poke Ball:
+  category: Pokeballs
+  description: A device for catching wild Pokémon. It is thrown like a ball at the
+    target. It is designed as a capsule system.
+Poke Doll:
+  category: General items
+  description: A doll that attracts Pokémon. Use it to flee from any battle with a
+    wild Pokémon.
+Poke Toy:
+  category: General items
+  description: An item that attracts Pokémon. Use it to flee from any battle with
+    a wild Pokémon.
+Pomeg Berry:
+  category: Berries
+  description: Using it on a Pokémon makes it more friendly, but it also lowers its
+    base HP.
+Potion:
+  category: Medicine
+  description: A spray-type medicine for wounds. It restores the HP of one Pokémon
+    by just 20 points.
+Power Anklet:
+  category: Hold items
+  description: A Pokémon held item that promotes Speed gain on leveling, but reduces
+    the Speed stat.
+Power Band:
+  category: Hold items
+  description: A Pokémon held item that promotes Sp. Def gain on leveling, but reduces
+    the Speed stat.
+Power Belt:
+  category: Hold items
+  description: A Pokémon held item that promotes Defense gain on leveling, but reduces
+    the Speed stat.
+Power Bracer:
+  category: Hold items
+  description: A Pokémon held item that promotes Attack gain on leveling, but reduces
+    the Speed stat.
+Power Herb:
+  category: Hold items
+  description: A single-use item to be held by a Pokémon. It allows the immediate
+    use of a move that charges on the first turn.
+Power Lens:
+  category: Hold items
+  description: A Pokémon held item that promotes Sp. Atk gain on leveling, but reduces
+    the Speed stat.
+Power Weight:
+  category: Hold items
+  description: A Pokémon held item that promotes HP gain on leveling, but reduces
+    the Speed stat.
+PP Max:
+  category: Medicine
+  description: It maximally raises the top PP of a selected move that has been learned
+    by the target Pokémon.
+PP Up:
+  category: Medicine
+  description: It slightly raises the maximum PP of a selected move that has been
+    learned by the target Pokémon.
+Premier Ball:
+  category: Pokeballs
+  description: A somewhat rare Poké Ball that has been specially made to commemorate
+    an event of some sort.
+Pretty Wing:
+  category: General items
+  description: Though this feather is beautiful, it’s just a regular feather and has
+    no effect on Pokémon.
+Prism Scale:
+  category: General items
+  description: A mysterious scale that evolves certain Pokémon. It shines in rainbow
+    colors.
+Protector:
+  category: General items
+  description: A protective item of some sort. It is extremely stiff and heavy. It
+    is loved by a certain Pokémon.
+Protein:
+  category: Medicine
+  description: A nutritious drink for Pokémon. It raises the base Attack stat of a
+    single Pokémon.
+Psychic Gem:
+  category: Hold items
+  description: A gem with an essence of the mind. When held, it strengthens the power
+    of a Psychic-type move only once.
+Pure Incense:
+  category: Hold items
+  description: An item to be held by a Pokémon. It helps keep wild Pokémon away if
+    the holder is the first one in the party.
+Qualot Berry:
+  category: Berries
+  description: Using it on a Pokémon makes it more friendly, but it also lowers its
+    base Defense stat.
+Quick Ball:
+  category: Pokeballs
+  description: A somewhat different Poké Ball that provides a better catch rate if
+    it is used at the start of a wild encounter.
+Quick Claw:
+  category: Hold items
+  description: An item to be held by a Pokémon. A light, sharp claw that lets the
+    bearer move first occasionally.
+Quick Powder:
+  category: Hold items
+  description: An item to be held by DITTO. Extremely fine yet hard, this odd powder
+    boosts the Speed stat.
+Rabuta Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+Rare Bone:
+  category: General items
+  description: A bone that is extremely valuable for Pokémon archeology. It can be
+    sold for a high price to shops.
+Rare Candy:
+  category: Medicine
+  description: A candy that is packed with energy. It raises the level of a single
+    Pokémon by one.
+Rawst Berry:
+  category: Berries
+  description: If held by a Pokémon, it recovers from a burn.
+Razor Claw:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a sharply hooked claw that ups
+    the holder’s critical-hit ratio.
+Razor Fang:
+  category: Hold items
+  description: An item to be held by a Pokémon. It may make foes and allies flinch
+    when the holder inflicts damage.
+Razz Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+Reaper Cloth:
+  category: General items
+  description: A cloth imbued with horrifyingly strong spiritual energy. It is loved
+    by a certain Pokémon.
+Red Apricorn:
+  category: General items
+  description: A red Apricorn. It assails your nostrils.
+Red Card:
+  category: Hold items
+  description: A card with a mysterious power. When the holder is struck by a foe,
+    the attacker is removed from battle.
+Red Flute:
+  category: General items
+  description: A toy flute made from red glass. A maniac will buy it for a high price.
+Red Scarf:
+  category: General items
+  description: An item to be held by a Pokémon. It boosts the Cool aspect of the holder
+    in a Contest.
+Red Shard:
+  category: General items
+  description: A small red shard. It appears to be from some sort of implement made
+    long ago.
+Relic Band:
+  category: General items
+  description: A bracelet made in a civilization about 3,000 years ago. A maniac will
+    buy it for a high price.
+Relic Copper:
+  category: General items
+  description: A copper coin used in a civilization about 3,000 years ago. A maniac
+    will buy it for a high price.
+Relic Crown:
+  category: General items
+  description: A crown made in a civilization about 3,000 years ago. A maniac will
+    buy it for a high price.
+Relic Gold:
+  category: General items
+  description: A gold coin used in a civilization about 3,000 years ago. A maniac
+    will buy it for a high price.
+Relic Silver:
+  category: General items
+  description: A silver coin used in a civilization about 3,000 years ago. A maniac
+    will buy it for a high price.
+Relic Statue:
+  category: General items
+  description: A stone figure made in a civilization about 3,000 years ago. A maniac
+    will buy it for a high price.
+Relic Vase:
+  category: General items
+  description: A vase made in a civilization about 3,000 years ago. A maniac will
+    buy it for a high price.
+Repeat Ball:
+  category: Pokeballs
+  description: A somewhat different Poké Ball that works especially well on Pokémon
+    species that were previously caught.
+Repel:
+  category: General items
+  description: An item that prevents weak wild Pokémon from appearing for 100 steps
+    after its use.
+Reset Urge:
+  category: Battle items
+  description: When used, it restores any stat changes of an ally Pokémon.
+Resist Wing:
+  category: Medicine
+  description: An item for use on a Pokémon. It slightly increases the base Defense
+    stat of a single Pokémon.
+Revival Herb:
+  category: Medicine
+  description: A very bitter medicinal herb. It revives a fainted Pokémon, fully restoring
+    its HP.
+Revive:
+  category: Medicine
+  description: A medicine that revives a fainted Pokémon. It restores half the Pokémon’s
+    maximum HP.
+Rindo Berry:
+  category: Berries
+  description: Weakens a supereffective Grass-type attack against the holding Pokémon.
+Ring Target:
+  category: Hold items
+  description: Moves that would otherwise have no effect will land on the Pokémon
+    that holds it.
+Rock Gem:
+  category: Hold items
+  description: A gem with an essence of rock. When held, it strengthens the power
+    of a Rock-type move only once.
+Rock Incense:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is an exotic-smelling incense that
+    boosts the power of Rock-type moves.
+Rocky Helmet:
+  category: Hold items
+  description: If the holder of this item takes damage, the attacker will also be
+    damaged upon contact.
+Root Fossil:
+  category: General items
+  description: A fossil of an ancient Pokémon that lived in the sea. It appears to
+    be part of a plant root.
+Rose Incense:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is an exotic-smelling incense that
+    boosts the power of Grass-type moves.
+Rowap Berry:
+  category: Berries
+  description: If held by a Pokémon and a special attack lands, the attacker also
+    takes damage.
+Sacred Ash:
+  category: Medicine
+  description: It revives all fainted Pokémon. In doing so, it also fully restores
+    their HP.
+Safari Ball:
+  category: Pokeballs
+  description: A special Poké Ball that is used only in the Great Marsh. It is decorated
+    in a camouflage pattern.
+Salac Berry:
+  category: Berries
+  description: If held by a Pokémon, it raises its Speed stat in a pinch.
+Scope Lens:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a lens that boosts the holder’s
+    critical-hit ratio.
+Sea Incense:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is incense with a curious aroma
+    that boosts the power of Water-type moves.
+Sharp Beak:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a long, sharp beak that boosts
+    the power of Flying-type moves.
+Shed Shell:
+  category: Hold items
+  description: A tough, discarded carapace to be held by a Pokémon. It enables the
+    holder to switch with a waiting Pokémon in battle.
+Shell Bell:
+  category: Hold items
+  description: An item to be held by a Pokémon. The holder’s HP is restored a little
+    every time it inflicts damage.
+Shiny Stone:
+  category: General items
+  description: A peculiar stone that makes certain species of Pokémon evolve. It shines
+    with a dazzling light.
+Shoal Salt:
+  category: General items
+  description: Pure salt that can be discovered deep inside the Shoal Cave. A maniac
+    will buy it for a high price.
+Shoal Shell:
+  category: General items
+  description: A pretty seashell that can be found  deep inside the Shoal Cave. A
+    maniac will buy it for a high price.
+Shock Drive:
+  category: Hold items
+  description: A cassette to be held by Genesect. It changes Techno Blast to an Electric-type
+    move.
+Shuca Berry:
+  category: Berries
+  description: Weakens a supereffective Ground-type attack against the holding Pokémon.
+Silk Scarf:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a sumptuous scarf that boosts
+    the power of Normal-type moves.
+SilverPowder:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a shiny, silver powder that
+    ups the power of Bug-type moves.
+Sitrus Berry:
+  category: Berries
+  description: If held by a Pokémon, it heals the user’s HP a little.
+Skull Fossil:
+  category: General items
+  description: A fossil from a prehistoric Pokémon that lived on the land. It appears
+    to be part of a head.
+Sky Plate:
+  category: Hold items
+  description: Increases power of Flying-type moves. Changes Arceus' type to Flying.
+Smoke Ball:
+  category: Hold items
+  description: An item to be held by a Pokémon. It enables the holder to flee from
+    any wild Pokémon without fail.
+Smooth Rock:
+  category: Hold items
+  description: A Pokémon held item that extends the duration of the move Sandstorm
+    used by the holder.
+Soda Pop:
+  category: Medicine
+  description: A fizzy soda drink. It restores the HP of one POKéMON by 60 points.
+Soft Sand:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a loose, silky sand that boosts
+    the power of Ground-type moves.
+Soothe Bell:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a bell with a comforting chime
+    that calms the holder and makes it friendly.
+Soul Dew:
+  category: Hold items
+  description: A wondrous orb to be held by LATIOS or LATIAS. It raises both the Sp.
+    Atk and Sp. Def stats.
+Spell Tag:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a sinister, eerie tag that boosts
+    the power of Ghost-type moves.
+Spelon Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+Splash Plate:
+  category: Hold items
+  description: Increases power of Water-type moves. Changes Arceus' type to Water.
+Spooky Plate:
+  category: Hold items
+  description: Increases power of Ghost-type moves. Changes Arceus' type to Ghost.
+Sport Ball:
+  category: Pokeballs
+  description: A special Poké Ball for the Bug-Catching Contest.
+Stable Mulch:
+  category: General items
+  description: A fertilizer to be spread on soft soil in regions where Berries are
+    grown. A maniac will buy it for a high price.
+Star Piece:
+  category: General items
+  description: A shard of a pretty gem that sparkles in a red color. It can be sold
+    at a high price to shops.
+Stardust:
+  category: General items
+  description: Lovely, red-colored sand with a loose, silky feel. It can be sold at
+    a high price to shops.
+Starf Berry:
+  category: Berries
+  description: If held by a Pokémon, it sharply raises one of its stats in a pinch.
+Steel Gem:
+  category: Hold items
+  description: A gem with an essence of steel. When held, it strengthens the power
+    of a Steel-type move only once.
+Stick:
+  category: Hold items
+  description: An item to be held by FARFETCH’D. It is a very long and stiff stalk
+    of leek that boosts the critical-hit ratio.
+Sticky Barb:
+  category: Hold items
+  description: A held item that damages the holder on every turn. It may latch on
+    to foes and allies that touch the holder.
+Stone Plate:
+  category: Hold items
+  description: Increases power of Rock-type moves. Changes Arceus' type to Rock.
+Sun Stone:
+  category: General items
+  description: A peculiar stone that makes certain species of POKéMON evolve. It is
+    as red as the sun.
+Super Potion:
+  category: Medicine
+  description: A spray-type medicine for wounds. It restores the HP of one Pokémon
+    by 50 points.
+Super Repel:
+  category: General items
+  description: An item that prevents weak wild Pokémon from appearing for 200 steps
+    after its use.
+Sweet Heart:
+  category: Medicine
+  description: Very sweet chocolate.   It restores the HP of one Pokémon by only 20
+    points.
+Swift Wing:
+  category: Medicine
+  description: An item for use on a Pokémon. It slightly increases the base Speed
+    stat of a single Pokémon.
+Tamato Berry:
+  category: Berries
+  description: Using it on a Pokémon makes it more friendly, but it also lowers its
+    base Speed stat.
+Tanga Berry:
+  category: Berries
+  description: Weakens a supereffective Bug-type attack against the holding Pokémon.
+Thick Club:
+  category: Hold items
+  description: An item to be held by CUBONE or MAROWAK. It is a hard bone of some
+    sort that boosts the Attack stat.
+Thunderstone:
+  category: General items
+  description: A peculiar stone that makes certain species of POKéMON evolve. It has
+    a thunderbolt pattern.
+Timer Ball:
+  category: Pokeballs
+  description: A somewhat different BALL that becomes progressively better the more
+    turns there are in a battle.
+TinyMushroom:
+  category: General items
+  description: A small and rare mushroom. It is sought after by collectors.
+Toxic Orb:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a bizarre orb that badly poisons
+    the holder in battle.
+Toxic Plate:
+  category: Hold items
+  description: Increases power of Poison-type moves. Changes Arceus' type to Poison.
+TwistedSpoon:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a spoon imbued with telekinetic
+    power that boosts Psychic-type moves.
+Ultra Ball:
+  category: Pokeballs
+  description: An ultra-performance Ball that provides a higher Pokémon catch rate
+    than a Great Ball.
+Up-Grade:
+  category: General items
+  description: A transparent device filled with all sorts of data. It was produced
+    by Silph Co.
+Wacan Berry:
+  category: Berries
+  description: Weakens a supereffective Electric-type attack against the holding Pokémon.
+Water Gem:
+  category: Hold items
+  description: A gem with an essence of water. When held, it strengthens the power
+    of a Water-type move only once.
+Water Stone:
+  category: General items
+  description: A peculiar stone that makes certain species of Pokémon evolve. It is
+    a clear, light blue.
+Watmel Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+Wave Incense:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is incense with a curious aroma
+    that boosts the power of Water-type moves.
+Wepear Berry:
+  category: Berries
+  description: A Berry which is very rare in the Unova region. A maniac will buy it
+    for a high price.
+White Flute:
+  category: General items
+  description: A toy flute made from white glass. A maniac will buy it for a high
+    price.
+White Herb:
+  category: Hold items
+  description: An item to be held by a POKéMON. It restores any lowered stat in battle.
+    It can be used only once.
+Wht Apricorn:
+  category: General items
+  description: A white Apricorn. It doesn’t smell like anything.
+Wide Lens:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a magnifying lens that slightly
+    boosts the accuracy of moves.
+Wiki Berry:
+  category: Berries
+  description: If held by a Pokémon, it restores the user’s HP in a pinch, but will
+    cause confusion if it hates the taste.
+Wise Glasses:
+  category: Hold items
+  description: An item to be held by a Pokémon. It is a thick pair of glasses that
+    slightly boosts the power of special moves.
+X Accuracy:
+  category: Battle items
+  description: An item that raises the accuracy of a Pokémon in battle. It wears off
+    if the Pokémon is withdrawn.
+X Accuracy 2:
+  category: Battle items
+  description: It sharply raises the accuracy of a Pokémon in battle. It wears off
+    if the Pokémon is withdrawn.
+X Accuracy 3:
+  category: Battle items
+  description: It drastically raises the accuracy of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Accuracy 6:
+  category: Battle items
+  description: It raises the accuracy of a Pokémon in battle immensely. It wears off
+    if the Pokémon is withdrawn.
+X Attack:
+  category: Battle items
+  description: An item that raises the Attack stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Attack 2:
+  category: Battle items
+  description: It sharply raises the Attack stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Attack 3:
+  category: Battle items
+  description: It drastically raises the Attack stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Attack 6:
+  category: Battle items
+  description: It raises the Attack stat of a Pokémon in battle immensely. It wears
+    off if the Pokémon is withdrawn.
+X Defend:
+  category: Battle items
+  description: An item that raises the Defense stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Defend 2:
+  category: Battle items
+  description: It sharply raises the Defense stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Defend 3:
+  category: Battle items
+  description: It drastically raises the Defense stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Defend 6:
+  category: Battle items
+  description: It raises the Defense stat of a Pokémon in battle immensely. It wears
+    off if the Pokémon is withdrawn.
+X Sp. Def:
+  category: Battle items
+  description: An item that raises the Sp. Def stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Sp. Def 2:
+  category: Battle items
+  description: It sharply raises the Sp. Def stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Sp. Def 3:
+  category: Battle items
+  description: It drastically raises the Sp. Def stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Sp. Def 6:
+  category: Battle items
+  description: It raises the Sp. Def stat of a Pokémon in battle immensely. It wears
+    off if the Pokémon is withdrawn.
+X Special:
+  category: Battle items
+  description: An item that raises the Sp. Atk stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Special 2:
+  category: Battle items
+  description: It sharply raises the Sp. Atk stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Special 3:
+  category: Battle items
+  description: It drastically raises the Sp. Atk stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Special 6:
+  category: Battle items
+  description: It raises the Sp. Atk stat of a Pokémon in battle immensely. It wears
+    off if the Pokémon is withdrawn.
+X Speed:
+  category: Battle items
+  description: An item that raises the Speed stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Speed 2:
+  category: Battle items
+  description: It sharply raises the Speed stat of a Pokémon in battle. It wears off
+    if the Pokémon is withdrawn.
+X Speed 3:
+  category: Battle items
+  description: It drastically raises the Speed stat of a Pokémon in battle. It wears
+    off if the Pokémon is withdrawn.
+X Speed 6:
+  category: Battle items
+  description: It raises the Speed stat of a Pokémon in battle immensely. It wears
+    off if the Pokémon is withdrawn.
+Yache Berry:
+  category: Berries
+  description: Weakens a supereffective Ice-type attack against the holding Pokémon.
+Yellow Flute:
+  category: General items
+  description: A toy flute made from yellow glass. A maniac will buy it for a high
+    price.
+Yellow Scarf:
+  category: General items
+  description: An item to be held by a Pokémon. It boosts the Tough aspect of the
+    holder in a Contest.
+Yellow Shard:
+  category: General items
+  description: A small yellow shard. It appears to be from some sort of implement
+    made long ago.
+Ylw Apricorn:
+  category: General items
+  description: A yellow Apricorn. It has an invigorating scent.
+Zap Plate:
+  category: Hold items
+  description: Increases power of Electric-type moves. Changes Arceus' type to Electric.
+Zinc:
+  category: Medicine
+  description: A nutritious drink for Pokémon. It raises the base Sp. Def (Special
+    Defense) stat of a single Pokémon.
+Zoom Lens:
+  category: Hold items
+  description: An item to be held by a Pokémon. If the holder moves after its target,
+    its accuracy will be boosted.

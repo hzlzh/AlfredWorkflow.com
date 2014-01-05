@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI -->
+<html><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# githubog: http://ogp.me/ns/fb/githubog#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>配置API · fis-dev/fis Wiki</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="logo" type="image/svg" href="https://github-media-downloads.s3.amazonaws.com/github-logo.svg">
+    <meta property="og:image" content="https://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png">
+    <meta name="hostname" content="github-fe118-cp1-prd.iad.github.net">
+    <meta name="ruby" content="ruby 1.9.3p194-tcs-github-tcmalloc (a846054d10) [x86_64-linux]">
+    <link rel="assets" href="https://github.global.ssl.fastly.net/">
+    <link rel="conduit-xhr" href="https://ghconduit.com:25035/">
+    <link rel="xhr-socket" href="https://github.com/_sockets">
+    
+
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_wiki" data-pjax-transient="">
+    <meta content="collector.githubapp.com" name="octolytics-host"><meta content="collector-cdn.github.com" name="octolytics-script-host"><meta content="github" name="octolytics-app-id"><meta content="3D87A954:06F1:EDDD26:52C67D91" name="octolytics-dimension-request_id"><meta content="631195" name="octolytics-actor-id"><meta content="xiangshouding" name="octolytics-actor-login"><meta content="0a3697ebde9ece73bec2d758adf58d203b82621558c459a3881e2e0fa14557ab" name="octolytics-actor-hash">
+    
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://github.com/favicon.ico">
+
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="JXBnxcrKbzJRKCJC4EVv1nGu/8CLg7OiSHlwsPmG6Js=" name="csrf-token">
+
+    <link href="./api_files/github-3944f96c1c19f752fe766b332fb7716555c8296e.css" media="all" rel="stylesheet" type="text/css">
+    <link href="./api_files/github2-26223e212ca99f1bf10e8a9619bc7a09400ed4f6.css" media="all" rel="stylesheet" type="text/css">
+    
+
+    
+
+      <script src="./api_files/frameworks-29a3fb0547e33bd8d4530bbad9bae3ef00d83293.js" type="text/javascript"></script>
+      <script src="./api_files/github-4ac46f893910c3da1bdbe9b20092fe75867245d8.js" type="text/javascript"></script><script type="text/javascript" async="" src="./api_files/ga.js"></script>
+      
+      <meta http-equiv="x-pjax-version" content="8131df651c3e5051e69641ddd10fc78c">
+
+        <script src="./api_files/wiki-d0c3d0f1be4bd69eb1c09955a5d45d29f62a3c5e.js" type="text/javascript"></script>
+  <meta property="og:title" content="fis">
+  <meta property="og:type" content="githubog:gitrepository">
+  <meta property="og:url" content="https://github.com/fis-dev/fis">
+  <meta property="og:image" content="https://github.global.ssl.fastly.net/images/gravatars/gravatar-user-420.png">
+  <meta property="og:site_name" content="GitHub">
+  <meta property="og:description" content="fis - Front-end Integrated Solution - 前端集成解决方案">
+
+  <meta name="description" content="fis - Front-end Integrated Solution - 前端集成解决方案">
+
+  <meta content="5443997" name="octolytics-dimension-user_id"><meta content="fis-dev" name="octolytics-dimension-user_login"><meta content="12848767" name="octolytics-dimension-repository_id"><meta content="fis-dev/fis" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="12848767" name="octolytics-dimension-repository_network_root_id"><meta content="fis-dev/fis" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/fis-dev/fis/commits/master.atom" rel="alternate" title="Recent Commits to fis:master" type="application/atom+xml">
+
+  <script type="text/javascript" async="" src="./api_files/api.js"></script></head>
+
+
+  <body class="logged_in  env-production macintosh vis-public" style="">
+    <div class="wrapper">
+      
+      
+      
+      
+
+
+      <div class="header header-logged-in true">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/">
+  <span class="mega-octicon octicon-mark-github"></span>
+</a>
+
+    
+    <a href="https://github.com/fis-dev/fis/notifications" class="notification-indicator tooltipped downwards contextually-unread" data-gotokey="n" original-title="You have unread notifications in this repository">
+        <span class="mail-status unread"></span>
+</a>
+
+      <div class="command-bar js-command-bar  in-repository">
+          <form accept-charset="UTF-8" action="https://github.com/search" class="command-bar-form" id="top_search_form" method="get">
+
+<input type="text" data-hotkey="/ s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off" data-username="xiangshouding" data-repo="fis-dev/fis" data-branch="master" data-sha="8f68b73d723cddd59ea4d0317d5e7397e631fb41">
+
+    <input type="hidden" name="nwo" value="fis-dev/fis">
+
+    <div class="select-menu js-menu-container js-select-menu search-context-select-menu">
+      <span class="minibutton select-menu-button js-menu-target">
+        <span class="js-select-button">This repository</span>
+      </span>
+
+      <div class="select-menu-modal-holder js-menu-content js-navigation-container">
+        <div class="select-menu-modal">
+
+          <div class="select-menu-item js-navigation-item js-this-repository-navigation-item selected">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" class="js-search-this-repository" name="search_target" value="repository" checked="checked">
+            <div class="select-menu-item-text js-select-button-text">This repository</div>
+          </div> <!-- /.select-menu-item -->
+
+          <div class="select-menu-item js-navigation-item js-all-repositories-navigation-item">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" name="search_target" value="global">
+            <div class="select-menu-item-text js-select-button-text">All repositories</div>
+          </div> <!-- /.select-menu-item -->
+
+        </div>
+      </div>
+    </div>
+
+  <span class="octicon help tooltipped downwards" original-title="Show command bar help">
+    <span class="octicon octicon-question"></span>
+  </span>
+
+
+  <input type="hidden" name="ref" value="cmdform">
+
+</form>
+        <ul class="top-nav">
+          <li class="explore"><a href="https://github.com/explore">Explore</a></li>
+            <li><a href="https://gist.github.com/">Gist</a></li>
+            <li><a href="https://github.com/blog">Blog</a></li>
+          <li><a href="https://help.github.com/">Help</a></li>
+        </ul>
+      </div>
+
+    
+
+
+  <ul id="user-links">
+    <li>
+      <a href="https://github.com/xiangshouding" class="name">
+        <img height="20" src="./api_files/7508a7c691f667937f675264c4ab9594" width="20"> xiangshouding
+      </a>
+    </li>
+
+      <li>
+        <a href="https://github.com/new" id="new_repo" class="tooltipped downwards" aria-label="Create a new repo" original-title="Create a new repo">
+          <span class="octicon octicon-repo-create"></span>
+        </a>
+      </li>
+
+      <li>
+        <a href="https://github.com/settings/profile" id="account_settings" class="tooltipped downwards" aria-label="Account settings " original-title="Account settings ">
+          <span class="octicon octicon-tools"></span>
+        </a>
+      </li>
+      <li>
+        <a class="tooltipped downwards" href="https://github.com/logout" data-method="post" id="logout" aria-label="Sign out" original-title="Sign out">
+          <span class="octicon octicon-log-out"></span>
+        </a>
+      </li>
+
+  </ul>
+
+<div class="js-new-dropdown-contents hidden">
+  
+
+<ul class="dropdown-menu">
+  <li>
+    <a href="https://github.com/new"><span class="octicon octicon-repo-create"></span> New repository</a>
+  </li>
+  <li>
+    <a href="https://github.com/organizations/new"><span class="octicon octicon-organization"></span> New organization</a>
+  </li>
+
+
+
+    <li class="section-title">
+      <span title="fis-dev/fis">This repository</span>
+    </li>
+      <li>
+        <a href="https://github.com/fis-dev/fis/issues/new"><span class="octicon octicon-issue-opened"></span> New issue</a>
+      </li>
+</ul>
+
+</div>
+
+
+    
+  </div>
+</div>
+
+      
+
+      
+
+
+
+
+          <div class="site" itemscope="" itemtype="http://schema.org/WebPage">
+    
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+
+<ul class="pagehead-actions">
+
+    <li class="subscription">
+      <form accept-charset="UTF-8" action="https://github.com/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="JXBnxcrKbzJRKCJC4EVv1nGu/8CLg7OiSHlwsPmG6Js="></div>  <input id="repository_id" name="repository_id" type="hidden" value="12848767">
+
+    <div class="select-menu js-menu-container js-select-menu">
+      <a class="social-count js-social-count" href="https://github.com/fis-dev/fis/watchers">
+        60
+      </a>
+      <span class="minibutton select-menu-button with-count js-menu-target" role="button" tabindex="0">
+        <span class="js-select-button">
+          <span class="octicon octicon-eye-unwatch"></span>
+          Unwatch
+        </span>
+      </span>
+
+      <div class="select-menu-modal-holder">
+        <div class="select-menu-modal subscription-menu-modal js-menu-content">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Notification status</span>
+            <span class="octicon octicon-remove-close js-menu-close"></span>
+          </div> <!-- /.select-menu-header -->
+
+          <div class="select-menu-list js-navigation-container" role="menu">
+
+            <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input id="do_included" name="do" type="radio" value="included">
+                <h4>Not watching</h4>
+                <span class="description">You only receive notifications for conversations in which you participate or are @mentioned.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-eye-watch"></span>
+                  Watch
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+              <span class="select-menu-item-icon octicon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input checked="checked" id="do_subscribed" name="do" type="radio" value="subscribed">
+                <h4>Watching</h4>
+                <span class="description">You receive notifications for all conversations in this repository.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-eye-unwatch"></span>
+                  Unwatch
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input id="do_ignore" name="do" type="radio" value="ignore">
+                <h4>Ignoring</h4>
+                <span class="description">You do not receive any notifications for conversations in this repository.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-mute"></span>
+                  Stop ignoring
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+          </div> <!-- /.select-menu-list -->
+
+        </div> <!-- /.select-menu-modal -->
+      </div> <!-- /.select-menu-modal-holder -->
+    </div> <!-- /.select-menu -->
+
+</form>
+    </li>
+
+  <li>
+  
+
+  <div class="js-toggler-container js-social-container starring-container on">
+    <a href="https://github.com/fis-dev/fis/unstar" class="minibutton with-count js-toggler-target star-button starred upwards" title="Unstar this repository" data-remote="true" data-method="post" rel="nofollow">
+      <span class="octicon octicon-star-delete"></span><span class="text">Unstar</span>
+    </a>
+
+    <a href="https://github.com/fis-dev/fis/star" class="minibutton with-count js-toggler-target star-button unstarred upwards" title="Star this repository" data-remote="true" data-method="post" rel="nofollow">
+      <span class="octicon octicon-star"></span><span class="text">Star</span>
+    </a>
+
+      <a class="social-count js-social-count" href="https://github.com/fis-dev/fis/stargazers">
+        219
+      </a>
+  </div>
+
+  </li>
+
+
+        <li>
+          <a href="https://github.com/fis-dev/fis/fork" class="minibutton with-count js-toggler-target fork-button lighter upwards" title="Fork this repo" rel="nofollow" data-method="post">
+            <span class="octicon octicon-git-branch-create"></span><span class="text">Fork</span>
+          </a>
+          <a href="https://github.com/fis-dev/fis/network" class="social-count">68</a>
+        </li>
+
+
+</ul>
+
+        <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="repo-label"><span>public</span></span>
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author">
+            <a href="https://github.com/fis-dev" class="url fn" itemprop="url" rel="author"><span itemprop="title">fis-dev</span></a>
+          </span>
+          <span class="repohead-name-divider">/</span>
+          <strong><a href="https://github.com/fis-dev/fis" class="js-current-repository js-repo-home-link">fis</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="Octocat-spinner-32" height="16" src="./api_files/octocat-spinner-32.gif" width="16">
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      
+
+      <div class="repository-with-sidebar repo-container">
+
+        <div class="repository-sidebar">
+            
+
+<div class="sunken-menu vertical-right repo-nav js-repo-nav js-repository-container-pjax js-octicon-loaders">
+  <div class="sunken-menu-contents">
+    <ul class="sunken-menu-group">
+      <li class="tooltipped leftwards" original-title="Code">
+        <a href="https://github.com/fis-dev/fis" aria-label="Code" class="js-selected-navigation-item sunken-menu-item" data-gotokey="c" data-pjax="true" data-selected-links="repo_source repo_downloads repo_commits repo_tags repo_branches /fis-dev/fis">
+          <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./api_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+        <li class="tooltipped leftwards" original-title="Issues">
+          <a href="https://github.com/fis-dev/fis/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-gotokey="i" data-selected-links="repo_issues /fis-dev/fis/issues">
+            <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+            <span class="counter">0</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./api_files/octocat-spinner-32.gif" width="16">
+</a>        </li>
+
+      <li class="tooltipped leftwards" original-title="Pull Requests">
+        <a href="https://github.com/fis-dev/fis/pulls" aria-label="Pull Requests" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-gotokey="p" data-selected-links="repo_pulls /fis-dev/fis/pulls">
+            <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+            <span class="counter">0</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./api_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+
+        <li class="tooltipped leftwards" original-title="Wiki">
+          <a href="https://github.com/fis-dev/fis/wiki" aria-label="Wiki" class="selected js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="repo_wiki /fis-dev/fis/wiki">
+            <span class="octicon octicon-book"></span> <span class="full-word">Wiki</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./api_files/octocat-spinner-32.gif" width="16">
+</a>        </li>
+    </ul>
+    <div class="sunken-menu-separator"></div>
+    <ul class="sunken-menu-group">
+
+      <li class="tooltipped leftwards" original-title="Pulse">
+        <a href="https://github.com/fis-dev/fis/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="pulse /fis-dev/fis/pulse">
+          <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./api_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+      <li class="tooltipped leftwards" original-title="Graphs">
+        <a href="https://github.com/fis-dev/fis/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="repo_graphs repo_contributors /fis-dev/fis/graphs">
+          <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./api_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+      <li class="tooltipped leftwards" original-title="Network">
+        <a href="https://github.com/fis-dev/fis/network" aria-label="Network" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-selected-links="repo_network /fis-dev/fis/network">
+          <span class="octicon octicon-git-branch"></span> <span class="full-word">Network</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="./api_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+    </ul>
+
+
+  </div>
+</div>
+
+            <div class="only-with-full-nav">
+              
+
+  
+
+<div class="clone-url open" data-protocol-type="http" data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=push">
+  <h3><strong>HTTPS</strong> clone URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone js-url-field" value="https://github.com/fis-dev/fis.git" readonly="readonly">
+
+    <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/fis-dev/fis.git" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+  
+
+<div class="clone-url " data-protocol-type="ssh" data-url="/users/set_protocol?protocol_selector=ssh&amp;protocol_type=push">
+  <h3><strong>SSH</strong> clone URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone js-url-field" value="git@github.com:fis-dev/fis.git" readonly="readonly">
+
+    <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="git@github.com:fis-dev/fis.git" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+  
+
+<div class="clone-url " data-protocol-type="subversion" data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=push">
+  <h3><strong>Subversion</strong> checkout URL</h3>
+  <div class="clone-url-box">
+    <input type="text" class="clone js-url-field" value="https://github.com/fis-dev/fis" readonly="readonly">
+
+    <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/fis-dev/fis" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+
+<p class="clone-options">You can clone with
+      <a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#" class="js-clone-selector" data-protocol="http">HTTPS</a>,
+      <a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#" class="js-clone-selector" data-protocol="ssh">SSH</a>,
+      or <a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#" class="js-clone-selector" data-protocol="subversion">Subversion</a>.
+  <span class="octicon help tooltipped upwards" original-title="Get help on which URL is right for you.">
+    <a href="https://help.github.com/articles/which-remote-url-should-i-use">
+    <span class="octicon octicon-question"></span>
+    </a>
+  </span>
+</p>
+
+  <a href="http://mac.github.com/" data-url="github-mac://openRepo/https://github.com/fis-dev/fis" class="minibutton sidebar-button js-conduit-rewrite-url">
+    <span class="octicon octicon-device-desktop"></span>
+    Clone in Desktop
+  </a>
+
+
+              <a href="https://github.com/fis-dev/fis/archive/master.zip" class="minibutton sidebar-button" title="Download this repository as a zip file" rel="nofollow">
+                <span class="octicon octicon-cloud-download"></span>
+                Download ZIP
+              </a>
+            </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">
+          
+
+<div class="tabnav">
+  <ul class="tabnav-tabs">
+    <li><a href="https://github.com/fis-dev/fis/wiki" class="js-selected-navigation-item tabnav-tab" data-selected-links=" /fis-dev/fis/wiki">Home</a></li>
+    <li><a href="https://github.com/fis-dev/fis/wiki/_pages" class="js-selected-navigation-item tabnav-tab" data-selected-links=" /fis-dev/fis/wiki/_pages">Pages</a></li>
+    <li><a href="https://github.com/fis-dev/fis/wiki/_history" class="js-selected-navigation-item tabnav-tab" data-selected-links=" /fis-dev/fis/wiki/_history">History</a></li>
+  </ul>
+  <div class="tabnav-right">
+    <div class="tabnav-widget">
+      <a href="https://github.com/fis-dev/fis/wiki/_new" class="button minibutton primary js-new-wiki-page">New Page</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="wiki-wrapper" class="page">
+<div id="head">
+  <ul class="wiki-actions readability-extra">
+    <li class="gollum-minibutton"><a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI/_edit" class="minibutton bigger action-edit-page">
+       Edit Page
+     </a></li>
+    <li class="gollum-minibutton"><a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI/_history" class="minibutton bigger action-page-history">
+       Page History
+     </a></li>
+    <li class="gollum-minibutton"><span class="js-zeroclipboard minibutton" data-clipboard-text="https://github.com/fis-dev/fis.wiki.git" data-copied-hint="copied!" title="Click to copy url to clipboard">Clone URL</span></li>
+  </ul>
+  <h1 class="instapaper_title">配置API</h1>
+</div>
+<div id="wiki-content">
+  <div class="wrap">
+  <div id="wiki-body" class="gollum-markdown-content instapaper_body">
+    <div class="markdown-body">
+      <blockquote>
+<p>F.I.S可以支持从最简单的前端开发到大规模大团队项目开发，因此允许用户以 <strong>零配置</strong> 开始使用F.I.S，于此同时经过适当配置和扩展，F.I.S还能展现其强大的开发支持能力，足以应对大型商业产品开发需求。</p>
+</blockquote>
+
+<h2>
+<a name="%E9%9B%B6%E9%85%8D%E7%BD%AE" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#%E9%9B%B6%E9%85%8D%E7%BD%AE"><span class="octicon octicon-link"></span></a>零配置</h2>
+
+<p>不使用任何配置，fis将支持：</p>
+
+<ol>
+<li>使用 <strong>fis install &lt;name&gt;</strong> 命令安装fis仓库提供的各种 <strong>组件、框架、示例、素材、配置等</strong> 开发资源。</li>
+<li>使用 <strong>fis server start</strong> 命令启动一个本地调试服务器，完美支持php后端程序</li>
+<li>使用 <strong>fis release --dest ./output --md5</strong> 命令为所有静态资源文件（js、css、图片、flash等）添加md5戳，并修改文件中的引用路径</li>
+<li>使用 <strong>fis release --dest ./output --optimize</strong> 命令对js、css、html、htm文件进行压缩（后续还会加上对图片的自动压缩）</li>
+<li>编译中对 <strong>js</strong>、 <strong>css</strong> 以及 <strong>类html</strong> ( <em>html, htm, xhtml, tpl, php, jsp, asp</em> ) 文件分别支持三种扩展语言能力：
+
+<ul>
+<li>
+<strong>资源定位</strong>：获取任何开发中所使用资源的线上路径；</li>
+<li>
+<strong>内容嵌入</strong>：把一个文件的内容(文本)或者base64编码(图片)嵌入到另一个文件中；</li>
+<li>
+<strong>依赖声明</strong>：在一个文本文件内标记对其他文件的依赖关系；</li>
+</ul>
+</li>
+</ol><p>以上功能可满足传统前端开发所需的基本要求</p>
+
+<h2>
+<a name="%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="octicon octicon-link"></span></a>使用配置文件</h2>
+
+<p>在项目目录下新建一个 <strong>fis-conf.js</strong> 文件，我们可以对fis的编译系统做各种定制化配置。配置fis系统的接口是：</p>
+
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
+</pre></div>
+
+<p>或者</p>
+
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({...});</span>
+</pre></div>
+
+<p>由于fis自动化工具采用nodejs作为平台，因此其配置文件也是js书写的。fis变量是全局注册，config属性是fis系统的配置对象实例，merge或set方法用以合并配置数据。</p>
+
+<h3>
+<a name="%E5%86%85%E7%BD%AE%E7%9A%84%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#%E5%86%85%E7%BD%AE%E7%9A%84%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE"><span class="octicon octicon-link"></span></a>内置的默认配置</h3>
+
+<p>由于fis系统是完全插件化的，因此fis.config对象会有一些内置配置用以为用户提供零配置下的基本功能，所以配置文件中使用<code>fis.config.merge</code> 或者 <code>fis.config.set</code> 接口来追加用户配置。而内部初始化的配置数是：</p>
+
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+    <span class="nx">project</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">charset</span> <span class="o">:</span> <span class="s1">'utf8'</span><span class="p">,</span>
+        <span class="nx">md5Length</span> <span class="o">:</span> <span class="mi">7</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<h3>
+<a name="projectcharset" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#projectcharset"><span class="octicon octicon-link"></span></a>project.charset</h3>
+
+<ul>
+<li>解释：指定项目编译后产出文件的编码。</li>
+<li>值类型：<code>string</code>
+</li>
+<li>默认值：'utf8'</li>
+<li>
+<p>用法：在项目的fis-conf.js里可以覆盖为
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'project.charset'</span><span class="p">,</span> <span class="s1">'gbk'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">project</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">charset</span> <span class="o">:</span> <span class="s1">'gbk'</span> <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="projectmd5length" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#projectmd5length"><span class="octicon octicon-link"></span></a>project.md5Length</h3>
+
+<ul>
+<li>解释：文件MD5戳长度。</li>
+<li>值类型：<code>number</code>
+</li>
+<li>默认值：7</li>
+<li>
+<p>用法：在项目的fis-conf.js里可以修改为
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'project.md5Length'</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">project</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">md5Length</span> <span class="o">:</span> <span class="mi">8</span> <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="projectmd5connector" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#projectmd5connector"><span class="octicon octicon-link"></span></a>project.md5Connector</h3>
+
+<ul>
+<li>解释：设置md5与文件的连字符。</li>
+<li>值类型：<code>string</code>
+</li>
+<li>默认值：'_'</li>
+<li>
+<p>用法：在项目的fis-conf.js里可以修改为
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'project.md5Connector '</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">project</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">md5Connector</span> <span class="o">:</span> <span class="s1">'.'</span> <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="projectinclude" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#projectinclude"><span class="octicon octicon-link"></span></a>project.include</h3>
+
+<ul>
+<li>解释：设置项目源码文件include过滤器。只有命中include的文件才被视为源码，其他文件则忽略。</li>
+<li>值类型：<code>string</code> | <code>RegExp</code>
+</li>
+<li>默认值：无</li>
+<li>
+<p>用法：在项目的fis-conf.js里可以修改为
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'project.include'</span><span class="p">,</span> <span class="s1">'src/**'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">project</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">include</span> <span class="o">:</span> <span class="s1">'src/**'</span> <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="projectexclude" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#projectexclude"><span class="octicon octicon-link"></span></a>project.exclude</h3>
+
+<ul>
+<li>解释：设置项目源码文件exclude过滤器。如果同时设置了 <a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#projectinclude">project.include</a> 和 <code>project.exclude</code> 则表示在include所命中的文件中排除掉某些文件。</li>
+<li>值类型：<code>string</code> | <code>RegExp</code>
+</li>
+<li>默认值：无</li>
+<li>
+<p>用法：在项目的fis-conf.js里可以修改为
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'project.exclude'</span><span class="p">,</span> <span class="sr">/^\/_build\//i</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">project</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">exclude</span> <span class="o">:</span> <span class="sr">/^\/_build\//i</span> <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="projectfiletypetext" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#projectfiletypetext"><span class="octicon octicon-link"></span></a>project.fileType.text</h3>
+
+<ul>
+<li>解释：追加文本文件后缀列表。</li>
+<li>值类型：<code>Array</code> | <code>string</code>
+</li>
+<li>默认值：无</li>
+<li>说明：fis系统在编译时会对文本文件和图片类二进制文件做不同的处理，文件分类依据是后缀名。虽然内部已列出一些常见的文本文件后缀，但难保用户有其他的后缀文件，内部已列入文本文件后缀的列表为： [ <strong>'css', 'tpl', 'js', 'php', 'txt', 'json', 'xml', 'htm', 'text', 'xhtml', 'html', 'md', 'conf', 'po', 'config', 'tmpl', 'coffee', 'less', 'sass', 'jsp', 'scss', 'manifest', 'bak', 'asp', 'tmp'</strong> ]，用户配置会 <strong>追加</strong>，而非覆盖内部后缀列表。</li>
+<li>
+<p>用法：编辑项目的fis-conf.js配置文件
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'project.fileType.text'</span><span class="p">,</span> <span class="s1">'tpl, js, css'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">project</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">fileType</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="nx">text</span> <span class="o">:</span> <span class="s1">'tpl, js, css'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="projectfiletypeimage" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#projectfiletypeimage"><span class="octicon octicon-link"></span></a>project.fileType.image</h3>
+
+<ul>
+<li>解释：追加图片类二进制文件后缀列表。</li>
+<li>值类型：<code>Array</code> | <code>string</code>
+</li>
+<li>默认值：无</li>
+<li>说明：fis系统在编译时会对文本文件和图片类二进制文件做不同的处理，文件分类依据是后缀名。虽然内部已列出一些常见的图片类二进制文件后缀，但难保用户有其他的后缀文件，内部已列入文本文件后缀的列表为： [ <strong>'svg', 'tif', 'tiff', 'wbmp', 'png', 'bmp', 'fax', 'gif', 'ico', 'jfif', 'jpe', 'jpeg', 'jpg', 'woff', 'cur'</strong> ]，用户配置会 <strong>追加</strong>，而非覆盖内部后缀列表。</li>
+<li>
+<p>用法：编辑项目的fis-conf.js配置文件
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'project.fileType.image'</span><span class="p">,</span> <span class="s1">'swf, cur, ico'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">project</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">fileType</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="nx">image</span> <span class="o">:</span> <span class="s1">'swf, cur, ico'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h2>
+<a name="%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="octicon octicon-link"></span></a>插件配置</h2>
+
+<blockquote>
+<p>fis系统有非常灵活的插件扩展能力，详细内容请参看 <a href="https://github.com/fis-dev/fis/wiki/%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86">运行原理</a>，<a href="https://github.com/fis-dev/fis/wiki/%E6%8F%92%E4%BB%B6%E8%B0%83%E7%94%A8%E6%9C%BA%E5%88%B6">插件调用机制</a>，<a href="https://github.com/fis-dev/fis/wiki/%E6%8F%92%E4%BB%B6%E6%89%A9%E5%B1%95%E7%82%B9%E5%88%97%E8%A1%A8">插件扩展点列表</a>等文档。</p>
+
+<p>fis所有的插件配置都支持定义一个 <strong>数组或者逗号分隔的字符串序列</strong> 来依次处理文件内容。</p>
+</blockquote>
+
+<h3>
+<a name="modulesparser" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#modulesparser"><span class="octicon octicon-link"></span></a>modules.parser</h3>
+
+<ul>
+<li>解释：配置编译器插件，可以根据 <strong>文件后缀</strong> 将某种语言编译成标准的js、css、html语言。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：无</li>
+<li>说明：fis对文件进行编译时，首先进入的是parser阶段，该阶段的定义是： <strong>将非标准语言编译成标准的html、js、css语言</strong>。例如我们可以利用这个阶段的处理把coffee、前端模板文件编译成js，less、sass、compass编译成css。在该阶段配置的插件，实际调用的是 <strong>fis-parser-xxx</strong>，这是fis <a href="https://github.com/fis-dev/fis/wiki/%E6%8F%92%E4%BB%B6%E6%89%A9%E5%B1%95%E7%82%B9%E5%88%97%E8%A1%A8#parser">parser插件命名规范</a> 所约束的。parser插件通常不会内置，如需要相关插件，可以使用npm安装，具体说明请参考文档 <a href="https://github.com/fis-dev/fis/wiki/%E6%8F%92%E4%BB%B6%E8%B0%83%E7%94%A8%E6%9C%BA%E5%88%B6">插件调用机制</a>。由于parser的主要职责是统一标准语言，因此它经常会和 <strong>roadmap.ext</strong> 配置配合使用，用于标记某个后缀的文件在parser阶段之后当做某种标准语言进行处理。</li>
+<li>用法：
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">modules</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">parser</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//coffee后缀的文件使用fis-parser-coffee-script插件编译</span>
+            <span class="nx">coffee</span> <span class="o">:</span> <span class="s1">'coffee-script'</span><span class="p">,</span>
+            <span class="c1">//less后缀的文件使用fis-parser-less插件编译</span>
+            <span class="c1">//处理器支持数组，或者逗号分隔的字符串配置</span>
+            <span class="nx">less</span> <span class="o">:</span> <span class="p">[</span><span class="s1">'less'</span><span class="p">],</span>
+            <span class="c1">//md后缀的文件使用fis-parser-marked插件编译</span>
+            <span class="nx">md</span> <span class="o">:</span> <span class="s1">'marked'</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">roadmap</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">ext</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//less后缀的文件将输出为css后缀</span>
+            <span class="c1">//并且在parser之后的其他处理流程中被当做css文件处理</span>
+            <span class="nx">less</span> <span class="o">:</span> <span class="s1">'css'</span><span class="p">,</span>
+            <span class="c1">//coffee后缀的文件将输出为js文件</span>
+            <span class="c1">//并且在parser之后的其他处理流程中被当做js文件处理</span>
+            <span class="nx">coffee</span> <span class="o">:</span> <span class="s1">'js'</span><span class="p">,</span>
+            <span class="c1">//md后缀的文件将输出为html文件</span>
+            <span class="c1">//并且在parser之后的其他处理流程中被当做html文件处理</span>
+            <span class="nx">md</span> <span class="o">:</span> <span class="s1">'html'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="modulespreprocessor" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#modulespreprocessor"><span class="octicon octicon-link"></span></a>modules.preprocessor</h3>
+
+<ul>
+<li>解释：配置 标准化预处理器插件，可以根据 <strong>文件后缀</strong> 对文件进行预处理。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：无</li>
+<li>说明：标准化预处理的下一个阶段就是标准化处理阶段，标准化处理阶段主要责任是 <a href="https://github.com/fis-dev/fis/wiki/%E4%B8%89%E7%A7%8D%E8%AF%AD%E8%A8%80%E8%83%BD%E5%8A%9B">扩展三种语言能力</a>，因此preprocessor插件可以在标准化处理之前对内容进行某些修改，比如 <a href="https://github.com/fouber/fis-preprocessor-image-set">fis-preprocessor-image-set</a> 插件，用于实现对retina屏的css的image-set属性支持。</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'modules.preprocessor.css'</span><span class="p">,</span> <span class="s1">'image-set'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">modules</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">preprocessor</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//css后缀文件会经过fis-preprocessor-image-set插件的预处理</span>
+            <span class="nx">css</span> <span class="o">:</span> <span class="s1">'image-set'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="modulespostprocessor" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#modulespostprocessor"><span class="octicon octicon-link"></span></a>modules.postprocessor</h3>
+
+<ul>
+<li>解释：在fis对js、css和类html文件进行语言能力扩展之后调用的插件配置，可以根据 <strong>文件后缀</strong> 对文件进行后处理。该阶段的插件可以获取文件对象的完整requires信息。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：
+<div class="highlight"><pre><span class="p">{</span> <span class="nx">js</span> <span class="o">:</span> <span class="s1">'jswrapper'</span> <span class="p">}</span>
+</pre></div>
+</li>
+<li>说明：标准化处理之后，fis已经完成了对前端领域语言的 <a href="https://github.com/fis-dev/fis/wiki/%E4%B8%89%E7%A7%8D%E8%AF%AD%E8%A8%80%E8%83%BD%E5%8A%9B">三种语言能力</a> 扩展，此时文件对象的相关信息已经获取到了，这个阶段我们可以对文件进行一些相关处理，比如amd包装等。fis内置的 <a href="https://github.com/fis-dev/fis-postprocessor-jswrapper">fis-postprocessor- jswrapper</a> 插件就是在这个阶段对js进行包装的。</li>
+<li>用法：类似 <a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#modulespreprocessor">modules.preprocessor</a>
+</li>
+</ul><h3>
+<a name="moduleslint" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#moduleslint"><span class="octicon octicon-link"></span></a>modules.lint</h3>
+
+<ul>
+<li>解释：单文件编译过程中的代码检查插件。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：无</li>
+<li>说明：fis支持在文件进行编译的过程中进行代码检查，这类插件 <strong>不会对文件内容做任何修改</strong>。fis模块内置没有安装任何校验插件，用户如果需要，可以自行开发，并发布到npm上。</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'modules.lint.js'</span><span class="p">,</span> <span class="s1">'jshint'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">modules</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">lint</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//js后缀文件会经过fis-lint-jshint插件的代码校验检查</span>
+            <span class="nx">js</span> <span class="o">:</span> <span class="s1">'jshint'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="modulestest" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#modulestest"><span class="octicon octicon-link"></span></a>modules.test</h3>
+
+<ul>
+<li>解释：单文件编译过程中的自动测试插件。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：无</li>
+<li>说明：fis支持在文件进行编译的过程中进行自动化测试，这类插件 <strong>不会对文件内容做任何修改</strong>。fis模块没有内置任何测试插件，用户如果需要，可以自行开发，并发布到npm上。</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'modules.test.js'</span><span class="p">,</span> <span class="s1">'phantomjs'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">modules</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">test</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//js后缀文件会经过fis-test-phantomjs插件的测试</span>
+            <span class="nx">js</span> <span class="o">:</span> <span class="s1">'phantomjs'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="modulesoptimizer" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#modulesoptimizer"><span class="octicon octicon-link"></span></a>modules.optimizer</h3>
+
+<ul>
+<li>解释：单文件编译过程中的最后阶段，对文件进行优化。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：
+<div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">js</span> <span class="o">:</span> <span class="s1">'uglify-js'</span><span class="p">,</span>
+    <span class="nx">css</span> <span class="o">:</span> <span class="s1">'clean-css'</span><span class="p">,</span>
+    <span class="nx">png</span> <span class="o">:</span> <span class="s1">'png-compressor'</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>说明：单文件编译的最后阶段，可以对代码进行优化，通常是压缩、xss修复等工作，fis内置了3个压缩插件： <a href="https://github.com/fis-dev/fis-optimizer-uglify-js">fis-optimizer-uglify-js</a>、<a href="https://github.com/fis-dev/fis-optimizer-clean-css">fis-optimizer-clean-css</a>、<a href="https://github.com/fis-dev/fis-optimizer-html-minifier">fis-optimizer-html-minifier</a>。</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'modules.optimizer.js'</span><span class="p">,</span> <span class="s1">'uglify-js'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">modules</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">optimizer</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//js后缀文件会经过fis-optimizer-uglify-js插件的压缩优化</span>
+            <span class="nx">js</span> <span class="o">:</span> <span class="s1">'uglify-js'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="modulesprepackager" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#modulesprepackager"><span class="octicon octicon-link"></span></a>modules.prepackager</h3>
+
+<ul>
+<li>解释：打包预处理插件。</li>
+<li>值类型：<code>Array</code> | <code>string</code>
+</li>
+<li>默认值：无</li>
+<li>说明：在fis打包操作前调用的插件， <strong>不管调用fis release命令时是否使用 --pack 参数，该插件均会被调用</strong>。</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'modules.prepackager'</span><span class="p">,</span> <span class="s1">'oo, xx'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">modules</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="c1">//打包前调用fis-prepackager-oo和fis-prepackager-xx插件进行处理</span>
+        <span class="nx">prepackager</span> <span class="o">:</span> <span class="s1">'oo, xx'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="modulespackager" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#modulespackager"><span class="octicon octicon-link"></span></a>modules.packager</h3>
+
+<ul>
+<li>解释：打包处理插件。</li>
+<li>值类型：<code>Array</code> | <code>string</code>
+</li>
+<li>默认值：'map', fis内置了打包插件 <code>fis-packager-map</code>，生成 <strong>map.json</strong> 文件</li>
+<li>说明：调用fis release命令时，添加 <strong>--pack</strong> 参数，该插件才会被调用。</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'modules.packager'</span><span class="p">,</span> <span class="s1">'your_packager'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">modules</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="c1">//打包调用fis-packager-your_packager插件进行处理</span>
+        <span class="nx">packager</span> <span class="o">:</span> <span class="s1">'your_packager'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="modulesspriter" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#modulesspriter"><span class="octicon octicon-link"></span></a>modules.spriter</h3>
+
+<ul>
+<li>解释：打包后处理csssprite的插件。</li>
+<li>值类型：<code>Array</code> | <code>string</code>
+</li>
+<li>默认值：'csssprites'，fis内置了spriter插件 <code>fis-spriter-csssprites</code>，支持自动css打包</li>
+<li>说明：调用fis release命令时，添加 <strong>--pack</strong> 参数，该插件才会被调用。</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'modules.spriter'</span><span class="p">,</span> <span class="s1">'your_spriter'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">modules</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="c1">//打包后调用fis-spriter-your_spriter插件进行css sprites化处理</span>
+        <span class="nx">spriter</span> <span class="o">:</span> <span class="s1">'your_spriter'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="modulespostpackager" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#modulespostpackager"><span class="octicon octicon-link"></span></a>modules.postpackager</h3>
+
+<ul>
+<li>解释：打包后处理插件。</li>
+<li>值类型：<code>Array</code> | <code>string</code>
+</li>
+<li>默认值：无</li>
+<li>说明：在fis打包操作后调用的插件， <strong>不管调用fis release命令时是否使用 --pack 参数，该插件均会被调用</strong>。</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'modules.postpackager'</span><span class="p">,</span> <span class="s1">'your_postpackager'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">modules</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="c1">//打包后调用fis-postpackager-your_postpackager插件进行处理</span>
+        <span class="nx">postpackager</span> <span class="o">:</span> <span class="s1">'your_postpackager'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="settings" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settings"><span class="octicon octicon-link"></span></a>settings</h3>
+
+<ul>
+<li>解释：插件的运行配置节点。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：无</li>
+<li>说明：插件要工作，偶尔也需要配置数据，比如fis内置的<a href="https://github.com/fis-dev/fis-optimizer-uglify-js/blob/master/index.js#L12">fis-optimizer-uglify-js</a>、<a href="https://github.com/fis-dev/fis-optimizer-clean-css/blob/master/index.js#L11">fis-optimizer-clean-css</a>、<a href="https://github.com/fis-dev/fis-optimizer-html-minifier/blob/master/index.js#L11">fis-optimizer-html-minifier</a>插件，它们的配置都是fis直接传递的，具体细节可以查看相应源码。配置节点具有很强的规律性，请参考下面的例子，小编就不一一枚举了。</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'settings.optimizer.uglify-js.output.max_line_len'</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'settings.optimizer.clean-css.keepBreaks'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">settings</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">optimizer</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//fis-optimizer-uglify-js插件的配置数据</span>
+            <span class="s1">'uglify-js'</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="nx">output</span> <span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">max_line_len</span> <span class="o">:</span> <span class="mi">500</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="c1">//fis-optimizer-clean-css插件的配置数据</span>
+            <span class="s1">'clean-css'</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="nx">keepBreaks</span> <span class="o">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h2>
+<a name="%E5%86%85%E7%BD%AE%E6%8F%92%E4%BB%B6%E8%BF%90%E8%A1%8C%E9%85%8D%E7%BD%AE" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#%E5%86%85%E7%BD%AE%E6%8F%92%E4%BB%B6%E8%BF%90%E8%A1%8C%E9%85%8D%E7%BD%AE"><span class="octicon octicon-link"></span></a>内置插件运行配置</h2>
+
+<h3>
+<a name="settingspostprocessorjswrapper" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingspostprocessorjswrapper"><span class="octicon octicon-link"></span></a>settings.postprocessor.jswrapper</h3>
+
+<ul>
+<li>项目：<a href="https://github.com/fis-dev/fis-postprocessor-jswrapper">https://github.com/fis-dev/fis-postprocessor-jswrapper</a>
+</li>
+<li>解释：用于自动包装js代码的插件。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：无</li>
+<li>选项：
+
+<ul>
+<li>
+<code>type</code>：包装方式。可选值目前只有 'amd'，amd包装结构请参考 <a href="https://github.com/fis-dev/fis-postprocessor-jswrapper/blob/master/index.js#L16">这里</a>，非amd包装结构参考 <a href="https://github.com/fis-dev/fis-postprocessor-jswrapper/blob/master/index.js#L20">这里</a>
+</li>
+<li>"template"：使用模板来定义包装结构，对template属性的设置优先级高于type属性。</li>
+<li>
+<code>wrapAll</code>：是否包装所有js文件。默认是false，只对标记为 <code>isMod</code> 的文件进行包装</li>
+</ul>
+</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'settings.postprocessor.jswrapper.template'</span><span class="p">,</span> <span class="s1">'try{ ${content} }catch(e){e.message+="${id}";throw e;}'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">settings</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">postprocessor</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="nx">jswrapper</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="nx">template</span> <span class="o">:</span> <span class="s1">'try{ ${content} }catch(e){ e.message += "${id}"; throw e; }'</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="settingsoptimizeruglify-js" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingsoptimizeruglify-js"><span class="octicon octicon-link"></span></a>settings.optimizer.uglify-js</h3>
+
+<ul>
+<li>项目：<a href="https://github.com/fis-dev/fis-optimizer-uglify-js">https://github.com/fis-dev/fis-optimizer-uglify-js</a>
+</li>
+<li>解释：uglify-js压缩器配置。fis-optimizer-uglify-js 插件内置了 <a href="https://github.com/mishoo/UglifyJS2">uglify-js</a> 包，并调用了它的 <a href="https://github.com/mishoo/UglifyJS2/blob/master/tools/node.js#L52">minify</a> 接口，把配置选项直接传递过去。因此，fis的配置完全等价于uglify-js的minify函数所需的配置</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：无</li>
+<li>选项：
+
+<ul>
+<li>
+<code>mangle</code>：混淆控制，参看uglify-js文档 <a href="http://lisperator.net/uglifyjs/mangle">mangle</a> 部分</li>
+<li>
+<code>output</code>：输出控制，参看uglify-js文档 <a href="http://lisperator.net/uglifyjs/codegen">codegen</a> 部分</li>
+<li>
+<code>compress</code>：优化参数，参看uglify-js文档 <a href="http://lisperator.net/uglifyjs/compress">compress</a> 部分</li>
+</ul>
+</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="c1">//配置字符串全部转换为ascii字符</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'settings.optimizer.uglify-js.output.ascii_only'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//配置字符串全部转换为ascii字符</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">settings</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">optimizer</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s1">'uglify-js'</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="nx">output</span> <span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">ascii_only</span> <span class="o">:</span> <span class="kc">true</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="settingsoptimizerclean-css" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingsoptimizerclean-css"><span class="octicon octicon-link"></span></a>settings.optimizer.clean-css</h3>
+
+<ul>
+<li>项目：<a href="https://github.com/fis-dev/fis-optimizer-clean-css">https://github.com/fis-dev/fis-optimizer-clean-css</a>
+</li>
+<li>解释：clean-css压缩器配置。fis-optimizer-clean-css 插件调用 <a href="https://github.com/GoalSmashers/clean-css">clean-css</a> 的压缩接口进行压缩，fis负责把 <code>settings.optimizer.clean-css</code> 配置节点的数据传递给压缩器，因此，这里的配置完全等价于clean-css的运行配置。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：无</li>
+<li>选项：参看clean-css的 <a href="https://github.com/GoalSmashers/clean-css#how-to-use-clean-css-programmatically">文档</a>
+</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="c1">//配置压缩css时保留换行</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'settings.optimizer.clean-css.keepBreaks'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//配置压缩css时保留换行</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">settings</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">optimizer</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s1">'clean-css'</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="nx">keepBreaks</span> <span class="o">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="settingsoptimizerpng-compressor" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingsoptimizerpng-compressor"><span class="octicon octicon-link"></span></a>settings.optimizer.png-compressor</h3>
+
+<ul>
+<li>项目：<a href="https://github.com/fis-dev/fis-optimizer-png-compressor">https://github.com/fis-dev/fis-optimizer-png-compressor</a>
+</li>
+<li>解释：png图片压缩器运行配置。fis团队将 <code>pngquant</code> 和 <code>pngcrush</code> 两个优秀的png图片压缩工具移植为nodejs的原生扩展（<a href="https://github.com/xiangshouding/node-pngcrush">node-pngcrush</a>与<a href="https://github.com/xiangshouding/node-pngquant-native">node-pngquant-native</a>），相比同类型工具采用进程调用的方式更高性能，压缩速度更快。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：无</li>
+<li>选项：
+
+<ul>
+<li>
+<code>type</code>：选择压缩器类型，默认是 'pngcrush'，可选值为 'pngquant'，pngquant会将所有 <code>png24</code> 的图片压缩为 <code>png8</code>，压缩率极高，但alpha通道信息会有损失。</li>
+</ul>
+</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="c1">//使用pngquant进行压缩，png图片压缩后均为png8</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'settings.optimizer.png-compressor.type'</span><span class="p">,</span> <span class="s1">'quant'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//使用pngquant进行压缩，png图片压缩后均为png8</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">settings</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">optimizer</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s1">'png-compressor'</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="nx">type</span> <span class="o">:</span> <span class="s1">'quant'</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="settingsspritercsssprites" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingsspritercsssprites"><span class="octicon octicon-link"></span></a>settings.spriter.csssprites</h3>
+
+<ul>
+<li>项目：<a href="https://github.com/fis-dev/fis-spriter-csssprites">https://github.com/fis-dev/fis-spriter-csssprites</a>
+</li>
+<li>解释：csssprite处理运行配置，以css文件为单位，对其引用的png、gif、jpg、jpeg等图片进行csssprite合并处理。<a href="https://github.com/zhangyuanwei">@zhangyuanwei</a> 同学将常用图片处理库的c++版本移植为nodejs的原生扩展，得到npm包 <a href="https://npmjs.org/package/node-images">node-images</a>，fis团队在此基础上进行包装，开发出了这款十分易用的csssprite插件。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>
+<p>默认值：
+</p>
+<div class="highlight"><pre><span class="p">{</span>
+    <span class="nx">margin</span>       <span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nx">layout</span>       <span class="o">:</span> <span class="s1">'linear'</span><span class="p">,</span>
+    <span class="nx">width_limit</span>  <span class="o">:</span> <span class="mi">10240</span><span class="p">,</span>
+    <span class="nx">height_limit</span> <span class="o">:</span> <span class="mi">10240</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>选项：</p>
+
+<ul>
+<li>
+<code>margin</code>：图之间的边距，单位像素。</li>
+<li>
+<code>layout</code>：布局算法，默认是 'linear'，图片垂直布局，水平方向无需 <code>遮盖处理</code> 。可选项还有 <code>matrix</code>，图片矩阵布局，面积最小化，但需要提供额外的dom控制水平方向图片的遮盖处理</li>
+</ul>
+</li>
+<li>注意：使用csssprite需要满足以下条件
+
+<ol>
+<li>使用release命令时，添加 <code>-p</code> 或者 <code>--pack</code> 参数。由于csssprite处理需要消耗一定的计算资源，并且开发过程中并不需要时刻做图片合并，因此fis将其定义为打包处理流程，启动csssprite处理需要指定--pack参数。</li>
+<li>只有 <a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#pack">打包的css文件</a> 或者 <a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#roadmappath">roadmap.path</a> 中 <code>useSprite</code> 属性标记为 <code>true</code> 的文件才会进行csssprite处理，因此请合理安排要进行csssprite处理的文件，尽量对合并后的文件做处理。</li>
+<li>在css中引用图片时，只要加上 <code>?__sprite</code> 这个query标记就可以使用csssprite了。详情请参考fis-spriter-csssprites插件的 <a href="https://github.com/fis-dev/fis-spriter-csssprites#%E4%BD%BF%E7%94%A8">使用文档</a>。</li>
+</ol>
+</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="c1">//使用矩阵布局</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'settings.spriter.csssprites.layout'</span><span class="p">,</span> <span class="s1">'matrix'</span><span class="p">);</span>
+</pre></div>
+
+<p>或者
+</p>
+<div class="highlight"><pre><span class="c1">//使用矩阵布局</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">settings</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">spriter</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="nx">csssprites</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="nx">layout</span> <span class="o">:</span> <span class="s1">'matrix'</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h2>
+<a name="%E7%9B%AE%E5%BD%95%E8%A7%84%E8%8C%83%E4%B8%8E%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#%E7%9B%AE%E5%BD%95%E8%A7%84%E8%8C%83%E4%B8%8E%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE"><span class="octicon octicon-link"></span></a>目录规范与域名配置</h2>
+
+<h3>
+<a name="roadmappath" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#roadmappath"><span class="octicon octicon-link"></span></a>roadmap.path</h3>
+
+<ul>
+<li>解释：定制项目文件属性，包括但不限于 <strong>产出路径，访问url，资源id，默认依赖，文件类型</strong>。</li>
+<li>值类型：<code>Array</code>
+</li>
+<li>默认值：无</li>
+<li>说明：roadmap.path配置是fis编译系中非常核心的机制，使用它可以控制文件编译后发布的路径或访问的url、操纵文件属性、为fis产出的资源表添加扩展信息，它的 <a href="https://github.com/fouber/fis-kernel/blob/master/lib/uri.js#L45-L67">实现原理</a> 也很简单：当fis创建一个内部的 <a href="https://github.com/fouber/fis-kernel/blob/master/lib/file.js#L130">file对象</a> 时，会利用roadmap.path来匹配文件路径，如果命中，则将当前规则下的属性及其值赋给file对象，从而影响file对象的相关信息(发布路径、访问url、资源表属性等)。roadmap.path是fis系统中资源定位的核心能力，具有非常重要的意义。由于fis自动化工具接管了js、css和类html语言的 <strong>资源定位能力</strong>，因此，用户在开发时只需使用相对路径对资源进行引用，fis编译时会根据roadmap.path的配置调整引用内容，并将代码产出到配置指定的位置，一切都配合的非常完美！</li>
+<li>支持的配置项：
+
+<ul>
+<li>
+<code>reg</code>：用于匹配文件路径的正则(RegExp)或通配(String)。文件路径是相对项目根目录的路径，以 <code>/</code> 开头。</li>
+<li>
+<code>release</code>：设置文件的产出路径。默认是文件相对项目根目录的路径，以 <code>/</code> 开头。该值可以设置为 <code>false</code> ，表示为不产出（unreleasable）文件。</li>
+<li>
+<code>url</code>：指定文件的资源定位路径，以 <code>/</code> 开头。默认是 <code>release</code> 的值，url可以与发布路径 <code>release</code> 不一致。</li>
+<li>
+<code>query</code>：指定文件的资源定位路径之后的query，比如'?t=123124132'。</li>
+<li>
+<code>id</code>：指定文件的资源id。默认是 <code>namespace</code> + <code>subpath</code> 的值。</li>
+<li>
+<code>charset</code>：指定文本文件的输出编码。默认是 <code>utf8</code>，可以制定为 <code>gbk</code> 或 <code>gb2312</code>等。</li>
+<li>
+<code>isHtmlLike</code>：指定对文件进行html相关的 <a href="https://github.com/fis-dev/fis/wiki/%E4%B8%89%E7%A7%8D%E8%AF%AD%E8%A8%80%E8%83%BD%E5%8A%9B">语言能力扩展</a>
+</li>
+<li>
+<code>isJsLike</code>：指定对文件进行js相关的 <a href="https://github.com/fis-dev/fis/wiki/%E4%B8%89%E7%A7%8D%E8%AF%AD%E8%A8%80%E8%83%BD%E5%8A%9B">语言能力扩展</a>
+</li>
+<li>
+<code>isCssLike</code>：指定对文件进行css相关的 <a href="https://github.com/fis-dev/fis/wiki/%E4%B8%89%E7%A7%8D%E8%AF%AD%E8%A8%80%E8%83%BD%E5%8A%9B">语言能力扩展</a>
+</li>
+<li>
+<code>useCompile</code>：指定文件是否经过fis的编译处理，如果为false，则该文件不会做任何编译处理。</li>
+<li>
+<code>useHash</code>：指定文件产出后是否添加md5戳。默认只有js、css、图片文件会添加。</li>
+<li>
+<code>useDomain</code>：指定文件引用处是否添加域名。</li>
+<li>
+<code>useCache</code>：指定文件编译过程中是否创建缓存，默认值是 <code>true</code>。</li>
+<li>
+<code>useMap</code>：指定fis在打包阶段是否将文件加入到map.json中索引。默认只有isJsLike、isCssLike、isMod的文件会加入表中</li>
+<li>
+<code>useParser</code>：指定文件是否经过parser插件处理。默认为true，值为 <code>false</code> 时才会关闭。</li>
+<li>
+<code>usePreprocessor</code>：指定文件是否经过preprocessor插件处理。默认为true，值为 <code>false</code> 时才会关闭。</li>
+<li>
+<code>useStandard</code>：指定文件是否经过内置的三种语言标准化流程处理。默认为true，值为 <code>false</code> 时才会关闭。</li>
+<li>
+<code>usePostprocessor</code>：指定文件是否经过postprocessor插件处理。默认为true，值为 <code>false</code> 时才会关闭。</li>
+<li>
+<code>useLint</code>：指定文件是否经过lint插件处理。默认为true，值为 <code>false</code> 时才会关闭。</li>
+<li>
+<code>useTest</code>：指定文件是否经过test插件处理。默认为true，值为 <code>false</code> 时才会关闭。</li>
+<li>
+<code>useOptimizer</code>：指定文件是否经过optimizer插件处理</li>
+<li>
+<code>useSprite</code>：指定文件是否进行csssprite处理。默认是 <code>false</code>，即不对单个文件进行csssprite操作的，而只对合并后的文件进行。fis release中使用 <code>--pack</code> 参数即可触发csssprite操作。</li>
+<li>
+<code>isMod</code>：标记文件为组件化文件。被标记成组件化的文件会入map.json表。并且会对js文件进行组件化包装。</li>
+<li>
+<code>extras</code>：在map.json中的附加数据，用于扩展map.json表的功能。</li>
+<li>
+<code>requires</code>：默认依赖的资源id表，类型为Array。</li>
+</ul>
+</li>
+<li>用法：
+<div class="highlight"><pre><span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">roadmap</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">path</span> <span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="c1">//所有widget目录下的js文件</span>
+                <span class="nx">reg</span> <span class="o">:</span> <span class="s1">'widget/**.js'</span><span class="p">,</span>
+                <span class="c1">//是模块化的js文件（标记为这种值的文件，会进行amd或者闭包包装）</span>
+                <span class="nx">isMod</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="c1">//默认依赖lib.js</span>
+                <span class="nx">requires</span> <span class="o">:</span> <span class="p">[</span> <span class="s1">'lib.js'</span> <span class="p">],</span>
+                <span class="c1">//向产出的map.json文件里附加一些信息</span>
+                <span class="nx">extras</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">say</span> <span class="o">:</span> <span class="s1">'123'</span> <span class="p">},</span>
+                <span class="c1">//编译后产出到 /static/widget/xxx 目录下</span>
+                <span class="nx">release</span> <span class="o">:</span> <span class="s1">'/static$&amp;'</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="c1">//所有的js文件</span>
+                <span class="nx">reg</span> <span class="o">:</span> <span class="s1">'**.js'</span><span class="p">,</span>
+                <span class="c1">//发布到/static/js/xxx目录下</span>
+                <span class="nx">release</span> <span class="o">:</span> <span class="s1">'/static/js$&amp;'</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="c1">//所有的ico文件</span>
+                <span class="nx">reg</span> <span class="o">:</span> <span class="s1">'**.ico'</span><span class="p">,</span>
+                <span class="c1">//发布的时候即使加了--md5参数也不要生成带md5戳的文件</span>
+                <span class="nx">useHash</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="c1">//发布到/static/xxx目录下</span>
+                <span class="nx">release</span> <span class="o">:</span> <span class="s1">'/static$&amp;'</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="c1">//所有image目录下的.png，.gif文件</span>
+                <span class="nx">reg</span> <span class="o">:</span> <span class="sr">/^\/images\/(.*\.(?:png|gif))/i</span><span class="p">,</span>
+                <span class="c1">//访问这些图片的url是 '/m/xxxx?log_id=123'</span>
+                <span class="nx">url</span> <span class="o">:</span> <span class="s1">'/m/$1?log_id=123'</span><span class="p">,</span>
+                <span class="c1">//发布到/static/pic/xxx目录下</span>
+                <span class="nx">release</span> <span class="o">:</span> <span class="s1">'/static/pic/$1'</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="c1">//所有template目录下的.php文件</span>
+                <span class="nx">reg</span> <span class="o">:</span> <span class="sr">/^\/template\/(.*\.php)/i</span><span class="p">,</span>
+                <span class="c1">//是类html文件，会进行html语言能力扩展</span>
+                <span class="nx">isHtmlLike</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="c1">//发布为gbk编码文件</span>
+                <span class="nx">charset</span> <span class="o">:</span> <span class="s1">'gbk'</span><span class="p">,</span>
+                <span class="c1">//发布到/php/template/xxx目录下</span>
+                <span class="nx">release</span> <span class="o">:</span> <span class="s1">'/php/template/$1'</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="c1">//前面规则未匹配到的其他文件</span>
+                <span class="nx">reg</span> <span class="o">:</span> <span class="sr">/.*/</span><span class="p">,</span>
+                <span class="c1">//编译的时候不要产出了</span>
+                <span class="nx">release</span> <span class="o">:</span> <span class="kc">false</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="roadmapext" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#roadmapext"><span class="octicon octicon-link"></span></a>roadmap.ext</h3>
+
+<ul>
+<li>解释：指定后缀名与标准化语言的映射关系。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：无</li>
+<li>说明：fis允许在前端开发中使用less、coffee、utc等非标准语言，并能利用插件将它们编译成标准的js、css语言。这个过程是由modules.parser配置的插件处理的。编译之后，less会变成css文件，那么，后续对于css的处理应该同样可以适用于less的生成文件，因此，这个时候需要通过配置告诉fis，less文件会编译为css文件，并在后续的处理过程中当做css文件对待。</li>
+<li>用法：
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">roadmap</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">ext</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//less后缀的文件将输出为css后缀</span>
+            <span class="c1">//并且在parser之后的其他处理流程中被当做css文件处理</span>
+            <span class="nx">less</span> <span class="o">:</span> <span class="s1">'css'</span><span class="p">,</span>
+            <span class="c1">//coffee后缀的文件将输出为js文件</span>
+            <span class="c1">//并且在parser之后的其他处理流程中被当做js文件处理</span>
+            <span class="nx">coffee</span> <span class="o">:</span> <span class="s1">'js'</span><span class="p">,</span>
+            <span class="c1">//md后缀的文件将输出为html文件</span>
+            <span class="c1">//并且在parser之后的其他处理流程中被当做html文件处理</span>
+            <span class="nx">md</span> <span class="o">:</span> <span class="s1">'html'</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+</ul><h3>
+<a name="roadmapdomain" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#roadmapdomain"><span class="octicon octicon-link"></span></a>roadmap.domain</h3>
+
+<ul>
+<li>解释：设置静态资源的域名前缀。</li>
+<li>值类型：<code>Object</code> | <code>string</code>
+</li>
+<li>默认值：无</li>
+<li>说明：fis扩展了html、js、css的<a href="https://github.com/fis-dev/fis/wiki/%E4%B8%89%E7%A7%8D%E8%AF%AD%E8%A8%80%E8%83%BD%E5%8A%9B">三种语言能力</a>，并支持对资源的定位，定位包括 <strong>开发路径与发布路径的映射关系</strong> 以及 <strong>静态资源服务器域名设置</strong>。roadmap.domain节点就是用于控制该能力的配置。</li>
+<li>注意：domain的值如果不是特殊需要，请 <strong>不要以"/"结尾</strong>。</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="c1">//用法一</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">roadmap</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="c1">//所有静态资源文件都使用 http://s1.example.com 或者 http://s2.example.com 作为域名</span>
+        <span class="nx">domain</span> <span class="o">:</span> <span class="s1">'http://s1.example.com, http://s2.example.com'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+<span class="c1">//用法二</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">roadmap</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">domain</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//widget目录下的所有css文件使用 http://css1.example.com 作为域名</span>
+            <span class="s1">'widget/**.css'</span> <span class="o">:</span> <span class="s1">'http://css1.example.com'</span><span class="p">,</span>
+            <span class="c1">//所有的js文件使用 http://js1.example.com 或者  http://js2.example.com 作为域名</span>
+            <span class="s1">'**.js'</span> <span class="o">:</span> <span class="p">[</span><span class="s1">'http://js1.example.com'</span><span class="p">,</span> <span class="s1">'http://js2.example.com'</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+编译时使用fis release的 <code>--domains</code> 参数来控制是否添加domain
+
+
+<div class="highlight"><pre><span class="nv">$ </span>fis release --domains --dest ../output
+</pre></div>
+</li>
+</ul><h3>
+<a name="roadmapdomainimage" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#roadmapdomainimage"><span class="octicon octicon-link"></span></a>roadmap.domain.image</h3>
+
+<ul>
+<li>解释：设置图片资源的域名前缀。</li>
+<li>值类型：<code>Array</code> | <code>string</code>
+</li>
+<li>默认值：无</li>
+<li>说明：由于使用配置roadmap.domain.ext方式来配置图片资源太麻烦，fis提供了image字段，对于符合 <a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#projectfiletypeimage">project.fileType.image</a> 规则的文件，设置相应domain配置。</li>
+<li>
+<p>用法：
+</p>
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">roadmap</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">domain</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//所有图片文件，使用 http://img.example.com 作为域名</span>
+            <span class="s1">'image'</span> <span class="o">:</span> <span class="p">[</span><span class="s1">'http://img.example.com'</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+编译时使用fis release的 <code>--domains</code> 参数来控制是否添加domain
+
+
+<div class="highlight"><pre><span class="nv">$ </span>fis release --domains --dest ../output
+</pre></div>
+</li>
+</ul><h2>
+<a name="%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE"><span class="octicon octicon-link"></span></a>部署配置</h2>
+
+<h3>
+<a name="deploy" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#deploy"><span class="octicon octicon-link"></span></a>deploy</h3>
+
+<ul>
+<li>解释：设置项目的发布方式。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：无</li>
+<li>说明：当使用 fis release 命令时，参数 <strong>--dest &lt;name&gt;</strong> 可以指定项目发布配置。deploy配置是一个key-value的object对象，--dest参数的值如果与配置的key相同，则执行该配置的部署设置。fis支持使用post请求向http服务器发送文件，服务器端可以使用php、java等后端逻辑进行接收，<a href="https://github.com/fis-dev/fis-command-release">fis-command-release</a>插件中提供了一个这样的 <a href="https://github.com/fis-dev/fis-command-release/blob/master/tools/receiver.php">php版示例</a>，用户可以直接部署此文件于接收端服务器上。</li>
+<li>用法：
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">deploy</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="c1">//使用fis release --dest remote来使用这个配置</span>
+        <span class="nx">remote</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//如果配置了receiver，fis会把文件逐个post到接收端上</span>
+            <span class="nx">receiver</span> <span class="o">:</span> <span class="s1">'http://www.example.com/path/to/receiver.php'</span><span class="p">,</span>
+            <span class="c1">//从产出的结果的static目录下找文件</span>
+            <span class="nx">from</span> <span class="o">:</span> <span class="s1">'/static'</span><span class="p">,</span>
+            <span class="c1">//保存到远端机器的/home/fis/www/static目录下</span>
+            <span class="c1">//这个参数会跟随post请求一起发送</span>
+            <span class="nx">to</span> <span class="o">:</span> <span class="s1">'/home/fis/www/'</span><span class="p">,</span>
+            <span class="c1">//通配或正则过滤文件，表示只上传所有的js文件</span>
+            <span class="nx">include</span> <span class="o">:</span> <span class="s1">'**.js'</span><span class="p">,</span>
+            <span class="c1">//widget目录下的那些文件就不要发布了</span>
+            <span class="nx">exclude</span> <span class="o">:</span> <span class="sr">/\/widget\//i</span><span class="p">,</span>
+            <span class="c1">//支持对文件进行字符串替换</span>
+            <span class="nx">replace</span> <span class="o">:</span> <span class="p">{</span>
+                <span class="nx">from</span> <span class="o">:</span> <span class="s1">'http://www.online.com'</span><span class="p">,</span>
+                <span class="nx">to</span> <span class="o">:</span> <span class="s1">'http://www.offline.com'</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="c1">//名字随便取的，没有特殊含义</span>
+        <span class="nx">local</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//from参数省略，表示从发布后的根目录开始上传</span>
+            <span class="c1">//发布到当前项目的上一级的output目录中</span>
+            <span class="nx">to</span> <span class="o">:</span> <span class="s1">'../output'</span>
+        <span class="p">},</span>
+        <span class="c1">//也可以是一个数组</span>
+        <span class="nx">remote2</span> <span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="c1">//将static目录上传到/home/fis/www/webroot下</span>
+                <span class="c1">//上传文件路径为/home/fis/www/webroot/static/xxxx</span>
+                <span class="nx">receiver</span> <span class="o">:</span> <span class="s1">'http://www.example.com/path/to/receiver.php'</span><span class="p">,</span>
+                <span class="nx">from</span> <span class="o">:</span> <span class="s1">'/static'</span><span class="p">,</span>
+                <span class="nx">to</span> <span class="o">:</span> <span class="s1">'/home/fis/www/webroot'</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="c1">//将template目录内的文件（不包括template一级）</span>
+                <span class="c1">//上传到/home/fis/www/tpl下</span>
+                <span class="c1">//上传文件路径为/home/fis/www/tpl/xxxx</span>
+                <span class="nx">receiver</span> <span class="o">:</span> <span class="s1">'http://www.example.com/path/to/receiver.php'</span><span class="p">,</span>
+                <span class="nx">from</span> <span class="o">:</span> <span class="s1">'/template'</span><span class="p">,</span>
+                <span class="nx">to</span> <span class="o">:</span> <span class="s1">'/home/fis/www/tpl'</span><span class="p">,</span>
+                <span class="nx">subOnly</span> <span class="o">:</span> <span class="kc">true</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+<li>小贴士：--dest参数支持使用逗号（,）分割多个发布配置，比如上面的例子，我们可以使用fis release --dest <strong>remote,local,remote2</strong> 命令在一次编译中同时发布多个目标。</li>
+</ul><h2>
+<a name="%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE"><span class="octicon octicon-link"></span></a>打包配置</h2>
+
+<h3>
+<a name="pack" class="anchor" href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#pack"><span class="octicon octicon-link"></span></a>pack</h3>
+
+<ul>
+<li>解释：配置要打包合并的文件。</li>
+<li>值类型：<code>Object</code>
+</li>
+<li>默认值：无</li>
+<li>说明：fis内置的 <a href="https://github.com/fis-dev/fis/wiki/%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86#----1">打包策略</a> 与传统的打包概念不同，fis的打包实际上是在建立一个资源表，并将其描述并产出为一份map.json文件，用户应该围绕着这份描述文件来设计前后端运行框架，从而实现运行时判断打包输出策略的架构。</li>
+<li>用法：
+<div class="highlight"><pre><span class="c1">//fis-conf.js</span>
+<span class="nx">fis</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">merge</span><span class="p">({</span>
+    <span class="nx">pack</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="c1">//打包所有的demo.js, script.js文件</span>
+        <span class="c1">//将内容输出为static/pkg/aio.js文件</span>
+        <span class="s1">'pkg/aio.js'</span> <span class="o">:</span> <span class="p">[</span><span class="s1">'**/demo.js'</span><span class="p">,</span> <span class="sr">/\/script\.js$/i</span><span class="p">],</span>
+        <span class="c1">//打包所有的css文件</span>
+        <span class="c1">//将内容输出为static/pkg/aio.css文件</span>
+        <span class="s1">'pkg/aio.css'</span> <span class="o">:</span> <span class="s1">'**.css'</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+<li>输出结果：使用命令 fis release <strong>--pack</strong> --md5 --dest ./output 编译项目，然后到output目录下查看产出的map.json内容得到：
+<div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">"res"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"demo.css"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/static/css/demo_7defa41.css"</span><span class="p">,</span>
+            <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"css"</span><span class="p">,</span>
+            <span class="nt">"pkg"</span><span class="p">:</span> <span class="s2">"p1"</span>
+        <span class="p">},</span>
+        <span class="nt">"demo.js"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/static/js/demo_33c5143.js"</span><span class="p">,</span>
+            <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"js"</span><span class="p">,</span>
+            <span class="nt">"deps"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"demo.css"</span>
+            <span class="p">],</span>
+            <span class="nt">"pkg"</span><span class="p">:</span> <span class="s2">"p0"</span>
+        <span class="p">},</span>
+        <span class="nt">"index.html"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/index.html"</span><span class="p">,</span>
+            <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"html"</span><span class="p">,</span>
+            <span class="nt">"deps"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"demo.js"</span><span class="p">,</span>
+                <span class="s2">"demo.css"</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">"script.js"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/static/js/script_32300bf.js"</span><span class="p">,</span>
+            <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"js"</span><span class="p">,</span>
+            <span class="nt">"pkg"</span><span class="p">:</span> <span class="s2">"p0"</span>
+        <span class="p">},</span>
+        <span class="nt">"style.css"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/static/css/style_837b297.css"</span><span class="p">,</span>
+            <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"css"</span><span class="p">,</span>
+            <span class="nt">"pkg"</span><span class="p">:</span> <span class="s2">"p1"</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">"pkg"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"p0"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/static/pkg/aio_5bb04ef.js"</span><span class="p">,</span>
+            <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"js"</span><span class="p">,</span>
+            <span class="nt">"has"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"demo.js"</span><span class="p">,</span>
+                <span class="s2">"script.js"</span>
+            <span class="p">],</span>
+            <span class="nt">"deps"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"demo.css"</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">"p1"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">"uri"</span><span class="p">:</span> <span class="s2">"/static/pkg/aio_cdf8bd3.css"</span><span class="p">,</span>
+            <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"css"</span><span class="p">,</span>
+            <span class="nt">"has"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"demo.css"</span><span class="p">,</span>
+                <span class="s2">"style.css"</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+</ul>
+    </div>
+  </div>
+  </div>
+
+</div>
+<div id="gollum-footer">
+  <p id="last-edit">
+    Last edited by 张云龙, <time class="js-relative-date" datetime="2013-12-11T21:53:27-08:00" title="2013-12-11 21:53:27">22 days ago</time>
+  </p>
+</div>
+</div>
+
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="http://developer.github.com/">API</a></li>
+      <li><a href="http://training.github.com/">Training</a></li>
+      <li><a href="http://shop.github.com/">Shop</a></li>
+      <li><a href="https://github.com/blog">Blog</a></li>
+      <li><a href="https://github.com/about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com/">
+      <span class="mega-octicon octicon-mark-github"></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>© 2014 <span title="0.06653s from github-fe118-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy">Privacy</a></li>
+        <li><a href="https://github.com/security">Security</a></li>
+        <li><a href="https://github.com/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+          <div class="suggester-container">
+              <div class="suggester fullscreen-suggester js-navigation-container" id="fullscreen_suggester" data-url="/fis-dev/fis/suggestions/commit">
+              </div>
+          </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#" class="exit-fullscreen js-exit-fullscreen tooltipped leftwards" original-title="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#" class="theme-switcher js-theme-switcher tooltipped leftwards" original-title="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#" class="octicon octicon-remove-close close ajax-error-dismiss"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+  
+
+
+<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" data-clipboard-ready="true" style="position: absolute; left: -9999px; top: -9999px; width: 15px; height: 15px; z-index: 9999;" original-title="">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="https://github.global.ssl.fastly.net/flash/ZeroClipboard.v1.2.1.swf?nocache=1388743594121">         <param name="allowScriptAccess" value="always">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedOrigins=github.com">         <embed src="https://github.global.ssl.fastly.net/flash/ZeroClipboard.v1.2.1.swf?nocache=1388743594122" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="100%" height="100%" name="global-zeroclipboard-flash-bridge" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedOrigins=github.com" scale="exactfit">                </object></div></body></html>

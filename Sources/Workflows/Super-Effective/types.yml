@@ -1,0 +1,160 @@
+---
+Fire:
+  number: '001'
+  supereffective: 'Grass, Ice, Bug, Steel'
+  noneffective: 'Fire, Water, Rock, Dragon'
+  noneffective-from: 'Bug, Fairy, Fire, Grass, Ice, Steel'
+  supereffective-from: 'Ground, Rock, Water'
+  url_name: fire
+
+Bug:
+  number: '002'
+  supereffective: 'Psychic, Grass, Dark'
+  noneffective: 'Fight, Fire, Flying, Ghost, Poison, Steel, Fairy'
+  noneffective-from: 'Fight, Grass, Ground'
+  supereffective-from: 'Fire, Flying, Rock'
+  url_name: bug
+
+Electric:
+  number: '003'
+  supereffective: 'Flying, Water'
+  noneffective: 'Dragon, Electric, Grass'
+  noneffective-from: 'Electric, Flying, Steel'
+  supereffective-from: 'Ground'
+  cant-damage: 'Ground'
+  url_name: electric
+
+Grass:
+  number: '004'
+  supereffective: 'Ground, Rock, Water'
+  noneffective: 'Bug, Dragon, Fire, Flying, Grass, Poison, Steel'
+  noneffective-from: 'Electric, Grass, Ground, Water'
+  supereffective-from: 'Bug, Fire, Flying, Ice, Poison'
+  url_name: grass
+
+Normal:
+  number: '005'
+  supereffective: 'None'
+  noneffective: 'Rock, Steel'
+  noneffective-from: 'None'
+  supereffective-from: 'Fight'
+  cant-damage: 'Ghost'
+  immune-to: 'Ghost'
+  url_name: normal
+
+Rock:
+  number: '006'
+  supereffective: 'Bug, Fire, Flying, Ice'
+  noneffective: 'Fight, Ground, Steel'
+  noneffective-from: 'Fire, Flying, Normal, Poison'
+  supereffective-from: 'Fight, Grass, Ground, Steel, Water'
+  url_name: rock
+
+Dark:
+  number: '007'
+  supereffective: 'Ghost, Psychic'
+  noneffective: 'Dark, Fight, Fairy'
+  noneffective-from: 'Dark, Ghost'
+  supereffective-from: 'Bug, Fight, Fairy'
+  immune-to: 'Psychic'
+  url_name: dark 
+
+Fairy:
+  number: '008'
+  supereffective: 'Dark, Dragon, Fight'
+  noneffective: 'Fire, Poison, Steel'
+  noneffective-from: 'Bug, Dark, Fight'
+  supereffective-from: 'Poison, Steel'
+  immune-to: 'Dragon'
+  url_name: fairy
+
+Flying:
+  number: '009'
+  supereffective: 'Bug, Fight, Grass'
+  noneffective: 'Electric, Rock, Steel'
+  noneffective-from: 'Bug, Fight, Grass'
+  supereffective-from: 'Electric, Ice, Rock'
+  immune-to: 'Ground'
+  url_name: flying
+
+Ground:
+  number: '010'
+  supereffective: 'Electric, Fire, Poison, Rock, Steel'
+  noneffective: 'Bug, Grass'
+  noneffective-from: 'Poison, Rock'
+  supereffective-from: 'Grass, Ice, Water'
+  cant-damage: 'Flying'
+  immune-to: 'Electric'
+  url_name: ground
+
+Poison:
+  number: '011'
+  supereffective: 'Grass, Fairy'
+  noneffective: 'Ghost, Ground, Poison, Rock'
+  noneffective-from: 'Bug, Fairy, Fight, Grass, Poison'
+  supereffective-from: 'Ground, Psychic'
+  cant-damage: 'Steel'
+  url_name: poison
+
+Steel:
+  number: '012'
+  supereffective: 'Fairy, Ice, Rock'
+  noneffective: 'Electric, Fire, Steel, Water'
+  noneffective-from: 'Bug, Dragon, Fairy, Flying, Grass, Ice, Normal, Psychic, Rock, Steel'
+  supereffective-from: 'Fight, Fire, Ground'
+  immune-to: 'Poison'
+  url_name: steel
+
+Dragon:
+  number: '013'
+  supereffective: 'Dragon'
+  noneffective: 'Steel'
+  noneffective-from: 'Electric, Fire, Grass, Water'
+  supereffective-from: 'Dragon, Ice, Fairy'
+  cant-damage: 'Fairy'
+  url_name: dragon
+
+Fighting:
+  number: '014'
+  supereffective: 'Dark, Ice, Normal, Rock, Steel'
+  noneffective: 'Bug, Fairy, Flying, Poison, Psychic'
+  noneffective-from: 'Bug, Dark, Rock'
+  supereffective-from: 'Fairy, Flying, Psychic'
+  cant-damage: 'Ghost'
+  url_name: fighting
+
+Ghost:
+  number: '015'
+  supereffective: 'Ghost, Psychic'
+  noneffective: 'Dark'
+  noneffective-from: 'Bug, Poison'
+  supereffective-from: 'Ghost, Dark'
+  cant-damage: 'Normal'
+  immune-to: 'Normal, Fight'
+  url_name: ghost
+
+Ice:
+  number: '016'
+  supereffective: 'Dragon, Flying, Grass, Ground'
+  noneffective: 'Fire, Ice, Steel, Water'
+  noneffective-from: 'Ice'
+  supereffective-from: 'Fight, Fire, Rock, Steel'
+  url_name: ice
+
+Psychic:
+  number: '017'
+  supereffective: 'Fight, Poison'
+  noneffective: 'Psychic, Steel'
+  noneffective-from: 'Fight, Psychic'
+  supereffective-from: 'Bug, Dark, Ghost'
+  cant-damage: 'Dark'
+  url_name: psychic
+
+Water:
+  number: '018'
+  supereffective: 'Fire, Ground, Rock'
+  noneffective: 'Dragon, Grass, Water'
+  noneffective-from: 'Fire, Ice, Steel, Water'
+  supereffective-from: 'Electric, Grass'
+  url_name: water
+

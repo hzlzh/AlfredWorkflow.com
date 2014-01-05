@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>cn.guoyukun.alfred-switch-network-location</string>
+	<key>connections</key>
+	<dict>
+		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A0F241E7-EC5C-4936-844C-C1ACF06905E1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A0F241E7-EC5C-4936-844C-C1ACF06905E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56B98DC7-9DE3-492B-8C0F-56D4130941CB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>gyk001&lt;gyk001@gmail.com&gt;</string>
+	<key>description</key>
+	<string>快速切换网络位置,支持中文</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>切换网络位置</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>query='{query}'
+title=`echo $query|awk -F ',' '{print $2}'`
+uid=`echo $query|awk -F ',' '{print $1}'`
+scselect $uid &gt; /dev/null
+echo '切换至' $title</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A0F241E7-EC5C-4936-844C-C1ACF06905E1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>loc</string>
+				<key>runningsubtext</key>
+				<string>没有该网络位置</string>
+				<key>script</key>
+				<string>#! /usr/bin/python
+# -*- coding: utf-8 -*-
+import dropdown
+
+if __name__ == '__main__':
+	query='{query}'.strip()
+	print dropdown.buildXml(query)</string>
+				<key>subtext</key>
+				<string>切换网络位置{query}</string>
+				<key>title</key>
+				<string>切换网络位置</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>63F60794-BB56-4415-9372-BAF974C3A7E1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<true/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>网络位置</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>56B98DC7-9DE3-492B-8C0F-56D4130941CB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>快速切换网络位置
+
+网络位置下拉框展示，直接选择，无需键入网络名称
+自动排除当前网络位置，智能方便
+通知中心气泡提示，切换结果一目了然</string>
+	<key>uidata</key>
+	<dict>
+		<key>56B98DC7-9DE3-492B-8C0F-56D4130941CB</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>A0F241E7-EC5C-4936-844C-C1ACF06905E1</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://www.guoyukun.cn/alfred-switch-network-location/</string>
+</dict>
+</plist>

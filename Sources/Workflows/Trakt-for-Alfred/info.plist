@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>de.timbooo.traktforalfred</string>
+	<key>connections</key>
+	<dict>
+		<key>2A0025CF-12DD-4820-B53D-FA117B432F1E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8DCFB11F-591C-4E73-A169-9C269926F37D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4A84E4B0-5AD5-4018-9604-FAF6A44B2FE1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8DCFB11F-591C-4E73-A169-9C269926F37D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>51D2287A-DEC4-4763-BDB3-EA04BBDBF6F5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CDCEF5B2-BCB7-4A89-80AD-F07207AAAD87</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>66DE8641-C7D7-4C1A-B643-AAC4CEC542B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>51D2287A-DEC4-4763-BDB3-EA04BBDBF6F5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Tim Weller</string>
+	<key>description</key>
+	<string>Search for shows, get episode guides etc.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Trakt for Alfred</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>apikey</string>
+				<key>subtext</key>
+				<string>Get it from trakt.tv: Profile -&gt; Settings -&gt; API</string>
+				<key>text</key>
+				<string>Set Trakt API key</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>66DE8641-C7D7-4C1A-B643-AAC4CEC542B4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>require('workflows.php');
+$w = new Workflows();
+
+exec('touch settings.plist');
+
+$apikey = "{query}";
+$apikey = trim($apikey);
+
+if (empty($apikey)) {
+	echo 'Error: API key is empty.';
+} else {
+	$w-&gt;set('apikey', $apikey, 'settings.plist');
+	echo 'API key has been saved.';
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>51D2287A-DEC4-4763-BDB3-EA04BBDBF6F5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Trakt for Alfred</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CDCEF5B2-BCB7-4A89-80AD-F07207AAAD87</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>8DCFB11F-591C-4E73-A169-9C269926F37D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>trakt-trends</string>
+				<key>runningsubtext</key>
+				<string>Requesting trending shows...</string>
+				<key>script</key>
+				<string>php -f traktforalfred.php -- 'trends' '{query}'</string>
+				<key>subtext</key>
+				<string>Show trending shows from trakt.tv</string>
+				<key>title</key>
+				<string>Trakt Trends</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>4A84E4B0-5AD5-4018-9604-FAF6A44B2FE1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>trakt-shows</string>
+				<key>runningsubtext</key>
+				<string>Searching for shows...</string>
+				<key>script</key>
+				<string>php -f traktforalfred.php -- 'shows' '{query}'</string>
+				<key>subtext</key>
+				<string>Search for shows on trakt.tv</string>
+				<key>title</key>
+				<string>Trakt Shows</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2A0025CF-12DD-4820-B53D-FA117B432F1E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>trakt-version</string>
+				<key>script</key>
+				<string>require('workflows.php');
+$w = new Workflows();
+$version = $w-&gt;get('version', 'settings.plist');
+$w-&gt;result('', '', 'Trakt Version', $version, 'icons/info.png');
+echo $w-&gt;toxml();
+</string>
+				<key>subtext</key>
+				<string>Show the version number of Trakt for Alfred...</string>
+				<key>title</key>
+				<string>Trakt Version</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C2F5C8E5-4B04-45F2-8516-D0C64645F5E1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>https://github.com/timbooo/traktforalfred/blob/master/README.md</string>
+	<key>uidata</key>
+	<dict>
+		<key>2A0025CF-12DD-4820-B53D-FA117B432F1E</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>4A84E4B0-5AD5-4018-9604-FAF6A44B2FE1</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>51D2287A-DEC4-4763-BDB3-EA04BBDBF6F5</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>66DE8641-C7D7-4C1A-B643-AAC4CEC542B4</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>8DCFB11F-591C-4E73-A169-9C269926F37D</key>
+		<dict>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>C2F5C8E5-4B04-45F2-8516-D0C64645F5E1</key>
+		<dict>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>CDCEF5B2-BCB7-4A89-80AD-F07207AAAD87</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/timbooo/traktforalfred</string>
+</dict>
+</plist>

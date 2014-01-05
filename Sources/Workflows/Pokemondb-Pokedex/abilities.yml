@@ -1,0 +1,565 @@
+---
+Adaptability:
+  description: 'Powers up moves of the same type.'
+  url_name: 'adaptability'
+Aerialate:
+  description: Turns Normal-type moves into Flying-type moves.
+  url_name: aerialate
+Aftermath:
+  description: Damages the attacker landing the finishing hit.
+  url_name: aftermath
+Air Lock:
+  description: Eliminates the effects of weather.
+  url_name: air-lock
+Analytic:
+  description: Boosts move power when the Pokémon moves last.
+  url_name: analytic
+Anger Point:
+  description: Maxes Attack after taking a critical hit.
+  url_name: anger-point
+Anticipation:
+  description: Senses a foe's dangerous moves.
+  url_name: anticipation
+Arena Trap:
+  description: Prevents the foe from fleeing.
+  url_name: arena-trap
+Aroma Veil:
+  description: Protects allies from attacks that limit their move choices.
+  url_name: aroma-veil
+Aura Break:
+  description: The effects of “Aura” Abilities are reversed.
+  url_name: aura-break
+Bad Dreams:
+  description: Reduces a sleeping foe's HP.
+  url_name: bad-dreams
+Battle Armor:
+  description: The Pokémon is protected against critical hits.
+  url_name: battle-armor
+Big Pecks:
+  description: Protects the Pokémon from Defense-lowering attacks.
+  url_name: big-pecks
+Blaze:
+  description: Powers up Fire-type moves in a pinch.
+  url_name: blaze
+Bulletproof:
+  description: Protects the Pokémon from ball and bomb moves.
+  url_name: bulletproof
+Cheek Pouch:
+  description: Restores additional HP when a Berry is consumed.
+  url_name: cheek-pouch
+Chlorophyll:
+  description: Boosts the Pokémon's Speed in sunshine.
+  url_name: chlorophyll
+Clear Body:
+  description: Prevents other Pokémon from lowering its stats.
+  url_name: clear-body
+Cloud Nine:
+  description: Eliminates the effects of weather.
+  url_name: cloud-nine
+Color Change:
+  description: Changes the Pokémon's type to the foe's move.
+  url_name: color-change
+Competitive:
+  description: Raises Special Attack when the Pokémon's stats are lowered.
+  url_name: competitive
+Compoundeyes:
+  description: The Pokémon's accuracy is boosted.
+  url_name: compoundeyes
+Contrary:
+  description: Makes stat changes have an opposite effect.
+  url_name: contrary
+Cursed Body:
+  description: May disable a move used on the Pokémon.
+  url_name: cursed-body
+Cute Charm:
+  description: Contact with the Pokémon may cause infatuation.
+  url_name: cute-charm
+Damp:
+  description: Prevents the use of self-destructing moves.
+  url_name: damp
+Dark Aura:
+  description: Raises power of Dark type moves for all Pokémon in battle.
+  url_name: dark-aura
+Defeatist:
+  description: Lowers stats when HP becomes half or less.
+  url_name: defeatist
+Defiant:
+  description: When its stats are lowered its Attack increases.
+  url_name: defiant
+Download:
+  description: Adjusts power according to a foe's defenses.
+  url_name: download
+Drizzle:
+  description: The Pokémon makes it rain if it appears in battle.
+  url_name: drizzle
+Drought:
+  description: Turns the sunlight harsh if it is in battle.
+  url_name: drought
+Dry Skin:
+  description: Reduces HP if it is hot. Water restores HP.
+  url_name: dry-skin
+Early Bird:
+  description: The Pokémon awakens quickly from sleep.
+  url_name: early-bird
+Effect Spore:
+  description: Contact may poison or cause paralysis or sleep.
+  url_name: effect-spore
+Fairy Aura:
+  description: Raises power of Fairy type moves for all Pokémon in battle.
+  url_name: fairy-aura
+Filter:
+  description: Reduces damage from supereffective attacks.
+  url_name: filter
+Flame Body:
+  description: Contact with the Pokémon may burn the attacker.
+  url_name: flame-body
+Flare Boost:
+  description: Powers up special attacks when burned.
+  url_name: flare-boost
+Flash Fire:
+  description: It powers up Fire-type moves if it's hit by one.
+  url_name: flash-fire
+Flower Gift:
+  description: Powers up party Pokémon when it is sunny.
+  url_name: flower-gift
+Flower Veil:
+  description: Prevents lowering of ally Grass-type Pokémon's stats.
+  url_name: flower-veil
+Forecast:
+  description: Castform transforms with the weather.
+  url_name: forecast
+Forewarn:
+  description: Determines what moves a foe has.
+  url_name: forewarn
+Friend Guard:
+  description: Reduces damage done to allies.
+  url_name: friend-guard
+Frisk:
+  description: The Pokémon can check a foe's held item.
+  url_name: frisk
+Fur Coat:
+  description: Reduces damage from physical moves.
+  url_name: fur-coat
+Gale Wings:
+  description: Gives priority to Flying-type moves.
+  url_name: gale-wings
+Gluttony:
+  description: Encourages the early use of a held Berry.
+  url_name: gluttony
+Gooey:
+  description: Contact with the Pokémon lowers the attacker's Speed stat.
+  url_name: gooey
+Grass Pelt:
+  description: Boosts the Defense stat in Grassy Terrain.
+  url_name: grass-pelt
+Guts:
+  description: Boosts Attack if there is a status problem.
+  url_name: guts
+Harvest:
+  description: May create another Berry after one is used.
+  url_name: harvest
+Healer:
+  description: May heal an ally's status conditions.
+  url_name: healer
+Heatproof:
+  description: Weakens the power of Fire-type moves.
+  url_name: heatproof
+Heavy Metal:
+  description: Doubles the Pokémon's weight.
+  url_name: heavy-metal
+Honey Gather:
+  description: The Pokémon may gather Honey from somewhere.
+  url_name: honey-gather
+Huge Power:
+  description: Raises the Pokémon's Attack stat.
+  url_name: huge-power
+Hustle:
+  description: Boosts the Attack stat, but lowers accuracy.
+  url_name: hustle
+Hydration:
+  description: Heals status problems if it is raining.
+  url_name: hydration
+Hyper Cutter:
+  description: Prevents other Pokémon from lowering Attack stat.
+  url_name: hyper-cutter
+Ice Body:
+  description: The Pokémon gradually regains HP in a hailstorm.
+  url_name: ice-body
+Illuminate:
+  description: Raises the likelihood of meeting wild Pokémon.
+  url_name: illuminate
+Illusion:
+  description: Comes out disguised as the Pokémon in back.
+  url_name: illusion
+Immunity:
+  description: Prevents the Pokémon from getting poisoned.
+  url_name: immunity
+Imposter:
+  description: It transforms itself into the Pokémon it is facing.
+  url_name: imposter
+Infiltrator:
+  description: Passes through the foe's barrier and strikes.
+  url_name: infiltrator
+Inner Focus:
+  description: The Pokémon is protected from flinching.
+  url_name: inner-focus
+Insomnia:
+  description: Prevents the Pokémon from falling asleep.
+  url_name: insomnia
+Intimidate:
+  description: Lowers the foe's Attack stat.
+  url_name: intimidate
+Iron Barbs:
+  description: Inflicts damage to the Pokémon on contact.
+  url_name: iron-barbs
+Iron Fist:
+  description: Boosts the power of punching moves.
+  url_name: iron-fist
+Justified:
+  description: Raises Attack when hit by a Dark-type move.
+  url_name: justified
+Keen Eye:
+  description: Prevents other Pokémon from lowering accuracy.
+  url_name: keen-eye
+Klutz:
+  description: The Pokémon can't use any held items.
+  url_name: klutz
+Leaf Guard:
+  description: Prevents problems with status in sunny weather.
+  url_name: leaf-guard
+Levitate:
+  description: Gives immunity to Ground type moves.
+  url_name: levitate
+Light Metal:
+  description: Halves the Pokémon's weight.
+  url_name: light-metal
+Lightningrod:
+  description: Draws in all Electric-type moves to up Sp. Attack.
+  url_name: lightningrod
+Limber:
+  description: The Pokémon is protected from paralysis.
+  url_name: limber
+Liquid Ooze:
+  description: Damages attackers using any draining move.
+  url_name: liquid-ooze
+Magic Bounce:
+  description: Reflects status- changing moves.
+  url_name: magic-bounce
+Magic Guard:
+  description: The Pokémon only takes damage from attacks.
+  url_name: magic-guard
+Magician:
+  description: The Pokémon steals the held item of a Pokémon it hits with a move.
+  url_name: magician
+Magma Armor:
+  description: Prevents the Pokémon from becoming frozen.
+  url_name: magma-armor
+Magnet Pull:
+  description: Prevents Steel-type Pokémon from escaping.
+  url_name: magnet-pull
+Marvel Scale:
+  description: Ups Defense if there is a status problem.
+  url_name: marvel-scale
+Mega Launcher:
+  description: Boosts the power of aura and pulse moves.
+  url_name: mega-launcher
+Minus:
+  description: Ups Sp. Atk if another Pokémon has Plus or Minus.
+  url_name: minus
+Mold Breaker:
+  description: Moves can be used regardless of Abilities.
+  url_name: mold-breaker
+Moody:
+  description: Raises one stat and lowers another.
+  url_name: moody
+Motor Drive:
+  description: Raises Speed if hit by an Electric-type move.
+  url_name: motor-drive
+Moxie:
+  description: Boosts Attack after knocking out any Pokémon.
+  url_name: moxie
+Multiscale:
+  description: Reduces damage when HP is full.
+  url_name: multiscale
+Multitype:
+  description: Changes type to match the held Plate.
+  url_name: multitype
+Mummy:
+  description: Contact with this Pokémon spreads this Ability.
+  url_name: mummy
+Natural Cure:
+  description: All status problems heal when it switches out.
+  url_name: natural-cure
+No Guard:
+  description: Ensures attacks by or against the Pokémon land.
+  url_name: no-guard
+Normalize:
+  description: All the Pokémon's moves become the Normal type.
+  url_name: normalize
+Oblivious:
+  description: Prevents it from becoming infatuated.
+  url_name: oblivious
+Overcoat:
+  description: Protects the Pokémon from damage from weather.
+  url_name: overcoat
+Overgrow:
+  description: Powers up Grass-type moves in a pinch.
+  url_name: overgrow
+Own Tempo:
+  description: Prevents the Pokémon from becoming confused.
+  url_name: own-tempo
+Parental Bond:
+  description: Allows the Pokémon to attack twice.
+  url_name: parental-bond
+Pickpocket:
+  description: Steals an item when hit by another Pokémon.
+  url_name: pickpocket
+Pickup:
+  description: The Pokémon may pick up items.
+  url_name: pickup
+Pixilate:
+  description: Turns Normal-type moves into Fairy-type moves.
+  url_name: pixilate
+Plus:
+  description: Ups Sp. Atk if another Pokémon has Plus or Minus.
+  url_name: plus
+Poison Heal:
+  description: Restores HP if the Pokémon is poisoned.
+  url_name: poison-heal
+Poison Point:
+  description: Contact with the Pokémon may poison the attacker.
+  url_name: poison-point
+Poison Touch:
+  description: May poison targets when a Pokémon makes contact.
+  url_name: poison-touch
+Prankster:
+  description: Gives priority to a status move.
+  url_name: prankster
+Pressure:
+  description: The Pokémon raises the foe's PP usage.
+  url_name: pressure
+Protean:
+  description: Changes the Pokémon's type to its last used move.
+  url_name: protean
+Pure Power:
+  description: Raises the Pokémon's Attack stat.
+  url_name: pure-power
+Quick Feet:
+  description: Boosts Speed if there is a status problem.
+  url_name: quick-feet
+Rain Dish:
+  description: The Pokémon gradually regains HP in rain.
+  url_name: rain-dish
+Rattled:
+  description: Bug, Ghost or Dark type moves scare it and boost its Speed.
+  url_name: rattled
+Reckless:
+  description: Powers up moves that have recoil damage.
+  url_name: reckless
+Refrigerate:
+  description: Turns Normal-type moves into Ice-type moves.
+  url_name: refrigerate
+Regenerator:
+  description: Restores a little HP when withdrawn from battle.
+  url_name: regenerator
+Rivalry:
+  description: Deals more damage to a Pokémon of same gender.
+  url_name: rivalry
+Rock Head:
+  description: Protects the Pokémon from recoil damage.
+  url_name: rock-head
+Rough Skin:
+  description: Inflicts damage to the attacker on contact.
+  url_name: rough-skin
+Run Away:
+  description: Enables a sure getaway from wild Pokémon.
+  url_name: run-away
+Sand Force:
+  description: Boosts certain moves' power in a sandstorm.
+  url_name: sand-force
+Sand Rush:
+  description: Boosts the Pokémon's Speed in a sandstorm.
+  url_name: sand-rush
+Sand Stream:
+  description: The Pokémon summons a sandstorm in battle.
+  url_name: sand-stream
+Sand Veil:
+  description: Boosts the Pokémon's evasion in a sandstorm.
+  url_name: sand-veil
+Sap Sipper:
+  description: Boosts Attack when hit by a Grass-type move.
+  url_name: sap-sipper
+Scrappy:
+  description: Enables moves to hit Ghost-type Pokémon.
+  url_name: scrappy
+Serene Grace:
+  description: Boosts the likelihood of added effects appearing.
+  url_name: serene-grace
+Shadow Tag:
+  description: Prevents the foe from escaping.
+  url_name: shadow-tag
+Shed Skin:
+  description: The Pokémon may heal its own status problems.
+  url_name: shed-skin
+Sheer Force:
+  description: Removes added effects to increase move damage.
+  url_name: sheer-force
+Shell Armor:
+  description: The Pokémon is protected against critical hits.
+  url_name: shell-armor
+Shield Dust:
+  description: Blocks the added effects of attacks taken.
+  url_name: shield-dust
+Simple:
+  description: The Pokémon is prone to wild stat changes.
+  url_name: simple
+Skill Link:
+  description: Increases the frequency of multi-strike moves.
+  url_name: skill-link
+Slow Start:
+  description: Temporarily halves Attack and Speed.
+  url_name: slow-start
+Sniper:
+  description: Powers up moves if they become critical hits.
+  url_name: sniper
+Snow Cloak:
+  description: Raises evasion in a hailstorm.
+  url_name: snow-cloak
+Snow Warning:
+  description: The Pokémon summons a hailstorm in battle.
+  url_name: snow-warning
+Solar Power:
+  description: In sunshine, Sp. Atk is boosted but HP decreases.
+  url_name: solar-power
+Solid Rock:
+  description: Reduces damage from supereffective attacks.
+  url_name: solid-rock
+Soundproof:
+  description: Gives immunity to sound-based moves.
+  url_name: soundproof
+Speed Boost:
+  description: Its Speed stat is gradually boosted.
+  url_name: speed-boost
+Stall:
+  description: The Pokémon moves after all other Pokémon do.
+  url_name: stall
+Stance Change:
+  description: The Pokémon changes form depending on how it battles.
+  url_name: stance-change
+Static:
+  description: Contact with the Pokémon may cause paralysis.
+  url_name: static
+Steadfast:
+  description: Raises Speed each time the Pokémon flinches.
+  url_name: steadfast
+Stench:
+  description: The stench may cause the target to flinch.
+  url_name: stench
+Sticky Hold:
+  description: Protects the Pokémon from item theft.
+  url_name: sticky-hold
+Storm Drain:
+  description: Draws in all Water-type moves to up Sp. Attack.
+  url_name: storm-drain
+Strong Jaw:
+  description: Boosts the power of biting moves.
+  url_name: strong-jaw
+Sturdy:
+  description: It cannot be knocked out with one hit.
+  url_name: sturdy
+Suction Cups:
+  description: Negates all moves that force switching out.
+  url_name: suction-cups
+Super Luck:
+  description: Heightens the critical-hit ratios of moves.
+  url_name: super-luck
+Swarm:
+  description: Powers up Bug-type moves in a pinch.
+  url_name: swarm
+Sweet Veil:
+  description: Prevents the Pokémon and allies from falling asleep.
+  url_name: sweet-veil
+Swift Swim:
+  description: Boosts the Pokémon's Speed in rain.
+  url_name: swift-swim
+Symbiosis:
+  description: The Pokémon can pass an item to an ally.
+  url_name: symbiosis
+Synchronize:
+  description: Passes a burn, poison, or paralysis to the foe.
+  url_name: synchronize
+Tangled Feet:
+  description: Raises evasion if the Pokémon is confused.
+  url_name: tangled-feet
+Technician:
+  description: Powers up the Pokémon's weaker moves.
+  url_name: technician
+Telepathy:
+  description: Anticipates an ally's attack and dodges it.
+  url_name: telepathy
+Teravolt:
+  description: Moves can be used regardless of Abilities.
+  url_name: teravolt
+Thick Fat:
+  description: Ups resistance to Fire- and Ice-type moves.
+  url_name: thick-fat
+Tinted Lens:
+  description: Powers up “not very effective” moves.
+  url_name: tinted-lens
+Torrent:
+  description: Powers up Water-type moves in a pinch.
+  url_name: torrent
+Tough Claws:
+  description: Boosts the power of contact moves.
+  url_name: tough-claws
+Toxic Boost:
+  description: Powers up physical attacks when poisoned.
+  url_name: toxic-boost
+Trace:
+  description: The Pokémon copies a foe's Ability.
+  url_name: trace
+Truant:
+  description: Pokémon can't attack on consecutive turns.
+  url_name: truant
+Turboblaze:
+  description: Moves can be used regardless of Abilities.
+  url_name: turboblaze
+Unaware:
+  description: Ignores any stat changes in the Pokémon.
+  url_name: unaware
+Unburden:
+  description: Raises Speed if a held item is used.
+  url_name: unburden
+Unnerve:
+  description: Makes the foe nervous and unable to eat Berries.
+  url_name: unnerve
+Victory Star:
+  description: Boosts the accuracy of its allies and itself.
+  url_name: victory-star
+Vital Spirit:
+  description: Prevents the Pokémon from falling asleep.
+  url_name: vital-spirit
+Volt Absorb:
+  description: Restores HP if hit by an Electric-type move.
+  url_name: volt-absorb
+Water Absorb:
+  description: Restores HP if hit by a Water-type move.
+  url_name: water-absorb
+Water Veil:
+  description: Prevents the Pokémon from getting a burn.
+  url_name: water-veil
+Weak Armor:
+  description: Physical attacks lower Defense and raise Speed.
+  url_name: weak-armor
+White Smoke:
+  description: Prevents other Pokémon from lowering its stats.
+  url_name: white-smoke
+Wonder Guard:
+  description: Only supereffective moves will hit.
+  url_name: wonder-guard
+Wonder Skin:
+  description: Makes status-changing moves more likely to miss.
+  url_name: wonder-skin
+Zen Mode:
+  description: Changes the Pokémon's shape when HP is halved.
+  url_name: zen-mode

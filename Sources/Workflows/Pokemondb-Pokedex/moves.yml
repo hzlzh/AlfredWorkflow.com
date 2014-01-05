@@ -1,0 +1,5483 @@
+---
+Absorb:
+  type: Grass
+  category: Special
+  power: '20'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '-'
+  description: User recovers half the HP inflicted on opponent.
+Acid:
+  type: Poison
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '10'
+  description: May lower opponent's Special Defense.
+Acid Armor:
+  type: Poison
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Sharply raises user's Defense.
+Acid Spray:
+  type: Poison
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '100'
+  description: Sharply lowers opponent's Special Defense.
+Acrobatics:
+  type: Flying
+  category: Physical
+  power: '55'
+  accuracy: '100'
+  pp: '15'
+  tm: TM62
+  probability: '-'
+  description: Stronger when the user does not have a held item.
+Acupressure:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Sharply raises a random stat.
+Aerial Ace:
+  type: Flying
+  category: Physical
+  power: '60'
+  accuracy: '&infin;'
+  pp: '20'
+  tm: TM40
+  probability: '-'
+  description: Ignores Accuracy and Evasiveness.
+Aeroblast:
+  type: Flying
+  category: Special
+  power: '100'
+  accuracy: '95'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+After You:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Gives target priority in the next turn.
+Agility:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Sharply raises user's Speed.
+Air Cutter:
+  type: Flying
+  category: Special
+  power: '60'
+  accuracy: '95'
+  pp: '25'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+Air Slash:
+  type: Flying
+  category: Special
+  power: '75'
+  accuracy: '95'
+  pp: '20'
+  tm: 
+  probability: '30'
+  description: May cause flinching.
+Ally Switch:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm:
+  probability: '-'
+  description: User switches with opposite teammate.
+Amnesia:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Sharply raises user's Special Defense.
+AncientPower:
+  type: Rock
+  category: Special
+  power: '60'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '10'
+  description: May raise all user's stats at once.
+Aqua Jet:
+  type: Water
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: User attacks first.
+Aqua Ring:
+  type: Water
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Restores a little HP each turn.
+Aqua Tail:
+  type: Water
+  category: Physical
+  power: '90'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: ''
+Arm Thrust:
+  type: Fighting
+  category: Physical
+  power: '15'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Aromatherapy:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Cures all status problems in your party.
+Aromatic Mist:
+  type: Fairy
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Raises Special Defense of allies.
+Assist:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: In a Double Battle, user randomly attacks with a partner's move.
+Assurance:
+  type: Dark
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Power doubles if opponent already took damage in the same turn.
+Astonish:
+  type: Ghost
+  category: Physical
+  power: '30'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '30'
+  description: May cause flinching.
+Attack Order:
+  type: Bug
+  category: Physical
+  power: '90'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+Attract:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: TM45
+  probability: '-'
+  description: If opponent is the opposite gender, it's less likely to attack.
+Aura Sphere:
+  type: Fighting
+  category: Special
+  power: '80'
+  accuracy: '&infin;'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Ignores Accuracy and Evasiveness.
+Aurora Beam:
+  type: Ice
+  category: Special
+  power: '65'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '10'
+  description: May lower opponent's Attack.
+Autotomize:
+  type: Steel
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Halves weight and sharply raises Speed.
+Avalanche:
+  type: Ice
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Power doubles if user took damage first.
+Baby-Doll Eyes:
+  type: Fairy
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Always goes first. Lowers the target's attack.
+Barrage:
+  type: Normal
+  category: Physical
+  power: '15'
+  accuracy: '85'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Barrier:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Sharply raises user's Defense.
+Baton Pass:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: User switches out and gives stat changes to the incoming Pokémon.
+Beat Up:
+  type: Dark
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Each Pokémon in your party attacks.
+Belch:
+  type: Poison
+  category: Special
+  power: '120'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Requires a held Berry to attack.
+Belly Drum:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User loses 50% of its max HP, but Attack raises to maximum.
+Bestow:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Gives the user's held item to the target.
+Bide:
+  type: Normal
+  category: Physical
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User takes damage for two turns then strikes back double.
+Bind:
+  type: Normal
+  category: Physical
+  power: '15'
+  accuracy: '85'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Traps opponent, damaging them for 4-5 turns.
+Bite:
+  type: Dark
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '30'
+  description: May cause flinching.
+Blast Burn:
+  type: Fire
+  category: Special
+  power: '150'
+  accuracy: '90'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User must recharge next turn.
+Blaze Kick:
+  type: Fire
+  category: Physical
+  power: '85'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '10'
+  description: High critical hit ratio. May burn opponent.
+Blizzard:
+  type: Ice
+  category: Special
+  power: '110'
+  accuracy: '70'
+  pp: '5'
+  tm: TM14
+  probability: '10'
+  description: May freeze opponent.
+Block:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Opponent cannot flee or switch.
+Blue Flare:
+  type: Fire
+  category: Special
+  power: '130'
+  accuracy: '85'
+  pp: '5'
+  tm: 
+  probability: '20'
+  description: May burn opponent.
+Body Slam:
+  type: Normal
+  category: Physical
+  power: '85'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '30'
+  description: May paralyze opponent.
+Bolt Strike:
+  type: Electric
+  category: Physical
+  power: '130'
+  accuracy: '85'
+  pp: '5'
+  tm: 
+  probability: '20'
+  description: May paralyze opponent.
+Bone Club:
+  type: Ground
+  category: Physical
+  power: '65'
+  accuracy: '85'
+  pp: '20'
+  tm: 
+  probability: '10'
+  description: May cause flinching.
+Bone Rush:
+  type: Ground
+  category: Physical
+  power: '25'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Bonemerang:
+  type: Ground
+  category: Physical
+  power: '50'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Hits twice in one turn.
+Boomburst:
+  type: Normal
+  category: Special
+  power: '140'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Hits all adjacent Pokémon.
+Bounce:
+  type: Flying
+  category: Physical
+  power: '85'
+  accuracy: '85'
+  pp: '5'
+  tm: 
+  probability: '30'
+  description: Springs up on first turn, attacks on second. May paralyze opponent.
+Brave Bird:
+  type: Flying
+  category: Physical
+  power: '120'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: User receives recoil damage.
+Brick Break:
+  type: Fighting
+  category: Physical
+  power: '75'
+  accuracy: '100'
+  pp: '15'
+  tm: TM31
+  probability: '-'
+  description: Breaks through Reflect and Light Screen barriers.
+Brine:
+  type: Water
+  category: Special
+  power: '65'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Power doubles if opponent's HP is less than 50%.
+Bubble:
+  type: Water
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '10'
+  description: May lower opponent's Speed.
+BubbleBeam:
+  type: Water
+  category: Special
+  power: '65'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '10'
+  description: May lower opponent's Speed.
+Bug Bite:
+  type: Bug
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Receives the effect from the opponent's held berry.
+Bug Buzz:
+  type: Bug
+  category: Special
+  power: '90'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '10'
+  description: May lower opponent's Special Defense.
+Bulk Up:
+  type: Fighting
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: TM08
+  probability: '-'
+  description: Raises user's Attack and Defense.
+Bulldoze:
+  type: Ground
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '20'
+  tm: TM78
+  probability: '100'
+  description: Lowers opponent's Speed.
+Bullet Punch:
+  type: Steel
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: User attacks first.
+Bullet Seed:
+  type: Grass
+  category: Physical
+  power: '25'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Calm Mind:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: TM04
+  probability: '-'
+  description: Raises user's Special Attack and Special Defense.
+Camouflage:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Changes user's type according to the location.
+Captivate:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Sharply lowers opponent's Special Attack if opposite gender.
+Charge:
+  type: Electric
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Raises user's Special Defense and next Electric move's power increases.
+Charge Beam:
+  type: Electric
+  category: Special
+  power: '50'
+  accuracy: '90'
+  pp: '10'
+  tm: TM57
+  probability: '70'
+  description: May raise user's Special Attack.
+Charm:
+  type: Fairy
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Sharply lowers opponent's Attack.
+Chatter:
+  type: Flying
+  category: Special
+  power: '65'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '100'
+  description: Confuses opponent.
+Chip Away:
+  type: Normal
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Ignores opponent's stat changes.
+Circle Throw:
+  type: Fighting
+  category: Physical
+  power: '60'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: In battles, the opponent switches. In the wild, the Pokémon runs.
+Clamp:
+  type: Water
+  category: Physical
+  power: '35'
+  accuracy: '85'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Traps opponent, damaging them for 4-5 turns.
+Clear Smog:
+  type: Poison
+  category: Special
+  power: '50'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Removes all of the target's stat changes.
+Close Combat:
+  type: Fighting
+  category: Physical
+  power: '120'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Lowers user's Defense and Special Defense.
+Coil:
+  type: Poison
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Raises user's Attack, Defense and Accuracy.
+Comet Punch:
+  type: Normal
+  category: Physical
+  power: '18'
+  accuracy: '85'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Confide:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 'TM100'
+  probability: '-'
+  description: Lowers opponent's Special Attack.
+Confuse Ray:
+  type: Ghost
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Confuses opponent.
+Confusion:
+  type: Psychic
+  category: Special
+  power: '50'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '10'
+  description: May confuse opponent.
+Constrict:
+  type: Normal
+  category: Physical
+  power: '10'
+  accuracy: '100'
+  pp: '35'
+  tm: 
+  probability: '10'
+  description: May lower opponent's Speed by one stage.
+Conversion:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Changes user's type to a type of one of its own moves.
+Conversion 2:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: User changes type to become resistant to opponent's last move.
+Copycat:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Copies opponent's last move.
+Cosmic Power:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Raises user's Defense and Special Defense.
+Cotton Guard:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Drastically raises user's Defense.
+Cotton Spore:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Sharply lowers opponent's Speed.
+Counter:
+  type: Fighting
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: When hit by a Physical Attack, user strikes back with 2x power.
+Covet:
+  type: Normal
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '-'
+  description: Opponent's item is stolen by the user.
+Crabhammer:
+  type: Water
+  category: Physical
+  power: '100'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+Crafty Shield:
+  type: Fairy
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Protects the Pokémon from status moves.
+Cross Chop:
+  type: Fighting
+  category: Physical
+  power: '100'
+  accuracy: '80'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+Cross Poison:
+  type: Poison
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '10'
+  description: High critical hit ratio. May poison opponent.
+Crunch:
+  type: Dark
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '20'
+  description: May lower opponent's Defense.
+Crush Claw:
+  type: Normal
+  category: Physical
+  power: '75'
+  accuracy: '95'
+  pp: '10'
+  tm: 
+  probability: '50'
+  description: May lower opponent's Defense.
+Crush Grip:
+  type: Normal
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: More powerful when opponent has higher HP.
+Curse:
+  type: Ghost
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Ghosts lose 50% of max HP and curse the opponent; Non-Ghosts raise
+    Attack, Defense and lower Speed.
+Cut:
+  type: Normal
+  category: Physical
+  power: '50'
+  accuracy: '95'
+  pp: '30'
+  tm: HM01
+  probability: '-'
+  description: ''
+Dark Pulse:
+  type: Dark
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '15'
+  tm: 'TM97'
+  probability: '20'
+  description: May cause flinching.
+Dark Void:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '80'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Puts all adjacent opponents to sleep.
+Dazzling Gleam:
+  type: Fairy
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '10'
+  tm: 'TM99'
+  probability: '-'
+  description: Hits all adjacent opponents.
+Defend Order:
+  type: Bug
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Raises user's Defense and Special Defense.
+Defense Curl:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Raises user's Defense.
+Defog:
+  type: Flying
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Evasiveness and clears fog.
+Destiny Bond:
+  type: Ghost
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: If the user faints, the opponent also faints.
+Detect:
+  type: Fighting
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Opponent's attack doesn't affect you, but may fail if used often.
+Dig:
+  type: Ground
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '10'
+  tm: TM28
+  probability: '-'
+  description: Digs underground on first turn, attacks on second. Can also escape
+    from caves.
+Disable:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Opponent can't use its last attack for a few turns.
+Disarming Voice:
+  type: Fairy
+  category: Special
+  power: '40'
+  accuracy: '&infin;'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Ignores Accuracy and Evasiveness.
+Discharge:
+  type: Electric
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '30'
+  description: May paralyze opponent.
+Dive:
+  type: Water
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '10'
+  tm: HM06
+  probability: '-'
+  description: Dives underwater on first turn, attacks on second turn.
+Dizzy Punch:
+  type: Normal
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '20'
+  description: May confuse opponent.
+Doom Desire:
+  type: Steel
+  category: Special
+  power: '140'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Damage occurs 2 turns later.
+Double Hit:
+  type: Normal
+  category: Physical
+  power: '35'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Hits twice in one turn.
+Double Kick:
+  type: Fighting
+  category: Physical
+  power: '30'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Hits twice in one turn.
+Double Team:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: TM32
+  probability: '-'
+  description: Raises user's Evasiveness.
+Double-Edge:
+  type: Normal
+  category: Physical
+  power: '120'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: User receives recoil damage.
+DoubleSlap:
+  type: Normal
+  category: Physical
+  power: '15'
+  accuracy: '85'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Draco Meteor:
+  type: Dragon
+  category: Special
+  power: '130'
+  accuracy: '90'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Sharply lowers user's Special Attack.
+Dragon Claw:
+  type: Dragon
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '15'
+  tm: TM02
+  probability: '-'
+  description: ''
+Dragon Dance:
+  type: Dragon
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Raises user's Attack and Speed.
+Dragon Pulse:
+  type: Dragon
+  category: Special
+  power: '85'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: ''
+Dragon Rage:
+  type: Dragon
+  category: Special
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Always inflicts 40 HP.
+Dragon Rush:
+  type: Dragon
+  category: Physical
+  power: '100'
+  accuracy: '75'
+  pp: '10'
+  tm: 
+  probability: '20'
+  description: May cause flinching.
+Dragon Tail:
+  type: Dragon
+  category: Physical
+  power: '60'
+  accuracy: '90'
+  pp: '10'
+  tm: TM82
+  probability: '-'
+  description: In battles, the opponent switches. In the wild, the Pokémon runs.
+DragonBreath:
+  type: Dragon
+  category: Special
+  power: '60'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '30'
+  description: May paralyze opponent.
+Drain Punch:
+  type: Fighting
+  category: Physical
+  power: '75'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User recovers half the HP inflicted on opponent.
+Draining Kiss:
+  type: Fairy
+  category: Special
+  power: '50'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User recovers most the HP inflicted on opponent.
+Dream Eater:
+  type: Psychic
+  category: Special
+  power: '100'
+  accuracy: '100'
+  pp: '15'
+  tm: TM85
+  probability: '-'
+  description: User recovers half the HP inflicted on a sleeping opponent.
+Drill Peck:
+  type: Flying
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: ''
+Drill Run:
+  type: Ground
+  category: Physical
+  power: '80'
+  accuracy: '95'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+Dual Chop:
+  type: Dragon
+  category: Physical
+  power: '40'
+  accuracy: '90'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Hits twice in one turn.
+DynamicPunch:
+  type: Fighting
+  category: Physical
+  power: '100'
+  accuracy: '50'
+  pp: '5'
+  tm: 
+  probability: '100'
+  description: Confuses opponent.
+Earth Power:
+  type: Ground
+  category: Special
+  power: '90'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '10'
+  description: May lower opponent's Special Defense.
+Earthquake:
+  type: Ground
+  category: Physical
+  power: '100'
+  accuracy: '100'
+  pp: '10'
+  tm: TM26
+  probability: '-'
+  description: Power is doubled if opponent is underground from using Dig.
+Echoed Voice:
+  type: Normal
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '15'
+  tm: TM49
+  probability: '-'
+  description: Power increases each turn.
+Eerie Impulse:
+  type: Electric
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Sharply lowers opponent's Special Attack.
+Egg Bomb:
+  type: Normal
+  category: Physical
+  power: '100'
+  accuracy: '75'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: ''
+Electric Terrain:
+  type: Electric
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Prevents all Pokémon from falling asleep for 5 turns.
+Electrify:
+  type: Electric
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Changes the target's move to Electric type.
+Electro Ball:
+  type: Electric
+  category: Special
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: The faster the user, the stronger the attack.
+Electroweb:
+  type: Electric
+  category: Special
+  power: '55'
+  accuracy: '95'
+  pp: '15'
+  tm: 
+  probability: '100'
+  description: Lowers opponent's Speed.
+Embargo:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: TM63
+  probability: '-'
+  description: Opponent cannot use items.
+Ember:
+  type: Fire
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '10'
+  description: May burn opponent.
+Encore:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Forces opponent to keep using its last move for 3 turns.
+Endeavor:
+  type: Normal
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Reduces opponent's HP to same as user's.
+Endure:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Always left with at least 1 HP, but may fail if used consecutively.
+Energy Ball:
+  type: Grass
+  category: Special
+  power: '90'
+  accuracy: '100'
+  pp: '10'
+  tm: TM53
+  probability: '10'
+  description: May lower opponent's Special Defense.
+Entrainment:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Makes target's ability same as user's.
+Eruption:
+  type: Fire
+  category: Special
+  power: '150'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Stronger when the user's HP is higher.
+Explosion:
+  type: Normal
+  category: Physical
+  power: '250'
+  accuracy: '100'
+  pp: '5'
+  tm: TM64
+  probability: '-'
+  description: User faints.
+Extrasensory:
+  type: Psychic
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '10'
+  description: May cause flinching.
+ExtremeSpeed:
+  type: Normal
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User attacks first.
+Facade:
+  type: Normal
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '20'
+  tm: TM42
+  probability: '-'
+  description: Power doubles if user is burned, poisoned, or paralyzed.
+Faint Attack:
+  type: Dark
+  category: Physical
+  power: '60'
+  accuracy: '&infin;'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Ignores Accuracy and Evasiveness.
+Fairy Lock:
+  type: Fairy
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Prevents fleeing in the next turn.
+Fairy Wind:
+  type: Fairy
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: ''
+Fake Out:
+  type: Normal
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '100'
+  description: User attacks first, foe flinches. Only usable on first turn.
+Fake Tears:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Sharply lowers opponent's Special Defense.
+False Swipe:
+  type: Normal
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '40'
+  tm: TM54
+  probability: '-'
+  description: Always leaves opponent with at least 1 HP.
+FeatherDance:
+  type: Flying
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Sharply lowers opponent's Attack.
+Feint:
+  type: Normal
+  category: Physical
+  power: '30'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Only hits if opponent uses Protect or Detect in the same turn.
+Fell Stinger:
+  type: Bug
+  category: Physical
+  power: '30'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '-'
+  description: Sharply raises user's Attack if target is KO'd.
+Fiery Dance:
+  type: Fire
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '50'
+  description: May raise user's Special Attack.
+Final Gambit:
+  type: Fighting
+  category: Special
+  power: '-'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Inflicts damage equal to the user's remaining HP. User faints.
+Fire Blast:
+  type: Fire
+  category: Special
+  power: '110'
+  accuracy: '85'
+  pp: '5'
+  tm: TM38
+  probability: '10'
+  description: May burn opponent.
+Fire Fang:
+  type: Fire
+  category: Physical
+  power: '65'
+  accuracy: '95'
+  pp: '15'
+  tm: 
+  probability: '10'
+  description: May cause flinching and/or burn opponent.
+Fire Pledge:
+  type: Fire
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Added effects appear if combined with Grass Pledge or Water Pledge.
+Fire Punch:
+  type: Fire
+  category: Physical
+  power: '75'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '10'
+  description: May burn opponent.
+Fire Spin:
+  type: Fire
+  category: Special
+  power: '35'
+  accuracy: '85'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Traps opponent, damaging them for 4-5 turns.
+Fissure:
+  type: Ground
+  category: Physical
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: One-Hit-KO, if it hits.
+Flail:
+  type: Normal
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: The lower the user's HP, the higher the power.
+Flame Burst:
+  type: Fire
+  category: Special
+  power: '70'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: May also injure nearby Pokémon.
+Flame Charge:
+  type: Fire
+  category: Physical
+  power: '50'
+  accuracy: '100'
+  pp: '20'
+  tm: TM43
+  probability: '100'
+  description: Raises user's Speed.
+Flame Wheel:
+  type: Fire
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '10'
+  description: May burn opponent.
+Flamethrower:
+  type: Fire
+  category: Special
+  power: '90'
+  accuracy: '100'
+  pp: '15'
+  tm: TM35
+  probability: '10'
+  description: May burn opponent.
+Flare Blitz:
+  type: Fire
+  category: Physical
+  power: '120'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '10'
+  description: User receives recoil damage. May burn opponent.
+Flash:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: TM70
+  probability: '-'
+  description: Lowers opponent's Accuracy.
+Flash Cannon:
+  type: Steel
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '10'
+  tm: TM91
+  probability: '10'
+  description: May lower opponent's Special Defense.
+Flatter:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Confuses opponent, but raises its Special Attack by two stages.
+Fling:
+  type: Dark
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: TM56
+  probability: '-'
+  description: Power depends on held item.
+Flower Shield:
+  type: Fairy
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Sharply raises Defense of all Grass-type Pokémon on the field.
+Fly:
+  type: Flying
+  category: Physical
+  power: '90'
+  accuracy: '95'
+  pp: '15'
+  tm: HM02
+  probability: '-'
+  description: Flies up on first turn, attacks on second turn.
+Flying Press:
+  type: Fighting
+  category: Physical
+  power: '80'
+  accuracy: '95'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Deals Fighting and Flying type damage.
+Focus Blast:
+  type: Fighting
+  category: Special
+  power: '120'
+  accuracy: '70'
+  pp: '5'
+  tm: TM52
+  probability: '10'
+  description: May lower opponent's Special Defense.
+Focus Energy:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Increases critical hit ratio.
+Focus Punch:
+  type: Fighting
+  category: Physical
+  power: '150'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: If the user is hit before attacking, it flinches instead.
+Follow Me:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: In Double Battle, the user takes all the attacks.
+Force Palm:
+  type: Fighting
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '30'
+  description: May paralyze opponent.
+Foresight:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Resets opponent's Evasiveness, Normal-type and Fighting-type attacks
+    can now hit Ghosts, and Ghost-type attacks hit Normal.
+Forest's Curse:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Adds Grass type to opponent.
+Foul Play:
+  type: Dark
+  category: Physical
+  power: '95'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Uses the opponent's Attack stat.
+Freeze Shock:
+  type: Ice
+  category: Physical
+  power: '140'
+  accuracy: '90'
+  pp: '5'
+  tm: 
+  probability: '30'
+  description: Charges on first turn, attacks on second. May paralyze opponent.
+Freeze-Dry:
+  type: Ice
+  category: Special
+  power: '70'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: May freeze opponent. Super-effective against Water types.
+Frenzy Plant:
+  type: Grass
+  category: Special
+  power: '150'
+  accuracy: '90'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User must recharge next turn.
+Frost Breath:
+  type: Ice
+  category: Special
+  power: '60'
+  accuracy: '90'
+  pp: '10'
+  tm: TM79
+  probability: '100'
+  description: Always results in a critical hit.
+Frustration:
+  type: Normal
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: TM21
+  probability: '-'
+  description: Power decreases with higher Happiness.
+Fury Attack:
+  type: Normal
+  category: Physical
+  power: '15'
+  accuracy: '85'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Fury Cutter:
+  type: Bug
+  category: Physical
+  power: '40'
+  accuracy: '95'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Power increases each turn.
+Fury Swipes:
+  type: Normal
+  category: Physical
+  power: '18'
+  accuracy: '80'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Fusion Bolt:
+  type: Electric
+  category: Physical
+  power: '100'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Power increases if Fusion Flare is used in the same turn.
+Fusion Flare:
+  type: Fire
+  category: Special
+  power: '100'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Power increases if Fusion Bolt is used in the same turn.
+Future Sight:
+  type: Psychic
+  category: Special
+  power: '120'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Damage occurs 2 turns later.
+Gastro Acid:
+  type: Poison
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Cancels out the effect of the opponent's Ability.
+Gear Grind:
+  type: Steel
+  category: Physical
+  power: '50'
+  accuracy: '85'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Hits twice in one turn.
+Geomancy:
+  type: Fairy
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Charges on first turn, sharply raises user's Sp. Attack, Sp. Defense
+    and Speed on the second.
+Giga Drain:
+  type: Grass
+  category: Special
+  power: '75'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User recovers half the HP inflicted on opponent.
+Giga Impact:
+  type: Normal
+  category: Physical
+  power: '150'
+  accuracy: '90'
+  pp: '5'
+  tm: TM68
+  probability: '-'
+  description: User must recharge next turn.
+Glaciate:
+  type: Ice
+  category: Special
+  power: '65'
+  accuracy: '95'
+  pp: '10'
+  tm: 
+  probability: '100'
+  description: Lowers opponent's Speed.
+Glare:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Paralyzes opponent.
+Grass Knot:
+  type: Grass
+  category: Special
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: TM86
+  probability: '-'
+  description: The heavier the opponent, the stronger the attack.
+Grass Pledge:
+  type: Grass
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Added effects appear if preceded by Water Pledge or succeeded by Fire
+    Pledge.
+GrassWhistle:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '55'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Puts opponent to sleep.
+Grassy Terrain:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: 'Restores a little HP of all Pokémon for 5 turns. '
+Gravity:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Prevents moves like Fly and Bounce and the Ability Levitate for 5 turns.
+Growl:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Attack.
+Growth:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Raises user's Attack and Special Attack.
+Grudge:
+  type: Ghost
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: If the users faints after using this move, the PP for the opponent's
+    last move is depleted.
+Guard Split:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Averages Defense and Special Defense with the target.
+Guard Swap:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User and opponent swap Defense and Special Defense.
+Guillotine:
+  type: Normal
+  category: Physical
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: One-Hit-KO, if it hits.
+Gunk Shot:
+  type: Poison
+  category: Physical
+  power: '120'
+  accuracy: '80'
+  pp: '5'
+  tm: 
+  probability: '30'
+  description: May poison opponent.
+Gust:
+  type: Flying
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '35'
+  tm: 
+  probability: '-'
+  description: Hits Pokémon using Fly/Bounce with double power.
+Gyro Ball:
+  type: Steel
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '5'
+  tm: TM74
+  probability: '-'
+  description: The slower the opponent, the stronger the attack.
+Hail:
+  type: Ice
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: TM07
+  probability: '-'
+  description: Non-Ice types are damaged for 5 turns.
+Hammer Arm:
+  type: Fighting
+  category: Physical
+  power: '100'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Lowers user's Speed.
+Happy Hour:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Doubles prize money from trainer battles.
+Harden:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Raises user's Defense.
+Haze:
+  type: Ice
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Resets all stat changes.
+Head Charge:
+  type: Normal
+  category: Physical
+  power: '120'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: User receives recoil damage.
+Head Smash:
+  type: Rock
+  category: Physical
+  power: '150'
+  accuracy: '80'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User receives recoil damage.
+Headbutt:
+  type: Normal
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '30'
+  description: May cause flinching.
+Heal Bell:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Heals the user's party's status conditions.
+Heal Block:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Prevents the opponent from restoring HP for 5 turns.
+Heal Order:
+  type: Bug
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Recovers half of the user's max HP.
+Heal Pulse:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Restores half the target's max HP.
+Healing Wish:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: The user faints and the next Pokémon released is fully healed.
+Heart Stamp:
+  type: Psychic
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '30'
+  description: May cause flinching.
+Heart Swap:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Stat changes are swapped with the opponent.
+Heat Crash:
+  type: Fire
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: The heavier the user, the stronger the attack.
+Heat Wave:
+  type: Fire
+  category: Special
+  power: '95'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '10'
+  description: May burn opponent.
+Heavy Slam:
+  type: Steel
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: The heavier the user, the stronger the attack.
+Helping Hand:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: In Double Battles, boosts the power of the partner's move.
+Hex:
+  type: Ghost
+  category: Special
+  power: '65'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Inflicts more damage if the target has a status condition.
+Hi Jump Kick:
+  type: Fighting
+  category: Physical
+  power: '130'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: If it misses, the user loses half their HP.
+Hidden Power:
+  type: Normal
+  category: Special
+  power: '60'
+  accuracy: '100'
+  pp: '15'
+  tm: TM10
+  probability: '-'
+  description: Type and power depends on user's IVs.
+Hone Claws:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: TM01
+  probability: '-'
+  description: Raises user's Attack and Accuracy.
+Horn Attack:
+  type: Normal
+  category: Physical
+  power: '65'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '-'
+  description: ''
+Horn Drill:
+  type: Normal
+  category: Physical
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: One-Hit-KO, if it hits.
+Horn Leech:
+  type: Grass
+  category: Physical
+  power: '75'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User recovers half the HP inflicted on opponent.
+Howl:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Raises user's Attack.
+Hurricane:
+  type: Flying
+  category: Special
+  power: '110'
+  accuracy: '70'
+  pp: '10'
+  tm: 
+  probability: '30'
+  description: May confuse opponent.
+Hydro Cannon:
+  type: Water
+  category: Special
+  power: '150'
+  accuracy: '90'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User must recharge next turn.
+Hydro Pump:
+  type: Water
+  category: Special
+  power: '110'
+  accuracy: '80'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: ''
+Hyper Beam:
+  type: Normal
+  category: Special
+  power: '150'
+  accuracy: '90'
+  pp: '5'
+  tm: TM15
+  probability: '-'
+  description: User must recharge next turn.
+Hyper Fang:
+  type: Normal
+  category: Physical
+  power: '80'
+  accuracy: '90'
+  pp: '15'
+  tm: 
+  probability: '10'
+  description: May cause flinching.
+Hyper Voice:
+  type: Normal
+  category: Special
+  power: '90'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: ''
+Hypnosis:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '60'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Puts opponent to sleep.
+Ice Ball:
+  type: Ice
+  category: Physical
+  power: '30'
+  accuracy: '90'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Doubles in power each turn for 5 turns.
+Ice Beam:
+  type: Ice
+  category: Special
+  power: '90'
+  accuracy: '100'
+  pp: '10'
+  tm: TM13
+  probability: '10'
+  description: May freeze opponent.
+Ice Burn:
+  type: Ice
+  category: Special
+  power: '140'
+  accuracy: '90'
+  pp: '5'
+  tm: 
+  probability: '30'
+  description: Charges on first turn, attacks on second. May burn opponent.
+Ice Fang:
+  type: Ice
+  category: Physical
+  power: '65'
+  accuracy: '95'
+  pp: '15'
+  tm: 
+  probability: '10'
+  description: May cause flinching and/or freeze opponent.
+Ice Punch:
+  type: Ice
+  category: Physical
+  power: '75'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '10'
+  description: May freeze opponent.
+Ice Shard:
+  type: Ice
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: User attacks first.
+Icicle Crash:
+  type: Ice
+  category: Physical
+  power: '85'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '30'
+  description: May cause flinching.
+Icicle Spear:
+  type: Ice
+  category: Physical
+  power: '25'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Icy Wind:
+  type: Ice
+  category: Special
+  power: '55'
+  accuracy: '95'
+  pp: '15'
+  tm: 
+  probability: '100'
+  description: Lowers opponent's Speed.
+Imprison:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Opponent is unable to use moves that the user also knows.
+Incinerate:
+  type: Fire
+  category: Special
+  power: '60'
+  accuracy: '100'
+  pp: '15'
+  tm: TM59
+  probability: '-'
+  description: Destroys the target's held berry.
+Inferno:
+  type: Fire
+  category: Special
+  power: '100'
+  accuracy: '50'
+  pp: '5'
+  tm: 
+  probability: '100'
+  description: Burns opponent.
+Infestation:
+  type: Bug
+  category: Special
+  power: '20'
+  accuracy: '100'
+  pp: '20'
+  tm: TM83
+  probability: '-'
+  description: Traps opponent, damaging them for 4-5 turns.
+Ingrain:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: User restores HP each turn. User cannot escape/switch.
+Ion Deluge:
+  type: Electric
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '25'
+  tm: 
+  probability: '-'
+  description: Changes Normal-type moves to Electric-type.
+Iron Defense:
+  type: Steel
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Sharply raises user's Defense.
+Iron Head:
+  type: Steel
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '30'
+  description: May cause flinching.
+Iron Tail:
+  type: Steel
+  category: Physical
+  power: '100'
+  accuracy: '75'
+  pp: '15'
+  tm: 
+  probability: '10'
+  description: May lower opponent's Defense.
+Judgment:
+  type: Normal
+  category: Special
+  power: '100'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Type depends on the Arceus Plate being held.
+Jump Kick:
+  type: Fighting
+  category: Physical
+  power: '100'
+  accuracy: '95'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: If it misses, the user loses half their HP.
+Karate Chop:
+  type: Fighting
+  category: Physical
+  power: '50'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+Kinesis:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '80'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Accuracy.
+King's Shield:
+  type: Steel
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Protects against attacks, and lowers opponent's Attack on contact.
+Knock Off:
+  type: Dark
+  category: Physical
+  power: '55'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Removes opponent's held item for the rest of the battle.
+Land's Wrath:
+  type: Ground
+  category: Physical
+  power: '90'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: ''
+Last Resort:
+  type: Normal
+  category: Physical
+  power: '140'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Can only be used after all other moves are used.
+Lava Plume:
+  type: Fire
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '30'
+  description: May burn opponent.
+Leaf Blade:
+  type: Grass
+  category: Physical
+  power: '90'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+Leaf Storm:
+  type: Grass
+  category: Special
+  power: '130'
+  accuracy: '90'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Sharply lowers user's Special Attack.
+Leaf Tornado:
+  type: Grass
+  category: Special
+  power: '65'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '30'
+  description: May lower opponent's Accuracy.
+Leech Life:
+  type: Bug
+  category: Physical
+  power: '20'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: User recovers half the HP inflicted on opponent.
+Leech Seed:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User steals HP from opponent each turn.
+Leer:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Defense.
+Lick:
+  type: Ghost
+  category: Physical
+  power: '30'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '30'
+  description: May paralyze opponent.
+Light Screen:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: TM16
+  probability: '-'
+  description: Halves damage from Special attacks for 5 turns.
+Lock-On:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: The next move the user uses is guaranteed to hit.
+Lovely Kiss:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '75'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Puts opponent to sleep.
+Low Kick:
+  type: Fighting
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: The heavier the opponent, the stronger the attack.
+Low Sweep:
+  type: Fighting
+  category: Physical
+  power: '65'
+  accuracy: '100'
+  pp: '20'
+  tm: TM47
+  probability: '100'
+  description: Lowers opponent's Speed.
+Lucky Chant:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Opponent cannot land critical hits for 5 turns.
+Lunar Dance:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: The user faints but the next Pokémon released is fully healed.
+Luster Purge:
+  type: Psychic
+  category: Special
+  power: '70'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '50'
+  description: May lower opponent's Special Defense.
+Mach Punch:
+  type: Fighting
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: User attacks first.
+Magic Coat:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Any special move is reflected back to the attacker.
+Magic Room:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Suppresses the effects of held items for five turns.
+Magical Leaf:
+  type: Grass
+  category: Special
+  power: '60'
+  accuracy: '&infin;'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Ignores Accuracy and Evasiveness.
+Magma Storm:
+  type: Fire
+  category: Special
+  power: '120'
+  accuracy: '75'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Traps opponent, damaging them for 4-5 turns.
+Magnet Bomb:
+  type: Steel
+  category: Physical
+  power: '60'
+  accuracy: '&infin;'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Ignores Accuracy and Evasiveness.
+Magnet Rise:
+  type: Electric
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User becomes immune to Ground-type moves for 5 turns.
+Magnetic Flux:
+  type: Electric
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Raises Defense and Sp. Defense of Plus/Minus Pokémon.
+Magnitude:
+  type: Ground
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Hits with random power.
+Mat Block:
+  type: Fighting
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Protects teammates from damaging moves.
+Me First:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: User copies the opponent's attack with 1.5× power.
+Mean Look:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Opponent cannot escape/switch.
+Meditate:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Raises user's Attack.
+Mega Drain:
+  type: Grass
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: User recovers half the HP inflicted on opponent.
+Mega Kick:
+  type: Normal
+  category: Physical
+  power: '120'
+  accuracy: '75'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: ''
+Mega Punch:
+  type: Normal
+  category: Physical
+  power: '80'
+  accuracy: '85'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: ''
+Megahorn:
+  type: Bug
+  category: Physical
+  power: '120'
+  accuracy: '85'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: ''
+Memento:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User faints, sharply lowers opponent's Attack and Special Attack.
+Metal Burst:
+  type: Steel
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Deals damage equal to 1.5x opponent's attack.
+Metal Claw:
+  type: Steel
+  category: Physical
+  power: '50'
+  accuracy: '95'
+  pp: '35'
+  tm: 
+  probability: '10'
+  description: May raise user's Attack.
+Metal Sound:
+  type: Steel
+  category: Status
+  power: '-'
+  accuracy: '85'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Sharply lowers opponent's Special Defense.
+Meteor Mash:
+  type: Steel
+  category: Physical
+  power: '90'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '20'
+  description: May raise user's Attack.
+Metronome:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User performs any move in the game at random.
+Milk Drink:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User recoves 50% of its maximum HP.
+Mimic:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Copies the opponent's last move.
+Mind Reader:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User's next attack is guaranteed to hit.
+Minimize:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Sharply raises user's Evasiveness.
+Miracle Eye:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Resets opponent's Evasiveness, removes Dark's Psychic immunity.
+Mirror Coat:
+  type: Psychic
+  category: Special
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: When hit by a Special Attack, user strikes back with 2x power.
+Mirror Move:
+  type: Flying
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: User performs the opponent's last move.
+Mirror Shot:
+  type: Steel
+  category: Special
+  power: '65'
+  accuracy: '85'
+  pp: '10'
+  tm: 
+  probability: '30'
+  description: May lower opponent's Accuracy.
+Mist:
+  type: Ice
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: User's stats cannot be changed for a period of time.
+Mist Ball:
+  type: Psychic
+  category: Special
+  power: '70'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '50'
+  description: May lower opponent's Special Attack.
+Misty Terrain:
+  type: Fairy
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Protects the field from status conditions for 5 turns.
+Moonblast:
+  type: Fairy
+  category: Special
+  power: '95'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '30'
+  description: May lower opponent's Special Attack.
+Moonlight:
+  type: Fairy
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User recovers HP. Amount varies with the weather.
+Morning Sun:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User recovers HP. Amount varies with the weather.
+Mud Bomb:
+  type: Ground
+  category: Special
+  power: '65'
+  accuracy: '85'
+  pp: '10'
+  tm: 
+  probability: '30'
+  description: May lower opponent's Accuracy.
+Mud Shot:
+  type: Ground
+  category: Special
+  power: '55'
+  accuracy: '95'
+  pp: '15'
+  tm: 
+  probability: '100'
+  description: Lowers opponent's Speed.
+Mud Sport:
+  type: Ground
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Weakens the power of Electric-type moves.
+Mud-Slap:
+  type: Ground
+  category: Special
+  power: '20'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '100'
+  description: Lowers opponent's Accuracy.
+Muddy Water:
+  type: Water
+  category: Special
+  power: '90'
+  accuracy: '85'
+  pp: '10'
+  tm: 
+  probability: '30'
+  description: May lower opponent's Accuracy.
+Mystical Fire:
+  type: Fire
+  category: Special
+  power: '65'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '100'
+  description: Lowers opponent's Special Attack.
+Nasty Plot:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Sharply raises user's Special Attack.
+Natural Gift:
+  type: Normal
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Power and type depend on the user's held berry.
+Nature Power:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 'TM96'
+  probability: '-'
+  description: Uses a certain move based on the current terrain.
+Needle Arm:
+  type: Grass
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '30'
+  description: May cause flinching.
+Night Daze:
+  type: Dark
+  category: Special
+  power: '85'
+  accuracy: '95'
+  pp: '10'
+  tm: 
+  probability: '40'
+  description: May lower opponent's Accuracy.
+Night Shade:
+  type: Ghost
+  category: Special
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Inflicts damage equal to user's level.
+Night Slash:
+  type: Dark
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+Nightmare:
+  type: Ghost
+  category: Special
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: The sleeping opponent loses 25% of its max HP each turn.
+Noble Roar:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Attack and Special Attack.
+Nuzzle:
+  type: Electric
+  category: Physical
+  power: '20'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '100'
+  description: Paralyzes opponent.
+Oblivion Wing:
+  type: Flying
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User recovers most of the HP inflicted on opponent.
+Octazooka:
+  type: Water
+  category: Special
+  power: '65'
+  accuracy: '85'
+  pp: '10'
+  tm: 
+  probability: '50'
+  description: May lower opponent's Accuracy.
+Odor Sleuth:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Resets opponent's Evasiveness, Normal-type and Fighting-type attacks
+    can now hit Ghosts, and Ghost-type attacks hit Normal.
+Ominous Wind:
+  type: Ghost
+  category: Special
+  power: '60'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '10'
+  description: May raise all user's stats at once.
+Outrage:
+  type: Dragon
+  category: Physical
+  power: '120'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User attacks for 2-3 turns but then becomes confused.
+Overheat:
+  type: Fire
+  category: Special
+  power: '130'
+  accuracy: '90'
+  pp: '5'
+  tm: TM50
+  probability: '-'
+  description: Sharply lowers user's Special Attack.
+Pain Split:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: The user's and opponent's HP becomes the average of both.
+Parabolic Charge:
+  type: Electric
+  category: Special
+  power: '50'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: User recovers half the HP inflicted on opponent.
+Parting Shot:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: 'Lowers opponent''s Attack and Special Attack then switches out. '
+Pay Day:
+  type: Normal
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: A small amount of money is gained after the battle resolves.
+Payback:
+  type: Dark
+  category: Physical
+  power: '50'
+  accuracy: '100'
+  pp: '10'
+  tm: TM66
+  probability: '-'
+  description: Power doubles if the user was attacked first.
+Peck:
+  type: Flying
+  category: Physical
+  power: '35'
+  accuracy: '100'
+  pp: '35'
+  tm: 
+  probability: '-'
+  description: ''
+Perish Song:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Any Pokémon in play when this attack is used faints in 3 turns.
+Petal Blizzard:
+  type: Grass
+  category: Physical
+  power: '90'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Hits all adjacent Pokémon.
+Petal Dance:
+  type: Grass
+  category: Special
+  power: '120'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User attacks for 2-3 turns but then becomes confused.
+Phantom Force:
+  type: Ghost
+  category: Physical
+  power: '90'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Disappears on first turn, attacks on second. Can strike through Protect/Detect.
+Pin Missile:
+  type: Bug
+  category: Physical
+  power: '25'
+  accuracy: '85'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Play Nice:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Attack. Always hits.
+Play Rough:
+  type: Fairy
+  category: Physical
+  power: '90'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: May lower opponent's Attack.
+Pluck:
+  type: Flying
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: If the opponent is holding a berry, its effect is stolen by user.
+Poison Fang:
+  type: Poison
+  category: Physical
+  power: '50'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '30'
+  description: May badly poison opponent.
+Poison Gas:
+  type: Poison
+  category: Status
+  power: '-'
+  accuracy: '90'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Poisons opponent.
+Poison Jab:
+  type: Poison
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '20'
+  tm: TM84
+  probability: '30'
+  description: May poison the opponent.
+Poison Sting:
+  type: Poison
+  category: Physical
+  power: '15'
+  accuracy: '100'
+  pp: '35'
+  tm: 
+  probability: '30'
+  description: May poison the opponent.
+Poison Tail:
+  type: Poison
+  category: Physical
+  power: '50'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '10'
+  description: High critical hit ratio. May poison opponent.
+PoisonPowder:
+  type: Poison
+  category: Status
+  power: '-'
+  accuracy: '75'
+  pp: '35'
+  tm: 
+  probability: '-'
+  description: Poisons opponent.
+Pound:
+  type: Normal
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '35'
+  tm: 
+  probability: '-'
+  description: ''
+Powder:
+  type: Bug
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Damages Pokémon using Fire type moves.
+Powder Snow:
+  type: Ice
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '10'
+  description: May freeze opponent.
+Power Gem:
+  type: Rock
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: ''
+Power Split:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Averages Attack and Special Attack with the target.
+Power Swap:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User and opponent swap Attack and Special Attack.
+Power Trick:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User's own Attack and Defense switch.
+Power Whip:
+  type: Grass
+  category: Physical
+  power: '120'
+  accuracy: '85'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: ''
+Power-Up Punch:
+  type: Fighting
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '10'
+  tm: 'TM98'
+  probability: '100'
+  description: Raises Attack.
+Present:
+  type: Normal
+  category: Physical
+  power: '-'
+  accuracy: '90'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Either deals damage or heals.
+Protect:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: TM17
+  probability: '-'
+  description: User is not affected by opponent's move.
+Psybeam:
+  type: Psychic
+  category: Special
+  power: '65'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '10'
+  description: May confuse opponent.
+Psych Up:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: TM77
+  probability: '-'
+  description: Copies the opponent's stat changes.
+Psychic:
+  type: Psychic
+  category: Special
+  power: '90'
+  accuracy: '100'
+  pp: '10'
+  tm: TM29
+  probability: '10'
+  description: May lower opponent's Special Defense.
+Psycho Boost:
+  type: Psychic
+  category: Special
+  power: '140'
+  accuracy: '90'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Sharply lowers user's Special Attack.
+Psycho Cut:
+  type: Psychic
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+Psycho Shift:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Gives the opponent the user's status condition, if it hits.
+Psyshock:
+  type: Psychic
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '10'
+  tm: TM03
+  probability: '-'
+  description: Inflicts damage based on the target's Defense, not Special Defense.
+Psystrike:
+  type: Psychic
+  category: Special
+  power: '100'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Inflicts damage based on the target's Defense, not Special Defense.
+Psywave:
+  type: Psychic
+  category: Special
+  power: '-'
+  accuracy: '80'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Inflicts damage 50-150% of user's level.
+Punishment:
+  type: Dark
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Power increases when opponent's stats have been raised.
+Pursuit:
+  type: Dark
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Double power if the opponent is switching out.
+Quash:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: TM60
+  probability: '-'
+  description: Makes the target act last this turn.
+Quick Attack:
+  type: Normal
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: User attacks first.
+Quick Guard:
+  type: Fighting
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Fast moves won't damage the user or its teammates.
+Quiver Dance:
+  type: Bug
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Raises user's Special Attack, Special Defense and Speed.
+Rage:
+  type: Normal
+  category: Physical
+  power: '20'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Raises user's Attack when hit.
+Rage Powder:
+  type: Bug
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Forces attacks to hit user, not team-mates.
+Rain Dance:
+  type: Water
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: TM18
+  probability: '-'
+  description: Makes it rain for 5 turns.
+Rapid Spin:
+  type: Normal
+  category: Physical
+  power: '20'
+  accuracy: '100'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Removes effects of trap moves.
+Razor Leaf:
+  type: Grass
+  category: Physical
+  power: '55'
+  accuracy: '95'
+  pp: '25'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+Razor Shell:
+  type: Water
+  category: Physical
+  power: '75'
+  accuracy: '95'
+  pp: '10'
+  tm: 
+  probability: '50'
+  description: May lower opponent's Defense.
+Razor Wind:
+  type: Normal
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Charges on first turn, attacks on second. High critical hit ratio.
+Recover:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User recovers 50% of its max HP.
+Recycle:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User's used hold item is restored.
+Reflect:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: TM33
+  probability: '-'
+  description: Halves damage from Physical attacks for 5 turns.
+Reflect Type:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: User becomes the target's type.
+Refresh:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Cures paralysis, poison, and burns.
+Relic Song:
+  type: Normal
+  category: Special
+  power: '75'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '10'
+  description: May put the target to sleep.
+Rest:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: TM44
+  probability: '-'
+  description: User sleeps for 2 turns, but user is fully healed.
+Retaliate:
+  type: Normal
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '5'
+  tm: TM67
+  probability: '-'
+  description: Inflicts double damage if a teammate fainted on the last turn.
+Return:
+  type: Normal
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: TM27
+  probability: '-'
+  description: Power increases with user's Happiness.
+Revenge:
+  type: Fighting
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Power increases if user was hit first.
+Reversal:
+  type: Fighting
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: The lower the user's HP, the higher the power.
+Roar:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: TM05
+  probability: '-'
+  description: In battles, the opponent switches. In the wild, the Pokémon runs.
+Roar of Time:
+  type: Dragon
+  category: Special
+  power: '150'
+  accuracy: '90'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User must recharge next turn.
+Rock Blast:
+  type: Rock
+  category: Physical
+  power: '25'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Rock Climb:
+  type: Normal
+  category: Physical
+  power: '90'
+  accuracy: '85'
+  pp: '20'
+  tm: 
+  probability: '20'
+  description: May confuse opponent.
+Rock Polish:
+  type: Rock
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: TM69
+  probability: '-'
+  description: Sharply raises user's Speed.
+Rock Slide:
+  type: Rock
+  category: Physical
+  power: '75'
+  accuracy: '90'
+  pp: '10'
+  tm: TM80
+  probability: '30'
+  description: May cause flinching.
+Rock Smash:
+  type: Fighting
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '15'
+  tm: TM94
+  probability: '50'
+  description: May lower opponent's Defense.
+Rock Throw:
+  type: Rock
+  category: Physical
+  power: '50'
+  accuracy: '90'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: ''
+Rock Tomb:
+  type: Rock
+  category: Physical
+  power: '60'
+  accuracy: '95'
+  pp: '15'
+  tm: TM39
+  probability: '100'
+  description: Lowers opponent's Speed.
+Rock Wrecker:
+  type: Rock
+  category: Physical
+  power: '150'
+  accuracy: '90'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User must recharge next turn.
+Role Play:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: User copies the opponent's Ability.
+Rolling Kick:
+  type: Fighting
+  category: Physical
+  power: '60'
+  accuracy: '85'
+  pp: '15'
+  tm: 
+  probability: '30'
+  description: May cause flinching.
+Rollout:
+  type: Rock
+  category: Physical
+  power: '30'
+  accuracy: '90'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Doubles in power each turn for 5 turns.
+Roost:
+  type: Flying
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 'TM19'
+  probability: '-'
+  description: User recovers 50% of its max HP. Flying-type users are not immune to
+    Ground-type moves immediately following this move.
+Rototiller:
+  type: Ground
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Raises Attack and Special Attack of Grass-types.
+Round:
+  type: Normal
+  category: Special
+  power: '60'
+  accuracy: '100'
+  pp: '15'
+  tm: TM48
+  probability: '-'
+  description: Power increases if teammates use it in the same turn.
+Sacred Fire:
+  type: Fire
+  category: Physical
+  power: '100'
+  accuracy: '95'
+  pp: '5'
+  tm: 
+  probability: '50'
+  description: May burn opponent.
+Sacred Sword:
+  type: Fighting
+  category: Physical
+  power: '90'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Ignores opponent's stat changes.
+Safeguard:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '25'
+  tm: TM20
+  probability: '-'
+  description: The user's party is protected from status conditions.
+Sand Tomb:
+  type: Ground
+  category: Physical
+  power: '35'
+  accuracy: '85'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Traps opponent, damaging them for 4-5 turns.
+Sand-Attack:
+  type: Ground
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Accuracy.
+Sandstorm:
+  type: Rock
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: TM37
+  probability: '-'
+  description: Creates a sandstorm for 5 turns.
+Scald:
+  type: Water
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '15'
+  tm: TM55
+  probability: '30'
+  description: May burn opponent.
+Scary Face:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Sharply lowers opponent's Speed.
+Scratch:
+  type: Normal
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '35'
+  tm: 
+  probability: '-'
+  description: ''
+Screech:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '85'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Sharply lowers opponent's Defense.
+Searing Shot:
+  type: Fire
+  category: Special
+  power: '100'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '30'
+  description: May burn opponent.
+Secret Power:
+  type: Normal
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '30'
+  description: Effects of the attack vary with the location.
+Secret Sword:
+  type: Fighting
+  category: Special
+  power: '85'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Inflicts damage based on the target's Defense, not Special Defense.
+Seed Bomb:
+  type: Grass
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: ''
+Seed Flare:
+  type: Grass
+  category: Special
+  power: '120'
+  accuracy: '85'
+  pp: '5'
+  tm: 
+  probability: '40'
+  description: May lower opponent's Special Defense.
+Seismic Toss:
+  type: Fighting
+  category: Physical
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Inflicts damage equal to user's level.
+Selfdestruct:
+  type: Normal
+  category: Physical
+  power: '200'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User faints.
+Shadow Ball:
+  type: Ghost
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '15'
+  tm: TM30
+  probability: '20'
+  description: May lower opponent's Special Defense.
+Shadow Claw:
+  type: Ghost
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '15'
+  tm: TM65
+  probability: '-'
+  description: High critical hit ratio.
+Shadow Force:
+  type: Ghost
+  category: Physical
+  power: '120'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Disappears on first turn, attacks on second. Can strike through Protect/Detect.
+Shadow Punch:
+  type: Ghost
+  category: Physical
+  power: '60'
+  accuracy: '&infin;'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Ignores Accuracy and Evasiveness.
+Shadow Sneak:
+  type: Ghost
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: User attacks first.
+Sharpen:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Raises user's Attack.
+Sheer Cold:
+  type: Ice
+  category: Special
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: One-Hit-KO, if it hits.
+Shell Smash:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Sharply raises user's Attack, Special Attack and Speed but lowers Defense
+    and Special Defense.
+Shift Gear:
+  type: Steel
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Raises user's Attack and sharply raises Speed.
+Shock Wave:
+  type: Electric
+  category: Special
+  power: '60'
+  accuracy: '&infin;'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Ignores Accuracy and Evasiveness.
+Signal Beam:
+  type: Bug
+  category: Special
+  power: '75'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '10'
+  description: May confuse opponent.
+Silver Wind:
+  type: Bug
+  category: Special
+  power: '60'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '10'
+  description: May raise all stats of user at once.
+Simple Beam:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Changes target's ability to Simple.
+Sing:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '55'
+  pp: '15'
+  tm: 
+  probability: '100'
+  description: Puts opponent to sleep.
+Sketch:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '1'
+  tm: 
+  probability: '-'
+  description: Permanently copies the opponent's last move.
+Skill Swap:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: The user swaps Abilities with the opponent.
+Skull Bash:
+  type: Normal
+  category: Physical
+  power: '130'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '100'
+  description: Raises Defense on first turn, attacks on second.
+Sky Attack:
+  type: Flying
+  category: Physical
+  power: '140'
+  accuracy: '90'
+  pp: '5'
+  tm: 
+  probability: '30'
+  description: Charges on first turn, attacks on second. May cause flinching.
+Sky Drop:
+  type: Flying
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '10'
+  tm: TM58
+  probability: '-'
+  description: Takes opponent into the air on first turn, drops them on second turn.
+Sky Uppercut:
+  type: Fighting
+  category: Physical
+  power: '85'
+  accuracy: '90'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Hits the opponent, even during Fly.
+Slack Off:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User recovers 50% of its max HP.
+Slam:
+  type: Normal
+  category: Physical
+  power: '80'
+  accuracy: '75'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: ''
+Slash:
+  type: Normal
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+Sleep Powder:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '75'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Puts opponent to sleep.
+Sleep Talk:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 'TM88'
+  probability: '-'
+  description: User performs one of its own moves while sleeping.
+Sludge:
+  type: Poison
+  category: Special
+  power: '65'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '30'
+  description: May poison opponent.
+Sludge Bomb:
+  type: Poison
+  category: Special
+  power: '90'
+  accuracy: '100'
+  pp: '10'
+  tm: TM36
+  probability: '30'
+  description: May poison opponent.
+Sludge Wave:
+  type: Poison
+  category: Special
+  power: '95'
+  accuracy: '100'
+  pp: '10'
+  tm: TM34
+  probability: '10'
+  description: May poison opponent.
+Smack Down:
+  type: Rock
+  category: Physical
+  power: '50'
+  accuracy: '100'
+  pp: '15'
+  tm: TM23
+  probability: '100'
+  description: Makes Flying-type Pokémon vulnerable to Ground moves.
+SmellingSalt:
+  type: Normal
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Power doubles if opponent is paralyzed, but cures it.
+Smog:
+  type: Poison
+  category: Special
+  power: '30'
+  accuracy: '70'
+  pp: '20'
+  tm: 
+  probability: '40'
+  description: May poison opponent.
+SmokeScreen:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Accuracy.
+Snarl:
+  type: Dark
+  category: Special
+  power: '55'
+  accuracy: '95'
+  pp: '15'
+  tm: TM95
+  probability: '100'
+  description: Lowers opponent's Special Attack.
+Snatch:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Steals the effects of the opponent's next move.
+Snore:
+  type: Normal
+  category: Special
+  power: '50'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '30'
+  description: Can only be used if asleep. May cause flinching.
+Soak:
+  type: Water
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Changes the target's type to water.
+Softboiled:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User recovers 50% of its max HP.
+SolarBeam:
+  type: Grass
+  category: Special
+  power: '120'
+  accuracy: '100'
+  pp: '10'
+  tm: TM22
+  probability: '-'
+  description: Charges on first turn, attacks on second.
+SonicBoom:
+  type: Normal
+  category: Special
+  power: '-'
+  accuracy: '90'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Always inflicts 20 HP.
+Spacial Rend:
+  type: Dragon
+  category: Special
+  power: '100'
+  accuracy: '95'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: High critical hit ratio.
+Spark:
+  type: Electric
+  category: Physical
+  power: '65'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '30'
+  description: May paralyze opponent.
+Spider Web:
+  type: Bug
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Opponent cannot escape/switch.
+Spike Cannon:
+  type: Normal
+  category: Physical
+  power: '20'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Spikes:
+  type: Ground
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Hurts opponents when they switch into battle.
+Spiky Shield:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Protects user and inflicts damage on contact moves.
+Spit Up:
+  type: Normal
+  category: Special
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Power depends on how many times the user performed Stockpile.
+Spite:
+  type: Ghost
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: The opponent's last move loses 2-5 PP.
+Splash:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Doesn't do ANYTHING.
+Spore:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '100'
+  description: Puts opponent to sleep.
+Stealth Rock:
+  type: Rock
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Damages opponent switching into battle.
+Steamroller:
+  type: Bug
+  category: Physical
+  power: '65'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '30'
+  description: May cause flinching.
+Steel Wing:
+  type: Steel
+  category: Physical
+  power: '70'
+  accuracy: '90'
+  pp: '25'
+  tm: TM51
+  probability: '10'
+  description: May raise user's Defense.
+Sticky Web:
+  type: Bug
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Speed when switching into battle.
+Stockpile:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Stores energy for use with Spit Up and Swallow.
+Stomp:
+  type: Normal
+  category: Physical
+  power: '65'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '30'
+  description: May cause flinching.
+Stone Edge:
+  type: Rock
+  category: Physical
+  power: '100'
+  accuracy: '80'
+  pp: '5'
+  tm: TM71
+  probability: '-'
+  description: High critical hit ratio.
+Stored Power:
+  type: Psychic
+  category: Special
+  power: '20'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Power increases when user's stats have been raised.
+Storm Throw:
+  type: Fighting
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Always results in a critical hit.
+Strength:
+  type: Normal
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '15'
+  tm: HM04
+  probability: '-'
+  description: ''
+String Shot:
+  type: Bug
+  category: Status
+  power: '-'
+  accuracy: '95'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Speed.
+Struggle:
+  type: Normal
+  category: Physical
+  power: '50'
+  accuracy: '100'
+  pp: '-'
+  tm: 
+  probability: '-'
+  description: Only usable when all PP are gone. Hurts the user.
+Struggle Bug:
+  type: Bug
+  category: Special
+  power: '50'
+  accuracy: '100'
+  pp: '20'
+  tm: TM76
+  probability: '100'
+  description: Lowers opponent's Special Attack.
+Stun Spore:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '75'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Paralyzes opponent.
+Submission:
+  type: Fighting
+  category: Physical
+  power: '80'
+  accuracy: '80'
+  pp: '25'
+  tm: 
+  probability: '-'
+  description: User receives recoil damage.
+Substitute:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: TM90
+  probability: '-'
+  description: Uses HP to creates a decoy that takes hits.
+Sucker Punch:
+  type: Dark
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User attacks first, but only works if opponent is readying an attack.
+Sunny Day:
+  type: Fire
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: TM11
+  probability: '-'
+  description: Makes it sunny for 5 turns.
+Super Fang:
+  type: Normal
+  category: Physical
+  power: '-'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Always takes off half of the opponent's HP.
+Superpower:
+  type: Fighting
+  category: Physical
+  power: '120'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Lowers user's Attack and Defense.
+Supersonic:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '55'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Confuses opponent.
+Surf:
+  type: Water
+  category: Special
+  power: '90'
+  accuracy: '100'
+  pp: '15'
+  tm: HM03
+  probability: '-'
+  description: Hits all adjacent Pokémon.
+Swagger:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '90'
+  pp: '15'
+  tm: TM87
+  probability: '-'
+  description: Opponent becomes confused, but its Attack is raised two stages.
+Swallow:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: The more times the user has performed Stockpile, the more HP is recovered.
+Sweet Kiss:
+  type: Fairy
+  category: Status
+  power: '-'
+  accuracy: '75'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Confuses opponent.
+Sweet Scent:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Evasiveness.
+Swift:
+  type: Normal
+  category: Special
+  power: '60'
+  accuracy: '&infin;'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Ignores Accuracy and Evasiveness.
+Switcheroo:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Swaps held items with the opponent.
+Swords Dance:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: TM75
+  probability: '-'
+  description: Sharply raises user's Attack.
+Synchronoise:
+  type: Psychic
+  category: Special
+  power: '120'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Hits any Pokémon that shares a type with the user.
+Synthesis:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: User recovers HP. Amount varies with the weather.
+Tackle:
+  type: Normal
+  category: Physical
+  power: '50'
+  accuracy: '100'
+  pp: '35'
+  tm: 
+  probability: '-'
+  description: ''
+Tail Glow:
+  type: Bug
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Drastically raises user's Special Attack.
+Tail Slap:
+  type: Normal
+  category: Physical
+  power: '25'
+  accuracy: '85'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Tail Whip:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Defense.
+Tailwind:
+  type: Flying
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: Doubles Speed for 4 turns.
+Take Down:
+  type: Normal
+  category: Physical
+  power: '90'
+  accuracy: '85'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: User receives recoil damage.
+Taunt:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: TM12
+  probability: '-'
+  description: Opponent can only use moves that attack.
+Techno Blast:
+  type: Normal
+  category: Special
+  power: '85'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: Type depends on the Drive being held.
+Teeter Dance:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Confuses all Pokémon.
+Telekinesis:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm:
+  probability: '-'
+  description: Ignores opponent's Evasiveness for three turns, add Ground immunity.
+Teleport:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Allows user to switch out. In the wild, the battle ends.
+Thief:
+  type: Dark
+  category: Physical
+  power: '40'
+  accuracy: '100'
+  pp: '10'
+  tm: TM46
+  probability: '-'
+  description: Also steals opponent's held item.
+Thrash:
+  type: Normal
+  category: Physical
+  power: '120'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User attacks for 2-3 turns but then becomes confused.
+Thunder:
+  type: Electric
+  category: Special
+  power: '110'
+  accuracy: '70'
+  pp: '10'
+  tm: TM25
+  probability: '30'
+  description: May paralyze opponent.
+Thunder Fang:
+  type: Electric
+  category: Physical
+  power: '65'
+  accuracy: '95'
+  pp: '15'
+  tm: 
+  probability: '10'
+  description: May cause flinching and/or paralyze opponent.
+Thunder Wave:
+  type: Electric
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: TM73
+  probability: '100'
+  description: Paralyzes opponent.
+Thunderbolt:
+  type: Electric
+  category: Special
+  power: '90'
+  accuracy: '100'
+  pp: '15'
+  tm: TM24
+  probability: '10'
+  description: May paralyze opponent.
+ThunderPunch:
+  type: Electric
+  category: Physical
+  power: '75'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '10'
+  description: May paralyze opponent.
+ThunderShock:
+  type: Electric
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '10'
+  description: May paralyze opponent.
+Tickle:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Lowers opponent's Attack and Defense.
+Topsy-Turvy:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Reverses stat changes of opponent.
+Torment:
+  type: Dark
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '15'
+  tm: TM41
+  probability: '-'
+  description: Opponent cannot use the same move in a row.
+Toxic:
+  type: Poison
+  category: Status
+  power: '-'
+  accuracy: '90'
+  pp: '10'
+  tm: TM06
+  probability: '-'
+  description: Badly poisons opponent.
+Toxic Spikes:
+  type: Poison
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Poisons opponents when they switch into battle.
+Transform:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User takes on the form and attacks of the opponent.
+Tri Attack:
+  type: Normal
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '20'
+  description: May paralyze, burn or freeze opponent.
+Trick:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Swaps held items with the opponent.
+Trick Room:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '5'
+  tm: TM92
+  probability: '-'
+  description: Slower Pokémon move first in the turn for 5 turns.
+Trick-or-Treat:
+  type: Ghost
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Adds Ghost type to opponent.
+Triple Kick:
+  type: Fighting
+  category: Physical
+  power: '10'
+  accuracy: '90'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Hits thrice in one turn at increasing power.
+Trump Card:
+  type: Normal
+  category: Special
+  power: '-'
+  accuracy: '&infin;'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: The lower the PP, the higher the power.
+Twineedle:
+  type: Bug
+  category: Physical
+  power: '25'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '20'
+  description: Hits twice in one turn. May poison opponent.
+Twister:
+  type: Dragon
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '20'
+  description: May cause flinching. Hits Pokémon using Fly/Bounce with double power.
+U-turn:
+  type: Bug
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '20'
+  tm: TM89
+  probability: '-'
+  description: User switches out immediately after attacking.
+Uproar:
+  type: Normal
+  category: Special
+  power: '90'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User attacks for 3 turns and prevents sleep.
+V-create:
+  type: Fire
+  category: Physical
+  power: '180'
+  accuracy: '95'
+  pp: '5'
+  tm: 
+  probability: '100'
+  description: Lowers user's Defense, Special Defense and Speed.
+Vacuum Wave:
+  type: Fighting
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: User attacks first.
+Venom Drench:
+  type: Poison
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Lowers poisoned opponent's Special Attack and Speed.
+Venoshock:
+  type: Poison
+  category: Special
+  power: '65'
+  accuracy: '100'
+  pp: '10'
+  tm: TM09
+  probability: '-'
+  description: Inflicts double damage if the target is poisoned.
+ViceGrip:
+  type: Normal
+  category: Physical
+  power: '55'
+  accuracy: '100'
+  pp: '30'
+  tm: 
+  probability: '-'
+  description: ''
+Vine Whip:
+  type: Grass
+  category: Physical
+  power: '45'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '-'
+  description: ''
+Vital Throw:
+  type: Fighting
+  category: Physical
+  power: '70'
+  accuracy: '&infin;'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: User attacks last, but ignores Accuracy and Evasiveness.
+Volt Switch:
+  type: Electric
+  category: Special
+  power: '70'
+  accuracy: '100'
+  pp: '20'
+  tm: TM72
+  probability: '-'
+  description: User must switch out after attacking.
+Volt Tackle:
+  type: Electric
+  category: Physical
+  power: '120'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '10'
+  description: User receives recoil damage. May paralyze opponent.
+Wake-Up Slap:
+  type: Fighting
+  category: Physical
+  power: '70'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Power doubles if opponent is asleep, but wakes it up.
+Water Gun:
+  type: Water
+  category: Special
+  power: '40'
+  accuracy: '100'
+  pp: '25'
+  tm: 
+  probability: '-'
+  description: ''
+Water Pledge:
+  type: Water
+  category: Special
+  power: '80'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Added effects appear if preceded by Fire Pledge or succeeded by Grass
+    Pledge.
+Water Pulse:
+  type: Water
+  category: Special
+  power: '60'
+  accuracy: '100'
+  pp: '20'
+  tm: 
+  probability: '20'
+  description: May confuse opponent.
+Water Shuriken:
+  type: Water
+  category: Physical
+  power: '15'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Hits 2-5 times in one turn.
+Water Sport:
+  type: Water
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Weakens the power of Fire-type moves.
+Water Spout:
+  type: Water
+  category: Special
+  power: '150'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: The higher the user's HP, the higher the damage caused.
+Waterfall:
+  type: Water
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '15'
+  tm: HM05
+  probability: '20'
+  description: May cause flinching.
+Weather Ball:
+  type: Normal
+  category: Special
+  power: '50'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Move's power and type changes with the weather.
+Whirlpool:
+  type: Water
+  category: Special
+  power: '35'
+  accuracy: '85'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: Traps opponent, damaging them for 4-5 turns.
+Whirlwind:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: In battles, the opponent switches. In the wild, the Pokémon runs.
+Wide Guard:
+  type: Rock
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Protects the user's team from multi-target attacks.
+Wild Charge:
+  type: Electric
+  category: Physical
+  power: '90'
+  accuracy: '100'
+  pp: '15'
+  tm: TM93
+  probability: '-'
+  description: User receives recoil damage.
+Will-O-Wisp:
+  type: Fire
+  category: Status 
+  power: '85'
+  accuracy: '15'
+  pp: TM61
+  tm: 
+  probability: '100'
+  description: Burns opponent.
+Wing Attack:
+  type: Flying
+  category: Physical
+  power: '60'
+  accuracy: '100'
+  pp: '35'
+  tm: 
+  probability: '-'
+  description: ''
+Wish:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: The user recovers HP in the following turn.
+Withdraw:
+  type: Water
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '40'
+  tm: 
+  probability: '-'
+  description: Raises user's Defense.
+Wonder Room:
+  type: Psychic
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Swaps every Pokémon's Defense and Special Defense for 5 turns.
+Wood Hammer:
+  type: Grass
+  category: Physical
+  power: '120'
+  accuracy: '100'
+  pp: '15'
+  tm: 
+  probability: '-'
+  description: User receives recoil damage.
+Work Up:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '30'
+  tm:
+  probability: '-'
+  description: Raises user's Attack and Special Attack.
+Worry Seed:
+  type: Grass
+  category: Status
+  power: '-'
+  accuracy: '100'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Changes the opponent's Ability to Insomnia.
+Wrap:
+  type: Normal
+  category: Physical
+  power: '15'
+  accuracy: '90'
+  pp: '20'
+  tm: 
+  probability: '-'
+  description: Traps opponent, damaging them for 4-5 turns.
+Wring Out:
+  type: Normal
+  category: Special
+  power: '-'
+  accuracy: '100'
+  pp: '5'
+  tm: 
+  probability: '-'
+  description: The higher the opponent's HP, the higher the damage.
+X-Scissor:
+  type: Bug
+  category: Physical
+  power: '80'
+  accuracy: '100'
+  pp: '15'
+  tm: TM81
+  probability: '-'
+  description: ''
+Yawn:
+  type: Normal
+  category: Status
+  power: '-'
+  accuracy: '-'
+  pp: '10'
+  tm: 
+  probability: '-'
+  description: Puts opponent to sleep in the next turn.
+Zap Cannon:
+  type: Electric
+  category: Special
+  power: '120'
+  accuracy: '50'
+  pp: '5'
+  tm: 
+  probability: '100'
+  description: Paralyzes opponent.
+Zen Headbutt:
+  type: Psychic
+  category: Physical
+  power: '80'
+  accuracy: '90'
+  pp: '15'
+  tm: 
+  probability: '20'
+  description: May cause flinching.
