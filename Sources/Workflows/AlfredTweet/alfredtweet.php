@@ -101,7 +101,7 @@ class AlfredTweet
 				'text' => $msg
 			)
 		);
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -128,7 +128,7 @@ class AlfredTweet
 				'screen_name' => $user
 			)
 		);
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -155,7 +155,7 @@ class AlfredTweet
 				'screen_name' => $user
 			)
 		);
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -182,7 +182,7 @@ class AlfredTweet
 				'screen_name' => $user
 			)
 		);
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -209,7 +209,7 @@ class AlfredTweet
 				'screen_name' => $user
 			)
 		);
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -233,7 +233,7 @@ class AlfredTweet
 				'name' => $name
 			)
 		);
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -257,7 +257,7 @@ class AlfredTweet
 				'list_id' => $name
 			)
 		);
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -281,7 +281,7 @@ class AlfredTweet
 				'screen_name' => $screen_name
 			)
 		);
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -304,7 +304,7 @@ class AlfredTweet
 				'count' => 10
 			)
 		);
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -328,7 +328,7 @@ class AlfredTweet
 				'result_type' => 'recent'
 			)
 		);
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -363,7 +363,7 @@ class AlfredTweet
 				)
 			);
 		endif;
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -386,7 +386,7 @@ class AlfredTweet
 				'count' => 10
 			)
 		);
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -405,7 +405,7 @@ class AlfredTweet
 			)
 		);
 
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -429,7 +429,7 @@ class AlfredTweet
 			)
 		);
 
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -448,7 +448,7 @@ class AlfredTweet
 			)
 		);
 
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
@@ -466,7 +466,7 @@ class AlfredTweet
 			)
 		);
 
-		if ( $result->error ):
+		if ( isset($result->error) ):
 			echo $result->error;
 			return false;
 		else:
