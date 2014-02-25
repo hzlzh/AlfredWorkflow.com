@@ -170,49 +170,58 @@ def search_suggest( query, api ):
 
 ################################################################################
 def search_zhihu( query ):
-	params = { "type":"question", "q":query }
-	response = urllib2.urlopen( "http://m.zhihu.com/search?"+urllib.urlencode(params) ).read().split( "\n" )
 	
-	result = []
+	params = { "type":"question", "q":query }
 	default_link = "http://www.zhihu.com/search?" + urllib.urlencode(params)
+	result = []
 	result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, u"更多详细结果……", default_link, ("zhihu.png") ) )
 	
-	title = ""
-	link = ""
-	answers = "" 
-	for line in response:
-		# <a class="question_link" target="_blank" href="/question/{id}">{title}</a>
-		# <a href="/question/{id}" class="answer zg-link-gray" target="_blank"><i></i>{answers}</a><a
-
-		if "question_link" in line:
-			title_begin = line.find( "\">" )
-			title_end = line.rfind( "</a>" )
-			if title_begin==-1 or title_end==-1:
-				continue
-			title = strip_html( line[title_begin+2:title_end] )
-			
-		elif "class=\"answer" in line and title!="":
-			link_begin = line.find( "<a href=\"/question/" )
-			link_end = line.find( "\" class=\"answer" )
-			answers_begin = line.find( "<i></i>" )
-			answers_end = line.rfind( "</a>" )			
-			if link_begin==-1 or link_end==-1 or answers_begin==-1 or answers_end==-1:
-				title = ""			
-				continue
-			link = line[link_begin+19:link_end]
-			answers = line[answers_begin+7:answers_end]
+	def _search_zhihu( search_type, query ):
+		params = { "type":search_type, "q":query }
+		response = urllib2.urlopen( "http://m.zhihu.com/search?"+urllib.urlencode(params) ).read().split( "\n" )
+		
+		result = []
+		title = ""
+		link = ""
+		answers = "" 
+		for line in response:
+			# <a class="question_link" target="_blank" href="/question/{id}">{title}</a>
+			# <a href="/question/{id}" class="answer zg-link-gray" target="_blank"><i></i>{answers}</a><a
 	
-			# append
-			if title!="" and link!="" and answers!="":
-				result.append( alfred.Item( {"uid":alfred.uid(link), "arg":"http://www.zhihu.com/question/"+link}, 
-					unescape_html(unicode(title,"utf-8")), unicode(answers,"utf-8"), ("zhihu.png")) )				
-			# next
-			title = ""
-			link = ""
-			answers = ""
-			
-		else:
-			continue
+			if "question_link" in line:
+				title_begin = line.find( "\">" )
+				title_end = line.rfind( "</a>" )
+				if title_begin==-1 or title_end==-1:
+					continue
+				title = strip_html( line[title_begin+2:title_end] )
+				
+			elif "class=\"answer" in line and title!="":
+				link_begin = line.find( "<a href=\"/question/" )
+				link_end = line.find( "\" class=\"answer" )
+				answers_begin = line.find( "<i></i>" )
+				answers_end = line.rfind( "</a>" )			
+				if link_begin==-1 or link_end==-1 or answers_begin==-1 or answers_end==-1:
+					title = ""			
+					continue
+				link = line[link_begin+19:link_end]
+				answers = line[answers_begin+7:answers_end]
+		
+				# append
+				if title!="" and link!="" and answers!="":
+					result.append( alfred.Item( {"uid":alfred.uid(link), "arg":"http://www.zhihu.com/question/"+link}, 
+						unescape_html(unicode(title,"utf-8")), unicode(answers,"utf-8"), ("zhihu.png")) )				
+				# next
+				title = ""
+				link = ""
+				answers = ""
+				
+			else:
+				continue
+				
+		return result
+		
+	result.extend( _search_zhihu("question", query) )
+	result.extend( _search_zhihu("answer", query) )
 		
 	if len(result) == 1:
 		result = []
@@ -223,12 +232,18 @@ def search_zhihu( query ):
 ################################################################################
 def search_weibo( query ):
 	weibo_gsid = ""
+	
+	result = []
+	if weibo_gsid == "":
+		result.append( alfred.Item( {"uid":"0", "arg":"http://weibo.cn/search/"}, 
+			u"请登录手机版微博查询gsid参数值", u"请修改search.py文件中search_weibo()函数的weibo_gsid变量", ("weibo.png")) )
+		return result
+
 	params = { "filter":"all", "sort":"time", "vt":"4", "keyword":query, "gsid":weibo_gsid }	
 	request=urllib2.Request( "http://weibo.cn/search/mblog/?"+urllib.urlencode(params), None, 
 		{'User-Agent':"Mozilla/5.0 (iPhone; CPU iPhone OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B179 Safari/7534.48.3",} )
 	response = urllib2.urlopen( request ).read().replace("<div","\n<div").split("\n")
 	
-	result = []
 	default_link = u"http://s.weibo.com/weibo/" + urllib.quote_plus(query) + "&" + urllib.urlencode(params)
 	result.append( alfred.Item( {"uid":alfred.uid("0"), "arg":default_link}, u"更多详细结果……", default_link, ("weibo.png") ) )
 	
