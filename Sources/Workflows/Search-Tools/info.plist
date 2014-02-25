@@ -113,7 +113,7 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>n</string>
+				<string>news</string>
 				<key>runningsubtext</key>
 				<string>Searching {query} ...</string>
 				<key>script</key>
@@ -140,7 +140,7 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>z</string>
+				<string>zh</string>
 				<key>runningsubtext</key>
 				<string>Searching {query} ...</string>
 				<key>script</key>
@@ -167,7 +167,7 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>w</string>
+				<string>wb</string>
 				<key>runningsubtext</key>
 				<string>Searching {query} ...</string>
 				<key>script</key>
@@ -194,7 +194,7 @@
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>k</string>
+				<string>wiki</string>
 				<key>runningsubtext</key>
 				<string>Searching {query} ...</string>
 				<key>script</key>
@@ -319,7 +319,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
-				<string>b</string>
+				<string>bing</string>
 				<key>script</key>
 				<string>python search.py bing {query}</string>
 				<key>subtext</key>
@@ -340,11 +340,17 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>谷歌(g)、维基百科(k)、微博(w)、知乎(z)、必应(b)、新浪新闻(n)、IMFDB(imf)的实时搜索工具，括号中为默认热键
+	<string>谷歌(g)、维基百科(wiki)、微博(wb)、知乎(zh)、必应(bing)、新浪新闻(news)、IMFDB(imf)的实时搜索工具，括号中为默认热键
 
 google和wikipedia接口默认通过本地goagent代理（127.0.0.1:8087）和HTTPS访问，若需修改请编辑search.py中set_proxy()函数
 
 因谷歌、微博、知乎未提供不限流量可匿名访问的API，故其结果均为解析HTML输出而得，若有改版可能失效
+
+v0.9
+*知乎搜索合并了问题（type=question）和回答（type=answer）内容
+
+v0.8
+*微博搜索改用手机版接口，需编辑search.py:search_weibo()函数的weibo_gsid变量
 
 v0.7.2
 *谷歌搜索升级
