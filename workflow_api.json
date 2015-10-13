@@ -7265,5 +7265,18 @@
     "workflow_author_site": "https:\/\/zlz.im\/",
     "workflow_file": "Shorten-URL.alfredworkflow",
     "workflow_screenshot": "Shorten-URL-trigger.png"
+  },
+  {
+    "workflow_name": "Tencent Portfolio",
+    "workflow_version": "1.0",
+    "workflow_description_small": "Quotes are real-time for SSE, SZSE, HKEx, NASDAQ, NYSE, and NYSE MKT, provided by Tencent Portfolio..",
+    "workflow_type": "Everyday Useful workflows",
+    "workflow_language": "Chinese - \u4e2d\u6587 (zh_CN)",
+    "workflow_release_page": "https:\/\/github.com\/wyicwx\/workflow-portfolio",
+    "workflow_download_link": "https:\/\/github.com\/wyicwx\/wokrflow-portfolio\/raw\/master\/Download\/Tencent-portfolio.alfredworkflow",
+    "workflow_author_name": "wyicwx",
+    "workflow_author_site": "https:\/\/github.com\/wyicwx",
+    "workflow_file": "Tencent-portfolio.alfredworkflow",
+    "workflow_screenshot": "Tencent-Portfolio.png"
   }
 ]
