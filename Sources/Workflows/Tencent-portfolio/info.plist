@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.weixinchen.portfolilo</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9A74E528-8196-496E-859B-372ED29F9019</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Weixin Chen</string>
+	<key>description</key>
+	<string>Get Stock Quotes</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>腾讯自选股</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>9A74E528-8196-496E-859B-372ED29F9019</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>gu</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>正在搜索股票 ...</string>
+				<key>script</key>
+				<string>require_once('Stock.php');
+$sb = new SmartBox();
+$sb-&gt;setKeyWord("{query}");
+$sb-&gt;search();
+echo $sb-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>涵盖沪深港美全市场实时行情</string>
+				<key>title</key>
+				<string>输入股票代码/名称/拼音搜索</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>63F60794-BB56-4415-9372-BAF974C3A7E1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
+		<dict>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+		<key>9A74E528-8196-496E-859B-372ED29F9019</key>
+		<dict>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://finance.qq.com/products/portfolio</string>
+</dict>
+</plist>
