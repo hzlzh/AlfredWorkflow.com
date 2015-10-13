@@ -90,7 +90,9 @@ echo $sb-&gt;toxml();</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>All information provided "as is" for informational purposes only, not intended for trading purposes or advice. Neither Tencent nor any of independent providers is liable for any informational errors, incompleteness, or delays, or for any actions taken in reliance on information contained herein. By accessing the Tencent site, you agree not to redistribute the information found therein.
+
+免责声明：本软件提供的信息仅供参考，不构成任何投资建议，投资者据此操作，风险自担。一切有关涉及上市公司的准确信息，请以沪深交易所公告为准。您使用本软件或者进入腾讯网站即表示同意以上声明。股市有风险，入市需谨慎。</string>
 	<key>uidata</key>
 	<dict>
 		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
