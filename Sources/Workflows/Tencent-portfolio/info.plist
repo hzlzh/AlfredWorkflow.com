@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.alfredapp.weixinchen.portfolilo</string>
+	<string>com.alfredapp.weixinchen.portfolio</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -23,7 +23,7 @@
 	<key>createdby</key>
 	<string>Weixin Chen</string>
 	<key>description</key>
-	<string>Get Stock Quotes</string>
+	<string>Tencent Portfolilo v0.2</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
