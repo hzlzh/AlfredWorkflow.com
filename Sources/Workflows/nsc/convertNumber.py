@@ -10,9 +10,9 @@
 import sys
 import alp
 import string
-ALPHA = string.digits + string.uppercase + string.lowercase
+ALPHA = string.digits + string.uppercase + string.lowercase + '+' + '/'
 
-def base62_encode(num, base, alphabet=ALPHA):
+def base64_encode(num, base, alphabet=ALPHA):
     """Encode a number in Base X
 
     `num`: The number to encode
@@ -29,7 +29,7 @@ def base62_encode(num, base, alphabet=ALPHA):
     arr.reverse()
     return ''.join(arr)
 
-def base62_decode(string, base, alphabet=ALPHA):
+def base64_decode(string, base, alphabet=ALPHA):
 	"""Decode a Base X encoded string into the number
 
 	Arguments:
@@ -52,12 +52,14 @@ def base62_decode(string, base, alphabet=ALPHA):
 if (len(sys.argv) == 4 and sys.argv[3] != "1"):
 	# calculate integer first
 	if (int(sys.argv[2]) <= 36):
+                # use built in python conversion if possible
 		decimal = int(sys.argv[1], int(sys.argv[2]))
-	elif (int(sys.argv[2]) > 36 and int(sys.argv[2]) <= 62):
-		decimal = base62_decode(sys.argv[1], int(sys.argv[2]))
+	elif (int(sys.argv[2]) > 36 and int(sys.argv[2]) <= 64):
+                # otherwise, use base64_decode
+		decimal = base64_decode(sys.argv[1], int(sys.argv[2]))
 	else:
 		# create dictionary to create xml from it
-		errorDic = dict(title="Ohoh, your number couldn't be converted", subtitle="make sure your base is between 2 and 62", uid="error", valid=False)
+		errorDic = dict(title="Ohoh, your number couldn't be converted", subtitle="make sure your base is between 2 and 64", uid="error", valid=False)
 		e = alp.Item(**errorDic)
 		alp.feedback(e)
 		sys.exit()
@@ -67,11 +69,11 @@ if (len(sys.argv) == 4 and sys.argv[3] != "1"):
 	d = alp.Item(**decimalDic)
 
 	# calculate new number
-	if (int(sys.argv[3]) >= 2 and int(sys.argv[3]) <= 62):
-		conv = base62_encode(decimal, int(sys.argv[3]))
+	if (int(sys.argv[3]) >= 2 and int(sys.argv[3]) <= 64):
+		conv = base64_encode(decimal, int(sys.argv[3]))
 	else:
 		# create dictionary to create xml from it
-		errorDic = dict(title="Ohoh, your number couldn't be converted", subtitle="make sure your base is between 2 and 62", uid="error", valid=False)
+		errorDic = dict(title="Ohoh, your number couldn't be converted", subtitle="make sure your base is between 2 and 64", uid="error", valid=False)
 		e = alp.Item(**errorDic)
 		itemsList = [d, e]
 		alp.feedback(itemsList)
@@ -92,11 +94,11 @@ if (len(sys.argv) == 4 and sys.argv[3] != "1"):
 	alp.feedback(itemsList)
 
 else:
-	if (int(sys.argv[3]) == 1):
-		errorDic = dict(title="Base 1 makes no sense", subtitle="", uid="error", valid=False, arg="error")
+        if (len(sys.argv) != 4):
+		errorDic = dict(title="Make sure to pass 3 numbers", subtitle="convert `number` `base of original` `base to convert to`", uid="error", valid=False, arg="error")
 		error = alp.Item(**errorDic)
 		alp.feedback(error)
-	else:
-		errorDic = dict(title="Make sure to pass 3 numbers", subtitle="for help type \"nsc help\"", uid="error", valid=False, arg="error")
+        elif (int(sys.argv[3]) == 1):
+		errorDic = dict(title="Base 1 makes no sense", subtitle="", uid="error", valid=False, arg="error")
 		error = alp.Item(**errorDic)
 		alp.feedback(error)

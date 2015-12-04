@@ -11,7 +11,7 @@ d = alp.Item(**decimalDic)
 
 
 # calculate binary number
-binary = bin(decimal)[2:]
+binary = bin(decimal)[2:].zfill(8)
 # create associative array and create xml from it
 binaryDic = dict(title=str(binary), subtitle="Binary", uid="binary", valid=True, arg=str(binary), icon="icons/binary.png")
 b = alp.Item(**binaryDic)
