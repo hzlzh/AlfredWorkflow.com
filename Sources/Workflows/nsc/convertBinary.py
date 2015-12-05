@@ -18,7 +18,7 @@ o = alp.Item(**octalDic)
 
 
 # calculate hex number
-hexadec = hex(decimal)[2:]
+hexadec = hex(decimal)[2:].upper()
 # create associative array and create xml from it
 hexDic = dict(title=str(hexadec), subtitle="Hexadecimal", uid="hex", valid=True, arg=str(hexadec), icon="icons/hex.png")
 h = alp.Item(**hexDic)
