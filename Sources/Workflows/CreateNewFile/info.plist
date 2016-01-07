@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>SuWang.newfile</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>926FDE9F-2D7C-475F-AAD8-BD1B9397EF5F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FC9F751E-52A1-4409-BF5C-34E35A306656</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>FC9F751E-52A1-4409-BF5C-34E35A306656</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Su Wang &amp; Ian Isted &amp; Chris Kalafarski</string>
+	<key>description</key>
+	<string>Creates a new file in the active finder window. ? for help</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Create New File in Finder</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>new</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Please Wait for the results</string>
+				<key>script</key>
+				<string>python express.py "{query}"</string>
+				<key>subtext</key>
+				<string>Enter a filename and extension for your new file. Type ? for help.</string>
+				<key>title</key>
+				<string>Create New File</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>926FDE9F-2D7C-475F-AAD8-BD1B9397EF5F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>54</integer>
+				<key>script</key>
+				<string># -*- coding: utf-8 -*-
+
+_osa1 = 'tell application \"Finder\" to set insertionLocation to insertion location as alias'
+_osa2 = 'return POSIX path of insertionLocation'
+activeFinderPath = (`osascript -e "#{_osa1}" -e "#{_osa2}"`).strip
+
+filename = 'untitled'
+extension = 'txt'
+
+
+if '{query}' == '!'
+	system("open", "./templates")
+	exit
+end
+
+if '{query}' == 'help' || '{query}' == '?'
+	system("open", "https://github.com/james016/alfred_newfile")
+	exit
+else
+	if '{query}' &amp;&amp; '{query}'.include?(' ')
+	  fullFilename = '{query}'.split(' ')[0]
+	  templates = '{query}'.split(' ')[1]
+	else
+	  fullFilename = '{query}'
+	end
+
+	if fullFilename &amp;&amp; fullFilename.include?(?.)
+	  filename = fullFilename.split('.')[0]
+	  extension = fullFilename.split('.')[1]
+	end
+	
+	file = [filename, extension].join('.')
+	path = [activeFinderPath, file].join
+	
+	if templates
+	  template = [templates, extension].join('.')
+	else
+	  template = [extension, extension].join('.')
+	end
+	if (File.exists?("templates/#{template}"))
+	  system(%[cp -r "templates/#{template}" "#{path}"])
+	else
+	  system(%[touch "#{path}"])
+	end
+end
+
+</string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FC9F751E-52A1-4409-BF5C-34E35A306656</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Add python find template method by Su Wang:
+https://github.com/james016/alfred_newfile
+
+——-
+
+Create new file, v3.0:
+http://ianisted.co.uk/new-finder-file-alfred-2
+
+---
+
+To create new a new file, open a finder window. Call up Alfred and type the filename and extension you want to use.
+
+If you want to use templates for new files, create a file with the format "extension.extension", e.g. "html.html" in the extensions Templates folder.
+
+---
+
+Created by Ian Isted (http://ianisted.co.uk)
+Thanks to Chris Kalafarski (http://awholenother.com)</string>
+	<key>uidata</key>
+	<dict>
+		<key>926FDE9F-2D7C-475F-AAD8-BD1B9397EF5F</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>FC9F751E-52A1-4409-BF5C-34E35A306656</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/james016/alfred_newfile</string>
+</dict>
+</plist>
