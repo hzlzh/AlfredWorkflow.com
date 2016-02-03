@@ -7278,5 +7278,18 @@
     "workflow_author_site": "https:\/\/github.com\/wyicwx",
     "workflow_file": "Tencent-portfolio.alfredworkflow",
     "workflow_screenshot": "Tencent-Portfolio.png"
+  },
+  {
+    "workflow_name": "Timestamp Convertor",
+    "workflow_version": "1.0",
+    "workflow_description_small": "convert timestamp to datetime string or convert datetime to timestamp",
+    "workflow_type": "Everyday Useful workflows",
+    "workflow_language": "Chinese - \u4e2d\u6587 (zh_CN)",
+    "workflow_release_page": "https:\/\/github.com\/chxj1992\/alfred-timestamp",
+    "workflow_download_link": "https:\/\/github.com\/chxj1992\/alfred-timestamp\/blob\/master\/timestamp.alfredworkflow",
+    "workflow_author_name": "chxj1992",
+    "workflow_author_site": "https:\/\/github.com\/chxj1992",
+    "workflow_file": "timestamp.alfredworkflow",
+    "workflow_screenshot": "screen-shot.png"
   }
 ]
