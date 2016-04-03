@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.htedsv.godic</string>
+	<key>connections</key>
+	<dict>
+		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>31D64669-BD93-4689-A2A3-67282E923973</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Htedsv</string>
+	<key>description</key>
+	<string>Get godic Search Suggestions</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>德语助手</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>31D64669-BD93-4689-A2A3-67282E923973</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>d</string>
+				<key>runningsubtext</key>
+				<string>Retrieving search suggestions ...</string>
+				<key>script</key>
+				<string># -*- coding: utf-8 -*-
+
+import json
+import urllib
+
+__author__ = 'Htedsv'
+
+theQuery = "{query}"
+
+rssurl = 'http://www.godic.net/dicts/prefix/' + urllib.quote(theQuery)
+print "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;"
+
+try:
+    txt = urllib.urlopen(rssurl).read()
+    items = txt[2:-2].split('},{')
+    li = []
+
+    for x in items:
+        v_st = x.find('"value"')+9
+        v_ed = x.find('"', v_st)
+        title = x[v_st:v_ed]
+
+        l_st = x.find('"label"')+9
+        l_ed = x.find('"', l_st)
+        sub = x[l_st:l_ed]
+        title = title.replace('\\r', ' ')
+        title = title.replace('\\n', ' ')
+        sub = sub.replace('\\r', ' ')
+        sub = sub.replace('\\n', ' ')
+        li.append((title, sub))
+    li.sort(key=lambda q: q[0].lower())
+    cnt = 0
+    for x in li:
+        title, sub = x
+        cnt += 1
+        link = 'http://www.godic.net/dicts/de/'+urllib.quote(title)
+
+        print "    &lt;item uid=\"%d\" arg=\""%cnt + link +"\"&gt;"
+        print "        &lt;title&gt;" + title + "&lt;/title&gt;"
+        print "        &lt;subtitle&gt;" + sub + "&lt;/subtitle&gt;"
+        print '''      &lt;icon type="fileicon"&gt;./icon.png&lt;/icon&gt;&lt;/item&gt;'''
+except Exception, e:
+    print "    &lt;item uid=\"0\" arg=\""+ 'http://www.godic.net/dicts/de/'+urllib.quote(theQuery) +"\"&gt;"
+    print "        &lt;title&gt;" + "在线搜索"+theQuery + "&lt;/title&gt;"
+    print "        &lt;subtitle&gt;" + "..." + "&lt;/subtitle&gt;"
+    print '''      &lt;icon type="fileicon"&gt;./icon.png&lt;/icon&gt;&lt;/item&gt;'''
+print "&lt;/items&gt;\n"
+</string>
+				<key>subtext</key>
+				<string>Search 德语助手</string>
+				<key>title</key>
+				<string>Search 德语助手</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>63F60794-BB56-4415-9372-BAF974C3A7E1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>31D64669-BD93-4689-A2A3-67282E923973</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>63F60794-BB56-4415-9372-BAF974C3A7E1</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>htedsv.com</string>
+</dict>
+</plist>
