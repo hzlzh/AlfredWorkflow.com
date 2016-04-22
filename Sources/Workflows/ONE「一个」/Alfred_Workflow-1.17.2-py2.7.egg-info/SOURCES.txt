@@ -1,0 +1,17 @@
+MANIFEST.in
+README_PYPI.rst
+setup.cfg
+setup.py
+Alfred_Workflow.egg-info/PKG-INFO
+Alfred_Workflow.egg-info/SOURCES.txt
+Alfred_Workflow.egg-info/dependency_links.txt
+Alfred_Workflow.egg-info/not-zip-safe
+Alfred_Workflow.egg-info/top_level.txt
+workflow/Notify.tgz
+workflow/__init__.py
+workflow/background.py
+workflow/notify.py
+workflow/update.py
+workflow/version
+workflow/web.py
+workflow/workflow.py
