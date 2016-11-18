@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: pushbullet.py
+Version: 0.10.0
+Summary: A simple python client for pushbullet.com
+Home-page: https://github.com/randomchars/pushbullet.py
+Author: Richard Borcsik
+Author-email: borcsikrichard@gmail.com
+License: MIT
+Download-URL: https://github.com/randomchars/pushbullet.py/tarball/0.10.0
+Keywords: push android pushbullet notification
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Requires-Dist: requests (>=1.0.0)
+Requires-Dist: python-magic
+Requires-Dist: websocket-client
+
+UNKNOWN
+
+

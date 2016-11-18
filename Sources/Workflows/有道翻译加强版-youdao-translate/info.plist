@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>youdao_wordbook_speak_openurl</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>174E9DBE-E69C-490E-9075-488FBF947E3C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B6B17F9A-B41D-491C-8991-2FAB703C3FF5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A0C47CAD-8F40-463D-8198-1427FE7F3B27</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>506F8893-E009-4F0F-92F3-4656785B9875</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EF04F569-D9CF-4145-ACE0-4BD0B3DEF672</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>50ACFBA3-8F38-4842-B93A-3B021E6F7E2A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>506F8893-E009-4F0F-92F3-4656785B9875</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>96C187BF-6D54-4474-8B91-610507F71B61</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>174E9DBE-E69C-490E-9075-488FBF947E3C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>96C187BF-6D54-4474-8B91-610507F71B61</key>
+		<array/>
+		<key>C894F8ED-2CC8-46DD-A1FC-683628CCF296</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>50ACFBA3-8F38-4842-B93A-3B021E6F7E2A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>icyleaf &amp; dalang &amp; dengo</string>
+	<key>description</key>
+	<string>使用有道翻译你想知道的单词和语句</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>有道翻译加强版</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>加入生词本</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EF04F569-D9CF-4145-ACE0-4BD0B3DEF672</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>try {
+    $input = "{query}";
+    $inputs = explode("\\ ", $input);
+    $input = implode(" ", $inputs);
+
+    if (strlen($input) &gt; 3 &amp;&amp; substr($input, -3) == "ADD") {
+        $word = substr($input, 0, -3);
+        $username = "allon6@163.com";     //替换成自己的网易帐号
+        $password = "allon123";  //替换成自己的网易密码
+        $contentType = "application/x-www-form-urlencoded";
+        $userAgent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4";
+        $body = array(
+                'url'=&gt;"http://account.youdao.com/login?service=dict&amp;back_url=http%3A%2F%2Fdict.youdao.com&amp;success=1",
+                'product'=&gt;"search",
+                'type'=&gt;1,
+                'username'=&gt;$username,
+                'password'=&gt;$password,
+                'savelogin'=&gt;1
+                );
+        $fields_string = http_build_query($body);
+
+        $url = "https://reg.163.com/logins.jsp";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POSTFIELDS,$fields_string);
+        curl_setopt($ch, CURLOPT_HEADER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLINFO_HEADER_OUT, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, Array('Content-type: '.$contentType . '; User-Agent=' . $userAgent));
+        curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 6);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $result = curl_exec($ch);
+        $cookies = array();
+        preg_match_all('/Set-Cookie:(?&lt;cookie&gt;.*)\b/m', $result, $cookies);
+        $cookie_string = trim(implode(",", $cookies['cookie']));
+        curl_close($ch);
+
+        // 添加单词到单词本
+        $add_word_url = 'http://dict.youdao.com/wordbook/ajax?action=addword&amp;q='.$word;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $add_word_url);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_POST, 0);
+        curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_NOBODY, 0);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_COOKIE, $cookie_string);
+        // curl_setopt($ch, CURLOPT_POSTFIELDS,$fields_string);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $result2 = curl_exec($ch);
+        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        if ($code==200) {
+            // 202 is accepted, 409 is already exists
+            if($result2=='{"message":"adddone"}') {
+                //exit(0); // success
+                echo "add \"$word\" Success";
+            }else{
+                //exit(1); // other error
+                echo "add \"$word\" Failed";
+            }
+        }
+        else if ($code==401) {
+            //exit(2); // bad auth
+            echo "Bad Auth when connect to YouDao Wordbook";
+        }
+        else {
+            //exit(1); // other error
+            echo "Encounter Other Error when connect to YouDao Wordboook";
+        }
+    }
+} catch (Exception $e) {
+    echo "";
+}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>506F8893-E009-4F0F-92F3-4656785B9875</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>f</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>翻译中...</string>
+				<key>script</key>
+				<string>require_once('youdao.php');
+
+$keyfrom = 'Alfred';
+$key = 1963786550;
+
+$input = '{query}';
+$inputs = explode("\\ ", $input);
+
+if (count($inputs) &gt; 1 &amp;&amp; $inputs[count($inputs) - 1] == 'add') {
+	array_pop($inputs);
+    $yd = YouDaoTranslation::factory($keyfrom, $key, implode(" ", $inputs));
+    echo $yd-&gt;listInAlfred(true);
+} 
+else if (count($inputs) &gt; 1 &amp;&amp; $inputs[count($inputs) - 1] == 'say') {
+	array_pop($inputs);
+	$keyword = implode(" ", $inputs);
+
+	if (preg_match("/([\x81-\xfe][\x40-\xfe])/", $keyword, $match)) {
+	    $canSpeak = false; //不能说包含中文的词条    
+	} else {
+	    exec("say ".$keyword);
+		$canSpeak = true;
+	}
+
+	$yd = YouDaoTranslation::factory($keyfrom, $key, $keyword);
+	echo $yd-&gt;listInAlfred(false,true,$canSpeak);
+}
+else if (count($inputs) &gt; 1 &amp;&amp; $inputs[count($inputs) - 1] == 'open') {
+	array_pop($inputs);
+    $yd = YouDaoTranslation::factory($keyfrom, $key, implode(" ", $inputs));
+    echo $yd-&gt;listInAlfred(false,false,false,true);
+}
+else {
+    $yd = YouDaoTranslation::factory($keyfrom, $key, implode(" ", $inputs));
+    echo $yd-&gt;listInAlfred();
+}
+</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>add加入单词本 | say单词发音 |  open打开网站 | shift+enter复制到粘贴板</string>
+				<key>title</key>
+				<string>常用指令：add、say或open；用法：yd word add...</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>50ACFBA3-8F38-4842-B93A-3B021E6F7E2A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>/usr/bin/python openurl.py {query}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>96C187BF-6D54-4474-8B91-610507F71B61</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>C894F8ED-2CC8-46DD-A1FC-683628CCF296</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>复制到粘贴板</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B6B17F9A-B41D-491C-8991-2FAB703C3FF5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>$output = stripslashes("{query}");
+$output = str_replace("n.", "", $output);
+$output = str_replace("vt.", "", $output);
+$output = str_replace("vi.", "", $output);
+$output = str_replace("adj.", "", $output);
+$output = str_replace("adv.", "", $output);
+$output = str_replace("prep.", "", $output);
+$output = str_replace("num.", "", $output);
+$output = str_replace("art.", "", $output);
+$output = str_replace("int.", "", $output);
+$output = str_replace("conj.", "", $output);
+$output = str_replace("abbr.", "", $output);
+$output = trim($output);
+//$output = preg_replace("/^[*]$/", "", $input);
+echo $output;</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>174E9DBE-E69C-490E-9075-488FBF947E3C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>A0C47CAD-8F40-463D-8198-1427FE7F3B27</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>站在巨人的肩膀上...
+
+Author:
+初始翻译功能开发者          ：icyleaf  &lt;icyleaf.cn@gmail.com&gt;
+单词本功能开发者             ：dalang
+发音和网站搜索功能开发者 ：dengo  &lt;i@dengo.org&gt;
+对enter做了定制化修改  ：liyonghui@baidu.com
+
+Overview：
+yd word         中英翻译结果最丰富
+yd word add   加入单词本(双击打开第一个脚本文件，填入自己的网易账号密码)
+yd word say   英文发音(调用系统发音，自行设置系统发音)
+yd word open 打开有道翻译网站，查看更多例句解释
+enter     复制到粘贴板同时把剪贴板内容同步到输入框（对enter做了部分修改，去掉了各种n. adv.词性和各种多余的符号。并直接内容进入输入框。）</string>
+	<key>uidata</key>
+	<dict>
+		<key>174E9DBE-E69C-490E-9075-488FBF947E3C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>506F8893-E009-4F0F-92F3-4656785B9875</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>50ACFBA3-8F38-4842-B93A-3B021E6F7E2A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>96C187BF-6D54-4474-8B91-610507F71B61</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>A0C47CAD-8F40-463D-8198-1427FE7F3B27</key>
+		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>B6B17F9A-B41D-491C-8991-2FAB703C3FF5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>720</integer>
+			<key>ypos</key>
+			<integer>350</integer>
+		</dict>
+		<key>C894F8ED-2CC8-46DD-A1FC-683628CCF296</key>
+		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<real>240</real>
+		</dict>
+		<key>EF04F569-D9CF-4145-ACE0-4BD0B3DEF672</key>
+		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string></string>
+	<key>webaddress</key>
+	<string>http://icyleaf.com || http://dengo.org</string>
+</dict>
+</plist>
