@@ -7291,5 +7291,32 @@
     "workflow_author_site": "https:\/\/github.com\/chxj1992",
     "workflow_file": "timestamp.alfredworkflow",
     "workflow_screenshot": "screen-shot.png"
+  },
+  {
+    "workflow_name": "A Key Value Storage",
+    "workflow_version": "1.0",
+    "workflow_description_small": "a key value storage",
+    "workflow_type": "Everyday Useful workflows",
+    "workflow_language": "Chinese - \u4e2d\u6587 (zh_CN)",
+    "workflow_release_page": "https:\/\/github.com\/chxj1992\/alfred-workflows\/tree\/master\/db",
+    "workflow_download_link": "https:\/\/github.com\/chxj1992\/alfred-workflows\/blob\/master\/db\/db.alfredworkflow",
+    "workflow_author_name": "chxj1992",
+    "workflow_author_site": "https:\/\/github.com\/chxj1992",
+    "workflow_file": "timestamp.alfredworkflow",
+    "workflow_screenshot": "screen-shot-1.png"
+  },
+  {
+    "workflow_name": "Google Authenticator Generator",
+    "workflow_version": "1.0",
+    "workflow_description_small": "Google Authenticator Generator",
+    "workflow_type": "Everyday Useful workflows",
+    "workflow_language": "Chinese - \u4e2d\u6587 (zh_CN)",
+    "workflow_release_page": "https:\/\/github.com\/chxj1992\/alfred-workflows\/tree\/master\/google-authenticator",
+    "workflow_download_link": "https:\/\/github.com\/chxj1992\/alfred-workflows\/blob\/master\/google-authenticator\/google-authenticator.alfredworkflow",
+    "workflow_author_name": "chxj1992",
+    "workflow_author_site": "https:\/\/github.com\/chxj1992",
+    "workflow_file": "google-authenticator.alfredworkflow",
+    "workflow_screenshot": "screen-shot.png"
   }
+
 ]

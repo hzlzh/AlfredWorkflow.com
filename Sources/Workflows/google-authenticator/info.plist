@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>google-authenticator</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>C8CD54F7-C895-4EE4-BC27-A0FD19950849</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4877B11D-98C3-46DD-A90F-7AAD1FE28145</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>chenxiaojing</string>
+	<key>description</key>
+	<string>google authenticator generator</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>google-authenticator</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>keyword</key>
+				<string>ga</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>script</key>
+				<string>require_once('workflows.php');
+require_once('ga.php');
+$workflows = new Workflows();
+$ga = new PHPGangsta_GoogleAuthenticator();
+
+$code = $ga-&gt;getCode('secret key');
+
+$workflows-&gt;result('', $code, 'google authenticator', $code, '');
+
+echo $workflows-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>google authenticator generator</string>
+				<key>title</key>
+				<string>google authenticator generator</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C8CD54F7-C895-4EE4-BC27-A0FD19950849</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>4877B11D-98C3-46DD-A90F-7AAD1FE28145</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>4877B11D-98C3-46DD-A90F-7AAD1FE28145</key>
+		<dict>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+		<key>C8CD54F7-C895-4EE4-BC27-A0FD19950849</key>
+		<dict>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
