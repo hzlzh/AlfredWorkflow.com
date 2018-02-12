@@ -3888,7 +3888,7 @@
   },
   {
     "workflow_name": "Baidu Map Search",
-    "workflow_version": "1.0",
+    "workflow_version": "1.1.0",
     "workflow_description_small": "\u767e\u5ea6\u5730\u56fe\u641c\u7d22(Search in Baidu Map)",
     "workflow_type": "Web workflows",
     "workflow_language": "Chinese - \u4e2d\u6587 (zh_CN)",
@@ -7291,5 +7291,17 @@
     "workflow_author_site": "https:\/\/github.com\/chxj1992",
     "workflow_file": "timestamp.alfredworkflow",
     "workflow_screenshot": "screen-shot.png"
+  },
+  {
+    "workflow_name": "Amap Search",
+    "workflow_version": "1.0.0",
+    "workflow_description_small": "\u9AD8\u5FB7\u5730\u56FE\u641C\u7D22 (Search in Amap)",
+    "workflow_type": "Web workflows",
+    "workflow_language": "Chinese - \u4e2d\u6587 (zh_CN)",
+    "workflow_release_page": "https:\/\/github.com\/wofeiwo\/alfred-amap",
+    "workflow_download_link": "https:\/\/github.com/wofeiwo\/alfred-amap\/releases",
+    "workflow_author_name": "wofeiwo",
+    "workflow_author_site": "https:\/\/github.com\/wofeiwo",
+    "workflow_file": "\u9AD8\u5FB7\u5730\u56FE.alfredworkflow"
   }
 ]
