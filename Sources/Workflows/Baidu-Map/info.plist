@@ -30,13 +30,13 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>GaRY</string>
+	<string></string>
 	<key>description</key>
-	<string>搜索百度地图</string>
+	<string></string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Baidu Map</string>
+	<string>Open custom URL in specified browser</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -45,15 +45,15 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>126</integer>
+				<integer>127</integer>
 				<key>keyword</key>
 				<string>bmap</string>
 				<key>runningsubtext</key>
-				<string>搜索{query}中…</string>
+				<string>搜索百度地图中...</string>
 				<key>script</key>
 				<string>/usr/bin/python baidu-map.py {query}</string>
 				<key>subtext</key>
-				<string>在地图上查找地址</string>
+				<string>查找地址</string>
 				<key>title</key>
 				<string>搜索百度地图</string>
 				<key>type</key>
@@ -146,6 +146,6 @@ f.close()</string>
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string>https://github.com/wofeiwo</string>
+	<string></string>
 </dict>
 </plist>
